@@ -1,0 +1,29 @@
+# タスクリスト: 食物栄養学科トップページ制作
+
+- [/] プロジェクトの初期化
+    - [/] `npm create vite@latest` の実行（React + JavaScript）
+    - [ ] Tailwind CSS のインストールと設定
+    - [ ] Framer Motion, Lucide React (アイコン用) のインストール
+- [ ] デザインシステムの構築
+    - [ ] `tailwind.config.js` へのカスタムカラー定義
+    - [ ] `index.css` へのフォント設定とベーススタイル
+- [ ] 共通コンポーネントの実装
+    - [ ] `Header.jsx`
+    - [ ] `Footer.jsx`
+- [ ] 各セクションの実装
+    - [ ] `Hero.jsx`
+    - [ ] `StatsBar.jsx`
+    - [ ] `Features.jsx`
+    - [ ] `Qualifications.jsx`
+    - [ ] `NationalExamSupport.jsx`
+    - [ ] `News.jsx`
+    - [ ] `SNSSection.jsx`
+    - [ ] `Career.jsx`
+- [ ] 全体の統合とアニメーション設定
+    - [ ] `App.jsx` でのセクション配置
+    - [ ] Framer Motion によるスクロールアニメーション
+- [ ] デプロイ設定
+    - [ ] `firebase.json`, `.firebaserc` の作成
+- [ ] 動作確認と微調整
+    - [ ] レスポンシブ確認
+    - [ ] ビルド確認
