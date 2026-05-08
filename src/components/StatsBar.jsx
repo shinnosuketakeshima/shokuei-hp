@@ -1,10 +1,26 @@
 import { useEffect, useRef } from 'react'
 
 const STATS = [
-  { number: '96', unit: '%',  label: '管理栄養士国家試験合格率', note: '2024年度実績' },
-  { number: '99', unit: '%',  label: '就職率',                  note: '2023年度実績' },
-  { number: '約400', unit: '名', label: '在学生数',             note: '4学年合計'   },
-  { number: '10',  unit: '+', label: '取得可能資格数',          note: '種類以上'    },
+  {
+    number: '99.2', unit: '%',
+    label: '就職率',
+    note: '2025年3月卒業生実績',
+  },
+  {
+    number: '78',   unit: '名',
+    label: '募集定員',
+    note: '少人数教育を徹底',
+  },
+  {
+    number: '8',    unit: '回',
+    label: '4年次 国試模擬試験',
+    note: '3年次にも夏・冬の2回実施',
+  },
+  {
+    number: '全国',  unit: '唯一',
+    label: '管理栄養士課程で',
+    note: '第一種衛生管理者が取れる大学',
+  },
 ]
 
 export default function StatsBar() {

@@ -1,13 +1,13 @@
 import { ArrowRight } from 'lucide-react'
 
 const PATHS = [
-  { name: '病院・クリニック',       role: '管理栄養士' },
-  { name: '学校（小・中・高）',     role: '栄養教諭'   },
-  { name: '保健所・行政機関',       role: '行政栄養士' },
-  { name: '給食センター・施設',      role: '管理栄養士' },
-  { name: '食品メーカー・企業',      role: '商品開発・栄養管理' },
-  { name: 'ドラッグストア・薬局',   role: '管理栄養士' },
-  { name: '福祉施設・介護施設',      role: '施設栄養士' },
+  { name: '病院・クリニック',      role: '管理栄養士' },
+  { name: '高齢者福祉施設',        role: '施設管理栄養士' },
+  { name: '保育園・子育て施設',    role: '給食担当・食育' },
+  { name: '給食サービス会社',      role: '管理栄養士・栄養士' },
+  { name: '食品メーカー',          role: '商品開発・品質管理' },
+  { name: '調剤薬局・ドラッグストア', role: '管理栄養士' },
+  { name: '地方公務員（保健所等）', role: '行政栄養士' },
 ]
 
 export default function Career() {
@@ -21,14 +21,14 @@ export default function Career() {
             <p className="eyebrow">進路・就職 / Career</p>
             <div className="career__stat-block">
               <div className="career__rate">
-                99<span className="career__rate-unit">%</span>
+                99.2<span className="career__rate-unit">%</span>
               </div>
-              <p className="career__rate-label">就職率（2023年度）</p>
+              <p className="career__rate-label">就職率（2025年3月卒業生・2025年4月現在）</p>
             </div>
             <p style={{ fontSize: '13px', color: 'var(--stone)', lineHeight: 1.9 }}>
-              卒業生は医療・教育・行政・企業など、
-              幅広い分野で活躍しています。
-              在学中から丁寧なキャリア支援を受けることができます。
+              入学から卒業まで、教員が親身に就職相談に対応。
+              医療・福祉・食品・行政など多彩な分野で
+              卒業生が活躍しています。
             </p>
           </div>
 
