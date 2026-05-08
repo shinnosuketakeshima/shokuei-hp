@@ -936,6 +936,12 @@ body {
   transition: background var(--transition);
 }
 .career-path:hover .career-path__dot { background: var(--terracotta); }
+.career-path__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
 .career-path__name {
   font-size: 14px;
   font-weight: 400;
@@ -943,6 +949,14 @@ body {
   transition: color var(--transition);
 }
 .career-path:hover .career-path__name { color: var(--terracotta); }
+.career-path__examples {
+  font-size: 11px;
+  color: var(--stone-light);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .career-path__role {
   font-size: 11px;
   color: var(--stone-light);
@@ -952,7 +966,84 @@ body {
 @media (max-width: 768px) {
   .career__layout { grid-template-columns: 1fr; }
   .career__deco { display: none; }
+  .career-path__examples { display: none; }
 }
+
+/* =============================================
+   STUDENT VOICES
+   ============================================= */
+.voices {
+  padding: var(--section-py) 0;
+  background: var(--white);
+}
+.voices__header { margin-bottom: clamp(44px, 6vw, 72px); }
+.voices__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.voice-card {
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+.voice-card:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+.voice-card__category {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: var(--forest-10);
+  padding: 4px 10px;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+.voice-card__quote {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--charcoal);
+  font-style: normal;
+  flex: 1;
+}
+.voice-card__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.voice-card__initial {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--terracotta-10);
+  color: var(--terracotta);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.voice-card__year {
+  font-size: 12px;
+  color: var(--stone);
+}
+
+@media (max-width: 900px) { .voices__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .voices__grid { grid-template-columns: 1fr; } }
 
 /* =============================================
    FOOTER

@@ -8,6 +8,7 @@ import NationalExamSupport from './components/NationalExamSupport'
 import News from './components/News'
 import SNSSection from './components/SNSSection'
 import Career from './components/Career'
+import StudentVoices from './components/StudentVoices'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -41,6 +42,7 @@ function App() {
         <News />
         <SNSSection />
         <Career />
+        <StudentVoices />
       </main>
       <Footer />
     </>
