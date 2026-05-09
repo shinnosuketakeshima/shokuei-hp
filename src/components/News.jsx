@@ -2,6 +2,13 @@ import { ArrowRight } from 'lucide-react'
 
 const NEWS = [
   {
+    date: '2026.05.10',
+    tag: 'お知らせ',
+    type: 'info',
+    title: '2026年度のオープンキャンパスの日程を公開しました',
+    href: 'https://www.jumonji-u.ac.jp/jumonji-style/open-campus/',
+  },
+  {
     date: '2025.04.01',
     tag: 'お知らせ',
     type: 'info',
@@ -49,7 +56,7 @@ export default function News() {
           <ul className="news-list" data-reveal data-reveal-delay="2">
             {NEWS.map((n, i) => (
               <li key={i}>
-                <a href="#" className="news-item">
+                <a href={n.href || '#'} className="news-item">
                   <span className="news-item__date">{n.date}</span>
                   <span className={`news-tag news-tag--${n.type}`}>{n.tag}</span>
                   <span className="news-item__title">{n.title}</span>
