@@ -33,8 +33,8 @@ export default function Header() {
               {n.label}
             </a>
           ))}
-          <a href="#contact" className="header__cta" onClick={() => setOpen(false)}>
-            資料請求
+          <a href="https://www.jumonji-u.ac.jp/humanlife/food/" className="header__cta" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+            学科公式HP
           </a>
         </nav>
 

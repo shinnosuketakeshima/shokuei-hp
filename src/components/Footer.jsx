@@ -9,7 +9,7 @@ const LINKS_1 = [
 const LINKS_2 = [
   { label: '入試情報',     href: '#' },
   { label: 'オープンキャンパス', href: '#' },
-  { label: '資料請求',     href: '#' },
+  { label: '学科公式HP',     href: 'https://www.jumonji-u.ac.jp/humanlife/food/' },
   { label: 'アクセス',     href: '#' },
   { label: '大学ホームページ', href: '#' },
 ]
@@ -56,7 +56,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__copy">
-            &copy; {new Date().getFullYear()} Jissen Women's University — Department of Food and Nutrition. All rights reserved.
+            &copy; {new Date().getFullYear()} Jumonji Women's University — Department of Food and Nutrition. All rights reserved.
           </p>
         </div>
       </div>

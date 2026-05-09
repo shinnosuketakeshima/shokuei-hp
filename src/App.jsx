@@ -1,19 +1,35 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import StatsBar from './components/StatsBar'
 import Features from './components/Features'
+import Labs from './components/Labs'
 import Qualifications from './components/Qualifications'
 import NationalExamSupport from './components/NationalExamSupport'
 import News from './components/News'
 import SNSSection from './components/SNSSection'
 import Career from './components/Career'
 import StudentVoices from './components/StudentVoices'
+import CampusLife from './components/CampusLife'
 import Footer from './components/Footer'
+import LabTakeshima from './components/LabTakeshima'
 import './App.css'
 
 function App() {
+  const [page, setPage] = useState(window.location.hash)
+
   useEffect(() => {
+    const handleHashChange = () => {
+      setPage(window.location.hash)
+      window.scrollTo(0, 0)
+    }
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
+  useEffect(() => {
+    if (page) return; // Do not run scroll animations on sub-pages
+
     const els = document.querySelectorAll('[data-reveal]')
     const io = new IntersectionObserver(
       (entries) => {
@@ -28,21 +44,36 @@ function App() {
     )
     els.forEach(el => io.observe(el))
     return () => io.disconnect()
-  }, [])
+  }, [page])
+
+  const renderPage = () => {
+    switch (page) {
+      case '#lab-takeshima':
+        return <LabTakeshima />
+      default:
+        return (
+          <>
+            <Hero />
+            <StatsBar />
+            <Features />
+            <Labs />
+            <Qualifications />
+            <NationalExamSupport />
+            <News />
+            <SNSSection />
+            <Career />
+            <StudentVoices />
+            <CampusLife />
+          </>
+        )
+    }
+  }
 
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <StatsBar />
-        <Features />
-        <Qualifications />
-        <NationalExamSupport />
-        <News />
-        <SNSSection />
-        <Career />
-        <StudentVoices />
+        {renderPage()}
       </main>
       <Footer />
     </>

@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="hero">
       {/* left — text */}
       <div className="hero__left">
-        <p className="hero__tag">Jissen Women's University — Food &amp; Nutrition</p>
+        <p className="hero__tag">Jumonji Women's University — Food &amp; Nutrition</p>
 
         <h1 className="hero__heading">
           食を学び、<br />
@@ -21,10 +21,6 @@ export default function Hero() {
           <a href="#features" className="btn-primary">
             学科の特色を見る
             <ArrowRight size={15} />
-          </a>
-          <a href="#" className="btn-secondary">
-            資料請求
-            <ArrowRight size={14} />
           </a>
         </div>
       </div>
