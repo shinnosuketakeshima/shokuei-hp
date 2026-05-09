@@ -1,46 +1,27 @@
-import { ArrowRight } from 'lucide-react'
-
-const NEWS = [
-  {
-    date: '2026.05.10',
-    tag: 'お知らせ',
-    type: 'info',
-    title: '2026年度のオープンキャンパスの日程を公開しました',
-    href: 'https://www.jumonji-u.ac.jp/jumonji-style/open-campus/',
-  },
-  {
-    date: '2025.04.01',
-    tag: 'お知らせ',
-    type: 'info',
-    title: '2025年度オープンキャンパスの日程を公開しました',
-  },
-  {
-    date: '2025.03.25',
-    tag: 'ニュース',
-    type: 'news',
-    title: '2024年度 管理栄養士国家試験結果：合格率96%を達成しました',
-  },
-  {
-    date: '2025.03.01',
-    tag: 'イベント',
-    type: 'event',
-    title: '卒業研究発表会を開催しました',
-  },
-  {
-    date: '2025.02.15',
-    tag: 'お知らせ',
-    type: 'info',
-    title: '2025年度入学試験合格者発表について',
-  },
-  {
-    date: '2025.01.20',
-    tag: 'ニュース',
-    type: 'news',
-    title: '学生が地域の食育イベントに参加・活動報告',
-  },
-]
+import { ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react'; // useStateとuseEffectをインポート
+import { collection, getDocs, query, orderBy } from 'firebase/firestore'; // Firestoreの関数をインポート
+import { db } from '../main.jsx'; // dbインスタンスをインポート
 
 export default function News() {
+  const [news, setNews] = useState([]); // ニュースデータを管理するstate
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      const newsCollectionRef = collection(db, 'news'); // 'news'コレクションへの参照
+      const q = query(newsCollectionRef, orderBy('date', 'desc')); // 日付で降順ソート
+      const querySnapshot = await getDocs(q); // ドキュメントを取得
+
+      const newsData = querySnapshot.docs.map(doc => ({
+        id: doc.id, // ドキュメントIDも保持
+        ...doc.data()
+      }));
+      setNews(newsData); // 取得したデータをstateにセット
+    };
+
+    fetchNews();
+  }, []); // コンポーネントマウント時に一度だけ実行
+
   return (
     <section className="news" id="news">
       <div className="container">
@@ -54,10 +35,10 @@ export default function News() {
           </div>
 
           <ul className="news-list" data-reveal data-reveal-delay="2">
-            {NEWS.map((n, i) => (
-              <li key={i}>
+            {news.map((n) => ( // ハードコードされたNEWSからFirestoreのnewsに変更
+              <li key={n.id}> {/* keyをdoc.idに変更 */}
                 <a href={n.href || '#'} className="news-item">
-                  <span className="news-item__date">{n.date}</span>
+                  <span className="news-item__date">{n.date instanceof Date ? n.date.toDate().toLocaleDateString('ja-JP') : n.date}</span> {/* 日付のフォーマットを考慮 */}
                   <span className={`news-tag news-tag--${n.type}`}>{n.tag}</span>
                   <span className="news-item__title">{n.title}</span>
                 </a>
@@ -67,5 +48,5 @@ export default function News() {
         </div>
       </div>
     </section>
-  )
+  );
 }
