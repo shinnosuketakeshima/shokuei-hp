@@ -117,7 +117,7 @@ export default function LabKamoshita() {
             <p className="lab-section__body">
               鴨下澄子准教授のより詳細な情報や研究業績は、以下のリンクからご覧いただけます。
             </p>
-            <a href="https://acoffice.jp/jmu/Profiles/13/0001220/profile.html" target="_blank" rel="noopener noreferrer" className="lab-section__link">
+            <a href="https://gyoseki.acoffice.jp/jmuhp/KgApp/k03/resid/S000233;jsessionid=21C4137957064FC5B14E93AB2E712EF8?local=0&headerTitle=%E5%8D%81%E6%96%87%E5%AD%97%E5%AD%A6%E5%9C%92%E5%A5%B3%E5%AD%90%E5%A4%A7%E5%AD%A6" target="_blank" rel="noopener noreferrer" className="lab-section__link">
               教員情報データベースで詳細を見る
             </a>
           </section>
