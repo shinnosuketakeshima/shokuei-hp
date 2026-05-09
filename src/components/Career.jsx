@@ -23,7 +23,7 @@ export default function Career() {
               <div className="career__rate">
                 99.2<span className="career__rate-unit">%</span>
               </div>
-              <p className="career__rate-label">就職率（2025年3月卒業生・2025年4月現在）</p>
+              <p className="career__rate-label">就職率（2025年3月卒業生実績）</p>
             </div>
             <p style={{ fontSize: '13px', color: 'var(--stone)', lineHeight: 1.9 }}>
               入学から卒業まで、教員が親身に就職相談に対応。

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import HeroFeatures from './components/HeroFeatures'
 import StatsBar from './components/StatsBar'
 import Features from './components/Features'
 import Labs from './components/Labs'
@@ -13,6 +14,8 @@ import StudentVoices from './components/StudentVoices'
 import CampusLife from './components/CampusLife'
 import Footer from './components/Footer'
 import LabTakeshima from './components/LabTakeshima'
+import LabKamoshita from './components/LabKamoshita'
+import KoudaiProject from './components/KoudaiProject'
 import './App.css'
 
 function App() {
@@ -50,10 +53,15 @@ function App() {
     switch (page) {
       case '#lab-takeshima':
         return <LabTakeshima />
+      case '#lab-kamoshita':
+        return <LabKamoshita />
+      case '#koudai-project':
+        return <KoudaiProject />
       default:
         return (
           <>
             <Hero />
+            <HeroFeatures />
             <StatsBar />
             <Features />
             <Labs />

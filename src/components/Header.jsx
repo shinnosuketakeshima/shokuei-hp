@@ -22,7 +22,7 @@ export default function Header() {
     <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <div className="header__inner">
         <a href="#" className="header__logo">
-          <span className="header__logo-school">十文字学園女子大学</span>
+          <span className="header__logo-school">Jumonji University</span>
           <span className="header__logo-dept">食物栄養学科</span>
         </a>
 

@@ -4,7 +4,7 @@ const STATS = [
   {
     number: '99.2', unit: '%',
     label: '就職率',
-    note: '2025年3月卒業生実績',
+    note: '(2025年3月卒業生実績)',
   },
   {
     number: '78',   unit: '名',

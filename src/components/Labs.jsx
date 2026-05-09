@@ -13,6 +13,12 @@ const LABS = [
     href: '#lab-takeshima',
     isExternal: false,
   },
+  {
+    name: '鴨下澄子先生の研究室',
+    description: '加工大豆食品や食文化の視点から、食物繊維の摂取と健康増進を探求する研究室です。高大連携や地域貢献活動を通じて、実践的な食育を推進しています。',
+    href: '#lab-kamoshita',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {

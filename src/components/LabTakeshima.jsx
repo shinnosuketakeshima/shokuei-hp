@@ -57,7 +57,7 @@ export default function LabTakeshima() {
           <section className="lab-section">
             <h2 className="lab-section__title">代表的な論文</h2>
             <ul className="lab-publication-list">
-              <li><strong>BoLA-DRB3とBLVプロウイルス量の関連 (Retrovirology, 2019):</strong> 全國調査により、BLVプロウイルス量がBoLA-DRB3多型と強く関連することを示した研究。</li>
+              <li><strong>BoLA-DRB3とBLVプロウイルス量の関連 (Retrovirology, 2019):</strong> 全国調査により、BLVプロウイルス量がBoLA-DRB3多型と強く関連することを示した研究。</li>
               <li><strong>BoLA-DRB3多型とリンパ腫・プロウイルス量 (Viruses, 2020):</strong> BLV誘発リンパ腫とプロウイルス量の双方に関わるBoLA-DRB3多型を解析した論文。</li>
               <li><strong>南米における新規BLV遺伝子型（genotype-9）の同定 (Retrovirology, 2016):</strong> 全ゲノム解析から新たなBLV第9遺伝子型を報告し、BLVの進化と国際的な理解を更新した研究。</li>
               <li><strong>BLV組込み部位とリンパ腫関連遺伝子クラスター (Int. J. Mol. Sci., 2025):</strong> BLV誘発リンパ腫の分子機構に迫った最新成果。</li>

@@ -1,4 +1,4 @@
-import { Stethoscope, ShieldCheck, GraduationCap, Leaf, Heart, BookOpen, Users } from 'lucide-react'
+import { Stethoscope, ShieldCheck, GraduationCap, Leaf, Heart, BookOpen } from 'lucide-react'
 
 const QUALS = [
   {
@@ -10,7 +10,7 @@ const QUALS = [
   {
     icon: <ShieldCheck size={16} />,
     title: '第一種衛生管理者',
-    note: '従業員50名以上の事業場への配置が義務付けられた国家資格。管理栄養士養成課程では全国唯一の取得校。',
+    note: '従業員50名以上の事業場への配置が義務付けられた国家資格。卒業と同時に取得できます。',
     special: true,
     badge: '全国唯一',
   },
