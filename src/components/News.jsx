@@ -28,9 +28,11 @@ function formatNewsDate(value) {
 
 export default function News() {
   const [news, setNews] = useState([]);
+  const [fetchError, setFetchError] = useState(null);
 
   useEffect(() => {
     const fetchNews = async () => {
+      setFetchError(null);
       try {
         const newsCollectionRef = collection(db, 'news');
         let querySnapshot;
@@ -47,8 +49,9 @@ export default function News() {
         }));
         newsData.sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date));
         setNews(newsData);
-      } catch {
+      } catch (err) {
         setNews([]);
+        setFetchError(err?.code || 'fetch-failed');
       }
     };
 
@@ -67,7 +70,14 @@ export default function News() {
             </a>
           </div>
 
-          <ul className="news-list" data-reveal data-reveal-delay="2">
+          <ul className="news-list">
+            {fetchError && (
+              <li className="news-list__error" role="alert">
+                {fetchError === 'permission-denied'
+                  ? 'お知らせを読み込めませんでした（アクセス権限の設定を確認してください）。'
+                  : 'お知らせを読み込めませんでした。時間をおいて再度お試しください。'}
+              </li>
+            )}
             {news.map((n) => (
               <li key={n.id}>
                 <a href={n.href || '#'} className="news-item">

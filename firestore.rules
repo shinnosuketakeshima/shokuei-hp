@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // トップページのお知らせ（クライアントからの読み取り用）
+    match /news/{newsId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

@@ -753,6 +753,13 @@ body {
 }
 .news__more:hover { gap: 14px; }
 .news-list { list-style: none; }
+.news-list__error {
+  padding: 20px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--terracotta);
+  border-bottom: 1px solid var(--border);
+}
 .news-item {
   display: grid;
   grid-template-columns: auto auto 1fr;

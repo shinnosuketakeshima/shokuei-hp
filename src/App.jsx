@@ -31,7 +31,8 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (page) return; // Do not run scroll animations on sub-pages
+    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#koudai-project']
+    if (subPages.includes(page)) return
 
     const els = document.querySelectorAll('[data-reveal]')
     const io = new IntersectionObserver(
