@@ -1,4 +1,4 @@
-import HeroBg from '../eiyo-kagaku.png';
+import HeroBg from '../top.png';
 
 export default function Hero() {
   return (

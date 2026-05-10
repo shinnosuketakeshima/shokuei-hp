@@ -1,28 +1,29 @@
 import JisshuSeiImage from '../jisshu-sei.jpg';
 import KoushaImage from '../university_kousha.jpg';
+import TairyouImage from '../tairyou.png';
+import KuwanohaImage from '../kuwanoha.jpg';
+import KokushiImage from '../kokushi.png';
 
 const PHOTOS = [
   {
-    src: JisshuSeiImage,
-    alt: '調理実習中の学生の様子',
-    caption: '2026年春の調理実習より',
+    src: TairyouImage,
+    alt: '大量調理実習の様子',
+    caption: '大量調理',
+  },
+  {
+    src: KuwanohaImage,
+    alt: '桑の葉あんぱんの試作',
+    caption: '桑の葉あんぱんの試作',
+  },
+  {
+    src: KokushiImage,
+    alt: '国家試験模擬試験の様子',
+    caption: '国家試験模擬試験の様子',
   },
   {
     src: KoushaImage,
     alt: '緑豊かなキャンパス',
     caption: '緑豊かなキャンパス、春',
-  },
-  {
-    src: null,
-    alt: '',
-    caption: '実習室前の集合写真',
-    placeholderColor: 'var(--forest)',
-  },
-  {
-    src: null,
-    alt: '',
-    caption: '国家試験対策の勉強会',
-    placeholderColor: 'var(--terracotta)',
   },
 ]
 
@@ -41,14 +42,7 @@ export default function CampusLife() {
           {PHOTOS.map((photo, i) => (
             <figure key={i} className="campus-photo">
               <div className="campus-photo__img-wrap">
-                {photo.src ? (
-                  <img src={photo.src} alt={photo.alt} className="campus-photo__img" />
-                ) : (
-                  <div
-                    className="campus-photo__placeholder"
-                    style={{ background: photo.placeholderColor }}
-                  />
-                )}
+                <img src={photo.src} alt={photo.alt} className="campus-photo__img" />
               </div>
               <figcaption className="campus-photo__caption">{photo.caption}</figcaption>
             </figure>
