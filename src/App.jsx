@@ -17,6 +17,7 @@ import LabTakeshima from './components/LabTakeshima'
 import LabKamoshita from './components/LabKamoshita'
 import LabKunii from './components/LabKunii'
 import KoudaiProject from './components/KoudaiProject'
+import KokushiReport from './components/KokushiReport'
 import './App.css'
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#koudai-project']
+    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#koudai-project', '#kokushi-report']
     if (subPages.includes(page)) return
 
     const els = document.querySelectorAll('[data-reveal]')
@@ -61,6 +62,8 @@ function App() {
         return <LabKunii />
       case '#koudai-project':
         return <KoudaiProject />
+      case '#kokushi-report':
+        return <KokushiReport />
       default:
         return (
           <>

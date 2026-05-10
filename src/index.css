@@ -1823,3 +1823,373 @@ body {
   font-weight: 500;
   color: var(--charcoal);
 }
+
+/* =============================================
+   SUPPORT SECTION — 国試レポートバナー
+   ============================================= */
+.support__report-banner {
+  margin-top: clamp(40px, 5vw, 64px);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 6px;
+  padding: 28px 32px;
+}
+.support__report-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.support__report-banner-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 6px;
+}
+.support__report-banner-title {
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1.45;
+}
+.support__report-banner-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+}
+.support__report-banner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: var(--terracotta);
+  padding: 12px 24px;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: background var(--transition), gap var(--transition);
+  flex-shrink: 0;
+}
+.support__report-banner-link:hover {
+  background: var(--terracotta-dark);
+  gap: 11px;
+}
+
+/* =============================================
+   KOKUSHI REPORT PAGE
+   ============================================= */
+.kr-page {
+  padding: var(--section-py) 0;
+  background: var(--white);
+  animation: fadeIn 0.5s var(--ease-out);
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+.kr-header {
+  text-align: center;
+  margin: clamp(40px, 6vw, 72px) 0 clamp(48px, 7vw, 88px);
+}
+.kr-header__eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 16px;
+}
+.kr-header__title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+.kr-header__meta {
+  font-size: 12px;
+  color: var(--stone-light);
+  letter-spacing: 0.06em;
+}
+
+.kr-section {
+  max-width: 800px;
+  margin: 0 auto clamp(56px, 8vw, 96px);
+}
+.kr-section--message {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: clamp(28px, 4vw, 48px);
+}
+.kr-section__label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--stone-light);
+  margin-bottom: 10px;
+}
+.kr-section__title {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.8vw, 30px);
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+  line-height: 1.4;
+}
+
+/* 数値行 */
+.kr-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.kr-stat {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 16px;
+  text-align: center;
+}
+.kr-stat--highlight {
+  border-color: var(--terracotta);
+  background: rgba(196,113,74,0.04);
+}
+.kr-stat__num {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.kr-stat__num--muted { color: var(--stone); }
+.kr-stat--highlight .kr-stat__num { color: var(--terracotta); }
+.kr-stat__unit {
+  font-size: 0.45em;
+  font-weight: 400;
+}
+.kr-stat__label {
+  font-size: 11px;
+  color: var(--stone);
+  line-height: 1.5;
+}
+.kr-stat__sublabel {
+  font-size: 10px;
+  color: var(--stone-light);
+}
+
+/* 正直ボックス */
+.kr-honest-box {
+  background: var(--cream-alt);
+  border-left: 3px solid var(--terracotta);
+  border-radius: 0 4px 4px 0;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.kr-honest-box p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--stone);
+}
+
+/* 全体変化スタット */
+.kr-change-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+}
+.kr-change-stat__num {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--stone);
+  white-space: nowrap;
+}
+.kr-change-stat__desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--stone);
+}
+
+/* 本文・リスト */
+.kr-body {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--stone);
+  margin-bottom: 16px;
+}
+.kr-body--emphasis {
+  font-family: var(--font-serif);
+  color: var(--charcoal);
+  font-size: 16px;
+}
+.kr-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kr-list li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--stone);
+  padding-left: 1.4em;
+  position: relative;
+}
+.kr-list li::before {
+  content: '─';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+  font-size: 12px;
+}
+
+/* 要因分析カード */
+.kr-cause-grid {
+  display: grid;
+  gap: 14px;
+}
+.kr-cause-card {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 12px 16px;
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 20px 22px;
+}
+.kr-cause-card__num {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--terracotta);
+  padding-top: 2px;
+}
+.kr-cause-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.kr-cause-card__body {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--stone);
+  grid-column: 2;
+}
+
+/* スローガン */
+.kr-slogan {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--cream-alt);
+  border-left: 4px solid var(--forest);
+  padding: 18px 24px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* 対策 */
+.kr-measures { display: flex; flex-direction: column; gap: 20px; }
+.kr-measure {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.kr-measure__head {
+  background: var(--cream);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.kr-measure__tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--forest);
+  padding: 3px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.kr-measure__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.kr-measure .kr-list {
+  padding: 16px 22px;
+  margin-bottom: 0;
+}
+
+/* 強み */
+.kr-strengths {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.kr-strengths__heading {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 14px;
+}
+
+/* リンクボタン */
+.kr-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.kr-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--terracotta);
+  padding: 12px 22px;
+  border-radius: 3px;
+  transition: background var(--transition), gap var(--transition);
+}
+.kr-link-btn:hover { background: var(--terracotta-dark); gap: 11px; }
+.kr-link-btn--outline {
+  background: transparent;
+  color: var(--terracotta);
+  border: 1px solid var(--terracotta);
+}
+.kr-link-btn--outline:hover { background: var(--terracotta-10); }
+
+@media (max-width: 640px) {
+  .kr-stats-row { grid-template-columns: 1fr; }
+  .kr-cause-card { grid-template-columns: 1fr; }
+  .kr-cause-card__body { grid-column: 1; }
+  .kr-measure__head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .kr-links { flex-direction: column; }
+}
