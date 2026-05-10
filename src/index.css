@@ -1392,11 +1392,19 @@ body {
 
 @media (max-width: 768px) {
   .hero {
-    height: clamp(300px, 70vh, 500px);
+    min-height: 80svh; /* モバイルでの高さを調整 */
   }
   .hero__catchphrase {
     font-size: clamp(28px, 8vw, 48px);
   }
+}
+
+.hero__sub-catchphrase {
+  display: block;
+  font-size: 0.6em;
+  font-weight: normal; /* 400 から normal に変更 */
+  margin-top: 0.5em;
+  opacity: 0.8;
 }
 
 .lab-page__header {

@@ -8,8 +8,8 @@ export default function Hero() {
         <div className="hero__content container">
           <h1 className="hero__catchphrase">
             栄養を通して、<br />
-            一人ひとりを未来へ導く。<br /><br />
-            管理栄養士という選択。
+            一人ひとりを未来へ導く<br />
+            <span className="hero__sub-catchphrase">管理栄養士という選択。</span>
           </h1>
         </div>
       </div>
