@@ -7,8 +7,9 @@ export default function Hero() {
         <div className="hero__overlay"></div>
         <div className="hero__content container">
           <h1 className="hero__catchphrase">
-            食と健康を、<br />
-            科学する。
+            栄養を通して、<br />
+            一人ひとりを未来へ導く。<br /><br />
+            管理栄養士という選択。
           </h1>
         </div>
       </div>
