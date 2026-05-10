@@ -1,22 +1,34 @@
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const LABS = [
   {
-    name: '新倉量太先生の研究室（G1 Lab）',
-    description: '新倉研究室は、消化管出血・消化管発がん・腸内マイクロバイオームを主な研究テーマとし、コホート研究や無作為化比較試験などの大規模臨床研究を展開しています。さらに機械学習・AIを内視鏡診断へ応用するなど、臨床と先端データサイエンスを融合させた研究を行っています。',
+    name: '新倉量太先生の研究室',
+    nameEn: 'G1 Lab',
+    description: '消化管出血・消化管発がん・腸内マイクロバイオームを主な研究テーマに、コホート研究や無作為化比較試験などの大規模臨床研究を展開。機械学習・AIを内視鏡診断へ応用するなど、臨床と先端データサイエンスを融合した研究室です。',
+    topic: '腸内マイクロバイオームと食習慣の関係についての論文を国際誌に投稿しました。',
+    topicDate: '2025.4',
     href: 'https://g1lab.jp/',
+    blogHref: 'https://g1lab.jp/',
     isExternal: true,
   },
   {
     name: '竹嶋伸之輔先生の研究室',
-    description: 'ウシ伝染性リンパ腫ウイルス(BLV)と宿主遺伝子(BoLA)の関係から、家畜の健康と人の食を守る研究室です。遺伝子解析、高感度検査法、ワクチン開発を通じて、One Healthに貢献します。',
+    nameEn: 'Takeshima Lab',
+    description: 'ウシ伝染性リンパ腫ウイルス(BLV)と宿主遺伝子(BoLA)の関係から、家畜の健康と人の食を守る研究室。遺伝子解析、高感度検査法、ワクチン開発を通じて、One Healthに貢献します。',
+    topic: '学生とともに、BLV感染牛の遺伝子型解析データを学会で発表しました。',
+    topicDate: '2025.3',
     href: '#lab-takeshima',
+    blogHref: '#lab-takeshima',
     isExternal: false,
   },
   {
     name: '國井大輔先生の研究室',
-    description: '「栄養管理をもっと身近に！」をスローガンに、公衆栄養学・実践食事学を軸として地域・企業・海外と連携する研究室です。学生主体の商品開発や社会連携プロジェクトを展開しています。',
+    nameEn: 'Kunii Lab',
+    description: '「栄養管理をもっと身近に！」をスローガンに、公衆栄養学・実践食事学を軸として地域・企業・海外と連携する研究室。学生主体の商品開発や社会連携プロジェクトを展開しています。',
+    topic: '地域の高齢者向け栄養改善プログラムの効果検証を進めています。',
+    topicDate: '2025.5',
     href: '#lab-kunii',
+    blogHref: '#lab-kunii',
     isExternal: false,
   },
 ]
@@ -26,27 +38,35 @@ export default function Labs() {
     <section className="section" id="labs">
       <div className="container">
         <div className="section__header">
-          <h2 className="section__title">研究室紹介</h2>
+          <h2 className="section__title">先生たちの研究室</h2>
           <p className="section__subtitle">Labs &amp; Researches</p>
         </div>
 
-        <div className="labs-grid">
+        <div className="labs-grid-new">
           {LABS.map(lab => (
-            <a
-              href={lab.href}
-              key={lab.href}
-              className="lab-card"
-              target={lab.isExternal ? '_blank' : '_self'}
-              rel={lab.isExternal ? 'noopener noreferrer' : ''}
-            >
-              <div className="lab-card__content">
-                <h3 className="lab-card__name">{lab.name}</h3>
-                <p className="lab-card__description">{lab.description}</p>
+            <div key={lab.href} className="lab-card-new">
+              <div className="lab-card-new__photo">
+                <div className="lab-card-new__photo-placeholder">
+                  <span>{lab.nameEn}</span>
+                </div>
               </div>
-              <div className="lab-card__icon">
-                <ArrowUpRight size={20} />
+              <div className="lab-card-new__body">
+                <h3 className="lab-card-new__name">{lab.name}</h3>
+                <p className="lab-card-new__description">{lab.description}</p>
+                <div className="lab-card-new__topic">
+                  <span className="lab-card-new__topic-date">{lab.topicDate}</span>
+                  <span className="lab-card-new__topic-text">{lab.topic}</span>
+                </div>
+                <a
+                  href={lab.blogHref}
+                  className="lab-card-new__blog-link"
+                  target={lab.isExternal ? '_blank' : '_self'}
+                  rel={lab.isExternal ? 'noopener noreferrer' : ''}
+                >
+                  研究室を見る <ArrowRight size={13} />
+                </a>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

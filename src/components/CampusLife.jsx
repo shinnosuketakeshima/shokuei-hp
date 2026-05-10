@@ -1,6 +1,31 @@
 import JisshuSeiImage from '../jisshu-sei.jpg';
 import KoushaImage from '../university_kousha.jpg';
 
+const PHOTOS = [
+  {
+    src: JisshuSeiImage,
+    alt: '調理実習中の学生の様子',
+    caption: '2026年春の調理実習より',
+  },
+  {
+    src: KoushaImage,
+    alt: '緑豊かなキャンパス',
+    caption: '緑豊かなキャンパス、春',
+  },
+  {
+    src: null,
+    alt: '',
+    caption: '実習室前の集合写真',
+    placeholderColor: 'var(--forest)',
+  },
+  {
+    src: null,
+    alt: '',
+    caption: '国家試験対策の勉強会',
+    placeholderColor: 'var(--terracotta)',
+  },
+]
+
 export default function CampusLife() {
   return (
     <section className="section" id="campus-life">
@@ -10,26 +35,24 @@ export default function CampusLife() {
           <p className="section__subtitle">Campus Life &amp; Environment</p>
         </div>
 
-        <div className="campus-life__grid">
-          <div className="campus-life__card">
-            <div className="campus-life__image-wrapper">
-              <img src={JisshuSeiImage} alt="実習中の学生の様子" className="campus-life__image" />
-            </div>
-            <div className="campus-life__text">
-              <h3 className="campus-life__title">いきいきとした学生の姿</h3>
-              <p className="campus-life__body">調理実習や実験、グループワークなど、真剣かつ和やかな雰囲気の中で、学生たちは主体的に学んでいます。</p>
-            </div>
-          </div>
+        <p className="campus-life__lead">ここに来れば、学生の日常が見える。</p>
 
-          <div className="campus-life__card campus-life__card--reverse">
-            <div className="campus-life__image-wrapper">
-              <img src={KoushaImage} alt="緑豊かなキャンパス" className="campus-life__image" />
-            </div>
-            <div className="campus-life__text">
-              <h3 className="campus-life__title">緑あふれる学習環境</h3>
-              <p className="campus-life__body">四季の移ろいを感じられる緑豊かなキャンパスが、学生たちの学びと成長を静かに見守ります。</p>
-            </div>
-          </div>
+        <div className="campus-photos">
+          {PHOTOS.map((photo, i) => (
+            <figure key={i} className="campus-photo">
+              <div className="campus-photo__img-wrap">
+                {photo.src ? (
+                  <img src={photo.src} alt={photo.alt} className="campus-photo__img" />
+                ) : (
+                  <div
+                    className="campus-photo__placeholder"
+                    style={{ background: photo.placeholderColor }}
+                  />
+                )}
+              </div>
+              <figcaption className="campus-photo__caption">{photo.caption}</figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>

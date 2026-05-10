@@ -14,6 +14,11 @@ const LINKS_2 = [
   { label: '大学ホームページ', href: '#' },
 ]
 
+const SNS = [
+  { label: 'Instagram', href: 'https://www.instagram.com/jumonji_shokuei/' },
+  { label: 'TikTok',    href: '#' },
+]
+
 export default function Footer() {
   return (
     <footer className="footer" id="contact">
@@ -29,6 +34,13 @@ export default function Footer() {
               TEL: 048-477-0555<br />
               （代表）
             </address>
+            <div className="footer__sns">
+              {SNS.map(s => (
+                <a key={s.label} href={s.href} className="footer__sns-link" target="_blank" rel="noopener noreferrer">
+                  {s.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
@@ -54,9 +66,14 @@ export default function Footer() {
           </div>
         </div>
 
+        <p className="footer__disclaimer">
+          このサイトは食物栄養学科の教員・学生有志が運営する非公式メディアです。
+          公式情報は<a href="https://www.jumonji-u.ac.jp/humanlife/food/" target="_blank" rel="noopener noreferrer" className="footer__disclaimer-link">学科公式HP</a>をご確認ください。
+        </p>
+
         <div className="footer__bottom">
           <p className="footer__copy">
-            &copy; {new Date().getFullYear()} Jumonji Women's University — Department of Food and Nutrition. All rights reserved.
+            &copy; {new Date().getFullYear()} 食物栄養学科 非公式情報メディア
           </p>
         </div>
       </div>

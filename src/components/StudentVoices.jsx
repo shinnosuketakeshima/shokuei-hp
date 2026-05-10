@@ -2,37 +2,43 @@ const VOICES = [
   {
     initial: 'A.N',
     year: '4年生',
-    quote: '管理栄養士と第一種衛生管理者を同時に取得できるのは本学だけ。卒業後の選択肢が広がりました。',
+    course: '臨床栄養コース',
+    quote: '最初は衛生管理者って何？って感じでしたが、就活で絶対強みになりました。取れてよかったです。',
     category: '資格',
   },
   {
     initial: 'K.W',
     year: '2年生',
-    quote: '先生との距離感が近く、何でも相談できる厚い信頼関係があります。少人数だからこその環境です。',
+    course: '給食管理コース',
+    quote: '先生に名前で呼んでもらえるのが、最初は驚きでした。相談しやすい雰囲気が本当にありがたいです。',
     category: '少人数教育',
   },
   {
     initial: 'A.I',
     year: '4年生',
-    quote: '実習を通して実際に現場に立つことで、栄養士として働く準備ができました。',
+    course: '臨床栄養コース',
+    quote: '病院実習で初めて患者さんと関わって、勉強していたことがぜんぶつながった感じがしました。',
     category: '実習',
   },
   {
     initial: 'S.A',
     year: '4年生',
-    quote: '自分のやりたい！を後押ししてくれる環境が整っています。やりたいことに全力で挑戦できます。',
+    course: '公衆栄養コース',
+    quote: 'やりたいことを話したら、先生が一緒に考えてくれた。「ここでよかった」って思える4年間でした。',
     category: '学生生活',
   },
   {
     initial: 'A.O',
     year: '4年生',
-    quote: 'チームとして学習に向かうことが当たり前のようになっています。仲間と一緒に高め合えます。',
+    course: '臨床栄養コース',
+    quote: '国試の勉強、ひとりだったら折れてたと思います。仲間がいたから最後まで続けられました。',
     category: '国試対策',
   },
   {
     initial: 'N.S',
     year: '3年生',
-    quote: '同じ目標を持った仲間達と切磋琢磨しながら頑張っています。ここで出会えた仲間は一生の宝です。',
+    course: '給食管理コース',
+    quote: '同じ目標を持った友達ができた。それだけで、ここに来た意味があったと思っています。',
     category: '学生生活',
   },
 ]
@@ -62,7 +68,10 @@ export default function StudentVoices() {
               </blockquote>
               <div className="voice-card__author">
                 <span className="voice-card__initial">{v.initial}</span>
-                <span className="voice-card__year">{v.year}</span>
+                <div className="voice-card__meta">
+                  <span className="voice-card__year">{v.year}</span>
+                  <span className="voice-card__course">{v.course}</span>
+                </div>
               </div>
             </div>
           ))}
