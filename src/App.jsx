@@ -16,6 +16,7 @@ import Footer from './components/Footer'
 import LabTakeshima from './components/LabTakeshima'
 import LabKamoshita from './components/LabKamoshita'
 import LabKunii from './components/LabKunii'
+import LabIimura from './components/LabIimura'
 import KoudaiProject from './components/KoudaiProject'
 import KokushiReport from './components/KokushiReport'
 import './App.css'
@@ -26,14 +27,16 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       setPage(window.location.hash)
-      window.scrollTo(0, 0)
     }
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
   useEffect(() => {
-    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#koudai-project', '#kokushi-report']
+    // ページ（ハッシュ）が変更されたらトップにスクロール
+    window.scrollTo(0, 0)
+
+    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#lab-iimura', '#koudai-project', '#kokushi-report']
     if (subPages.includes(page)) return
 
     const els = document.querySelectorAll('[data-reveal]')
@@ -60,6 +63,8 @@ function App() {
         return <LabKamoshita />
       case '#lab-kunii':
         return <LabKunii />
+      case '#lab-iimura':
+        return <LabIimura />
       case '#koudai-project':
         return <KoudaiProject />
       case '#kokushi-report':

@@ -1,4 +1,3 @@
-import JisshuSeiImage from '../jisshu-sei.jpg';
 import KoushaImage from '../university_kousha.jpg';
 import TairyouImage from '../tairyou.png';
 import KuwanohaImage from '../kuwanoha.jpg';

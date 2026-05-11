@@ -31,6 +31,16 @@ const LABS = [
     blogHref: '#lab-kunii',
     isExternal: false,
   },
+  {
+    name: '飯村九林先生の研究室',
+    nameEn: 'Iimura Lab',
+    description: '「生体組織と食品機能を、分子レベルで探る」をテーマに、魚の鱗再生、食品由来成分による真菌毒制御、植物の機能性成分解析など、基礎と応用をつなぐ研究を展開しています。',
+    topic: 'アシタバ由来成分の機能性に関する研究成果をまとめ、論文投稿の準備を進めています。',
+    topicDate: '2025.6',
+    href: '#lab-iimura',
+    blogHref: '#lab-iimura',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {
