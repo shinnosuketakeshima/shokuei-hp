@@ -18,6 +18,7 @@ import LabKamoshita from './components/LabKamoshita'
 import LabKunii from './components/LabKunii'
 import KoudaiProject from './components/KoudaiProject'
 import KokushiReport from './components/KokushiReport'
+import StudentColumn1 from './components/StudentColumn1'
 import './App.css'
 
 function App() {
@@ -44,6 +45,8 @@ function App() {
         return <KoudaiProject />
       case '#kokushi-report':
         return <KokushiReport />
+      case '#student-column-1':
+        return <StudentColumn1 />
       default:
         return (
           <>

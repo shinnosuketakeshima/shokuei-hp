@@ -6,6 +6,14 @@ import { motion } from 'framer-motion';
 
 const DUMMY_NEWS = [
   {
+    id: 'dummy-col1',
+    date: '2026.5.11',
+    tag: '学生コラム',
+    type: 'column',
+    title: '白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情',
+    href: '#student-column-1',
+  },
+  {
     id: 'dummy-1',
     date: '2026.4.20',
     tag: '実習レポート',
