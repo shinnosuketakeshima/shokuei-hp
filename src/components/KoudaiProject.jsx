@@ -1,10 +1,16 @@
 import { ArrowLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function KoudaiProject() {
   return (
     <div className="lab-page">
       <div className="container">
-        <div className="lab-page__header">
+        <motion.div 
+          className="lab-page__header"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <a href="#" className="lab-page__back-link">
             <ArrowLeft size={16} />
             <span>トップページに戻る</span>
@@ -12,10 +18,16 @@ export default function KoudaiProject() {
           <p className="lab-page__eyebrow">十文字学園女子大学 食物栄養学科</p>
           <h1 className="lab-page__title">高大連携プロジェクト「食の未来を創る」</h1>
           <p className="lab-page__subtitle">十文字学園女子大学と駒場学園高等学校の共同プロジェクト</p>
-        </div>
+        </motion.div>
 
         <div className="lab-page__content">
-          <section className="lab-section">
+          <motion.section 
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="lab-section__title">協定締結の背景と教育機関としての専門的相補性</h2>
             <p className="lab-section__body">
               現代の日本の教育現場において、中等教育と高等教育の連続性を担保し、学術的な探求力と実践的な社会貢献力を統合する「高大接続」の構築は最重要課題の一つに位置づけられています。このような潮流の中、十文字学園女子大学と駒場学園高等学校は、教育、研究、社会貢献に係る緊密な交流と連携を通じ、双方の教育の活性化を図ることを目的として、2023年9月27日に高大連携に関する協定を正式に締結しました。
@@ -65,9 +77,15 @@ export default function KoudaiProject() {
                 </tbody>
               </table>
             </div>
-          </section>
+          </motion.section>
 
-          <section className="lab-section">
+          <motion.section 
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="lab-section__title">2023年度（初年度）：廃棄資源の付加価値化と代替食材の探求</h2>
             <p className="lab-section__body">
               高大連携プロジェクト「食の未来を創る」の記念すべき第1期にあたる2023年度は、全9回のプログラムを通じて「地球環境や健康について食の観点から考えること」を理念とし、SDGs目標12「つくる責任 つかう責任」に貢献する活動を模索しました。高校生と大学生がそれぞれの知識と技術を融合させ、新たな料理や菓子を開発することを目指しました。
@@ -78,9 +96,15 @@ export default function KoudaiProject() {
             <p className="lab-section__body">
               この年度における中核的な活動内容は、「もったいないだしプロジェクト」と「新素材でフュージョン料理と菓子を作ろうプロジェクト」の二本柱に集約されます。前者は、調理実習において不可避的に発生する廃棄野菜の端材や皮などを回収し、そこから抽出される栄養素や旨味成分を余すことなく料理に活かすためのレシピ考案を目指したものです。後者は、持続可能な食糧システムへの移行（フードシステム転換）を視野に入れ、健康維持や地球環境負荷低減に寄与する代替素材を既存の食品と融合させ、付加価値の高い創作料理や菓子へ昇華させる挑戦でした。これらの活動を通じて、参加者は単なる調理技術に留まらず、地球規模の食糧問題と地域資源循環の繋がりを身を以て理解するに至りました。
             </p>
-          </section>
+          </motion.section>
 
-          <section className="lab-section">
+          <motion.section 
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="lab-section__title">2024年度（第二期）：若年層の食生活改善と多角的な産学官連携</h2>
             <p className="lab-section__body">
               2024年度の第2期プロジェクトは、多様な生活スタイルによって朝食の欠食や不規則な栄養摂取が問題視されている若者（高校生・大学生自身）の食生活管理能力の向上に着目し、『自分たちの青春に健康プラスワンプロジェクト』という具体的なスローガンを設定しました。本年度は、科学的な食生活分析と、課題解決のための「バランス栄養パン」の製品開発、およびそれを地域に還元する社会実装までを含む、より本格的な産学連携スキームへと発展しました。
@@ -161,9 +185,15 @@ export default function KoudaiProject() {
             <p className="lab-section__body">
               2025年2月15日には、大学のキャンパスにて成果報告会が開催され、学生による司会進行のもと、関係企業や保証人を前に高校生と大学生が共に登壇し、プロジェクトのプロセスと学びの意義を堂々と発表しました。この社会的実践性が高く評価され、農林水産省主催の令和6年度「みどり戦略学生チャレンジ」関東ブロック大会において見事な受賞を果たしました。
             </p>
-          </section>
+          </motion.section>
 
-          <section className="lab-section">
+          <motion.section 
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="lab-section__title">2025年度（第三期）：「適塩」と「地産地消」による地域循環と二度目の栄冠</h2>
             <p className="lab-section__body">
               前年度の食事分析から明らかになった別の深刻な課題、すなわち「若年世代における過剰な食塩摂取」に対峙するため、2025年度のプロジェクトは『SDGs持続可能な未来に MISO SOUP を食べて 自分たちの健康にプラスワンプロジェクト』をテーマに設定しました。管理栄養士を目指す女子大生と、調理師を目指す高校生たちが共同で、日本の伝統食である「みそ汁」をプラットフォームとし、健康的な「適塩習慣の定着」と環境に優しい「地産地消の推進」を包括する極めて高度な探求へ足を踏み入れました。
@@ -187,9 +217,15 @@ export default function KoudaiProject() {
             <p className="lab-section__body">
               さらに、プロジェクトはここで休止することなく、次年度に向けてさらなる進化が予定されています。2026年度は、日本人の主食であり環境負荷低減や地産地消において最も重要な食材である「お米」に着目した「おむすびプロジェクト」の始動を目指し、更なる共同カリキュラムの設計・検討が鋭意進められています。
             </p>
-          </section>
+          </motion.section>
 
-          <section className="lab-section">
+          <motion.section 
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="lab-section__title">高大連携がもたらす教育システムとしてのイノベーション</h2>
             <p className="lab-section__body">
               十文字学園女子大学と駒場学園高等学校の「食の未来を創る」プロジェクトは、単なる2校間の親睦的なイベントの枠組みを遥かに超え、現代の教育界が目指すべき理想的な「PBL（課題解決型学習）」および「地域密着型アクティブラーニング」の先進事例を示しています。
@@ -206,9 +242,15 @@ export default function KoudaiProject() {
             <p className="lab-section__body">
               このような食、健康、農、および福祉が融合した高度な循環型プロジェクトは、将来の教育接続における一つの金字塔であり、次代を担う若者たちに、自らの技術と知識で未来の社会を変革していく確かな自信と主体的な学びを、これからも絶え間なく提供し続けるでしょう。
             </p>
-          </section>
+          </motion.section>
 
-          <section className="lab-section">
+          <motion.section 
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="lab-section__title">引用文献</h2>
             <ul className="lab-publication-list">
               <li>駒場学園高等学校と高大連携に関する協定を締結しました | NEWS, 5月 9, 2026にアクセス、 <a href="https://www.jumonji-u.ac.jp/info/20230927_1-60032/" target="_blank" rel="noopener noreferrer">https://www.jumonji-u.ac.jp/info/20230927_1-60032/</a></li>
@@ -231,7 +273,7 @@ export default function KoudaiProject() {
               <li>駒場学園高等学校との高大連携プロジェクト「食の未来を創る ..., 5月 9, 2026にアクセス、 <a href="https://www.jumonji-u.ac.jp/topic/20240819_01/" target="_blank" rel="noopener noreferrer">https://www.jumonji-u.ac.jp/topic/20240819_01/</a></li>
               <li>駒場学園高等学校との高大連携プロジェクトが、農林水産省主催「みどり戦略学生チャレンジ」関東ブロック大会で特別賞を受賞しました | TOPICS, 5月 9, 2026にアクセス、 <a href="https://www.jumonji-u.ac.jp/topic/20250304_01/" target="_blank" rel="noopener noreferrer">https://www.jumonji-u.ac.jp/topic/20250304_01/</a></li>
             </ul>
-          </section>
+          </motion.section>
         </div>
       </div>
     </div>

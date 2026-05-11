@@ -1,4 +1,5 @@
 import { Award, Users, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const FEATURES = [
   {
@@ -24,11 +25,18 @@ export default function HeroFeatures() {
       <div className="container">
         <div className="hero-features__grid">
           {FEATURES.map((feature, i) => (
-            <div key={i} className="hero-feature-card">
+            <motion.div 
+              key={i} 
+              className="hero-feature-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
               <div className="hero-feature-card__icon">{feature.icon}</div>
               <h3 className="hero-feature-card__title">{feature.title}</h3>
               <p className="hero-feature-card__body">{feature.body}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
