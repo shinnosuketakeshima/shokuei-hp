@@ -33,8 +33,10 @@ Routing is hash-based, implemented manually in `src/App.jsx` with a `useEffect` 
 | `#lab-kamoshita` | `LabKamoshita` |
 | `#lab-kunii` | `LabKunii` |
 | `#koudai-project` | `KoudaiProject` |
+| `#kokushi-report` | `KokushiReport` |
+| `#student-column-1` | `StudentColumn1` |
 
-`Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (the four routes above).
+`Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except the homepage default).
 
 ### News: Firestore + static dummy items
 
@@ -78,6 +80,7 @@ Static images live directly in `src/` and are imported by the components that us
 - All components are plain `.jsx` under `src/components/`. No TypeScript.
 - External links: `target="_blank" rel="noopener noreferrer"`. Internal hash links: no target.
 - Scroll-reveal: add `data-reveal` (and optionally `data-reveal-delay="1"–"6"`) to animate elements on scroll. Works only on the homepage.
+- Framer Motion (`framer-motion`) is used for animations in `News.jsx` and sub-page components. Use `motion.*` variants and `AnimatePresence` from that library rather than raw CSS transitions for new animated UI.
 
 ## Language
 

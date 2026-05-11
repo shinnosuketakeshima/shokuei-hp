@@ -25,9 +25,12 @@ function App() {
   const [page, setPage] = useState(window.location.hash)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [page])
+
+  useEffect(() => {
     const handleHashChange = () => {
       setPage(window.location.hash)
-      window.scrollTo(0, 0)
     }
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)

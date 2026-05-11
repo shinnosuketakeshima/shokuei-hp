@@ -60,7 +60,7 @@ function newsDateMillis(value) {
   if (typeof value.toMillis === 'function') return value.toMillis();
   if (value instanceof Date) return value.getTime();
   if (typeof value === 'string') {
-    const t = Date.parse(value);
+    const t = Date.parse(value.replace(/\./g, '-'));
     return Number.isNaN(t) ? 0 : t;
   }
   return 0;
@@ -113,7 +113,7 @@ export default function News() {
       type: n.type || 'info',
     })),
     ...DUMMY_NEWS,
-  ];
+  ].sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date));
 
   return (
     <section className="news" id="news">
