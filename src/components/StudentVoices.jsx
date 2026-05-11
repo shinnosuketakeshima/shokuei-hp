@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const VOICES = [
   {
     initial: 'A.N',
@@ -47,20 +49,28 @@ export default function StudentVoices() {
   return (
     <section className="voices" id="voices">
       <div className="container">
-        <div className="voices__header" data-reveal>
+        <motion.div 
+          className="voices__header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="eyebrow">学生の声 / Student Voices</p>
           <h2 className="section-title">
             在学生からのメッセージ
           </h2>
-        </div>
+        </motion.div>
 
         <div className="voices__grid">
           {VOICES.map((v, i) => (
-            <div
+            <motion.div
               key={i}
               className="voice-card"
-              data-reveal
-              data-reveal-delay={String((i % 3) + 1)}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
             >
               <p className="voice-card__category">{v.category}</p>
               <blockquote className="voice-card__quote">
@@ -73,10 +83,11 @@ export default function StudentVoices() {
                   <span className="voice-card__course">{v.course}</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   )
 }
+

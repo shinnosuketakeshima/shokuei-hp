@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const ITEMS = [
   {
@@ -40,7 +41,12 @@ export default function NationalExamSupport() {
       <div className="support__orb support__orb--2" aria-hidden />
 
       <div className="support__inner container">
-        <div data-reveal>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="eyebrow">国試対策 / Exam Support</p>
           <h2 className="section-title">
             合格率を支える<br />
@@ -50,24 +56,32 @@ export default function NationalExamSupport() {
             1年次からの早期意識づけに始まり、4年次は年8回の模擬試験で本番力を養成。
             多角的なサポートで、全員合格をめざします。
           </p>
-        </div>
+        </motion.div>
 
         <div className="support__grid">
           {ITEMS.map((item, i) => (
-            <div
+            <motion.div
               key={i}
               className="support-item"
-              data-reveal
-              data-reveal-delay={String((i % 3) + 1)}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
             >
               <p className="support-item__num">{item.num}</p>
               <h3 className="support-item__title">{item.title}</h3>
               <p className="support-item__body">{item.body}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="support__report-banner" data-reveal>
+        <motion.div 
+          className="support__report-banner"
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="support__report-banner-inner">
             <div>
               <p className="support__report-banner-label">国試レポート</p>
@@ -78,8 +92,9 @@ export default function NationalExamSupport() {
               詳細を読む <ArrowRight size={14} />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
 }
+

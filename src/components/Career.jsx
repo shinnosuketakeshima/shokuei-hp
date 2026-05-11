@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const PATHS = [
   { name: '病院・クリニック',          role: '管理栄養士',         examples: '自治医科大学附属病院、東京慈恵会医科大学附属病院 他' },
@@ -17,7 +18,13 @@ export default function Career() {
 
       <div className="container">
         <div className="career__layout">
-          <div className="career__left" data-reveal>
+          <motion.div 
+            className="career__left"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <p className="eyebrow">進路・就職 / Career</p>
             <div className="career__stat-block">
               <div className="career__rate">
@@ -29,12 +36,25 @@ export default function Career() {
               入学から卒業まで、教員が親身に就職相談に対応。
               病院・行政・企業など多彩な分野で毎年多くの卒業生が活躍しています。
             </p>
-          </div>
+          </motion.div>
 
-          <div className="career__right" data-reveal data-reveal-delay="2">
+          <motion.div 
+            className="career__right"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="career__paths">
               {PATHS.map((p, i) => (
-                <div key={i} className="career-path">
+                <motion.div 
+                  key={i} 
+                  className="career-path"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 + (i * 0.05) }}
+                >
                   <span className="career-path__dot" />
                   <div className="career-path__info">
                     <span className="career-path__name">{p.name}</span>
@@ -42,12 +62,13 @@ export default function Career() {
                   </div>
                   <span className="career-path__role">{p.role}</span>
                   <ArrowRight size={13} className="career-path__arrow" />
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   )
 }
+

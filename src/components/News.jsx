@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase.js';
+import { motion } from 'framer-motion';
 
 const DUMMY_NEWS = [
   {
@@ -110,27 +111,46 @@ export default function News() {
     <section className="news" id="news">
       <div className="container">
         <div className="news__layout">
-          <div className="news__header" data-reveal>
+          <motion.div 
+            className="news__header"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <p className="eyebrow">お知らせ / ブログ</p>
             <h2 className="section-title">新着情報</h2>
             <a href="#" className="news__more">
               一覧へ <ArrowRight size={13} />
             </a>
-          </div>
+          </motion.div>
 
-          <ul className="news-list">
-            {allNews.map((n) => (
-              <li key={n.id}>
+          <motion.ul 
+            className="news-list"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {allNews.map((n, i) => (
+              <motion.li 
+                key={n.id}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+              >
                 <a href={n.href || '#'} className="news-item">
                   <span className="news-item__date">{n.date}</span>
                   <span className={`news-tag news-tag--${n.type}`}>{n.tag}</span>
                   <span className="news-item__title">{n.title}</span>
                 </a>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </div>
     </section>
   );
 }
+

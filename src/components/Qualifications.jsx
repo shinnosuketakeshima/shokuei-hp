@@ -1,4 +1,5 @@
 import { Stethoscope, ShieldCheck, GraduationCap, Leaf, Heart, BookOpen } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const QUALS = [
   {
@@ -52,7 +53,13 @@ export default function Qualifications() {
       <span className="qualifications__bg" aria-hidden>資格</span>
 
       <div className="qualifications__inner container">
-        <div className="qualifications__header" data-reveal>
+        <motion.div 
+          className="qualifications__header"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="eyebrow">取得資格 / Qualifications</p>
           <h2 className="section-title">
             卒業後に活かせる<br />
@@ -62,24 +69,27 @@ export default function Qualifications() {
             「管理栄養士＋第一種衛生管理者」のダブルライセンスが最大の強み。
             全国唯一の組み合わせが、就職の幅を大きく広げます。
           </p>
-        </div>
+        </motion.div>
 
         <div className="qual-grid">
           {QUALS.map((q, i) => (
-            <div
+            <motion.div
               key={i}
               className={`qual-card${q.special ? ' qual-card--special' : ''}`}
-              data-reveal
-              data-reveal-delay={String((i % 4) + 1)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: (i % 4) * 0.1 }}
             >
               {q.special && <p className="qual-badge">★ {q.badge}</p>}
               <div className="qual-card__icon">{q.icon}</div>
               <h3 className="qual-card__title">{q.title}</h3>
               <p className="qual-card__note">{q.note}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   )
 }
+

@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const LABS = [
   {
@@ -37,14 +38,27 @@ export default function Labs() {
   return (
     <section className="section" id="labs">
       <div className="container">
-        <div className="section__header">
+        <motion.div 
+          className="section__header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section__title">先生たちの研究室</h2>
           <p className="section__subtitle">Labs &amp; Researches</p>
-        </div>
+        </motion.div>
 
         <div className="labs-grid-new">
-          {LABS.map(lab => (
-            <div key={lab.href} className="lab-card-new">
+          {LABS.map((lab, i) => (
+            <motion.div 
+              key={lab.href} 
+              className="lab-card-new"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+            >
               <div className="lab-card-new__photo">
                 <div className="lab-card-new__photo-placeholder">
                   <span>{lab.nameEn}</span>
@@ -66,10 +80,11 @@ export default function Labs() {
                   研究室を見る <ArrowRight size={13} />
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   )
 }
+

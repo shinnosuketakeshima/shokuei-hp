@@ -32,26 +32,6 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
-  useEffect(() => {
-    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#koudai-project', '#kokushi-report']
-    if (subPages.includes(page)) return
-
-    const els = document.querySelectorAll('[data-reveal]')
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-visible')
-            io.unobserve(e.target)
-          }
-        })
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -32px 0px' }
-    )
-    els.forEach(el => io.observe(el))
-    return () => io.disconnect()
-  }, [page])
-
   const renderPage = () => {
     switch (page) {
       case '#lab-takeshima':

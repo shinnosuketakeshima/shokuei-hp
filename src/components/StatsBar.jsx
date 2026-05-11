@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 
 const STATS = [
   {
@@ -24,38 +24,28 @@ const STATS = [
 ]
 
 export default function StatsBar() {
-  const refs = useRef([])
-
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-visible')
-            io.unobserve(e.target)
-          }
-        })
-      },
-      { threshold: 0.3 }
-    )
-    refs.current.forEach(el => el && io.observe(el))
-    return () => io.disconnect()
-  }, [])
-
   return (
     <section className="stats">
       <div className="stats__grid">
         {STATS.map((s, i) => (
-          <div key={i} className="stats__item" ref={el => refs.current[i] = el}>
+          <motion.div 
+            key={i} 
+            className="stats__item"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+          >
             <div className="stats__number">
               {s.number}
               <span className="stats__unit">{s.unit}</span>
             </div>
             <div className="stats__label">{s.label}</div>
             <div className="stats__note">{s.note}</div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
   )
 }
+

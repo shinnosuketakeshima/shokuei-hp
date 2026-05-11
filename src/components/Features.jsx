@@ -1,4 +1,5 @@
 import { Award, Users, BookOpen } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const FEATURES = [
   {
@@ -14,7 +15,7 @@ const FEATURES = [
     icon: <Users size={20} />,
     title: '定員78名の少人数教育',
     body: '少人数だからこそできる、きめ細かな指導。教員が一人ひとりの学習状況を早期に把握し、入学から卒業・就職まで親身にサポートします。就職率99.2%（2025年3月卒業生実績）はこの環境から生まれています。',
-    quote: '「少人数だからこそ、名前で呼ぶ関係が生まれます。それが、ここの一番の強みだと思っています。」',
+    quote: '「少人数だからこそ、名前で呼ぶ関係が生まれます。それが, ここの一番の強みだと思っています。」',
     quoteAuthor: '担当教員より',
   },
   {
@@ -31,22 +32,30 @@ export default function Features() {
   return (
     <section className="features" id="features">
       <div className="container">
-        <div className="features__header" data-reveal>
+        <motion.div 
+          className="features__header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="eyebrow">学科の特色 / Features</p>
           <h2 className="section-title">
             食物栄養学科が選ばれる<br />
             3つの理由
           </h2>
-        </div>
+        </motion.div>
       </div>
 
       <div className="features__grid">
         {FEATURES.map((f, i) => (
-          <article
+          <motion.article
             key={i}
             className="feature-card"
-            data-reveal
-            data-reveal-delay={String(i + 1)}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
           >
             <span className="feature-card__ghost">{f.num}</span>
             <div className="feature-card__icon">{f.icon}</div>
@@ -57,9 +66,10 @@ export default function Features() {
               {f.quote}<br />
               <span className="feature-card__teacher-name">─ {f.quoteAuthor}</span>
             </p>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>
   )
 }
+

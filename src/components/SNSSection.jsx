@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 function InstagramIcon({ size = 24 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -21,21 +23,31 @@ export default function SNSSection() {
   return (
     <section className="sns">
       <div className="container">
-        <div className="sns__header" data-reveal>
+        <motion.div 
+          className="sns__header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="eyebrow">SNS / Social Media</p>
           <h2 className="section-title">学科のいまを発信中</h2>
           <p style={{ marginTop: '14px', fontSize: '14px', color: 'var(--stone)' }}>
             授業・実習・学生生活の様子をリアルタイムで発信しています。
           </p>
-        </div>
+        </motion.div>
 
-        <div className="sns__grid" data-reveal data-reveal-delay="2">
-          <a
+        <div className="sns__grid">
+          <motion.a
             href="https://www.instagram.com/jumonji_shokuei/"
             target="_blank"
             rel="noopener noreferrer"
             className="sns-card sns-card--instagram"
             aria-label="Instagram @jumonji_shokuei"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="sns-card__icon"><InstagramIcon size={44} /></div>
             <p className="sns-card__name">Instagram</p>
@@ -43,14 +55,18 @@ export default function SNSSection() {
             <div className="sns-card__hover">
               <span className="sns-card__cta">フォローする</span>
             </div>
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
             href="https://www.tiktok.com/@ishokssov49"
             target="_blank"
             rel="noopener noreferrer"
             className="sns-card sns-card--tiktok"
             aria-label="TikTok @ishokssov49"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="sns-card__icon"><TikTokIcon size={44} /></div>
             <p className="sns-card__name">TikTok</p>
@@ -58,9 +74,10 @@ export default function SNSSection() {
             <div className="sns-card__hover">
               <span className="sns-card__cta">フォローする</span>
             </div>
-          </a>
+          </motion.a>
         </div>
       </div>
     </section>
   )
 }
+
