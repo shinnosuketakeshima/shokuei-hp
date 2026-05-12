@@ -22,8 +22,11 @@ export default function Header() {
     <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <div className="header__inner">
         <a href="#" className="header__logo">
-          <span className="header__logo-dept">食物栄養学科</span>
-          <span className="header__logo-tagline">十文字学園女子大学 ― 非公式情報メディア</span>
+          <div className="header__logo-main">
+            <span className="header__logo-dept">食物栄養学科</span>
+            <span className="header__unofficial-badge">非公式</span>
+          </div>
+          <span className="header__logo-tagline">十文字学園女子大学 ― 学生・教員による情報メディア</span>
         </a>
 
         <nav className={`header__nav${open ? ' header__nav--open' : ''}`}>

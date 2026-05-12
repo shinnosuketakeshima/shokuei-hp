@@ -32,9 +32,18 @@ Routing is hash-based, implemented manually in `src/App.jsx` with a `useEffect` 
 | `#lab-takeshima` | `LabTakeshima` |
 | `#lab-kamoshita` | `LabKamoshita` |
 | `#lab-kunii` | `LabKunii` |
+| `#lab-iimura` | `LabIimura` |
+| `#lab-kamiyama` | `LabKamiyama` |
+| `#lab-ishii` | `LabIshii` |
+| `#lab-komeichi` | `LabKomeichi` |
+| `#lab-nakaoka` | `LabNakaoka` |
+| `#lab-shibasaki` | `LabShibasaki` |
+| `#lab-iwamoto` | `LabIwamoto` |
+| `#lab-okamoto` | `LabOkamoto` |
 | `#koudai-project` | `KoudaiProject` |
 | `#kokushi-report` | `KokushiReport` |
 | `#student-column-1` | `StudentColumn1` |
+| `#student-column-2` | `StudentColumn2` |
 
 `Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except the homepage default).
 
@@ -65,15 +74,18 @@ Static images live directly in `src/` and are imported by the components that us
 
 | File | Used by |
 |---|---|
-| `src/eiyo-kagaku.png` | `Hero.jsx` (background) |
+| `src/top.png` | `Hero.jsx` (background) |
 | `src/jisshu-sei.jpg` | `CampusLife.jsx` |
 | `src/university_kousha.jpg` | `CampusLife.jsx` |
-
-`CampusLife.jsx` also renders two CSS colour-block placeholders (forest-green, terracotta) to reserve space for future photos.
+| `src/tairyou.png` | `CampusLife.jsx` |
+| `src/kuwanoha.jpg` | `CampusLife.jsx` |
+| `src/kokushi.png` | `CampusLife.jsx` |
 
 ### Labs section
 
-`Labs.jsx` renders a 3-column card grid (`.labs-grid-new` / `.lab-card-new`). Each card has a photo placeholder, description, a dated research topic blurb, and a "研究室を見る →" link. The individual lab **pages** (`LabTakeshima`, `LabKunii`, `LabKamoshita`) are separate full-page components that use the shared `.lab-page` / `.lab-section` CSS classes.
+`Labs.jsx` renders a card grid (`.labs-grid-new` / `.lab-card-new`) for all 12 labs. Each card has a photo placeholder, description, a dated research topic blurb, and a "研究室を見る →" link. Cards for external labs (e.g. G1 Lab) set `isExternal: true` and link out; internal lab cards link to their hash route. The individual lab **pages** are separate full-page components that use the shared `.lab-page` / `.lab-section` CSS classes.
+
+`HeroFeatures.jsx` exists in `src/components/` but is not currently rendered in `App.jsx`.
 
 ### Component Conventions
 

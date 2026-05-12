@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="hero__background" style={{ backgroundImage: `url(${HeroBg})` }}>
         <div className="hero__overlay"></div>
         <div className="hero__content container">
-          <motion.h1 
+          <motion.h1
             className="hero__catchphrase"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ export default function Hero() {
           >
             栄養を通して、<br />
             一人ひとりを未来へ導く。
-            <motion.span 
+            <motion.span
               className="hero__catchphrase-detail"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

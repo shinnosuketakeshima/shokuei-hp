@@ -133,6 +133,23 @@ body {
   color: var(--charcoal);
   letter-spacing: 0.05em;
 }
+.header__logo-main {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.header__unofficial-badge {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--terracotta);
+  background: rgba(196, 113, 74, 0.1);
+  border: 1px solid rgba(196, 113, 74, 0.35);
+  border-radius: 3px;
+  padding: 1px 6px;
+  line-height: 1.8;
+  white-space: nowrap;
+}
 .header__logo-tagline {
   font-size: 9px;
   font-weight: 400;
@@ -1623,6 +1640,23 @@ body {
   opacity: 0.88;
   line-height: 1.9;
   letter-spacing: 0.05em;
+}
+.hero__informal-label {
+  font-size: clamp(11px, 1.4vw, 13px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.hero__catchphrase em {
+  font-style: normal;
+  color: #f5c99a;
+}
+.hero__disclaimer-note {
+  font-size: clamp(11px, 1.3vw, 12px);
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 20px;
+  letter-spacing: 0.06em;
 }
 
 .lab-page__header {
