@@ -25,6 +25,7 @@ import KokushiReport from './components/KokushiReport'
 import StudentColumn1 from './components/StudentColumn1'
 import StudentColumn2 from './components/StudentColumn2'
 import LabShibasaki from './components/LabShibasaki'
+import LabIwamoto from './components/LabIwamoto'
 import './App.css'
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
 
-    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#lab-iimura', '#lab-kamiyama', '#lab-ishii', '#lab-komeichi', '#lab-nakaoka', '#lab-shibasaki', '#koudai-project', '#kokushi-report']
+    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#lab-iimura', '#lab-kamiyama', '#lab-ishii', '#lab-komeichi', '#lab-nakaoka', '#lab-shibasaki', '#lab-iwamoto', '#koudai-project', '#kokushi-report']
     if (subPages.includes(page)) return
 
     const els = document.querySelectorAll('[data-reveal]')
@@ -80,6 +81,8 @@ function App() {
         return <LabNakaoka />
       case '#lab-shibasaki':
         return <LabShibasaki />
+      case '#lab-iwamoto':
+        return <LabIwamoto />
       case '#koudai-project':
         return <KoudaiProject />
       case '#kokushi-report':

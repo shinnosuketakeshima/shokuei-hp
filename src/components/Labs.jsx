@@ -102,6 +102,16 @@ const LABS = [
     blogHref: '#lab-nakaoka',
     isExternal: false,
   },
+  {
+    name: '岩本珠美先生の研究室',
+    nameEn: 'Iwamoto Lab',
+    description: '食品生化学・食品免疫学を専門に、動脈硬化性疾患予防のための食事療法を研究。うま味成分による減塩支援やポリフェノールの機能性解析など、食品成分から生活習慣病予防を科学します。',
+    topic: 'うま味調味料を活用した郷土料理コンテストに学生と参加し、地域食材×減塩レシピの開発に取り組んでいます。',
+    topicDate: '2026.5',
+    href: '#lab-iwamoto',
+    blogHref: '#lab-iwamoto',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {
