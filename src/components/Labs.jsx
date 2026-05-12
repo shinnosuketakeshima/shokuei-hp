@@ -92,6 +92,16 @@ const LABS = [
     blogHref: '#lab-komeichi',
     isExternal: false,
   },
+  {
+    name: '中岡加奈絵先生の研究室',
+    nameEn: 'Nakaoka Lab',
+    description: '子どもの食生活・食育や応用栄養学が専門。成長期の骨量・体力、家族との共食、社会的ジェットラグなど、日常生活に根ざした研究と地域での実践に取り組んでいます。',
+    topic: '地域社会と連携し、「砂糖のひみつを科学で解き明かす！」ワークショップを開催しました。',
+    topicDate: '2026.5',
+    href: '#lab-nakaoka',
+    blogHref: '#lab-nakaoka',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {
