@@ -32,7 +32,9 @@ Routing is hash-based, implemented manually in `src/App.jsx` with a `useEffect` 
 | `#lab-takeshima` | `LabTakeshima` |
 | `#lab-kamoshita` | `LabKamoshita` |
 | `#lab-kunii` | `LabKunii` |
+| `#lab-iimura` | `LabIimura` |
 | `#koudai-project` | `KoudaiProject` |
+| `#kokushi-report` | `KokushiReport` |
 
 `Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (the four routes above).
 

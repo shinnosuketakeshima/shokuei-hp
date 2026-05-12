@@ -8,7 +8,10 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(git commit *)",
-      "Bash(copy *)"
+      "Bash(copy *)",
+      "Bash(Remove-Item *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\stake\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--GitHub-shokuei-hp\\\\1ce2adc4-1a46-4a51-a6bc-daef38cbcdd1\\\\tasks\\\\b8f0fzxub.output\" -Wait -Tail 30)",
+      "Bash(Select-Object -First 40)"
     ]
   }
 }
