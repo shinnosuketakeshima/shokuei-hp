@@ -6,7 +6,15 @@ import { motion } from 'framer-motion';
 
 const DUMMY_NEWS = [
   {
-    id: 'dummy-col1',
+    id: 'col2',
+    date: '2026.5.12',
+    tag: '学生コラム',
+    type: 'column',
+    title: '健康×SNS映え！？竹嶋ゼミ・芝崎ゼミの「機能性和洋菓子」開発会議に潜入取材！',
+    href: '#student-column-2',
+  },
+  {
+    id: 'col1',
     date: '2026.5.11',
     tag: '学生コラム',
     type: 'column',
@@ -27,14 +35,6 @@ const DUMMY_NEWS = [
     tag: '学生の声',
     type: 'voice',
     title: '栄養計算、3回やり直してやっと合格した話',
-    href: '#',
-  },
-  {
-    id: 'dummy-3',
-    date: '2026.2.05',
-    tag: 'コラム',
-    type: 'column',
-    title: '白衣の洗濯どうしてる？実習着管理の実態調査',
     href: '#',
   },
   {
