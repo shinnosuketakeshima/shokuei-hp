@@ -43,7 +43,7 @@ export default function LabKomeichi() {
           >
             <h2 className="lab-section__title">教員プロフィール</h2>
             <div className="lab-pi-profile">
-              <p><strong>古明地 夕佳（こめいち ゆか）教授</strong></p>
+              <p><strong>古明地 夕佳（こめいち せきか）教授</strong></p>
               <p>十文字学園女子大学 人間生活学部 食物栄養学科 教授</p>
               <p><strong>専門分野:</strong> 公衆栄養学、栄養教育・食育、地域保健</p>
               <p className="lab-section__body" style={{ marginTop: '1.5em' }}>
