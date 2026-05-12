@@ -21,38 +21,6 @@ const DUMMY_NEWS = [
     title: '白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情',
     href: '#student-column-1',
   },
-  {
-    id: 'dummy-1',
-    date: '2026.4.20',
-    tag: '実習レポート',
-    type: 'report',
-    title: '病院実習に行ってきました ─ 初めてみた栄養指導の現場',
-    href: '#',
-  },
-  {
-    id: 'dummy-2',
-    date: '2026.3.18',
-    tag: '学生の声',
-    type: 'voice',
-    title: '栄養計算、3回やり直してやっと合格した話',
-    href: '#',
-  },
-  {
-    id: 'dummy-4',
-    date: '2025.12.14',
-    tag: '実習レポート',
-    type: 'report',
-    title: '給食経営管理実習の1日 ─ 朝7時から18時まで',
-    href: '#',
-  },
-  {
-    id: 'dummy-5',
-    date: '2025.11.01',
-    tag: '先生のはなし',
-    type: 'sensei',
-    title: '災害栄養って実際なにするの？國井先生に聞いてみた',
-    href: '#',
-  },
 ]
 
 function newsDateMillis(value) {

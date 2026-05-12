@@ -1,9 +1,6 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.jumonji-u.ac.jp)",
-      "mcp__plugin_playwright_playwright__browser_navigate",
-      "mcp__plugin_playwright_playwright__browser_evaluate",
       "Bash(npm run *)",
       "Bash(firebase deploy *)",
       "Bash(npx firebase *)",
@@ -11,7 +8,15 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(git commit *)",
-      "Bash(copy *)"
+      "Bash(copy *)",
+      "Bash(Remove-Item *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\stake\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--GitHub-shokuei-hp\\\\1ce2adc4-1a46-4a51-a6bc-daef38cbcdd1\\\\tasks\\\\b8f0fzxub.output\" -Wait -Tail 30)",
+      "Bash(Select-Object -First 40)",
+      "Bash(git fetch *)",
+      "Bash(git stash *)",
+      "Bash(git checkout *)",
+      "Bash(git pull *)",
+      "Bash(npm install *)"
     ]
   }
 }
