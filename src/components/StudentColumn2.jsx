@@ -7,7 +7,7 @@ export default function StudentColumn2() {
       <div className="container">
 
         <motion.a
-          href="#"
+          href="/"
           className="lab-page__back-link"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}

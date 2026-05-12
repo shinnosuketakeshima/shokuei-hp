@@ -1,4 +1,4 @@
-import { ArrowLeft, Baby, Activity, Utensils, GraduationCap, Award, BookOpen } from 'lucide-react';
+﻿import { ArrowLeft, Baby, Activity, Utensils, GraduationCap, Award, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function LabNakaoka() {
@@ -11,7 +11,7 @@ export default function LabNakaoka() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <a href="#" className="lab-page__back-link">
+          <a href="/" className="lab-page__back-link">
             <ArrowLeft size={16} />
             <span>トップページに戻る</span>
           </a>

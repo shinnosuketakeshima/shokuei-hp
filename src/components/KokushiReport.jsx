@@ -7,8 +7,8 @@ export default function KokushiReport() {
       <div className="container">
 
         {/* 戻るリンク */}
-        <motion.a 
-          href="#" 
+        <motion.a
+          href="/"
           className="lab-page__back-link"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}

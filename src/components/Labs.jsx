@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const LABS = [
   {
@@ -18,8 +19,8 @@ const LABS = [
     description: 'ウシ伝染性リンパ腫ウイルス(BLV)と宿主遺伝子(BoLA)の関係から、家畜の健康と人の食を守る研究室。遺伝子解析、高感度検査法、ワクチン開発を通じて、One Healthに貢献します。',
     topic: '学生とともに、BLV感染牛の遺伝子型解析データを学会で発表しました。',
     topicDate: '2025.3',
-    href: '#lab-takeshima',
-    blogHref: '#lab-takeshima',
+    href: '/lab-takeshima',
+    blogHref: '/lab-takeshima',
     isExternal: false,
   },
   {
@@ -28,8 +29,8 @@ const LABS = [
     description: '「栄養管理をもっと身近に！」をスローガンに、公衆栄養学・実践食事学を軸として地域・企業・海外と連携する研究室。学生主体の商品開発や社会連携プロジェクトを展開しています。',
     topic: '地域の高齢者向け栄養改善プログラムの効果検証を進めています。',
     topicDate: '2025.5',
-    href: '#lab-kunii',
-    blogHref: '#lab-kunii',
+    href: '/lab-kunii',
+    blogHref: '/lab-kunii',
     isExternal: false,
   },
   {
@@ -38,8 +39,8 @@ const LABS = [
     description: '「生体組織と食品機能を、分子レベルで探る」をテーマに、魚の鱗再生、食品由来成分による真菌毒制御、植物の機能性成分解析など、基礎と応用をつなぐ研究を展開しています。',
     topic: 'アシタバ由来成分の機能性に関する研究成果をまとめ、論文投稿の準備を進めています。',
     topicDate: '2025.6',
-    href: '#lab-iimura',
-    blogHref: '#lab-iimura',
+    href: '/lab-iimura',
+    blogHref: '/lab-iimura',
     isExternal: false,
   },
   {
@@ -48,8 +49,8 @@ const LABS = [
     description: 'ポリフェノールや機能性成分の解析から、生活習慣病予防や災害栄養まで幅広く研究。「おいしい」を入口に「健康」と「安心な暮らし」を科学的根拠に基づいて探究します。',
     topic: 'エイジェックファームとの連携で、熟成黒たまねぎマフィン「くろたまフィン」を開発しました。',
     topicDate: '2026.5',
-    href: '#lab-kamiyama',
-    blogHref: '#lab-kamiyama',
+    href: '/lab-kamiyama',
+    blogHref: '/lab-kamiyama',
     isExternal: false,
   },
   {
@@ -58,8 +59,8 @@ const LABS = [
     description: '加工大豆食品やテンペの研究を通じて、食物繊維摂取の向上と健康維持を探求。若年層の食育や食行動変容の評価など、実践的な社会・高大連携活動にも力を入れています。',
     topic: '駒場学園高等学校との高大連携プロジェクト「自分たちの青春に健康プラスワン」を展開中。',
     topicDate: '2025.10',
-    href: '#lab-kamoshita',
-    blogHref: '#lab-kamoshita',
+    href: '/lab-kamoshita',
+    blogHref: '/lab-kamoshita',
     isExternal: false,
   },
   {
@@ -68,8 +69,8 @@ const LABS = [
     description: '和菓子職人としての経験と調理科学を融合させ、郷土菓子やあんこ、おだんごの「おいしさ」を科学的に解明。伝統文化を次世代につなぐ研究室です。',
     topic: 'TBS「マツコの知らない世界」に出演。みたらし団子の魅力を調理科学の視点から解説しました。',
     topicDate: '2026.5',
-    href: '#lab-shibasaki',
-    blogHref: '#lab-shibasaki',
+    href: '/lab-shibasaki',
+    blogHref: '/lab-shibasaki',
     isExternal: false,
   },
   {
@@ -78,8 +79,8 @@ const LABS = [
     description: '雑穀粉パンや膨化食品の物性解析を通じて、「おいしい」と「やさしい」を両立する食をデザイン。廃棄部位を活用しただし開発など、フードロス削減にも取り組んでいます。',
     topic: 'キヌア粉を用いたグルテンフリーパンの開発と、その物性評価に関する研究を進めています。',
     topicDate: '2026.5',
-    href: '#lab-ishii',
-    blogHref: '#lab-ishii',
+    href: '/lab-ishii',
+    blogHref: '/lab-ishii',
     isExternal: false,
   },
   {
@@ -88,8 +89,8 @@ const LABS = [
     description: '高齢者の栄養ケアや子ども食堂、地域連携を軸に「エビデンスに基づく公衆栄養実践」を探究。新座市の健康まつり等、地域に根ざした食と健康づくりを実践しています。',
     topic: '子ども食堂を対象とした食・栄養面からの実態把握と支援・食育プログラムの評価を行っています。',
     topicDate: '2026.5',
-    href: '#lab-komeichi',
-    blogHref: '#lab-komeichi',
+    href: '/lab-komeichi',
+    blogHref: '/lab-komeichi',
     isExternal: false,
   },
   {
@@ -98,8 +99,8 @@ const LABS = [
     description: '子どもの食生活・食育や応用栄養学が専門。成長期の骨量・体力、家族との共食、社会的ジェットラグなど、日常生活に根ざした研究と地域での実践に取り組んでいます。',
     topic: '地域社会と連携し、「砂糖のひみつを科学で解き明かす！」ワークショップを開催しました。',
     topicDate: '2026.5',
-    href: '#lab-nakaoka',
-    blogHref: '#lab-nakaoka',
+    href: '/lab-nakaoka',
+    blogHref: '/lab-nakaoka',
     isExternal: false,
   },
   {
@@ -108,8 +109,8 @@ const LABS = [
     description: '食品生化学・食品免疫学を専門に、動脈硬化性疾患予防のための食事療法を研究。うま味成分による減塩支援やポリフェノールの機能性解析など、食品成分から生活習慣病予防を科学します。',
     topic: 'うま味調味料を活用した郷土料理コンテストに学生と参加し、地域食材×減塩レシピの開発に取り組んでいます。',
     topicDate: '2026.5',
-    href: '#lab-iwamoto',
-    blogHref: '#lab-iwamoto',
+    href: '/lab-iwamoto',
+    blogHref: '/lab-iwamoto',
     isExternal: false,
   },
   {
@@ -118,8 +119,8 @@ const LABS = [
     description: '地域在住高齢者のサルコペニア予防から介護施設の栄養ケア・マネジメントまで、超高齢社会の食と健康に正面から向き合う研究室。新調理システムの評価や高齢者向けレシピ開発など、現場と連携した研究が特徴です。',
     topic: '新座市社会福祉協議会の調理ボランティア向けレシピ集に、高齢者向けメニューを監修・提供しました。',
     topicDate: '2026.5',
-    href: '#lab-okamoto',
-    blogHref: '#lab-okamoto',
+    href: '/lab-okamoto',
+    blogHref: '/lab-okamoto',
     isExternal: false,
   },
 ]
@@ -161,14 +162,20 @@ export default function Labs() {
                   <span className="lab-card-new__topic-date">{lab.topicDate}</span>
                   <span className="lab-card-new__topic-text">{lab.topic}</span>
                 </div>
-                <a
-                  href={lab.blogHref}
-                  className="lab-card-new__blog-link"
-                  target={lab.isExternal ? '_blank' : '_self'}
-                  rel={lab.isExternal ? 'noopener noreferrer' : ''}
-                >
-                  研究室を見る <ArrowRight size={13} />
-                </a>
+                {lab.isExternal ? (
+                  <a
+                    href={lab.blogHref}
+                    className="lab-card-new__blog-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    研究室を見る <ArrowRight size={13} />
+                  </a>
+                ) : (
+                  <Link to={lab.blogHref} className="lab-card-new__blog-link">
+                    研究室を見る <ArrowRight size={13} />
+                  </Link>
+                )}
               </div>
             </motion.div>
           ))}

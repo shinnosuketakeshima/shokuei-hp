@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shokuei-hp.web.app/sitemap.xml

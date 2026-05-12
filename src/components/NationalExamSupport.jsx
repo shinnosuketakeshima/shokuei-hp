@@ -88,7 +88,7 @@ export default function NationalExamSupport() {
               <p className="support__report-banner-title">第40回管理栄養士国家試験 結果と本学の取り組みについて</p>
               <p className="support__report-banner-sub">合格率・要因分析・今後の対策を公開しています</p>
             </div>
-            <a href="#kokushi-report" className="support__report-banner-link">
+            <a href="/kokushi-report" className="support__report-banner-link">
               詳細を読む <ArrowRight size={14} />
             </a>
           </div>

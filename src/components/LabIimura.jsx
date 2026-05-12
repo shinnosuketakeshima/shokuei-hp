@@ -1,11 +1,11 @@
-import { ArrowLeft } from 'lucide-react';
+﻿import { ArrowLeft } from 'lucide-react';
 
 export default function LabIimura() {
   return (
     <div className="lab-page">
       <div className="container">
         <div className="lab-page__header">
-          <a href="#" className="lab-page__back-link">
+          <a href="/" className="lab-page__back-link">
             <ArrowLeft size={16} />
             <span>トップページに戻る</span>
           </a>

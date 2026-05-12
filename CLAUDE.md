@@ -26,27 +26,33 @@ npx firebase deploy   # firebase CLI may not be on PATH; use npx
 
 Routing is hash-based, implemented manually in `src/App.jsx` with a `useEffect` on `hashchange`. There is no React Router.
 
-| Hash | Component |
-|---|---|
-| *(empty / `#`)* | Homepage — all sections stacked |
-| `#lab-takeshima` | `LabTakeshima` |
-| `#lab-kamoshita` | `LabKamoshita` |
-| `#lab-kunii` | `LabKunii` |
-| `#lab-iimura` | `LabIimura` |
-| `#lab-kamiyama` | `LabKamiyama` |
-| `#lab-ishii` | `LabIshii` |
-| `#lab-komeichi` | `LabKomeichi` |
-| `#lab-nakaoka` | `LabNakaoka` |
-| `#lab-shibasaki` | `LabShibasaki` |
-| `#lab-iwamoto` | `LabIwamoto` |
-| `#lab-okamoto` | `LabOkamoto` |
-| `#koudai-project` | `KoudaiProject` |
-| `#kokushi-report` | `KokushiReport` |
-| `#student-column-1` | `StudentColumn1` |
-| `#student-column-2` | `StudentColumn2` |
-| `#event-0525` | `EventSpecial0525` |
+Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`Route` (in `src/App.jsx`). Firebase Hosting rewrites all paths to `index.html`. Do **not** revert to hash-based routing.
 
-`Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except the homepage default).
+| Path | Component |
+|---|---|
+| `/` | Homepage — all sections stacked |
+| `/lab-takeshima` | `LabTakeshima` |
+| `/lab-kamoshita` | `LabKamoshita` |
+| `/lab-kunii` | `LabKunii` |
+| `/lab-iimura` | `LabIimura` |
+| `/lab-kamiyama` | `LabKamiyama` |
+| `/lab-ishii` | `LabIshii` |
+| `/lab-komeichi` | `LabKomeichi` |
+| `/lab-nakaoka` | `LabNakaoka` |
+| `/lab-shibasaki` | `LabShibasaki` |
+| `/lab-iwamoto` | `LabIwamoto` |
+| `/lab-okamoto` | `LabOkamoto` |
+| `/koudai-project` | `KoudaiProject` |
+| `/kokushi-report` | `KokushiReport` |
+| `/student-column-1` | `StudentColumn1` |
+| `/student-column-2` | `StudentColumn2` |
+| `/event-0525` | `EventSpecial0525` |
+
+`Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except `/`).
+
+Dynamic `<title>` and `<meta name="description">` are updated per route in `App.jsx` via the `PAGE_META` map.
+
+In-page scroll nav links in `Header.jsx` use `href="/#section-id"` so they work from any sub-page.
 
 ### News: Firestore + static dummy items
 

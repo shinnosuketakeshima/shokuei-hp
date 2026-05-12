@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 
 const NAV = [
-  { label: '学科について', href: '#features' },
-  { label: '取得資格',    href: '#qualifications' },
-  { label: '国試対策',    href: '#support' },
-  { label: '実習レポート', href: '#news' },
-  { label: '進路・就職',  href: '#career' },
+  { label: '学科について', href: '/#features' },
+  { label: '取得資格',    href: '/#qualifications' },
+  { label: '国試対策',    href: '/#support' },
+  { label: '実習レポート', href: '/#news' },
+  { label: '進路・就職',  href: '/#career' },
 ]
 
 export default function Header() {
@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <div className="header__inner">
-        <a href="#" className="header__logo">
+        <a href="/" className="header__logo">
           <div className="header__logo-main">
             <span className="header__logo-dept">食物栄養学科</span>
             <span className="header__unofficial-badge">非公式</span>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase.js';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const DUMMY_NEWS = [
   {
@@ -11,7 +12,7 @@ const DUMMY_NEWS = [
     tag: 'イベント',
     type: 'event',
     title: '【5/25開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」',
-    href: '#event-0525',
+    href: '/event-0525',
   },
   {
     id: 'col2',
@@ -19,7 +20,7 @@ const DUMMY_NEWS = [
     tag: '学生コラム',
     type: 'column',
     title: '健康×SNS映え！？竹嶋ゼミ・芝崎ゼミの「機能性和洋菓子」開発会議に潜入取材！',
-    href: '#student-column-2',
+    href: '/student-column-2',
   },
   {
     id: 'col1',
@@ -27,7 +28,7 @@ const DUMMY_NEWS = [
     tag: '学生コラム',
     type: 'column',
     title: '白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情',
-    href: '#student-column-1',
+    href: '/student-column-1',
   },
 ]
 
@@ -104,7 +105,7 @@ export default function News() {
           >
             <p className="eyebrow">お知らせ / ブログ</p>
             <h2 className="section-title">新着情報</h2>
-            <a href="#" className="news__more">
+            <a href="/" className="news__more">
               一覧へ <ArrowRight size={13} />
             </a>
           </motion.div>
@@ -124,11 +125,11 @@ export default function News() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
               >
-                <a href={n.href || '#'} className="news-item">
+                <Link to={n.href || '/'} className="news-item">
                   <span className="news-item__date">{n.date}</span>
                   <span className={`news-tag news-tag--${n.type}`}>{n.tag}</span>
                   <span className="news-item__title">{n.title}</span>
-                </a>
+                </Link>
               </motion.li>
             ))}
           </motion.ul>

@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, MapPin, Users, Mail } from 'lucide-react';
+﻿import { ArrowLeft, Calendar, MapPin, Users, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const fadeUp = (delay = 0) => ({
@@ -18,7 +18,7 @@ export default function EventSpecial0525() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <a href="#" className="lab-page__back-link">
+          <a href="/" className="lab-page__back-link">
             <ArrowLeft size={16} />
             <span>トップページに戻る</span>
           </a>

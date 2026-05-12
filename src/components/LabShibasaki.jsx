@@ -7,7 +7,7 @@ export default function LabShibasaki() {
       <div className="container">
 
         <motion.a
-          href="#"
+          href="/"
           className="lab-page__back-link"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
@@ -138,7 +138,7 @@ export default function LabShibasaki() {
                 食物調理科の生徒たちと共同で、若者の食生活改善を目指した「青春三色パン」の開発や、
                 適塩をテーマにした地域還元プロジェクト「しらりん食堂」での活動などを展開しています。
               </p>
-              <a href="#koudai-project" className="btn-secondary">
+              <a href="/koudai-project" className="btn-secondary">
                 高大連携プロジェクトの詳細を見る <ArrowRight size={14} />
               </a>
             </div>
@@ -157,7 +157,7 @@ export default function LabShibasaki() {
                 <strong>令和7年度 みどり戦略学生チャレンジ 関東ブロック大会：</strong>
                 「高大連携：食の未来を創るプロジェクト」農林水産省関東農政局 準グランプリ
                 <br />
-                <a href="#koudai-project" className="text-terracotta hover:underline text-xs inline-flex items-center gap-1 mt-1">
+                <a href="/koudai-project" className="text-terracotta hover:underline text-xs inline-flex items-center gap-1 mt-1">
                   プロジェクト詳細はこちら <ExternalLink size={10} />
                 </a>
               </li>

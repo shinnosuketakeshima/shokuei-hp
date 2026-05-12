@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'lucide-react';
+﻿import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function LabIshii() {
@@ -11,7 +11,7 @@ export default function LabIshii() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <a href="#" className="lab-page__back-link">
+          <a href="/" className="lab-page__back-link">
             <ArrowLeft size={16} />
             <span>トップページに戻る</span>
           </a>

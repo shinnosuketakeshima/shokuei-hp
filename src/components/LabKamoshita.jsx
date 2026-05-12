@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'lucide-react';
+﻿import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function LabKamoshita() {
@@ -11,7 +11,7 @@ export default function LabKamoshita() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <a href="#" className="lab-page__back-link">
+          <a href="/" className="lab-page__back-link">
             <ArrowLeft size={16} />
             <span>トップページに戻る</span>
           </a>
@@ -172,7 +172,7 @@ export default function LabKamoshita() {
               特に、駒場学園高等学校との連携プロジェクト「自分たちの青春に健康プラスワンプロジェクト」では、学生と共同で授業・実習・フィールドワークを展開しています。
             </p>
             <p className="lab-section__body">
-              <a href="#koudai-project" className="lab-section__link">
+              <a href="/koudai-project" className="lab-section__link">
                 高大連携プロジェクト「食の未来を創る」の詳細を見る
               </a>
             </p>
