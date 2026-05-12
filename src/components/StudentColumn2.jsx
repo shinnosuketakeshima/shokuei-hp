@@ -41,7 +41,7 @@ export default function StudentColumn2() {
           >
             <p className="lab-section__body">
               こんにちは！学生記者です。
-              今回は、学内でユニークな食品開発を行っていると噂の「竹嶋ゼミ」に潜入してきました！
+              今回は、学内でユニークな食品開発を行っていると噂の竹嶋ゼミと芝崎ゼミに潜入してきました！
             </p>
             <p className="lab-section__body">
               この日の会議のメインテーマは、「桑の葉」と「竹炭パウダー」を活用した新しい機能性和洋菓子の試食会。
