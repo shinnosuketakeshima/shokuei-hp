@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import HeroFeatures from './components/HeroFeatures'
 import StatsBar from './components/StatsBar'
 import Features from './components/Features'
 import Labs from './components/Labs'
@@ -75,13 +74,12 @@ function App() {
         return (
           <>
             <Hero />
-            <HeroFeatures />
+            <News />
             <StatsBar />
             <Features />
             <Labs />
             <Qualifications />
             <NationalExamSupport />
-            <News />
             <SNSSection />
             <Career />
             <StudentVoices />
