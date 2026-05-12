@@ -62,6 +62,16 @@ const LABS = [
     blogHref: '#lab-kamoshita',
     isExternal: false,
   },
+  {
+    name: '芝崎本実先生の研究室',
+    nameEn: 'Shibasaki Lab',
+    description: '和菓子職人としての経験と調理科学を融合させ、郷土菓子やあんこ、おだんごの「おいしさ」を科学的に解明。伝統文化を次世代につなぐ研究室です。',
+    topic: 'TBS「マツコの知らない世界」に出演。みたらし団子の魅力を調理科学の視点から解説しました。',
+    topicDate: '2026.5',
+    href: '#lab-shibasaki',
+    blogHref: '#lab-shibasaki',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {
