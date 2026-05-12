@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Book, ExternalLink, GraduationCap, Microscope, Tv } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Book, ExternalLink, GraduationCap, Tv } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function LabShibasaki() {
