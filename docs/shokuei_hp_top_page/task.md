@@ -1,29 +1,29 @@
 # タスクリスト: 食物栄養学科トップページ制作
 
-- [/] プロジェクトの初期化
-    - [/] `npm create vite@latest` の実行（React + JavaScript）
-    - [ ] Tailwind CSS のインストールと設定
-    - [ ] Framer Motion, Lucide React (アイコン用) のインストール
-- [ ] デザインシステムの構築
-    - [ ] `tailwind.config.js` へのカスタムカラー定義
-    - [ ] `index.css` へのフォント設定とベーススタイル
-- [ ] 共通コンポーネントの実装
-    - [ ] `Header.jsx`
-    - [ ] `Footer.jsx`
-- [ ] 各セクションの実装
-    - [ ] `Hero.jsx`
-    - [ ] `StatsBar.jsx`
-    - [ ] `Features.jsx`
-    - [ ] `Qualifications.jsx`
-    - [ ] `NationalExamSupport.jsx`
-    - [ ] `News.jsx`
-    - [ ] `SNSSection.jsx`
-    - [ ] `Career.jsx`
-- [ ] 全体の統合とアニメーション設定
-    - [ ] `App.jsx` でのセクション配置
-    - [ ] Framer Motion によるスクロールアニメーション
-- [ ] デプロイ設定
-    - [ ] `firebase.json`, `.firebaserc` の作成
-- [ ] 動作確認と微調整
-    - [ ] レスポンシブ確認
-    - [ ] ビルド確認
+- [x] プロジェクトの初期化
+    - [x] `npm create vite@latest` の実行（React + JavaScript）
+    - [x] Tailwind CSS のインストールと設定
+    - [x] Framer Motion, Lucide React (アイコン用) のインストール
+- [x] デザインシステムの構築
+    - [x] `tailwind.config.js` へのカスタムカラー定義
+    - [x] `index.css` へのフォント設定とベーススタイル
+- [x] 共通コンポーネントの実装
+    - [x] `Header.jsx`
+    - [x] `Footer.jsx`
+- [x] 各セクションの実装
+    - [x] `Hero.jsx`
+    - [x] `StatsBar.jsx`
+    - [x] `Features.jsx`
+    - [x] `Qualifications.jsx`
+    - [x] `NationalExamSupport.jsx`
+    - [x] `News.jsx`
+    - [x] `SNSSection.jsx`
+    - [x] `Career.jsx`
+- [x] 全体の統合とアニメーション設定
+    - [x] `App.jsx` でのセクション配置
+    - [x] Framer Motion によるスクロールアニメーション
+- [x] デプロイ設定
+    - [x] `firebase.json`, `.firebaserc` の作成
+- [x] 動作確認と微調整
+    - [x] レスポンシブ確認
+    - [x] ビルド確認
