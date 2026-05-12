@@ -1,4 +1,4 @@
-import { ArrowLeft, Book, ExternalLink, GraduationCap, Microscope, Tv } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Book, ExternalLink, GraduationCap, Microscope, Tv } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function LabShibasaki() {
@@ -115,6 +115,32 @@ export default function LabShibasaki() {
                   『おだんご先生のおいしい 手作り和菓子』四季シリーズ
                 </p>
               </div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="lab-section__title">社会貢献・高大連携</h2>
+            <p className="lab-section__body">
+              地域社会や教育機関との連携を重視し、食を通じた課題解決に取り組んでいます。
+            </p>
+            <div className="lab-section__card">
+              <h3 className="flex items-center gap-2">
+                <ExternalLink size={18} className="text-terracotta" />
+                駒場学園高等学校との高大連携
+              </h3>
+              <p className="mb-4">
+                食物調理科の生徒たちと共同で、若者の食生活改善を目指した「青春三色パン」の開発や、
+                適塩をテーマにした地域還元プロジェクト「しらりん食堂」での活動などを展開しています。
+              </p>
+              <a href="#koudai-project" className="btn-secondary">
+                高大連携プロジェクトの詳細を見る <ArrowRight size={14} />
+              </a>
             </div>
           </motion.section>
 
