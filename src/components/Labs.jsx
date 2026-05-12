@@ -72,6 +72,16 @@ const LABS = [
     blogHref: '#lab-shibasaki',
     isExternal: false,
   },
+  {
+    name: '石井和美先生の研究室',
+    nameEn: 'Ishii Lab',
+    description: '雑穀粉パンや膨化食品の物性解析を通じて、「おいしい」と「やさしい」を両立する食をデザイン。廃棄部位を活用しただし開発など、フードロス削減にも取り組んでいます。',
+    topic: 'キヌア粉を用いたグルテンフリーパンの開発と、その物性評価に関する研究を進めています。',
+    topicDate: '2026.5',
+    href: '#lab-ishii',
+    blogHref: '#lab-ishii',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {
