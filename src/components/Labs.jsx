@@ -42,6 +42,26 @@ const LABS = [
     blogHref: '#lab-iimura',
     isExternal: false,
   },
+  {
+    name: '神山真澄先生の研究室',
+    nameEn: 'Kamiyama Lab',
+    description: 'ポリフェノールや機能性成分の解析から、生活習慣病予防や災害栄養まで幅広く研究。「おいしい」を入口に「健康」と「安心な暮らし」を科学的根拠に基づいて探究します。',
+    topic: 'エイジェックファームとの連携で、熟成黒たまねぎマフィン「くろたまフィン」を開発しました。',
+    topicDate: '2026.5',
+    href: '#lab-kamiyama',
+    blogHref: '#lab-kamiyama',
+    isExternal: false,
+  },
+  {
+    name: '鴨下澄子先生の研究室',
+    nameEn: 'Kamoshita Lab',
+    description: '加工大豆食品やテンペの研究を通じて、食物繊維摂取の向上と健康維持を探求。若年層の食育や食行動変容の評価など、実践的な社会・高大連携活動にも力を入れています。',
+    topic: '駒場学園高等学校との高大連携プロジェクト「自分たちの青春に健康プラスワン」を展開中。',
+    topicDate: '2025.10',
+    href: '#lab-kamoshita',
+    blogHref: '#lab-kamoshita',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {
