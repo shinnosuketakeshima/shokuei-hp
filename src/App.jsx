@@ -27,6 +27,7 @@ import StudentColumn2 from './components/StudentColumn2'
 import LabShibasaki from './components/LabShibasaki'
 import LabIwamoto from './components/LabIwamoto'
 import LabOkamoto from './components/LabOkamoto'
+import EventSpecial0525 from './components/EventSpecial0525'
 import './App.css'
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
 
-    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#lab-iimura', '#lab-kamiyama', '#lab-ishii', '#lab-komeichi', '#lab-nakaoka', '#lab-shibasaki', '#lab-iwamoto', '#lab-okamoto', '#koudai-project', '#kokushi-report']
+    const subPages = ['#lab-takeshima', '#lab-kamoshita', '#lab-kunii', '#lab-iimura', '#lab-kamiyama', '#lab-ishii', '#lab-komeichi', '#lab-nakaoka', '#lab-shibasaki', '#lab-iwamoto', '#lab-okamoto', '#koudai-project', '#kokushi-report', '#event-0525']
     if (subPages.includes(page)) return
 
     const els = document.querySelectorAll('[data-reveal]')
@@ -94,6 +95,8 @@ function App() {
         return <StudentColumn1 />
       case '#student-column-2':
         return <StudentColumn2 />
+      case '#event-0525':
+        return <EventSpecial0525 />
       default:
         return (
           <>

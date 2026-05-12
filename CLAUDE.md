@@ -44,6 +44,7 @@ Routing is hash-based, implemented manually in `src/App.jsx` with a `useEffect` 
 | `#kokushi-report` | `KokushiReport` |
 | `#student-column-1` | `StudentColumn1` |
 | `#student-column-2` | `StudentColumn2` |
+| `#event-0525` | `EventSpecial0525` |
 
 `Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except the homepage default).
 

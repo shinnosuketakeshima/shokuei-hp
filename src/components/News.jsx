@@ -6,6 +6,14 @@ import { motion } from 'framer-motion';
 
 const DUMMY_NEWS = [
   {
+    id: 'event-0525',
+    date: '2026.5.12',
+    tag: 'イベント',
+    type: 'event',
+    title: '【5/25開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」',
+    href: '#event-0525',
+  },
+  {
     id: 'col2',
     date: '2026.5.12',
     tag: '学生コラム',
