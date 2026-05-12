@@ -151,14 +151,71 @@ export default function LabShibasaki() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="lab-section__title">研究室プロフィール</h2>
+            <h2 className="lab-section__title">受賞歴</h2>
+            <div className="lab-publication-list">
+              <li>
+                <strong>令和7年度 みどり戦略学生チャレンジ 関東ブロック大会：</strong>
+                「高大連携：食の未来を創るプロジェクト」農林水産省関東農政局 準グランプリ
+                <br />
+                <a href="#koudai-project" className="text-terracotta hover:underline text-xs inline-flex items-center gap-1 mt-1">
+                  プロジェクト詳細はこちら <ExternalLink size={10} />
+                </a>
+              </li>
+              <li>
+                <strong>令和6年度 みどり戦略学生チャレンジ 関東ブロック大会：</strong>
+                「高大連携：食の未来を創るプロジェクト」農林水産省関東農政局 特別賞
+              </li>
+              <li>
+                <strong>令和7年度 武蔵野会賞：</strong>
+                フードドライブプラス2024（指導教員）入選
+              </li>
+            </div>
+          </motion.section>
+
+          <motion.section
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="lab-section__title">経歴・プロフィール</h2>
             <div className="lab-pi-profile">
-              <p><strong>芝崎 本実（准教授）</strong></p>
-              <p className="mb-4">Motomi Shibasaki / 十文字学園女子大学 食物栄養学科</p>
-              <p>
-                和菓子屋情報MAPサイト「おだんご日和」主宰。
-                地域に根ざした和菓子文化を、栄養・健康の視点も交えて次世代につなぐ活動を精力的に行っています。
-              </p>
+              <p className="mb-2"><strong>芝崎 本実（准教授）</strong></p>
+              <p className="text-xs mb-4">Motomi Shibasaki / 十文字学園女子大学 食物栄養学科</p>
+              
+              <div className="grid sm:grid-cols-2 gap-6 mt-4">
+                <div>
+                  <h4 className="text-charcoal font-medium text-sm mb-2 border-l-2 border-terracotta pl-2">職歴</h4>
+                  <ul className="text-xs space-y-1 list-none p-0">
+                    <li>十文字学園女子大学 准教授（現職）</li>
+                    <li>十文字学園女子大学 専任講師</li>
+                    <li>農研機構 食品研究部門 依頼研究員</li>
+                    <li>帝京平成大学 健康栄養学科 助教</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-charcoal font-medium text-sm mb-2 border-l-2 border-terracotta pl-2">学歴・学位</h4>
+                  <ul className="text-xs space-y-1 list-none p-0">
+                    <li>帝京平成大学大学院 修了 博士（健康科学）</li>
+                    <li>女子栄養大学大学院 修了 修士（栄養学）</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <h4 className="text-charcoal font-medium text-sm mb-2 border-l-2 border-terracotta pl-2">資格</h4>
+                <p className="text-xs">
+                  管理栄養士、調理師、製菓衛生師、フードスペシャリスト
+                </p>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-border/50">
+                <p className="text-xs leading-relaxed">
+                  和菓子屋情報MAPサイト「おだんご日和」主宰。
+                  和菓子職人としての経験を活かし、地域に根ざした和菓子文化を調理科学と栄養学の視点から次世代につなぐ活動を精力的に行っています。
+                </p>
+              </div>
             </div>
           </motion.section>
 
