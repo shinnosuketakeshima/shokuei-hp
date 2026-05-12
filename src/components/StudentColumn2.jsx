@@ -81,9 +81,9 @@ export default function StudentColumn2() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="lab-section__title">衝撃の黒さ！新感覚ネオ団子「ブラックみたらし」</h2>
+            <h2 className="lab-section__title">漆黒の誘惑！新感覚ネオ団子「ブラックみたらし」</h2>
             <p className="lab-section__body">
-              続いて登場したのが、竹炭パウダーを使用したお団子。その名も「新感覚のネオ団子」！
+              続いて登場したのが、竹炭パウダーを使用したお団子。その名も「漆黒の誘惑 ブラックみたらし団子」！
               日本伝統の和菓子であるみたらし団子に竹炭を加え、なんと真っ黒なルックスに仕上がっています。
             </p>
             <p className="lab-section__body">
