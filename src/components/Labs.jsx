@@ -82,6 +82,16 @@ const LABS = [
     blogHref: '#lab-ishii',
     isExternal: false,
   },
+  {
+    name: '古明地夕佳先生の研究室',
+    nameEn: 'Komeichi Lab',
+    description: '高齢者の栄養ケアや子ども食堂、地域連携を軸に「エビデンスに基づく公衆栄養実践」を探究。新座市の健康まつり等、地域に根ざした食と健康づくりを実践しています。',
+    topic: '子ども食堂を対象とした食・栄養面からの実態把握と支援・食育プログラムの評価を行っています。',
+    topicDate: '2026.5',
+    href: '#lab-komeichi',
+    blogHref: '#lab-komeichi',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {
