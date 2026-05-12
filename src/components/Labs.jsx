@@ -112,6 +112,16 @@ const LABS = [
     blogHref: '#lab-iwamoto',
     isExternal: false,
   },
+  {
+    name: '岡本節子先生の研究室',
+    nameEn: 'Okamoto Lab',
+    description: '地域在住高齢者のサルコペニア予防から介護施設の栄養ケア・マネジメントまで、超高齢社会の食と健康に正面から向き合う研究室。新調理システムの評価や高齢者向けレシピ開発など、現場と連携した研究が特徴です。',
+    topic: '新座市社会福祉協議会の調理ボランティア向けレシピ集に、高齢者向けメニューを監修・提供しました。',
+    topicDate: '2026.5',
+    href: '#lab-okamoto',
+    blogHref: '#lab-okamoto',
+    isExternal: false,
+  },
 ]
 
 export default function Labs() {
