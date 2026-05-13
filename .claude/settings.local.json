@@ -15,7 +15,11 @@
       "Bash(git checkout *)",
       "Bash(git pull *)",
       "Bash(npm install *)",
-      "Bash(dir srccomponents *)"
+      "Bash(dir srccomponents *)",
+      "Bash(Get-ChildItem -Recurse -Path \"C:\\\\GitHub\\\\shokuei-hp\\\\src\" -Include \"*.jsx\",\"*.js\",\"*.css\")",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "WebFetch(domain:localhost)"
     ]
   }
 }
