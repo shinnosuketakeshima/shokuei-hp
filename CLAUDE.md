@@ -24,8 +24,6 @@ npx firebase deploy   # firebase CLI may not be on PATH; use npx
 
 ### Routing
 
-Routing is hash-based, implemented manually in `src/App.jsx` with a `useEffect` on `hashchange`. There is no React Router.
-
 Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`Route` (in `src/App.jsx`). Firebase Hosting rewrites all paths to `index.html`. Do **not** revert to hash-based routing.
 
 | Path | Component |
@@ -54,6 +52,16 @@ Dynamic `<title>` and `<meta name="description">` are updated per route in `App.
 
 In-page scroll nav links in `Header.jsx` use `href="/#section-id"` so they work from any sub-page.
 
+### Adding a new lab page
+
+Three places in `App.jsx` must all be updated together:
+
+1. **`PAGE_META`** — add a `'/lab-xxx': { title, desc }` entry.
+2. **`SUB_PATHS`** — add `'/lab-xxx'` to the array (skips scroll-reveal on sub-pages).
+3. **`<Routes>`** — add `<Route path="/lab-xxx" element={<LabXxx />} />`.
+
+Also update **`Labs.jsx`** (`LABS` array) to add the card, and create the component file `src/components/LabXxx.jsx` using the `.lab-page` / `.lab-section` CSS classes.
+
 ### News: Firestore + static dummy items
 
 `News.jsx` merges two sources:
@@ -70,7 +78,7 @@ Firestore date values can be a `Timestamp`, a `Date`, or a string — `formatNew
 
 ### Styling
 
-- `src/index.css` (~1700 lines) is the single stylesheet. It defines a design-token system via CSS custom properties (`--cream`, `--terracotta`, `--forest`, `--charcoal`, etc.) and drives all layout with those tokens plus `clamp()` for fluid spacing.
+- `src/index.css` (~1900 lines) is the single stylesheet. It defines a design-token system via CSS custom properties (`--cream`, `--terracotta`, `--forest`, `--charcoal`, etc.) and drives all layout with those tokens plus `clamp()` for fluid spacing.
 - Tailwind CSS 4 is a listed dependency but effectively unused — do not introduce Tailwind utilities; extend `index.css` instead.
 - Google Fonts (Noto Serif JP, Noto Sans JP) load via `<link>` in `index.html`. Use `var(--font-serif)` / `var(--font-sans)`.
 - Stats bar (`StatsBar`) uses an off-white background (`#FAF8F5`), not the charcoal dark theme — keep this distinction when editing that section.
@@ -90,14 +98,14 @@ Static images live directly in `src/` and are imported by the components that us
 
 ### Labs section
 
-`Labs.jsx` renders a card grid (`.labs-grid-new` / `.lab-card-new`) for all 12 labs. Each card has a photo placeholder, description, a dated research topic blurb, and a "研究室を見る →" link. Cards for external labs (e.g. G1 Lab) set `isExternal: true` and link out; internal lab cards link to their hash route. The individual lab **pages** are separate full-page components that use the shared `.lab-page` / `.lab-section` CSS classes.
+`Labs.jsx` renders a card grid (`.labs-grid-new` / `.lab-card-new`) for all 12 labs. Each entry in the `LABS` array has `isExternal: true` for external labs (renders an `<a>` tag) or `false` for internal labs (renders a `<Link>`). The individual lab **pages** are separate full-page components that use the shared `.lab-page` / `.lab-section` CSS classes.
 
 `HeroFeatures.jsx` exists in `src/components/` but is not currently rendered in `App.jsx`.
 
 ### Component Conventions
 
 - All components are plain `.jsx` under `src/components/`. No TypeScript.
-- External links: `target="_blank" rel="noopener noreferrer"`. Internal hash links: no target.
+- External links: `target="_blank" rel="noopener noreferrer"`. Internal path links: use `<Link to="...">` from `react-router-dom`.
 - Scroll-reveal: add `data-reveal` (and optionally `data-reveal-delay="1"–"6"`) to animate elements on scroll. Works only on the homepage.
 - Framer Motion (`framer-motion`) is used for animations in `News.jsx` and sub-page components. Use `motion.*` variants and `AnimatePresence` from that library rather than raw CSS transitions for new animated UI.
 
