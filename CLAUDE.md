@@ -97,16 +97,34 @@ Static images live directly in `src/` and are imported by the components that us
 
 | File | Used by |
 |---|---|
-| `src/top.png` | `Hero.jsx` (background) |
-| `src/jisshu-sei.jpg` | `CampusLife.jsx` |
+| `src/top.jpg` | `Hero.jsx` (background) |
 | `src/university_kousha.jpg` | `CampusLife.jsx` |
 | `src/tairyou.png` | `CampusLife.jsx` |
 | `src/kuwanoha.jpg` | `CampusLife.jsx` |
 | `src/kokushi.png` | `CampusLife.jsx` |
 
+Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg` (e.g. `takeshima.jpg`) and are imported in `Labs.jsx` for the lab cards. Add a new file there when adding a new lab entry.
+
 ### Labs section
 
-`Labs.jsx` renders a card grid (`.labs-grid-new` / `.lab-card-new`) for all 12 labs. Each entry in the `LABS` array has `isExternal: true` for external labs (renders an `<a>` tag) or `false` for internal labs (renders a `<Link>`). The individual lab **pages** are separate full-page components that use the shared `.lab-page` / `.lab-section` CSS classes.
+`Labs.jsx` renders a card grid (`.labs-grid-new` / `.lab-card-new`) for all 12 labs. Each entry in the `LABS` array requires these fields:
+
+```js
+{
+  name: '〇〇先生の研究室',  // displayed heading
+  nameEn: 'Xxx Lab',         // fallback if no photo
+  photo: facultyXxx,          // imported from src/faculty/xxx.jpg
+  photoPosition: 'center center', // optional; overrides CSS default 'center top' for passport-style photos
+  description: '...',
+  topic: '...',               // latest news blurb
+  topicDate: 'YYYY.M',
+  href: '/lab-xxx',           // or full URL for external
+  blogHref: '/lab-xxx',
+  isExternal: false,          // true → <a>, false → <Link>
+}
+```
+
+`isExternal: true` renders an `<a>` tag (with `target="_blank"`); `false` renders a React Router `<Link>`. The individual lab **pages** are separate full-page components that use the shared `.lab-page` / `.lab-section` CSS classes.
 
 `HeroFeatures.jsx` exists in `src/components/` but is not currently rendered in `App.jsx`.
 
