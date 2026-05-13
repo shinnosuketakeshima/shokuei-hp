@@ -1,11 +1,20 @@
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import facultyNiikura from '../faculty/niikura.jpg'
+import facultyTakeshima from '../faculty/takeshima.jpg'
+import facultyKunii from '../faculty/kunii.jpg'
+import facultyIimura from '../faculty/iimura.jpg'
+import facultyKamiyama from '../faculty/kamiyama.jpg'
+import facultyNakaoka from '../faculty/nakaoka.jpg'
+import facultyIwamoto from '../faculty/iwamoto.jpg'
+import facultyOkamoto from '../faculty/okamoto.jpg'
 
 const LABS = [
   {
     name: '新倉量太先生の研究室',
     nameEn: 'G1 Lab',
+    photo: facultyNiikura,
     description: '消化管出血・消化管発がん・腸内マイクロバイオームを主な研究テーマに、コホート研究や無作為化比較試験などの大規模臨床研究を展開。機械学習・AIを内視鏡診断へ応用するなど、臨床と先端データサイエンスを融合した研究室です。',
     topic: '腸内マイクロバイオームと食習慣の関係についての論文を国際誌に投稿しました。',
     topicDate: '2025.4',
@@ -16,6 +25,7 @@ const LABS = [
   {
     name: '竹嶋伸之輔先生の研究室',
     nameEn: 'Takeshima Lab',
+    photo: facultyTakeshima,
     description: 'ウシ伝染性リンパ腫ウイルス(BLV)と宿主遺伝子(BoLA)の関係から、家畜の健康と人の食を守る研究室。遺伝子解析、高感度検査法、ワクチン開発を通じて、One Healthに貢献します。',
     topic: '学生とともに、BLV感染牛の遺伝子型解析データを学会で発表しました。',
     topicDate: '2025.3',
@@ -26,6 +36,7 @@ const LABS = [
   {
     name: '國井大輔先生の研究室',
     nameEn: 'Kunii Lab',
+    photo: facultyKunii,
     description: '「栄養管理をもっと身近に！」をスローガンに、公衆栄養学・実践食事学を軸として地域・企業・海外と連携する研究室。学生主体の商品開発や社会連携プロジェクトを展開しています。',
     topic: '地域の高齢者向け栄養改善プログラムの効果検証を進めています。',
     topicDate: '2025.5',
@@ -36,6 +47,7 @@ const LABS = [
   {
     name: '飯村九林先生の研究室',
     nameEn: 'Iimura Lab',
+    photo: facultyIimura,
     description: '「生体組織と食品機能を、分子レベルで探る」をテーマに、魚の鱗再生、食品由来成分による真菌毒制御、植物の機能性成分解析など、基礎と応用をつなぐ研究を展開しています。',
     topic: 'アシタバ由来成分の機能性に関する研究成果をまとめ、論文投稿の準備を進めています。',
     topicDate: '2025.6',
@@ -46,6 +58,7 @@ const LABS = [
   {
     name: '神山真澄先生の研究室',
     nameEn: 'Kamiyama Lab',
+    photo: facultyKamiyama,
     description: 'ポリフェノールや機能性成分の解析から、生活習慣病予防や災害栄養まで幅広く研究。「おいしい」を入口に「健康」と「安心な暮らし」を科学的根拠に基づいて探究します。',
     topic: 'エイジェックファームとの連携で、熟成黒たまねぎマフィン「くろたまフィン」を開発しました。',
     topicDate: '2026.5',
@@ -96,6 +109,7 @@ const LABS = [
   {
     name: '中岡加奈絵先生の研究室',
     nameEn: 'Nakaoka Lab',
+    photo: facultyNakaoka,
     description: '子どもの食生活・食育や応用栄養学が専門。成長期の骨量・体力、家族との共食、社会的ジェットラグなど、日常生活に根ざした研究と地域での実践に取り組んでいます。',
     topic: '地域社会と連携し、「砂糖のひみつを科学で解き明かす！」ワークショップを開催しました。',
     topicDate: '2026.5',
@@ -106,6 +120,7 @@ const LABS = [
   {
     name: '岩本珠美先生の研究室',
     nameEn: 'Iwamoto Lab',
+    photo: facultyIwamoto,
     description: '食品生化学・食品免疫学を専門に、動脈硬化性疾患予防のための食事療法を研究。うま味成分による減塩支援やポリフェノールの機能性解析など、食品成分から生活習慣病予防を科学します。',
     topic: 'うま味調味料を活用した郷土料理コンテストに学生と参加し、地域食材×減塩レシピの開発に取り組んでいます。',
     topicDate: '2026.5',
@@ -116,6 +131,7 @@ const LABS = [
   {
     name: '岡本節子先生の研究室',
     nameEn: 'Okamoto Lab',
+    photo: facultyOkamoto,
     description: '地域在住高齢者のサルコペニア予防から介護施設の栄養ケア・マネジメントまで、超高齢社会の食と健康に正面から向き合う研究室。新調理システムの評価や高齢者向けレシピ開発など、現場と連携した研究が特徴です。',
     topic: '新座市社会福祉協議会の調理ボランティア向けレシピ集に、高齢者向けメニューを監修・提供しました。',
     topicDate: '2026.5',
@@ -151,9 +167,18 @@ export default function Labs() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
               <div className="lab-card-new__photo">
-                <div className="lab-card-new__photo-placeholder">
-                  <span>{lab.nameEn}</span>
-                </div>
+                {lab.photo ? (
+                  <img
+                    className="lab-card-new__photo-img"
+                    src={lab.photo}
+                    alt={lab.name}
+                    decoding="async"
+                  />
+                ) : (
+                  <div className="lab-card-new__photo-placeholder">
+                    <span>{lab.nameEn}</span>
+                  </div>
+                )}
               </div>
               <div className="lab-card-new__body">
                 <h3 className="lab-card-new__name">{lab.name}</h3>

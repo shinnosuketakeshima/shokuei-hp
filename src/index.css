@@ -1358,6 +1358,16 @@ body {
 .lab-card-new__photo {
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  position: relative;
+  background: var(--cream-alt);
+}
+
+.lab-card-new__photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .lab-card-new__photo-placeholder {
