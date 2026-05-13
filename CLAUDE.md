@@ -52,15 +52,23 @@ Dynamic `<title>` and `<meta name="description">` are updated per route in `App.
 
 In-page scroll nav links in `Header.jsx` use `href="/#section-id"` so they work from any sub-page.
 
-### Adding a new lab page
+### Homepage section render order
 
-Three places in `App.jsx` must all be updated together:
+The homepage `/` stacks sections in this order with these `id` attributes (used by nav `href="/#id"` links):
 
-1. **`PAGE_META`** — add a `'/lab-xxx': { title, desc }` entry.
-2. **`SUB_PATHS`** — add `'/lab-xxx'` to the array (skips scroll-reveal on sub-pages).
-3. **`<Routes>`** — add `<Route path="/lab-xxx" element={<LabXxx />} />`.
+`Hero` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `Footer` (`#contact`)
 
-Also update **`Labs.jsx`** (`LABS` array) to add the card, and create the component file `src/components/LabXxx.jsx` using the `.lab-page` / `.lab-section` CSS classes.
+### Adding a new sub-page
+
+Three places in `App.jsx` must all be updated together for any new route:
+
+1. **`PAGE_META`** — add a `'/path': { title, desc }` entry.
+2. **`SUB_PATHS`** — add `'/path'` to the array (skips scroll-reveal on sub-pages).
+3. **`<Routes>`** — add `<Route path="/path" element={<Component />} />`.
+
+For **lab pages**, also update **`Labs.jsx`** (`LABS` array) to add the card, and create `src/components/LabXxx.jsx` using the `.lab-page` / `.lab-section` CSS classes.
+
+For **content pages** (student columns, event pages, etc.), create the component directly and skip the Labs step.
 
 ### News: Firestore + static dummy items
 
@@ -108,6 +116,8 @@ Static images live directly in `src/` and are imported by the components that us
 - External links: `target="_blank" rel="noopener noreferrer"`. Internal path links: use `<Link to="...">` from `react-router-dom`.
 - Scroll-reveal: add `data-reveal` (and optionally `data-reveal-delay="1"–"6"`) to animate elements on scroll. Works only on the homepage.
 - Framer Motion (`framer-motion`) is used for animations in `News.jsx` and sub-page components. Use `motion.*` variants and `AnimatePresence` from that library rather than raw CSS transitions for new animated UI.
+- Icons: `lucide-react` is available (e.g. `import { ArrowRight } from 'lucide-react'`). Use it for any new iconography.
+- `App.css` is intentionally empty — all styles live in `src/index.css`.
 
 ## Language
 
