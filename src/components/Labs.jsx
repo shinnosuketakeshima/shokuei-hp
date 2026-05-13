@@ -6,6 +6,10 @@ import facultyTakeshima from '../faculty/takeshima.jpg'
 import facultyKunii from '../faculty/kunii.jpg'
 import facultyIimura from '../faculty/iimura.jpg'
 import facultyKamiyama from '../faculty/kamiyama.jpg'
+import facultyKamoshita from '../faculty/kamoshita.jpg'
+import facultyShibasaki from '../faculty/shibasaki.jpg'
+import facultyIshii from '../faculty/ishii.jpg'
+import facultyKomeichi from '../faculty/komeichi.jpg'
 import facultyNakaoka from '../faculty/nakaoka.jpg'
 import facultyIwamoto from '../faculty/iwamoto.jpg'
 import facultyOkamoto from '../faculty/okamoto.jpg'
@@ -69,6 +73,7 @@ const LABS = [
   {
     name: '鴨下澄子先生の研究室',
     nameEn: 'Kamoshita Lab',
+    photo: facultyKamoshita,
     description: '加工大豆食品やテンペの研究を通じて、食物繊維摂取の向上と健康維持を探求。若年層の食育や食行動変容の評価など、実践的な社会・高大連携活動にも力を入れています。',
     topic: '駒場学園高等学校との高大連携プロジェクト「自分たちの青春に健康プラスワン」を展開中。',
     topicDate: '2025.10',
@@ -79,6 +84,7 @@ const LABS = [
   {
     name: '芝崎本実先生の研究室',
     nameEn: 'Shibasaki Lab',
+    photo: facultyShibasaki,
     description: '和菓子職人としての経験と調理科学を融合させ、郷土菓子やあんこ、おだんごの「おいしさ」を科学的に解明。伝統文化を次世代につなぐ研究室です。',
     topic: 'TBS「マツコの知らない世界」に出演。みたらし団子の魅力を調理科学の視点から解説しました。',
     topicDate: '2026.5',
@@ -89,6 +95,7 @@ const LABS = [
   {
     name: '石井和美先生の研究室',
     nameEn: 'Ishii Lab',
+    photo: facultyIshii,
     description: '雑穀粉パンや膨化食品の物性解析を通じて、「おいしい」と「やさしい」を両立する食をデザイン。廃棄部位を活用しただし開発など、フードロス削減にも取り組んでいます。',
     topic: 'キヌア粉を用いたグルテンフリーパンの開発と、その物性評価に関する研究を進めています。',
     topicDate: '2026.5',
@@ -99,6 +106,7 @@ const LABS = [
   {
     name: '古明地夕佳先生の研究室',
     nameEn: 'Komeichi Lab',
+    photo: facultyKomeichi,
     description: '高齢者の栄養ケアや子ども食堂、地域連携を軸に「エビデンスに基づく公衆栄養実践」を探究。新座市の健康まつり等、地域に根ざした食と健康づくりを実践しています。',
     topic: '子ども食堂を対象とした食・栄養面からの実態把握と支援・食育プログラムの評価を行っています。',
     topicDate: '2026.5',
