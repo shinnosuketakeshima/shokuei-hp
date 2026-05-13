@@ -56,6 +56,11 @@ function formatNewsDate(value) {
   return '';
 }
 
+function isNewsItemTemporarilyHidden(n) {
+  const title = typeof n.title === 'string' ? n.title : ''
+  return title.includes('チーズの王様')
+}
+
 export default function News() {
   const [firestoreNews, setFirestoreNews] = useState([]);
 
@@ -84,12 +89,14 @@ export default function News() {
   }, []);
 
   const allNews = [
-    ...firestoreNews.map(n => ({
-      ...n,
-      date: formatNewsDate(n.date),
-      type: n.type || 'info',
-    })),
-    ...DUMMY_NEWS,
+    ...firestoreNews
+      .filter((n) => !isNewsItemTemporarilyHidden(n))
+      .map(n => ({
+        ...n,
+        date: formatNewsDate(n.date),
+        type: n.type || 'info',
+      })),
+    ...DUMMY_NEWS.filter((n) => !isNewsItemTemporarilyHidden(n)),
   ].sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date));
 
   return (
