@@ -122,9 +122,15 @@ export default function App() {
 
     const meta = PAGE_META[location.pathname]
     if (meta) {
+      const url = `https://shokuei-hp.web.app${location.pathname}`
       document.title = meta.title
-      const descTag = document.querySelector('meta[name="description"]')
-      if (descTag) descTag.content = meta.desc
+      const q = (sel) => document.querySelector(sel)
+      const set = (sel, attr, val) => { const el = q(sel); if (el) el[attr] = val }
+      set('meta[name="description"]', 'content', meta.desc)
+      set('link[rel="canonical"]', 'href', url)
+      set('meta[property="og:url"]', 'content', url)
+      set('meta[property="og:title"]', 'content', meta.title)
+      set('meta[property="og:description"]', 'content', meta.desc)
     }
 
     if (SUB_PATHS.includes(location.pathname)) return
