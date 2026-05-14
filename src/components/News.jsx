@@ -7,6 +7,14 @@ import { Link } from 'react-router-dom';
 
 const DUMMY_NEWS = [
   {
+    id: 'col3',
+    date: '2026.5.13',
+    tag: '学生コラム',
+    type: 'column',
+    title: 'チーズに"王様"と"女王様"がいた！骨の衝撃映像と食育論セミナーレポート',
+    href: '/student-column-3',
+  },
+  {
     id: 'event-0525',
     date: '2026.5.12',
     tag: 'イベント',
@@ -56,11 +64,6 @@ function formatNewsDate(value) {
   return '';
 }
 
-function isNewsItemTemporarilyHidden(n) {
-  const title = typeof n.title === 'string' ? n.title : ''
-  return title.includes('チーズの王様')
-}
-
 export default function News() {
   const [firestoreNews, setFirestoreNews] = useState([]);
 
@@ -89,14 +92,12 @@ export default function News() {
   }, []);
 
   const allNews = [
-    ...firestoreNews
-      .filter((n) => !isNewsItemTemporarilyHidden(n))
-      .map(n => ({
-        ...n,
-        date: formatNewsDate(n.date),
-        type: n.type || 'info',
-      })),
-    ...DUMMY_NEWS.filter((n) => !isNewsItemTemporarilyHidden(n)),
+    ...firestoreNews.map(n => ({
+      ...n,
+      date: formatNewsDate(n.date),
+      type: n.type || 'info',
+    })),
+    ...DUMMY_NEWS,
   ].sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date));
 
   return (

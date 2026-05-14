@@ -19,7 +19,11 @@
       "Bash(Get-ChildItem -Recurse -Path \"C:\\\\GitHub\\\\shokuei-hp\\\\src\" -Include \"*.jsx\",\"*.js\",\"*.css\")",
       "Bash(Select-Object FullName)",
       "Bash(Sort-Object FullName)",
-      "WebFetch(domain:localhost)"
+      "WebFetch(domain:localhost)",
+      "PowerShell(Copy-Item *)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_evaluate"
     ]
   }
 }

@@ -29,6 +29,7 @@ import LabShibasaki from './components/LabShibasaki'
 import LabIwamoto from './components/LabIwamoto'
 import LabOkamoto from './components/LabOkamoto'
 import EventSpecial0525 from './components/EventSpecial0525'
+import StudentColumn3 from './components/StudentColumn3'
 import './App.css'
 
 const PAGE_META = {
@@ -100,13 +101,17 @@ const PAGE_META = {
     title: '管理栄養士探求型イベント(5/25) | 食物栄養学科 | 十文字学園女子大学',
     desc: '食と栄養で未来をデザイン。管理栄養士について考える探求型イベントを5月25日に開催。高校生・保護者参加無料。',
   },
+  '/student-column-3': {
+    title: 'チーズに"王様"と"女王様"がいた！食育論セミナーレポート | 食物栄養学科',
+    desc: '食育論の授業に雪印メグミルク様をお招き。骨の衝撃映像、チーズの王様・女王様エピソード、高タンパク・低糖質の栄養価、試食まで体験した学生記者レポート。',
+  },
 }
 
 const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki', '/lab-iwamoto',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
-  '/student-column-2', '/event-0525',
+  '/student-column-2', '/event-0525', '/student-column-3',
 ]
 
 export default function App() {
@@ -161,6 +166,7 @@ export default function App() {
           <Route path="/student-column-1" element={<StudentColumn1 />} />
           <Route path="/student-column-2" element={<StudentColumn2 />} />
           <Route path="/event-0525" element={<EventSpecial0525 />} />
+          <Route path="/student-column-3" element={<StudentColumn3 />} />
           <Route path="/" element={
             <>
               <Hero />

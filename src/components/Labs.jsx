@@ -19,7 +19,7 @@ const LABS = [
     name: '新倉量太先生の研究室',
     nameEn: 'G1 Lab',
     photo: facultyNiikura,
-    photoPosition: 'center center',
+    photoFit: 'contain',
     description: '消化管出血・消化管発がん・腸内マイクロバイオームを主な研究テーマに、コホート研究や無作為化比較試験などの大規模臨床研究を展開。機械学習・AIを内視鏡診断へ応用するなど、臨床と先端データサイエンスを融合した研究室です。',
     topic: '腸内マイクロバイオームと食習慣の関係についての論文を国際誌に投稿しました。',
     topicDate: '2025.4',
@@ -42,6 +42,7 @@ const LABS = [
     name: '國井大輔先生の研究室',
     nameEn: 'Kunii Lab',
     photo: facultyKunii,
+    photoPosition: 'center 30%',
     description: '「栄養管理をもっと身近に！」をスローガンに、公衆栄養学・実践食事学を軸として地域・企業・海外と連携する研究室。学生主体の商品開発や社会連携プロジェクトを展開しています。',
     topic: '地域の高齢者向け栄養改善プログラムの効果検証を進めています。',
     topicDate: '2025.5',
@@ -75,7 +76,7 @@ const LABS = [
     name: '鴨下澄子先生の研究室',
     nameEn: 'Kamoshita Lab',
     photo: facultyKamoshita,
-    photoPosition: 'center center',
+    photoFit: 'contain',
     description: '加工大豆食品やテンペの研究を通じて、食物繊維摂取の向上と健康維持を探求。若年層の食育や食行動変容の評価など、実践的な社会・高大連携活動にも力を入れています。',
     topic: '駒場学園高等学校との高大連携プロジェクト「自分たちの青春に健康プラスワン」を展開中。',
     topicDate: '2025.10',
@@ -109,7 +110,7 @@ const LABS = [
     name: '古明地夕佳先生の研究室',
     nameEn: 'Komeichi Lab',
     photo: facultyKomeichi,
-    photoPosition: 'center center',
+    photoFit: 'contain',
     description: '高齢者の栄養ケアや子ども食堂、地域連携を軸に「エビデンスに基づく公衆栄養実践」を探究。新座市の健康まつり等、地域に根ざした食と健康づくりを実践しています。',
     topic: '子ども食堂を対象とした食・栄養面からの実態把握と支援・食育プログラムの評価を行っています。',
     topicDate: '2026.5',
@@ -132,7 +133,7 @@ const LABS = [
     name: '岩本珠美先生の研究室',
     nameEn: 'Iwamoto Lab',
     photo: facultyIwamoto,
-    photoPosition: 'center center',
+    photoFit: 'contain',
     description: '食品生化学・食品免疫学を専門に、動脈硬化性疾患予防のための食事療法を研究。うま味成分による減塩支援やポリフェノールの機能性解析など、食品成分から生活習慣病予防を科学します。',
     topic: 'うま味調味料を活用した郷土料理コンテストに学生と参加し、地域食材×減塩レシピの開発に取り組んでいます。',
     topicDate: '2026.5',
@@ -144,7 +145,7 @@ const LABS = [
     name: '岡本節子先生の研究室',
     nameEn: 'Okamoto Lab',
     photo: facultyOkamoto,
-    photoPosition: 'center center',
+    photoFit: 'contain',
     description: '地域在住高齢者のサルコペニア予防から介護施設の栄養ケア・マネジメントまで、超高齢社会の食と健康に正面から向き合う研究室。新調理システムの評価や高齢者向けレシピ開発など、現場と連携した研究が特徴です。',
     topic: '新座市社会福祉協議会の調理ボランティア向けレシピ集に、高齢者向けメニューを監修・提供しました。',
     topicDate: '2026.5',
@@ -186,7 +187,10 @@ export default function Labs() {
                     src={lab.photo}
                     alt={lab.name}
                     decoding="async"
-                    style={lab.photoPosition ? { objectPosition: lab.photoPosition } : undefined}
+                    style={{
+                      ...(lab.photoFit ? { objectFit: lab.photoFit } : {}),
+                      ...(lab.photoPosition ? { objectPosition: lab.photoPosition } : {}),
+                    }}
                   />
                 ) : (
                   <div className="lab-card-new__photo-placeholder">

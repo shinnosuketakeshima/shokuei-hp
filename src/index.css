@@ -1815,6 +1815,49 @@ body {
   }
 }
 
+.column-figure {
+  margin: 2rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.column-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.column-figure__caption {
+  font-size: 12px;
+  color: var(--stone-light);
+  text-align: center;
+  padding: 10px 16px;
+  background: var(--cream);
+  letter-spacing: 0.06em;
+}
+
+.column-memo {
+  background: var(--terracotta-10);
+  border-left: 4px solid var(--terracotta);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 2rem 0;
+}
+.column-memo__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 10px;
+}
+.column-memo p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--stone);
+  margin: 0;
+}
+
 .table-responsive {
   overflow-x: auto;
   margin-bottom: 1.5em;

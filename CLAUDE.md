@@ -45,6 +45,7 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/student-column-1` | `StudentColumn1` |
 | `/student-column-2` | `StudentColumn2` |
 | `/event-0525` | `EventSpecial0525` |
+| `/student-column-3` | `StudentColumn3` |
 
 `Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except `/`).
 
@@ -73,10 +74,10 @@ For **content pages** (student columns, event pages, etc.), create the component
 ### News: Firestore + static dummy items
 
 `News.jsx` merges two sources:
-1. **Firestore** — `news` collection, sorted by `date` desc. Falls back to unordered query if the composite index is missing. Firestore items appear first.
-2. **`DUMMY_NEWS` array** (static, in `News.jsx`) — editorial/blog-style articles that always render below Firestore items.
+1. **Firestore** — `news` collection. Falls back to unordered query if the composite index is missing.
+2. **`DUMMY_NEWS` array** (static, in `News.jsx`) — editorial/blog-style articles with internal `href` links (e.g. `/student-column-3`).
 
-Firestore date values can be a `Timestamp`, a `Date`, or a string — `formatNewsDate()` handles all three. The `type` field on each news item maps to a `news-tag--{type}` CSS class; valid types are `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`.
+Both sources are merged and re-sorted by date descending (`newsDateMillis()`) before render. Firestore `date` values can be a `Timestamp`, a `Date`, or a string — `formatNewsDate()` normalises all three to `YYYY.MM.DD`. The `type` field maps to a `news-tag--{type}` CSS class; valid types are `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`. To temporarily suppress a specific item from both sources, add its title pattern to `isNewsItemTemporarilyHidden()` in `News.jsx`.
 
 ### Firestore / Firebase
 
