@@ -138,7 +138,7 @@ const LABS = [
     topic: 'うま味調味料を活用した郷土料理コンテストに学生と参加し、地域食材×減塩レシピの開発に取り組んでいます。',
     topicDate: '2026.5',
     href: '/lab-iwamoto',
-    blogHref: '/lab-iwamoto',
+    blogHref: null,
     isExternal: false,
   },
   {
@@ -205,7 +205,7 @@ export default function Labs() {
                   <span className="lab-card-new__topic-date">{lab.topicDate}</span>
                   <span className="lab-card-new__topic-text">{lab.topic}</span>
                 </div>
-                {lab.isExternal ? (
+                {lab.blogHref && (lab.isExternal ? (
                   <a
                     href={lab.blogHref}
                     className="lab-card-new__blog-link"
@@ -218,7 +218,7 @@ export default function Labs() {
                   <Link to={lab.blogHref} className="lab-card-new__blog-link">
                     研究室を見る <ArrowRight size={13} />
                   </Link>
-                )}
+                ))}
               </div>
             </motion.div>
           ))}

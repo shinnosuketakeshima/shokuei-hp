@@ -73,10 +73,6 @@ const PAGE_META = {
     title: '芝崎研究室 | 食物栄養学科 | 十文字学園女子大学',
     desc: '芝崎本実先生の研究室。和菓子職人としての経験と調理科学を融合し、郷土菓子の科学的解明に取り組みます。',
   },
-  '/lab-iwamoto': {
-    title: '岩本研究室 | 食物栄養学科 | 十文字学園女子大学',
-    desc: '岩本珠美先生の研究室。食品生化学・食品免疫学を専門に動脈硬化性疾患予防のための食事療法を研究します。',
-  },
   '/lab-okamoto': {
     title: '岡本研究室 | 食物栄養学科 | 十文字学園女子大学',
     desc: '岡本節子先生の研究室。高齢者のサルコペニア予防から介護施設の栄養ケアまで超高齢社会の食と健康に向き合います。',
@@ -109,7 +105,7 @@ const PAGE_META = {
 
 const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
-  '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki', '/lab-iwamoto',
+  '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/student-column-2', '/event-0525', '/student-column-3',
 ]
@@ -165,7 +161,6 @@ export default function App() {
           <Route path="/lab-komeichi" element={<LabKomeichi />} />
           <Route path="/lab-nakaoka" element={<LabNakaoka />} />
           <Route path="/lab-shibasaki" element={<LabShibasaki />} />
-          <Route path="/lab-iwamoto" element={<LabIwamoto />} />
           <Route path="/lab-okamoto" element={<LabOkamoto />} />
           <Route path="/koudai-project" element={<KoudaiProject />} />
           <Route path="/kokushi-report" element={<KokushiReport />} />
