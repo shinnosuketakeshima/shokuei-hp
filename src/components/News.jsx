@@ -7,6 +7,14 @@ import { Link } from 'react-router-dom';
 
 const DUMMY_NEWS = [
   {
+    id: 'kamiyama-sa-report',
+    date: '2026.5.15',
+    tag: '教員コラム',
+    type: 'column',
+    title: '先輩が授業をサポート！総合科目「いちから学ぶnutrition science」SAレポート',
+    href: '/lab-kamiyama-report',
+  },
+  {
     id: 'col3',
     date: '2026.5.13',
     tag: '学生コラム',
