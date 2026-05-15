@@ -38,7 +38,6 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/lab-komeichi` | `LabKomeichi` |
 | `/lab-nakaoka` | `LabNakaoka` |
 | `/lab-shibasaki` | `LabShibasaki` |
-| `/lab-iwamoto` | `LabIwamoto` |
 | `/lab-okamoto` | `LabOkamoto` |
 | `/koudai-project` | `KoudaiProject` |
 | `/kokushi-report` | `KokushiReport` |
@@ -70,6 +69,8 @@ Three places in `App.jsx` must all be updated together for any new route:
 For **lab pages**, also update **`Labs.jsx`** (`LABS` array) to add the card, and create `src/components/LabXxx.jsx` using the `.lab-page` / `.lab-section` CSS classes.
 
 For **content pages** (student columns, event pages, etc.), create the component directly and skip the Labs step.
+
+**Suspended lab pages**: `LabIwamoto.jsx` exists and is still imported in `App.jsx`, but has no active route (card removed from `Labs.jsx`, route removed from `App.jsx`, per recent commits). To re-enable, add it back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and re-add the card to the `LABS` array in `Labs.jsx`.
 
 ### News: Firestore + static dummy items
 
@@ -108,7 +109,7 @@ Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg` (e.g. `takesh
 
 ### Labs section
 
-`Labs.jsx` renders a card grid (`.labs-grid-new` / `.lab-card-new`) for all 12 labs. Each entry in the `LABS` array requires these fields:
+`Labs.jsx` renders a card grid (`.labs-grid-new` / `.lab-card-new`) for all active labs (currently 10; `LabIwamoto` is suspended and its card has been removed). Each entry in the `LABS` array requires these fields:
 
 ```js
 {
