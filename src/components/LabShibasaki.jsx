@@ -110,7 +110,7 @@ export default function LabShibasaki() {
                   <h3 className="m-0">主な著書</h3>
                 </div>
                 <p>
-                  『究極のあんこを炊く』（日本栄養大学出版部）<br />
+                  『究極のあんこを炊く 職人技と調理科学の融合』（女子栄養大学出版部）<br />
                   『あんこのことがすべてわかる本』（監修）<br />
                   『おだんご先生のおいしい 手作り和菓子』四季シリーズ
                 </p>
@@ -189,7 +189,6 @@ export default function LabShibasaki() {
                   <h4 className="text-charcoal font-medium text-sm mb-2 border-l-2 border-terracotta pl-2">職歴</h4>
                   <ul className="text-xs space-y-1 list-none p-0">
                     <li>十文字学園女子大学 准教授（現職）</li>
-                    <li>十文字学園女子大学 専任講師</li>
                     <li>農研機構 食品研究部門 依頼研究員</li>
                     <li>帝京平成大学 健康栄養学科 助教</li>
                   </ul>
