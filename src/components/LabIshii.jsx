@@ -98,31 +98,12 @@ export default function LabIshii() {
               {[
                 {
                   title: "粉末さらしあんの洋菓子への利用",
-                  body: "さらしあん（あんこの原料となる小豆粉末）はグルテンフリー食材です。粉末さらしあんを使ったクッキーの調理特性を調べ、破断特性（硬さ・もろさ）と粒子構造の関連を解析しています。膨化食品としてのクッキーのおいしさを科学的に探ります。"
+                  body: "さらしあん（乾燥白あんの粉末）はグルテンフリー食材です。粉末さらしあんを使ったクッキーの調理特性を調べ、破断特性（硬さ・もろさ）と粒子構造の関連を解析しています。膨化食品としてのクッキーのおいしさを科学的に探ります。"
                 },
                 {
                   title: "牛肉の物理的特性とおいしさ",
-                  body: "牛肉のおいしさを決めている要因は何か。官能評価と物性測定を組み合わせて、焼き方や熟成・部位の違いが食感・風味に与える影響を探究しています。"
-                }
-              ].map((card, i) => (
-                <motion.div
-                  key={i}
-                  className="lab-section__card"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                >
-                  <h3>{card.title}</h3>
-                  <p>{card.body}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* 今後のテーマ（PPTより） */}
-            <h3 className="lab-subsection__title" style={{ marginTop: '2em' }}>これから取り組むテーマ</h3>
-            <div className="lab-section__grid" style={{ marginTop: '12px' }}>
-              {[
+                  body: "牛肉の科学的な分析データと官能評価、物性測定を組み合わせて、牛肉のおいしさを決めている要因は何かを探求しています。"
+                },
                 {
                   title: "乳幼児食の物理特性基準化（窒息事故予防）",
                   body: "乳幼児の窒息事故予防のための基準づくりを目指し、乳幼児食の物性測定と官能評価を実施します。「安全に食べられる食品の硬さや形状の基準」を探索する、3年間のプロジェクトです。"
