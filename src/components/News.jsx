@@ -5,7 +5,7 @@ import { db } from '../firebase.js';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const DUMMY_NEWS = [
+export const DUMMY_NEWS = [
   {
     id: 'kamiyama-sa-report',
     date: '2026.5.15',
@@ -48,7 +48,7 @@ const DUMMY_NEWS = [
   },
 ]
 
-function newsDateMillis(value) {
+export function newsDateMillis(value) {
   if (value == null) return 0;
   if (typeof value.toMillis === 'function') return value.toMillis();
   if (value instanceof Date) return value.getTime();
@@ -59,7 +59,7 @@ function newsDateMillis(value) {
   return 0;
 }
 
-function formatNewsDate(value) {
+export function formatNewsDate(value) {
   if (value == null) return '';
   if (typeof value.toDate === 'function') {
     const d = value.toDate();
@@ -121,9 +121,9 @@ export default function News() {
           >
             <p className="eyebrow">お知らせ / ブログ</p>
             <h2 className="section-title">新着情報</h2>
-            <a href="/" className="news__more">
+            <Link to="/news" className="news__more">
               一覧へ <ArrowRight size={13} />
-            </a>
+            </Link>
           </motion.div>
 
           <motion.ul 

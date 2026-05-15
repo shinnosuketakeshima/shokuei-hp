@@ -31,6 +31,7 @@ import LabOkamoto from './components/LabOkamoto'
 import EventSpecial0525 from './components/EventSpecial0525'
 import StudentColumn3 from './components/StudentColumn3'
 import LabKamiyamaReport from './components/LabKamiyamaReport'
+import NewsArchive from './components/NewsArchive'
 import './App.css'
 
 const PAGE_META = {
@@ -92,7 +93,7 @@ const PAGE_META = {
   },
   '/student-column-2': {
     title: '学生コラム | 食物栄養学科 | 十文字学園女子大学',
-    desc: '健康×SNS映え！竹嶋ゼミ・芝崎ゼミの「機能性和洋菓子」開発会議に潜入取材！',
+    desc: '健康×SNS映え！竹嶋ゼミ・芝崎ゼミの「機能性と洋菓子」開発会議に潜入取材！',
   },
   '/event-0525': {
     title: '管理栄養士探求型イベント(5/25) | 食物栄養学科 | 十文字学園女子大学',
@@ -106,6 +107,10 @@ const PAGE_META = {
     title: '「いちから学ぶnutrition science」SAレポート | 食物栄養学科',
     desc: '総合科目「いちから学ぶnutrition science」での神山ゼミ生によるSA活動レポート。アクティブラーニング形式の授業の様子や学生の成長を伝えます。',
   },
+  '/news': {
+    title: '新着情報・コラム一覧 | 食物栄養学科 | 十文字学園女子大学',
+    desc: '食物栄養学科の最新ニュース、学生コラム、教員コラムの一覧です。食と栄養の最前線をお届けします。',
+  },
 }
 
 const SUB_PATHS = [
@@ -113,6 +118,7 @@ const SUB_PATHS = [
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/student-column-2', '/event-0525', '/student-column-3', '/lab-kamiyama-report',
+  '/news',
 ]
 
 export default function App() {
@@ -174,6 +180,7 @@ export default function App() {
           <Route path="/event-0525" element={<EventSpecial0525 />} />
           <Route path="/student-column-3" element={<StudentColumn3 />} />
           <Route path="/lab-kamiyama-report" element={<LabKamiyamaReport />} />
+          <Route path="/news" element={<NewsArchive />} />
           <Route path="/" element={
             <>
               <Hero />
