@@ -30,6 +30,7 @@ import LabIwamoto from './components/LabIwamoto'
 import LabOkamoto from './components/LabOkamoto'
 import EventSpecial0525 from './components/EventSpecial0525'
 import StudentColumn3 from './components/StudentColumn3'
+import LabKamiyamaReport from './components/LabKamiyamaReport'
 import './App.css'
 
 const PAGE_META = {
@@ -87,7 +88,7 @@ const PAGE_META = {
   },
   '/student-column-1': {
     title: '学生コラム | 食物栄養学科 | 十文字学園女子大学',
-    desc: '管理栄養士の卵たちのリアルな裏事情。白衣の「三権分立」とは？',
+    desc: '管理栄養士の卵たちのリアルな裏事情。白衣의 「三権分立」とは？',
   },
   '/student-column-2': {
     title: '学生コラム | 食物栄養学科 | 十文字学園女子大学',
@@ -111,7 +112,7 @@ const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
-  '/student-column-2', '/event-0525', '/student-column-3',
+  '/student-column-2', '/event-0525', '/student-column-3', '/lab-kamiyama-report',
 ]
 
 export default function App() {
@@ -172,6 +173,7 @@ export default function App() {
           <Route path="/student-column-2" element={<StudentColumn2 />} />
           <Route path="/event-0525" element={<EventSpecial0525 />} />
           <Route path="/student-column-3" element={<StudentColumn3 />} />
+          <Route path="/lab-kamiyama-report" element={<LabKamiyamaReport />} />
           <Route path="/" element={
             <>
               <Hero />
