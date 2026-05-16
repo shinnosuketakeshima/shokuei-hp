@@ -96,6 +96,7 @@ const LABS = [
     name: '石井和美先生の研究室',
     nameEn: 'Ishii Lab',
     photo: facultyIshii,
+    photoFilter: 'contrast(1.15) brightness(0.9) saturate(1.2)', // 白飛びを抑え、髪の毛のディテールを出す
     description: '膨化食品の物性と雑穀粉を使ったグルテンフリーパンの開発を軸に、アレルギー対応レシピの考案にも取り組む研究室。「データでおいしさを解き明かす」調理科学を実践します。',
     topic: 'キヌア粉を用いたグルテンフリーパンの開発と、その物性評価に関する研究を進めています。',
     topicDate: '2026.5',
@@ -170,6 +171,9 @@ export default function Labs() {
                     src={lab.photo}
                     alt={lab.name}
                     decoding="async"
+                    style={{
+                      filter: lab.photoFilter || 'none'
+                    }}
                   />
                 ) : (
                   <div className="lab-card-new__photo-placeholder">
