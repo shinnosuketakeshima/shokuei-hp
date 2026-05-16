@@ -1367,10 +1367,11 @@ body {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  background: #fafafa;
+  background: #fdfdfd; /* より白に近い、わずかな温かみ */
   display: block;
   transition: transform 0.6s ease;
-  padding: 8%; /* 写真を少し小さく表示して「ひいた」印象にする */
+  padding: 6%; /* paddingを少し減らして、解像度低下を防ぐ */
+  image-rendering: -webkit-optimize-contrast; /* コントラストを強調して「かすみ」を軽減 */
 }
 
 .lab-card-new:hover .lab-card-new__photo-img {
