@@ -19,7 +19,6 @@ const LABS = [
     name: '新倉量太先生の研究室',
     nameEn: 'G1 Lab',
     photo: facultyNiikura,
-    photoPosition: 'center 20%',
     description: '消化管出血・消化管発がん・腸内マイクロバイオームを主な研究テーマに、コホート研究や無作為化比較試験などの大規模臨床研究を展開。機械学習・AIを内視鏡診断へ応用するなど、臨床と先端データサイエンスを融合した研究室です。',
     topic: '腸内マイクロバイオームと食習慣の関係についての論文を国際誌に投稿しました。',
     topicDate: '2025.4',
@@ -31,7 +30,6 @@ const LABS = [
     name: '竹嶋伸之輔先生の研究室',
     nameEn: 'Takeshima Lab',
     photo: facultyTakeshima,
-    photoPosition: 'center 15%',
     description: 'ウシ伝染性リンパ腫ウイルス(BLV)と宿主遺伝子(BoLA)の関係から、家畜の健康と人の食を守る研究室。遺伝子解析、高感度検査法、ワクチン開発を通じて、One Healthに貢献します。',
     topic: '学生とともに、BLV感染牛の遺伝子型解析データを学会で発表しました。',
     topicDate: '2025.3',
@@ -43,7 +41,6 @@ const LABS = [
     name: '國井大輔先生の研究室',
     nameEn: 'Kunii Lab',
     photo: facultyKunii,
-    photoPosition: 'center 25%',
     description: '「栄養管理技術の社会還元」を掲げ、専門性を活かした商品開発や実践教育プログラムの開発に取り組む研究室。実社会で通用する「実践技術・考え方」の習得を目指し、企業や地域との社会実装を推進しています。',
     topic: '企業と連携した「プラスちゃんナッツ」の共同開発や、地域の名店との「すったて」うどんコラボを展開中です。',
     topicDate: '2026.5',
@@ -55,7 +52,6 @@ const LABS = [
     name: '飯村九林先生の研究室',
     nameEn: 'Iimura Lab',
     photo: facultyIimura,
-    photoPosition: 'center 20%',
     description: '小型魚類（ゼブラフィッシュ・金魚）を研究モデルに、鱗・皮膚の再生メカニズム、ヒアルロン酸の老化機構、紫外線による光老化を解析。食品成分の生体への作用を分子レベルで探る研究室です。',
     topic: '鱗再生モデルを用いたヒアルロン酸の局在・機能解析と、紫外線が石灰化に与える影響を研究中です。',
     topicDate: '2026.5',
@@ -67,7 +63,6 @@ const LABS = [
     name: '神山真澄先生の研究室',
     nameEn: 'Kamiyama Lab',
     photo: facultyKamiyama,
-    photoPosition: 'center 20%',
     description: '味噌・大豆・玉ねぎなどのポリフェノールや機能性成分を解析し、生活習慣病予防を科学的根拠に基づいて探究。「おいしい」を入口に「健康」と「安心な暮らし」を追究する研究室です。',
     topic: 'エイジェックファームとの連携で、熟成黒たまねぎマフィン「くろたまフィン」を開発しました。',
     topicDate: '2026.5',
@@ -79,7 +74,6 @@ const LABS = [
     name: '鴨下澄子先生の研究室',
     nameEn: 'Kamoshita Lab',
     photo: facultyKamoshita,
-    photoFit: 'contain',
     description: 'テンペ・オートミール・おから・ひよこ豆粉など、健康増進が期待できる食品を使った料理を試作し、被験者によるおいしさの評価を繰り返す研究室。「健康によいものを、おいしく続けられる」を科学的に追究します。',
     topic: '食物繊維豊富なテンペやおからを使ったレシピを開発し、被験者を対象においしさを評価・分析しています。',
     topicDate: '2025.10',
@@ -91,7 +85,6 @@ const LABS = [
     name: '芝崎本実先生の研究室',
     nameEn: 'Shibasaki Lab',
     photo: facultyShibasaki,
-    photoPosition: 'center 20%',
     description: '和菓子職人としての経験 and 調理科学を融合させ、郷土菓子やあんこ、おだんごの「おいしさ」を科学的に解明。伝統文化を次世代につなぐ研究室です。',
     topic: 'TBS「マツコの知らない世界」に出演。みたらし団子の魅力を調理科学の視点から解説しました。',
     topicDate: '2026.5',
@@ -103,7 +96,6 @@ const LABS = [
     name: '石井和美先生の研究室',
     nameEn: 'Ishii Lab',
     photo: facultyIshii,
-    photoPosition: 'center 20%',
     description: '膨化食品の物性と雑穀粉を使ったグルテンフリーパンの開発を軸に、アレルギー対応レシピの考案にも取り組む研究室。「データでおいしさを解き明かす」調理科学を実践します。',
     topic: 'キヌア粉を用いたグルテンフリーパンの開発と、その物性評価に関する研究を進めています。',
     topicDate: '2026.5',
@@ -115,7 +107,6 @@ const LABS = [
     name: '古明地夕佳先生の研究室',
     nameEn: 'Komeichi Lab',
     photo: facultyKomeichi,
-    photoFit: 'contain',
     description: '高齢者の栄養ケアや子ども食堂、地域連携を軸に「エビデンスに基づく公衆栄養実践」を探究。新座市の健康まつり等、地域に根ざした食と健康づくりを実践しています。',
     topic: '子ども食堂を対象とした食・栄養面からの実態把握と支援・食育プログラムの評価を行っています。',
     topicDate: '2026.5',
@@ -127,7 +118,6 @@ const LABS = [
     name: '中岡加奈絵先生の研究室',
     nameEn: 'Nakaoka Lab',
     photo: facultyNakaoka,
-    photoPosition: 'center 20%',
     description: '子どもの食生活・食育や応用栄養学が専門。成長期の骨量・体力、家族との共食、社会的ジェットラグなど、日常生活に根ざした研究と地域での実践に取り組んでいます。',
     topic: '地域社会と連携し、「砂糖のひみつを科学で解き明かす！」ワークショップを開催しました。',
     topicDate: '2026.5',
@@ -139,7 +129,6 @@ const LABS = [
     name: '岡本節子先生の研究室',
     nameEn: 'Okamoto Lab',
     photo: facultyOkamoto,
-    photoFit: 'contain',
     description: '地域在住高齢者のサルコペニア・フレイル予防から介護施設の栄養ケア・マネジメントまで、超高齢社会の食と健康に正面から向き合う研究室。高齢者向けレシピ開発など、現場と連携した研究が特徴です。',
     topic: '新座市社会福祉協議会の調理ボランティア向けレシピ集に、高齢者向けメニューを監修・提供しました。',
     topicDate: '2026.5',
@@ -181,10 +170,6 @@ export default function Labs() {
                     src={lab.photo}
                     alt={lab.name}
                     decoding="async"
-                    style={{
-                      ...(lab.photoFit ? { objectFit: lab.photoFit } : {}),
-                      ...(lab.photoPosition ? { objectPosition: lab.photoPosition } : {}),
-                    }}
                   />
                 ) : (
                   <div className="lab-card-new__photo-placeholder">
@@ -221,4 +206,3 @@ export default function Labs() {
     </section>
   )
 }
-
