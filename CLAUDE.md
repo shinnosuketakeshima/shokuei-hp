@@ -45,6 +45,8 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/student-column-2` | `StudentColumn2` |
 | `/event-0525` | `EventSpecial0525` |
 | `/student-column-3` | `StudentColumn3` |
+| `/lab-kamiyama-report` | `LabKamiyamaReport` |
+| `/news` | `NewsArchive` |
 
 `Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except `/`).
 
@@ -71,6 +73,10 @@ For **lab pages**, also update **`Labs.jsx`** (`LABS` array) to add the card, an
 For **content pages** (student columns, event pages, etc.), create the component directly and skip the Labs step.
 
 **Suspended lab pages**: `LabIwamoto.jsx` exists and is still imported in `App.jsx`, but has no active route (card removed from `Labs.jsx`, route removed from `App.jsx`, per recent commits). To re-enable, add it back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and re-add the card to the `LABS` array in `Labs.jsx`.
+
+**Report/archive pages with routes but no Labs card**: `LabKamiyamaReport` (`/lab-kamiyama-report`) and `NewsArchive` (`/news`) have active routes but are not linked from the Labs card grid — they are linked from within other content (e.g. news items, lab pages).
+
+`NewsArchive` shares `DUMMY_NEWS`, `newsDateMillis`, and `formatNewsDate` from `News.jsx` (exported from that file). It renders the same merged Firestore + static dataset with category filter tabs.
 
 ### News: Firestore + static dummy items
 
@@ -105,7 +111,11 @@ Static images live directly in `src/` and are imported by the components that us
 | `src/kuwanoha.jpg` | `CampusLife.jsx` |
 | `src/kokushi.png` | `CampusLife.jsx` |
 
-Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg` (e.g. `takeshima.jpg`) and are imported in `Labs.jsx` for the lab cards. Add a new file there when adding a new lab entry.
+Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg` (e.g. `takeshima.jpg`) and are imported in `Labs.jsx` for the lab cards. Add a new file there when adding a new lab entry. `src/faculty/niikura.jpg` exists but has no corresponding lab component yet — it is a placeholder for a future entry.
+
+### Working materials
+
+`docs/` is a non-deployed working directory containing reference images, design documents, source PDFs, and draft component files (e.g. `LabShibasaki_perplexity.jsx`, `design.md`). Files here are not served by Vite or Firebase; they are scratch/source assets used during development. Do not import from `docs/` in application code — copy assets to `src/` first.
 
 ### Labs section
 
