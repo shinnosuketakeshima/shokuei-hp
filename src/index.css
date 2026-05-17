@@ -2431,3 +2431,161 @@ body {
   .event-program__item { flex-direction: column; gap: 12px; }
   .event-program__number { width: 32px; height: 32px; font-size: 15px; }
 }
+
+/* ==========================================================
+   KokushiReport.jsx ── 追加・更新 CSS
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Section 01: 冒頭リード用 honest-box バリアント
+   ---------------------------------------------------------- */
+.kr-honest-box--lead {
+  background: transparent;
+  border-left: 3px solid var(--terracotta);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: var(--stone);
+  line-height: 1.75;
+}
+
+/* ----------------------------------------------------------
+   Section 04: ワークグループブロック
+   ---------------------------------------------------------- */
+.kr-wg-block {
+  background: var(--cream-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin: 2.5rem 0;
+  position: relative;
+}
+
+.kr-wg-block__badge {
+  display: inline-block;
+  background: var(--terracotta);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.kr-wg-block__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.kr-wg-block__body {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--stone);
+  margin-bottom: 1.5rem;
+}
+
+.kr-wg-block__body strong {
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+/* ワークグループ 3本柱 */
+.kr-wg-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 680px) {
+  .kr-wg-pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kr-wg-pillar {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.kr-wg-pillar__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.kr-wg-pillar__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  letter-spacing: 0.03em;
+}
+
+.kr-wg-pillar__desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--stone);
+}
+
+/* ----------------------------------------------------------
+   Section 05: 学生の成長カード（新規）
+   ---------------------------------------------------------- */
+.kr-section--students {
+  background: var(--cream-alt);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin-top: 0.5rem;
+}
+
+.kr-student-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .kr-student-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kr-student-card {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.kr-student-card__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--terracotta);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.2em 0.7em;
+  width: fit-content;
+}
+
+.kr-student-card__text {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--stone);
+  margin: 0;
+}
+
