@@ -64,10 +64,11 @@ export default function EventSpecial0525() {
           {/* キャッチコピー */}
           <motion.section className="lab-section" {...fadeUp(0.1)}>
             <div className="event-catch">
-              <p className="event-catch__label">総合型選抜対策にもピッタリ！</p>
+              <p className="event-catch__label">総合型選抜・学校推薦型選抜対策に！</p>
               <p className="lab-section__body">
-                正解を求めるのではなく、議論を通じて新しい視点を発見する探求型イベントです。
-                管理栄養士の多様な活躍について学びながら、食と栄養の力で幸せな未来を築く方法を一緒に考えてみましょう！
+                昨年も多くの高校生が参加し、進路決定や入試準備に活用した大好評のイベントです。
+                管理栄養士の多様な活躍について学びながら、自分自身の未来をデザインしてみませんか？
+                面接や小論文のヒントも満載の内容でお届けします！
               </p>
             </div>
           </motion.section>
@@ -79,30 +80,31 @@ export default function EventSpecial0525() {
               <div className="event-program__item">
                 <div className="event-program__number">1</div>
                 <div className="event-program__body">
-                  <h3 className="event-program__title">管理栄養士の仕事を知る！</h3>
+                  <h3 className="event-program__title">管理栄養士の活躍を知る！</h3>
                   <p className="event-program__desc">
-                    病院・学校・企業・行政など、多彩なフィールドで活躍する管理栄養士の仕事をわかりやすく紹介します。
-                    「管理栄養士って何をするの？」という疑問をこのセッションで解消しましょう。
+                    病院・学校・企業・行政など、多彩なフィールドで活躍する管理栄養士の「今」をわかりやすく紹介します。
+                    「管理栄養士って何をするの？」という基本から、意外な活躍の場まで、最新のキャリア像を提示します。
                   </p>
                 </div>
               </div>
               <div className="event-program__item">
                 <div className="event-program__number">2</div>
                 <div className="event-program__body">
-                  <h3 className="event-program__title">グループワークで深堀り！</h3>
+                  <h3 className="event-program__title">管理栄養士の未来を考える！</h3>
                   <p className="event-program__desc">
-                    参加者同士でディスカッション。「食と栄養で社会をどう変えられるか」を自由に語り合います。
-                    正解はありません。あなたの考えを聞かせてください。
+                    食と栄養の力で、社会をどう幸せに変えられるか。
+                    これからの時代に求められる管理栄養士の役割や、食の未来について一緒に考えてみましょう。
+                    自分の考えを整理するプロセスが、そのまま入試対策にもつながります。
                   </p>
                 </div>
               </div>
               <div className="event-program__item">
                 <div className="event-program__number">3</div>
                 <div className="event-program__body">
-                  <h3 className="event-program__title">現場経験者からのコメント！</h3>
+                  <h3 className="event-program__title">入試に役立つヒントが満載！</h3>
                   <p className="event-program__desc">
-                    実際の現場を知る管理栄養士・教員がグループワークにコメントします。
-                    リアルな経験談から、未来のキャリアのヒントをつかみましょう。
+                    イベントを通じて得られる気づきは、面接での受け答えや小論文のテーマ設定にそのまま活かせる貴重な素材になります。
+                    食物栄養学科での学びの深さを体感しながら、自信を持って入試に臨める準備を始めましょう。
                   </p>
                 </div>
               </div>
@@ -118,8 +120,8 @@ export default function EventSpecial0525() {
                 <p>管理栄養士という仕事に少しでも興味があれば大歓迎。まずは「知る」ところから始めましょう。</p>
               </div>
               <div className="lab-section__card">
-                <h3>総合型選抜を検討している方</h3>
-                <p>グループワークや議論の経験は総合型選抜対策に直結します。本番さながらの雰囲気を体験できます。</p>
+                <h3>面接・小論文対策をしたい方</h3>
+                <p>管理栄養士の専門性や社会貢献について深く考える経験は、入試のあらゆる場面であなたの強みになります。</p>
               </div>
               <div className="lab-section__card">
                 <h3>保護者の方</h3>
