@@ -95,9 +95,9 @@ const PAGE_META = {
     title: '学生コラム | 食物栄養学科 | 十文字学園女子大学',
     desc: '健康×SNS映え！竹嶋ゼミ・芝崎ゼミの「機能性と洋菓子」開発会議に潜入取材！',
   },
-  '/event-0525': {
-    title: '管理栄養士探求型イベント(5/25) | 食物栄養学科 | 十文字学園女子大学',
-    desc: '食と栄養で未来をデザイン。管理栄養士について考える探求型イベントを5月25日に開催。高校生・保護者参加無料。',
+  '/event-0531': {
+    title: '管理栄養士探求型イベント(5/31) | 食物栄養学科 | 十文字学園女子大学',
+    desc: '食と栄養で未来をデザイン。管理栄養士について考える探求型イベントを5月31日に開催。高校生・保護者参加無料。',
   },
   '/student-column-3': {
     title: 'チーズに"王様"と"女王様"がいた！食育論セミナーレポート | 食物栄養学科',
@@ -117,7 +117,7 @@ const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
-  '/student-column-2', '/event-0525', '/student-column-3', '/lab-kamiyama-report',
+  '/student-column-2', '/event-0531', '/student-column-3', '/lab-kamiyama-report',
   '/news',
 ]
 
@@ -177,7 +177,7 @@ export default function App() {
           <Route path="/kokushi-report" element={<KokushiReport />} />
           <Route path="/student-column-1" element={<StudentColumn1 />} />
           <Route path="/student-column-2" element={<StudentColumn2 />} />
-          <Route path="/event-0525" element={<EventSpecial0525 />} />
+          <Route path="/event-0531" element={<EventSpecial0525 />} />
           <Route path="/student-column-3" element={<StudentColumn3 />} />
           <Route path="/lab-kamiyama-report" element={<LabKamiyamaReport />} />
           <Route path="/news" element={<NewsArchive />} />

@@ -23,12 +23,12 @@ export const DUMMY_NEWS = [
     href: '/student-column-3',
   },
   {
-    id: 'event-0525',
-    date: '2026.5.12',
+    id: 'event-0531',
+    date: '2026.5.18',
     tag: 'イベント',
     type: 'event',
-    title: '【5/25開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」',
-    href: '/event-0525',
+    title: '【5/31開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」',
+    href: '/event-0531',
   },
   {
     id: 'col2',

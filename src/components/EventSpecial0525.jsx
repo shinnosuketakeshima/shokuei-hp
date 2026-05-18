@@ -38,7 +38,7 @@ export default function EventSpecial0525() {
                   <Calendar size={18} className="event-overview__icon" />
                   <div>
                     <p className="event-overview__meta-label">日時</p>
-                    <p className="event-overview__meta-value">2025年5月25日（日）10:30〜11:30</p>
+                    <p className="event-overview__meta-value">2026年5月31日（日）10:30〜11:30</p>
                     <p className="event-overview__meta-sub">開場 10:00</p>
                   </div>
                 </div>
