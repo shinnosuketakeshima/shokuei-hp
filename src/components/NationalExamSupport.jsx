@@ -74,7 +74,7 @@ export default function NationalExamSupport({ summary = false }) {
             >
               <p className="support-item__num">{item.num}</p>
               <h3 className="support-item__title">{item.title}</h3>
-              <p className="support-item__body">{item.body}</p>
+              {!summary && <p className="support-item__body">{item.body}</p>}
             </motion.div>
           ))}
         </div>

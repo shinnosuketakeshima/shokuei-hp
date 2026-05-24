@@ -88,7 +88,7 @@ export default function Qualifications({ summary = false }) {
               {q.special && <p className="qual-badge">★ {q.badge}</p>}
               <div className="qual-card__icon">{q.icon}</div>
               <h3 className="qual-card__title">{q.title}</h3>
-              <p className="qual-card__note">{q.note}</p>
+              {!summary && <p className="qual-card__note">{q.note}</p>}
             </motion.div>
           ))}
         </div>

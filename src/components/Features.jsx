@@ -65,11 +65,15 @@ export default function Features({ summary = false }) {
             <div className="feature-card__icon">{f.icon}</div>
             <p className="feature-card__num">{f.num}</p>
             <h3 className="feature-card__title">{f.title}</h3>
-            <p className="feature-card__body">{f.body}</p>
-            <p className="feature-card__teacher-quote">
-              {f.quote}<br />
-              <span className="feature-card__teacher-name">─ {f.quoteAuthor}</span>
-            </p>
+            {!summary && (
+              <>
+                <p className="feature-card__body">{f.body}</p>
+                <p className="feature-card__teacher-quote">
+                  {f.quote}<br />
+                  <span className="feature-card__teacher-name">─ {f.quoteAuthor}</span>
+                </p>
+              </>
+            )}
           </motion.article>
         ))}
       </div>

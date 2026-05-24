@@ -69,7 +69,7 @@ export default function Career({ summary = false }) {
                   <span className="career-path__dot" />
                   <div className="career-path__info">
                     <span className="career-path__name">{p.name}</span>
-                    <span className="career-path__examples">{p.examples}</span>
+                    {!summary && <span className="career-path__examples">{p.examples}</span>}
                   </div>
                   <span className="career-path__role">{p.role}</span>
                   <ArrowRight size={13} className="career-path__arrow" />
