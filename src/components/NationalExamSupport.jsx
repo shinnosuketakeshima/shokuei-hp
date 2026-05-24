@@ -37,6 +37,7 @@ const ITEMS = [
 
 export default function NationalExamSupport({ summary = false }) {
   const displayItems = summary ? ITEMS.slice(0, 3) : ITEMS
+  const TitleTag = summary ? 'h2' : 'h1'
 
   return (
     <section className="support" id="support">
@@ -51,10 +52,10 @@ export default function NationalExamSupport({ summary = false }) {
           transition={{ duration: 0.6 }}
         >
           <p className="eyebrow">国試対策 / Exam Support</p>
-          <h2 className="section-title">
+          <TitleTag className="section-title">
             合格率を支える<br />
             6段階のサポートプログラム
-          </h2>
+          </TitleTag>
           <p className="support__subtitle">
             1年次からの早期意識づけに始まり、4年次は年8回の模擬試験で本番力を養成。
             多角的なサポートで、全員合格をめざします。

@@ -162,6 +162,63 @@ export default function App() {
       set('meta[property="og:url"]', 'content', url)
       set('meta[property="og:title"]', 'content', meta.title)
       set('meta[property="og:description"]', 'content', meta.desc)
+
+      // JSON-LD dynamic injection
+      const oldScript = document.getElementById('json-ld')
+      if (oldScript) oldScript.remove()
+
+      let jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: meta.title,
+        description: meta.desc,
+        url: url,
+      }
+
+      if (location.pathname === '/') {
+        jsonLd = {
+          ...jsonLd,
+          '@type': 'CollegeOrUniversity',
+          name: '十文字学園女子大学 食物栄養学科（非公式情報メディア）',
+          alternateName: '十文字学園女子大学 食物栄養学科',
+          parentOrganization: {
+            '@type': 'CollegeOrUniversity',
+            name: '十文字学園女子大学',
+            url: 'https://www.jumonji-u.ac.jp/'
+          },
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '菅沢2-1-28',
+            addressLocality: '新座市',
+            addressRegion: '埼玉県',
+            postalCode: '352-8510',
+            addressCountry: 'JP'
+          }
+        }
+      } else if (location.pathname.startsWith('/lab-')) {
+        jsonLd['@type'] = 'ProfilePage'
+        jsonLd['mainEntity'] = {
+          '@type': 'Person',
+          name: meta.title.split(' | ')[0],
+          jobTitle: '教授',
+          affiliation: {
+            '@type': 'CollegeOrUniversity',
+            name: '十文字学園女子大学 食物栄養学科'
+          }
+        }
+      } else if (location.pathname.includes('column') || location.pathname.includes('report')) {
+        jsonLd['@type'] = 'Article'
+        jsonLd['author'] = {
+          '@type': 'Organization',
+          name: '十文字学園女子大学 食物栄養学科 学生・教員有志'
+        }
+      }
+
+      const script = document.createElement('script')
+      script.id = 'json-ld'
+      script.type = 'application/ld+json'
+      script.text = JSON.stringify(jsonLd)
+      document.head.appendChild(script)
     }
 
     if (SUB_PATHS.includes(location.pathname)) return

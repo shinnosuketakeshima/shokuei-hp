@@ -50,6 +50,7 @@ const QUALS = [
 
 export default function Qualifications({ summary = false }) {
   const displayQuals = summary ? QUALS.slice(0, 4) : QUALS
+  const TitleTag = summary ? 'h2' : 'h1'
 
   return (
     <section className="qualifications" id="qualifications">
@@ -64,10 +65,10 @@ export default function Qualifications({ summary = false }) {
           transition={{ duration: 0.6 }}
         >
           <p className="eyebrow">取得資格 / Qualifications</p>
-          <h2 className="section-title">
+          <TitleTag className="section-title">
             卒業後に活かせる<br />
             7つの資格・免許
-          </h2>
+          </TitleTag>
           <p style={{ marginTop: '16px', fontSize: '14px', color: 'var(--stone)', maxWidth: '560px', lineHeight: 1.9 }}>
             「管理栄養士＋第一種衛生管理者」のダブルライセンスが最大の強み。
             全国唯一の組み合わせが、就職の幅を大きく広げます。

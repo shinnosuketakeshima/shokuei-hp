@@ -74,6 +74,7 @@ const COLUMNS = [
 export default function StudentVoices({ summary = false }) {
   const displayVoices = summary ? VOICES.slice(0, 3) : VOICES
   const displayColumns = summary ? COLUMNS.slice(0, 1) : COLUMNS
+  const TitleTag = summary ? 'h2' : 'h1'
 
   return (
     <section className="voices" id="voices">
@@ -86,9 +87,9 @@ export default function StudentVoices({ summary = false }) {
           transition={{ duration: 0.6 }}
         >
           <p className="eyebrow">学生の声 / Student Voices</p>
-          <h2 className="section-title">
+          <TitleTag className="section-title">
             在学生からのメッセージ
-          </h2>
+          </TitleTag>
         </motion.div>
 
         <div className="voices__grid">

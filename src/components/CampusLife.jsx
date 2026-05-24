@@ -31,6 +31,7 @@ const PHOTOS = [
 
 export default function CampusLife({ summary = false }) {
   const displayPhotos = summary ? PHOTOS.slice(0, 2) : PHOTOS
+  const TitleTag = summary ? 'h2' : 'h1'
 
   return (
     <section className="section" id="campus-life">
@@ -42,7 +43,7 @@ export default function CampusLife({ summary = false }) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section__title">キャンパスライフ</h2>
+          <TitleTag className="section__title">キャンパスライフ</TitleTag>
           <p className="section__subtitle">Campus Life &amp; Environment</p>
         </motion.div>
 

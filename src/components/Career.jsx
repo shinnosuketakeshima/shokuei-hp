@@ -14,6 +14,7 @@ const PATHS = [
 
 export default function Career({ summary = false }) {
   const displayPaths = summary ? PATHS.slice(0, 4) : PATHS
+  const TitleTag = summary ? 'h2' : 'h1'
 
   return (
     <section className="career" id="career">
@@ -29,12 +30,12 @@ export default function Career({ summary = false }) {
             transition={{ duration: 0.6 }}
           >
             <p className="eyebrow">進路・就職 / Career</p>
-            <div className="career__stat-block">
+            <TitleTag className="career__stat-block" style={{ fontSize: 'inherit', fontWeight: 'inherit', margin: 0, border: 'none', padding: 0 }}>
               <div className="career__rate">
                 99.2<span className="career__rate-unit">%</span>
               </div>
               <p className="career__rate-label">就職率（2025年3月卒業生実績）</p>
-            </div>
+            </TitleTag>
             <p style={{ fontSize: '13px', color: 'var(--stone)', lineHeight: 1.9 }}>
               入学から卒業まで、教員が親身に就職相談に対応。
               病院・行政・企業など多彩な分野で毎年多くの卒業生が活躍しています。

@@ -31,6 +31,7 @@ const FEATURES = [
 
 export default function Features({ summary = false }) {
   const displayFeatures = summary ? FEATURES.slice(0, 2) : FEATURES
+  const TitleTag = summary ? 'h2' : 'h1'
 
   return (
     <section className="features" id="features">
@@ -43,10 +44,10 @@ export default function Features({ summary = false }) {
           transition={{ duration: 0.6 }}
         >
           <p className="eyebrow">学科の特色 / Features</p>
-          <h2 className="section-title">
+          <TitleTag className="section-title">
             食物栄養学科が選ばれる<br />
             3つの理由
-          </h2>
+          </TitleTag>
         </motion.div>
       </div>
 
