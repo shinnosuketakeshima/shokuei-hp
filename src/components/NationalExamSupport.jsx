@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const ITEMS = [
   {
@@ -34,7 +35,9 @@ const ITEMS = [
   },
 ]
 
-export default function NationalExamSupport() {
+export default function NationalExamSupport({ summary = false }) {
+  const displayItems = summary ? ITEMS.slice(0, 3) : ITEMS
+
   return (
     <section className="support" id="support">
       <div className="support__orb support__orb--1" aria-hidden />
@@ -59,7 +62,7 @@ export default function NationalExamSupport() {
         </motion.div>
 
         <div className="support__grid">
-          {ITEMS.map((item, i) => (
+          {displayItems.map((item, i) => (
             <motion.div
               key={i}
               className="support-item"
@@ -75,26 +78,35 @@ export default function NationalExamSupport() {
           ))}
         </div>
 
-        <motion.div 
-          className="support__report-banner"
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="support__report-banner-inner">
-            <div>
-              <p className="support__report-banner-label">国試レポート</p>
-              <p className="support__report-banner-title">第40回管理栄養士国家試験 結果と本学の取り組みについて</p>
-              <p className="support__report-banner-sub">合格率・要因分析・今後の対策を公開しています</p>
-            </div>
-            <a href="/kokushi-report" className="support__report-banner-link">
-              詳細を読む <ArrowRight size={14} />
-            </a>
+        {summary && (
+          <div style={{ marginTop: '48px', textAlign: 'center' }}>
+            <Link to="/support" className="button button--outline">
+              国家試験対策を詳しく見る <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+            </Link>
           </div>
-        </motion.div>
+        )}
+
+        {!summary && (
+          <motion.div 
+            className="support__report-banner"
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="support__report-banner-inner">
+              <div>
+                <p className="support__report-banner-label">国試レポート</p>
+                <p className="support__report-banner-title">第40回管理栄養士国家試験 結果と本学の取り組みについて</p>
+                <p className="support__report-banner-sub">合格率・要因分析・今後の対策を公開しています</p>
+              </div>
+              <a href="/kokushi-report" className="support__report-banner-link">
+                詳細を読む <ArrowRight size={14} />
+              </a>
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   )
 }
-

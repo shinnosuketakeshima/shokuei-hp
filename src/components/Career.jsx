@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const PATHS = [
   { name: '病院・クリニック',          role: '管理栄養士',         examples: '自治医科大学附属病院、東京慈恵会医科大学附属病院 他' },
@@ -11,7 +12,9 @@ const PATHS = [
   { name: '食品メーカー・企業',        role: '商品開発・品質管理', examples: 'キユーピー醸造、セブンイレブン 他' },
 ]
 
-export default function Career() {
+export default function Career({ summary = false }) {
+  const displayPaths = summary ? PATHS.slice(0, 4) : PATHS
+
   return (
     <section className="career" id="career">
       <span className="career__deco" aria-hidden>進路</span>
@@ -36,6 +39,13 @@ export default function Career() {
               入学から卒業まで、教員が親身に就職相談に対応。
               病院・行政・企業など多彩な分野で毎年多くの卒業生が活躍しています。
             </p>
+            {summary && (
+              <div style={{ marginTop: '24px' }}>
+                <Link to="/career" className="button button--outline">
+                  進路・就職について詳しく見る <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+                </Link>
+              </div>
+            )}
           </motion.div>
 
           <motion.div 
@@ -46,7 +56,7 @@ export default function Career() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="career__paths">
-              {PATHS.map((p, i) => (
+              {displayPaths.map((p, i) => (
                 <motion.div 
                   key={i} 
                   className="career-path"
@@ -71,4 +81,3 @@ export default function Career() {
     </section>
   )
 }
-

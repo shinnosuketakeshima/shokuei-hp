@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 
 const VOICES = [
   {
@@ -45,7 +47,9 @@ const VOICES = [
   },
 ]
 
-export default function StudentVoices() {
+export default function StudentVoices({ summary = false }) {
+  const displayVoices = summary ? VOICES.slice(0, 3) : VOICES
+
   return (
     <section className="voices" id="voices">
       <div className="container">
@@ -63,7 +67,7 @@ export default function StudentVoices() {
         </motion.div>
 
         <div className="voices__grid">
-          {VOICES.map((v, i) => (
+          {displayVoices.map((v, i) => (
             <motion.div
               key={i}
               className="voice-card"
@@ -86,8 +90,15 @@ export default function StudentVoices() {
             </motion.div>
           ))}
         </div>
+
+        {summary && (
+          <div style={{ marginTop: '48px', textAlign: 'center' }}>
+            <Link to="/voices" className="button button--outline">
+              学生の声をもっと見る <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
 }
-

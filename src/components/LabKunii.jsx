@@ -1,4 +1,4 @@
-﻿import { ArrowLeft, Mail, MapPin, Lightbulb, Users, Rocket } from 'lucide-react';
+﻿import { ArrowLeft, Mail, MapPin, Lightbulb, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function LabKunii() {

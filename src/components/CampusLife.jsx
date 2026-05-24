@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import KoushaImage from '../university_kousha.jpg';
 import TairyouImage from '../tairyou.png';
 import KuwanohaImage from '../kuwanoha.jpg';
@@ -27,7 +29,9 @@ const PHOTOS = [
   },
 ]
 
-export default function CampusLife() {
+export default function CampusLife({ summary = false }) {
+  const displayPhotos = summary ? PHOTOS.slice(0, 2) : PHOTOS
+
   return (
     <section className="section" id="campus-life">
       <div className="container">
@@ -53,7 +57,7 @@ export default function CampusLife() {
         </motion.p>
 
         <div className="campus-photos">
-          {PHOTOS.map((photo, i) => (
+          {displayPhotos.map((photo, i) => (
             <motion.figure 
               key={i} 
               className="campus-photo"
@@ -69,8 +73,15 @@ export default function CampusLife() {
             </motion.figure>
           ))}
         </div>
+
+        {summary && (
+          <div style={{ marginTop: '48px', textAlign: 'center' }}>
+            <Link to="/campus-life" className="button button--outline">
+              キャンパスライフをもっと見る <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
 }
-

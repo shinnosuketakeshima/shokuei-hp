@@ -1,5 +1,6 @@
-import { Award, Users, BookOpen } from 'lucide-react'
+import { Award, Users, BookOpen, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const FEATURES = [
   {
@@ -28,7 +29,9 @@ const FEATURES = [
   },
 ]
 
-export default function Features() {
+export default function Features({ summary = false }) {
+  const displayFeatures = summary ? FEATURES.slice(0, 2) : FEATURES
+
   return (
     <section className="features" id="features">
       <div className="container">
@@ -48,7 +51,7 @@ export default function Features() {
       </div>
 
       <div className="features__grid">
-        {FEATURES.map((f, i) => (
+        {displayFeatures.map((f, i) => (
           <motion.article
             key={i}
             className="feature-card"
@@ -69,6 +72,14 @@ export default function Features() {
           </motion.article>
         ))}
       </div>
+
+      {summary && (
+        <div className="container" style={{ marginTop: '48px', textAlign: 'center' }}>
+          <Link to="/features" className="button button--outline">
+            学科の特色を詳しく見る <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+          </Link>
+        </div>
+      )}
     </section>
   )
 }

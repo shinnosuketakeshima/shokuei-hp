@@ -1,5 +1,6 @@
-import { Stethoscope, ShieldCheck, GraduationCap, Leaf, Heart, BookOpen } from 'lucide-react'
+import { Stethoscope, ShieldCheck, GraduationCap, Leaf, Heart, BookOpen, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const QUALS = [
   {
@@ -47,7 +48,9 @@ const QUALS = [
   },
 ]
 
-export default function Qualifications() {
+export default function Qualifications({ summary = false }) {
+  const displayQuals = summary ? QUALS.slice(0, 4) : QUALS
+
   return (
     <section className="qualifications" id="qualifications">
       <span className="qualifications__bg" aria-hidden>資格</span>
@@ -72,7 +75,7 @@ export default function Qualifications() {
         </motion.div>
 
         <div className="qual-grid">
-          {QUALS.map((q, i) => (
+          {displayQuals.map((q, i) => (
             <motion.div
               key={i}
               className={`qual-card${q.special ? ' qual-card--special' : ''}`}
@@ -88,8 +91,15 @@ export default function Qualifications() {
             </motion.div>
           ))}
         </div>
+
+        {summary && (
+          <div style={{ marginTop: '48px', textAlign: 'center' }}>
+            <Link to="/qualifications" className="button button--outline">
+              資格・免許について詳しく見る <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
 }
-

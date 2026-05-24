@@ -111,6 +111,30 @@ const PAGE_META = {
     title: '新着情報・コラム一覧 | 食物栄養学科 | 十文字学園女子大学',
     desc: '食物栄養学科の最新ニュース、学生コラム、教員コラムの一覧です。食と栄養の最前線をお届けします。',
   },
+  '/features': {
+    title: '学科の特色 | 食物栄養学科 | 十文字学園女子大学',
+    desc: '十文字学園女子大学 食物栄養学科の特徴をご紹介します。食と栄養の専門知識を深める実践的なカリキュラム。',
+  },
+  '/qualifications': {
+    title: '取得資格 | 食物栄養学科 | 十文字学園女子大学',
+    desc: '食物栄養学科で取得可能な資格（管理栄養士、栄養士、栄養教諭など）について詳しく解説します。',
+  },
+  '/support': {
+    title: '国家試験対策 | 食物栄養学科 | 十文字学園女子大学',
+    desc: '管理栄養士国家試験合格に向けた、十文字学園女子大学の手厚いサポート体制と高い合格実績をご紹介します。',
+  },
+  '/career': {
+    title: '進路・就職 | 食物栄養学科 | 十文字学園女子大学',
+    desc: '食物栄養学科の卒業後の進路、就職実績、キャリア支援プログラムについてご紹介します。',
+  },
+  '/campus-life': {
+    title: 'キャンパスライフ | 食物栄養学科 | 十文字学園女子大学',
+    desc: '食物栄養学科の学生たちの日常、施設、イベントなど、充実したキャンパスライフをお届けします。',
+  },
+  '/voices': {
+    title: '学生の声 | 食物栄養学科 | 十文字学園女子大学',
+    desc: '食物栄養学科で学ぶ学生たちのインタビューや体験談を通じて、学科の魅力をお伝えします。',
+  },
 }
 
 const SUB_PATHS = [
@@ -118,7 +142,7 @@ const SUB_PATHS = [
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/student-column-2', '/event-0531', '/student-column-3', '/lab-kamiyama-report',
-  '/news',
+  '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices',
 ]
 
 export default function App() {
@@ -181,19 +205,25 @@ export default function App() {
           <Route path="/student-column-3" element={<StudentColumn3 />} />
           <Route path="/lab-kamiyama-report" element={<LabKamiyamaReport />} />
           <Route path="/news" element={<NewsArchive />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/qualifications" element={<Qualifications />} />
+          <Route path="/support" element={<NationalExamSupport />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/campus-life" element={<CampusLife />} />
+          <Route path="/voices" element={<StudentVoices />} />
           <Route path="/" element={
             <>
               <Hero />
               <News />
               <StatsBar />
-              <Features />
+              <Features summary={true} />
               <Labs />
-              <Qualifications />
-              <NationalExamSupport />
+              <Qualifications summary={true} />
+              <NationalExamSupport summary={true} />
               <SNSSection />
-              <Career />
-              <StudentVoices />
-              <CampusLife />
+              <Career summary={true} />
+              <StudentVoices summary={true} />
+              <CampusLife summary={true} />
             </>
           } />
         </Routes>

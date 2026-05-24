@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 
 const NAV = [
-  { label: '学科について', href: '/#features' },
-  { label: '取得資格',    href: '/#qualifications' },
-  { label: '国試対策',    href: '/#support' },
-  { label: '実習レポート', href: '/#news' },
-  { label: '進路・就職',  href: '/#career' },
+  { label: '学科について', href: '/features' },
+  { label: '取得資格',    href: '/qualifications' },
+  { label: '国試対策',    href: '/support' },
+  { label: '進路・就職',  href: '/career' },
+  { label: '学生の声',    href: '/voices' },
+  { label: '学生生活',    href: '/campus-life' },
 ]
 
 export default function Header() {
