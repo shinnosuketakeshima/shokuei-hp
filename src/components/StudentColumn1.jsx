@@ -47,7 +47,7 @@ export default function StudentColumn1() {
               「え、これ公式……だよね？」と疑いたくなるほどのクオリティに、私たち学生も「ちゃんとした記事を載せなきゃ！」と、ちょっとだけ背筋を伸ばしているところです。
             </p>
             <p className="lab-section__body">
-              さて、記念すべきコラム第1回目は、私たちの相棒であり、アイデンティティでもある「白衣」についてお届けします。
+              さて、記念すべきコラム第1回目は、私たちの相棒であり、アイデンティティでもある<strong>「白衣」</strong>についてお届けします。
             </p>
           </motion.section>
 
@@ -60,12 +60,12 @@ export default function StudentColumn1() {
           >
             <h2 className="lab-section__title">1. 知ってた？白衣には「3つの顔」がある</h2>
             <p className="lab-section__body">
-              ひと口に「白衣」と言っても、実は主に3種類のスタイルが存在します。
+              ひと口に「白衣」と言っても、実は主に<strong>3種類のスタイル</strong>が存在します。
             </p>
             <div className="lab-section__grid">
               <div className="lab-section__card">
                 <h3>大量調理実習用（上下セット）</h3>
-                <p>給食の実習などで着用する、気合の入ったフル装備です。</p>
+                <p><strong>給食の実習</strong>などで着用する、気合の入ったフル装備です。</p>
               </div>
               <div className="lab-section__card">
                 <h3>調理実習用（白衣1枚）</h3>
@@ -73,7 +73,7 @@ export default function StudentColumn1() {
               </div>
               <div className="lab-section__card">
                 <h3>実験用</h3>
-                <p>解剖生理学や食品化学の実験で使うもの。</p>
+                <p><strong>解剖生理学や食品化学</strong>の実験で使うもの。</p>
               </div>
             </div>
             <p className="lab-section__body" style={{ marginTop: '1.5rem' }}>

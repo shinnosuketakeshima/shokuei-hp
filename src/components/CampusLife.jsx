@@ -9,22 +9,22 @@ import KokushiImage from '../kokushi.png';
 const PHOTOS = [
   {
     src: TairyouImage,
-    alt: '大量調理実習の様子',
-    caption: '大量調理',
+    alt: '食物栄養学科の大量調理実習。給食経営管理実習の様子。',
+    caption: '大量調理実習',
   },
   {
     src: KuwanohaImage,
-    alt: '桑の葉あんぱんの試作',
+    alt: '地域連携活動。桑の葉あんぱんの試作品。',
     caption: '桑の葉あんぱんの試作',
   },
   {
     src: KokushiImage,
-    alt: '国家試験模擬試験の様子',
-    caption: '国家試験模擬試験の様子',
+    alt: '管理栄養士国家試験の模擬試験。真剣に取り組む学生たち。',
+    caption: '国家試験模擬試験',
   },
   {
     src: KoushaImage,
-    alt: '緑豊かなキャンパス',
+    alt: '十文字学園女子大学の緑豊かなキャンパス風景。',
     caption: '緑豊かなキャンパス、春',
   },
 ]

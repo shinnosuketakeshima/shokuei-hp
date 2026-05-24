@@ -131,7 +131,7 @@ export default function StudentVoices({ summary = false }) {
 
         <div className="voices__columns-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
           {displayColumns.map((c, i) => (
-            <motion.div
+            <motion.article
               key={c.id}
               className="column-card"
               initial={{ opacity: 0, y: 20 }}
@@ -143,10 +143,10 @@ export default function StudentVoices({ summary = false }) {
               <span className="column-card__date" style={{ fontSize: '13px', color: 'var(--stone)', marginBottom: '8px' }}>{c.date}</span>
               <h3 className="column-card__title" style={{ fontSize: '1.1rem', marginBottom: '12px', lineHeight: 1.5 }}>{c.title}</h3>
               <p className="column-card__desc" style={{ fontSize: '14px', color: 'var(--charcoal)', marginBottom: '20px', flex: 1 }}>{c.desc}</p>
-              <Link to={c.href} className="text-link" style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--terracotta)', fontWeight: 'bold' }}>
+              <Link to={c.href} className="text-link" style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--terracotta)', fontWeight: 'bold' }} aria-label={`${c.title} の続きを読む`}>
                 続きを読む <ArrowRight size={14} />
               </Link>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 

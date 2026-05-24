@@ -44,13 +44,13 @@ export default function LabKamiyamaReport() {
             transition={{ duration: 0.6 }}
           >
             <p className="lab-section__body">
-              共通科目のなかの総合科目「いちから学ぶnutrition science」において、神山ゼミの3年生、4年生がstudent assistant (SA)をしています。
+              共通科目のなかの総合科目<strong>「いちから学ぶnutrition science」</strong>において、神山ゼミの3年生、4年生が<strong>student assistant (SA)</strong>をしています。
             </p>
             <p className="lab-section__body">
-              「いちから学ぶnutrition science」は、共通科目ですので、食物栄養学科のほかにも他学科の学生も履修しています。前期科目の一つで、これまで、栄養とは何か、糖質の構造と糖尿病について、脂質の構造と乳化の原理について、などを学びました。1年生がほとんどなので、入学間もない初々しい学生に、先輩の3年生、4年生が授業補佐をしています。
+              「いちから学ぶnutrition science」は、共通科目ですので、食物栄養学科のほかにも他学科の学生も履修しています。前期科目の一つで、これまで、<strong>栄養とは何か、糖質の構造と糖尿病について、脂質の構造と乳化の原理について</strong>、などを学びました。1年生がほとんどなので、入学間もない初々しい学生に、先輩の3年生、4年生が授業補佐をしています。
             </p>
             <p className="lab-section__body">
-              先輩達からは、学んできたことを復習できる、教えると理解がより深まる、などの意見をいただいており、毎年、ゼミ生にはSAをお願いしています。
+              先輩達からは、<strong>学んしてきたことを復習できる、教えると理解がより深まる</strong>、などの意見をいただいており、毎年、ゼミ生にはSAをお願いしています。
             </p>
           </motion.section>
 
@@ -63,23 +63,23 @@ export default function LabKamiyamaReport() {
           >
             <h2 className="lab-section__title">体験しながら学ぶ授業スタイル</h2>
             <p className="lab-section__body">
-              この授業、おもしろくて、受け身の座学ではなく、ディスカッション、プレゼンテーション、工作までする、ちょっと変わった授業スタイルです。
+              この授業、おもしろくて、受け身の座学ではなく、<strong>ディスカッション、プレゼンテーション、工作</strong>までする、ちょっと変わった授業スタイルです。
             </p>
             <p className="lab-section__body">
-              脂質の回では、SAの学生がマヨネーズを作るところを履修学生に見せ、酢 (水)と植物油 (油)がどのように混ざるのか、まずは目で確かめました。次に、混ざるための乳化のポイントとなる卵黄について学び、卵黄に含まれているリン脂質、レシチンについて学びました。
+              脂質の回では、SAの学生が<strong>マヨネーズ作り</strong>を履修学生に見せ、酢 (水)と植物油 (油)がどのように混ざるのか、まずは目で確かめました。次に、混ざるための乳化のポイントとなる卵黄について学び、卵黄に含まれている<strong>リン脂質、レシチン</strong>について学びました。
             </p>
 
             <div className="column-figure">
-              <img src={saImg1} alt="授業でのSAによるデモンストレーション" />
+              <img src={saImg1} alt="SA（スチューデント・アシスタント）学生によるマヨネーズ作りの実演風景" />
               <p className="column-figure__caption">SAによるマヨネーズ作りの実演。分離していた油と水が混ざる様子を観察します。</p>
             </div>
 
             <p className="lab-section__body">
-              マヨネーズは、水中油滴型という乳化方法によりできていますが、それを工作で表したものをグループで作成し、提出してもらいました。履修学生の皆さん、とてもよく理解できたようでした。
+              マヨネーズは、<strong>水中油滴型</strong>という乳化方法によりできていますが、それを工作で表したものをグループで作成し、提出してもらいました。
             </p>
 
             <div className="column-figure">
-              <img src={saImg2} alt="乳化の仕組みを表現した工作" />
+              <img src={saImg2} alt="卵黄のリン脂質（レシチン）の構造を表現した工作課題" />
               <p className="column-figure__caption">リン脂質やレシチンの構造を工作で表現。視覚的に理解を深めます。</p>
             </div>
           </motion.section>

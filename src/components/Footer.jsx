@@ -44,7 +44,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <nav className="footer__nav-group" aria-label="サイトマップ">
             <p className="footer__col-title">サイトマップ</p>
             <ul className="footer__links">
               {LINKS_1.map(l => (
@@ -53,9 +53,9 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav className="footer__nav-group" aria-label="受験・入学情報">
             <p className="footer__col-title">受験・入学</p>
             <ul className="footer__links">
               {LINKS_2.map(l => (
@@ -64,7 +64,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         <p className="footer__disclaimer">

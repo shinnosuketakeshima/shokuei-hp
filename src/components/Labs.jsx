@@ -163,7 +163,7 @@ export default function Labs() {
 
         <div className="labs-grid-new">
           {LABS.map((lab, i) => (
-            <motion.div 
+            <motion.article 
               key={lab.href} 
               className="lab-card-new"
               initial={{ opacity: 0, y: 30 }}
@@ -176,7 +176,7 @@ export default function Labs() {
                   <img
                     className="lab-card-new__photo-img"
                     src={lab.photo}
-                    alt={lab.name}
+                    alt={`${lab.name} 写真`}
                     decoding="async"
                     style={{
                       objectPosition: lab.photoPosition || undefined,
@@ -202,16 +202,17 @@ export default function Labs() {
                     className="lab-card-new__blog-link"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${lab.name}の詳細を見る`}
                   >
                     研究室を見る <ArrowRight size={13} />
                   </a>
                 ) : (
-                  <Link to={lab.blogHref} className="lab-card-new__blog-link">
+                  <Link to={lab.blogHref} className="lab-card-new__blog-link" aria-label={`${lab.name}の詳細を見る`}>
                     研究室を見る <ArrowRight size={13} />
                   </Link>
                 ))}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -132,6 +132,7 @@ export default function News() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            aria-label="新着情報一覧"
           >
             {allNews.map((n, i) => (
               <motion.li 
@@ -141,11 +142,13 @@ export default function News() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
               >
-                <Link to={n.href || '/'} className="news-item">
-                  <span className="news-item__date">{n.date}</span>
-                  <span className={`news-tag news-tag--${n.type}`}>{n.tag}</span>
-                  <span className="news-item__title">{n.title}</span>
-                </Link>
+                <article>
+                  <Link to={n.href || '/'} className="news-item" aria-label={`${n.date} ${n.tag}: ${n.title} の詳細を読む`}>
+                    <span className="news-item__date">{n.date}</span>
+                    <span className={`news-tag news-tag--${n.type}`}>{n.tag}</span>
+                    <span className="news-item__title">{n.title}</span>
+                  </Link>
+                </article>
               </motion.li>
             ))}
           </motion.ul>
