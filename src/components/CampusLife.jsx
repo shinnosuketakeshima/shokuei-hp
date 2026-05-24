@@ -68,7 +68,13 @@ export default function CampusLife({ summary = false }) {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="campus-photo__img-wrap">
-                <img src={photo.src} alt={photo.alt} className="campus-photo__img" />
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="campus-photo__img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <figcaption className="campus-photo__caption">{photo.caption}</figcaption>
             </motion.figure>

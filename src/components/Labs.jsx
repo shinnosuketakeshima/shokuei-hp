@@ -177,7 +177,9 @@ export default function Labs() {
                     className="lab-card-new__photo-img"
                     src={lab.photo}
                     alt={`${lab.name} 写真`}
+                    loading="lazy"
                     decoding="async"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     style={{
                       objectPosition: lab.photoPosition || undefined,
                       objectFit: lab.photoFit || undefined,

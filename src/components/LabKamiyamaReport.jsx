@@ -70,7 +70,12 @@ export default function LabKamiyamaReport() {
             </p>
 
             <div className="column-figure">
-              <img src={saImg1} alt="SA（スチューデント・アシスタント）学生によるマヨネーズ作りの実演風景" />
+              <img
+                src={saImg1}
+                alt="SA（スチューデント・アシスタント）学生によるマヨネーズ作りの実演風景"
+                loading="lazy"
+                decoding="async"
+              />
               <p className="column-figure__caption">SAによるマヨネーズ作りの実演。分離していた油と水が混ざる様子を観察します。</p>
             </div>
 
@@ -79,7 +84,12 @@ export default function LabKamiyamaReport() {
             </p>
 
             <div className="column-figure">
-              <img src={saImg2} alt="卵黄のリン脂質（レシチン）の構造を表現した工作課題" />
+              <img
+                src={saImg2}
+                alt="卵黄のリン脂質（レシチン）の構造を表現した工作課題"
+                loading="lazy"
+                decoding="async"
+              />
               <p className="column-figure__caption">リン脂質やレシチンの構造を工作で表現。視覚的に理解を深めます。</p>
             </div>
           </motion.section>
