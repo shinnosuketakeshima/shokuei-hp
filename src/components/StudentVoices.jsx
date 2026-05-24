@@ -47,8 +47,33 @@ const VOICES = [
   },
 ]
 
+const COLUMNS = [
+  {
+    id: 'col3',
+    title: 'チーズに"王様"と"女王様"がいた！食育論セミナーレポート',
+    date: '2026.5.13',
+    desc: '食育論の授業に雪印メグミルク様をお招き。骨の衝撃映像からチーズの試食まで体験した学生記者レポート。',
+    href: '/student-column-3',
+  },
+  {
+    id: 'col2',
+    title: '健康×SNS映え！？「機能性和洋菓子」開発会議に潜入取材！',
+    date: '2026.5.12',
+    desc: '竹嶋ゼミ・芝崎ゼミが合同で取り組む機能性お菓子の開発現場をレポート。',
+    href: '/student-column-2',
+  },
+  {
+    id: 'col1',
+    title: '白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情',
+    date: '2026.5.11',
+    desc: '実験、実習、そして白衣。管理栄養士を目指す学生たちの日常にある不思議なルールとは？',
+    href: '/student-column-1',
+  },
+]
+
 export default function StudentVoices({ summary = false }) {
   const displayVoices = summary ? VOICES.slice(0, 3) : VOICES
+  const displayColumns = summary ? COLUMNS.slice(0, 1) : COLUMNS
 
   return (
     <section className="voices" id="voices">
@@ -91,10 +116,43 @@ export default function StudentVoices({ summary = false }) {
           ))}
         </div>
 
+        <motion.div 
+          className="voices__columns-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ marginTop: '80px', marginBottom: '40px' }}
+        >
+          <p className="eyebrow">学生コラム / Student Column</p>
+          <h2 className="section-title">学生記者が伝える学科の日常</h2>
+        </motion.div>
+
+        <div className="voices__columns-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+          {displayColumns.map((c, i) => (
+            <motion.div
+              key={c.id}
+              className="column-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}
+            >
+              <span className="column-card__date" style={{ fontSize: '13px', color: 'var(--stone)', marginBottom: '8px' }}>{c.date}</span>
+              <h3 className="column-card__title" style={{ fontSize: '1.1rem', marginBottom: '12px', lineHeight: 1.5 }}>{c.title}</h3>
+              <p className="column-card__desc" style={{ fontSize: '14px', color: 'var(--charcoal)', marginBottom: '20px', flex: 1 }}>{c.desc}</p>
+              <Link to={c.href} className="text-link" style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--terracotta)', fontWeight: 'bold' }}>
+                続きを読む <ArrowRight size={14} />
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
         {summary && (
           <div style={{ marginTop: '48px', textAlign: 'center' }}>
             <Link to="/voices" className="button button--outline">
-              学生の声をもっと見る <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+              学生の声・コラムをもっと見る <ArrowRight size={16} style={{ marginLeft: '8px' }} />
             </Link>
           </div>
         )}

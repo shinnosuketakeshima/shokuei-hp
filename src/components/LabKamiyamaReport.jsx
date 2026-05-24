@@ -14,9 +14,9 @@ export default function LabKamiyamaReport() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link to="/" className="lab-page__back-link">
+          <Link to="/lab-kamiyama" className="lab-page__back-link">
             <ArrowLeft size={16} />
-            <span>トップページに戻る</span>
+            <span>神山研究室に戻る</span>
           </Link>
         </motion.div>
 
@@ -151,7 +151,7 @@ export default function LabKamiyamaReport() {
           border-radius: 1rem;
           padding: 2rem;
           margin: 3rem 0;
-          border-left: 4px solid var(--primary-color, #2563eb);
+          border-left: 4px solid var(--forest);
         }
         .student-voice-box__header {
           display: flex;
@@ -160,7 +160,7 @@ export default function LabKamiyamaReport() {
           margin-bottom: 1.5rem;
         }
         .student-voice-box__icon {
-          color: var(--primary-color, #2563eb);
+          color: var(--forest);
           opacity: 0.5;
         }
         .student-voice-box__title {
@@ -170,7 +170,7 @@ export default function LabKamiyamaReport() {
           color: #1e293b;
         }
         .btn--primary {
-          background: var(--primary-color, #2563eb);
+          background: var(--forest);
           color: white;
           padding: 0.75rem 1.5rem;
           border-radius: 0.5rem;

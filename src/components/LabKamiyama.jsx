@@ -1,5 +1,6 @@
-﻿import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function LabKamiyama() {
   return (
@@ -160,11 +161,31 @@ export default function LabKamiyama() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
+            <h2 className="lab-section__title">教員コラム / 活動レポート</h2>
+            <div className="lab-section__card" style={{ borderLeft: '4px solid var(--forest)' }}>
+              <span className="column-card__date" style={{ fontSize: '13px', color: 'var(--stone)' }}>2026.5.15</span>
+              <h3 style={{ fontSize: '1.1rem', margin: '8px 0 12px' }}>先輩が授業をサポート！総合科目「いちから学ぶnutrition science」SAレポート</h3>
+              <p className="lab-section__body" style={{ fontSize: '14px', marginBottom: '16px' }}>
+                神山ゼミの学生たちがSA（スチューデント・アシスタント）として活躍する授業の様子をレポートします。
+              </p>
+              <Link to="/lab-kamiyama-report" className="text-link" style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--forest)', fontWeight: 'bold' }}>
+                コラムを読む <ArrowRight size={14} />
+              </Link>
+            </div>
+          </motion.section>
+
+          <motion.section 
+            className="lab-section"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="lab-section__title">受験生・在学生へのメッセージ</h2>
             <p className="lab-section__body">
               「食べることが好き」「機能性食品に興味がある」「予防医学に興味がある」——そんな思いを持つ皆さんを神山研究室は歓迎します。
             </p>
-            </motion.section>
+          </motion.section>
         </div>
       </div>
     </div>

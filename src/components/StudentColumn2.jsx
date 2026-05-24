@@ -1,22 +1,23 @@
 import { ArrowLeft } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 export default function StudentColumn2() {
   return (
     <div className="lab-page">
       <div className="container">
 
-        <motion.a
-          href="/"
-          className="lab-page__back-link"
+        {/* 戻るリンク */}
+        <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <ArrowLeft size={16} />
-          <span>トップページに戻る</span>
-        </motion.a>
-
+          <Link to="/voices" className="lab-page__back-link">
+            <ArrowLeft size={16} />
+            <span>学生の声・コラムに戻る</span>
+          </Link>
+        </motion.div>
         <motion.div
           className="lab-page__header"
           initial={{ opacity: 0, y: -20 }}
