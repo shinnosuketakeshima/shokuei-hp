@@ -43,14 +43,20 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/kokushi-report` | `KokushiReport` |
 | `/student-column-1` | `StudentColumn1` |
 | `/student-column-2` | `StudentColumn2` |
-| `/event-0525` | `EventSpecial0525` |
+| `/event-0531` | `EventSpecial0525` |
 | `/student-column-3` | `StudentColumn3` |
 | `/lab-kamiyama-report` | `LabKamiyamaReport` |
 | `/news` | `NewsArchive` |
+| `/features` | `Features` |
+| `/qualifications` | `Qualifications` |
+| `/support` | `NationalExamSupport` |
+| `/career` | `Career` |
+| `/campus-life` | `CampusLife` |
+| `/voices` | `StudentVoices` |
 
 `Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except `/`).
 
-Dynamic `<title>` and `<meta name="description">` are updated per route in `App.jsx` via the `PAGE_META` map.
+Dynamic `<title>`, `<meta name="description">`, Open Graph tags, canonical URL, and JSON-LD structured data are all injected per route in `App.jsx` via the `PAGE_META` map (each entry has `title`, `desc`, `ogType`). The JSON-LD `@type` is automatically set to `CollegeOrUniversity` for `/`, `ProfilePage` for lab pages, and `Article` for column/report paths.
 
 In-page scroll nav links in `Header.jsx` use `href="/#section-id"` so they work from any sub-page.
 
@@ -71,6 +77,8 @@ Three places in `App.jsx` must all be updated together for any new route:
 For **lab pages**, also update **`Labs.jsx`** (`LABS` array) to add the card, and create `src/components/LabXxx.jsx` using the `.lab-page` / `.lab-section` CSS classes.
 
 For **content pages** (student columns, event pages, etc.), create the component directly and skip the Labs step.
+
+**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `Career`, `StudentVoices`, and `CampusLife` each accept a `summary` prop. On the homepage they render with `summary={true}` (condensed/teaser view); their corresponding routes (`/features`, `/qualifications`, etc.) render the same component without the prop for the full expanded view. When editing these components, maintain both modes.
 
 **Suspended lab pages**: `LabIwamoto.jsx` exists and is still imported in `App.jsx`, but has no active route (card removed from `Labs.jsx`, route removed from `App.jsx`, per recent commits). To re-enable, add it back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and re-add the card to the `LABS` array in `Labs.jsx`.
 
