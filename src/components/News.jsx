@@ -31,12 +31,12 @@ export const DUMMY_NEWS = [
     href: '/event-0531',
   },
   {
-    id: 'col2',
-    date: '2026.5.12',
-    tag: '学生コラム',
-    type: 'column',
-    title: '健康×SNS映え！？竹嶋ゼミ・芝崎ゼミの「機能性和洋菓子」開発会議に潜入取材！',
-    href: '/student-column-2',
+    id: 'kokushi-report',
+    date: '2026.5.17',
+    tag: 'レポート',
+    type: 'report',
+    title: '第40回管理栄養士国家試験 結果と本学科の取り組みについて',
+    href: '/kokushi-report',
   },
   {
     id: 'col1',
@@ -45,6 +45,14 @@ export const DUMMY_NEWS = [
     type: 'column',
     title: '白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情',
     href: '/student-column-1',
+  },
+  {
+    id: 'koudai-project',
+    date: '2026.5.12',
+    tag: 'お知らせ',
+    type: 'info',
+    title: '高大連携プロジェクト「食の未来を創る」十文字大×駒場学園高が始動',
+    href: '/koudai-project',
   },
 ]
 

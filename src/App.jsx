@@ -24,7 +24,6 @@ import LabNakaoka from './components/LabNakaoka'
 import KoudaiProject from './components/KoudaiProject'
 import KokushiReport from './components/KokushiReport'
 import StudentColumn1 from './components/StudentColumn1'
-import StudentColumn2 from './components/StudentColumn2'
 import LabShibasaki from './components/LabShibasaki'
 import LabIwamoto from './components/LabIwamoto'
 import LabOkamoto from './components/LabOkamoto'
@@ -105,11 +104,6 @@ const PAGE_META = {
     desc: '管理栄養士の卵たちのリアルな裏事情。白衣の「三権分立」とは？',
     ogType: 'article',
   },
-  '/student-column-2': {
-    title: '学生コラム | 食物栄養学科 | 十文字学園女子大学',
-    desc: '健康×SNS映え！竹嶋ゼミ・芝崎ゼミの「機能性と洋菓子」開発会議に潜入取材！',
-    ogType: 'article',
-  },
   '/event-0531': {
     title: '管理栄養士探求型イベント(5/31) | 食物栄養学科 | 十文字学園女子大学',
     desc: '食と栄養で未来をデザイン。管理栄養士について考える探求型イベントを5月31日に開催。高校生・保護者参加無料。',
@@ -167,7 +161,7 @@ const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
-  '/student-column-2', '/event-0531', '/student-column-3', '/lab-kamiyama-report',
+  '/event-0531', '/student-column-3', '/lab-kamiyama-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices',
 ]
 
@@ -283,7 +277,6 @@ export default function App() {
           <Route path="/koudai-project" element={<KoudaiProject />} />
           <Route path="/kokushi-report" element={<KokushiReport />} />
           <Route path="/student-column-1" element={<StudentColumn1 />} />
-          <Route path="/student-column-2" element={<StudentColumn2 />} />
           <Route path="/event-0531" element={<EventSpecial0525 />} />
           <Route path="/student-column-3" element={<StudentColumn3 />} />
           <Route path="/lab-kamiyama-report" element={<LabKamiyamaReport />} />

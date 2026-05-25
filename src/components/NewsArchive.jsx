@@ -10,6 +10,7 @@ const CATEGORIES = [
   { id: 'all', label: '全て' },
   { id: 'column', label: 'コラム' },
   { id: 'event', label: 'イベント' },
+  { id: 'report', label: 'レポート' },
   { id: 'info', label: 'お知らせ' },
 ]
 
