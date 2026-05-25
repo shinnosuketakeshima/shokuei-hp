@@ -1,4 +1,4 @@
-import { ArrowRight, MapPin, GraduationCap, Sparkles, Building2, Users } from 'lucide-react'
+import { ArrowRight, MapPin, GraduationCap, Sparkles, Building2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Career from './Career'
@@ -74,7 +74,7 @@ function HBar({ label, count, total, accent = 'var(--moss, #6b7d52)', delay = 0 
       }}>
         <span style={{ color: 'var(--ink, #2b2b2b)', letterSpacing: '0.02em' }}>{label}</span>
         <span style={{ color: 'var(--stone, #8a8175)', fontSize: '12px', fontVariantNumeric: 'tabular-nums' }}>
-          {count}名 <span style={{ opacity: 0.6 }}>／ {pct.toFixed(1)}%</span>
+          {pct.toFixed(1)}%
         </span>
       </div>
       <div style={{
@@ -131,7 +131,7 @@ export default function CareerPage() {
               数字で見る、卒業後のリアル
             </h2>
             <p style={{ fontSize: '13px', color: 'var(--stone)', marginTop: '16px', lineHeight: 1.9 }}>
-              2025年3月卒業生 127名の進路実績にもとづく集計です。
+              2025年3月卒業生の進路実績にもとづく集計です。
             </p>
           </motion.div>
 
@@ -143,7 +143,6 @@ export default function CareerPage() {
             margin: '0 auto',
           }}>
             {[
-              { num: '127', unit: '名',  label: '2025年3月卒業生', icon: <Users size={18} /> },
               { num: '66', unit: '%',   label: '栄養士・管理栄養士として就職', icon: <GraduationCap size={18} /> },
               { num: '73', unit: '%',   label: '東京・埼玉エリアで勤務', icon: <MapPin size={18} /> },
               { num: '10', unit: '分野',label: 'にわたる就職先業種', icon: <Building2 size={18} /> },
@@ -244,7 +243,7 @@ export default function CareerPage() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                栄養士・管理栄養士 {NUTRITION}名
+                栄養士・管理栄養士 {Math.round((NUTRITION/TOTAL)*100)}%
               </motion.div>
               <motion.div
                 initial={{ width: 0 }}
@@ -263,7 +262,7 @@ export default function CareerPage() {
                   overflow: 'hidden',
                 }}
               >
-                一般職 {GENERAL}名
+                一般職 {Math.round((GENERAL/TOTAL)*100)}%
               </motion.div>
               <motion.div
                 initial={{ width: 0 }}
