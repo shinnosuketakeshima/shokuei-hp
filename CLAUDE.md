@@ -84,7 +84,7 @@ For **content pages** (student columns, event pages, etc.), create the component
 
 **Report/archive pages with routes but no Labs card**: `LabKamiyamaReport` (`/lab-kamiyama-report`) and `NewsArchive` (`/news`) have active routes but are not linked from the Labs card grid — they are linked from within other content (e.g. news items, lab pages).
 
-`NewsArchive` shares `STATIC_NEWS`, `newsDateMillis`, and `formatNewsDate` from `News.jsx` (exported from that file). It renders the same merged Firestore + static dataset with category filter tabs.
+`NewsArchive` shares `STATIC_NEWS`, `newsDateMillis`, and `formatNewsDate` from `src/newsData.js` (a dedicated data file, not from `News.jsx`). To add or remove articles, edit `src/newsData.js`. It renders the same merged Firestore + static dataset with category filter tabs.
 
 ### News: Firestore + static dummy items
 

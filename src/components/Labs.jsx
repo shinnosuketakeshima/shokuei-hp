@@ -11,7 +11,6 @@ import facultyShibasaki from '../faculty/shibasaki.jpg'
 import facultyIshii from '../faculty/ishii.jpg'
 import facultyKomeichi from '../faculty/komeichi.jpg'
 import facultyNakaoka from '../faculty/nakaoka.jpg'
-import facultyIwamoto from '../faculty/iwamoto.jpg'
 import facultyOkamoto from '../faculty/okamoto.jpg'
 
 const LABS = [

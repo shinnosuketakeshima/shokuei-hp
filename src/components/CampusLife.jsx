@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpen, Coffee, Users, GraduationCap, Microscope, ChefHat, MapPin } from 'lucide-react'
+import { ArrowRight, BookOpen, Users, GraduationCap, Microscope, ChefHat, MapPin } from 'lucide-react'
 import KoushaImage from '../university_kousha.jpg'
 import TairyouImage from '../tairyou.png'
 import KuwanohaImage from '../kuwanoha.jpg'

@@ -4,73 +4,7 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase.js';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-export const STATIC_NEWS = [
-  {
-    id: 'kamiyama-sa-report',
-    date: '2026.5.15',
-    tag: '教員コラム',
-    type: 'column',
-    title: '先輩が授業をサポート！総合科目「いちから学ぶnutrition science」SAレポート',
-    href: '/lab-kamiyama-report',
-  },
-  {
-    id: 'col3',
-    date: '2026.5.13',
-    tag: '学生コラム',
-    type: 'column',
-    title: 'チーズに"王様"と"女王様"がいた！骨の衝撃映像と食育論セミナーレポート',
-    href: '/student-column-3',
-  },
-  {
-    id: 'event-0531',
-    date: '2026.5.18',
-    tag: 'イベント',
-    type: 'event',
-    title: '【5/31開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」',
-    href: '/event-0531',
-  },
-  {
-    id: 'col1',
-    date: '2026.5.11',
-    tag: '学生コラム',
-    type: 'column',
-    title: '白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情',
-    href: '/student-column-1',
-  },
-  {
-    id: 'koudai-project',
-    date: '2026.5.12',
-    tag: 'お知らせ',
-    type: 'info',
-    title: '高大連携プロジェクト「食の未来を創る」十文字大×駒場学園高が始動',
-    href: '/koudai-project',
-  },
-]
-
-export function newsDateMillis(value) {
-  if (value == null) return 0;
-  if (typeof value.toMillis === 'function') return value.toMillis();
-  if (value instanceof Date) return value.getTime();
-  if (typeof value === 'string') {
-    const t = Date.parse(value.replace(/\./g, '-'));
-    return Number.isNaN(t) ? 0 : t;
-  }
-  return 0;
-}
-
-export function formatNewsDate(value) {
-  if (value == null) return '';
-  if (typeof value.toDate === 'function') {
-    const d = value.toDate();
-    return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`;
-  }
-  if (value instanceof Date) {
-    return `${value.getFullYear()}.${String(value.getMonth()+1).padStart(2,'0')}.${String(value.getDate()).padStart(2,'0')}`;
-  }
-  if (typeof value === 'string') return value;
-  return '';
-}
+import { STATIC_NEWS, newsDateMillis, formatNewsDate } from '../newsData.js';
 
 export default function News() {
   const [firestoreNews, setFirestoreNews] = useState([]);

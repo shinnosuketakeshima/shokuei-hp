@@ -4,7 +4,7 @@ import { db } from '../firebase.js'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Filter } from 'lucide-react'
-import { STATIC_NEWS, newsDateMillis, formatNewsDate } from './News'
+import { STATIC_NEWS, newsDateMillis, formatNewsDate } from '../newsData.js'
 
 const CATEGORIES = [
   { id: 'all', label: '全て' },
