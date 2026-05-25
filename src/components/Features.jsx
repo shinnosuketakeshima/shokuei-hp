@@ -30,7 +30,7 @@ const FEATURES = [
 ]
 
 export default function Features({ summary = false }) {
-  const displayFeatures = summary ? FEATURES.slice(0, 2) : FEATURES
+  const displayFeatures = FEATURES
   const TitleTag = summary ? 'h2' : 'h1'
 
   return (

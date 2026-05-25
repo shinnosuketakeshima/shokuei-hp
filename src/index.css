@@ -557,12 +557,12 @@ body {
   line-height: 1.45;
 }
 .feature-card__body {
-  font-size: 13px;
-  line-height: 1.95;
+  font-size: 15px;
+  line-height: 1.9;
   color: var(--stone);
 }
 .feature-card__teacher-quote {
-  font-size: 12px;
+  font-size: 13px;
   font-style: italic;
   line-height: 1.7;
   color: var(--stone-light);
@@ -982,9 +982,9 @@ body {
 }
 .career-path:hover .career-path__name { color: var(--terracotta); }
 .career-path__examples {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--stone-light);
-  line-height: 1.4;
+  line-height: 1.65;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1322,8 +1322,8 @@ body {
 }
 
 .lab-card__description {
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.85;
   color: var(--stone);
 }
 
@@ -1771,8 +1771,8 @@ body {
   margin-bottom: 10px;
 }
 .lab-section__card p {
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.85;
   color: var(--stone);
 }
 
