@@ -88,7 +88,7 @@ export default function Career({ summary = false }) {
             </p>
             {!summary && (
               <p style={{ fontSize: '11px', color: 'var(--stone)', marginTop: '20px', opacity: 0.7, lineHeight: 1.7 }}>
-                ※ 2025年3月卒業生 127名の進路データに基づく主な就職先
+                ※ 2025年3月卒業生の進路データに基づく主な就職先
               </p>
             )}
             {summary && (
@@ -109,21 +109,33 @@ export default function Career({ summary = false }) {
           >
             <div className="career__paths">
               {displayPaths.map((p, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   className="career-path"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 + (i * 0.05) }}
                 >
-                  <span className="career-path__dot" />
-                  <div className="career-path__info">
-                    <span className="career-path__name">{p.name}</span>
-                    {!summary && <span className="career-path__examples">{p.examples}</span>}
-                  </div>
-                  <span className="career-path__role">{p.role}</span>
-                  <ArrowRight size={13} className="career-path__arrow" />
+                  {summary ? (
+                    <Link to="/career" className="career-path__link">
+                      <span className="career-path__dot" />
+                      <div className="career-path__info">
+                        <span className="career-path__name">{p.name}</span>
+                      </div>
+                      <span className="career-path__role">{p.role}</span>
+                      <ArrowRight size={13} className="career-path__arrow" />
+                    </Link>
+                  ) : (
+                    <>
+                      <span className="career-path__dot" />
+                      <div className="career-path__info">
+                        <span className="career-path__name">{p.name}</span>
+                        <span className="career-path__examples">{p.examples}</span>
+                      </div>
+                      <span className="career-path__role">{p.role}</span>
+                    </>
+                  )}
                 </motion.div>
               ))}
             </div>
