@@ -88,7 +88,7 @@ export default function Career({ summary = false }) {
             </p>
             {!summary && (
               <p style={{ fontSize: '11px', color: 'var(--stone)', marginTop: '20px', opacity: 0.7, lineHeight: 1.7 }}>
-                ※ 2025年3月卒業生 127名の進路データに基づく主な就職先（業種別人数を併記）
+                ※ 2025年3月卒業生 127名の進路データに基づく主な就職先
               </p>
             )}
             {summary && (

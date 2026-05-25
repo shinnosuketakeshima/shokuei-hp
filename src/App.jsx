@@ -10,6 +10,7 @@ import NationalExamSupport from './components/NationalExamSupport'
 import News from './components/News'
 import SNSSection from './components/SNSSection'
 import Career from './components/Career'
+import CareerPage from './components/CareerPage'
 import StudentVoices from './components/StudentVoices'
 import CampusLife from './components/CampusLife'
 import Footer from './components/Footer'
@@ -283,7 +284,7 @@ export default function App() {
           <Route path="/features" element={<Features />} />
           <Route path="/qualifications" element={<Qualifications />} />
           <Route path="/support" element={<NationalExamSupport />} />
-          <Route path="/career" element={<Career />} />
+          <Route path="/career" element={<CareerPage />} />
           <Route path="/campus-life" element={<CampusLife />} />
           <Route path="/voices" element={<StudentVoices />} />
           <Route path="/" element={
