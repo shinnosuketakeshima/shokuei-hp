@@ -31,14 +31,6 @@ export const DUMMY_NEWS = [
     href: '/event-0531',
   },
   {
-    id: 'kokushi-report',
-    date: '2026.5.17',
-    tag: 'レポート',
-    type: 'report',
-    title: '第40回管理栄養士国家試験 結果と本学科の取り組みについて',
-    href: '/kokushi-report',
-  },
-  {
     id: 'col1',
     date: '2026.5.11',
     tag: '学生コラム',
