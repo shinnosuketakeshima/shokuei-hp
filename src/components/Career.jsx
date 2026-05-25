@@ -7,61 +7,51 @@ const PATHS = [
   {
     name: '保育園',
     role: '栄養士・管理栄養士',
-    count: 25,
     examples: '日本保育サービス、こどもの森、学研ココファン・ナーサリー、ポピンズエデュケア、ネス・コーポレーション、さくらさくみらい、AIAI Child Care、ミアヘルサ 他'
   },
   {
     name: '調剤薬局・ドラッグストア',
     role: '管理栄養士・医療事務・総合職',
-    count: 21,
     examples: 'トモズ、ココカラファイン、ウエルシア薬局、富士薬品、アイングループ、龍生堂本店、総合メディカル、ヴェルペンファルマ 他'
   },
   {
     name: '病院・クリニック',
     role: '管理栄養士',
-    count: 18,
     examples: '自治医科大学附属病院、IMSグループ、上尾中央医科グループ、医療生協さいたま、平成医療福祉グループ、熊谷総合病院 他'
   },
   {
     name: '給食受託会社（病院・福祉施設・事業所）',
     role: '栄養士・管理栄養士',
-    count: 14,
     examples: 'エームサービス、グリーンハウス、ハーベスト、富士産業、シルバーライフ、淀川食品 他'
   },
   {
     name: '食品メーカー・食品関連企業',
     role: '商品開発・品質管理・営業・食品CRO',
-    count: 11,
     examples: 'トオカツフーズ、山崎製パン、ケンコーマヨネーズ、オルトメディコ（食品CRO）、国分関信越、セブン-イレブン・ジャパン 他'
   },
   {
     name: '一般企業（金融・物流・サービスほか）',
     role: '事務・営業・販売・サービス',
-    count: 11,
     examples: '日本生命、りそなグループ、橋本産業、サイゼリヤ、LAVA International、ロック・フィールド 他'
   },
   {
     name: '高齢者・福祉施設',
     role: '施設管理栄養士',
-    count: 7,
     examples: '社会福祉法人 百葉の会、道心会、松仁会、恵比寿会、平成医療福祉グループ 他'
   },
   {
     name: 'スーパー・百貨店・専門小売',
     role: '販売・総合職',
-    count: 5,
     examples: 'ヤオコー、ベルク、ファンケル、ロック・フィールド 他'
   },
   {
     name: '公務員（行政栄養士・保安職）',
     role: '栄養職員・自衛官',
-    count: 4,
     examples: '東京都Ⅱ類 栄養士職（江東区・立川市・青梅市）、海上自衛隊 他'
   },
   {
     name: '歯科クリニック',
     role: '管理栄養士・歯科助手',
-    count: 4,
     examples: 'T&T歯科・矯正歯科クリニック、デンタルクリニックK、ちゃいるど歯科医院、桜光会 他'
   },
 ]
@@ -129,21 +119,7 @@ export default function Career({ summary = false }) {
                 >
                   <span className="career-path__dot" />
                   <div className="career-path__info">
-                    <span className="career-path__name">
-                      {p.name}
-                      {!summary && p.count && (
-                        <span style={{
-                          marginLeft: '10px',
-                          fontSize: '11px',
-                          color: 'var(--stone)',
-                          fontWeight: 'normal',
-                          opacity: 0.75,
-                          letterSpacing: '0.02em',
-                        }}>
-                          {p.count}名
-                        </span>
-                      )}
-                    </span>
+                    <span className="career-path__name">{p.name}</span>
                     {!summary && <span className="career-path__examples">{p.examples}</span>}
                   </div>
                   <span className="career-path__role">{p.role}</span>
