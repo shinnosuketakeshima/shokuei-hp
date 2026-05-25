@@ -5,51 +5,61 @@ import { Link } from 'react-router-dom'
 // 2025年3月卒業生 127名の進路実績をもとに構成（多い順）
 const PATHS = [
   {
+    anchor: 'nursery',
     name: '保育園',
     role: '栄養士・管理栄養士',
-    examples: '日本保育サービス、こどもの森、学研ココファン・ナーサリー、ポピンズエデュケア、ネス・コーポレーション、さくらさくみらい、AIAI Child Care、ミアヘルサ 他'
+    examples: '日本保育サービス、こどもの森、学研ココファン・ナーサリー、ポピンズエデュケア、ネス・コーポレーション、さくらさくみらい、AIAI Child Care、ミアヘルサ、武蔵野会、どろんこ会、つばさ、クオリス 他'
   },
   {
+    anchor: 'pharmacy',
     name: '調剤薬局・ドラッグストア',
     role: '管理栄養士・医療事務・総合職',
-    examples: 'トモズ、ココカラファイン、ウエルシア薬局、富士薬品、アイングループ、龍生堂本店、総合メディカル、ヴェルペンファルマ 他'
+    examples: 'トモズ、ココカラファイン、ウエルシア薬局、富士薬品、アイングループ、龍生堂本店、総合メディカル、ヴェルペンファルマ、アップルケアネット、かくの木、コスモプラス、アビック、うさぎ薬局、アイリスファーマ、パル・オネスト、サエラ薬局 他'
   },
   {
+    anchor: 'hospital',
     name: '病院・クリニック',
     role: '管理栄養士',
-    examples: '自治医科大学附属病院、IMSグループ、上尾中央医科グループ、医療生協さいたま、平成医療福祉グループ、熊谷総合病院 他'
+    examples: '自治医科大学附属病院、IMSグループ、上尾中央医科グループ、医療生協さいたま、平成医療福祉グループ、熊谷総合病院、国際医療福祉大学グループ、社会医療法人至仁会、愛友会、桃和会、和同会 他'
   },
   {
+    anchor: 'catering',
     name: '給食受託会社（病院・福祉施設・事業所）',
     role: '栄養士・管理栄養士',
     examples: 'エームサービス、グリーンハウス、ハーベスト、富士産業、シルバーライフ、淀川食品 他'
   },
   {
+    anchor: 'food',
     name: '食品メーカー・食品関連企業',
     role: '商品開発・品質管理・営業・食品CRO',
-    examples: 'トオカツフーズ、山崎製パン、ケンコーマヨネーズ、オルトメディコ（食品CRO）、国分関信越、セブン-イレブン・ジャパン 他'
+    examples: 'トオカツフーズ、山崎製パン、ケンコーマヨネーズ、オルトメディコ（食品CRO）、国分関信越、セブン-イレブン・ジャパン、マルイチ産商、関東日本フード、日栄商事 他'
   },
   {
+    anchor: 'general',
     name: '一般企業（金融・物流・サービスほか）',
     role: '事務・営業・販売・サービス',
-    examples: '日本生命、りそなグループ、橋本産業、サイゼリヤ、LAVA International、ロック・フィールド 他'
+    examples: '日本生命、りそなグループ、橋本産業、サイゼリヤ、LAVA International、ロック・フィールド、拓洋、Ling、三ツ和、trottoファンケル 他'
   },
   {
+    anchor: 'welfare',
     name: '高齢者・福祉施設',
     role: '施設管理栄養士',
-    examples: '社会福祉法人 百葉の会、道心会、松仁会、恵比寿会、平成医療福祉グループ 他'
+    examples: '社会福祉法人 百葉の会、道心会、松仁会、恵比寿会、平成医療福祉グループ、隼人会、知心会 他'
   },
   {
+    anchor: 'retail',
     name: 'スーパー・百貨店・専門小売',
     role: '販売・総合職',
-    examples: 'ヤオコー、ベルク、ファンケル、ロック・フィールド 他'
+    examples: 'ヤオコー、ベルク、ファンケル、ロック・フィールド、石屋 他'
   },
   {
+    anchor: 'public',
     name: '公務員（行政栄養士・保安職）',
     role: '栄養職員・自衛官',
     examples: '東京都Ⅱ類 栄養士職（江東区・立川市・青梅市）、海上自衛隊 他'
   },
   {
+    anchor: 'dental',
     name: '歯科クリニック',
     role: '管理栄養士・歯科助手',
     examples: 'T&T歯科・矯正歯科クリニック、デンタルクリニックK、ちゃいるど歯科医院、桜光会 他'
@@ -111,6 +121,7 @@ export default function Career({ summary = false }) {
               {displayPaths.map((p, i) => (
                 <motion.div
                   key={i}
+                  id={!summary ? p.anchor : undefined}
                   className="career-path"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +129,7 @@ export default function Career({ summary = false }) {
                   transition={{ duration: 0.4, delay: 0.3 + (i * 0.05) }}
                 >
                   {summary ? (
-                    <Link to="/career" className="career-path__link">
+                    <Link to={`/career#${p.anchor}`} className="career-path__link">
                       <span className="career-path__dot" />
                       <div className="career-path__info">
                         <span className="career-path__name">{p.name}</span>
