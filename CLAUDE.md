@@ -84,13 +84,13 @@ For **content pages** (student columns, event pages, etc.), create the component
 
 **Report/archive pages with routes but no Labs card**: `LabKamiyamaReport` (`/lab-kamiyama-report`) and `NewsArchive` (`/news`) have active routes but are not linked from the Labs card grid — they are linked from within other content (e.g. news items, lab pages).
 
-`NewsArchive` shares `DUMMY_NEWS`, `newsDateMillis`, and `formatNewsDate` from `News.jsx` (exported from that file). It renders the same merged Firestore + static dataset with category filter tabs.
+`NewsArchive` shares `STATIC_NEWS`, `newsDateMillis`, and `formatNewsDate` from `News.jsx` (exported from that file). It renders the same merged Firestore + static dataset with category filter tabs.
 
 ### News: Firestore + static dummy items
 
 `News.jsx` merges two sources:
 1. **Firestore** — `news` collection. Falls back to unordered query if the composite index is missing.
-2. **`DUMMY_NEWS` array** (static, in `News.jsx`) — editorial/blog-style articles with internal `href` links (e.g. `/student-column-3`).
+2. **`STATIC_NEWS` array** (static, in `News.jsx`) — editorial/blog-style articles with internal `href` links (e.g. `/student-column-3`).
 
 Both sources are merged and re-sorted by date descending (`newsDateMillis()`) before render. Firestore `date` values can be a `Timestamp`, a `Date`, or a string — `formatNewsDate()` normalises all three to `YYYY.MM.DD`. The `type` field maps to a `news-tag--{type}` CSS class; valid types are `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`. To temporarily suppress a specific item from both sources, add its title pattern to `isNewsItemTemporarilyHidden()` in `News.jsx`.
 

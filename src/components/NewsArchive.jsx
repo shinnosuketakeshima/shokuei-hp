@@ -4,7 +4,7 @@ import { db } from '../firebase.js'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Filter } from 'lucide-react'
-import { DUMMY_NEWS, newsDateMillis, formatNewsDate } from './News'
+import { STATIC_NEWS, newsDateMillis, formatNewsDate } from './News'
 
 const CATEGORIES = [
   { id: 'all', label: '全て' },
@@ -48,7 +48,7 @@ export default function NewsArchive() {
       date: formatNewsDate(n.date),
       type: n.type || 'info',
     })),
-    ...DUMMY_NEWS,
+    ...STATIC_NEWS,
   ].sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date))
 
   const filteredNews = activeFilter === 'all' 

@@ -5,7 +5,7 @@ import { db } from '../firebase.js';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export const DUMMY_NEWS = [
+export const STATIC_NEWS = [
   {
     id: 'kamiyama-sa-report',
     date: '2026.5.15',
@@ -105,7 +105,7 @@ export default function News() {
       date: formatNewsDate(n.date),
       type: n.type || 'info',
     })),
-    ...DUMMY_NEWS,
+    ...STATIC_NEWS,
   ].sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date));
 
   return (
