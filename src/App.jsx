@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import CategoryBanners from './components/CategoryBanners'
 import StatsBar from './components/StatsBar'
 import Features from './components/Features'
 import Labs from './components/Labs'
@@ -297,6 +298,7 @@ export default function App() {
           <Route path="/" element={
             <>
               <Hero />
+              <CategoryBanners />
               <News />
               <StatsBar />
               <Features summary={true} />

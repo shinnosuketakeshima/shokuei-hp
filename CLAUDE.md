@@ -42,15 +42,15 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/koudai-project` | `KoudaiProject` |
 | `/kokushi-report` | `KokushiReport` |
 | `/student-column-1` | `StudentColumn1` |
-| `/student-column-2` | `StudentColumn2` |
 | `/event-0531` | `EventSpecial0525` |
 | `/student-column-3` | `StudentColumn3` |
 | `/lab-kamiyama-report` | `LabKamiyamaReport` |
+| `/eiyo-app-report` | `EiyoAppReport` |
 | `/news` | `NewsArchive` |
 | `/features` | `Features` |
 | `/qualifications` | `Qualifications` |
 | `/support` | `NationalExamSupport` |
-| `/career` | `Career` |
+| `/career` | `CareerPage` |
 | `/campus-life` | `CampusLife` |
 | `/voices` | `StudentVoices` |
 
@@ -64,7 +64,7 @@ In-page scroll nav links in `Header.jsx` use `href="/#section-id"` so they work 
 
 The homepage `/` stacks sections in this order with these `id` attributes (used by nav `href="/#id"` links):
 
-`Hero` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `Footer` (`#contact`)
+`Hero` → `CategoryBanners` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `Footer` (`#contact`)
 
 ### Adding a new sub-page
 
@@ -78,9 +78,11 @@ For **lab pages**, also update **`Labs.jsx`** (`LABS` array) to add the card, an
 
 For **content pages** (student columns, event pages, etc.), create the component directly and skip the Labs step.
 
-**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `Career`, `StudentVoices`, and `CampusLife` each accept a `summary` prop. On the homepage they render with `summary={true}` (condensed/teaser view); their corresponding routes (`/features`, `/qualifications`, etc.) render the same component without the prop for the full expanded view. When editing these components, maintain both modes.
+**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `StudentVoices`, and `CampusLife` each accept a `summary` prop. On the homepage they render with `summary={true}` (condensed/teaser view); their corresponding routes render the same component without the prop for the full expanded view. When editing these components, maintain both modes.
 
-**Suspended lab pages**: `LabIwamoto.jsx` exists and is still imported in `App.jsx`, but has no active route (card removed from `Labs.jsx`, route removed from `App.jsx`, per recent commits). To re-enable, add it back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and re-add the card to the `LABS` array in `Labs.jsx`.
+**Career is split into two components**: `Career.jsx` is used only on the homepage (with `summary={true}`). `CareerPage.jsx` is the dedicated full-page component rendered at `/career`. Unlike the dual-mode components above, these are separate files.
+
+**Suspended pages**: `LabIwamoto.jsx` and `StudentColumn2.jsx` exist but have no active routes (not imported in `App.jsx`). To re-enable, add back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and import in `App.jsx`. For `LabIwamoto`, also re-add its card to the `LABS` array in `Labs.jsx`.
 
 **Report/archive pages with routes but no Labs card**: `LabKamiyamaReport` (`/lab-kamiyama-report`) and `NewsArchive` (`/news`) have active routes but are not linked from the Labs card grid — they are linked from within other content (e.g. news items, lab pages).
 

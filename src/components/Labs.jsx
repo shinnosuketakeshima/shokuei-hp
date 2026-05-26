@@ -1,221 +1,229 @@
 import { ArrowRight } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import facultyNiikura from '../faculty/niikura.jpg'
-import facultyTakeshima from '../faculty/takeshima.jpg'
-import facultyKunii from '../faculty/kunii.jpg'
-import facultyIimura from '../faculty/iimura.jpg'
-import facultyKamiyama from '../faculty/kamiyama.jpg'
-import facultyKamoshita from '../faculty/kamoshita.jpg'
-import facultyShibasaki from '../faculty/shibasaki.jpg'
-import facultyIshii from '../faculty/ishii.jpg'
-import facultyKomeichi from '../faculty/komeichi.jpg'
-import facultyNakaoka from '../faculty/nakaoka.jpg'
-import facultyOkamoto from '../faculty/okamoto.jpg'
+import { useEffect, useMemo, useState } from 'react'
 
-const LABS = [
+const CATEGORY_LABELS = {
+  regional: '地域連携・商品開発',
+  science: '最先端サイエンス',
+  welfare: '子ども・高齢者・福祉',
+}
+
+const LAB_STORIES = [
   {
-    name: '新倉量太先生の研究室',
-    nameEn: 'G1 Lab',
-    photo: facultyNiikura,
-    photoFit: 'contain',
-    photoPosition: 'center center',
-    description: '消化管出血・消化管発がん・腸内マイクロバイオームを主な研究テーマに、コホート研究や無作為化比較試験などの大規模臨床研究を展開。機械学習・AIを内視鏡診断へ応用するなど、臨床と先端データサイエンスを融合した研究室です。',
-    topic: '腸内マイクロバイオームと食習慣の関係についての論文を国際誌に投稿しました。',
-    topicDate: '2025.4',
+    storyTitle: '黒たまねぎマフィンと、おいしい健康の科学',
+    hook: 'ポリフェノール解析から地域企業とつくる「くろたまフィン」。',
+    category: 'regional',
+    href: '/lab-kamiyama',
+    isExternal: false,
+  },
+  {
+    storyTitle: 'プラスちゃんナッツと、すったてうどんの挑戦',
+    hook: '企業・地域とつなぐ、栄養管理技術の社会還元。',
+    category: 'regional',
+    href: '/lab-kunii',
+    isExternal: false,
+  },
+  {
+    storyTitle: 'おだんごの「おいしさ」を、科学で解き明かす',
+    hook: '和菓子職人の経験と調理科学が出会う場所。',
+    category: 'regional',
+    href: '/lab-shibasaki',
+    isExternal: false,
+  },
+  {
+    storyTitle: '市民健康まつりと、子ども食堂の食の現場',
+    hook: 'エビデンスに基づく公衆栄養を、地域で実践する。',
+    category: 'regional',
+    href: '/lab-komeichi',
+    isExternal: false,
+  },
+  {
+    storyTitle: 'ウイルスと遺伝子で、命の食卓を守る',
+    hook: 'BLVとBoLA。顕微鏡の向こうで動く One Health。',
+    category: 'science',
+    href: '/lab-takeshima',
+    isExternal: false,
+  },
+  {
+    storyTitle: '金魚とゼブラフィッシュが教えてくれる老化のヒミツ',
+    hook: '鱗・皮膚の再生から、食品成分の分子レベル解析へ。',
+    category: 'science',
+    href: '/lab-iimura',
+    isExternal: false,
+  },
+  {
+    storyTitle: 'テンペとおからで、おいしく続ける健康食',
+    hook: '被験者と試作を重ねる、食物繊維の調理科学。',
+    category: 'science',
+    href: '/lab-kamoshita',
+    isExternal: false,
+  },
+  {
+    storyTitle: 'グルテンフリーパンと、データで解くおいしさ',
+    hook: '雑穀粉・アレルギー対応レシピの物性評価。',
+    category: 'science',
+    href: '/lab-ishii',
+    isExternal: false,
+  },
+  {
+    storyTitle: '内視鏡とAIが拓く、腸と健康の未来',
+    hook: 'マイクロバイオームから臨床研究まで。G1 Lab（外部）。',
+    category: 'science',
     href: 'https://g1lab.jp/',
-    blogHref: 'https://g1lab.jp/',
     isExternal: true,
   },
   {
-    name: '竹嶋伸之輔先生の研究室',
-    nameEn: 'Takeshima Lab',
-    photo: facultyTakeshima,
-    description: 'ウシ伝染性リンパ腫ウイルス(BLV)と宿主遺伝子(BoLA)の関係から、家畜の健康と人の食を守る研究室。遺伝子解析、高感度検査法、ワクチン開発を通じて、One Healthに貢献します。',
-    topic: '学生とともに、BLV感染牛の遺伝子型解析データを学会で発表しました。',
-    topicDate: '2025.3',
-    href: '/lab-takeshima',
-    blogHref: '/lab-takeshima',
-    isExternal: false,
-  },
-  {
-    name: '國井大輔先生の研究室',
-    nameEn: 'Kunii Lab',
-    photo: facultyKunii,
-    description: '「栄養管理技術の社会還元」を掲げ、専門性を活かした商品開発や実践教育プログラムの開発に取り組む研究室。実社会で通用する「実践技術・考え方」の習得を目指し、企業や地域との社会実装を推進しています。',
-    topic: '企業と連携した「プラスちゃんナッツ」の共同開発や、地域の名店との「すったて」うどんコラボを展開中です。',
-    topicDate: '2026.5',
-    href: '/lab-kunii',
-    blogHref: '/lab-kunii',
-    isExternal: false,
-  },
-  {
-    name: '飯村九林先生の研究室',
-    nameEn: 'Iimura Lab',
-    photo: facultyIimura,
-    description: '小型魚類（ゼブラフィッシュ・金魚）を研究モデルに、鱗・皮膚の再生メカニズム、ヒアルロン酸の老化機構、紫外線による光老化を解析。食品成分の生体への作用を分子レベルで探る研究室です。',
-    topic: '鱗再生モデルを用いたヒアルロン酸の局在・機能解析と、紫外線が石灰化に与える影響を研究中です。',
-    topicDate: '2026.5',
-    href: '/lab-iimura',
-    blogHref: '/lab-iimura',
-    isExternal: false,
-  },
-  {
-    name: '神山真澄先生の研究室',
-    nameEn: 'Kamiyama Lab',
-    photo: facultyKamiyama,
-    description: '味噌・大豆・玉ねぎなどのポリフェノールや機能性成分を解析し、生活習慣病予防を科学的根拠に基づいて探究。「おいしい」を入口に「健康」と「安心な暮らし」を追究する研究室です。',
-    topic: 'エイジェックファームとの連携で、熟成黒たまねぎマフィン「くろたまフィン」を開発しました。',
-    topicDate: '2026.5',
-    href: '/lab-kamiyama',
-    blogHref: '/lab-kamiyama',
-    isExternal: false,
-  },
-  {
-    name: '鴨下澄子先生の研究室',
-    nameEn: 'Kamoshita Lab',
-    photo: facultyKamoshita,
-    photoFit: 'contain',
-    photoPosition: 'center center',
-    description: 'テンペ・オートミール・おから・ひよこ豆粉など、健康増進が期待できる食品を使った料理を試作し、被験者によるおいしさの評価を繰り返す研究室。「健康によいものを、おいしく続けられる」を科学的に追究します。',
-    topic: '食物繊維豊富なテンペやおからを使ったレシピを開発し、被験者を対象においしさを評価・分析しています。',
-    topicDate: '2025.10',
-    href: '/lab-kamoshita',
-    blogHref: '/lab-kamoshita',
-    isExternal: false,
-  },
-  {
-    name: '芝崎本実先生の研究室',
-    nameEn: 'Shibasaki Lab',
-    photo: facultyShibasaki,
-    description: '和菓子職人としての経験 and 調理科学を融合させ、郷土菓子やあんこ、おだんごの「おいしさ」を科学的に解明。伝統文化を次世代につなぐ研究室です。',
-    topic: 'TBS「マツコの知らない世界」に出演。みたらし団子の魅力を調理科学の視点から解説しました。',
-    topicDate: '2026.5',
-    href: '/lab-shibasaki',
-    blogHref: '/lab-shibasaki',
-    isExternal: false,
-  },
-  {
-    name: '石井和美先生の研究室',
-    nameEn: 'Ishii Lab',
-    photo: facultyIshii,
-    description: '膨化食品の物性と雑穀粉を使ったグルテンフリーパンの開発を軸に、アレルギー対応レシピの考案にも取り組む研究室。「データでおいしさを解き明かす」調理科学を実践します。',
-    topic: 'キヌア粉を用いたグルテンフリーパンの開発と、その物性評価に関する研究を進めています。',
-    topicDate: '2026.5',
-    href: '/lab-ishii',
-    blogHref: '/lab-ishii',
-    isExternal: false,
-  },
-  {
-    name: '古明地夕佳先生の研究室',
-    nameEn: 'Komeichi Lab',
-    photo: facultyKomeichi,
-    photoFit: 'contain',
-    photoPosition: 'center center',
-    description: '高齢者の栄養ケアや子ども食堂、地域連携を軸に「エビデンスに基づく公衆栄養実践」を探究。新座市の健康まつり等、地域に根ざした食と健康づくりを実践しています。',
-    topic: '子ども食堂を対象とした食・栄養面からの実態把握と支援・食育プログラムの評価を行っています。',
-    topicDate: '2026.5',
-    href: '/lab-komeichi',
-    blogHref: '/lab-komeichi',
-    isExternal: false,
-  },
-  {
-    name: '中岡加奈絵先生の研究室',
-    nameEn: 'Nakaoka Lab',
-    photo: facultyNakaoka,
-    description: '子どもの食生活・食育や応用栄養学が専門。成長期の骨量・体力、家族との共食、社会的ジェットラグなど、日常生活に根ざした研究と地域での実践に取り組んでいます。',
-    topic: '地域社会と連携し、「砂糖のひみつを科学で解き明かす！」ワークショップを開催しました。',
-    topicDate: '2026.5',
+    storyTitle: '砂糖のひみつと、成長期の骨・体力',
+    hook: '食育ワークショップから、子どもの食生活研究へ。',
+    category: 'welfare',
     href: '/lab-nakaoka',
-    blogHref: '/lab-nakaoka',
     isExternal: false,
   },
   {
-    name: '岡本節子先生の研究室',
-    nameEn: 'Okamoto Lab',
-    photo: facultyOkamoto,
-    photoFit: 'contain',
-    photoPosition: 'center center',
-    description: '地域在住高齢者のサルコペニア・フレイル予防から介護施設の栄養ケア・マネジメントまで、超高齢社会の食と健康に正面から向き合う研究室。高齢者向けレシピ開発など、現場と連携した研究が特徴です。',
-    topic: '新座市社会福祉協議会の調理ボランティア向けレシピ集に、高齢者向けメニューを監修・提供しました。',
-    topicDate: '2026.5',
+    storyTitle: '超高齢社会の食と、介護現場の栄養ケア',
+    hook: 'サルコペニア予防から施設マネジメントまで。',
+    category: 'welfare',
     href: '/lab-okamoto',
-    blogHref: '/lab-okamoto',
     isExternal: false,
   },
 ]
 
-export default function Labs() {
+function parseCategoryFromHash() {
+  const hash = window.location.hash.replace('#', '')
+  if (hash === 'labs-regional') return 'regional'
+  if (hash === 'labs-science') return 'science'
+  if (hash === 'labs-welfare') return 'welfare'
+  return null
+}
+
+function StoryCard({ lab, index }) {
+  const categoryLabel = CATEGORY_LABELS[lab.category]
+  const inner = (
+    <>
+      <span className="lab-story-card__category">{categoryLabel}</span>
+      <h3 className="lab-story-card__title">{lab.storyTitle}</h3>
+      <p className="lab-story-card__hook">{lab.hook}</p>
+      <span className="lab-story-card__link">
+        ストーリーを読む <ArrowRight size={14} aria-hidden="true" />
+      </span>
+    </>
+  )
+
   return (
-    <section className="section" id="labs">
+    <motion.article
+      key={lab.href}
+      className={`lab-story-card lab-story-card--${lab.category}`}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: (index % 6) * 0.06 }}
+      layout
+    >
+      {lab.isExternal ? (
+        <a
+          href={lab.href}
+          className="lab-story-card__inner"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${lab.storyTitle}のストーリーを読む（外部サイト）`}
+        >
+          {inner}
+        </a>
+      ) : (
+        <Link to={lab.href} className="lab-story-card__inner" aria-label={`${lab.storyTitle}のストーリーを読む`}>
+          {inner}
+        </Link>
+      )}
+    </motion.article>
+  )
+}
+
+export default function Labs() {
+  const [activeCategory, setActiveCategory] = useState(null)
+
+  useEffect(() => {
+    const sync = () => {
+      const hash = window.location.hash.replace('#', '')
+      setActiveCategory(parseCategoryFromHash())
+      if (hash.startsWith('labs')) {
+        document.getElementById('labs')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+    sync()
+    window.addEventListener('hashchange', sync)
+    return () => window.removeEventListener('hashchange', sync)
+  }, [])
+
+  const filteredLabs = useMemo(() => {
+    if (!activeCategory) return LAB_STORIES
+    return LAB_STORIES.filter((lab) => lab.category === activeCategory)
+  }, [activeCategory])
+
+  const setFilter = (category) => {
+    if (category) {
+      window.location.hash = `labs-${category}`
+    } else {
+      window.location.hash = 'labs'
+    }
+    setActiveCategory(category)
+  }
+
+  return (
+    <section className="section labs-portal" id="labs">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section__header"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section__title">先生たちの研究室</h2>
-          <p className="section__subtitle">Labs &amp; Researches</p>
+          <h2 className="section__title">11の研究室ストーリー</h2>
+          <p className="section__subtitle">Lab Stories</p>
+          <p className="labs-portal__lead">
+            教員プロフィールや研究業績の一覧ではなく、ゼミごとの「物語」から入れます。気になるテーマを選んで、詳細ページへ。
+          </p>
         </motion.div>
 
-        <div className="labs-grid-new">
-          {LABS.map((lab, i) => (
-            <motion.article 
-              key={lab.href} 
-              className="lab-card-new"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+        <div className="labs-portal__filters" role="tablist" aria-label="研究室カテゴリ">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={!activeCategory}
+            className={`labs-portal__filter${!activeCategory ? ' labs-portal__filter--active' : ''}`}
+            onClick={() => setFilter(null)}
+          >
+            すべて
+          </button>
+          {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
+            <button
+              key={key}
+              type="button"
+              role="tab"
+              aria-selected={activeCategory === key}
+              className={`labs-portal__filter labs-portal__filter--${key}${activeCategory === key ? ' labs-portal__filter--active' : ''}`}
+              onClick={() => setFilter(key)}
             >
-              <div className="lab-card-new__photo">
-                {lab.photo ? (
-                  <img
-                    className="lab-card-new__photo-img"
-                    src={lab.photo}
-                    alt={`${lab.name} 写真`}
-                    loading="lazy"
-                    decoding="async"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    style={{
-                      objectPosition: lab.photoPosition || undefined,
-                      objectFit: lab.photoFit || undefined,
-                    }}
-                  />
-                ) : (
-                  <div className="lab-card-new__photo-placeholder">
-                    <span>{lab.nameEn}</span>
-                  </div>
-                )}
-              </div>
-              <div className="lab-card-new__body">
-                <h3 className="lab-card-new__name">{lab.name}</h3>
-                <p className="lab-card-new__description">{lab.description}</p>
-                <div className="lab-card-new__topic">
-                  <span className="lab-card-new__topic-date">{lab.topicDate}</span>
-                  <span className="lab-card-new__topic-text">{lab.topic}</span>
-                </div>
-                {lab.blogHref && (lab.isExternal ? (
-                  <a
-                    href={lab.blogHref}
-                    className="lab-card-new__blog-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${lab.name}の詳細を見る`}
-                  >
-                    研究室を見る <ArrowRight size={13} />
-                  </a>
-                ) : (
-                  <Link to={lab.blogHref} className="lab-card-new__blog-link" aria-label={`${lab.name}の詳細を見る`}>
-                    研究室を見る <ArrowRight size={13} />
-                  </Link>
-                ))}
-              </div>
-            </motion.article>
+              {label}
+            </button>
           ))}
         </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory || 'all'}
+            className="labs-story-grid"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            {filteredLabs.map((lab, i) => (
+              <StoryCard key={lab.href} lab={lab} index={i} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   )

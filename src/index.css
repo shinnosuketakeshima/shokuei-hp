@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* =============================================
    Terroir — Design System
    食物栄養学科 / Jissen Women's University
@@ -34,30 +36,32 @@
 }
 
 /* --- Reset --- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
-button { cursor: pointer; border: none; background: none; font-family: inherit; }
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-body {
-  font-family: var(--font-sans);
-  background: var(--cream);
-  color: var(--charcoal);
-  line-height: 1.8;
-  font-weight: 300;
-  font-size: 15px;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
+  body {
+    font-family: var(--font-sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
 
-#root {
-  width: 100%;
-  max-width: 100%;
-  border: none;
-  min-height: unset;
-  display: block;
-  text-align: left;
+  #root {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    min-height: unset;
+    display: block;
+    text-align: left;
+  }
 }
 
 /* --- Utilities --- */
@@ -236,6 +240,156 @@ body {
     width: 100%;
     font-size: 15px;
   }
+}
+
+/* =============================================
+   HEADER — CATEGORY DROPDOWNS
+   ============================================= */
+.header__cat-wrap {
+  position: relative;
+}
+.header__cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--stone);
+  letter-spacing: 0.04em;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition);
+  position: relative;
+}
+.header__cat-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--terracotta);
+  transition: width var(--transition);
+}
+.header__cat-btn:hover,
+.header__cat-btn--active {
+  color: var(--charcoal);
+}
+.header__cat-btn:hover::after,
+.header__cat-btn--active::after {
+  width: 100%;
+}
+.header__cat-chevron {
+  transition: transform 0.22s ease;
+  flex-shrink: 0;
+  color: var(--stone-light);
+}
+.header__cat-chevron--open {
+  transform: rotate(180deg);
+}
+
+.header__dropdown {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(42, 30, 26, 0.12);
+  padding: 10px 0 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 200;
+}
+.header__dropdown--open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.header__dropdown-eyebrow {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-light);
+  padding: 0 16px 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.header__dropdown-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  transition: background var(--transition);
+  border-radius: 6px;
+  margin: 0 4px;
+}
+.header__dropdown-item:hover {
+  background: var(--cream);
+}
+.header__dropdown-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: 0.02em;
+}
+.header__dropdown-note {
+  font-size: 10px;
+  color: var(--stone-light);
+  letter-spacing: 0.03em;
+  margin-top: 1px;
+}
+
+/* Category accent colours on eyebrow */
+.header__dropdown--regional .header__dropdown-eyebrow { color: var(--forest); }
+.header__dropdown--science  .header__dropdown-eyebrow { color: #6b5b95; }
+.header__dropdown--welfare  .header__dropdown-eyebrow { color: var(--terracotta); }
+
+/* Mobile overrides */
+@media (max-width: 900px) {
+  .header__cat-wrap {
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+  }
+  .header__cat-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px 0;
+    font-size: 15px;
+    border-bottom: none;
+  }
+  .header__cat-btn::after { display: none; }
+  .header__dropdown {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: var(--cream);
+    padding: 0 0 4px 12px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    transition: max-height 0.3s ease;
+  }
+  .header__dropdown--open {
+    max-height: 400px;
+    transform: none;
+  }
+  .header__dropdown-eyebrow {
+    padding: 6px 8px;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .header__dropdown-item {
+    padding: 8px 8px;
+    margin: 0;
+  }
+  .header__dropdown-item:hover { background: none; }
 }
 
 /* =============================================
@@ -1094,6 +1248,80 @@ body {
   background: var(--charcoal);
   padding: clamp(48px, 7vw, 88px) 0 32px;
 }
+
+/* Lab categories strip */
+.footer__labs {
+  margin-bottom: 52px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer__labs-heading {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+}
+.footer__labs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 4vw, 48px);
+}
+.footer__labs-col-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer__labs-col--regional .footer__labs-col-title { color: #7eb99a; }
+.footer__labs-col--science  .footer__labs-col-title { color: #a89bc6; }
+.footer__labs-col--welfare  .footer__labs-col-title { color: #d9a08a; }
+.footer__labs-col-sub {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+}
+.footer__labs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.footer__lab-link {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background var(--transition);
+}
+.footer__lab-link:hover {
+  background: rgba(255,255,255,0.06);
+}
+.footer__lab-name {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.03em;
+}
+.footer__lab-note {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.03em;
+  margin-top: 1px;
+}
+@media (max-width: 700px) {
+  .footer__labs-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
 .footer__inner {
   display: grid;
   grid-template-columns: 1.8fr 1fr 1fr;
@@ -1460,6 +1688,107 @@ body {
 @media (max-width: 900px) {
   .labs-grid-new { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
 }
+
+/* --- Labs portal (story cards) --- */
+.labs-portal__lead {
+  margin-top: 16px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--stone);
+  text-align: center;
+}
+.labs-portal__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 40px 0 32px;
+}
+.labs-portal__filter {
+  font-size: 12px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--stone);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.labs-portal__filter:hover { border-color: var(--terracotta); color: var(--charcoal); }
+.labs-portal__filter--active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
+}
+.labs-portal__filter--regional.labs-portal__filter--active { background: var(--forest); border-color: var(--forest); }
+.labs-portal__filter--science.labs-portal__filter--active { background: #5a4a6b; border-color: #5a4a6b; }
+.labs-portal__filter--welfare.labs-portal__filter--active { background: var(--terracotta-dark); border-color: var(--terracotta-dark); }
+
+.labs-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .labs-story-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+}
+
+.lab-story-card {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--white);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.lab-story-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.lab-story-card__inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  padding: 24px 22px;
+  height: 100%;
+}
+.lab-story-card__category {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--terracotta);
+  text-transform: uppercase;
+}
+.lab-story-card--regional .lab-story-card__category { color: var(--forest); }
+.lab-story-card--science .lab-story-card__category { color: #6b5a7d; }
+.lab-story-card--welfare .lab-story-card__category { color: var(--terracotta-dark); }
+.lab-story-card__title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--charcoal);
+  margin-top: 10px;
+  flex: 1;
+}
+.lab-story-card__hook {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--stone);
+  margin-top: 10px;
+}
+.lab-story-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: gap var(--transition);
+}
+.lab-story-card:hover .lab-story-card__link { gap: 10px; }
 
 /* =============================================
    CAMPUS LIFE
