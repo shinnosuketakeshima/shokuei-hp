@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)https://htmlrun.ai/app -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script async="" src="./HTMLRUN.AI_files/js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BJP52LMEM3');
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>HTMLRUN.AI</title>
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%E2%9A%A1&lt;/text&gt;&lt;/svg&gt;">
+    <meta name="description" content="Run AI-generated HTML instantly.">
+    <style>
+        :root { --bg-color: #f4f4f5; --text-color: #000; --border: 3px solid #000; --shadow: 4px 4px 0px 0px #000; --accent: #ffeb3b; --font-code: 'Menlo', 'Monaco', 'Courier New', monospace; --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; --header-base-h: 60px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
+        body { font-family: var(--font-ui); background-color: var(--bg-color); color: var(--text-color); height: 100dvh; width: 100vw; overflow: hidden; display: flex; flex-direction: column; }
+        .editor-header, .system-header { flex: 0 0 auto; width: 100%; background: #fff; display: flex; justify-content: space-between; align-items: center; padding: 0 16px; z-index: 100; height: var(--header-base-h); padding-top: 0; }
+        @supports (padding-top: env(safe-area-inset-top)) { .editor-header, .system-header { padding-top: env(safe-area-inset-top); height: calc(var(--header-base-h) + env(safe-area-inset-top)); } }
+        .editor-header { border-bottom: var(--border); }
+        .system-header { background-color: #111; color: #fff; border-bottom: 1px solid #333; }
+        .header-left, .header-right { display: flex; align-items: center; gap: 12px; height: 100%; }
+        .brand, .brand-logo-white { font-family: var(--font-ui); font-weight: 900; font-size: 16px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 12px; background: #000; color: #fff; }
+        .brand-logo-white { border: 1px solid #333; }
+        .badge-readonly { font-size: 10px; font-weight: 800; color: #aaa; border: 1px solid #555; padding: 0 8px; height: 24px; border-radius: 4px; display: none; align-items: center; letter-spacing: 1px; text-transform: uppercase; }
+        .btn { font-family: inherit; font-weight: 900; font-size: 13px; padding: 0 16px; height: 40px; background: #fff; border: var(--border); box-shadow: var(--shadow); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #000; white-space: nowrap; appearance: none; }
+        .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+        .btn-primary { background-color: var(--accent); }
+        .btn-fork { background: #fff; color: #000; padding: 0 16px; height: 36px; border-radius: 100px; font-size: 12px; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 5px rgba(255,255,255,0.2); transition: transform 0.1s; }
+        .btn-fork:active { transform: scale(0.95); }
+        .btn-report { background: #fff; border: 2px solid #ff3b30; color: #ff3b30; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; padding: 0; margin: 0; box-shadow: 0 0 8px rgba(255, 59, 48, 0.4); }
+        .btn-report span { margin-top: 2px; margin-left: 2px; line-height: 1; }
+        
+        .btn-mylib { font-size: 20px; text-decoration: none; margin-right: 5px; opacity: 0.8; transition: 0.2s; display: inline-flex; align-items: center; height: 36px; }
+        
+        .btn-mylib:hover { opacity: 1; transform: scale(1.1); }
+        .btn-history-header { font-size: 20px; text-decoration: none; margin-right: 15px; opacity: 0.6; transition: 0.2s; }
+        #app-editor { width: 100%; height: 100%; display: flex; flex-direction: column; }
+        .editor-main { flex: 1 1 auto; overflow: hidden; display: flex; padding: 10px; gap: 10px; flex-direction: row; transition: all 0.3s ease; }
+        .pane { flex: 1; display: flex; flex-direction: column; background: #fff; border: var(--border); box-shadow: var(--shadow); position: relative; overflow: hidden; transition: all 0.3s ease; }
+        .pane-header { flex: 0 0 auto; padding: 12px; background: #000; color: #fff; font-size: 13px; font-weight: bold; text-align: center; cursor: pointer; display: flex; justify-content: center; align-items: center; user-select: none; font-family: var(--font-code); }
+        textarea { flex: 1; border: none; padding: 15px; resize: none; font-size: 13px; font-family: var(--font-code); line-height: 1.5; background: transparent; }
+        .paste-overlay { position: absolute; top: 40px; left: 0; width: 100%; height: calc(100% - 40px); background: rgba(255,255,255,0.96); z-index: 5; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.2s; }
+        .paste-overlay.hidden { opacity: 0; pointer-events: none; }
+        .btn-paste-big { font-size: 16px; padding: 20px 30px; background: #000; color: #fff; border: 2px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.2); appearance: none; }
+        #app-viewer { display: none; width: 100%; height: 100%; flex-direction: column; background-color: #111; }
+        .content-wrapper { flex: 1 1 auto; position: relative; background: #fff; width: 100%; overflow: hidden; border-top-left-radius: 16px; border-top-right-radius: 16px; }
+        iframe { width: 100%; height: 100%; border: none; display: block; }
+        .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: #000; color: #fff; padding: 12px 20px; border-radius: 50px; font-weight: bold; font-size: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 15px; z-index: 9999; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        .toast-btn { background: #333; color: #fff; border: none; padding: 5px 12px; border-radius: 20px; font-size: 11px; cursor: pointer; text-decoration: none; }
+        @media (max-width: 768px) { .editor-main { flex-direction: column-reverse; gap: 0; padding: 0; } .pane { border: none; border-top: var(--border); box-shadow: none; width: 100%; } #paneInput { flex: none; height: 40%; z-index: 20; } #panePreview { flex: none; height: 60%; } .editor-main.collapsed #paneInput { height: 45px !important; flex: none !important; } .editor-main.collapsed #panePreview { height: calc(100% - 45px) !important; flex: none !important; } .editor-main.collapsed .pane-header { background: #333; } }
+    </style>
+</head>
+<body>
+    <div id="app-editor" style="display: none;">
+        <header class="editor-header">
+            <a href="https://htmlrun.ai/index.html" class="brand">HTMLRUN.AI</a>
+            <div class="header-right"><a href="https://htmlrun.ai/dashboard.html" class="btn-history-header" title="My Library">📂</a><button class="btn btn-primary" id="btnShare">🚀 SHARE</button></div>
+        </header>
+        <main class="editor-main" id="editorMain">
+            <div class="pane" id="paneInput">
+                <div class="pane-header" id="inputToggleHeader">INPUT &nbsp;<span id="toggleIcon">▼</span></div>
+                <textarea id="editor" placeholder="// Paste Code Here..."></textarea>
+                <div id="pasteOverlay" class="paste-overlay hidden"><button id="btnPaste" class="btn-paste-big">📋 PASTE CODE</button><p style="margin-top:10px; font-size:11px; color:#666;">Tap to paste</p></div>
+            </div>
+            <div class="pane" id="panePreview"><iframe id="previewFrame" sandbox="allow-scripts allow-modals" src="./HTMLRUN.AI_files/saved_resource.html"></iframe></div>
+        </main>
+    </div>
+    <div id="app-viewer" style="display: flex;">
+        <header class="system-header">
+            <div class="header-left"><a href="https://htmlrun.ai/app#" id="exitViewerLogo" class="brand-logo-white">HTMLRUN.AI</a><div class="badge-readonly" id="readOnlyBadge" style="display: flex;">READ ONLY</div></div>
+            <div class="header-right">
+                <a href="https://htmlrun.ai/dashboard.html" id="btnMyLib" class="btn-mylib" title="Back to Library">📂</a>
+                <a href="https://htmlrun.ai/app#" id="btnFork" class="btn-fork">⚡ FORK</a>
+                <button class="btn-report" id="btnReport" title="Report"><span>🚩</span></button>
+            </div>
+        </header>
+        <div class="content-wrapper"><iframe id="viewerFrame" src="./HTMLRUN.AI_files/saved_resource(1).html"></iframe></div>
+    </div>
+    <div id="toast" class="toast"><span>URL Copied!</span><a href="https://htmlrun.ai/dashboard.html" class="toast-btn">📂 Library</a></div>
+
+<script>
+    const API_URL = "https://quiet-mountain-db2e.soft-scene-d3de.workers.dev"; 
+    const editor = document.getElementById('editor');
+    const previewFrame = document.getElementById('previewFrame');
+    const viewerFrame = document.getElementById('viewerFrame');
+    const pasteOverlay = document.getElementById('pasteOverlay');
+    const btnPaste = document.getElementById('btnPaste');
+    const appEditor = document.getElementById('app-editor');
+    const appViewer = document.getElementById('app-viewer');
+    const btnShare = document.getElementById('btnShare');
+    const toast = document.getElementById('toast');
+    const readOnlyBadge = document.getElementById('readOnlyBadge');
+    const btnMyLib = document.getElementById('btnMyLib');
+    const editorMain = document.getElementById('editorMain');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    const getUserId = () => {
+        let uid = localStorage.getItem('htmlrun_uid');
+        if (!uid) { uid = 'u_' + Math.random().toString(36).substring(2, 9); localStorage.setItem('htmlrun_uid', uid); }
+        return uid;
+    };
+    const showToast = (msg) => { const span = toast.querySelector('span'); if(span) span.innerText = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 5000); };
+    const saveToHistory = (item) => {
+        const history = JSON.parse(localStorage.getItem('htmlrun_history') || '[]');
+        history.unshift(item); if(history.length > 50) history.pop();
+        localStorage.setItem('htmlrun_history', JSON.stringify(history));
+    };
+
+    const autoSaveDraft = async (code) => {
+        try { const uid = getUserId(); await fetch(`${API_URL}/autosave`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ code, uid }) }); } catch(e) {}
+    };
+    const updateState = () => { const code = editor.value; if(code.length > 0) pasteOverlay.classList.add('hidden'); else pasteOverlay.classList.remove('hidden'); previewFrame.srcdoc = code; };
+
+    // ▼▼▼ ここを修正しました（ブックマークレット対応） ▼▼▼
+    window.addEventListener('DOMContentLoaded', async () => {
+        getUserId(); 
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const importedCode = params.get('import');
+
+        if (id) {
+            // IDがある場合（DBから読み込み）
+            appEditor.style.display = 'none'; appViewer.style.display = 'flex'; readOnlyBadge.style.display = 'flex';
+            viewerFrame.srcdoc = `<body style="color:#fff; background:#111; font-family:sans-serif; display:flex; justify-content:center; align-items:center; height:100vh;">Loading...</body>`;
+            try {
+                const res = await fetch(`${API_URL}/get/${id}`);
+                const data = await res.json();
+                if (data && data.code) { const code = data.code; viewerFrame.srcdoc = `<style>body{margin:0; overflow-x:hidden;}</style>${code}`; editor.value = code; updateState(); }
+            } catch (e) { viewerFrame.srcdoc = `<body style="color:red;">Error: ${e.message}</body>`; }
+        } else if (importedCode) {
+            // ブックマークレットからコードが送られてきた場合
+            editor.value = importedCode;
+            updateState();
+            
+            // スマホならエディタを閉じてプレビューを見やすくする
+            if(window.innerWidth <= 768) { 
+                editorMain.classList.add('collapsed'); 
+                toggleIcon.innerText = '▲'; 
+            }
+            
+            // URLパラメータを掃除
+            window.history.replaceState(null, null, window.location.pathname);
+            gtag('event', 'import_bookmarklet');
+        }
+    });
+    // ▲▲▲ 修正ここまで ▲▲▲
+
+    document.getElementById('inputToggleHeader').addEventListener('click', () => { editorMain.classList.toggle('collapsed'); toggleIcon.innerText = editorMain.classList.contains('collapsed') ? '▲' : '▼'; });
+    editor.addEventListener('input', updateState);
+    btnPaste.addEventListener('click', async () => {
+        try {
+            const text = await navigator.clipboard.readText();
+            if(text) { editor.value = text; updateState(); gtag('event', 'paste_code'); autoSaveDraft(text); if(window.innerWidth <= 768) { editorMain.classList.add('collapsed'); toggleIcon.innerText = '▲'; } }
+        } catch (err) { pasteOverlay.classList.add('hidden'); editor.focus(); }
+    });
+    btnShare.addEventListener('click', async () => {
+        const code = editor.value; if(!code.trim()) return alert("Code is empty!");
+        const originalText = btnShare.innerText; btnShare.innerText = "⏳...";
+        try {
+            const uid = getUserId();
+            const res = await fetch(`${API_URL}/save`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ code, uid }) });
+            const data = await res.json();
+            if (data.id) {
+                gtag('event', 'share_project', { 'project_id': data.id });
+                const newUrl = `${window.location.origin}${window.location.pathname}?id=${data.id}`;
+                window.history.pushState({path: newUrl}, '', newUrl);
+                const titleMatch = code.match(/<title>(.*?)<\/title>/i) || code.match(/<h1>(.*?)<\/h1>/i);
+                saveToHistory({ id: data.id, title: titleMatch ? titleMatch[1] : "Untitled Project", date: new Date().toISOString(), code_preview: code.substring(0, 1000) });
+                appEditor.style.display = 'none'; appViewer.style.display = 'flex'; readOnlyBadge.style.display = 'flex'; 
+                viewerFrame.srcdoc = `<style>body{margin:0; overflow-x:hidden;}</style>${code}`;
+                navigator.clipboard.writeText(newUrl).then(() => showToast("URL Copied!")).catch(() => showToast("Shared!"));
+            }
+        } catch (e) { alert("Error: " + e.message); } finally { btnShare.innerText = originalText; }
+    });
+    const exitViewer = () => { const cleanUrl = window.location.origin + window.location.pathname; window.history.pushState({path: cleanUrl}, '', cleanUrl); appViewer.style.display = 'none'; appEditor.style.display = 'flex'; };
+    document.getElementById('exitViewerLogo').addEventListener('click', exitViewer);
+    document.getElementById('btnFork').addEventListener('click', () => { gtag('event', 'fork_project'); exitViewer(); });
+    document.getElementById('btnReport').addEventListener('click', async () => { 
+        const id = new URLSearchParams(window.location.search).get('id'); if(!id) return;
+        if(confirm("Report this content?")) { await fetch(`${API_URL}/report/${id}`, { method: "POST" }); showToast("Report Sent."); } 
+    });
+    updateState();
+</script>
+<script defer="" src="./HTMLRUN.AI_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;3da79df205f34f2c952c62fc3f9581c0&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

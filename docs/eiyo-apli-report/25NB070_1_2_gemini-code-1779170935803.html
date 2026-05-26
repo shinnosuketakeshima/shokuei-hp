@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>からだバランス栄養たより</title>
+    <style>
+        :root {
+            --primary-color: #7bc676;
+            --primary-light: #e8f5e9;
+            --accent-color: #ff9800;
+            --accent-light: #fff3e0;
+            --text-color: #4a4a4a;
+            --border-color: #c8e6c9;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f9fbe7;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 30px;
+            border: 3px solid var(--primary-color);
+            position: relative;
+        }
+
+        /* 栄養だより風のヘッダー */
+        header {
+            text-align: center;
+            border-bottom: 2px dashed var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .intro {
+            background-color: var(--primary-light);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* フォームレイアウト */
+        .section-title {
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus, select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .unit {
+            font-size: 12px;
+            color: #777;
+            margin-top: 2px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 4px 0 #e68a00;
+            transition: all 0.1s;
+        }
+
+        button:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        /* 結果表示エリア */
+        #result-area {
+            display: none;
+            margin-top: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-card {
+            background-color: #fff;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .result-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .badge-normal { background-color: #4caf50; }
+        .badge-warning { background-color: #ff9800; }
+        .badge-danger { background-color: #f44336; }
+
+        .advice-box {
+            background-color: var(--accent-light);
+            border-left: 5px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .advice-title {
+            font-weight: bold;
+            color: #d84315;
+            margin-bottom: 5px;
+        }
+
+        /* 比較テーブル */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-light);
+            color: var(--text-color);
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 40px;
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>ほっとひと息・からだバランス栄養たより</h1>
+        <p>〜BWA（体水分分析）と代謝量から、あなたにぴったりの健康づくりを〜</p>
+    </header>
+
+    <div class="intro">
+        こんにちは！今日のからだの状態をチェックして、無理のない健やかなダイエットと食事のヒントを見つけていきましょう。
+    </div>
+
+    <form id="bwa-form" onsubmit="calculateAll(event)">
+        <div class="section-title">1. 基本情報</div>
+        <div class="grid-2">
+            <div class="form-group">
+                <label for="age">年齢</label>
+                <input type="number" id="age" min="18" max="120" required placeholder="例: 45">
+                <div class="unit">才</div>
+            </div>
+            <div class="form-group">
+                <label for="gender">性別</label>
+                <select id="gender" required>
+                    <option value="male">男性</option>
+                    <option value="female" selected>女性</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid-2">
+            <div class="form-group">
+                <label for="height">身長</label>
+                <input type="number" id="height" step="0.1" min="100" max="250" required placeholder="例: 158.5">
+                <div class="unit">cm</div>
+            </div>
+            <div class="form-group">
+                <label for="weight">現在の体重</label>
+                <input type="number" id="weight" step="0.1" min="30" max="200" required placeholder="例: 56.0">
+                <div class="unit">kg</div>
+            </div>
+        </div>
+
+        <div class="section-title">2. BWA（体水分分析）＆ 筋肉量</div>
+        <div class="grid-2">
+            <div class="form-group">
+                <label for="ecw_tbw">むくみ度 (ECW/TBW)</label>
+                <input type="number" id="ecw_tbw" step="0.001" min="0.300" max="0.450" required placeholder="例: 0.385">
+                <div class="unit">正常目安: 0.360 〜 0.390</div>
+            </div>
+            <div class="form-group">
+                <label for="muscle_mass">筋肉量</label>
+                <input type="number" id="muscle_mass" step="0.1" min="10" max="100" required placeholder="例: 38.0">
+                <div class="unit">kg</div>
+            </div>
+        </div>
+
+        <div class="section-title">3. 代謝量（MedGem実測値がある場合）</div>
+        <div class="grid-2">
+            <div class="form-group">
+                <label for="medgem_rmr">MedGemによる実測代謝量（任意）</label>
+                <input type="number" id="medgem_rmr" min="500" max="3500" placeholder="例: 1150">
+                <div class="unit">kcal/日（測定していない場合は空欄でOK）</div>
+            </div>
+            <div class="form-group">
+                <label for="activity_level">普段の活動量</label>
+                <select id="activity_level">
+                    <option value="1.3">低い（デスクワーク中心）</option>
+                    <option value="1.5" selected>ふつう（立ち仕事・軽い運動）</option>
+                    <option value="1.75">高い（活発な運動習慣・重労働）</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit">栄養アドバイスを作成する</button>
+    </form>
+
+    <div id="result-area">
+        <header>
+            <h2 style="color: var(--accent-color); margin: 0;">測定結果とあなたへのアドバイス</h2>
+        </header>
+
+        <div class="result-card">
+            <div class="result-header">
+                <span>① 体格（BMI）の判定</span>
+                <span id="bmi-badge" class="badge">判定中</span>
+            </div>
+            <p>あなたのBMIは <strong id="bmi-value" style="font-size: 20px; color: var(--accent-color);">--</strong> です。</p>
+            <p id="bmi-target-text" style="font-size: 14px; color: #555;"></p>
+            <div class="advice-box">
+                <div class="advice-title">💡 BMIからのみちしるべ</div>
+                <div id="bmi-advice">アドバイスを生成中...</div>
+            </div>
+        </div>
+
+        <div class="result-card">
+            <div class="result-header">
+                <span>② 水分バランス（むくみ）と筋肉量</span>
+                <span id="bwa-badge" class="badge">判定中</span>
+            </div>
+            <p>細胞外水分比 (ECW/TBW): <strong id="ecw-value" style="font-size: 18px;">--</strong></p>
+            <p>筋肉量: <strong id="muscle-value" style="font-size: 18px;">--</strong> kg （体重比: <span id="muscle-ratio">--</span>%）</p>
+            <div class="advice-box">
+                <div class="advice-title">💡 水分と筋肉のアドバイス</div>
+                <div id="bwa-advice">アドバイスを生成中...</div>
+            </div>
+        </div>
+
+        <div class="result-card">
+            <div class="result-header">
+                <span>③ 代謝量チェック（MedGem比較）</span>
+            </div>
+            <div id="medgem-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ハリス・ベネディクト（計算値）</th>
+                            <th>MedGem（実測値）</th>
+                            <th>判定・特徴</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span id="calc-rmr" style="font-weight: bold;">--</span> kcal</td>
+                            <td><span id="measured-rmr" style="font-weight: bold;">--</span> kcal</td>
+                            <td><span id="rmr-status">--</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="advice-box" style="margin-top: 15px;">
+                    <div class="advice-title">💡 代謝に合わせたダイエット戦略</div>
+                    <div id="diet-advice">アドバイスを生成中...</div>
+                </div>
+            </div>
+            <div id="no-medgem-message" style="display: none; color: #666; font-style: italic;">
+                ※MedGemの実測値が入力されていないため、計算上の推定基礎代謝量（ハリス・ベネディクト式）をもとにアドバイスを表示しています。
+                <div class="advice-box" style="margin-top: 15px;">
+                    <div class="advice-title">💡 推定代謝からのダイエットアドバイス</div>
+                    <div id="diet-advice-fallback">アドバイスを生成中...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            「食事基準2025年版」に準拠しています。無理のないペースで、おいしく食べてキレイに元気を応援します！
+        </div>
+    </div>
+</div>
+
+<script>
+function calculateAll(event) {
+    event.preventDefault();
+
+    // 入力値の取得
+    const age = parseInt(document.getElementById('age').value);
+    const gender = document.getElementById('gender').value;
+    const height = parseFloat(document.getElementById('height').value) / 100; // mに変換
+    const weight = parseFloat(document.getElementById('weight').value);
+    const ecw_tbw = parseFloat(document.getElementById('ecw_tbw').value);
+    const muscle_mass = parseFloat(document.getElementById('muscle_mass').value);
+    const medgem_rmr = document.getElementById('medgem_rmr').value ? parseInt(document.getElementById('medgem_rmr').value) : null;
+    const activity_level = parseFloat(document.getElementById('activity_level').value);
+
+    // 1. BMIの計算と判定 (2025年版準拠)
+    const bmi = weight / (height * height);
+    document.getElementById('bmi-value').textContent = bmi.toFixed(1);
+
+    let targetMin, targetMax;
+    if (age >= 18 && age <= 49) {
+        targetMin = 18.5; targetMax = 24.9;
+    } else if (age >= 50 && age <= 64) {
+        targetMin = 20.0; targetMax = 24.9;
+    } else {
+        targetMin = 21.5; targetMax = 24.9;
+    }
+
+    document.getElementById('bmi-target-text').textContent = `※日本人の食事摂取基準（2025年版）による、あなたの年齢（${age}歳）の目標BMI範囲は ${targetMin} 〜 ${targetMax} です。`;
+
+    const bmiBadge = document.getElementById('bmi-badge');
+    let bmiAdvice = "";
+
+    if (bmi < targetMin) {
+        bmiBadge.textContent = "目標以下";
+        bmiBadge.className = "badge badge-warning";
+        bmiAdvice = "現在の体重は目標範囲より低めです。ダイエット目的であっても、これ以上体重を減らすと体力や免疫力の低下につながる恐れがあります。しっかりと3食食べ、筋肉量を維持・向上させることを最優先にしましょう。";
+    } else if (bmi > targetMax) {
+        bmiBadge.textContent = "目標以上";
+        bmiBadge.className = "badge badge-danger";
+        bmiAdvice = "現在の体重は目標範囲を上回っています。生活習慣病の予防や身体への負担を減らすため、あせらず、まずは「現在の体重の5%減」や「1ヶ月に0.5〜1kg減」を目安に、食事のバランスと活動量を見直していきましょう。";
+    } else {
+        bmiBadge.textContent = "目標内（良好）";
+        bmiBadge.className = "badge badge-normal";
+        bmiAdvice = "素晴らしいです！現在の体格は、2025年版の目標範囲内にしっかりと収まっています。現在の良好な体重をキープしつつ、中身（筋肉量や水分バランス）をさらに引き締める『健康的ボディメイク』を意識しましょう。";
+    }
+    document.getElementById('bmi-advice').textContent = bmiAdvice;
+
+
+    // 2. BWA（むくみ）・筋肉量の計算と判定
+    document.getElementById('ecw-value').textContent = ecw_tbw.toFixed(3);
+    document.getElementById('muscle-value').textContent = muscle_mass.toFixed(1);
+    const muscleRatio = (muscle_mass / weight) * 100;
+    document.getElementById('muscle-ratio').textContent = muscleRatio.toFixed(1);
+
+    const bwaBadge = document.getElementById('bwa-badge');
+    let bwaAdvice = "";
+
+    // むくみ判定
+    let isEdema = ecw_tbw > 0.390;
+    let isDry = ecw_tbw < 0.360;
+
+    if (isEdema) {
+        bwaBadge.textContent = "要ケア（むくみ気味）";
+        bwaBadge.className = "badge badge-danger";
+        bwaAdvice = "体水分バランスがやや高め（むくみ傾向）です。塩分の摂りすぎや、冷え、同じ姿勢が続くことで水分が停滞しやすくなります。食事ではカリウム豊富な野菜（ほうれん草や小松菜）やキノコ類、海藻を積極的に摂り、水分を外に出す力を高めましょう。";
+    } else if (isDry) {
+        bwaBadge.textContent = "水分不足気味";
+        bwaBadge.className = "badge badge-warning";
+        bwaAdvice = "体水分比率がやや低めです。脱水や、お茶・コーヒー（カフェイン）の摂りすぎによる利尿作用が影響している可能性があります。こまめな「お水」での水分補給を心がけてください。";
+    } else {
+        bwaBadge.textContent = "水分バランス良好";
+        bwaBadge.className = "badge badge-normal";
+        bwaAdvice = "からだの水分バランスはとても綺麗に保たれています！良好な状態です。";
+    }
+
+    // 筋肉量アドバイスの追加
+    if (gender === 'female' && muscleRatio < 35 || gender === 'male' && muscleRatio < 42) {
+        bwaAdvice += " また、体重に対して筋肉量がやや少なめです。筋肉が減ると代謝が落ちてリバウンドしやすくなります。毎食、手のひら1枚分の「たんぱく質（お肉・お魚・卵・大豆製品）」を必ず取り入れましょう。";
+    } else {
+        bwaAdvice += " 筋肉量もしっかり維持できています！この調子で、たんぱく質を不足させない食事を続けましょう。";
+    }
+    document.getElementById('bwa-advice').textContent = bwaAdvice;
+
+
+    // 3. 代謝量チェック（ハリス・ベネディクト式による計算値）
+    let calcRmr = 0;
+    if (gender === 'male') {
+        calcRmr = 66.47 + (13.75 * weight) + (5.0 * height * 100) - (6.75 * age);
+    } else {
+        calcRmr = 655.1 + (9.56 * weight) + (1.85 * height * 100) - (4.68 * age);
+    }
+    document.getElementById('calc-rmr').textContent = Math.round(calcRmr);
+
+    // ダイエットのためのエネルギー消費量目安
+    const currentTdee = (medgem_rmr ? medgem_rmr : calcRmr) * activity_level;
+    const targetCalories = Math.round(currentTdee - 300); // 1日300kcalマイナスを提案
+
+    let dietAdviceText = "";
+
+    if (medgem_rmr) {
+        document.getElementById('medgem-container').style.display = 'block';
+        document.getElementById('no-medgem-message').style.display = 'none';
+        document.getElementById('measured-rmr').textContent = medgem_rmr;
+
+        const diff = medgem_rmr - calcRmr;
+        const rmrStatusText = document.getElementById('rmr-status');
+
+        if (diff > 50) {
+            rmrStatusText.textContent = "実測値が高い（燃えやすい型）";
+            rmrStatusText.style.color = "#4caf50";
+            dietAdviceText = `MedGemでの実測結果、計算値よりも基礎代謝が【高い】状態です！筋肉が効率よくエネルギーを消費しているか、細胞が元気な証拠。非常にダイエットがスムーズに進みやすい体質です。極端なカロリー制限を行うと、逆に筋肉が落ちてしまいます。1日あたり 【 ${targetCalories} kcal 】 を目安に、しっかり栄養を摂りながら活動量を維持する『しっかり食べて痩せるスタイル』がベストです。`;
+        } else if (diff < -50) {
+            rmrStatusText.textContent = "実測値が低い（省エネ型）";
+            rmrStatusText.style.color = "#f44336";
+            dietAdviceText = `MedGemでの実測結果、計算値よりも基礎代謝が【低め（省エネモード）】になっています。過去に無理な食事制限を繰り返したり、運動不足による筋肉の「質」の低下が原因かもしれません。これ以上食事を減らすとさらに代謝が落ちるため、食べる量を極端に減らすのはNGです！食事の「質」を高め（ビタミンB群や鉄分、たんぱく質の摂取）、スクワットなど大きな筋肉を動かす運動を足して、まずは「燃えるカラダ」への呼び起こしを優先しましょう。目標カロリーは 【 ${Math.round(currentTdee - 200)} kcal 】 程度に留め、じっくり進めましょう。`;
+        } else {
+            rmrStatusText.textContent = "計算値通り（標準型）";
+            rmrStatusText.style.color = "#4a4a4a";
+            dietAdviceText = `MedGemでの実測結果、標準的な代謝量です。あなたの現在の推定総消費エネルギー（活動量込み）は約 ${Math.round(currentTdee)} kcalです。健康的なダイエットを進めるため、1日 【 ${targetCalories} kcal 】 を目標に食事をコントロールしてみましょう。油っこい食事を控え、食物繊維（野菜、もち麦、玄米など）を先に食べる「ベジファースト」を意識すると、脂質の吸収を抑えられて効果的です。`;
+        }
+        document.getElementById('diet-advice').textContent = dietAdviceText;
+
+    } else {
+        document.getElementById('medgem-container').style.display = 'none';
+        document.getElementById('no-medgem-message').style.display = 'block';
+        
+        dietAdviceText = `計算上のあなたの1日の総消費エネルギー（活動量込み）は約 ${Math.round(currentTdee)} kcalです。健康的なダイエット（月に約1kg減）を目指す場合、1日の摂取目安は 【 ${targetCalories} kcal 】 となります。糖質を完全に抜くのではなく、お菓子やジュースなどの「お砂糖」を減らし、主食（ごはんなど）は毎食握りこぶし1個分を美味しくいただくのが、リバウンドしない秘訣です。`;
+        document.getElementById('diet-advice-fallback').textContent = dietAdviceText;
+    }
+
+    // 結果エリアへスクロールして表示
+    document.getElementById('result-area').style.display = 'block';
+    document.getElementById('result-area').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

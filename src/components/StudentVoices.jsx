@@ -49,6 +49,13 @@ const VOICES = [
 
 const COLUMNS = [
   {
+    id: 'eiyo-app-report',
+    title: '解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発',
+    date: '2026.5.26',
+    desc: 'InBody・MedGemで自分のからだを測り、Gemini・ChatGPTで世界に一つの栄養アドバイスアプリを開発。2年生「解剖生理学実験」教員コラム。',
+    href: '/eiyo-app-report',
+  },
+  {
     id: 'col3',
     title: 'チーズに"王様"と"女王様"がいた！食育論セミナーレポート',
     date: '2026.5.13',

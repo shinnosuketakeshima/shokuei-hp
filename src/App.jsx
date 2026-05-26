@@ -30,6 +30,7 @@ import LabOkamoto from './components/LabOkamoto'
 import EventSpecial0525 from './components/EventSpecial0525'
 import StudentColumn3 from './components/StudentColumn3'
 import LabKamiyamaReport from './components/LabKamiyamaReport'
+import EiyoAppReport from './components/EiyoAppReport'
 import NewsArchive from './components/NewsArchive'
 import './App.css'
 
@@ -119,6 +120,11 @@ const PAGE_META = {
     desc: '総合科目「いちから学ぶnutrition science」での神山ゼミ生によるSA活動レポート。アクティブラーニング形式の授業の様子や学生の成長を伝えます。',
     ogType: 'article',
   },
+  '/eiyo-app-report': {
+    title: '解剖生理学実験×生成AI 栄養アドバイスアプリ開発レポート | 食物栄養学科',
+    desc: '十文字学園女子大学 食物栄養学科2年生の解剖生理学実験で、InBody・MedGemの測定データを活用し、Gemini・ChatGPTなど生成AIを使って学生がオリジナルの栄養アドバイスアプリを開発した教員コラム。',
+    ogType: 'article',
+  },
   '/news': {
     title: '新着情報・コラム一覧 | 食物栄養学科 | 十文字学園女子大学',
     desc: '食物栄養学科の最新ニュース、学生コラム、教員コラムの一覧です。食と栄養の最前線をお届けします。',
@@ -161,7 +167,7 @@ const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
-  '/event-0531', '/student-column-3', '/lab-kamiyama-report',
+  '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices',
 ]
 
@@ -280,6 +286,7 @@ export default function App() {
           <Route path="/event-0531" element={<EventSpecial0525 />} />
           <Route path="/student-column-3" element={<StudentColumn3 />} />
           <Route path="/lab-kamiyama-report" element={<LabKamiyamaReport />} />
+          <Route path="/eiyo-app-report" element={<EiyoAppReport />} />
           <Route path="/news" element={<NewsArchive />} />
           <Route path="/features" element={<Features />} />
           <Route path="/qualifications" element={<Qualifications />} />

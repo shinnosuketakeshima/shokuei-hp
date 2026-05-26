@@ -1,5 +1,13 @@
 export const STATIC_NEWS = [
   {
+    id: 'eiyo-app-report',
+    date: '2026.5.26',
+    tag: '教員コラム',
+    type: 'column',
+    title: '解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発した話',
+    href: '/eiyo-app-report',
+  },
+  {
     id: 'kamiyama-sa-report',
     date: '2026.5.15',
     tag: '教員コラム',

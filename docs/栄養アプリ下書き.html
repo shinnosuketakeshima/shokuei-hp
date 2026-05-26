@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教員コラム：解剖生理学実験での挑戦！生成AIを活用したオリジナル栄養アドバイスアプリ開発</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        header {
+            border-bottom: 2px solid #2ecc71;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+        }
+        .meta-info {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        h2 {
+            font-size: 20px;
+            color: #2ecc71;
+            border-left: 5px solid #2ecc71;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .image-caption {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .emphasis {
+            background: linear-gradient(transparent 60%, #e8f8f5 60%);
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #95a5a6;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>食物栄養学科2年生「解剖生理学実験」レポート：生成AIを活用したオリジナル栄養アドバイスアプリ開発への挑戦！</h1>
+        <div class="meta-info">掲載先：食物栄養学科ブログ (https://shokuei-hp.web.app)</div>
+    </header>
+
+    <section>
+        <p>みなさん、こんにちは！食物栄養学科です。</p>
+        <p>先日、食物栄養学科の2年生を対象とした<span class="emphasis">「解剖生理学実験」</span>の授業が行われました。今回の実験では、最新の体組成計「InBody」を用いて各自の体組成データを測定し、その測定結果をただ眺めるだけでなく、さらに一歩踏み込んだ最先端のDX（デジタルトランスフォーメーション）学習に取り組みました！</p>
+    </section>
+
+    <section>
+        <h2>バイブコーディングで自分だけの「栄養アドバイスアプリ」をつくる</h2>
+        <p>授業の後半では、InBodyから得られた身体データ（筋肉量や水分バランス、基礎代謝など）を入力すると、その人に合わせた最適な栄養・食事のアドバイスを自動で出力してくれる<span class="emphasis">「オリジナル栄養アドバイスアプリ」</span>の開発に挑戦しました。</p>
+        <p>「えっ、管理栄養士の卵がプログラミングのコードを書くの？」と驚かれるかもしれません。今回は、プログラミングの専門知識がなくてもAIと対話しながらアプリを構築できる「バイブコーディング」という手法を取り入れました。</p>
+        
+        <p>まずは、大学から学生全員に配布されている「学生用Geminiアカウント」を活用し、AIに指示を出しながらベースとなる栄養アプリを作成。その後、学生たちは思い思いにデザインを変更したり、独自の機能を追加したりして、自分だけのカスタマイズを進めていきました。</p>
+
+        <div class="image-container">
+            <img src="25NB029_1_1_HTMLRUN.AI.pdf" alt="学生が作成した栄養アドバイスアプリの出力画面">
+            <div class="image-caption">▲ 学生が実際に作成した「オーダーメイド栄養便り」アプリの出力画面。BMIや水分＆筋肉バランス、実測代謝量に基づいた専門的なアドバイスが自動生成されます。</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>エラーを乗り越え、ChatGPTも味方に</h2>
+        <p>アプリ開発は一筋縄ではいかない場面もありました。最初はGeminiがスムーズにコードを書いてくれたものの、「計算ボタンを押しても動かない！」「修正しようと何度もGeminiに命令を繰り返したけれど、どうしてもエラーが直らない……」と、バグに頭を悩ませて苦労する学生の姿も見られました。</p>
+        <p>しかし、そこで諦めないのが今の学生たちの強みです。泥沼化してしまったコードを今度は「ChatGPT」に投げかけ、多角的にバグフィックス（不具合の修正）を依頼するなど、複数の生成AIを臨機応変に使いこなすことで、見事に問題を解決していきました。</p>
+    </section>
+
+    <section>
+        <h2>これからの管理栄養士に求められる「現場のDX人材」へ</h2>
+        <p>私たちがこの授業を通じて学生たちに最も経験してほしかったのは、<span class="emphasis">「コーディングを専門に習っていなくても、自分たちの業務に役立つアプリは自分たちで作れる」</span>という成功体験です。</p>
+        <p>これから学生たちが管理栄養士として社会へ羽ばたいたとき、病院、学校、福祉施設、地域社会など、あらゆる現場で業務の効率化やデジタル化（DX）を推進していくリーダーシップが求められます。「システムは誰かに作ってもらうもの」ではなく、「自分たちの手で課題を解決するツールを生み出せる」という自信を持った人材へと成長してほしい、そんな教員の熱い思いがこの授業には込められています。</p>
+    </section>
+
+    <section>
+        <h2>みんなお疲れさまでした！</h2>
+        <p>最終的には、全員が試行錯誤を重ねながらも、個性的で実用的な思い思いのアプリを無事に完成させることができました！完成した素晴らしい成果物は、大学の教務システム（ユニパ）へしっかりと登録されました。</p>
+        <p>慣れない作業で大変だったと思いますが、今回の経験は将来きっと大きな強みになるはずです。2年生のみなさん、本当にお疲れさまでした！</p>
+    </section>
+
+    <footer>
+        &copy; 2026 食物栄養学科 All Rights Reserved.
+    </footer>
+</div>
+
+</body>
+</html>
