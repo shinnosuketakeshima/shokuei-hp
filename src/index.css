@@ -2155,6 +2155,648 @@
   }
 }
 
+/* =============================================
+   LAB STORY FEATURE — メディア記事風ヒーロー
+   ============================================= */
+.lab-story-feature {
+  position: relative;
+  margin-bottom: clamp(48px, 6vw, 80px);
+  padding: clamp(36px, 5vw, 64px) clamp(28px, 5vw, 56px);
+  background: linear-gradient(135deg, var(--cream-alt) 0%, var(--cream) 65%);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.lab-story-feature::before,
+.lab-story-feature::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+.lab-story-feature::before {
+  width: 260px;
+  height: 260px;
+  background: var(--terracotta-10);
+  top: -90px;
+  right: -80px;
+}
+.lab-story-feature::after {
+  width: 160px;
+  height: 160px;
+  background: var(--forest-10);
+  bottom: -60px;
+  left: -50px;
+}
+.lab-story-feature > * {
+  position: relative;
+  z-index: 1;
+}
+.lab-story-feature__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--terracotta);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  margin-bottom: 24px;
+}
+.lab-story-feature__title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.4vw, 38px);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin-bottom: 22px;
+  letter-spacing: 0.02em;
+}
+.lab-story-feature__title em {
+  font-style: normal;
+  color: var(--terracotta-dark);
+  background: linear-gradient(transparent 60%, var(--terracotta-20) 60%);
+  padding: 0 4px;
+}
+
+/* Forest variation — 飯村研などの自然・生命科学系ラボ用 */
+.lab-story-feature--forest {
+  background: linear-gradient(135deg, var(--forest-10) 0%, var(--cream) 70%);
+}
+.lab-story-feature--forest::before {
+  background: var(--forest-10);
+}
+.lab-story-feature--forest::after {
+  background: var(--terracotta-10);
+}
+.lab-story-feature--forest .lab-story-feature__label {
+  background: var(--forest);
+}
+.lab-story-feature--forest .lab-story-feature__title em {
+  color: var(--forest-dark);
+  background: linear-gradient(transparent 60%, var(--forest-10) 60%);
+}
+.lab-story-feature--forest .lab-story-feature__lead strong {
+  background: linear-gradient(transparent 62%, var(--forest-10) 62%);
+}
+.lab-story-feature--forest .lab-story-feature__tags span {
+  color: var(--forest-dark);
+}
+.lab-story-feature__lead {
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 2;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+}
+.lab-story-feature__lead strong {
+  background: linear-gradient(transparent 62%, var(--terracotta-20) 62%);
+  font-weight: 500;
+  padding: 0 2px;
+}
+.lab-story-feature__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.lab-story-feature__tags span {
+  font-size: 12px;
+  color: var(--terracotta-dark);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+/* =============================================
+   LAB TIMELINE — プロジェクト開発ステップ
+   ============================================= */
+.lab-timeline {
+  position: relative;
+  margin-top: 32px;
+  padding-left: 4px;
+}
+.lab-timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 27px;
+  width: 2px;
+  background: linear-gradient(var(--terracotta), var(--terracotta-20));
+}
+.lab-timeline__step {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 24px;
+}
+.lab-timeline__step:last-child {
+  padding-bottom: 0;
+}
+.lab-timeline__num {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--terracotta);
+  color: var(--terracotta-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  z-index: 1;
+  box-shadow: 0 0 0 6px var(--cream);
+}
+.lab-timeline__content {
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 18px 22px;
+  flex-grow: 1;
+  border: 1px solid var(--border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.lab-timeline__content:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.lab-timeline__content h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.lab-timeline__content p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--stone);
+  margin: 0;
+}
+
+/* =============================================
+   LAB CHAT SECTION — 学生の声（吹き出し）
+   ============================================= */
+.lab-chat-section {
+  background: var(--cream-alt);
+  padding: clamp(36px, 5vw, 56px) clamp(20px, 4vw, 40px);
+  border-radius: 28px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.lab-chat-section__title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--charcoal);
+  text-align: center;
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.lab-chat-section__title svg {
+  color: var(--terracotta);
+}
+.lab-chat-section__lead {
+  text-align: center;
+  font-size: 13px;
+  color: var(--stone);
+  margin-bottom: 28px;
+}
+.lab-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.lab-chat__row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.lab-chat__row--right {
+  flex-direction: row-reverse;
+}
+.lab-chat__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 15px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.lab-chat__row--right .lab-chat__avatar {
+  background: var(--forest);
+}
+.lab-chat__bubble {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 16px 20px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  max-width: 78%;
+}
+.lab-chat__row--left .lab-chat__bubble {
+  border-bottom-left-radius: 4px;
+}
+.lab-chat__row--right .lab-chat__bubble {
+  border-bottom-right-radius: 4px;
+}
+.lab-chat__bubble p {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--charcoal);
+  margin: 0 0 8px;
+}
+.lab-chat__name {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--stone-light);
+}
+.lab-chat__row--right .lab-chat__name {
+  text-align: right;
+}
+
+/* =============================================
+   LAB JARGON DECODER — 専門用語をやさしく噛み砕く
+   ============================================= */
+.lab-jargon-decoder {
+  background: linear-gradient(135deg, var(--forest-10) 0%, var(--cream) 75%);
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--border);
+}
+.lab-jargon-decoder__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--forest);
+  margin-bottom: 14px;
+}
+.lab-jargon-decoder h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--charcoal);
+  font-weight: 500;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+.lab-jargon-decoder h3 em {
+  font-style: normal;
+  color: var(--forest-dark);
+  background: linear-gradient(transparent 62%, var(--forest-10) 62%);
+  padding: 0 4px;
+}
+.lab-jargon-decoder > p {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--stone);
+  margin: 0 0 20px;
+}
+.lab-jargon-decoder > p strong {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+.lab-jargon-decoder__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lab-jargon-decoder__list li {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.8;
+  border: 1px solid var(--border);
+}
+.lab-jargon-decoder__list strong {
+  display: block;
+  font-weight: 600;
+  color: var(--forest-dark);
+  margin-bottom: 4px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+.lab-jargon-decoder__list span {
+  color: var(--stone);
+}
+.lab-jargon-decoder__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.lab-jargon-decoder__keywords span {
+  font-size: 11px;
+  color: var(--stone);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  letter-spacing: 0.04em;
+}
+
+/* =============================================
+   LAB RATING CARD — 授業評価ハイライト
+   ============================================= */
+.lab-rating-card {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 24px 28px;
+  border: 1px solid var(--border);
+}
+.lab-rating-card__score {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 14px 22px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.lab-rating-card__number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--terracotta-dark);
+  line-height: 1;
+}
+.lab-rating-card__max {
+  display: block;
+  font-size: 11px;
+  color: var(--stone-light);
+  margin-top: 4px;
+  letter-spacing: 0.06em;
+}
+.lab-rating-card__stars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 8px;
+  color: #E6B53E;
+}
+.lab-rating-card__body {
+  flex-grow: 1;
+}
+.lab-rating-card__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--terracotta);
+  margin: 0 0 8px;
+}
+.lab-rating-card__body p:last-child {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--stone);
+  margin: 0;
+}
+.lab-rating-card__body strong {
+  color: var(--charcoal);
+  font-weight: 600;
+}
+
+/* =============================================
+   LAB THEME LIST — アイコン付きテーマカード（飯村研）
+   ============================================= */
+.lab-theme-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.lab-theme-card {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  background: var(--cream);
+  border-radius: 18px;
+  padding: 22px 26px;
+  border: 1px solid var(--border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.lab-theme-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.lab-theme-card__icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--forest);
+  color: var(--forest-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lab-theme-card__content {
+  flex-grow: 1;
+  min-width: 0;
+}
+.lab-theme-card__tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--forest);
+  background: var(--forest-10);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.lab-theme-card__content h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 1.9vw, 19px);
+  font-weight: 500;
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.lab-theme-card__content p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--stone);
+  margin: 0;
+}
+
+/* Terracotta variation — 竹嶋研などの医療・公衆衛生系ラボ用 */
+.lab-theme-list--terracotta .lab-theme-card__icon {
+  border-color: var(--terracotta);
+  color: var(--terracotta-dark);
+}
+.lab-theme-list--terracotta .lab-theme-card__tag {
+  color: var(--terracotta-dark);
+  background: var(--terracotta-10);
+}
+
+/* =============================================
+   LAB LIFE HIGHLIGHTS — チェックマーク式の研究室生活
+   ============================================= */
+.lab-life-highlights {
+  background: linear-gradient(135deg, var(--cream-alt) 0%, var(--cream) 65%);
+  border-radius: 22px;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--border);
+  margin-top: 24px;
+}
+.lab-life-highlights__lead {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--terracotta-dark);
+  margin: 0 0 18px;
+  letter-spacing: 0.04em;
+}
+.lab-life-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.lab-life-highlights li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+}
+.lab-life-highlights li svg {
+  flex-shrink: 0;
+  color: var(--forest);
+  margin-top: 2px;
+}
+.lab-life-highlights li strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.lab-life-highlights li span {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--stone);
+}
+
+/* Terracotta variation */
+.lab-life-highlights--terracotta li svg {
+  color: var(--terracotta);
+}
+
+/* =============================================
+   LAB QUOTE CARD — 教員メッセージ引用カード
+   ============================================= */
+.lab-quote-card {
+  position: relative;
+  background: var(--cream);
+  border-radius: 22px;
+  padding: clamp(32px, 5vw, 48px) clamp(28px, 5vw, 56px);
+  border: 1px solid var(--border);
+  text-align: center;
+  overflow: hidden;
+}
+.lab-quote-card__icon {
+  color: var(--terracotta);
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+.lab-quote-card p {
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 1.7vw, 18px);
+  line-height: 2.1;
+  color: var(--charcoal);
+  max-width: 580px;
+  margin: 0 auto 24px;
+  letter-spacing: 0.02em;
+}
+.lab-quote-card p em {
+  font-style: normal;
+  background: linear-gradient(transparent 60%, var(--terracotta-20) 60%);
+  padding: 0 4px;
+  color: var(--terracotta-dark);
+}
+.lab-quote-card__author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.lab-quote-card__role {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--stone-light);
+}
+.lab-quote-card__name {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .lab-story-feature__title {
+    line-height: 1.6;
+  }
+  .lab-timeline::before {
+    left: 23px;
+  }
+  .lab-timeline__num {
+    width: 48px;
+    height: 48px;
+    font-size: 13px;
+  }
+  .lab-chat__bubble {
+    max-width: 84%;
+  }
+  .lab-rating-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .lab-rating-card__body {
+    text-align: left;
+  }
+  .lab-theme-card {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .lab-life-highlights ul {
+    grid-template-columns: 1fr;
+  }
+}
+
 .column-figure {
   margin: 2rem 0;
   border-radius: 16px;
