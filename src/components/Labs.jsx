@@ -75,10 +75,10 @@ const LAB_STORIES = [
   },
   {
     storyTitle: '内視鏡とAIが拓く、腸と健康の未来',
-    hook: 'マイクロバイオームから臨床研究まで。G1 Lab（外部）。',
+    hook: 'マイクロバイオームから臨床研究まで。',
     category: 'science',
-    href: 'https://g1lab.jp/',
-    isExternal: true,
+    href: '/lab-niikura',
+    isExternal: false,
   },
   {
     storyTitle: '砂糖のひみつと、成長期の骨・体力',
