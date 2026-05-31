@@ -185,7 +185,7 @@ export default function LabNiikura() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
               gap: '16px',
               marginTop: '24px',
             }}>
