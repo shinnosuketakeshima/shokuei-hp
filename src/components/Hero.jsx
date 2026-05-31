@@ -5,7 +5,7 @@ import HeroBg from '../top.jpg';
 
 const CTAS = [
   { label: '学生たちのリアルを見る', href: '/voices', external: false },
-  { label: '11の研究室ストーリー', href: '#labs', external: false },
+  { label: '12の研究室ストーリー', href: '#labs', external: false },
   {
     label: '公式サイトでカリキュラムを見る',
     href: 'https://www.jumonji-u.ac.jp/humanlife/food/',
