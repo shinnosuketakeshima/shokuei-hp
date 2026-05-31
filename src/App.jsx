@@ -29,6 +29,7 @@ import KokushiReport from './components/KokushiReport'
 import StudentColumn1 from './components/StudentColumn1'
 import LabShibasaki from './components/LabShibasaki'
 import LabYamazaki from './components/LabYamazaki'
+import LabNiikura from './components/LabNiikura'
 import LabOkamoto from './components/LabOkamoto'
 import EventSpecial0525 from './components/EventSpecial0525'
 import StudentColumn3 from './components/StudentColumn3'
@@ -91,6 +92,11 @@ const PAGE_META = {
   '/lab-yamazaki': {
     title: '山崎優子研究室（食品安全学・栄養生化学） | 十文字学園女子大学 食物栄養学科',
     description: 'サプリメントと健康食品の「本当の安全」を科学で守る山崎研究室。薬物相互作用（CYP解析）から独自の安全評価法SDI-SEまで、食品安全学・栄養生化学のスペシャリストを育成します。',
+    ogType: 'article',
+  },
+  '/lab-niikura': {
+    title: '新倉量太研究室（消化器内科学・腸内細菌・医療AI） | 十文字学園女子大学 食物栄養学科',
+    description: '医療×AI×腸内細菌。東大病院の消化器内科医・新倉量太教授が率いる研究室。大規模データ解析・AIを活用した胃腸ガン予防・腸内細菌研究で、「食で病気を防ぐ」科学の最前線へ。',
     ogType: 'article',
   },
   '/lab-okamoto': {
@@ -173,7 +179,7 @@ const PAGE_META = {
 const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki', '/lab-yamazaki',
-  '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
+  '/lab-niikura', '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices',
 ]
@@ -269,6 +275,7 @@ export default function App() {
           <Route path="/lab-nakaoka" element={<LabNakaoka />} />
           <Route path="/lab-shibasaki" element={<LabShibasaki />} />
           <Route path="/lab-yamazaki" element={<LabYamazaki />} />
+          <Route path="/lab-niikura" element={<LabNiikura />} />
           <Route path="/lab-okamoto" element={<LabOkamoto />} />
           <Route path="/koudai-project" element={<KoudaiProject />} />
           <Route path="/kokushi-report" element={<KokushiReport />} />
