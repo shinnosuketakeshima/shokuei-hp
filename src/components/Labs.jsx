@@ -46,7 +46,7 @@ const LAB_STORIES = [
     isExternal: false,
   },
   {
-    storyTitle: '金魚とゼブラフィッシュが教えてくれる老化のヒミツ',
+    storyTitle: 'キンギョとゼブラフィッシュが教えてくれる老化のヒミツ',
     hook: '鱗・皮膚の再生から、食品成分の分子レベル解析へ。',
     category: 'science',
     href: '/lab-iimura',
