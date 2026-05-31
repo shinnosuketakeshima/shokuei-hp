@@ -45,12 +45,52 @@ const SENIOR_THEMES = [
   'ハーブ抽出物が培養肝細胞に与える影響（細胞実験）',
 ];
 
-const PUBLICATIONS = [
-  'Yamazaki Y, et al. Inhibitory effects of Hypericum perforatum extract on cytochrome P450 enzyme activities. J Nutr Sci Vitaminol. 2018;64(3):210-217.',
-  'Yamazaki Y, et al. Safety evaluation of turmeric extract using the Subchronic Dietary Intake-based Safety Evaluation (SDI-SE) method: a rat feeding study. J Nutr Sci Vitaminol. 2020;66(5):405-414.',
-  'Yamazaki Y, et al. Effects of herbal extracts on CYP3A4 and CYP2C9 activities in human liver microsomes. Food Chem Toxicol. 2019;131:110577.',
-  'Yamazaki Y, et al. Hepatotoxic potential assessment of Echinacea purpurea extract using HepG2 cells and mRNA expression analysis. J Nutr Sci Vitaminol. 2021;67(2):131-139.',
-  'Yamazaki Y, et al. Establishment of an acceptable daily intake estimation method for herbal food products (SDI-SE): concept and validation. Food Funct. 2022;13(4):1823-1832.',
+const PUBLICATION_SECTIONS = [
+  {
+    label: '査読論文',
+    items: [
+      'Near-Physiological Concentrations of Extracellular Pyruvate Stimulated Glucose Utilization along with Triglyceride Accumulation and Mitochondrial Activity in HepG2 Cells. J Nutr Sci Vitaminol. 2023;69(5):314-325. (共著)',
+      'Application to Butterbur Products of a Suggested Daily Intake-Based Safety Evaluation of Individual Herbal Supplements with Cytochrome P450 Expression as a Major Index. J Nutr Sci Vitaminol. 2023;69(3):206-219. (共著)',
+      'デンプン原料の異なる2種類のリン酸高架橋デンプンに対するヒト腸内細菌由来水素ガス測定による発酵性の評価. 安定同位体と生体ガス. 2022;14:46-57. (共著)',
+      '母獣ラットの難消化性糖質継続摂取による腸内細菌由来水素ガスの体内分布と胎仔への移行. 安定同位体と生体ガス. 2021;13:13-22. (共著)',
+      'Excessive folic acid supplementation in pregnant mice impairs insulin secretion and induces the expression of genes associated with fatty liver in their offsprings. 2020;6(4). (共著)',
+      'Comparison of CYP Induction by Coleus forskohlii Extract and Recovery in the Small Intestine and Liver of Mice. Biol Pharm Bull. 2020;43:116-123. (共著)',
+      'Science-Based Ratings of Safety and Effectiveness of Ingredients of Health Foods Distributed in Japan Differ among Health Food Categories. 2019;1(4):100-110. (共著)',
+      '培養細胞内グリコーゲンの定量のための酵素蛍光法の検討. 十文字学園女子大学紀要. 2019;49:83-94. (共著)',
+      '細胞内ATP測定への化学発光イメージング解析の応用. 十文字学園女子大学紀要. 2018;48(2):85-97. (共著)',
+      '食品添加物の安全性評価の手法に準じたアマチャヅル製品の安全性の検討. 十文字学園女子大学紀要. 2018;48(2):75-84. (共著)',
+      'ラットを1,5-アンヒドログルシトール飼料で飼育したときの成長，臓器重量，血液性状ならびに酸化ストレスなどに及ぼす影響. ルミナコイド研究. 2016;20(2):77-84. (共著)',
+      'Induction of fatty liver by Coleus forskohlii extract through enhancement of de novo triglyceride synthesis in mice. Toxicology Reports. 2014;1:787-794. (共著)',
+      'D-sorbose inhibits disaccharidase activity and demonstrates suppressive action on postprandial blood levels of glucose and insulin in the rat. Nutrition Research. 2014;34:961-967. (共著)',
+      'Coleus forskohlii extract induces hepatic cytochrome P450 enzymes in mice. Food Chem Toxicol. 2012;50:750-755. (共著)',
+      'ヒトにおけるD-タガトースの一過性下痢に対する最大無作用量，有効エネルギー量ならびに生体における利用性. 日本栄養・食糧学会誌. 2011;64(6):403-413. (共著)',
+      '人気の高いハーブサプリメント素材のNatural Medicines Comprehensive Databaseに基づく安全性および有効性の評価検討. 栄養学雑誌. 2011;69(5):267-279. (共著)',
+      'Influence of zinc deficiency to the mice infected with babesia microti. J Vet Med Sci. 2011;73(2):263-267. (共著)',
+      'Time-Dependent Induction of Hepatic Cytochrome P450(CYP)s Enzyme Activity and mRNA Expression by Bilobalide in Rats. J Pharmacol Sci. 2009;109:459-462. (共著)',
+      'High dose of commercial products of kava (Piper methysticum) markedly enhanced hepatic cytochrome P450 1A1 mRNA expression with liver enlargement in rats. Food Chem Toxicol. 2008;46:3732-3738. (共著)',
+      '栄養士養成教育のための遺伝子解析実習プログラムの点検評価. 十文字学園女子短期大学研究紀要. 2000;31:113-122. (共著)',
+      '栄養士養成に向けたチトクロームP450 1A1の遺伝子解析実習に関する教育研究. 十文字学園女子短期大学研究紀要. 1999;30:121-132. (共著)',
+      '成長期の雄ラットにおける飲用水からのメラトニン摂取の影響. 十文字学園女子短期大学研究紀要. 1999;30:111-119. (共著)',
+      '栄養士養成教育への遺伝子解析実習の導入の試み. 栄養学雑誌. 1999;57:229-240. (共著)',
+      '中枢神経系局在カルシウム結合タンパク質セファロカルシンの分子多様性. 十文字学園女子短期大学研究紀要. 1996;27:155-170. (共著)',
+    ],
+  },
+  {
+    label: '著書',
+    items: [
+      '健康・栄養学用語辞典. 2012. (共著)',
+      '食品機能性の科学. 2008. (共著)',
+    ],
+  },
+  {
+    label: 'レビュー・解説',
+    items: [
+      '抗うつ作用を志向するハーブ類サプリメントのエビデンス. アンチエイジング医学－日本抗加齢医学会雑誌. 2007;3(4):33-41. (共著)',
+      'ハーブサプリメントの安全・安心な利用をめざして（連載12回）. FOOD Style 21. 2004-2005. (共著)',
+      'ハーブサプリメントとその有用性. 医学のあゆみ. 2004;208(12):991-995. (共著)',
+      'セイヨウオトギリソウと通常医薬品の相互作用：臨床試験の系統的レビュー. 栄養学雑誌. 2004;62(5):309. (単著)',
+    ],
+  },
 ];
 
 export default function LabYamazaki() {
@@ -379,26 +419,40 @@ export default function LabYamazaki() {
                 }}>
                   主要論文・学術業績を表示する
                 </summary>
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '10px',
-                }}>
-                  {PUBLICATIONS.map((pub, i) => (
-                    <li key={i} style={{
-                      fontSize: '12px',
-                      lineHeight: '1.8',
-                      color: 'var(--stone)',
-                      paddingLeft: '14px',
-                      borderLeft: '2px solid var(--terracotta)',
+                {PUBLICATION_SECTIONS.map((section, si) => (
+                  <div key={si} style={{ marginBottom: '24px' }}>
+                    <p style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--terracotta-dark, var(--terracotta))',
+                      letterSpacing: '0.1em',
+                      marginBottom: '10px',
+                      textTransform: 'uppercase',
                     }}>
-                      {pub}
-                    </li>
-                  ))}
-                </ul>
+                      {section.label}
+                    </p>
+                    <ul style={{
+                      listStyle: 'none',
+                      padding: 0,
+                      margin: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '10px',
+                    }}>
+                      {section.items.map((pub, i) => (
+                        <li key={i} style={{
+                          fontSize: '12px',
+                          lineHeight: '1.8',
+                          color: 'var(--stone)',
+                          paddingLeft: '14px',
+                          borderLeft: '2px solid var(--terracotta)',
+                        }}>
+                          {pub}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </details>
               <div className="lab-data-archive__grid" style={{ marginTop: '16px' }}>
                 <div>
