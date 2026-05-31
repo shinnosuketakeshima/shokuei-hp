@@ -91,7 +91,7 @@ const PAGE_META = {
   '/lab-yamazaki': {
     title: '山崎優子研究室（食品安全学・栄養生化学） | 十文字学園女子大学 食物栄養学科',
     description: 'サプリメントと健康食品の「本当の安全」を科学で守る山崎研究室。薬物相互作用（CYP解析）から独自の安全評価法SDI-SEまで、食品安全学・栄養生化学のスペシャリストを育成します。',
-    ogType: 'profile',
+    ogType: 'article',
   },
   '/lab-okamoto': {
     title: '岡本節子研究室（高齢者栄養・臨床栄養） | 十文字学園女子大学 食物栄養学科',
