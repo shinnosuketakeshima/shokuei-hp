@@ -39,7 +39,8 @@ const LAB_COLS = [
     labs: [
       { name: '竹嶋研究室', note: 'ウイルスと遺伝子・One Health', href: '/lab-takeshima' },
       { name: '飯村研究室', note: '小型魚類モデル・皮膚老化', href: '/lab-iimura' },
-      { name: '新倉研究室', note: '医療×データサイエンス', href: 'https://g1lab.jp/', external: true },
+      { name: '新倉研究室', note: '医療×データサイエンス', href: '/lab-niikura' },
+      { name: '山崎研究室', note: '健康食品・リスク評価科学', href: '/lab-yamazaki' },
       { name: '石井研究室', note: 'もっちり食感・グルテンフリー', href: '/lab-ishii' },
     ],
   },
