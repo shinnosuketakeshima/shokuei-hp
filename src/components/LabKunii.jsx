@@ -1,4 +1,4 @@
-﻿import { ArrowLeft, Mail, ShoppingCart, Users, Zap } from 'lucide-react';
+﻿import { ArrowLeft, ShoppingCart, Users, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function LabKunii() {
@@ -48,8 +48,8 @@ export default function LabKunii() {
                 {
                   icon: <ShoppingCart className="text-terracotta" size={28} />,
                   title: "【商品開発】大学公式キャラ「プラスちゃん」をナッツに！企業との共同開発",
-                  subtitle: "プラスちゃんナッツ × コストコ × NewDays",
-                  body: "管理栄養士が監修する、美味しくて健康的なナッツ・フルーツ商品を企業と一緒にプロデュース。企画から改良、社会実装まで、新商品が世に出るプロセスをそのまま体験します。学生たちが栄養計算した商品は、今、全国37のコストコ倉庫店や新座駅のNewDaysで販売中。あなたの「栄養の知識」が、実際にお客さんの手に届く実感——それがこのゼミの醍醐味です。"
+                  subtitle: "プラスちゃんナッツ × NewDays",
+                  body: "管理栄養士が監修する、美味しくて健康的なナッツ・フルーツ商品を企業と一緒にプロデュース。企画から改良、社会実装まで、新商品が世に出るプロセスをそのまま体験します。学生たちが栄養計算した商品は、今、新座駅のNewDaysで販売中。あなたの「栄養の知識」が、実際にお客さんの手に届く実感——それがこのゼミの醍醐味です。"
                 },
                 {
                   icon: <Zap className="text-terracotta" size={28} />,
@@ -155,7 +155,6 @@ export default function LabKunii() {
             </p>
             <div style={{ marginTop: '24px' }}>
               {[
-                { year: '2025年5月', event: 'プラスちゃんナッツ', detail: 'コストコホールセール全37倉庫店でリニューアル販売開始' },
                 { year: '2025年6月', event: 'GOONA（グーナ）グミ発売', detail: '23種類の栄養成分配合。子ども向け栄養サポートお菓子として商品化' },
                 { year: '2025年7月', event: '「すったてうどん」実践食事学コラボ', detail: '川島町の名店と連携。夏の郷土料理の栄養分析と開発を実施' },
                 { year: '2025年8月', event: 'セブンイレブン「すったて」販売', detail: '学生が栄養計算・ポスター制作を担当。埼玉県内で季節限定販売中' },
@@ -188,54 +187,6 @@ export default function LabKunii() {
                 </motion.div>
               ))}
             </div>
-          </motion.section>
-
-          {/* CTA Banner */}
-          <motion.section
-            className="lab-section"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{
-              backgroundColor: 'linear-gradient(135deg, rgba(238, 119, 82, 0.12), rgba(238, 119, 82, 0.05))',
-              padding: '40px 28px',
-              borderRadius: '12px',
-              borderLeft: '4px solid var(--terracotta)',
-              textAlign: 'center'
-            }}
-          >
-            <h2 className="lab-section__title" style={{ marginBottom: '16px' }}>
-              本気で「実践」したい君へ
-            </h2>
-            <p className="lab-section__body" style={{ fontSize: '1.05em', marginBottom: '24px' }}>
-              企業と一緒に商品を生み出す。地域の課題を栄養で解く。
-              <br />
-              そんな「本当の学び」に、興味がありませんか？
-            </p>
-            <div style={{
-              display: 'inline-block',
-              backgroundColor: 'var(--terracotta)',
-              color: 'white',
-              padding: '16px 32px',
-              borderRadius: '8px',
-              textDecoration: 'none',
-              fontWeight: '600',
-              fontSize: '1.05em',
-              marginBottom: '16px'
-            }}>
-              <a href="mailto:kunii@jumonji-u.ac.jp" style={{ color: 'white', textDecoration: 'none' }}>
-                <Mail size={18} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'middle' }} />
-                オンライン説明会に申し込む
-              </a>
-            </div>
-            <p style={{ fontSize: '0.95em', color: '#666', marginTop: '16px' }}>
-              卒業研究に対する考え方や取り組み方について、
-              <br />
-              オンラインで詳しく説明します。
-              <br />
-              気になることがあればメールでご連絡ください。
-            </p>
           </motion.section>
 
           {/* Lab Information */}
