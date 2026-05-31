@@ -28,6 +28,7 @@ import KoudaiProject from './components/KoudaiProject'
 import KokushiReport from './components/KokushiReport'
 import StudentColumn1 from './components/StudentColumn1'
 import LabShibasaki from './components/LabShibasaki'
+import LabYamazaki from './components/LabYamazaki'
 import LabOkamoto from './components/LabOkamoto'
 import EventSpecial0525 from './components/EventSpecial0525'
 import StudentColumn3 from './components/StudentColumn3'
@@ -86,6 +87,11 @@ const PAGE_META = {
     title: '芝崎本実研究室・おだんごゼミ（和菓子・調理科学） | 十文字学園女子大学 食物栄養学科',
     description: '「好き」を科学に変える！和菓子職人の経験を持つ「おだんご先生」率いる芝崎研究室。胃消化シミュレーターを用いた和菓子の消化性解析から、高校生とコラボした「青春三色パン」開発まで、伝統と科学を掛け合わせた最先端の調理科学を探究します。',
     ogType: 'article',
+  },
+  '/lab-yamazaki': {
+    title: '山崎優子研究室（食品安全学・栄養生化学） | 十文字学園女子大学 食物栄養学科',
+    description: 'サプリメントと健康食品の「本当の安全」を科学で守る山崎研究室。薬物相互作用（CYP解析）から独自の安全評価法SDI-SEまで、食品安全学・栄養生化学のスペシャリストを育成します。',
+    ogType: 'profile',
   },
   '/lab-okamoto': {
     title: '岡本節子研究室（高齢者栄養・臨床栄養） | 十文字学園女子大学 食物栄養学科',
@@ -166,7 +172,7 @@ const PAGE_META = {
 
 const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
-  '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki',
+  '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki', '/lab-yamazaki',
   '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices',
@@ -262,6 +268,7 @@ export default function App() {
           <Route path="/lab-komeichi" element={<LabKomeichi />} />
           <Route path="/lab-nakaoka" element={<LabNakaoka />} />
           <Route path="/lab-shibasaki" element={<LabShibasaki />} />
+          <Route path="/lab-yamazaki" element={<LabYamazaki />} />
           <Route path="/lab-okamoto" element={<LabOkamoto />} />
           <Route path="/koudai-project" element={<KoudaiProject />} />
           <Route path="/kokushi-report" element={<KokushiReport />} />
