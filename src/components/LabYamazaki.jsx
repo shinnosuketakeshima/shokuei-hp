@@ -3,7 +3,6 @@ import {
   Sparkles,
   ShieldCheck,
   FlaskConical,
-  Dna,
   Microscope,
   CheckCircle2,
   Quote,
@@ -28,17 +27,14 @@ const RESEARCH_THEMES = [
 
 const LAB_METHODS = [
   {
-    icon: Dna,
     label: '動物実験',
     body: 'ラットへの投与試験を通して、成長曲線や肝臓重量への影響を精密に測定します。',
   },
   {
-    icon: Microscope,
     label: '細胞実験',
     body: 'ヒトの培養肝細胞（HepG2）を使って、成分が細胞にどう作用するかを分析。',
   },
   {
-    icon: FlaskConical,
     label: '遺伝子解析',
     body: 'リアルタイムRT-PCR法などの最先端技術で、目に見えないmRNA（遺伝子発現）の変化まで追いかけます。',
   },
