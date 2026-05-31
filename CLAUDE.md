@@ -5,11 +5,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
+npm install       # Install dependencies (first-time setup)
 npm run dev       # Start Vite dev server with HMR
 npm run build     # Production build → dist/
 npm run preview   # Preview the production build locally
 npm run lint      # ESLint (flat config, React Hooks + React Refresh rules)
 ```
+
+Before committing, run `npm run lint` to catch ESLint violations early (especially React Hooks rules).
 
 Deploy to Firebase Hosting (requires Firebase CLI):
 ```bash
@@ -95,7 +98,7 @@ For **content pages** (student columns, event pages, etc.), create the component
 ### News: Firestore + static dummy items
 
 `News.jsx` merges two sources:
-1. **Firestore** — `news` collection. Falls back to unordered query if the composite index is missing.
+1. **Firestore** — `news` collection. Falls back to unordered query if the composite index is missing (check Firebase Console Firestore > Indexes if results seem out of order).
 2. **`STATIC_NEWS` array** (static, in `News.jsx`) — editorial/blog-style articles with internal `href` links (e.g. `/student-column-3`).
 
 Both sources are merged and re-sorted by date descending (`newsDateMillis()`) before render. Firestore `date` values can be a `Timestamp`, a `Date`, or a string — `formatNewsDate()` normalises all three to `YYYY.MM.DD`. The `type` field maps to a `news-tag--{type}` CSS class; valid types are `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`. To temporarily suppress a specific item from both sources, add its title pattern to `isNewsItemTemporarilyHidden()` in `News.jsx`.
@@ -108,8 +111,9 @@ Both sources are merged and re-sorted by date descending (`newsDateMillis()`) be
 
 ### Styling
 
-- `src/index.css` (~1900 lines) is the single stylesheet. It defines a design-token system via CSS custom properties (`--cream`, `--terracotta`, `--forest`, `--charcoal`, etc.) and drives all layout with those tokens plus `clamp()` for fluid spacing.
-- Tailwind CSS 4 is a listed dependency but effectively unused — do not introduce Tailwind utilities; extend `index.css` instead.
+- **`src/index.css` is the only stylesheet.** All styles must go here (~1900 lines). Do not create new CSS files anywhere in the project.
+- It defines a design-token system via CSS custom properties (`--cream`, `--terracotta`, `--forest`, `--charcoal`, etc.) and drives all layout with those tokens plus `clamp()` for fluid spacing.
+- Tailwind CSS 4 is a listed dependency but **completely unused** — do not introduce Tailwind utilities in any form; extend `index.css` instead.
 - Google Fonts (Noto Serif JP, Noto Sans JP) load via `<link>` in `index.html`. Use `var(--font-serif)` / `var(--font-sans)`.
 - Stats bar (`StatsBar`) uses an off-white background (`#FAF8F5`), not the charcoal dark theme — keep this distinction when editing that section.
 
@@ -161,7 +165,7 @@ Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg` (e.g. `takesh
 
 ### Component Conventions
 
-- All components are plain `.jsx` under `src/components/`. No TypeScript.
+- **All components are in `src/components/` only.** Plain `.jsx`, no TypeScript. Do not create component subdirectories or component-specific CSS files.
 - External links: `target="_blank" rel="noopener noreferrer"`. Internal path links: use `<Link to="...">` from `react-router-dom`.
 - Scroll-reveal: add `data-reveal` (and optionally `data-reveal-delay="1"–"6"`) to animate elements on scroll. Works only on the homepage.
 - Framer Motion (`framer-motion`) is used for animations in `News.jsx` and sub-page components. Use `motion.*` variants and `AnimatePresence` from that library rather than raw CSS transitions for new animated UI.
