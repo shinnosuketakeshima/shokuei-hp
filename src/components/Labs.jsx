@@ -67,6 +67,13 @@ const LAB_STORIES = [
     isExternal: false,
   },
   {
+    storyTitle: 'そのサプリ、本当に安全？健康食品を守るリスク評価の科学',
+    hook: '薬物相互作用・CYP解析から独自の安全基準SDI-SEまで。',
+    category: 'science',
+    href: '/lab-yamazaki',
+    isExternal: false,
+  },
+  {
     storyTitle: '内視鏡とAIが拓く、腸と健康の未来',
     hook: 'マイクロバイオームから臨床研究まで。G1 Lab（外部）。',
     category: 'science',
@@ -179,7 +186,7 @@ export default function Labs() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section__title">11の研究室ストーリー</h2>
+          <h2 className="section__title">12の研究室ストーリー</h2>
           <p className="section__subtitle">Lab Stories</p>
           <p className="labs-portal__lead">
             教員プロフィールや研究業績の一覧ではなく、ゼミごとの「物語」から入れます。気になるテーマを選んで、詳細ページへ。
