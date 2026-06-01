@@ -31,6 +31,10 @@ export default function SEO({ title, description, ogType = 'website', customJson
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
 
+      {/* Language/Locale */}
+      <link rel="alternate" hrefLang="ja" href={url} />
+      <link rel="alternate" hrefLang="ja-JP" href={url} />
+
       {/* Open Graph / Social */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -42,7 +46,11 @@ export default function SEO({ title, description, ogType = 'website', customJson
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
 
-      {/* GEO (Generative Engine Optimization)対策: 
+      {/* GEO Targeting */}
+      <meta name="geo.position" content="35.8193;139.6291" />
+      <meta name="ICBM" content="35.8193, 139.6291" />
+
+      {/* GEO (Generative Engine Optimization)対策:
           AIクローラー向けにより明確なコンテキストを示すため、
           JSON-LDによるセマンティックな構造化データを必ず出力 */}
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>

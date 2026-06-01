@@ -41,8 +41,8 @@ const RESEARCH_THEMES = [
 
 const LAB_HIGHLIGHTS = [
   {
-    title: '東大病院の最前線とつながる研究環境',
-    body: '先生が東京大学病院の消化器内科の臨床医を兼任しているため、研究が常に「実際の患者さん」と結びついています。リアルな医療現場のデータから学べる、他にはない環境です。',
+    title: '臨床研究と教育が融合した環境',
+    body: '先生の豊富な臨床経験と最新の研究知見が融合した教育環境。リアルな医療現場のデータや知見から学べる、他にはない研究室です。',
   },
   {
     title: 'AIとデータサイエンスを本格活用',
@@ -116,7 +116,7 @@ export default function LabNiikura() {
               <em>「病気にならない食生活」</em>をデザインする。
             </h2>
             <p className="lab-story-feature__lead">
-              東大病院の医師として最前線で患者さんと向き合いながら、
+              豊富な臨床経験を活かしながら、
               AIやデータサイエンスを駆使して胃腸の病気やガンの予防に挑む新倉研究室。
               私たちの体の中に住む<strong>「腸内細菌」</strong>と、日々の<strong>「食」</strong>がどう関わっているのか。
               最先端のテクノロジーで、まだ誰も知らない健康の答えを一緒に探しに行きませんか？
@@ -340,7 +340,7 @@ export default function LabNiikura() {
             <div className="lab-media-profile">
               <div className="lab-media-profile__header">
                 <div className="lab-media-profile__name">
-                  <span className="lab-media-profile__role">東京大学病院 消化器内科 臨床研究医 兼任</span>
+                  <span className="lab-media-profile__role">十文字学園女子大学 食物栄養学科</span>
                   <h3>新倉 量太 教授</h3>
                 </div>
                 <div className="lab-media-profile__badges">
@@ -379,8 +379,8 @@ export default function LabNiikura() {
               </div>
               <div className="lab-media-profile__message">
                 <p>
-                  「東大病院で患者さんと向き合いながら、十文字では次世代の栄養・医療の担い手を育てたい。<br />
-                  <strong>臨床・研究・教育、すべてのフィールドで、データと食が人を救う世界を一緒に作りましょう。」</strong>
+                  「十文字学園女子大学で、次世代の栄養・医療の担い手を育てたい。<br />
+                  <strong>研究・教育、すべてのフィールドで、データと食が人を救う世界を一緒に作りましょう。」</strong>
                 </p>
               </div>
             </div>

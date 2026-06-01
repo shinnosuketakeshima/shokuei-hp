@@ -215,8 +215,11 @@ export default function App() {
   if (location.pathname === '/') {
     customJsonLd = {
       '@type': 'CollegeOrUniversity',
-      name: '十文字学園女子大学 食物栄養学科（非公式情報メディア）',
-      alternateName: '十文字学園女子大学 食物栄養学科',
+      '@id': 'https://shokuei-hp.web.app/#organization',
+      name: '十文字学園女子大学 食物栄養学科',
+      alternateName: '食物栄養学科',
+      description: '埼玉県新座市にある十文字学園女子大学 食物栄養学科。管理栄養士・栄養士を育成する4年間の実践的カリキュラムと国家試験対策サポート体制が特徴。',
+      url: 'https://shokuei-hp.web.app/',
       parentOrganization: {
         '@type': 'CollegeOrUniversity',
         name: '十文字学園女子大学',
@@ -224,19 +227,33 @@ export default function App() {
       },
       address: {
         '@type': 'PostalAddress',
-        streetAddress: '菅沢2-1-28',
+        streetAddress: '埼玉県新座市菅沢2-1-28',
         addressLocality: '新座市',
         addressRegion: '埼玉県',
         postalCode: '352-8510',
         addressCountry: 'JP'
-      }
+      },
+      telephone: '+81-48-481-1111',
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: '35.8193',
+        longitude: '139.6291'
+      },
+      foundingDate: '2000',
+      areaServed: {
+        '@type': 'Country',
+        name: 'JP'
+      },
+      sameAs: [
+        'https://www.jumonji-u.ac.jp/'
+      ]
     }
   } else if (location.pathname.startsWith('/lab-')) {
     customJsonLd = {
       '@type': 'ProfilePage',
       mainEntity: {
         '@type': 'Person',
-        name: meta.title.split('（')[0].replace('研究室', ''), // "竹嶋伸之輔研究室" -> "竹嶋伸之輔"
+        name: meta.title.split('（')[0].replace('研究室', ''),
         jobTitle: '教授',
         affiliation: {
           '@type': 'CollegeOrUniversity',
@@ -250,6 +267,16 @@ export default function App() {
       author: {
         '@type': 'Organization',
         name: '十文字学園女子大学 食物栄養学科 学生・教員有志'
+      },
+      publisher: {
+        '@type': 'CollegeOrUniversity',
+        name: '十文字学園女子大学',
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'JP',
+          addressRegion: '埼玉県',
+          addressLocality: '新座市'
+        }
       }
     }
   }

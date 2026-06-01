@@ -17,7 +17,7 @@ const CATEGORIES = [
     icon: FlaskConical,
     title: '最先端サイエンス',
     description:
-      '金魚やゼブラフィッシュの老化実験、ウイルスと遺伝子、胃消化シミュレーターなど、白衣で挑む科学の最前線。',
+      'キンギョやゼブラフィッシュの老化実験、ウイルスと遺伝子、胃消化シミュレーターなど、白衣で挑む科学の最前線。',
     href: '#labs-science',
     accent: 'from-[#5a4a6b]/90 to-[#3d3450]/95',
     tag: '白衣の実験室',

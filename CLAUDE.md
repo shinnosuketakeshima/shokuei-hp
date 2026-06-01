@@ -5,11 +5,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
+npm install       # Install dependencies (first-time setup)
 npm run dev       # Start Vite dev server with HMR
 npm run build     # Production build → dist/
 npm run preview   # Preview the production build locally
 npm run lint      # ESLint (flat config, React Hooks + React Refresh rules)
 ```
+
+Before committing, run `npm run lint` to catch ESLint violations early (especially React Hooks rules).
 
 Deploy to Firebase Hosting (requires Firebase CLI):
 ```bash
@@ -54,6 +57,8 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/campus-life` | `CampusLife` |
 | `/voices` | `StudentVoices` |
 
+**Note:** `/event-0531` (route path) maps to `EventSpecial0525.jsx` (component name). The date mismatch is intentional — component names reflect event planning dates while route paths reflect event dates. Search for event-related code using the route path `/event-` pattern.
+
 `Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except `/`).
 
 Dynamic `<title>`, `<meta name="description">`, Open Graph tags, canonical URL, and JSON-LD structured data are all injected per route in `App.jsx` via the `PAGE_META` map (each entry has `title`, `desc`, `ogType`). The JSON-LD `@type` is automatically set to `CollegeOrUniversity` for `/`, `ProfilePage` for lab pages, and `Article` for column/report paths.
@@ -65,6 +70,8 @@ In-page scroll nav links in `Header.jsx` use `href="/#section-id"` so they work 
 The homepage `/` stacks sections in this order with these `id` attributes (used by nav `href="/#id"` links):
 
 `Hero` → `CategoryBanners` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `Footer` (`#contact`)
+
+`CategoryBanners` is a navigation component that displays category/topic cards (e.g., for quick access to major sections). It does not have an `id` attribute since it is not nav-linked.
 
 ### Adding a new sub-page
 
@@ -91,7 +98,7 @@ For **content pages** (student columns, event pages, etc.), create the component
 ### News: Firestore + static dummy items
 
 `News.jsx` merges two sources:
-1. **Firestore** — `news` collection. Falls back to unordered query if the composite index is missing.
+1. **Firestore** — `news` collection. Falls back to unordered query if the composite index is missing (check Firebase Console Firestore > Indexes if results seem out of order).
 2. **`STATIC_NEWS` array** (static, in `News.jsx`) — editorial/blog-style articles with internal `href` links (e.g. `/student-column-3`).
 
 Both sources are merged and re-sorted by date descending (`newsDateMillis()`) before render. Firestore `date` values can be a `Timestamp`, a `Date`, or a string — `formatNewsDate()` normalises all three to `YYYY.MM.DD`. The `type` field maps to a `news-tag--{type}` CSS class; valid types are `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`. To temporarily suppress a specific item from both sources, add its title pattern to `isNewsItemTemporarilyHidden()` in `News.jsx`.
@@ -104,8 +111,9 @@ Both sources are merged and re-sorted by date descending (`newsDateMillis()`) be
 
 ### Styling
 
-- `src/index.css` (~1900 lines) is the single stylesheet. It defines a design-token system via CSS custom properties (`--cream`, `--terracotta`, `--forest`, `--charcoal`, etc.) and drives all layout with those tokens plus `clamp()` for fluid spacing.
-- Tailwind CSS 4 is a listed dependency but effectively unused — do not introduce Tailwind utilities; extend `index.css` instead.
+- **`src/index.css` is the only stylesheet.** All styles must go here (~1900 lines). Do not create new CSS files anywhere in the project.
+- It defines a design-token system via CSS custom properties (`--cream`, `--terracotta`, `--forest`, `--charcoal`, etc.) and drives all layout with those tokens plus `clamp()` for fluid spacing.
+- Tailwind CSS 4 is a listed dependency but **completely unused** — do not introduce Tailwind utilities in any form; extend `index.css` instead.
 - Google Fonts (Noto Serif JP, Noto Sans JP) load via `<link>` in `index.html`. Use `var(--font-serif)` / `var(--font-sans)`.
 - Stats bar (`StatsBar`) uses an off-white background (`#FAF8F5`), not the charcoal dark theme — keep this distinction when editing that section.
 
@@ -120,6 +128,11 @@ Static images live directly in `src/` and are imported by the components that us
 | `src/tairyou.png` | `CampusLife.jsx` |
 | `src/kuwanoha.jpg` | `CampusLife.jsx` |
 | `src/kokushi.png` | `CampusLife.jsx` |
+| `src/eiyo-kagaku.png` | `EiyoAppReport.jsx` (nutrition app illustration) |
+| `src/jisshu-sei.jpg` | `EiyoAppReport.jsx` (intern/practical work) |
+| `src/cheese-camembert.jpg` | `StudentColumn3.jsx` (cheese seminar content) |
+| `src/cheese-seminar-lecture.jpg` | `StudentColumn3.jsx` (cheese seminar lecture) |
+| `src/cheese-tasting.jpg` | `StudentColumn3.jsx` (cheese tasting event) |
 
 Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg` (e.g. `takeshima.jpg`) and are imported in `Labs.jsx` for the lab cards. Add a new file there when adding a new lab entry. `src/faculty/niikura.jpg` exists but has no corresponding lab component yet — it is a placeholder for a future entry.
 
@@ -152,7 +165,7 @@ Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg` (e.g. `takesh
 
 ### Component Conventions
 
-- All components are plain `.jsx` under `src/components/`. No TypeScript.
+- **All components are in `src/components/` only.** Plain `.jsx`, no TypeScript. Do not create component subdirectories or component-specific CSS files.
 - External links: `target="_blank" rel="noopener noreferrer"`. Internal path links: use `<Link to="...">` from `react-router-dom`.
 - Scroll-reveal: add `data-reveal` (and optionally `data-reveal-delay="1"–"6"`) to animate elements on scroll. Works only on the homepage.
 - Framer Motion (`framer-motion`) is used for animations in `News.jsx` and sub-page components. Use `motion.*` variants and `AnimatePresence` from that library rather than raw CSS transitions for new animated UI.
