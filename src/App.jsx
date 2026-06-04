@@ -251,7 +251,7 @@ export default function App() {
   } else if (location.pathname.startsWith('/lab-') && !location.pathname.includes('report')) {
     const jobTitleMap = {
       '/lab-nakaoka': '准教授',
-      '/lab-komeichi': '准教授',
+      '/lab-komeichi': '教授',
       '/lab-yamazaki': '准教授',
       '/lab-niikura': '教授',
     }
