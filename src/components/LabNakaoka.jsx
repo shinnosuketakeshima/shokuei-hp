@@ -197,17 +197,9 @@ export default function LabNakaoka() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="lab-section__title">こんな方を歓迎します</h2>
-            {/* PPTのスライド20に記載の学生像を正確に反映 */}
-            <ul className="lab-publication-list">
-              <li>「子どもの食」に興味のある人</li>
-              <li>課題意識を持ち、自主的に行動できる人</li>
-              <li>自分の考えを周りに伝えられる人</li>
-              <li>周りと協力して物事に取り組める人</li>
-              <li>こつこつ努力するのが苦にならない人</li>
-            </ul>
-            <p className="lab-section__body" style={{ marginTop: '1.5em' }}>
-              保育所でのワークショップ、学校での骨量測定、動物実験、勉強会と、やることは多様ですが、それだけ身につくものも多い研究室です。みなさんの参加を楽しみにしています。
+            <h2 className="lab-section__title">研究室での学び</h2>
+            <p className="lab-section__body">
+              研究室では、子どもの食生活や健康に関する課題を多角的に捉え、調査研究・食育実践・基礎研究を通して学びを深めています。学生はテーマ設定から調査・実験、発表まで主体的に取り組みながら、管理栄養士として必要な実践力と研究力を身につけていきます。
             </p>
           </motion.section>
         </div>
