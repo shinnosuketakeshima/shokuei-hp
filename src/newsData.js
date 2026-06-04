@@ -1,5 +1,14 @@
 export const STATIC_NEWS = [
   {
+    id: 'miraitaikenday-2026',
+    date: '2026.6.21',
+    tag: 'イベント',
+    type: 'info',
+    title: 'ひとつのトマトが、３つの未来を開く─未来体験Day 6月21日開催',
+    description: '食物栄養・健康栄養・食品開発の3学科合同イベント。高校生が同じ食材「トマト」から3つの専門分野を体験。',
+    href: 'https://www.jumonji-u.ac.jp/info/jumonji_miraitaikenday/',
+  },
+  {
     id: 'eiyo-app-report',
     date: '2026.5.26',
     tag: '教員コラム',
