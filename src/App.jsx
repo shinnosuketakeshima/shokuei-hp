@@ -248,34 +248,63 @@ export default function App() {
         'https://www.jumonji-u.ac.jp/'
       ]
     }
-  } else if (location.pathname.startsWith('/lab-')) {
+  } else if (location.pathname.startsWith('/lab-') && !location.pathname.includes('report')) {
+    const jobTitleMap = {
+      '/lab-nakaoka': '准教授',
+      '/lab-komeichi': '准教授',
+      '/lab-yamazaki': '准教授',
+      '/lab-niikura': '教授',
+    }
+    const jobTitle = jobTitleMap[location.pathname] || '教授'
     customJsonLd = {
       '@type': 'ProfilePage',
       mainEntity: {
         '@type': 'Person',
-        name: meta.title.split('（')[0].replace('研究室', ''),
-        jobTitle: '教授',
+        name: meta.title.split('（')[0].replace('研究室', '').trim(),
+        jobTitle,
         affiliation: {
           '@type': 'CollegeOrUniversity',
-          name: '十文字学園女子大学 食物栄養学科'
+          name: '十文字学園女子大学 食物栄養学科',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: '新座市',
+            addressRegion: '埼玉県',
+            addressCountry: 'JP',
+          }
         }
       }
     }
-  } else if (location.pathname.includes('column') || location.pathname.includes('report')) {
+  } else if (
+    location.pathname.includes('column') ||
+    location.pathname.includes('report') ||
+    location.pathname.includes('project') ||
+    location.pathname.includes('event')
+  ) {
+    const articleDateMap = {
+      '/student-column-1': '2026-05-11',
+      '/student-column-3': '2026-05-13',
+      '/koudai-project': '2026-05-12',
+      '/kokushi-report': '2026-05-01',
+      '/lab-kamiyama-report': '2026-05-15',
+      '/eiyo-app-report': '2026-05-26',
+      '/event-0531': '2026-05-18',
+    }
     customJsonLd = {
       '@type': 'Article',
+      datePublished: articleDateMap[location.pathname] || '2026-05-01',
+      dateModified: '2026-06-04',
       author: {
         '@type': 'Organization',
-        name: '十文字学園女子大学 食物栄養学科 学生・教員有志'
+        name: '十文字学園女子大学 食物栄養学科'
       },
       publisher: {
         '@type': 'CollegeOrUniversity',
         name: '十文字学園女子大学',
         address: {
           '@type': 'PostalAddress',
-          addressCountry: 'JP',
+          addressLocality: '新座市',
           addressRegion: '埼玉県',
-          addressLocality: '新座市'
+          addressCountry: 'JP'
         }
       }
     }
