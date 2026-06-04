@@ -1,7 +1,35 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
-export default function SEO({ title, description, ogType = 'website', customJsonLd, datePublished }) {
+function buildBreadcrumbs(pathname, title, url) {
+  if (pathname === '/') return null;
+
+  const base = { name: 'ホーム', url: 'https://shokuei-hp.web.app/' };
+  const pageLabel = title.split('|')[0].trim();
+
+  if (pathname.startsWith('/lab-') && !pathname.includes('report')) {
+    return [
+      base,
+      { name: '研究室一覧', url: 'https://shokuei-hp.web.app/#labs' },
+      { name: pageLabel, url },
+    ];
+  }
+  if (
+    pathname.includes('column') ||
+    pathname.includes('report') ||
+    pathname.includes('project') ||
+    pathname.includes('event')
+  ) {
+    return [
+      base,
+      { name: 'お知らせ・コラム', url: 'https://shokuei-hp.web.app/news' },
+      { name: pageLabel, url },
+    ];
+  }
+  return [base, { name: pageLabel, url }];
+}
+
+export default function SEO({ title, description, ogType = 'website', customJsonLd, keywords }) {
   const location = useLocation();
   const url = `https://shokuei-hp.web.app${location.pathname}`;
   const siteName = '十文字学園女子大学 食物栄養学科';
@@ -10,8 +38,8 @@ export default function SEO({ title, description, ogType = 'website', customJson
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: title,
-    description: description,
-    url: url,
+    description,
+    url,
     publisher: {
       '@type': 'CollegeOrUniversity',
       name: siteName,
@@ -19,19 +47,29 @@ export default function SEO({ title, description, ogType = 'website', customJson
     },
   };
 
-  if (datePublished) {
-    jsonLd.datePublished = datePublished;
-    jsonLd.dateModified = '2026-06-04';
-  }
-
   if (customJsonLd) {
     jsonLd = { ...jsonLd, ...customJsonLd };
   }
+
+  const breadcrumbs = buildBreadcrumbs(location.pathname, title, url);
+  const breadcrumbJsonLd = breadcrumbs
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.map((crumb, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: crumb.name,
+          item: crumb.url,
+        })),
+      }
+    : null;
 
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />
 
       {/* Language/Locale */}
@@ -60,6 +98,9 @@ export default function SEO({ title, description, ogType = 'website', customJson
       <meta name="geo.region" content="JP-11" />
 
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      {breadcrumbJsonLd && (
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+      )}
     </Helmet>
   );
 }

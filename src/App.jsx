@@ -240,12 +240,18 @@ export default function App() {
         longitude: '139.6291'
       },
       foundingDate: '2000',
-      areaServed: {
-        '@type': 'Country',
-        name: 'JP'
-      },
+      areaServed: [
+        { '@type': 'State', name: '埼玉県' },
+        { '@type': 'State', name: '東京都' },
+        { '@type': 'State', name: '神奈川県' },
+        { '@type': 'State', name: '千葉県' },
+        { '@type': 'State', name: '群馬県' },
+        { '@type': 'State', name: '栃木県' },
+      ],
       sameAs: [
-        'https://www.jumonji-u.ac.jp/'
+        'https://www.jumonji-u.ac.jp/',
+        'https://www.instagram.com/jumonji_shokuei/',
+        'https://www.tiktok.com/@ishokssov49',
       ]
     }
   } else if (location.pathname.startsWith('/lab-') && !location.pathname.includes('report')) {
@@ -273,6 +279,66 @@ export default function App() {
           }
         }
       }
+    }
+  } else if (location.pathname === '/support') {
+    customJsonLd = {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '管理栄養士国家試験の合格率はどのくらいですか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '十文字学園女子大学 食物栄養学科は、全国平均を上回る高い合格実績を維持しています。1年次からの早期意識づけと4年次の年8回模擬試験による体制が支えています。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '国家試験対策はいつから始まりますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '1・2年次から学習習慣の形成と基礎固めを開始します。3年次に夏・冬の模擬試験、4年次には年8回の模擬試験と外部講師による特別講義・e-Learningで全員合格を目指します。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'e-Learningはいつでも使えますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'はい。e-Learningシステムにより自分のペースで反復学習が可能です。苦手分野の集中対策や隙間時間の有効活用に活用できます。',
+          },
+        },
+      ],
+    }
+  } else if (location.pathname === '/qualifications') {
+    customJsonLd = {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '食物栄養学科で管理栄養士の資格は取れますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '卒業と同時に管理栄養士国家試験の受験資格が得られます。国家試験に合格することで管理栄養士の資格を取得できます。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '第一種衛生管理者とはどんな資格ですか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '従業員50名以上の事業場への配置が法律で義務付けられた国家資格です。十文字学園女子大学 食物栄養学科では、管理栄養士と第一種衛生管理者のダブルライセンスが取得でき、これは全国唯一の組み合わせで就職の幅を大きく広げます。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '栄養教諭になることはできますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '所定の教職課程を修了することで栄養教諭一種免許状を取得できます。児童生徒の食習慣改善や食育を担う教育職として学校での活躍が可能です。',
+          },
+        },
+      ],
     }
   } else if (
     location.pathname.includes('column') ||
@@ -310,13 +376,27 @@ export default function App() {
     }
   }
 
+  const keywordsMap = {
+    '/': '管理栄養士,栄養士,食物栄養学科,十文字学園女子大学,埼玉県,新座市,食と栄養,大学進学,管理栄養士 大学,栄養士 大学',
+    '/support': '管理栄養士 国家試験,国試対策,合格率,管理栄養士 勉強,受験対策,模擬試験,e-Learning',
+    '/qualifications': '管理栄養士 資格,栄養士 資格,第一種衛生管理者,栄養教諭,NR サプリメントアドバイザー,ダブルライセンス',
+    '/career': '管理栄養士 就職,栄養士 就職先,食品メーカー,病院 管理栄養士,学校 栄養教諭,進路',
+    '/features': '食物栄養 カリキュラム,実習,管理栄養士 養成,学科の特色',
+    '/campus-life': 'キャンパスライフ,学生生活,調理実習室,十文字 施設',
+    '/voices': '在学生の声,卒業生,体験談,管理栄養士 体験',
+    '/news': '食物栄養 ニュース,学科 お知らせ,コラム,イベント',
+  }
+  const keywords = keywordsMap[location.pathname] ||
+    (location.pathname.startsWith('/lab-') ? '研究室,ゼミ,卒業研究,食物栄養学科,十文字学園女子大学' : null)
+
   return (
     <>
-      <SEO 
-        title={meta.title} 
-        description={meta.description} 
-        ogType={meta.ogType} 
-        customJsonLd={customJsonLd} 
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        ogType={meta.ogType}
+        customJsonLd={customJsonLd}
+        keywords={keywords}
       />
       <Header />
       <main>
