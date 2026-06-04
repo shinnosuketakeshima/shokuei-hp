@@ -122,7 +122,7 @@ export default function LabNakaoka() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="lab-section__title">研究室の活動（PPTより）</h2>
+            <h2 className="lab-section__title">研究室の活動</h2>
             {/* 追記: PPTに明記されている活動内容を正確に反映 */}
             <div className="lab-section__card" style={{ marginBottom: '20px' }}>
               <h3>3年生の主な活動</h3>
