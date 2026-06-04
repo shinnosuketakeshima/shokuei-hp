@@ -123,23 +123,28 @@ export default function LabNakaoka() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="lab-section__title">研究室の活動</h2>
-            {/* 追記: PPTに明記されている活動内容を正確に反映 */}
             <div className="lab-section__card" style={{ marginBottom: '20px' }}>
-              <h3>3年生の主な活動</h3>
+              <h3>【3年生】</h3>
               <ul className="lab-publication-list">
-                <li><strong>保育所や科学館での食育活動（夏休み）:</strong> 保育所での食育ワークショップ（野菜・果物を使った草木染め、クッキング保育など）や科学館での体験型食育ワークショップなど、子どもたちが食に親しむ実践プログラムを企画・実施します。</li>
-                <li><strong>小中学校での調査・測定活動（夏休み）:</strong> 実際に測定機器を使い、データ収集から解析までを経験します。</li>
-                <li><strong>動物実験（夏休み〜後期）:</strong> 実験動物（ラット）の飼育・サンプリングを担当します（飼育期間は1〜2か月程度）。</li>
-                <li><strong>勉強会（週1回）:</strong> 1人あたり3回、自分で選んだ論文や研究内容を発表します。</li>
+                <li>保育所や科学館と連携した食育活動の企画・運営</li>
+                <li>小中学校等での調査・測定活動への参加</li>
+                <li>動物実験（ラット飼育・サンプリング）</li>
+                <li>論文紹介や研究発表を行う勉強会</li>
               </ul>
+              <p className="lab-section__body" style={{ marginTop: '1.5em' }}>
+                子どもの食生活や健康に関する研究について学びながら、調査研究・実践活動・基礎研究を幅広く経験します。
+              </p>
             </div>
             <div className="lab-section__card">
-              <h3>4年生の主な活動</h3>
+              <h3>【4年生】</h3>
               <ul className="lab-publication-list">
-                <li><strong>卒業研究:</strong> 2〜3名のグループ単位で、テーマを相談しながら一から研究をまとめます。</li>
-                <li><strong>学会発表や研究成果の発信:</strong> 学会での口頭発表やポスター発表を通じて、研究成果を広く発信します。</li>
-                <li><strong>桐華祭:</strong> 草木染め体験ワークショップの実施と研究活動報告。文化展部門で入賞実績もあります。</li>
+                <li>卒業研究</li>
+                <li>学会発表や研究成果の発信</li>
+                <li>大学祭での研究紹介や体験型企画の実施</li>
               </ul>
+              <p className="lab-section__body" style={{ marginTop: '1.5em' }}>
+                少人数グループで協力しながら研究テーマを設定し、調査計画の立案からデータ解析、発表まで取り組みます。
+              </p>
             </div>
           </motion.section>
 
