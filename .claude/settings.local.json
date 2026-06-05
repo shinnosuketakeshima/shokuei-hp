@@ -23,7 +23,22 @@
       "PowerShell(Copy-Item *)",
       "mcp__plugin_playwright_playwright__browser_navigate",
       "mcp__plugin_playwright_playwright__browser_take_screenshot",
-      "mcp__plugin_playwright_playwright__browser_evaluate"
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "Bash(Start-Sleep -Seconds 4)",
+      "Bash(Get-Content \"C:\\\\Users\\\\教員nb竹嶋伸之輔\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Github-shokuei-hp\\\\d2f38f67-a13f-4482-bb1b-4a973a91903f\\\\tasks\\\\bqo561o78.output\" -Tail 10)",
+      "Bash(npx vite *)",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5175/)",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"C:\\\\Github\\\\shokuei-hp\\\\docs\\\\教員写真\\\\yamazaki\"\\); $hex = \\($bytes[0..7] | ForEach-Object { $_.ToString\\(\"X2\"\\) }\\) -join \" \"; Write-Output $hex)",
+      "Bash(git *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/lab-yamazaki)",
+      "WebFetch(domain:gyoseki.acoffice.jp)",
+      "WebFetch(domain:gemini.google.com)",
+      "Bash(python -c \"import chardet; data=open\\('C:/Github/shokuei-hp/docs/superpowers/specs/2026-06-05-sports-nutrition-design-v2.md','rb'\\).read\\(\\); print\\(chardet.detect\\(data\\)\\)\")",
+      "Bash(python *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5174/sports-nutrition)"
     ]
   }
 }
