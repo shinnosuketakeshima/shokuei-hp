@@ -36,6 +36,7 @@ import StudentColumn3 from './components/StudentColumn3'
 import LabKamiyamaReport from './components/LabKamiyamaReport'
 import EiyoAppReport from './components/EiyoAppReport'
 import NewsArchive from './components/NewsArchive'
+import FAQ from './components/FAQ'
 import './App.css'
 
 const PAGE_META = {
@@ -174,6 +175,11 @@ const PAGE_META = {
     description: '食物栄養学科で学ぶ在学生や、社会で管理栄養士として活躍する卒業生たちのリアルなインタビュー体験談。十文字を選んだ理由、学生生活の思い出、そして将来の夢など、受験生の参考になる生の声を集めました。',
     ogType: 'article',
   },
+  '/faq': {
+    title: 'よくある質問 | 十文字学園女子大学 食物栄養学科',
+    description: '食物栄養学科への入学・資格・就職・国家試験対策についてよくある質問をまとめました。管理栄養士の資格取得方法、第一種衛生管理者のダブルライセンス、就職率99.2%を支えるサポート体制など、受験生の疑問にお答えします。',
+    ogType: 'website',
+  },
 }
 
 const SUB_PATHS = [
@@ -181,7 +187,7 @@ const SUB_PATHS = [
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki', '/lab-yamazaki',
   '/lab-niikura', '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/eiyo-app-report',
-  '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices',
+  '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices', '/faq',
 ]
 
 export default function App() {
@@ -514,6 +520,28 @@ export default function App() {
         },
       ],
     }
+  } else if (location.pathname === '/faq') {
+    customJsonLd = {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: '食物栄養学科の定員は何名ですか？', acceptedAnswer: { '@type': 'Answer', text: '定員は78名の少人数制です。教員が一人ひとりの学習状況を早期に把握し、入学から卒業・就職まで親身にサポートします。先生に名前で呼ばれるほどの距離感が特徴で、国家試験対策でも個別フォローが可能です。' } },
+        { '@type': 'Question', name: '4年間のカリキュラムの特徴は何ですか？', acceptedAnswer: { '@type': 'Answer', text: '1年次の基礎固めから4年次の国試対策まで段階的に深める体系的なカリキュラムです。給食経営管理実習（150食の実際の給食運営）、病院・福祉施設での臨地実習、地域連携活動など、現場で役立つ実践力を養います。' } },
+        { '@type': 'Question', name: '給食経営管理実習とはどのような授業ですか？', acceptedAnswer: { '@type': 'Answer', text: '実際の給食施設を使い、学生自身が150食規模の給食を一から企画・調理・提供する授業です。メニュー設計から食材の発注、衛生管理、原価計算まで、給食現場のすべてを体験できる集大成となる実習です。' } },
+        { '@type': 'Question', name: '十文字学園女子大学はどこにありますか？', acceptedAnswer: { '@type': 'Answer', text: '埼玉県新座市菅沢2-1-28にあります。東武東上線・志木駅からスクールバスが運行しており、東京都内や埼玉各地から通いやすいアクセスです。' } },
+        { '@type': 'Question', name: '管理栄養士の資格は取得できますか？', acceptedAnswer: { '@type': 'Answer', text: '卒業と同時に管理栄養士国家試験の受験資格が得られます。国家試験に合格することで管理栄養士の資格を取得できます。医療・行政・企業など幅広い分野で活躍できる国家資格です。' } },
+        { '@type': 'Question', name: '第一種衛生管理者とはどんな資格で、なぜ全国唯一なのですか？', acceptedAnswer: { '@type': 'Answer', text: '第一種衛生管理者は従業員50名以上の事業場への配置が法律で義務付けられた国家資格です。管理栄養士養成課程でこの資格を卒業と同時に取得できるのは全国の大学で本学のみです。管理栄養士との「ダブルライセンス」が企業への就職に大きく有利に働きます。' } },
+        { '@type': 'Question', name: '卒業と同時に取得できる資格は何ですか？', acceptedAnswer: { '@type': 'Answer', text: '栄養士免許と第一種衛生管理者は卒業と同時に取得できます。管理栄養士は卒業後に国家試験合格が必要です。栄養教諭一種免許状は所定の教職課程修了で取得できます。' } },
+        { '@type': 'Question', name: '栄養教諭になることはできますか？', acceptedAnswer: { '@type': 'Answer', text: '所定の教職課程を修了することで栄養教諭一種免許状を取得できます。学校に配属され、児童生徒の食習慣改善や食育を担う教育職です。' } },
+        { '@type': 'Question', name: '管理栄養士国家試験の合格率はどのくらいですか？', acceptedAnswer: { '@type': 'Answer', text: '十文字学園女子大学 食物栄養学科は全国平均を上回る合格実績を維持しています。1年次からの早期意識づけ、4年次の年8回模擬試験、外部講師による特別講義など6段階のサポート体制が支えています。' } },
+        { '@type': 'Question', name: '国家試験対策はいつから始まりますか？', acceptedAnswer: { '@type': 'Answer', text: '「4年生からでは遅い」という方針のもと、入学直後の1年次から学習習慣の形成と基礎固めを開始します。3年次の夏・冬に模擬試験を実施し、4年次は年8回の模擬試験で本番力を高めます。' } },
+        { '@type': 'Question', name: '4年次の模擬試験は何回ありますか？', acceptedAnswer: { '@type': 'Answer', text: '4年次には年8回の模擬試験を実施します。本番さながらの環境で繰り返し演習し、得点力と時間管理の精度を高めます。4年7月の模試で「130点突破」を全員の目標として明確に設定しています。' } },
+        { '@type': 'Question', name: '国家試験に向けて個別サポートはありますか？', acceptedAnswer: { '@type': 'Answer', text: '少人数教育（定員78名）の強みを活かし、教員が一人ひとりの学習状況を把握して個別にサポートします。4年次には就職活動・国家試験対策・卒業研究の三本柱を、教員が個別フォローしながら進めます。' } },
+        { '@type': 'Question', name: '就職率はどのくらいですか？', acceptedAnswer: { '@type': 'Answer', text: '就職率99.2%（2025年3月卒業生実績）を達成しています。少人数教育と1年次からのキャリア支援、そして管理栄養士＋衛生管理者のダブルライセンスが高い就職実績を支えています。' } },
+        { '@type': 'Question', name: '卒業生の主な就職先はどこですか？', acceptedAnswer: { '@type': 'Answer', text: '2025年3月卒業生の主な就職先は、保育園（25名）・調剤薬局・ドラッグストア（21名）・病院・クリニック（18名）・給食受託会社（14名）・食品メーカー（11名）などです。東京都・埼玉県を中心に関東圏全域で活躍しています。' } },
+        { '@type': 'Question', name: '就職サポートはいつから始まりますか？', acceptedAnswer: { '@type': 'Answer', text: '1年次から就職サポートを開始します。ガイダンスや先輩との交流でキャリアを意識し、2年次には現場実習、3年次には個別進路相談と業界研究会、4年次には教員が一人ひとりの状況に合わせた個別フォローを行います。' } },
+        { '@type': 'Question', name: '一般企業（食品以外）への就職もできますか？', acceptedAnswer: { '@type': 'Answer', text: 'はい。一般企業（金融・物流ほか）に11名、公務員・自衛官に4名が就職しています（2025年3月実績）。第一種衛生管理者の資格は50名以上の事業場への配置が義務付けられているため、幅広い業種の一般企業でも強みになります。' } },
+      ],
+    }
   } else if (
     location.pathname.includes('column') ||
     location.pathname.includes('report') ||
@@ -559,6 +587,7 @@ export default function App() {
     '/campus-life': 'キャンパスライフ,学生生活,調理実習室,十文字 施設',
     '/voices': '在学生の声,卒業生,体験談,管理栄養士 体験',
     '/news': '食物栄養 ニュース,学科 お知らせ,コラム,イベント',
+    '/faq': 'よくある質問,管理栄養士 疑問,食物栄養学科 入学,管理栄養士 大学 埼玉,Q&A',
   }
   const keywords = keywordsMap[location.pathname] ||
     (location.pathname.startsWith('/lab-') ? '研究室,ゼミ,卒業研究,食物栄養学科,十文字学園女子大学' : null)
@@ -601,6 +630,7 @@ export default function App() {
           <Route path="/career" element={<CareerPage />} />
           <Route path="/campus-life" element={<CampusLife />} />
           <Route path="/voices" element={<StudentVoices />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/" element={
             <>
               <Hero />
@@ -615,6 +645,7 @@ export default function App() {
               <Career summary={true} />
               <StudentVoices summary={true} />
               <CampusLife summary={true} />
+              <FAQ summary={true} />
             </>
           } />
         </Routes>
