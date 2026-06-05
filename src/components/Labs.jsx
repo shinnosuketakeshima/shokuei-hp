@@ -81,8 +81,8 @@ const LAB_STORIES = [
     isExternal: false,
   },
   {
-    storyTitle: '砂糖のひみつと、成長期の骨・体力',
-    hook: '食育ワークショップから、子どもの食生活研究へ。',
+    storyTitle: '食育と子どもの健康を、多角的に科学する',
+    hook: '調査研究・実践活動・基礎研究で、子どもの心身の成長をサポート。',
     category: 'welfare',
     href: '/lab-nakaoka',
     isExternal: false,

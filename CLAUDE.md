@@ -137,9 +137,15 @@ Static source images live in `src/` (root) or `src/assets/<topic>/`. Compiled na
 
 Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg`. They are **not currently imported** by any active component — they are reserved assets for future use.
 
+The following files in `src/` are also unused — do not import them:
+- `src/jisshu-sei.jpg`, `src/eiyo-kagaku.png` — reserved/orphaned images
+- `src/assets/hero.png` — unused placeholder
+
 ### Working materials
 
 `docs/` is a non-deployed working directory for reference images, design documents, source PDFs, and draft files. Do not import from `docs/` in application code — copy assets to `src/` first.
+
+`src/koudai_project.md` is a plain-text content source for `KoudaiProject.jsx`. It is **not** a component or module — do not import it.
 
 ### Labs section
 

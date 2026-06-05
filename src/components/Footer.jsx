@@ -5,6 +5,7 @@ const LINKS_1 = [
   { label: '進路・就職',  href: '/career' },
   { label: '学生の声',    href: '/voices' },
   { label: '学生生活',    href: '/campus-life' },
+  { label: 'よくある質問', href: '/faq' },
 ]
 
 const LINKS_2 = [
