@@ -37,6 +37,7 @@ import LabKamiyamaReport from './components/LabKamiyamaReport'
 import EiyoAppReport from './components/EiyoAppReport'
 import NewsArchive from './components/NewsArchive'
 import FAQ from './components/FAQ'
+import SportNutritionPage from './components/SportNutritionPage'
 import './App.css'
 
 const PAGE_META = {
@@ -180,6 +181,11 @@ const PAGE_META = {
     description: '食物栄養学科への入学・資格・就職・国家試験対策についてよくある質問をまとめました。管理栄養士の資格取得方法、第一種衛生管理者のダブルライセンス、就職率99.2%を支えるサポート体制など、受験生の疑問にお答えします。',
     ogType: 'website',
   },
+  '/sports-nutrition': {
+    title: 'スポーツ栄養 | 十文字学園女子大学',
+    description: '食物栄養学科・健康栄養学科の2学科体制と他学科開放制度で、スポーツ栄養学・運動生理学を本格的に学べる十文字学園女子大学の特集ページ。公認スポーツ栄養士への最短ルートや、国内最高峰の教員陣による指導環境を紹介します。',
+    ogType: 'website',
+  },
 }
 
 const SUB_PATHS = [
@@ -188,6 +194,7 @@ const SUB_PATHS = [
   '/lab-niikura', '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices', '/faq',
+  '/sports-nutrition',
 ]
 
 export default function App() {
@@ -631,6 +638,7 @@ export default function App() {
           <Route path="/campus-life" element={<CampusLife />} />
           <Route path="/voices" element={<StudentVoices />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/sports-nutrition" element={<SportNutritionPage />} />
           <Route path="/" element={
             <>
               <Hero />

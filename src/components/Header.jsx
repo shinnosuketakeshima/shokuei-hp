@@ -35,6 +35,14 @@ const LAB_CATEGORIES = [
       { name: '岡本研究室', note: '高齢者・サルコペニア予防', href: '/lab-okamoto' },
     ],
   },
+  {
+    label: '特集',
+    sublabel: 'コンテンツ・記事',
+    key: 'feature',
+    labs: [
+      { name: 'スポーツ栄養特集', note: '食物栄養学科×スポーツの可能性', href: '/sports-nutrition' },
+    ],
+  },
 ]
 
 export default function Header() {

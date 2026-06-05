@@ -1,0 +1,355 @@
+import {
+  ArrowLeft,
+  Trophy,
+  Award,
+  Dumbbell,
+  Heart,
+  Zap,
+  Building2,
+  FlaskConical,
+  CheckCircle2,
+  ChevronRight,
+  Sparkles,
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.55, delay },
+});
+
+const EVIDENCE_CARDS = [
+  {
+    num: '01',
+    icon: Trophy,
+    title: '国内最高峰のスポーツ栄養専門教員陣',
+    body: '日本スポーツ栄養学会理事・村田浩子教授、公認スポーツ栄養士・徳野裕子准教授ら、国内トップクラスの専門家による指導を、他学科開放制度を通じて受けることができます。',
+    accent: 'var(--forest)',
+  },
+  {
+    num: '02',
+    icon: Award,
+    title: '公認スポーツ栄養士への最短ルート',
+    body: '公認スポーツ栄養士を受験するには「管理栄養士免許」が必須。合格率92.2%（第37回実績）を誇る食物栄養学科なら、国試対策と並行してスポーツ栄養の専門知識を身につけられます。',
+    accent: 'var(--terracotta)',
+  },
+  {
+    num: '03',
+    icon: Dumbbell,
+    title: '在学中から実践できる環境',
+    body: 'カレッジスポーツセンター（CSC）を通じ、サッカー部やローイングクラブへの栄養指導プロジェクトに在学中から参加可能。理論をすぐに現場で試せる環境があります。',
+    accent: 'var(--forest)',
+  },
+];
+
+const FACULTY = [
+  {
+    name: '村田 浩子 教授',
+    dept: '健康栄養学科（他学科開放で食物栄養学科生も受講可）',
+    degree: '博士（スポーツ科学）早稲田大学大学院',
+    fields: ['健康スポーツ科学', 'スポーツ栄養学', '環境生理学', '時間栄養学'],
+    badges: ['日本スポーツ栄養学会 理事', '大学院 研究指導担当'],
+    message:
+      '「時間栄養学」をアスリート現場に導入し、持続血糖測定器（CGM）を用いた高強度運動時の低血糖防止策など最先端の栄養アセスメントを研究。本学大学院（食物栄養学専攻修士課程）の研究指導も担当しており、学部から大学院まで一貫した指導が受けられます。',
+  },
+  {
+    name: '徳野 裕子 准教授',
+    dept: '健康栄養学科（他学科開放で食物栄養学科生も受講可）',
+    degree: '博士（学術）日本女子大学',
+    fields: ['公認スポーツ栄養士', '管理栄養士', '健康科学', '応用微生物学'],
+    badges: ['公認スポーツ栄養士', '日本スポーツ栄養学会 会員'],
+    message:
+      '現役の「公認スポーツ栄養士」として実際の栄養サポート活動を展開する実践家。講義・実習を通じて、学生への公認スポーツ栄養士としてのキャリアパス提示も積極的に行っています。',
+  },
+];
+
+const PATH_STEPS = [
+  {
+    label: '食物栄養学科に入学',
+    note: '管理栄養士養成課程でメディカルな基礎を固める',
+    color: 'var(--forest)',
+  },
+  {
+    label: '他学科開放制度を活用',
+    note: 'スポーツ栄養学・運動生理学を自由選択科目として並行履修（単位は卒業要件に算入）',
+    color: 'var(--forest)',
+  },
+  {
+    label: '管理栄養士国家試験受験資格を取得',
+    note: '合格率92.2%（第37回実績）を支える手厚いサポート体制',
+    color: 'var(--terracotta)',
+  },
+  {
+    label: '公認スポーツ栄養士 受験・取得',
+    note: '管理栄養士免許が受験必須条件——食物栄養学科ルートが最短',
+    color: 'var(--terracotta)',
+  },
+  {
+    label: '大学院でさらに専門性を深める（任意）',
+    note: '本学大学院 食物栄養学専攻修士課程（村田浩子教授指導）への内部進学ルートも',
+    color: 'var(--stone)',
+    optional: true,
+  },
+];
+
+const CAREER_CARDS = [
+  {
+    icon: Heart,
+    field: '医療機関・病院',
+    examples: 'IMSグループ、埼玉医科大学病院、東京慈恵会医科大学附属病院 等',
+    synergy:
+      'スポーツ整形外科・リハビリ科での「メディカルスポーツ管理栄養士」として、術後復帰やアスリートの機能回復を医学と栄養の両面からサポート。',
+    color: 'var(--terracotta)',
+  },
+  {
+    icon: Zap,
+    field: 'スポーツ・フィットネス産業',
+    examples: 'アシックスジャパン、コナミスポーツ、東急スポーツオアシス、ルネサンス 等',
+    synergy:
+      '生化学・栄養評価に基づいた個別カウンセリングができる高付加価値人材として、スポーツ・健康産業の第一線で活躍。',
+    color: 'var(--forest)',
+  },
+  {
+    icon: Building2,
+    field: '行政・教育現場',
+    examples: '東京都・埼玉県行政栄養士、学校栄養教諭（さいたま市・清瀬市 等）',
+    synergy:
+      '運動指導と食事指導を融合した健康増進政策を推進。フレイル・ロコモ予防など地域住民の一次予防に貢献できる専門家へ。',
+    color: 'var(--forest)',
+  },
+  {
+    icon: FlaskConical,
+    field: '食品・ヘルスケア開発',
+    examples: 'キユーピー醸造、グルメデリカ、プライムデリカ、紀文食品 等',
+    synergy:
+      'スポーツパフォーマンス向上・疲労回復を目的とした機能性食品・栄養補助食品の企画開発をエビデンスに基づき主導。',
+    color: 'var(--terracotta)',
+  },
+];
+
+export default function SportNutritionPage() {
+  return (
+    <div className="lab-page">
+      <div className="container">
+
+        <motion.div
+          className="lab-page__header"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <a href="/" className="lab-page__back-link">
+            <ArrowLeft size={16} />
+            <span>トップページに戻る</span>
+          </a>
+          <p className="lab-page__eyebrow">十文字学園女子大学</p>
+          <h1 className="lab-page__title">スポーツ栄養士を<br />目指すなら、<br />十文字学園へ。</h1>
+          <p className="lab-page__subtitle">
+            「管理栄養士」の圧倒的な医療知識を、スポーツ栄養の最高の武器に変える。
+          </p>
+        </motion.div>
+
+        <div className="lab-page__content">
+
+          {/* ===== 誤解を解く ===== */}
+          <motion.section
+            className="lab-story-feature lab-story-feature--forest"
+            {...fadeUp(0)}
+          >
+            <span className="lab-story-feature__label">
+              <Sparkles size={12} /> よくある誤解
+            </span>
+            <h2 className="lab-story-feature__title">
+              「食物栄養学科では<br />
+              <em>スポーツ栄養は学べない</em>」<br />
+              ——それは誤解です。
+            </h2>
+            <p className="lab-story-feature__lead">
+              「管理栄養士養成課程は病院や臨床中心で、スポーツ系は学べない」——そう思っていませんか？
+              十文字学園女子大学では、その常識は当てはまりません。<br /><br />
+              食物栄養学科に在籍しながら、健康栄養学科が展開する
+              <strong>「スポーツ栄養学」「運動生理学」</strong>を
+              自由選択科目として履修できる<strong>「他学科開放制度」</strong>が整備されているからです。<br /><br />
+              高い国家試験合格率を誇るメディカルな学びをベースに、
+              ハイレベルなスポーツ栄養の専門性を上乗せする。
+              そんな学び方が、ここでは現実です。
+            </p>
+            <div className="lab-story-feature__tags">
+              <span>#公認スポーツ栄養士</span>
+              <span>#管理栄養士</span>
+              <span>#他学科開放制度</span>
+              <span>#アスリートサポート</span>
+              <span>#カレッジスポーツセンター</span>
+            </div>
+          </motion.section>
+
+          {/* ===== 3つのエビデンス ===== */}
+          <motion.section className="lab-section" {...fadeUp(0.05)}>
+            <h2 className="lab-section__title">十文字学園でスポーツ栄養を学ぶ3つの根拠</h2>
+            <p className="lab-section__body">
+              制度・教員・実践の3つの柱が、十文字学園のスポーツ栄養教育を裏づけています。
+            </p>
+            <div className="sn-evidence-cards">
+              {EVIDENCE_CARDS.map((card, i) => {
+                const Icon = card.icon;
+                return (
+                  <motion.div key={i} className="sn-evidence-card" {...fadeUp(0.08 * i)}>
+                    <div className="sn-evidence-card__num" style={{ color: card.accent }}>
+                      {card.num}
+                    </div>
+                    <div
+                      className="sn-evidence-card__icon"
+                      style={{ background: `color-mix(in srgb, ${card.accent} 12%, transparent)`, color: card.accent }}
+                    >
+                      <Icon size={28} aria-hidden="true" />
+                    </div>
+                    <h3 className="sn-evidence-card__title">{card.title}</h3>
+                    <p className="sn-evidence-card__body">{card.body}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.section>
+
+          {/* ===== 教員スポットライト ===== */}
+          <motion.section className="lab-section" {...fadeUp(0.05)}>
+            <h2 className="lab-section__title">スポーツ栄養を教える教員陣</h2>
+            <p className="lab-section__body">
+              健康栄養学科に所属する以下の教員の講義・演習は、
+              <strong>他学科開放制度</strong>を利用することで食物栄養学科の学生も受講できます。
+              国内最高峰の指導に直接アクセスできるのが、十文字学園の強みです。
+            </p>
+            <div className="sn-faculty-grid">
+              {FACULTY.map((f, i) => (
+                <motion.div key={i} className="sn-faculty-card" {...fadeUp(0.08 * i)}>
+                  <div className="sn-faculty-card__top">
+                    <p className="sn-faculty-card__dept">{f.dept}</p>
+                    <h3 className="sn-faculty-card__name">{f.name}</h3>
+                    <p className="sn-faculty-card__degree">{f.degree}</p>
+                  </div>
+                  <div className="sn-faculty-card__badges">
+                    {f.badges.map((b, j) => <span key={j}>{b}</span>)}
+                  </div>
+                  <div className="sn-faculty-card__fields">
+                    {f.fields.map((field, j) => <span key={j}>{field}</span>)}
+                  </div>
+                  <p className="sn-faculty-card__message">{f.message}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* ===== 資格パスフロー ===== */}
+          <motion.section className="lab-section" {...fadeUp(0.05)}>
+            <h2 className="lab-section__title">食物栄養学科から「公認スポーツ栄養士」へのルート</h2>
+            <p className="lab-section__body">
+              公認スポーツ栄養士を受験するには、<strong>管理栄養士免許が必須条件</strong>です。
+              食物栄養学科で国試対策をしながらスポーツ栄養を学ぶことで、
+              最短・最強のキャリアパスが描けます。
+            </p>
+            <div className="sn-path-flow">
+              {PATH_STEPS.map((step, i) => (
+                <motion.div
+                  key={i}
+                  className={`sn-path-step${step.optional ? ' sn-path-step--optional' : ''}`}
+                  {...fadeUp(0.07 * i)}
+                >
+                  <div className="sn-path-step__track">
+                    <div
+                      className="sn-path-step__dot"
+                      style={{
+                        borderColor: step.color,
+                        background: step.optional ? 'var(--cream)' : step.color,
+                      }}
+                    />
+                    {i < PATH_STEPS.length - 1 && <div className="sn-path-step__line" />}
+                  </div>
+                  <div className="sn-path-step__content">
+                    <p className="sn-path-step__label" style={{ color: step.color }}>
+                      {step.label}
+                    </p>
+                    <p className="sn-path-step__note">{step.note}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <div className="sn-path-callout">
+              <CheckCircle2 size={18} aria-hidden="true" />
+              <p>
+                公認スポーツ栄養士は、日本栄養士会と日本スポーツ協会が共同認定する資格です。
+                プロ・実業団アスリートを支える最高峰の資格として知られており、
+                受験には<strong>管理栄養士免許の所持</strong>が義務付けられています。
+              </p>
+            </div>
+          </motion.section>
+
+          {/* ===== キャリアパス ===== */}
+          <motion.section className="lab-section" {...fadeUp(0.05)}>
+            <h2 className="lab-section__title">スポーツ栄養の知識で広がるキャリア</h2>
+            <p className="lab-section__body">
+              管理栄養士としての確かな専門性に、スポーツ・健康科学の知識を組み合わせることで、
+              多様かつ付加価値の高いキャリアパスが開かれます。
+            </p>
+            <div className="sn-career-grid">
+              {CAREER_CARDS.map((card, i) => {
+                const Icon = card.icon;
+                return (
+                  <motion.div key={i} className="sn-career-card" {...fadeUp(0.07 * i)}>
+                    <div
+                      className="sn-career-card__icon"
+                      style={{
+                        color: card.color,
+                        background: `color-mix(in srgb, ${card.color} 12%, transparent)`,
+                      }}
+                    >
+                      <Icon size={24} aria-hidden="true" />
+                    </div>
+                    <h3 className="sn-career-card__field">{card.field}</h3>
+                    <p className="sn-career-card__examples">{card.examples}</p>
+                    <p className="sn-career-card__synergy">{card.synergy}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.section>
+
+          {/* ===== CTA ===== */}
+          <motion.section className="lab-section" {...fadeUp(0.05)}>
+            <div className="sn-cta-banner">
+              <p className="sn-cta-banner__eyebrow">
+                <Sparkles size={14} aria-hidden="true" />
+                十文字学園女子大学
+              </p>
+              <h2 className="sn-cta-banner__title">
+                どちらの学科から目指しても、<br />
+                十文字学園なら本物のスポーツ栄養が学べる。
+              </h2>
+              <p className="sn-cta-banner__body">
+                食物栄養学科・健康栄養学科の2学科体制と、他学科開放制度・カレッジスポーツセンターが一体となって、
+                学生一人ひとりのスポーツ栄養への情熱に応えます。
+              </p>
+              <div className="sn-cta-banner__buttons">
+                <a href="/" className="sn-cta-btn sn-cta-btn--primary">
+                  食物栄養学科について詳しく
+                  <ChevronRight size={16} aria-hidden="true" />
+                </a>
+                <a
+                  href="https://www.jumonji-u.ac.jp/humanlife/health/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sn-cta-btn sn-cta-btn--secondary"
+                >
+                  健康栄養学科について詳しく
+                  <ChevronRight size={16} aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </motion.section>
+
+        </div>
+      </div>
+    </div>
+  );
+}
