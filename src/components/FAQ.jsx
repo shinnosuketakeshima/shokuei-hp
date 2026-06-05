@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Plus, Minus, ArrowRight } from 'lucide-react'
+import { Plus, Minus, ArrowRight, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const FAQ_CATEGORIES = [
@@ -83,6 +83,36 @@ const FAQ_CATEGORIES = [
     ],
   },
   {
+    id: 'sports',
+    title: 'スポーツ栄養・スポーツ管理栄養士',
+    items: [
+      {
+        id: 's1',
+        q: '管理栄養士はスポーツ選手を支える仕事ができますか？',
+        a: 'できます。「公認スポーツ栄養士」という資格があり、Jリーグクラブや実業団チーム、日本代表チームなどに帯同して選手の食事・栄養管理を専門的に行います。試合当日の食事設計から遠征中の補食管理、体重コントロールまで、アスリートのパフォーマンスを栄養で支える仕事です。管理栄養士の免許は公認スポーツ栄養士の受験に必須であり、スポーツ栄養のプロへの最も確実なルートです。',
+      },
+      {
+        id: 's2',
+        q: '食物栄養学科でもスポーツ栄養は学べますか？',
+        a: '学べます。食物栄養学科に在籍しながら、健康栄養学科が展開するスポーツ栄養学・運動生理学を「他学科開放制度」で履修できます。日本スポーツ栄養学会理事の村田浩子教授（博士・スポーツ科学）や、現役の公認スポーツ栄養士である徳野裕子准教授から直接指導を受けることができます。管理栄養士の国試対策をしながらスポーツ栄養を同時に学べるのは、十文字学園ならではの強みです。',
+        link: '/sports-nutrition',
+        linkLabel: 'スポーツ栄養特集ページを見る',
+      },
+      {
+        id: 's3',
+        q: '公認スポーツ栄養士になるにはどうすればよいですか？',
+        a: '公認スポーツ栄養士は日本栄養士会と日本スポーツ協会が共同認定する資格です。受験には「管理栄養士免許の所持」が必須条件となっています。つまり、まず管理栄養士国家試験に合格することが最初のステップです。そのうえで所定の研修（スポーツ栄養ベーシックコース修了）と実務経験を積むことで受験資格が得られます。食物栄養学科で合格率92.2%（第37回実績）の国試対策を受けながら、他学科開放でスポーツ栄養を学ぶルートが最短・最強です。',
+        link: '/sports-nutrition',
+        linkLabel: '資格取得ルートを詳しく見る',
+      },
+      {
+        id: 's4',
+        q: 'スポーツが好きで管理栄養士を目指しています。どんな仕事に就けますか？',
+        a: 'スポーツ×管理栄養士の組み合わせは就職先の幅が非常に広いです。①アシックスジャパン・コナミスポーツ・ルネサンスなどスポーツ・フィットネス産業でのパーソナル栄養カウンセリング、②スポーツ整形外科・リハビリ科での「メディカルスポーツ管理栄養士」、③プロチームや大学運動部への栄養サポート（公認スポーツ栄養士として）、④スポーツ食品・栄養補助食品の企画開発——など、スポーツへの情熱を活かしたキャリアが描けます。',
+      },
+    ],
+  },
+  {
     id: 'career',
     title: '就職・進路',
     items: [
@@ -110,13 +140,18 @@ const FAQ_CATEGORIES = [
   },
 ]
 
+const byId = (catId, itemId) => {
+  const cat = FAQ_CATEGORIES.find(c => c.id === catId)
+  return cat.items.find(i => i.id === itemId)
+}
+
 const SUMMARY_ITEMS = [
-  FAQ_CATEGORIES[1].items[0],
-  FAQ_CATEGORIES[1].items[1],
-  FAQ_CATEGORIES[3].items[0],
-  FAQ_CATEGORIES[2].items[0],
-  FAQ_CATEGORIES[0].items[0],
-  FAQ_CATEGORIES[3].items[1],
+  byId('qualifications', 'q1'),
+  byId('qualifications', 'q2'),
+  byId('sports', 's1'),
+  byId('sports', 's3'),
+  byId('exam', 'e1'),
+  byId('career', 'j1'),
 ]
 
 function FaqItem({ item, isOpen, onToggle }) {
@@ -139,7 +174,15 @@ function FaqItem({ item, isOpen, onToggle }) {
         transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
         style={{ overflow: 'hidden' }}
       >
-        <p className="faq__answer-inner">{item.a}</p>
+        <div className="faq__answer-inner">
+          <p>{item.a}</p>
+          {item.link && (
+            <Link to={item.link} className="faq__answer-link">
+              {item.linkLabel}
+              <ChevronRight size={14} aria-hidden="true" />
+            </Link>
+          )}
+        </div>
       </motion.div>
     </div>
   )

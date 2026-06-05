@@ -3863,6 +3863,24 @@
   line-height: 1.95;
   color: var(--stone);
 }
+.faq__answer-inner p {
+  margin: 0;
+}
+.faq__answer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--forest);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.faq__answer-link:hover {
+  border-bottom-color: var(--forest);
+}
 .faq__more {
   text-align: center;
   margin-top: clamp(32px, 4vw, 44px);
