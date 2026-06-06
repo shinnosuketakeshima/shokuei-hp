@@ -170,7 +170,7 @@ export default function SportNutritionPage() {
               「管理栄養士養成課程は病院や臨床中心で、スポーツ系は学べない」——そう思っていませんか？
               十文字学園女子大学では、その常識は当てはまりません。<br /><br />
               食物栄養学科には、学科内の科目として
-              <strong>「スポーツ栄養学（石津達野先生）」「運動生理学（長浜尚史先生）」</strong>
+              <strong>「スポーツ栄養学（石津達野先生）」「運動生理学（長浜尚史先生）」「スポーツコーチング論」</strong>
               が設置されています。管理栄養士を目指しながら、スポーツ栄養の専門知識を学科の中で身につけられるのです。<br /><br />
               さらに<strong>「他学科開放制度」</strong>を活用すれば、
               健康栄養学科が展開するスポーツ栄養の高度な専門講義も受講可能です。<br /><br />
@@ -223,8 +223,9 @@ export default function SportNutritionPage() {
             <h2 className="lab-section__title">スポーツ栄養を教える教員陣</h2>
             <p className="lab-section__body">
               食物栄養学科には、学科内のスポーツ関連科目として
-              <strong>スポーツ栄養学（石津達野先生）</strong>と
-              <strong>運動生理学（長浜尚史先生）</strong>が設置されています。<br />
+              <strong>スポーツ栄養学（石津達野先生）</strong>、
+              <strong>運動生理学（長浜尚史先生）</strong>、
+              <strong>スポーツコーチング論</strong>が設置されています。<br />
               さらに<strong>他学科開放制度</strong>を利用することで、
               健康栄養学科に所属する以下の専門教員の講義・演習も受講できます。
             </p>
