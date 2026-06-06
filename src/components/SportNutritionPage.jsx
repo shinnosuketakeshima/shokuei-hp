@@ -45,6 +45,26 @@ const ENGAGEMENT_CARDS = [
 
 const FACULTY = [
   {
+    name: 'ヨーコ ゼッターランド 講師',
+    dept: '健康栄養学科',
+    degree: '元アメリカ女子バレーボール代表 ／ 選手歴18年・指導歴25年',
+    fields: ['コーチング論', '女性とスポーツ', 'スポーツ組織マネジメント', '日米スポーツ文化'],
+    badges: ['バルセロナ五輪 銅メダル（1992）', 'アトランタ五輪 7位入賞（1996）'],
+    career: [
+      '1969年 アメリカ生まれ（日本名：堀江陽子）。母は元バレーボール日本代表',
+      '1975年 6歳で来日。東京の中学・高校でバレーボールに打ち込み、全日本ジュニア代表としてアジアジュニア選手権優勝',
+      '早稲田大学でチームを関東大学リーグ6部から2部優勝へ導く',
+      '単身渡米してアメリカ代表トライアウトに合格。バルセロナ五輪（1992年・銅メダル）、アトランタ五輪（1996年・7位入賞）',
+      '1997年 ダイエーオレンジアタッカーズ（現・久光製薬スプリングス）とプロ契約、1999年引退',
+      '2013〜2017年 嘉悦大学女子バレーボール部監督',
+      '2019〜2024年 日本女子体育大学体育学部 准教授・バレーボール部副部長',
+      '2024年〜 アメリカ女子プロリーグ LOVBアトランタ アシスタントコーチ',
+    ],
+    message:
+      '選手歴18年・指導歴25年の実務経験をもとに、「コーチングとティーチングの違い」「グッドコーチ像」「体罰・ハラスメントのない指導環境」「プレーヤーズセンタード」を実践的かつ国際的な視点から教えます。日米のスポーツ文化を知る数少ない指導者として、栄養・管理栄養士を目指す学生に「人を育てること」の本質を伝えます。',
+    wide: true,
+  },
+  {
     name: '村田 浩子 教授',
     dept: '健康栄養学科',
     degree: '博士（スポーツ科学）早稲田大学大学院',
@@ -142,6 +162,27 @@ const COURSES = [
       '運動処方の実際',
     ],
   },
+  {
+    accent: 'forest',
+    badge: '2学科 同時開講（選択）',
+    name: 'コーチング論 ／ スポーツコーチング論',
+    prof: 'ヨーコ ゼッターランド 先生',
+    meta: ['前期', '2単位', '講義・演習'],
+    overview: '健康栄養学科「コーチング論」・食物栄養学科「スポーツコーチング論」として2学科合同で同時開講される実践的科目。人を育てる「コーチング」の本質を学ぶ。「ティーチング」との違いを起点に、「グッドコーチ」に必要な資質と考え方を探究する。体罰・ハラスメントのない指導環境、「プレーヤーズセンタード」「アントラージュ」「Well Being」の概念と実践、日米のスポーツ文化の違いを学ぶ。ロールプレイングと学生間ディスカッションを通じて指導者としての実践力を養う。五輪銅メダリスト・指導歴25年の担当教員による実務家講義。',
+    topics: [
+      'コーチングとティーチングの違い',
+      '成長過程と指導方法の選択',
+      '効果的なコーチングの言葉',
+      '勝利至上主義の問題点',
+      '体罰・暴力・ハラスメント',
+      'プレーヤーズセンタード',
+      'アントラージュ・Well Being',
+      '日米スポーツ文化の比較',
+      '成長期・女性アスリートへの指導',
+      '組織運営とリーダーシップ演習',
+    ],
+    wide: true,
+  },
 ];
 
 const CAREER_CARDS = [
@@ -219,8 +260,8 @@ export default function SportNutritionPage() {
             <p className="lab-story-feature__lead">
               「管理栄養士養成課程は臨床・病院中心で、スポーツとは関係ない」「スポーツ系を学ぶなら健康・体育の専門学科でないと」——そう思っていませんか？十文字学園では、その常識は当てはまりません。<br /><br />
               食物栄養学科には、学科内の科目として
-              <strong>「スポーツ栄養学（石津達野先生）」「運動生理学（長浜尚史先生）」「スポーツコーチング論」</strong>
-              が設置されています。管理栄養士を目指しながら、スポーツ栄養の専門知識を学科の中で身につけられるのです。さらに<strong>副指導教員制度</strong>を活用することで、健康栄養学科のゼミを通じてスポーツの現場に立つ機会もあります。<br /><br />
+              <strong>「スポーツ栄養学（石津達野先生）」「運動生理学（長浜尚史先生）」</strong>
+              が設置されています。さらに<strong>「スポーツコーチング論（ヨーコ ゼッターランド先生）」</strong>は健康栄養学科との<strong>2学科同時開講</strong>科目として履修できます。管理栄養士を目指しながら、五輪メダリストから直接コーチング論を学べる環境があります。さらに<strong>副指導教員制度</strong>を活用することで、健康栄養学科のゼミを通じてスポーツの現場に立つ機会もあります。<br /><br />
               健康栄養学科では、日本スポーツ栄養学会理事・村田浩子教授と現役公認スポーツ栄養士・徳野裕子准教授が直接指導。スポーツ栄養を軸に管理栄養士・栄養士資格を目指すなら、より直接的な環境が整っています。<br /><br />
               見落とされがちなのが「<strong>選手として学ぶ</strong>」という視点です。サッカー部等でアスリートとして活動しながら、栄養の専門教育を受ける。卒業後に管理栄養士として、その競技経験を活かしたキャリアへ——そんな学び方が、ここでは現実です。<br /><br />
               スポーツ栄養に関わるキャリアは、<strong>公認スポーツ栄養士だけではありません</strong>。学校で体育教員と連携する栄養教諭、医療現場でアスリートをサポートする管理栄養士、地域の健康増進を担う行政栄養士——スポーツと食をつなぐ専門家の姿は、多様です。
@@ -272,14 +313,17 @@ export default function SportNutritionPage() {
 
           {/* ===== 学科内スポーツ科目 ===== */}
           <motion.section className="lab-section" {...fadeUp(0.05)}>
-            <h2 className="lab-section__title">食物栄養学科で学ぶスポーツ関連科目</h2>
+            <h2 className="lab-section__title">スポーツ関連科目一覧</h2>
             <p className="lab-section__body">
-              以下の2科目は食物栄養学科の選択科目として設置されており、
-              管理栄養士課程の学びと並行して3年次に履修できます。
+              スポーツ栄養学・運動生理学は食物栄養学科の選択科目として設置。コーチング論（スポーツコーチング論）は健康栄養・食物栄養の<strong>2学科合同で同時開講</strong>されており、どちらの学科の学生も一緒に学びます。
             </p>
             <div className="sn-courses-grid">
               {COURSES.map((c, i) => (
-                <motion.div key={i} className={`sn-course-card sn-course-card--${c.accent}`} {...fadeUp(0.08 * i)}>
+                <motion.div
+                  key={i}
+                  className={`sn-course-card sn-course-card--${c.accent}${c.wide ? ' sn-course-card--wide' : ''}`}
+                  {...fadeUp(0.08 * i)}
+                >
                   <div className="sn-course-card__meta">
                     {c.meta.map((m, j) => <span key={j}>{m}</span>)}
                   </div>
@@ -298,18 +342,18 @@ export default function SportNutritionPage() {
 
           {/* ===== 教員スポットライト ===== */}
           <motion.section className="lab-section" {...fadeUp(0.05)}>
-            <h2 className="lab-section__title">スポーツ栄養を教える教員陣</h2>
+            <h2 className="lab-section__title">スポーツを教える教員陣</h2>
             <p className="lab-section__body">
-              食物栄養学科には、学科内のスポーツ関連科目として
-              <strong>スポーツ栄養学（石津達野先生）</strong>、
-              <strong>運動生理学（長浜尚史先生）</strong>、
-              <strong>スポーツコーチング論</strong>が設置されています。<br />
-              加えて、健康栄養学科には国内最高峰のスポーツ栄養専門家が在籍しており、
-              <strong>副指導教員制度</strong>を活用することで、食物栄養学科の学生もそのゼミでスポーツ栄養を実践的に学ぶことができます。
+              健康栄養学科には、五輪メダリストのコーチング論講師、国内最高峰のスポーツ栄養専門家が在籍。
+              <strong>副指導教員制度</strong>を活用することで、食物栄養学科の学生も健康栄養学科のゼミ・授業を通じてスポーツを実践的に学ぶことができます。
             </p>
             <div className="sn-faculty-grid">
               {FACULTY.map((f, i) => (
-                <motion.div key={i} className="sn-faculty-card" {...fadeUp(0.08 * i)}>
+                <motion.div
+                  key={i}
+                  className={`sn-faculty-card${f.wide ? ' sn-faculty-card--featured' : ''}`}
+                  {...fadeUp(0.08 * i)}
+                >
                   <div className="sn-faculty-card__top">
                     <p className="sn-faculty-card__dept">{f.dept}</p>
                     <h3 className="sn-faculty-card__name">{f.name}</h3>
@@ -318,6 +362,13 @@ export default function SportNutritionPage() {
                   <div className="sn-faculty-card__badges">
                     {f.badges.map((b, j) => <span key={j}>{b}</span>)}
                   </div>
+                  {f.career && (
+                    <div className="sn-faculty-card__career">
+                      {f.career.map((item, j) => (
+                        <p key={j} className="sn-faculty-card__career-item">{item}</p>
+                      ))}
+                    </div>
+                  )}
                   <div className="sn-faculty-card__fields">
                     {f.fields.map((field, j) => <span key={j}>{field}</span>)}
                   </div>
