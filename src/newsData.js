@@ -9,6 +9,14 @@ export const STATIC_NEWS = [
     href: 'https://www.jumonji-u.ac.jp/info/jumonji_miraitaikenday/',
   },
   {
+    id: 'takeshima-column-1',
+    date: '2026.6.6',
+    tag: '教員コラム',
+    type: 'column',
+    title: '失敗が消えない時代に、どう育つか（竹嶋伸之輔 教授）',
+    href: '/lab-takeshima-column',
+  },
+  {
     id: 'eiyo-app-report',
     date: '2026.5.26',
     tag: '教員コラム',

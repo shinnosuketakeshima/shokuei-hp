@@ -34,6 +34,7 @@ import LabOkamoto from './components/LabOkamoto'
 import EventSpecial0525 from './components/EventSpecial0525'
 import StudentColumn3 from './components/StudentColumn3'
 import LabKamiyamaReport from './components/LabKamiyamaReport'
+import LabTakeshimaColumn from './components/LabTakeshimaColumn'
 import EiyoAppReport from './components/EiyoAppReport'
 import NewsArchive from './components/NewsArchive'
 import FAQ from './components/FAQ'
@@ -136,6 +137,11 @@ const PAGE_META = {
     description: '十文字学園女子大学の総合科目「いちから学ぶnutrition science」にて、神山ゼミの学生たちがSA（スチューデント・アシスタント）として活躍する様子をレポート。アクティブラーニング形式の授業で育つ「教える力」と「学ぶ力」に迫ります。',
     ogType: 'article',
   },
+  '/lab-takeshima-column': {
+    title: '教員コラム：失敗が消えない時代に、どう育つか | 竹嶋伸之輔 | 食物栄養学科',
+    description: 'SNSが日常化した時代、失敗のコストは根本的に変わった。「マニュアルがないとできない」と言われる学生たちの背景に何があるのか——実習巡回での気づきをもとに、竹嶋伸之輔教授が問う、教育の矛盾と本質。',
+    ogType: 'article',
+  },
   '/eiyo-app-report': {
     title: '解剖生理学実験×生成AI！学生が作る栄養アドバイスアプリ開発レポート | 食物栄養学科',
     description: '食物栄養学科の実験がDX化！2年生の解剖生理学実験で、InBodyやMedGemの測定データを活用し、GeminiやChatGPTなどの生成AIを使って学生自身がオリジナルの栄養アドバイスアプリをプログラミング・開発した革新的な授業レポートです。',
@@ -192,7 +198,7 @@ const SUB_PATHS = [
   '/lab-takeshima', '/lab-kamoshita', '/lab-kunii', '/lab-iimura', '/lab-kamiyama',
   '/lab-ishii', '/lab-komeichi', '/lab-nakaoka', '/lab-shibasaki', '/lab-yamazaki',
   '/lab-niikura', '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
-  '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/eiyo-app-report',
+  '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/lab-takeshima-column', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices', '/faq',
   '/sports-nutrition',
 ]
@@ -629,6 +635,7 @@ export default function App() {
           <Route path="/event-0531" element={<EventSpecial0525 />} />
           <Route path="/student-column-3" element={<StudentColumn3 />} />
           <Route path="/lab-kamiyama-report" element={<LabKamiyamaReport />} />
+          <Route path="/lab-takeshima-column" element={<LabTakeshimaColumn />} />
           <Route path="/eiyo-app-report" element={<EiyoAppReport />} />
           <Route path="/news" element={<NewsArchive />} />
           <Route path="/features" element={<Features />} />
