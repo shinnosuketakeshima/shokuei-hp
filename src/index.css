@@ -4460,4 +4460,125 @@
   }
 }
 
+/* Dept badge on engagement cards */
+.sn-evidence-card__dept {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  align-self: flex-start;
+}
+
+/* Route Cards (3つのルート) */
+.sn-routes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+  align-items: start;
+}
+
+.sn-route-card {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sn-route-card__dept {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  align-self: flex-start;
+}
+
+.sn-route-card__title {
+  font-family: var(--font-serif);
+  font-size: clamp(14px, 1.4vw, 15px);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.sn-route-card__steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.sn-route-step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.sn-route-step__track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 14px;
+}
+
+.sn-route-step__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2.5px solid;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.sn-route-step__line {
+  width: 2px;
+  flex: 1;
+  min-height: 16px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.12), rgba(0,0,0,0.04));
+  margin: 3px 0;
+}
+
+.sn-route-step__content {
+  padding-bottom: 14px;
+}
+
+.sn-route-step--optional .sn-route-step__content {
+  padding-bottom: 0;
+}
+
+.sn-route-step__label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin: 0 0 3px;
+  line-height: 1.4;
+}
+
+.sn-route-step--optional .sn-route-step__label {
+  color: var(--stone);
+}
+
+.sn-route-step__note {
+  font-size: 12px;
+  color: var(--stone);
+  margin: 0;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .sn-routes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 

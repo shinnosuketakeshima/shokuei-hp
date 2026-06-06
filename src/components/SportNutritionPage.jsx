@@ -7,7 +7,6 @@ import {
   Zap,
   Building2,
   FlaskConical,
-  CheckCircle2,
   ChevronRight,
   Sparkles,
 } from 'lucide-react';
@@ -20,26 +19,26 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, delay },
 });
 
-const EVIDENCE_CARDS = [
+const ENGAGEMENT_CARDS = [
   {
-    num: '01',
     icon: Trophy,
-    title: '国内最高峰のスポーツ栄養専門教員陣',
-    body: '日本スポーツ栄養学会理事・村田浩子教授、公認スポーツ栄養士・徳野裕子准教授ら、国内トップクラスのスポーツ栄養専門家が同じ大学の健康栄養学科に在籍。副指導教員制度を活用することで、健康栄養学科が主催するゼミを通じ、食物栄養学科の学生もスポーツの現場に立ち、スポーツ栄養の実践を体験することができます。',
+    dept: '食物栄養学科',
+    title: '管理栄養士の確かな基礎から、スポーツ栄養へ',
+    body: '管理栄養士養成課程として医療・臨床の深い知識を身につけながら、学科内のスポーツ栄養学・運動生理学を並行履修。副指導教員制度で健康栄養学科のゼミにも踏み込め、スポーツの現場を在学中から体験できます。',
     accent: 'var(--forest)',
   },
   {
-    num: '02',
     icon: Award,
-    title: '公認スポーツ栄養士を目指す確かな土台',
-    body: '公認スポーツ栄養士の受験には「管理栄養士免許」の所持が必須で、取得後も所定の研修・実務経験が求められる本格的な資格です。食物栄養学科では充実した国家試験対策サポート体制のもと、管理栄養士国家試験に向けた確かな土台を築きながら、並行してスポーツ栄養の専門知識を深めることができます。',
+    dept: '健康栄養学科',
+    title: 'スポーツ栄養の専門家と、直接学ぶ',
+    body: '日本スポーツ栄養学会理事・村田浩子教授、公認スポーツ栄養士・徳野裕子准教授が在籍。スポーツ栄養を軸に管理栄養士・栄養士を目指すなら、より直接的な環境です。公認スポーツ栄養士へのルートも開かれています。',
     accent: 'var(--terracotta)',
   },
   {
-    num: '03',
     icon: Dumbbell,
-    title: '強豪サッカー部が同じキャンパスにいる',
-    body: '十文字学園には全国屈指の強豪女子サッカー部が在籍し、同じキャンパス内のフィールドで日々練習しています。カレッジスポーツセンター（CSC）を通じ、実際の選手を対象にした栄養サポートプロジェクトに在学中から参加可能。本物のアスリートとともに、スポーツ栄養の理論を現場で実践できます。',
+    dept: '学生アスリートとして',
+    title: '選手として学び、卒業後に栄養の専門家へ',
+    body: '強豪女子サッカー部が同じキャンパスで活動中。選手として在学しながら栄養・食の専門教育を受け、競技経験を活かして卒業後に管理栄養士・栄養士として活躍する道があります。',
     accent: 'var(--forest)',
   },
 ];
@@ -65,32 +64,40 @@ const FACULTY = [
   },
 ];
 
-const PATH_STEPS = [
+const ROUTES = [
   {
-    label: '食物栄養学科に入学',
-    note: '管理栄養士養成課程でメディカルな基礎を固める',
     color: 'var(--forest)',
+    dept: '食物栄養学科',
+    title: '管理栄養士の土台から、スポーツ栄養へ',
+    steps: [
+      { label: '食物栄養学科に入学', note: '管理栄養士養成課程でメディカルな基礎を固める' },
+      { label: '学科内スポーツ科目を履修', note: 'スポーツ栄養学・運動生理学・スポーツコーチング論を3年次に並行履修' },
+      { label: '健康栄養ゼミに参加（任意）', note: '副指導教員制度を活用し、スポーツの現場に立つ', optional: true },
+      { label: '管理栄養士国家試験合格', note: '充実したサポート体制で確実に合格を目指す' },
+      { label: 'スポーツ関連キャリアへ', note: '公認スポーツ栄養士取得や、医療・産業・教育現場での活躍へ' },
+    ],
   },
   {
-    label: '学科内のスポーツ関連科目を履修',
-    note: 'スポーツ栄養学・運動生理学・スポーツコーチング論を選択科目として並行履修（単位は卒業要件に算入）',
-    color: 'var(--forest)',
-  },
-  {
-    label: '管理栄養士国家試験受験資格を取得',
-    note: '充実した国家試験対策サポート体制で、確実に合格を目指す',
     color: 'var(--terracotta)',
+    dept: '健康栄養学科',
+    title: 'スポーツ栄養の専門家として',
+    steps: [
+      { label: '健康栄養学科に入学', note: 'スポーツ栄養を軸に管理栄養士・栄養士を目指す' },
+      { label: 'スポーツ栄養専門教員の指導を受ける', note: '村田浩子教授・徳野裕子准教授のもとで深く学ぶ' },
+      { label: '管理栄養士・栄養士資格取得', note: '学科の養成課程を通じて国家試験受験資格を得る' },
+      { label: '公認スポーツ栄養士取得（任意）', note: '管理栄養士免許取得後、研修・実務経験を経て受験可能', optional: true },
+    ],
   },
   {
-    label: '公認スポーツ栄養士 受験・取得',
-    note: '管理栄養士免許が受験必須条件。所定の研修・実務経験を経て受験へ',
-    color: 'var(--terracotta)',
-  },
-  {
-    label: '大学院でさらに専門性を深める（任意）',
-    note: '本学大学院 食物栄養学専攻修士課程（村田浩子教授指導）への内部進学ルートも',
     color: 'var(--stone)',
-    optional: true,
+    dept: '学生アスリートルート',
+    title: '選手経験を活かして専門家へ',
+    steps: [
+      { label: '選手として在学', note: 'サッカー部等でアスリートとして活動しながら栄養・食の専門教育を受ける' },
+      { label: '現場で体験しながら学ぶ', note: '栄養サポートを受ける視点から、実践的な栄養知識を育む' },
+      { label: '管理栄養士受験資格を取得', note: '養成課程を修了し、在学中に受験資格を得る' },
+      { label: '卒業後に管理栄養士として活躍', note: '競技経験という強みを武器に、スポーツ関連キャリアへ' },
+    ],
   },
 ];
 
@@ -156,10 +163,10 @@ const CAREER_CARDS = [
   },
   {
     icon: Building2,
-    field: '行政・教育現場',
-    examples: '東京都・埼玉県行政栄養士、学校栄養教諭（さいたま市・清瀬市 等）',
+    field: '学校・スポーツ教育現場',
+    examples: '栄養教諭（さいたま市・清瀬市 等）、学校給食管理、部活動への栄養支援 等',
     synergy:
-      '運動指導と食事指導を融合した健康増進政策を推進。フレイル・ロコモ予防など地域住民の一次予防に貢献できる専門家へ。',
+      '体育教員と連携しながら、運動部の選手へのコンディショニング指導や食育を推進。スポーツ栄養の知識は、教育現場でこそ日常的に活きる専門性です。',
     color: 'var(--forest)',
   },
   {
@@ -188,9 +195,9 @@ export default function SportNutritionPage() {
             <span>トップページに戻る</span>
           </a>
           <p className="lab-page__eyebrow">十文字学園女子大学</p>
-          <h1 className="lab-page__title">スポーツ栄養士を<br />目指すなら、<br />十文字学園へ。</h1>
+          <h1 className="lab-page__title">スポーツ現場に近いところで、<br />栄養の専門家を<br />目指すなら。</h1>
           <p className="lab-page__subtitle">
-            強豪サッカー部が同じキャンパスで活動中。管理栄養士の確かな知識を、本物のアスリートとともに現場で活かす。
+            食物栄養学科・健康栄養学科の2学科と強豪サッカー部が同じキャンパスに。管理栄養士・栄養士資格を軸に、スポーツと関わるキャリアを在学中から本物の現場で育てられます。
           </p>
         </motion.div>
 
@@ -205,52 +212,50 @@ export default function SportNutritionPage() {
               <Sparkles size={12} /> よくある誤解
             </span>
             <h2 className="lab-story-feature__title">
-              「食物栄養学科では<br />
-              <em>スポーツ栄養は学べない</em>」<br />
+              「スポーツ栄養を学ぶなら<br />
+              <em>スポーツ系の学科じゃないと</em>」<br />
               ——それは誤解です。
             </h2>
             <p className="lab-story-feature__lead">
-              「管理栄養士養成課程は病院や臨床中心で、スポーツ系は学べない」——そう思っていませんか？
-              十文字学園女子大学では、その常識は当てはまりません。<br /><br />
+              「管理栄養士養成課程は臨床・病院中心で、スポーツとは関係ない」「スポーツ系を学ぶなら健康・体育の専門学科でないと」——そう思っていませんか？十文字学園では、その常識は当てはまりません。<br /><br />
               食物栄養学科には、学科内の科目として
               <strong>「スポーツ栄養学（石津達野先生）」「運動生理学（長浜尚史先生）」「スポーツコーチング論」</strong>
-              が設置されています。管理栄養士を目指しながら、スポーツ栄養の専門知識を学科の中で身につけられるのです。<br /><br />
-              さらに<strong>副指導教員制度</strong>を活用することで、
-              健康栄養学科が主催するゼミを通じてスポーツの現場に立ち、
-              実際のアスリートを対象にしたスポーツ栄養の実践を体験することもできます。
-              日本スポーツ栄養学会理事・村田浩子教授、公認スポーツ栄養士・徳野裕子准教授ら
-              国内最高峰の専門家のゼミに、食物栄養学科の学生が踏み込める環境が整っています。<br /><br />
-              充実した国家試験対策サポートに裏打ちされたメディカルな学びをベースに、
-              ハイレベルなスポーツ栄養の専門性を積み上げる。
-              そんな学び方が、ここでは現実です。<br /><br />
-              そして同じキャンパスには<strong>全国屈指の強豪女子サッカーチーム</strong>が活動しており、
-              そのフィールドを舞台にした本格的な栄養サポートの実践が在学中から可能です。
-              教室で学んだ理論を、すぐ隣の現場で試せる——これが十文字学園のスポーツ栄養教育の核心です。
+              が設置されています。管理栄養士を目指しながら、スポーツ栄養の専門知識を学科の中で身につけられるのです。さらに<strong>副指導教員制度</strong>を活用することで、健康栄養学科のゼミを通じてスポーツの現場に立つ機会もあります。<br /><br />
+              健康栄養学科では、日本スポーツ栄養学会理事・村田浩子教授と現役公認スポーツ栄養士・徳野裕子准教授が直接指導。スポーツ栄養を軸に管理栄養士・栄養士資格を目指すなら、より直接的な環境が整っています。<br /><br />
+              見落とされがちなのが「<strong>選手として学ぶ</strong>」という視点です。サッカー部等でアスリートとして活動しながら、栄養の専門教育を受ける。卒業後に管理栄養士として、その競技経験を活かしたキャリアへ——そんな学び方が、ここでは現実です。<br /><br />
+              スポーツ栄養に関わるキャリアは、<strong>公認スポーツ栄養士だけではありません</strong>。学校で体育教員と連携する栄養教諭、医療現場でアスリートをサポートする管理栄養士、地域の健康増進を担う行政栄養士——スポーツと食をつなぐ専門家の姿は、多様です。
             </p>
             <div className="lab-story-feature__tags">
-              <span>#公認スポーツ栄養士</span>
               <span>#管理栄養士</span>
+              <span>#栄養士</span>
               <span>#スポーツ栄養学</span>
+              <span>#公認スポーツ栄養士</span>
               <span>#副指導教員制度</span>
               <span>#アスリートサポート</span>
-              <span>#カレッジスポーツセンター</span>
+              <span>#2学科連携</span>
             </div>
           </motion.section>
 
-          {/* ===== 3つのエビデンス ===== */}
+          {/* ===== 3つの関わり方 ===== */}
           <motion.section className="lab-section" {...fadeUp(0.05)}>
-            <h2 className="lab-section__title">十文字学園でスポーツ栄養を学ぶ3つの根拠</h2>
+            <h2 className="lab-section__title">十文字でのスポーツ栄養との関わり方</h2>
             <p className="lab-section__body">
-              制度・教員・実践の3つの柱が、十文字学園のスポーツ栄養教育を裏づけています。
+              2つの学科と学生アスリートという3つの立場から、スポーツ栄養に関わるキャリアを描けます。
             </p>
             <div className="sn-evidence-cards">
-              {EVIDENCE_CARDS.map((card, i) => {
+              {ENGAGEMENT_CARDS.map((card, i) => {
                 const Icon = card.icon;
                 return (
                   <motion.div key={i} className="sn-evidence-card" {...fadeUp(0.08 * i)}>
-                    <div className="sn-evidence-card__num" style={{ color: card.accent }}>
-                      {card.num}
-                    </div>
+                    <span
+                      className="sn-evidence-card__dept"
+                      style={{
+                        background: `color-mix(in srgb, ${card.accent} 12%, transparent)`,
+                        color: card.accent,
+                      }}
+                    >
+                      {card.dept}
+                    </span>
                     <div
                       className="sn-evidence-card__icon"
                       style={{ background: `color-mix(in srgb, ${card.accent} 12%, transparent)`, color: card.accent }}
@@ -299,9 +304,8 @@ export default function SportNutritionPage() {
               <strong>スポーツ栄養学（石津達野先生）</strong>、
               <strong>運動生理学（長浜尚史先生）</strong>、
               <strong>スポーツコーチング論</strong>が設置されています。<br />
-              加えて、十文字学園女子大学の健康栄養学科には国内最高峰のスポーツ栄養専門家が在籍しており、
-              <strong>副指導教員制度</strong>を活用することで、健康栄養学科が主催するゼミを通じて
-              食物栄養学科の学生もスポーツの現場でスポーツ栄養を実践的に学ぶことができます。
+              加えて、健康栄養学科には国内最高峰のスポーツ栄養専門家が在籍しており、
+              <strong>副指導教員制度</strong>を活用することで、食物栄養学科の学生もそのゼミでスポーツ栄養を実践的に学ぶことができます。
             </p>
             <div className="sn-faculty-grid">
               {FACULTY.map((f, i) => (
@@ -323,48 +327,55 @@ export default function SportNutritionPage() {
             </div>
           </motion.section>
 
-          {/* ===== 資格パスフロー ===== */}
+          {/* ===== 3つのルート ===== */}
           <motion.section className="lab-section" {...fadeUp(0.05)}>
-            <h2 className="lab-section__title">食物栄養学科から「公認スポーツ栄養士」へのルート</h2>
+            <h2 className="lab-section__title">スポーツと栄養をつなぐ、3つのルート</h2>
             <p className="lab-section__body">
-              公認スポーツ栄養士を受験するには、<strong>管理栄養士免許が必須条件</strong>です。
-              資格取得には研修や実務経験も含む段階的なプロセスが必要です。
-              食物栄養学科で国試対策とスポーツ栄養の学びを両立しながら、
-              確実にそのキャリアを目指すことができます。
+              どの立場からスタートしても、スポーツに関わる栄養の専門家を目指せます。
             </p>
-            <div className="sn-path-flow">
-              {PATH_STEPS.map((step, i) => (
+            <div className="sn-routes-grid">
+              {ROUTES.map((route, i) => (
                 <motion.div
                   key={i}
-                  className={`sn-path-step${step.optional ? ' sn-path-step--optional' : ''}`}
-                  {...fadeUp(0.07 * i)}
+                  className="sn-route-card"
+                  style={{ borderTop: `4px solid ${route.color}` }}
+                  {...fadeUp(0.08 * i)}
                 >
-                  <div className="sn-path-step__track">
-                    <div
-                      className="sn-path-step__dot"
-                      style={{
-                        borderColor: step.color,
-                        background: step.optional ? 'var(--cream)' : step.color,
-                      }}
-                    />
-                    {i < PATH_STEPS.length - 1 && <div className="sn-path-step__line" />}
-                  </div>
-                  <div className="sn-path-step__content">
-                    <p className="sn-path-step__label" style={{ color: step.color }}>
-                      {step.label}
-                    </p>
-                    <p className="sn-path-step__note">{step.note}</p>
+                  <span
+                    className="sn-route-card__dept"
+                    style={{
+                      background: `color-mix(in srgb, ${route.color} 12%, transparent)`,
+                      color: route.color,
+                    }}
+                  >
+                    {route.dept}
+                  </span>
+                  <h3 className="sn-route-card__title">{route.title}</h3>
+                  <div className="sn-route-card__steps">
+                    {route.steps.map((step, j) => (
+                      <div
+                        key={j}
+                        className={`sn-route-step${step.optional ? ' sn-route-step--optional' : ''}`}
+                      >
+                        <div className="sn-route-step__track">
+                          <div
+                            className="sn-route-step__dot"
+                            style={{
+                              borderColor: route.color,
+                              background: step.optional ? 'var(--cream)' : route.color,
+                            }}
+                          />
+                          {j < route.steps.length - 1 && <div className="sn-route-step__line" />}
+                        </div>
+                        <div className="sn-route-step__content">
+                          <p className="sn-route-step__label">{step.label}</p>
+                          {step.note && <p className="sn-route-step__note">{step.note}</p>}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </motion.div>
               ))}
-            </div>
-            <div className="sn-path-callout">
-              <CheckCircle2 size={18} aria-hidden="true" />
-              <p>
-                公認スポーツ栄養士は、日本栄養士会と日本スポーツ協会が共同認定する資格です。
-                プロ・実業団アスリートを支える最高峰の資格として知られており、
-                受験には<strong>管理栄養士免許の所持</strong>が義務付けられています。
-              </p>
             </div>
           </motion.section>
 
@@ -372,8 +383,8 @@ export default function SportNutritionPage() {
           <motion.section className="lab-section" {...fadeUp(0.05)}>
             <h2 className="lab-section__title">スポーツ栄養の知識で広がるキャリア</h2>
             <p className="lab-section__body">
-              管理栄養士としての確かな専門性に、スポーツ・健康科学の知識を組み合わせることで、
-              多様かつ付加価値の高いキャリアパスが開かれます。
+              管理栄養士・栄養士としての専門性に、スポーツ・健康科学の知識を組み合わせることで、
+              多様なキャリアパスが開かれます。公認スポーツ栄養士はそのひとつに過ぎません。
             </p>
             <div className="sn-career-grid">
               {CAREER_CARDS.map((card, i) => {
@@ -406,12 +417,11 @@ export default function SportNutritionPage() {
                 十文字学園女子大学
               </p>
               <h2 className="sn-cta-banner__title">
-                強豪チームが隣にいる。<br />
-                だから、実践が本物になる。
+                2学科と強豪サッカー部が、<br />
+                同じキャンパスにいる。
               </h2>
               <p className="sn-cta-banner__body">
-                同じキャンパスで練習する強豪女子サッカー部、学科内のスポーツ関連科目、そして2学科体制の充実した専門教員陣——
-                この環境が揃って初めて可能になる、本物のスポーツ栄養教育がここにあります。
+                食物栄養学科・健康栄養学科、どちらからでもスポーツと栄養の接点を持てる環境が整っています。本物のアスリートとともに現場で学ぶ経験が、スポーツに関わる栄養の専門家への道を切り拓きます。
               </p>
               <div className="sn-cta-banner__buttons">
                 <a href="/" className="sn-cta-btn sn-cta-btn--primary">
