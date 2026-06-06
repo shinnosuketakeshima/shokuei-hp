@@ -94,6 +94,49 @@ const PATH_STEPS = [
   },
 ];
 
+const COURSES = [
+  {
+    accent: 'forest',
+    badge: '食物栄養関連科目（選択）',
+    name: 'スポーツ栄養学',
+    prof: '石津 達野 先生',
+    meta: ['3年次・後期', '2単位', '講義'],
+    overview: '基礎的な栄養学を土台に、スポーツにおける身体づくり・コンディショニング・競技パフォーマンス向上のための科学的根拠に基づいた栄養学的知識を習得。管理栄養士の視点から選手の食生活の実践方法までを学ぶ。',
+    topics: [
+      'エネルギーニーズと身体組成評価',
+      'たんぱく質・糖質・脂質摂取',
+      '骨の健康と貧血予防',
+      'ビタミンとコンディショニング',
+      '水分補給',
+      '増量・減量のウエイトコントロール',
+      'サプリメント摂取の考え方',
+      '試合前の食事調整',
+      'ジュニア選手の栄養',
+      '日常の実践的食事管理',
+    ],
+  },
+  {
+    accent: 'terracotta',
+    badge: '専門基礎領域（選択）',
+    name: '運動生理学',
+    prof: '長浜 尚史 先生',
+    meta: ['3年次・前期', '2単位', '講義＋実技・実験'],
+    overview: '運動が身体に及ぼす影響を生理学の観点から学ぶ。筋・神経・循環・呼吸・代謝の各系統が運動によってどう変化するかを理解し、実技・実験を通じて生体応答を実際に確認する。',
+    topics: [
+      '筋の構造とATP産生3ルート',
+      '筋線維の種類と筋力',
+      '運動と循環・呼吸',
+      '最大酸素摂取量・無酸素性作業閾値',
+      '呼吸循環応答【実技・実験】',
+      '運動とホルモン・代謝調節',
+      '筋疲労のメカニズム',
+      '体温調節と熱中症',
+      '運動と栄養・スポーツ選手の食事',
+      '運動処方の実際',
+    ],
+  },
+];
+
 const CAREER_CARDS = [
   {
     icon: Heart,
@@ -215,6 +258,32 @@ export default function SportNutritionPage() {
                   </motion.div>
                 );
               })}
+            </div>
+          </motion.section>
+
+          {/* ===== 学科内スポーツ科目 ===== */}
+          <motion.section className="lab-section" {...fadeUp(0.05)}>
+            <h2 className="lab-section__title">食物栄養学科で学ぶスポーツ関連科目</h2>
+            <p className="lab-section__body">
+              以下の2科目は食物栄養学科の選択科目として設置されており、
+              管理栄養士課程の学びと並行して3年次に履修できます。
+            </p>
+            <div className="sn-courses-grid">
+              {COURSES.map((c, i) => (
+                <motion.div key={i} className={`sn-course-card sn-course-card--${c.accent}`} {...fadeUp(0.08 * i)}>
+                  <div className="sn-course-card__meta">
+                    {c.meta.map((m, j) => <span key={j}>{m}</span>)}
+                  </div>
+                  <span className="sn-course-card__badge">{c.badge}</span>
+                  <h3 className="sn-course-card__name">{c.name}</h3>
+                  <p className="sn-course-card__prof">{c.prof}</p>
+                  <p className="sn-course-card__overview">{c.overview}</p>
+                  <p className="sn-course-card__topics-label">主な授業トピック</p>
+                  <div className="sn-course-card__topics">
+                    {c.topics.map((t, j) => <span key={j}>{t}</span>)}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.section>
 
