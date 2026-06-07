@@ -39,6 +39,8 @@ import EiyoAppReport from './components/EiyoAppReport'
 import NewsArchive from './components/NewsArchive'
 import FAQ from './components/FAQ'
 import SportNutritionPage from './components/SportNutritionPage'
+import Columns from './components/Columns'
+import FeatureSpotlight from './components/FeatureSpotlight'
 import './App.css'
 
 const PAGE_META = {
@@ -192,6 +194,11 @@ const PAGE_META = {
     description: '強豪女子サッカー部が同じキャンパスで活動中。管理栄養士の確かな知識を本物のアスリートとともに実践できる十文字学園女子大学のスポーツ栄養特集。2学科体制・他学科開放制度・国内最高峰の教員陣による本格的な指導環境を紹介します。',
     ogType: 'website',
   },
+  '/columns': {
+    title: 'コラム | 十文字学園女子大学 食物栄養学科',
+    description: '学生と教員、それぞれの視点で綴るコラム一覧。実習やゼミでの気づきから、教育・キャリアへの想いまで、学びと現場のリアルをお届けします。',
+    ogType: 'website',
+  },
 }
 
 const SUB_PATHS = [
@@ -200,7 +207,7 @@ const SUB_PATHS = [
   '/lab-niikura', '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/lab-takeshima-column', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices', '/faq',
-  '/sports-nutrition',
+  '/sports-nutrition', '/columns',
 ]
 
 export default function App() {
@@ -646,9 +653,11 @@ export default function App() {
           <Route path="/voices" element={<StudentVoices />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/sports-nutrition" element={<SportNutritionPage />} />
+          <Route path="/columns" element={<Columns />} />
           <Route path="/" element={
             <>
               <Hero />
+              <FeatureSpotlight />
               <CategoryBanners />
               <News />
               <StatsBar />

@@ -58,6 +58,7 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/voices` | `StudentVoices` |
 | `/faq` | `FAQ` |
 | `/sports-nutrition` | `SportNutritionPage` |
+| `/columns` | `Columns` |
 
 **Note:** `/event-0531` maps to `EventSpecial0525.jsx` — the date mismatch is intentional.
 
@@ -75,7 +76,7 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 
 ### Homepage section render order
 
-`Hero` → `CategoryBanners` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `Footer` (`#contact`)
+`Hero` → `FeatureSpotlight` → `CategoryBanners` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `Footer` (`#contact`)
 
 ### Adding a new sub-page
 
@@ -96,7 +97,11 @@ For **content pages** (student columns, event pages, etc.), skip the Labs and He
 
 **Suspended pages**: `LabIwamoto.jsx` and `StudentColumn2.jsx` exist but have no active routes. To re-enable, add back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and import in `App.jsx`. For `LabIwamoto`, also re-add its card to `Labs.jsx` and the nav lists.
 
-**Report/archive pages with routes but no Labs card**: `LabKamiyamaReport` (`/lab-kamiyama-report`) and `NewsArchive` (`/news`) have active routes but are not in the Labs story grid — they are linked from within other content.
+**Report/archive pages with routes but no Labs card**: `LabKamiyamaReport` (`/lab-kamiyama-report`), `NewsArchive` (`/news`), and `Columns` (`/columns`) have active routes but are not in the Labs story grid — they are linked from within other content (nav, footer, homepage spotlight).
+
+`Columns` (`/columns`) is a unified listing of student (`学生コラム`) and faculty (`教員コラム`) columns, filtered from `STATIC_NEWS` (`type === 'column'`) in `src/newsData.js` with a category tab filter.
+
+`FeatureSpotlight` is a homepage-only quick-link bar rendered between `Hero` and `CategoryBanners`, linking to `/sports-nutrition` and `/columns`. It uses Tailwind utility classes (matching `Hero`/`CategoryBanners`), not `index.css`.
 
 ### News: Firestore + static items
 

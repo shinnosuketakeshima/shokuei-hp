@@ -7,6 +7,7 @@ const LINKS_1 = [
   { label: '学生生活',    href: '/campus-life' },
   { label: 'よくある質問', href: '/faq' },
   { label: 'スポーツ栄養特集', href: '/sports-nutrition' },
+  { label: 'コラム', href: '/columns' },
 ]
 
 const LINKS_2 = [
