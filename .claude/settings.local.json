@@ -38,7 +38,29 @@
       "WebFetch(domain:gemini.google.com)",
       "Bash(python -c \"import chardet; data=open\\('C:/Github/shokuei-hp/docs/superpowers/specs/2026-06-05-sports-nutrition-design-v2.md','rb'\\).read\\(\\); print\\(chardet.detect\\(data\\)\\)\")",
       "Bash(python *)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5174/sports-nutrition)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5174/sports-nutrition)",
+      "Skill(run)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(chromium-cli screenshot *)",
+      "Bash(npx playwright *)",
+      "Bash(xargs rm -f)",
+      "Bash(node /tmp/sn-shots.cjs)",
+      "Bash(npx --yes playwright screenshot --help)",
+      "Bash(curl -s http://localhost:5174/sports-nutrition)",
+      "Bash(node *)",
+      "WebSearch",
+      "Bash(pkill -f \"vite --port 5175\")",
+      "Bash(lsof -ti:5173)",
+      "Bash(curl -s http://localhost:5175/sports-nutrition)",
+      "Bash(curl -s http://localhost:5175/ -o /dev/null -w \"homepage status: %{http_code}\\\\n\")",
+      "Bash(pkill -f \"vite\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(grep -n \"^\\\\s*</div>\\\\s*$\\\\|<style\\\\|relevantLink\\\\|btn--primary\\\\|関連\" /Users/takesima/github/shokuei-hp/src/components/LabKamiyamaReport.jsx)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(npx -y playwright --version)",
+      "Read(//private/tmp/**)",
+      "Bash(npm init *)",
+      "Read(//tmp/**)"
     ]
   }
 }
