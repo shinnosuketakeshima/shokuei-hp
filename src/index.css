@@ -111,11 +111,21 @@
   transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
 }
 .header--scrolled {
+  padding: 12px 0;
+  box-shadow: 0 1px 0 var(--border);
+}
+/* backdrop-filter は .header 自体ではなく疑似要素に置く。
+   .header に付けると position: fixed の子要素（ハンバーガーメニューの
+   ドロワー）の containing block が viewport から .header に変わってしまい、
+   スクロール後にメニューを開くとドロワーが正しく表示されない不具合が起きる。 */
+.header--scrolled::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(255, 249, 249, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 12px 0;
-  box-shadow: 0 1px 0 var(--border);
 }
 .header__inner {
   display: flex;
@@ -204,6 +214,33 @@
   background: var(--charcoal);
   transition: var(--transition);
   transform-origin: center;
+}
+
+/* トップページのHero（写真背景）に重なっている間は、視認性のためロゴ・メニューボタンを白系に切り替える */
+.header--on-hero .header__logo-dept,
+.header--on-hero .header__logo-tagline,
+.header--on-hero .header__nav-link,
+.header--on-hero .header__cat-btn,
+.header--on-hero .header__cat-chevron,
+.header--on-hero .header__official-link {
+  color: var(--white);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+.header--on-hero .header__nav-link:hover,
+.header--on-hero .header__cat-btn:hover,
+.header--on-hero .header__cat-btn--active,
+.header--on-hero .header__official-link:hover {
+  color: var(--white);
+  opacity: 0.8;
+}
+.header--on-hero .header__unofficial-badge {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.header--on-hero .header__menu-btn span {
+  background: var(--white);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 .header__menu-btn.open span:nth-child(1) { transform: rotate(45deg) translateY(6.5px); }
 .header__menu-btn.open span:nth-child(2) { opacity: 0; }

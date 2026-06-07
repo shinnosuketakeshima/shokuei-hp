@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
 
 const LAB_CATEGORIES = [
@@ -51,6 +52,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen]   = useState(false)
   const [openKey, setOpenKey]     = useState(null)
   const navRef                    = useRef(null)
+  const location                  = useLocation()
+
+  const onHero = location.pathname === '/' && !scrolled && !menuOpen
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48)
@@ -72,7 +76,7 @@ export default function Header() {
   const toggle   = (key) => setOpenKey(k => k === key ? null : key)
 
   return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
+    <header className={`header${scrolled ? ' header--scrolled' : ''}${onHero ? ' header--on-hero' : ''}`}>
       <div className="header__inner">
 
         <a href="/" className="header__logo" onClick={closeAll}>
