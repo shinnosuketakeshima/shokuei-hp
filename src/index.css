@@ -971,6 +971,14 @@
   color: var(--charcoal);
   line-height: 1.5;
 }
+.news-item__hook {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.6;
+}
 
 @media (max-width: 768px) {
   .news__layout { grid-template-columns: 1fr; }
@@ -1777,6 +1785,18 @@
   line-height: 1.85;
   color: var(--stone);
   margin-top: 10px;
+}
+.lab-story-card__interest {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 12px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--terracotta-dark);
+  background: var(--terracotta-10);
+  border-radius: 20px;
 }
 .lab-story-card__link {
   display: inline-flex;
@@ -4044,6 +4064,51 @@
   padding: 0 var(--container-px);
   width: 100%;
 }
+.faq__audience-guides {
+  display: grid;
+  gap: 16px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+@media (min-width: 768px) {
+  .faq__audience-guides { grid-template-columns: 1fr 1fr; }
+}
+.faq__audience-guide {
+  padding: 22px 24px;
+  border-radius: 16px;
+  background: var(--cream);
+  border: 1px solid var(--terracotta-20);
+}
+.faq__audience-guide-title {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.faq__audience-guide-desc {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--stone);
+}
+.faq__audience-guide-links {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.faq__audience-guide-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--terracotta-dark);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+.faq__audience-guide-link:hover { opacity: 0.65; }
+.faq__audience-guide-link svg { margin-top: 3px; flex-shrink: 0; }
+
 .faq__categories {
   display: flex;
   flex-direction: column;
@@ -4803,4 +4868,54 @@
   }
 }
 
+/* =============================================
+   Related reading / 補完サイト注記（記事末尾）
+   ============================================= */
+.related-reading {
+  max-width: 760px;
+  margin: clamp(48px, 7vw, 72px) auto 0;
+  padding: clamp(24px, 4vw, 32px);
+  border-radius: 18px;
+  background: var(--cream);
+  border: 1px solid var(--terracotta-20);
+}
+.related-reading__heading {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 0 0 12px;
+}
+.related-reading__links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+.related-reading__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--terracotta-dark);
+  text-decoration: none;
+  transition: gap var(--transition);
+}
+.related-reading__link:hover { gap: 10px; }
+.related-reading__note {
+  margin: 16px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--terracotta-20);
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--stone);
+}
+.related-reading__links + .related-reading__note { margin-top: 16px; }
+.related-reading__note a {
+  color: var(--terracotta-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 

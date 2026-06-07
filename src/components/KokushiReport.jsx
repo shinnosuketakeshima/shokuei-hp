@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import RelatedReading from './RelatedReading'
 
 export default function KokushiReport() {
   return (
@@ -405,6 +406,13 @@ export default function KokushiReport() {
             </a>
           </div>
         </motion.section>
+
+        <RelatedReading
+          links={[
+            { label: '管理栄養士 国家試験対策サポート体制を見る', href: '/support' },
+            { label: '進路・就職先実績を見る', href: '/career' },
+          ]}
+        />
 
       </div>
     </div>

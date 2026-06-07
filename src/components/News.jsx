@@ -80,7 +80,10 @@ export default function News() {
                   <Link to={n.href || '/'} className="news-item" aria-label={`${n.date} ${n.tag}: ${n.title} の詳細を読む`}>
                     <span className="news-item__date">{n.date}</span>
                     <span className={`news-tag news-tag--${n.type}`}>{n.tag}</span>
-                    <span className="news-item__title">{n.title}</span>
+                    <span className="news-item__title">
+                      {n.title}
+                      {n.hook && <span className="news-item__hook">{n.hook}</span>}
+                    </span>
                   </Link>
                 </article>
               </motion.li>

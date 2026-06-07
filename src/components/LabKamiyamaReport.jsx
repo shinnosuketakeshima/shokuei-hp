@@ -1,6 +1,7 @@
 import { ArrowLeft, Quote } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import RelatedReading from './RelatedReading'
 import saImg1 from '../assets/kamiyama-sa/image1.jpg'
 import saImg2 from '../assets/kamiyama-sa/image2.jpg'
 
@@ -151,6 +152,13 @@ export default function LabKamiyamaReport() {
               </Link>
             </div>
           </motion.section>
+
+          <RelatedReading
+            links={[
+              { label: '学科の特色・カリキュラムを見る', href: '/features' },
+              { label: '在学生・卒業生の声を見る', href: '/voices' },
+            ]}
+          />
 
         </div>
       </div>

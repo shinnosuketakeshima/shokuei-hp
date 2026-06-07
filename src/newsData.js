@@ -14,6 +14,7 @@ export const STATIC_NEWS = [
     tag: '教員コラム',
     type: 'column',
     title: '失敗が消えない時代に、どう育つか（竹嶋伸之輔 教授）',
+    hook: '「マニュアルがないとできない」と言われる学生たちの背景に、何があるのか。',
     href: '/lab-takeshima-column',
   },
   {
@@ -22,6 +23,7 @@ export const STATIC_NEWS = [
     tag: '教員コラム',
     type: 'column',
     title: '解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発した話',
+    hook: 'InBodyの測定データをもとに、生成AIで自分専用の栄養アドバイスアプリを作る実習とは。',
     href: '/eiyo-app-report',
   },
   {
@@ -30,6 +32,7 @@ export const STATIC_NEWS = [
     tag: '教員コラム',
     type: 'column',
     title: '先輩が授業をサポート！総合科目「いちから学ぶnutrition science」SAレポート',
+    hook: '先輩が後輩を教える「SA」の活動から見える、教える力と学ぶ力の育ち方。',
     href: '/lab-kamiyama-report',
   },
   {
@@ -38,6 +41,7 @@ export const STATIC_NEWS = [
     tag: '学生コラム',
     type: 'column',
     title: 'チーズに"王様"と"女王様"がいた！骨の衝撃映像と食育論セミナーレポート',
+    hook: 'チーズの"王様"と"女王様"って何のこと？学生記者が体験した特別講義のリアル。',
     href: '/student-column-3',
   },
   {
@@ -46,6 +50,7 @@ export const STATIC_NEWS = [
     tag: 'イベント',
     type: 'event',
     title: '【5/31開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」',
+    hook: '管理栄養士のリアルな仕事や大学での学びを体験できる、参加無料の特別企画。',
     href: '/event-0531',
   },
   {
@@ -54,6 +59,7 @@ export const STATIC_NEWS = [
     tag: '学生コラム',
     type: 'column',
     title: '白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情',
+    hook: '実習着・白衣・エプロン…用途で使い分ける理由を、現役学生が解説。',
     href: '/student-column-1',
   },
   {
@@ -62,6 +68,7 @@ export const STATIC_NEWS = [
     tag: 'お知らせ',
     type: 'info',
     title: '高大連携プロジェクト「食の未来を創る」十文字大×駒場学園高が始動',
+    hook: '高校生と大学生がタッグを組み、商品開発や地域食堂で食課題に挑む実践レポート。',
     href: '/koudai-project',
   },
 ]

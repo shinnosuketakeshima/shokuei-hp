@@ -37,19 +37,28 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
         >
-          十文字学園女子大学 食物栄養学科
+          十文字学園女子大学 食物栄養学科 ― 補完サイト
         </motion.p>
 
         <motion.h1
-          className="max-w-3xl font-serif text-[clamp(32px,5.5vw,68px)] leading-[1.2] font-bold tracking-[0.02em] text-white drop-shadow-lg"
+          className="max-w-3xl font-serif text-[clamp(28px,4.6vw,56px)] leading-[1.3] font-bold tracking-[0.02em] text-white drop-shadow-lg"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
         >
-          「食」を、科学する。
+          管理栄養士をめざす毎日って、
           <br />
-          社会を、動かす。
+          実際どんな感じ？
         </motion.h1>
+
+        <motion.p
+          className="mt-3 max-w-2xl text-[clamp(13px,1.6vw,15px)] leading-[1.9] font-light text-white/70"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+        >
+          「食」を、科学する。社会を、動かす。
+        </motion.p>
 
         <motion.p
           className="mt-6 max-w-2xl text-[clamp(14px,1.8vw,17px)] leading-[2] font-light text-white/90"
@@ -57,7 +66,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45 }}
         >
-          十文字の食物栄養学科の学生たちが、顕微鏡の向こう側から地域の食卓まで、日々向き合っている「リアルな4年間」のストーリー。
+          ここは、十文字学園女子大学 食物栄養学科の「公式サイトでは見えにくい部分」を伝える補完サイトです。研究室の素顔、学生の本音、教員のことばを通じて、入学後の毎日をリアルに知ることができます。
         </motion.p>
 
         <motion.div

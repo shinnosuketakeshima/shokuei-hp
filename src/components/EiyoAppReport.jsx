@@ -1,4 +1,5 @@
 import { ArrowLeft, Sparkles, Quote, ExternalLink } from 'lucide-react'
+import RelatedReading from './RelatedReading'
 
 /** 解剖生理学実験で制作した栄養アドバイスアプリのデモ（学籍番号を含まない公開用ファイル名） */
 const NUTRITION_APP_DEMO_URL = '/demos/anatomy-lab-nutrition-app.html'
@@ -363,6 +364,8 @@ export default function EiyoAppReport() {
               </div>
             </div>
           </motion.section>
+
+          <RelatedReading links={[]} />
 
         </div>
       </div>

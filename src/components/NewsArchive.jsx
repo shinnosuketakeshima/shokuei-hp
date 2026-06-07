@@ -119,6 +119,7 @@ export default function NewsArchive() {
                       <span className={`news-tag news-tag--${n.type}`}>{n.tag}</span>
                     </div>
                     <h2 className="archive-item__title">{n.title}</h2>
+                    {n.hook && <p className="archive-item__hook">{n.hook}</p>}
                   </Link>
                 </motion.li>
               ))}
@@ -225,6 +226,13 @@ export default function NewsArchive() {
           font-weight: 700;
           color: #1e293b;
           line-height: 1.4;
+        }
+        .archive-item__hook {
+          margin-top: 0.5rem;
+          font-size: 0.85rem;
+          font-weight: 400;
+          color: #64748b;
+          line-height: 1.6;
         }
         .archive-empty {
           text-align: center;

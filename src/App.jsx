@@ -41,12 +41,13 @@ import FAQ from './components/FAQ'
 import SportNutritionPage from './components/SportNutritionPage'
 import Columns from './components/Columns'
 import FeatureSpotlight from './components/FeatureSpotlight'
+import AudienceGuide from './components/AudienceGuide'
 import './App.css'
 
 const PAGE_META = {
   '/': {
-    title: '食物栄養学科 | 十文字学園女子大学 - 管理栄養士・栄養士を育成',
-    description: '埼玉県新座市にある十文字学園女子大学 食物栄養学科（人間生活学部）の非公式情報メディア。4年間を通じた実践的なカリキュラム、国家試験合格率を支えるサポート体制、最新の研究室情報など、食と栄養のプロフェッショナルを目指す高校生に向けたリアルな学びの魅力を発信します。',
+    title: '食物栄養学科のリアルを学生・教員の声で｜十文字学園女子大学 補完サイト',
+    description: '十文字学園女子大学 食物栄養学科の「もうひとつの顔」を伝える補完サイトです。研究室の素顔、学生コラム、教員のことば、国家試験サポートの様子をリアルにお届け。公式サイトと合わせて読むことで、入学後の毎日がより具体的に見えてきます。',
     ogType: 'website',
   },
   '/lab-takeshima': {
@@ -657,6 +658,7 @@ export default function App() {
           <Route path="/" element={
             <>
               <Hero />
+              <AudienceGuide />
               <FeatureSpotlight />
               <CategoryBanners />
               <News />

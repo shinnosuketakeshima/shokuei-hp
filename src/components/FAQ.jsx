@@ -140,6 +140,31 @@ const FAQ_CATEGORIES = [
   },
 ]
 
+const AUDIENCE_GUIDES = [
+  {
+    id: 'parent',
+    label: '保護者の方へ',
+    description: '実績データと制度から、学科の信頼性を確認したい方は、まずこちらの質問をご覧ください。',
+    refs: [
+      { catId: 'career', itemId: 'j1' },
+      { catId: 'career', itemId: 'j2' },
+      { catId: 'exam', itemId: 'e1' },
+      { catId: 'qualifications', itemId: 'q2' },
+    ],
+  },
+  {
+    id: 'teacher',
+    label: '進路指導の先生へ',
+    description: '生徒さんに学科の特色を説明する際に役立つ質問を集めました。',
+    refs: [
+      { catId: 'curriculum', itemId: 'c2' },
+      { catId: 'qualifications', itemId: 'q1' },
+      { catId: 'qualifications', itemId: 'q3' },
+      { catId: 'career', itemId: 'j3' },
+    ],
+  },
+]
+
 const byId = (catId, itemId) => {
   const cat = FAQ_CATEGORIES.find(c => c.id === catId)
   return cat.items.find(i => i.id === itemId)
@@ -156,7 +181,7 @@ const SUMMARY_ITEMS = [
 
 function FaqItem({ item, isOpen, onToggle }) {
   return (
-    <div className={`faq__item${isOpen ? ' faq__item--open' : ''}`}>
+    <div id={`faq-${item.id}`} className={`faq__item${isOpen ? ' faq__item--open' : ''}`}>
       <button
         className="faq__question-btn"
         onClick={() => onToggle(item.id)}
@@ -269,6 +294,27 @@ export default function FAQ({ summary = false }) {
             食物栄養学科への入学・資格・就職・国家試験対策についてのよくある質問をまとめました。
           </p>
         </motion.div>
+        <div className="faq__audience-guides">
+          {AUDIENCE_GUIDES.map((guide) => (
+            <div key={guide.id} className="faq__audience-guide">
+              <h2 className="faq__audience-guide-title">{guide.label}</h2>
+              <p className="faq__audience-guide-desc">{guide.description}</p>
+              <ul className="faq__audience-guide-links">
+                {guide.refs.map((ref) => {
+                  const item = byId(ref.catId, ref.itemId)
+                  return (
+                    <li key={item.id}>
+                      <a href={`#faq-${item.id}`} className="faq__audience-guide-link">
+                        <ChevronRight size={14} aria-hidden="true" />
+                        {item.q}
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          ))}
+        </div>
         <div className="faq__categories">
           {FAQ_CATEGORIES.map((category, ci) => (
             <motion.div
