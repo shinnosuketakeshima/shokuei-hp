@@ -23,22 +23,22 @@ const ENGAGEMENT_CARDS = [
   {
     icon: Trophy,
     dept: '食物栄養学科',
-    title: '管理栄養士の確かな基礎から、スポーツ栄養へ',
-    body: '管理栄養士養成課程として医療・臨床の深い知識を身につけながら、学科内のスポーツ栄養学・運動生理学を並行履修。副指導教員制度で健康栄養学科のゼミにも踏み込め、スポーツの現場を在学中から体験できます。',
+    title: '管理栄養士の確かな基礎から、スポーツの現場へ',
+    body: '管理栄養士養成課程として医療・臨床の深い知識を身につけながら、学科内のスポーツ栄養学・運動生理学を並行履修。さらに「コーチング論」は、日々トレーニングに励む学生アスリートが多く在籍する健康栄養学科との同時開講（共通化予定）科目として、一般学生とアスリートが机を並べて学べます。',
     accent: 'var(--forest)',
   },
   {
     icon: Award,
     dept: '健康栄養学科',
-    title: 'スポーツ栄養の専門家と、直接学ぶ',
-    body: '日本スポーツ栄養学会理事・村田浩子教授、公認スポーツ栄養士・徳野裕子准教授が在籍。スポーツ栄養を軸に管理栄養士・栄養士を目指すなら、より直接的な環境です。公認スポーツ栄養士へのルートも開かれています。',
+    title: 'スポーツ栄養を、専門家から直接学ぶ',
+    body: '公認スポーツ栄養士や日本スポーツ栄養学会の理事クラスの教員が必修科目を直接指導。スポーツ栄養を軸に管理栄養士・栄養士を目指すなら、より直接的な環境です。卒業後に公認スポーツ栄養士を目指すルートも開かれています。',
     accent: 'var(--terracotta)',
   },
   {
     icon: Dumbbell,
     dept: '学生アスリートとして',
-    title: '選手として学び、卒業後に栄養の専門家へ',
-    body: '強豪女子サッカー部が同じキャンパスで活動中。選手として在学しながら栄養・食の専門教育を受け、競技経験を活かして卒業後に管理栄養士・栄養士として活躍する道があります。',
+    title: '選手として学び、競技経験を専門性に変える',
+    body: '強豪女子サッカー部が同じキャンパスで活動中。選手として在学しながら栄養・食の専門教育を受け、卒業後はその競技経験を活かして管理栄養士として活躍——さらに公認スポーツ栄養士を目指す道も描けます。',
     accent: 'var(--forest)',
   },
 ];
@@ -47,6 +47,7 @@ const FACULTY = [
   {
     name: 'ヨーコ ゼッターランド 講師',
     dept: '健康栄養学科',
+    course: 'コーチング論／スポーツコーチング論（2学科同時開講）',
     degree: '元アメリカ女子バレーボール代表 ／ 選手歴18年・指導歴25年',
     fields: ['コーチング論', '女性とスポーツ', 'スポーツ組織マネジメント', '日米スポーツ文化'],
     badges: ['バルセロナ五輪 銅メダル（1992）', 'アトランタ五輪 7位入賞（1996）'],
@@ -67,21 +68,28 @@ const FACULTY = [
   {
     name: '村田 浩子 教授',
     dept: '健康栄養学科',
+    course: '栄養指導論／応用栄養学',
     degree: '博士（スポーツ科学）早稲田大学大学院',
-    fields: ['健康スポーツ科学', 'スポーツ栄養学', '環境生理学', '時間栄養学'],
+    fields: ['健康スポーツ科学', 'スポーツ栄養学', '栄養アセスメント', '競技者の食事調査'],
     badges: ['日本スポーツ栄養学会 理事', '大学院 研究指導担当'],
     message:
-      '「時間栄養学」をアスリート現場に導入し、持続血糖測定器（CGM）を用いた高強度運動時の低血糖防止策など最先端の栄養アセスメントを研究。本学大学院（食物栄養学専攻修士課程）の研究指導も担当しており、学部から大学院まで一貫した指導が受けられます。',
+      '競技者を対象とした食事調査を中心に、栄養アセスメント研究の第一人者として国内外の学会で多数の発表を重ねる。本学大学院（食物栄養学専攻修士課程）の研究指導も担当しており、学部で学んだ学生がさらに専門性を高めるために教授ゼミへ進学する道も開かれている。実際に、ゼミ出身の大学院生が競技者の食事調査に関する研究で、昨年の日本スポーツ栄養学会大会において演題賞を受賞——「入学・学部・大学院・キャリアアップ」という一貫した学びの好例を、自らのゼミから生み出している。',
   },
   {
     name: '徳野 裕子 准教授',
     dept: '健康栄養学科',
+    course: '公衆栄養学（演習・実習）',
     degree: '博士（学術）日本女子大学',
     fields: ['公認スポーツ栄養士', '管理栄養士', '健康科学', '応用微生物学'],
     badges: ['公認スポーツ栄養士', '日本スポーツ栄養学会 会員'],
     message:
-      '現役の「公認スポーツ栄養士」として実際の栄養サポート活動を展開する実践家。講義・実習を通じて、学生への公認スポーツ栄養士としてのキャリアパス提示も積極的に行っています。',
+      '必修科目「公衆栄養学」とその演習・実習を担当。現役の公認スポーツ栄養士として、実際にスポーツ選手への栄養サポート活動を重ねてきた実践家でもある。講義・実習を通じて、現場経験に裏打ちされた知見を伝えるとともに、学生への公認スポーツ栄養士としてのキャリアパス提示にも力を入れている。',
   },
+];
+
+const SIMPLE_LECTURERS = [
+  { course: 'スポーツ栄養学', name: '石津 達野 先生', role: '非常勤講師' },
+  { course: '運動生理学', name: '長浜 尚史 先生', role: '非常勤講師' },
 ];
 
 const ROUTES = [
@@ -91,8 +99,8 @@ const ROUTES = [
     title: '管理栄養士の土台から、スポーツ栄養へ',
     steps: [
       { label: '食物栄養学科に入学', note: '管理栄養士養成課程でメディカルな基礎を固める' },
-      { label: '学科内スポーツ科目を履修', note: 'スポーツ栄養学・運動生理学・スポーツコーチング論を3年次に並行履修' },
-      { label: '健康栄養ゼミに参加（任意）', note: '副指導教員制度を活用し、スポーツの現場に立つ', optional: true },
+      { label: '学科内スポーツ科目を履修', note: 'スポーツ栄養学・運動生理学・コーチング論（健康栄養学科との同時開講）を3年次に並行履修' },
+      { label: '専門ゼミ・実習で現場に立つ（任意）', note: '副指導教員制度を活用し、各学科の専門ゼミを通じてスポーツの現場に立つ', optional: true },
       { label: '管理栄養士国家試験合格', note: '充実したサポート体制で確実に合格を目指す' },
       { label: 'スポーツ関連キャリアへ', note: '公認スポーツ栄養士取得や、医療・産業・教育現場での活躍へ' },
     ],
@@ -103,7 +111,7 @@ const ROUTES = [
     title: 'スポーツ栄養の専門家として',
     steps: [
       { label: '健康栄養学科に入学', note: 'スポーツ栄養を軸に管理栄養士・栄養士を目指す' },
-      { label: 'スポーツ栄養専門教員の指導を受ける', note: '村田浩子教授・徳野裕子准教授のもとで深く学ぶ' },
+      { label: '必修科目でスポーツ栄養の第一線を学ぶ', note: '公認スポーツ栄養士・学会理事クラスの教員から直接指導を受ける' },
       { label: '管理栄養士・栄養士資格取得', note: '学科の養成課程を通じて国家試験受験資格を得る' },
       { label: '公認スポーツ栄養士取得（任意）', note: '管理栄養士免許取得後、研修・実務経験を経て受験可能', optional: true },
     ],
@@ -111,12 +119,23 @@ const ROUTES = [
   {
     color: 'var(--stone)',
     dept: '学生アスリートルート',
-    title: '選手経験を活かして専門家へ',
+    title: '競技経験を、確かな専門性に変える',
     steps: [
       { label: '選手として在学', note: 'サッカー部等でアスリートとして活動しながら栄養・食の専門教育を受ける' },
-      { label: '現場で体験しながら学ぶ', note: '栄養サポートを受ける視点から、実践的な栄養知識を育む' },
-      { label: '管理栄養士受験資格を取得', note: '養成課程を修了し、在学中に受験資格を得る' },
-      { label: '卒業後に管理栄養士として活躍', note: '競技経験という強みを武器に、スポーツ関連キャリアへ' },
+      { label: '現場で体験しながら学ぶ', note: '栄養サポートを受ける当事者の視点から、実践的な栄養知識を育む' },
+      { label: '管理栄養士として卒業・活躍', note: '自身の競技経験を生かした栄養管理業務に携わる' },
+      { label: 'スポーツ現場でのサポート経験を蓄積', note: '実務を通じて、現場での経験を一歩ずつ積み重ねる', optional: true },
+      { label: '公認スポーツ栄養士資格を取得', note: '競技者だった強みを生かし、確実なステップアップを描ける' },
+    ],
+  },
+  {
+    color: 'var(--charcoal)',
+    dept: '社会人からのルート',
+    title: '現場での経験を重ねながら、公認スポーツ栄養士へ',
+    steps: [
+      { label: '管理栄養士・栄養士として就職', note: '医療、産業（給食サービス会社等）、教育現場など、多様な分野で社会人として活躍する' },
+      { label: 'スポーツ現場でのサポート経験を重ねる', note: '公認スポーツ栄養士の取得に不可欠な実務経験を、就業後にコツコツ積み上げる', optional: true },
+      { label: '公認スポーツ栄養士の取得を目指す', note: '本学では、この経験を在学中から先んじて積み上げられることが、他校にはない圧倒的なアドバンテージになる' },
     ],
   },
 ];
@@ -126,7 +145,6 @@ const COURSES = [
     accent: 'forest',
     badge: '食物栄養関連科目（選択）',
     name: 'スポーツ栄養学',
-    prof: '石津 達野 先生',
     meta: ['3年次・後期', '2単位', '講義'],
     overview: '基礎的な栄養学を土台に、スポーツにおける身体づくり・コンディショニング・競技パフォーマンス向上のための科学的根拠に基づいた栄養学的知識を習得。管理栄養士の視点から選手の食生活の実践方法までを学ぶ。',
     topics: [
@@ -146,7 +164,6 @@ const COURSES = [
     accent: 'terracotta',
     badge: '専門基礎領域（選択）',
     name: '運動生理学',
-    prof: '長浜 尚史 先生',
     meta: ['3年次・前期', '2単位', '講義＋実技・実験'],
     overview: '運動が身体に及ぼす影響を生理学の観点から学ぶ。筋・神経・循環・呼吸・代謝の各系統が運動によってどう変化するかを理解し、実技・実験を通じて生体応答を実際に確認する。',
     topics: [
@@ -166,7 +183,6 @@ const COURSES = [
     accent: 'forest',
     badge: '2学科 同時開講（選択）',
     name: 'コーチング論 ／ スポーツコーチング論',
-    prof: 'ヨーコ ゼッターランド 先生',
     meta: ['前期', '2単位', '講義・演習'],
     overview: '健康栄養学科「コーチング論」・食物栄養学科「スポーツコーチング論」として2学科合同で同時開講される実践的科目。人を育てる「コーチング」の本質を学ぶ。「ティーチング」との違いを起点に、「グッドコーチ」に必要な資質と考え方を探究する。体罰・ハラスメントのない指導環境、「プレーヤーズセンタード」「アントラージュ」「Well Being」の概念と実践、日米のスポーツ文化の違いを学ぶ。ロールプレイングと学生間ディスカッションを通じて指導者としての実践力を養う。五輪銅メダリスト・指導歴25年の担当教員による実務家講義。',
     topics: [
@@ -259,12 +275,10 @@ export default function SportNutritionPage() {
             </h2>
             <p className="lab-story-feature__lead">
               「管理栄養士養成課程は臨床・病院中心で、スポーツとは関係ない」「スポーツ系を学ぶなら健康・体育の専門学科でないと」——そう思っていませんか？十文字学園では、その常識は当てはまりません。<br /><br />
-              食物栄養学科には、学科内の科目として
-              <strong>「スポーツ栄養学（石津達野先生）」「運動生理学（長浜尚史先生）」</strong>
-              が設置されています。さらに<strong>「スポーツコーチング論（ヨーコ ゼッターランド先生）」</strong>は健康栄養学科との<strong>2学科同時開講</strong>科目として履修できます。管理栄養士を目指しながら、五輪メダリストから直接コーチング論を学べる環境があります。さらに<strong>副指導教員制度</strong>を活用することで、健康栄養学科のゼミを通じてスポーツの現場に立つ機会もあります。<br /><br />
-              健康栄養学科では、日本スポーツ栄養学会理事・村田浩子教授と現役公認スポーツ栄養士・徳野裕子准教授が直接指導。スポーツ栄養を軸に管理栄養士・栄養士資格を目指すなら、より直接的な環境が整っています。<br /><br />
+              食物栄養学科には、学科内の選択科目として<strong>「スポーツ栄養学」「運動生理学」</strong>が設置されています。さらに<strong>「コーチング論／スポーツコーチング論」</strong>は、日々トレーニングに励む学生アスリートが多く在籍する<strong>健康栄養学科との同時開講（共通化予定）</strong>科目として履修可能。一般学生とアスリートが同じ教室で机を並べ、アスリートの生の日常（日々の疲労度やリアルな体調変化など）を間近に感じながら、教科書だけでは学べない「スポーツ現場の空気感と実態」を肌で学べる——そんなリアルな環境があります。さらに<strong>副指導教員制度</strong>を活用すれば、各学科の専門ゼミを通じてスポーツの現場に立つ機会も広がります。<br /><br />
+              健康栄養学科では、公認スポーツ栄養士や日本スポーツ栄養学会の理事クラスの教員が必修科目を直接指導。スポーツ栄養を軸に管理栄養士・栄養士資格を目指すなら、より直接的な環境が整っています。<br /><br />
               見落とされがちなのが「<strong>選手として学ぶ</strong>」という視点です。サッカー部等でアスリートとして活動しながら、栄養の専門教育を受ける。卒業後に管理栄養士として、その競技経験を活かしたキャリアへ——そんな学び方が、ここでは現実です。<br /><br />
-              スポーツ栄養に関わるキャリアは、<strong>公認スポーツ栄養士だけではありません</strong>。学校で体育教員と連携する栄養教諭、医療現場でアスリートをサポートする管理栄養士、地域の健康増進を担う行政栄養士——スポーツと食をつなぐ専門家の姿は、多様です。
+              スポーツ栄養に関わるキャリアは、<strong>公認スポーツ栄養士だけではありません</strong>。学校で体育教員と連携する栄養教諭・保健体育教諭、医療現場でアスリートをサポートする管理栄養士、地域の健康増進を担う行政栄養士——スポーツと食をつなぐ専門家の姿は、多様です。
             </p>
             <div className="lab-story-feature__tags">
               <span>#管理栄養士</span>
@@ -274,6 +288,32 @@ export default function SportNutritionPage() {
               <span>#副指導教員制度</span>
               <span>#アスリートサポート</span>
               <span>#2学科連携</span>
+            </div>
+          </motion.section>
+
+          {/* ===== 本学独自の強み：学校現場×スポーツ栄養 ===== */}
+          <motion.section
+            className="lab-story-feature lab-story-feature--terracotta"
+            {...fadeUp(0.05)}
+          >
+            <span className="lab-story-feature__label">
+              <Sparkles size={12} /> 本学独自の強み
+            </span>
+            <h2 className="lab-story-feature__title">
+              <em>学校現場こそ</em>、<br />
+              スポーツ栄養の最前線。
+            </h2>
+            <p className="lab-story-feature__lead">
+              スポーツ栄養と聞くと、多くの人がプロチームやアスリート個人へのサポートを思い浮かべます。しかし、栄養士・管理栄養士の資格を持ちながら<strong>「保健体育の教員免許」</strong>や<strong>「栄養教諭免許」</strong>を取得して教育現場へ入職することは、実はスポーツ栄養における最も重要なアプローチのひとつです。<br /><br />
+              心身ともに大きく成長する児童・生徒（ジュニア層）の時期に、スポーツ栄養の知識を日常的に直接指導し、生活へと反映させられる「最初の専門家」になれるのは、教育現場に立つ教員にほかなりません。<br /><br />
+              十文字学園女子大学では、この視点をカリキュラムとキャリアパスに明確に組み込んでいます。「資格を取って終わり」ではなく「教育現場でスポーツ栄養をどう活かすか」まで描けること——それこそが、他大学にはない本学だけの完全な差別化ポイントです。
+            </p>
+            <div className="lab-story-feature__tags">
+              <span>#栄養教諭</span>
+              <span>#保健体育教諭</span>
+              <span>#学校給食</span>
+              <span>#ジュニア期の栄養教育</span>
+              <span>#体育教員との連携</span>
             </div>
           </motion.section>
 
@@ -315,7 +355,7 @@ export default function SportNutritionPage() {
           <motion.section className="lab-section" {...fadeUp(0.05)}>
             <h2 className="lab-section__title">スポーツ関連科目一覧</h2>
             <p className="lab-section__body">
-              スポーツ栄養学・運動生理学は食物栄養学科の選択科目として設置。コーチング論（スポーツコーチング論）は健康栄養・食物栄養の<strong>2学科合同で同時開講</strong>されており、どちらの学科の学生も一緒に学びます。
+              スポーツ栄養学・運動生理学は食物栄養学科の選択科目として設置。コーチング論（スポーツコーチング論）は健康栄養・食物栄養の<strong>2学科合同で同時開講</strong>されており、どちらの学科の学生も一緒に学びます。担当教員のご紹介はこのページの「講義・教員紹介」をご覧ください。
             </p>
             <div className="sn-courses-grid">
               {COURSES.map((c, i) => (
@@ -329,7 +369,6 @@ export default function SportNutritionPage() {
                   </div>
                   <span className="sn-course-card__badge">{c.badge}</span>
                   <h3 className="sn-course-card__name">{c.name}</h3>
-                  <p className="sn-course-card__prof">{c.prof}</p>
                   <p className="sn-course-card__overview">{c.overview}</p>
                   <p className="sn-course-card__topics-label">主な授業トピック</p>
                   <div className="sn-course-card__topics">
@@ -340,49 +379,11 @@ export default function SportNutritionPage() {
             </div>
           </motion.section>
 
-          {/* ===== 教員スポットライト ===== */}
-          <motion.section className="lab-section" {...fadeUp(0.05)}>
-            <h2 className="lab-section__title">スポーツを教える教員陣</h2>
-            <p className="lab-section__body">
-              健康栄養学科には、五輪メダリストのコーチング論講師、国内最高峰のスポーツ栄養専門家が在籍。
-              <strong>副指導教員制度</strong>を活用することで、食物栄養学科の学生も健康栄養学科のゼミ・授業を通じてスポーツを実践的に学ぶことができます。
-            </p>
-            <div className="sn-faculty-grid">
-              {FACULTY.map((f, i) => (
-                <motion.div
-                  key={i}
-                  className={`sn-faculty-card${f.wide ? ' sn-faculty-card--featured' : ''}`}
-                  {...fadeUp(0.08 * i)}
-                >
-                  <div className="sn-faculty-card__top">
-                    <p className="sn-faculty-card__dept">{f.dept}</p>
-                    <h3 className="sn-faculty-card__name">{f.name}</h3>
-                    <p className="sn-faculty-card__degree">{f.degree}</p>
-                  </div>
-                  <div className="sn-faculty-card__badges">
-                    {f.badges.map((b, j) => <span key={j}>{b}</span>)}
-                  </div>
-                  {f.career && (
-                    <div className="sn-faculty-card__career">
-                      {f.career.map((item, j) => (
-                        <p key={j} className="sn-faculty-card__career-item">{item}</p>
-                      ))}
-                    </div>
-                  )}
-                  <div className="sn-faculty-card__fields">
-                    {f.fields.map((field, j) => <span key={j}>{field}</span>)}
-                  </div>
-                  <p className="sn-faculty-card__message">{f.message}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
-
           {/* ===== 3つのルート ===== */}
           <motion.section className="lab-section" {...fadeUp(0.05)}>
-            <h2 className="lab-section__title">スポーツと栄養をつなぐ、3つのルート</h2>
+            <h2 className="lab-section__title">スポーツと栄養をつなぐ、4つのルート</h2>
             <p className="lab-section__body">
-              どの立場からスタートしても、スポーツに関わる栄養の専門家を目指せます。
+              どの立場からスタートしても、スポーツに関わる栄養の専門家を目指せます。在学中だけでなく、卒業後・社会人からのステップアップも見据えたルートがあります。
             </p>
             <div className="sn-routes-grid">
               {ROUTES.map((route, i) => (
@@ -457,6 +458,65 @@ export default function SportNutritionPage() {
                   </motion.div>
                 );
               })}
+            </div>
+          </motion.section>
+
+          {/* ===== スポーツ栄養の普遍的な価値 ===== */}
+          <motion.section className="lab-section" {...fadeUp(0.05)}>
+            <h2 className="lab-section__title">スポーツ栄養の知識は、アスリートだけのものではない</h2>
+            <p className="lab-section__body">
+              「速く走るため」「強くなるため」——スポーツ栄養は、競技者だけのための知識ではありません。エネルギー代謝・身体組成・コンディショニングといった理論は、<strong>幼児期から高齢期まで、生涯にわたる幅広い対象者の健康増進・身体づくりに応用できる、汎用性の高い知識</strong>です。<br /><br />
+              実際に、健康栄養学科の講義の中でもこうした知見は積極的に取り入れられています。スポーツに特化しない学生にとっても、将来どの現場（病院、企業、学校、地域など）に進んでも役立つ「強力な武器」になる——スポーツ栄養を学ぶことは、特定の進路を選ぶことではなく、<strong>栄養の専門家としての土台を、より厚く、より実践的にすること</strong>なのです。
+            </p>
+          </motion.section>
+
+          {/* ===== 講義・教員紹介 ===== */}
+          <motion.section className="lab-section" {...fadeUp(0.05)}>
+            <h2 className="lab-section__title">講義・教員紹介</h2>
+            <p className="lab-section__body">
+              スポーツ栄養に関わる講義には、五輪メダリストのコーチングのプロから、公認スポーツ栄養士、日本スポーツ栄養学会の理事クラスまで——国内有数の専門家・実務家が顔を揃えます。
+              <strong>副指導教員制度</strong>を活用することで、食物栄養学科の学生もこうした教員陣の指導を受けながらスポーツを実践的に学ぶことができます。
+            </p>
+            <div className="sn-faculty-grid">
+              {FACULTY.map((f, i) => (
+                <motion.div
+                  key={i}
+                  className={`sn-faculty-card${f.wide ? ' sn-faculty-card--featured' : ''}`}
+                  {...fadeUp(0.08 * i)}
+                >
+                  <div className="sn-faculty-card__top">
+                    <p className="sn-faculty-card__dept">{f.dept}</p>
+                    <p className="sn-faculty-card__course">担当科目：{f.course}</p>
+                    <h3 className="sn-faculty-card__name">{f.name}</h3>
+                    <p className="sn-faculty-card__degree">{f.degree}</p>
+                  </div>
+                  <div className="sn-faculty-card__badges">
+                    {f.badges.map((b, j) => <span key={j}>{b}</span>)}
+                  </div>
+                  {f.career && (
+                    <div className="sn-faculty-card__career">
+                      {f.career.map((item, j) => (
+                        <p key={j} className="sn-faculty-card__career-item">{item}</p>
+                      ))}
+                    </div>
+                  )}
+                  <div className="sn-faculty-card__fields">
+                    {f.fields.map((field, j) => <span key={j}>{field}</span>)}
+                  </div>
+                  <p className="sn-faculty-card__message">{f.message}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="sn-lecturer-list">
+              {SIMPLE_LECTURERS.map((l, i) => (
+                <div key={i} className="sn-lecturer-list__item">
+                  <span className="sn-lecturer-list__course">{l.course}</span>
+                  <span className="sn-lecturer-list__person">
+                    <span className="sn-lecturer-list__name">{l.name}</span>
+                    <span className="sn-lecturer-list__role">{l.role}</span>
+                  </span>
+                </div>
+              ))}
             </div>
           </motion.section>
 

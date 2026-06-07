@@ -2244,6 +2244,28 @@
 .lab-story-feature--forest .lab-story-feature__tags span {
   color: var(--forest-dark);
 }
+.lab-story-feature--terracotta {
+  background: linear-gradient(135deg, var(--terracotta-10) 0%, var(--cream) 70%);
+}
+.lab-story-feature--terracotta::before {
+  background: var(--terracotta-10);
+}
+.lab-story-feature--terracotta::after {
+  background: var(--forest-10);
+}
+.lab-story-feature--terracotta .lab-story-feature__label {
+  background: var(--terracotta);
+}
+.lab-story-feature--terracotta .lab-story-feature__title em {
+  color: var(--terracotta-dark);
+  background: linear-gradient(transparent 60%, var(--terracotta-10) 60%);
+}
+.lab-story-feature--terracotta .lab-story-feature__lead strong {
+  background: linear-gradient(transparent 62%, var(--terracotta-10) 62%);
+}
+.lab-story-feature--terracotta .lab-story-feature__tags span {
+  color: var(--terracotta-dark);
+}
 .lab-story-feature__lead {
   font-size: clamp(14px, 1.4vw, 16px);
   line-height: 2;
@@ -4055,13 +4077,6 @@
   margin-bottom: 4px;
 }
 
-.sn-course-card__prof {
-  font-size: 0.82rem;
-  color: var(--stone);
-  font-family: var(--font-sans);
-  margin-bottom: 16px;
-}
-
 .sn-course-card__overview {
   font-size: 0.85rem;
   color: var(--charcoal);
@@ -4202,6 +4217,19 @@
   margin: 0;
 }
 
+.sn-faculty-card__course {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--terracotta-dark);
+  letter-spacing: 0.02em;
+  margin: 0 0 2px;
+}
+
+.sn-faculty-card--featured .sn-faculty-card__course {
+  color: var(--forest-dark);
+}
+
 .sn-faculty-card__degree {
   font-size: 12px;
   color: var(--stone);
@@ -4249,6 +4277,50 @@
   .sn-faculty-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.sn-lecturer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.sn-lecturer-list__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.sn-lecturer-list__course {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--charcoal);
+  font-family: var(--font-serif);
+}
+
+.sn-lecturer-list__person {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.sn-lecturer-list__name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.sn-lecturer-list__role {
+  font-size: 11px;
+  color: var(--stone);
 }
 
 /* Qualification Path Flow */
@@ -4516,7 +4588,7 @@
 /* Route Cards (3つのルート) */
 .sn-routes-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 28px;
   align-items: start;
