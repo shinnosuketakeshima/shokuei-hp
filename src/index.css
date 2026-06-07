@@ -207,6 +207,8 @@
   flex-direction: column;
   gap: 5px;
   padding: 4px;
+  position: relative;
+  z-index: 100; /* .header__nav（開いた時 z-index: 99）の上に出して、開閉どちらもタップできるようにする */
 }
 .header__menu-btn span {
   display: block;
