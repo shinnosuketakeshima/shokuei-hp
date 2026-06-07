@@ -47,6 +47,7 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/event-0531` | `EventSpecial0525` |
 | `/student-column-3` | `StudentColumn3` |
 | `/lab-kamiyama-report` | `LabKamiyamaReport` |
+| `/lab-takeshima-column` | `LabTakeshimaColumn` |
 | `/eiyo-app-report` | `EiyoAppReport` |
 | `/news` | `NewsArchive` |
 | `/features` | `Features` |
@@ -55,6 +56,8 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 | `/career` | `CareerPage` |
 | `/campus-life` | `CampusLife` |
 | `/voices` | `StudentVoices` |
+| `/faq` | `FAQ` |
+| `/sports-nutrition` | `SportNutritionPage` |
 
 **Note:** `/event-0531` maps to `EventSpecial0525.jsx` — the date mismatch is intentional.
 
@@ -87,7 +90,7 @@ For **lab pages**, also update **`Labs.jsx`** (`LAB_STORIES` array) to add the s
 
 For **content pages** (student columns, event pages, etc.), skip the Labs and Header/Footer steps.
 
-**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `StudentVoices`, and `CampusLife` each accept a `summary` prop. On the homepage they render with `summary={true}` (condensed/teaser view); their corresponding routes render the same component without the prop for the full expanded view. When editing these components, maintain both modes.
+**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `StudentVoices`, `CampusLife`, and `FAQ` each accept a `summary` prop. On the homepage they render with `summary={true}` (condensed/teaser view); their corresponding routes (`FAQ` also at `/faq`) render the same component without the prop for the full expanded view. When editing these components, maintain both modes.
 
 **Career is split into two components**: `Career.jsx` is used only on the homepage (with `summary={true}`). `CareerPage.jsx` is the dedicated full-page component rendered at `/career`.
 
