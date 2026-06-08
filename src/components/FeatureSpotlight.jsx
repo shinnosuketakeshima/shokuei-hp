@@ -51,8 +51,8 @@ export default function FeatureSpotlight() {
                     </span>
                     <div>
                       <span className="text-[11px] font-medium tracking-[0.15em] text-white/80 uppercase">{item.label}</span>
-                      <h3 className="font-serif text-[clamp(16px,2vw,19px)] leading-snug font-bold">{item.title}</h3>
-                      <p className="mt-1 hidden text-[12px] leading-[1.7] font-light text-white/85 sm:block">{item.description}</p>
+                      <h3 className="text-balance font-serif text-[clamp(16px,2vw,19px)] leading-snug font-bold">{item.title}</h3>
+                      <p className="mt-1 hidden text-pretty text-[12px] leading-[1.7] font-light text-white/85 sm:block">{item.description}</p>
                     </div>
                   </div>
                   <ArrowRight

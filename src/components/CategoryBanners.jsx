@@ -48,7 +48,7 @@ export default function CategoryBanners() {
           <p className="text-[11px] font-medium tracking-[0.2em] text-[#A87878] uppercase">Pick your story</p>
           <h2
             id="category-banners-heading"
-            className="mt-3 font-serif text-[clamp(24px,3.5vw,36px)] leading-snug font-bold text-[#4A3F3F]"
+            className="mt-3 text-balance font-serif text-[clamp(24px,3.5vw,36px)] leading-snug font-bold text-[#4A3F3F]"
           >
             あなたの「好き」から、学びを選ぶ
           </h2>
@@ -76,10 +76,10 @@ export default function CategoryBanners() {
                     <Icon size={14} aria-hidden="true" />
                     {cat.tag}
                   </span>
-                  <h3 className="mt-5 font-serif text-[clamp(20px,2.2vw,26px)] leading-snug font-bold">
+                  <h3 className="mt-5 text-balance font-serif text-[clamp(20px,2.2vw,26px)] leading-snug font-bold">
                     【{cat.title}】
                   </h3>
-                  <p className="mt-4 text-[13px] leading-[1.9] font-light text-white/90">{cat.description}</p>
+                  <p className="mt-4 text-pretty text-[13px] leading-[1.9] font-light text-white/90">{cat.description}</p>
                 </div>
                 <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-medium text-white/95">
                   ストーリーを見る

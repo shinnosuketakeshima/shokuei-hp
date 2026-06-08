@@ -41,18 +41,16 @@ export default function Hero() {
         </motion.p>
 
         <motion.h1
-          className="max-w-3xl font-serif text-[clamp(28px,4.6vw,56px)] leading-[1.3] font-bold tracking-[0.02em] text-white drop-shadow-lg"
+          className="max-w-3xl text-balance font-serif text-[clamp(28px,4.6vw,56px)] leading-[1.3] font-bold tracking-[0.02em] text-white drop-shadow-lg"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
         >
-          管理栄養士をめざす毎日って、
-          <br />
-          実際どんな感じ？
+          管理栄養士をめざす毎日って、実際どんな感じ？
         </motion.h1>
 
         <motion.p
-          className="mt-3 max-w-2xl text-[clamp(13px,1.6vw,15px)] leading-[1.9] font-light text-white/70"
+          className="mt-3 max-w-2xl text-pretty text-[clamp(13px,1.6vw,15px)] leading-[1.9] font-light text-white/70"
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
@@ -61,7 +59,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.p
-          className="mt-6 max-w-2xl text-[clamp(14px,1.8vw,17px)] leading-[2] font-light text-white/90"
+          className="mt-6 max-w-2xl text-pretty text-[clamp(14px,1.8vw,17px)] leading-[2] font-light text-white/90"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45 }}

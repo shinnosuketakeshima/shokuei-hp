@@ -252,7 +252,7 @@ export default function SportNutritionPage() {
             <span>トップページに戻る</span>
           </a>
           <p className="lab-page__eyebrow">十文字学園女子大学</p>
-          <h1 className="lab-page__title">スポーツ現場に近いところで、<br />栄養の専門家を<br />目指すなら。</h1>
+          <h1 className="lab-page__title">スポーツ現場に近いところで、栄養の専門家を目指すなら。</h1>
           <p className="lab-page__subtitle">
             食物栄養学科・健康栄養学科の2学科と強豪サッカー部が同じキャンパスに。管理栄養士・栄養士資格を軸に、スポーツと関わるキャリアを在学中から本物の現場で育てられます。
           </p>
