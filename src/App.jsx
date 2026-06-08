@@ -237,6 +237,16 @@ export default function App() {
 
   const meta = PAGE_META[location.pathname] || PAGE_META['/']
 
+  // SPAのクライアントサイド遷移はgtag.jsの自動計測では検知されないため、ルート変更ごとに手動でpage_viewを送信
+  useEffect(() => {
+    if (typeof window.gtag !== 'function') return
+    window.gtag('event', 'page_view', {
+      page_path: location.pathname + location.search,
+      page_title: meta.title,
+      page_location: window.location.href,
+    })
+  }, [location.pathname, location.search, meta.title])
+
   // ページごとに固有のカスタムJSON-LDを生成（GEO対応）
   let customJsonLd = {}
   if (location.pathname === '/') {
