@@ -4538,6 +4538,61 @@
   color: var(--stone);
 }
 
+.sn-dept-courses {
+  margin-top: 28px;
+}
+
+.sn-dept-courses__heading {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--stone);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.sn-dept-course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 12px;
+}
+
+.sn-dept-course-item {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.sn-dept-course-item__name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--charcoal);
+  font-family: var(--font-serif);
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.sn-dept-course-item__meta {
+  font-size: 11px;
+  color: var(--stone);
+  margin-bottom: 6px;
+}
+
+.sn-dept-course-item__teachers {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+
+.sn-dept-course-item__desc {
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--charcoal);
+  opacity: 0.85;
+}
+
 /* Qualification Path Flow */
 .sn-path-flow {
   display: flex;

@@ -76,7 +76,7 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 
 ### Homepage section render order
 
-`Hero` → `FeatureSpotlight` → `CategoryBanners` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `Footer` (`#contact`)
+`Hero` → `AudienceGuide` → `FeatureSpotlight` → `CategoryBanners` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `FAQ` (summary) → `Footer` (`#contact`)
 
 ### Adding a new sub-page
 
@@ -101,7 +101,9 @@ For **content pages** (student columns, event pages, etc.), skip the Labs and He
 
 `Columns` (`/columns`) is a unified listing of student (`学生コラム`) and faculty (`教員コラム`) columns, filtered from `STATIC_NEWS` (`type === 'column'`) in `src/newsData.js` with a category tab filter.
 
-`FeatureSpotlight` is a homepage-only quick-link bar rendered between `Hero` and `CategoryBanners`, linking to `/sports-nutrition` and `/columns`. It uses Tailwind utility classes (matching `Hero`/`CategoryBanners`), not `index.css`.
+`AudienceGuide` is a homepage-only audience-segmented nav block (`高校生` / `保護者` / `進路指導の先生`) rendered between `Hero` and `FeatureSpotlight`. Uses Tailwind utility classes, not `index.css`.
+
+`FeatureSpotlight` is a homepage-only quick-link bar rendered between `AudienceGuide` and `CategoryBanners`, linking to `/sports-nutrition` and `/columns`. Uses Tailwind utility classes, not `index.css`.
 
 ### News: Firestore + static items
 
@@ -123,7 +125,7 @@ Both sources are merged and re-sorted by date descending before render. Firestor
 
 - **`src/index.css` is the only stylesheet** (~1900 lines). Do not create new CSS files.
 - Design-token system via CSS custom properties: `--cream`, `--terracotta`, `--forest`, `--charcoal`, `--stone`, etc. Use `clamp()` for fluid spacing.
-- Tailwind CSS 4 is a listed dependency but **completely unused** — extend `index.css` instead.
+- Tailwind CSS 4 is a dependency. `AudienceGuide`, `FeatureSpotlight`, and a few other homepage-above-fold components use Tailwind utility classes. All other components use `index.css` only — extend `index.css` for new styles rather than adding Tailwind to existing components.
 - Google Fonts (Noto Serif JP, Noto Sans JP) load via `<link>` in `index.html`. Use `var(--font-serif)` / `var(--font-sans)`.
 
 ### Images
