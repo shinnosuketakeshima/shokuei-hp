@@ -1,6 +1,5 @@
 import {
   ArrowLeft,
-  Trophy,
   Award,
   Dumbbell,
   Heart,

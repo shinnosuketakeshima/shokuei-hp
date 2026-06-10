@@ -28,6 +28,15 @@ const FAQ_CATEGORIES = [
         q: '十文字学園女子大学はどこにありますか？',
         a: '埼玉県新座市菅沢2-1-28にあります。JR武蔵野線・新座駅から徒歩10〜15分でアクセスできます。東京都内や埼玉各地から通いやすい立地です。',
       },
+      {
+        id: 'c5',
+        q: '健康栄養学科でスポーツ栄養を学べる？',
+        a: '健康運動コースを選べば、スポーツをする人のための栄養を中心に学べます。運動指導と栄養学を統合的に学び、栄養士＋αの知識と技術を身につけられます。',
+        relatedLink: {
+          label: '健康栄養学科のスポーツ栄養について詳しく',
+          href: '/sports-nutrition-health',
+        },
+      },
     ],
   },
   {
@@ -204,6 +213,12 @@ function FaqItem({ item, isOpen, onToggle }) {
           {item.link && (
             <Link to={item.link} className="faq__answer-link">
               {item.linkLabel}
+              <ChevronRight size={14} aria-hidden="true" />
+            </Link>
+          )}
+          {item.relatedLink && (
+            <Link to={item.relatedLink.href} className="faq__answer-link">
+              {item.relatedLink.label}
               <ChevronRight size={14} aria-hidden="true" />
             </Link>
           )}
