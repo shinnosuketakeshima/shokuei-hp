@@ -72,10 +72,7 @@ const FACULTY = [
   },
 ];
 
-const SIMPLE_LECTURERS = [
-  { course: 'スポーツ栄養学', name: '石津 達野', role: '非常勤講師' },
-  { course: '運動生理学', name: '長浜 尚史', role: '非常勤講師' },
-];
+const SIMPLE_LECTURERS = [];
 
 const HEALTH_SPORT_TEACHERS = [
   {
