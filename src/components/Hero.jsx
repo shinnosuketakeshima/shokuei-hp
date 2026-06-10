@@ -55,7 +55,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
         >
-          「食」を、科学する。社会を、動かす。
+          あなたのペースに合ったスポーツ栄養の学びが待っています
         </motion.p>
 
         <motion.p

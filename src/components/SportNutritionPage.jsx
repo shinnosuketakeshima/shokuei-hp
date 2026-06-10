@@ -286,12 +286,10 @@ export default function SportNutritionPage() {
             {...fadeUp(0)}
           >
             <span className="lab-story-feature__label">
-              <Sparkles size={12} /> よくある誤解
+              <Sparkles size={12} /> あなたのペースに合わせた学び
             </span>
             <h2 className="lab-story-feature__title">
-              「スポーツ栄養を学ぶなら<br />
-              <em>スポーツ系の学科じゃないと</em>」<br />
-              ——それは誤解です。
+              あなたのペースに合ったスポーツ栄養の学びが待っています
             </h2>
             <p className="lab-story-feature__lead">
               「管理栄養士養成課程は臨床・病院中心で、スポーツとは関係ない」「スポーツ系を学ぶなら健康・体育の専門学科でないと」——そう思っていませんか？十文字学園では、その常識は当てはまりません。<br /><br />
