@@ -44,6 +44,7 @@ import Columns from './components/Columns'
 import FeatureSpotlight from './components/FeatureSpotlight'
 import AudienceGuide from './components/AudienceGuide'
 import LivingAlone from './components/LivingAlone'
+import StudentLife from './components/StudentLife'
 import './App.css'
 
 const PAGE_META = {
@@ -694,6 +695,7 @@ export default function App() {
               <SNSSection />
               <Career summary={true} />
               <StudentVoices summary={true} />
+              <StudentLife />
               <CampusLife summary={true} />
               <FAQ summary={true} />
             </>
