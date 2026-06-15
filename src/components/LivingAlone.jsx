@@ -163,6 +163,10 @@ export default function LivingAlone() {
             <h3>十文字学園女子大学</h3>
             <p>受験生応援サイト イベントカレンダー</p>
           </a>
+          <a href="https://www.jumonji-u.ac.jp/jumonji-style/about/campus-life/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>キャンパスライフ</h3>
+            <p>一人暮らしの学生の声・キャンパス風景など</p>
+          </a>
           <a href="https://dormy-ac.com/page/jumonji/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
             <h3>ドーミー公式サイト</h3>
             <p>十文字学園女子大学向け学生寮の詳細情報・資料請求</p>
