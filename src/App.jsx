@@ -43,6 +43,7 @@ import SportNutritionHealthPage from './components/SportNutritionHealthPage'
 import Columns from './components/Columns'
 import FeatureSpotlight from './components/FeatureSpotlight'
 import AudienceGuide from './components/AudienceGuide'
+import LivingAlone from './components/LivingAlone'
 import './App.css'
 
 const PAGE_META = {
@@ -206,6 +207,11 @@ const PAGE_META = {
     description: '学生と教員、それぞれの視点で綴るコラム一覧。実習やゼミでの気づきから、教育・キャリアへの想いまで、学びと現場のリアルをお届けします。',
     ogType: 'website',
   },
+  '/living-alone': {
+    title: 'はじめての一人暮らし | 十文字学園女子大学 食物栄養学科',
+    description: '学生寮とアパートの費用比較。月額ではなく年間・4年間でいくらかかるか、実際のシミュレーションで検討できます。食事・家具・セキュリティなど生活面の違いも一覧で比較。',
+    ogType: 'website',
+  },
 }
 
 const SUB_PATHS = [
@@ -214,7 +220,7 @@ const SUB_PATHS = [
   '/lab-niikura', '/lab-okamoto', '/koudai-project', '/kokushi-report', '/student-column-1',
   '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/lab-takeshima-column', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices', '/faq',
-  '/sports-nutrition', '/sports-nutrition-health', '/columns',
+  '/sports-nutrition', '/sports-nutrition-health', '/columns', '/living-alone',
 ]
 
 export default function App() {
@@ -672,6 +678,7 @@ export default function App() {
           <Route path="/sports-nutrition" element={<SportNutritionPage />} />
           <Route path="/sports-nutrition-health" element={<SportNutritionHealthPage />} />
           <Route path="/columns" element={<Columns />} />
+          <Route path="/living-alone" element={<LivingAlone />} />
           <Route path="/" element={
             <>
               <Hero />

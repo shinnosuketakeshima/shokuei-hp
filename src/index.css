@@ -5015,3 +5015,142 @@
   text-underline-offset: 2px;
 }
 
+/* =============================================
+   Living Alone / 一人暮らし情報ページ
+   ============================================= */
+.la {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+  color: var(--charcoal);
+  font-family: var(--font-sans);
+  line-height: 1.8;
+}
+
+.la-hero { padding: 56px 0 40px; }
+.la-eyebrow {
+  font-size: 0.85rem; letter-spacing: 0.15em;
+  color: var(--terracotta-dark); font-weight: 700; margin: 0 0 12px;
+}
+.la-title {
+  font-size: clamp(1.9rem, 5vw, 2.9rem);
+  line-height: 1.35; font-weight: 800; margin: 0 0 20px;
+}
+.la-accent {
+  color: var(--forest);
+  border-bottom: 4px solid var(--terracotta);
+  padding-bottom: 2px;
+}
+.la-lead { font-size: 1.02rem; max-width: 46em; margin: 0; }
+.la-lead strong { color: var(--terracotta); }
+
+.la-choices {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  margin: 40px 0 56px;
+}
+.la-card {
+  border-radius: 14px; padding: 28px 26px;
+  background: var(--cream);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.la-card--dorm { border-top: 5px solid var(--forest); }
+.la-card--apt { border-top: 5px solid var(--terracotta); }
+.la-card h2 { font-size: 1.3rem; margin: 0 0 16px; }
+.la-card ul { margin: 0 0 18px; padding-left: 1.1em; }
+.la-card li { margin-bottom: 6px; }
+.la-card-cost {
+  margin: 0; padding-top: 16px;
+  border-top: 1px dashed rgba(0,0,0,0.15);
+  font-size: 0.95rem;
+}
+.la-card-cost strong { font-size: 1.25rem; color: var(--charcoal); display: block; }
+.la-card-cost span { color: var(--stone); font-size: 0.85rem; }
+
+.la-sim {
+  background: var(--charcoal); color: var(--cream);
+  border-radius: 18px; padding: 40px 32px; margin: 0 0 56px;
+}
+.la-sim .la-eyebrow { color: #e0a890; }
+.la-h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 800; margin: 0 0 14px; }
+.la-sim-note { color: rgba(255,249,249,0.8); margin: 0 0 24px; }
+
+.la-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+.la-tab {
+  background: transparent; color: var(--cream);
+  border: 1.5px solid rgba(255,249,249,0.35);
+  border-radius: 999px; padding: 8px 18px;
+  font-size: 0.92rem; cursor: pointer; transition: all 0.15s;
+  font-family: inherit;
+}
+.la-tab:hover { border-color: var(--cream); }
+.la-tab.is-active {
+  background: var(--terracotta); border-color: var(--terracotta);
+  font-weight: 700;
+}
+
+.la-breakdown { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+.la-bd-col h3 { font-size: 1.05rem; margin: 0 0 14px; color: #e0a890; }
+.la-bd-col dl { margin: 0; }
+.la-bd-col dl > div {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 9px 0; border-bottom: 1px solid rgba(255,249,249,0.12);
+}
+.la-bd-col dt { color: rgba(255,249,249,0.85); font-size: 0.92rem; }
+.la-bd-col dd { margin: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.la-bd-total { border-bottom: none !important; padding-top: 14px !important; }
+.la-bd-total dt { color: var(--cream) !important; font-weight: 700; font-size: 1rem !important; }
+.la-bd-total dd { font-size: 1.15rem; font-weight: 800; }
+.la-bd-total dd span { display: block; font-size: 0.72rem; font-weight: 400; color: rgba(255,249,249,0.7); text-align: right; }
+
+.la-bd-col--four {
+  background: rgba(255,249,249,0.06); border-radius: 12px;
+  padding: 22px; align-self: start;
+}
+.la-four-num {
+  font-size: clamp(1.6rem, 5vw, 2.3rem); font-weight: 800;
+  margin: 0 0 6px; color: #fff; font-variant-numeric: tabular-nums;
+}
+.la-four-num span { font-size: 0.8rem; font-weight: 400; color: rgba(255,249,249,0.7); margin-left: 6px; }
+.la-four-sub { font-size: 0.82rem; color: rgba(255,249,249,0.7); margin: 0; }
+
+.la-disclaimer {
+  margin: 24px 0 0; font-size: 0.78rem;
+  color: rgba(255,249,249,0.6); line-height: 1.7;
+}
+
+.la-compare { margin-bottom: 48px; }
+.la-table-wrap { overflow-x: auto; }
+.la-table {
+  width: 100%; border-collapse: collapse; margin: 8px 0 18px;
+  font-size: 0.95rem; min-width: 460px;
+}
+.la-table th, .la-table td {
+  text-align: left; padding: 12px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.la-table thead th { color: var(--stone); font-size: 0.85rem; }
+.la-table thead th:nth-child(2) { color: var(--forest); }
+.la-table thead th:nth-child(3) { color: var(--terracotta); }
+.la-table tbody th { color: var(--stone); font-weight: 600; white-space: nowrap; }
+.la-compare-note {
+  background: var(--cream); border-left: 4px solid var(--forest);
+  padding: 16px 18px; border-radius: 0 10px 10px 0;
+  margin: 0; font-size: 0.95rem;
+}
+
+.la-foot {
+  text-align: center; padding: 32px 24px;
+  background: var(--cream); border-radius: 14px;
+}
+.la-foot p { margin: 0; font-size: 1rem; }
+
+@media (max-width: 768px) {
+  .la-choices { grid-template-columns: 1fr; }
+  .la-breakdown { grid-template-columns: 1fr; }
+  .la-sim { padding: 28px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .la-tab { transition: none; }
+}
+
