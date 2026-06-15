@@ -171,7 +171,7 @@ export default function LivingAlone() {
             <h3>ドーミー公式サイト</h3>
             <p>十文字学園女子大学向け学生寮の詳細情報・資料請求</p>
           </a>
-          <a href="https://www.suumo.jp/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+          <a href="https://suumo.jp/chintai/kanto/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
             <h3>SUUMO</h3>
             <p>賃貸物件検索。東京都近郊のアパート探しに</p>
           </a>
