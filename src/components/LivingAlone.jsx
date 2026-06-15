@@ -156,6 +156,36 @@ export default function LivingAlone() {
         </p>
       </section>
 
+      <section className="la-references">
+        <h2 className="la-h2">参考になるリンク</h2>
+        <div className="la-reference-grid">
+          <a href="https://www.jumonji.ac.jp/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>十文字学園女子大学</h3>
+            <p>公式サイト。キャンパスライフ・施設・アクセスなど</p>
+          </a>
+          <a href="https://www.jumonji.ac.jp/campuslife/dormitory/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>キャンパスライフ（公式）</h3>
+            <p>学生サポート・奨学金・保健管理センター情報</p>
+          </a>
+          <a href="https://www.kyoritsu-maint.co.jp/student/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>ドーミー公式サイト</h3>
+            <p>学生寮の詳細情報・資料請求・問い合わせ</p>
+          </a>
+          <a href="https://www.suumo.jp/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>SUUMO</h3>
+            <p>賃貸物件検索。東京都近郊のアパート探しに</p>
+          </a>
+          <a href="https://www.homes.co.jp/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>HOMES</h3>
+            <p>賃貸・売買物件情報。家賃相場や条件検索</p>
+          </a>
+          <a href="https://www.chintai.net/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>賃貸情報 チンタイ</h3>
+            <p>礼金なし・敷金なしなど条件に合わせた検索</p>
+          </a>
+        </div>
+      </section>
+
       <footer className="la-foot">
         <p>
           住まい選びで迷ったら、オープンキャンパスや個別相談で気軽に聞いてください。

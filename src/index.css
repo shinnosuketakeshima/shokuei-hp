@@ -5138,6 +5138,24 @@
   margin: 0; font-size: 0.95rem;
 }
 
+.la-references { margin-bottom: 48px; }
+.la-reference-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;
+  margin: 0;
+}
+.la-reference-card {
+  display: block; padding: 20px 18px;
+  background: var(--cream); border: 1px solid var(--terracotta-20);
+  border-radius: 12px; text-decoration: none; color: inherit;
+  transition: all 0.2s ease;
+}
+.la-reference-card:hover {
+  border-color: var(--terracotta); box-shadow: 0 4px 12px rgba(200, 155, 155, 0.12);
+  transform: translateY(-2px);
+}
+.la-reference-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 8px; color: var(--forest); }
+.la-reference-card p { font-size: 0.9rem; margin: 0; color: var(--stone); line-height: 1.6; }
+
 .la-foot {
   text-align: center; padding: 32px 24px;
   background: var(--cream); border-radius: 14px;
@@ -5148,9 +5166,11 @@
   .la-choices { grid-template-columns: 1fr; }
   .la-breakdown { grid-template-columns: 1fr; }
   .la-sim { padding: 28px 20px; }
+  .la-reference-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .la-tab { transition: none; }
+  .la-reference-card { transition: none; }
 }
 

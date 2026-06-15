@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Trophy, BookOpen } from 'lucide-react';
+import { ArrowRight, Trophy, BookOpen, Home } from 'lucide-react';
 
 const SPOTLIGHTS = [
   {
@@ -11,6 +11,15 @@ const SPOTLIGHTS = [
     description: '2学科共通で学べる、スポーツ栄養の最前線。教員紹介や学びのルートを紹介。',
     href: '/sports-nutrition',
     accent: 'from-[#3D6B4F]/90 to-[#2E5340]/95',
+  },
+  {
+    id: 'living-alone',
+    icon: Home,
+    label: '学生生活',
+    title: 'はじめての一人暮らし',
+    description: '学生寮とアパートの費用を総額で比較。シミュレーターで検討できます。',
+    href: '/living-alone',
+    accent: 'from-[#8A7B7B]/90 to-[#6B5959]/95',
   },
   {
     id: 'columns',
