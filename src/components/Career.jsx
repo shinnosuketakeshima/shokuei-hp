@@ -86,7 +86,7 @@ export default function Career({ summary = false }) {
             <p className="eyebrow">進路・就職 / Career</p>
             <TitleTag className="career__stat-block" style={{ fontSize: 'inherit', fontWeight: 'inherit', margin: 0, border: 'none', padding: 0 }}>
               <div className="career__rate">
-                99.2<span className="career__rate-unit">%</span>
+                100<span className="career__rate-unit">%</span>
               </div>
               <p className="career__rate-label">就職率（2025年3月卒業生実績・就職希望者ベース）</p>
             </TitleTag>

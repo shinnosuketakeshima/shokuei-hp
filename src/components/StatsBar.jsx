@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const STATS = [
   {
-    number: '99.2', unit: '%',
+    number: '100', unit: '%',
     label: '就職率',
     note: '(2025年3月卒業生実績)',
   },
