@@ -5162,11 +5162,95 @@
 }
 .la-foot p { margin: 0; font-size: 1rem; }
 
+.la-local {
+  margin-bottom: 48px; padding: 28px 26px;
+  background: var(--cream); border-radius: 14px;
+  border-left: 5px solid var(--forest);
+}
+.la-local .la-h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin: 0 0 14px; }
+.la-local p { margin: 0 0 14px; font-size: 0.98rem; }
+.la-local-list { margin: 0 0 14px; padding-left: 1.2em; }
+.la-local-list li { margin-bottom: 6px; }
+.la-local-note { font-size: 0.92rem; color: var(--stone); }
+.la-local-note a { color: var(--forest); font-weight: 600; }
+
+.la-sim--apt { margin-top: 32px; }
+
+.la-tuition {
+  margin-bottom: 48px; padding: 36px 28px;
+  background: var(--cream); border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.la-tuition .la-eyebrow { color: var(--terracotta-dark); }
+.la-tuition .la-h2 { margin-bottom: 10px; }
+.la-tuition-note { color: var(--stone); margin: 0 0 24px; font-size: 0.95rem; }
+.la-tuition-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; }
+.la-tuition-card {
+  background: #fff; border-radius: 12px; padding: 22px 20px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.la-tuition-card--highlight {
+  border-top: 4px solid var(--terracotta);
+  display: flex; flex-direction: column;
+}
+.la-tuition-card h3 { font-size: 1.05rem; margin: 0 0 14px; color: var(--forest); }
+.la-tuition-card dl { margin: 0; }
+.la-tuition-card dl > div {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.92rem;
+}
+.la-tuition-card dt { color: var(--stone); }
+.la-tuition-card dd { margin: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.la-tuition-total { border-bottom: none !important; padding-top: 10px !important; }
+.la-tuition-total dt { font-weight: 700; color: var(--charcoal) !important; }
+.la-tuition-total dd { font-weight: 800; font-size: 1.1rem; }
+.la-tuition-four {
+  font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800;
+  margin: 0 0 8px; color: var(--terracotta); font-variant-numeric: tabular-nums;
+}
+.la-tuition-sub { font-size: 0.85rem; color: var(--stone); margin: 0 0 14px; flex: 1; }
+.la-tuition-link {
+  display: inline-block; font-size: 0.9rem; font-weight: 600;
+  color: var(--forest); text-decoration: underline; text-underline-offset: 2px;
+}
+
+.la-total { margin-bottom: 48px; }
+.la-total .la-h2 { margin-bottom: 8px; }
+.la-total-note { color: var(--stone); font-size: 0.92rem; margin: 0 0 20px; }
+.la-total-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.la-total-card {
+  border-radius: 14px; padding: 24px 22px; text-align: center;
+}
+.la-total-card--dorm { background: rgba(61, 107, 79, 0.08); border: 1px solid rgba(61, 107, 79, 0.2); }
+.la-total-card--apt { background: rgba(200, 155, 155, 0.1); border: 1px solid rgba(200, 155, 155, 0.25); }
+.la-total-card h3 { font-size: 1rem; margin: 0 0 10px; }
+.la-total-card--dorm h3 { color: var(--forest); }
+.la-total-card--apt h3 { color: var(--terracotta-dark); }
+.la-total-num {
+  font-size: clamp(1.4rem, 4vw, 1.9rem); font-weight: 800;
+  margin: 0 0 8px; font-variant-numeric: tabular-nums;
+}
+.la-total-breakdown { font-size: 0.82rem; color: var(--stone); margin: 0; }
+
+.la-faq { margin-bottom: 48px; }
+.la-faq .la-h2 { margin-bottom: 20px; }
+.la-faq-list { margin: 0; }
+.la-faq-item {
+  padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.la-faq-item dt {
+  font-weight: 700; font-size: 1rem; margin: 0 0 8px; color: var(--charcoal);
+}
+.la-faq-item dd { margin: 0; font-size: 0.95rem; color: var(--stone); line-height: 1.8; }
+
 @media (max-width: 768px) {
   .la-choices { grid-template-columns: 1fr; }
   .la-breakdown { grid-template-columns: 1fr; }
   .la-sim { padding: 28px 20px; }
   .la-reference-grid { grid-template-columns: 1fr; }
+  .la-tuition-grid { grid-template-columns: 1fr; }
+  .la-total-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

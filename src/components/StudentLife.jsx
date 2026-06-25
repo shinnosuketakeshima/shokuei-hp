@@ -18,11 +18,11 @@ export default function StudentLife() {
             id="student-life-heading"
             className="mt-3 text-balance font-serif text-[clamp(28px,4vw,40px)] leading-snug font-bold text-[#4A3F3F]"
           >
-            はじめての一人暮らし
+            新座で一人暮らしするなら
           </h2>
           <p className="mt-6 text-lg text-[#7A6868] leading-relaxed">
-            学生寮とアパート、どちらを選ぶ？<br className="hidden sm:block" />
-            月額ではなく「年間・4年間の総額」で比較できるシミュレーターを用意しました。
+            新座市での学生寮・アパート費用と学費を、<br className="hidden sm:block" />
+            年間・4年間の総額で比較できるシミュレーターを用意しました。
           </p>
         </motion.div>
 
@@ -38,7 +38,7 @@ export default function StudentLife() {
             className="group inline-flex items-center gap-3 rounded-full bg-[#4A3F3F] px-8 py-4 text-white font-medium transition-all duration-300 hover:gap-4 hover:shadow-lg hover:-translate-y-1"
           >
             <Home size={20} aria-hidden="true" />
-            詳しく見る
+            一人暮らしコスト比較を見る
             <ArrowRight
               size={18}
               className="transition-transform duration-300 group-hover:translate-x-1"

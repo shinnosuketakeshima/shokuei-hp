@@ -225,6 +225,9 @@ export default function CampusLife({ summary = false }) {
                     埼玉県新座市の緑豊かな環境に位置するキャンパス。
                     池袋から急行で約20分と都心へのアクセスも良く、落ち着いた環境で学びに集中できます。
                     四季折々の自然を感じながら、学生たちは図書館や自習室、国試対策室で仲間と共に切磋琢磨しています。
+                    <Link to="/living-alone" style={{ display: 'inline-block', marginTop: '12px', color: 'var(--forest)', fontWeight: 600 }}>
+                      新座で一人暮らしする費用シミュレーター →
+                    </Link>
                   </p>
                 </motion.div>
 

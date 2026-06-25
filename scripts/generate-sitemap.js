@@ -39,6 +39,7 @@ const routes = [
   { path: '/faq', changefreq: 'monthly', priority: '0.7' },
   { path: '/sports-nutrition', changefreq: 'monthly', priority: '0.8' },
   { path: '/columns', changefreq: 'weekly', priority: '0.7' },
+  { path: '/living-alone', changefreq: 'monthly', priority: '0.8' },
 ];
 
 const generateSitemap = () => {
