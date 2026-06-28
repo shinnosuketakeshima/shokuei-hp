@@ -50,8 +50,8 @@ import './App.css'
 
 const PAGE_META = {
   '/': {
-    title: '食物栄養学科のリアルを学生・教員の声で｜十文字学園女子大学 補完サイト',
-    description: '十文字学園女子大学 食物栄養学科の「もうひとつの顔」を伝える補完サイトです。研究室の素顔、学生コラム、教員のことば、国家試験サポートの様子をリアルにお届け。公式サイトと合わせて読むことで、入学後の毎日がより具体的に見えてきます。',
+    title: '管理栄養士を目指せる食物栄養学科のリアル｜十文字学園女子大学',
+    description: '管理栄養士・栄養士を目指す学生のリアルな声と研究室の素顔。十文字学園女子大学食物栄養学科の学びを在学生・教員が伝える補完情報サイト。',
     ogType: 'website',
   },
   '/lab-takeshima': {
@@ -165,19 +165,19 @@ const PAGE_META = {
     ogType: 'article',
   },
   '/qualifications': {
-    title: '取得できる資格（管理栄養士・栄養教諭など） | 十文字学園女子大学 食物栄養学科',
-    description: '十文字学園女子大学 食物栄養学科で取得可能な資格一覧。管理栄養士国家試験受験資格をはじめ、栄養士、栄養教諭一種免許状、食品衛生管理者など、食と健康のプロフェッショナルとして社会で活躍するための資格取得を徹底サポートします。',
-    ogType: 'article',
+    title: '管理栄養士・栄養士など取得できる7つの資格｜十文字学園女子大学 食物栄養学科',
+    description: '管理栄養士・栄養士・第一種衛生管理者など卒業後に活かせる7つの資格・免許を紹介。全国唯一の管理栄養士＋衛生管理者ダブルライセンスが最大の特長。',
+    ogType: 'website',
   },
   '/support': {
     title: '管理栄養士 国家試験対策サポート | 十文字学園女子大学 食物栄養学科',
-    description: '十文字学園女子大学 食物栄養学科が誇る、管理栄養士国家試験への手厚いサポート体制。全国平均を上回る高い合格実績を支える、1年次からのステップアップ指導や特別講座、個別面談などの具体的な対策プログラムをご紹介します。',
-    ogType: 'article',
+    description: '十文字学園女子大学の管理栄養士国家試験対策は1年次から開始。年8回の模擬試験・130点突破目標など6段階の合格サポートプログラムを詳しく紹介。',
+    ogType: 'website',
   },
   '/career': {
-    title: '進路・就職先実績 | 十文字学園女子大学 食物栄養学科',
-    description: '食物栄養学科の卒業後の進路と就職実績。病院・福祉施設での臨床栄養から、食品メーカーでの商品開発、学校での栄養教諭まで、管理栄養士の資格を活かして多様なフィールドで活躍する卒業生たちのキャリアと、大学の就職支援体制をご紹介。',
-    ogType: 'article',
+    title: '管理栄養士として就職できる？進路・就職実績｜十文字学園女子大学 食物栄養学科',
+    description: '就職率100%（2025年3月卒業生実績）。卒業生の進路先や管理栄養士・栄養士としての就職先を数字と実例で紹介します。',
+    ogType: 'website',
   },
   '/campus-life': {
     title: 'キャンパスライフ・施設紹介 | 十文字学園女子大学 食物栄養学科',
@@ -210,8 +210,8 @@ const PAGE_META = {
     ogType: 'website',
   },
   '/submajor': {
-    title: '副専攻×管理栄養士 | 十文字学園女子大学',
-    description: '2027年度から始まる全学の副専攻制度を食物栄養学科の学びと掛け合わせる提案。管理栄養士＋もうひとつ（食と美と健康、DX、発信）であなただけのキャリアをデザインする。',
+    title: '管理栄養士＋副専攻でキャリアを広げる｜十文字学園女子大学 食物栄養学科',
+    description: '管理栄養士の資格に加えて「こどもコース」「スポーツコース」など副専攻で差別化。あなただけのキャリアをデザインする新しい学び方を紹介。',
     ogType: 'website',
   },
   '/columns': {
@@ -262,15 +262,39 @@ export default function App() {
 
   const meta = PAGE_META[location.pathname] || PAGE_META['/']
 
-  // SPAのクライアントサイド遷移はgtag.jsの自動計測では検知されないため、ルート変更ごとに手動でpage_viewを送信
+  // SPAの二重計測を防止し、DOMのtitleが更新された後に正確にPVを送信する
   useEffect(() => {
     if (typeof window.gtag !== 'function') return
-    window.gtag('event', 'page_view', {
-      page_path: location.pathname + location.search,
-      page_title: meta.title,
-      page_location: window.location.href,
-    })
-  }, [location.pathname, location.search, meta.title])
+
+    const timer = setTimeout(() => {
+      window.gtag('event', 'page_view', {
+        page_path: location.pathname + location.search,
+        page_title: document.title || meta.title,
+        page_location: window.location.href,
+      })
+    }, 100)
+
+    return () => clearTimeout(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname, location.search]) // 依存配列から meta.title を除外し、ページ遷移時のみトリガー
+
+  // グローバルCTAクリック計測 (GA4カスタムイベント)
+  useEffect(() => {
+    const handleCtaClick = (e) => {
+      const target = e.target.closest('[data-ga-click]')
+      if (!target || typeof window.gtag !== 'function') return
+
+      const label = target.getAttribute('data-ga-click')
+      window.gtag('event', 'click_cta', {
+        event_category: 'CTA',
+        event_label: label,
+        page_path: location.pathname,
+      })
+    }
+
+    document.addEventListener('click', handleCtaClick)
+    return () => document.removeEventListener('click', handleCtaClick)
+  }, [location.pathname])
 
   // ページごとに固有のカスタムJSON-LDを生成（GEO対応）
   let customJsonLd = {}

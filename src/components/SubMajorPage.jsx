@@ -156,7 +156,7 @@ export default function SubMajorPage() {
                 あなただけのもうひとつの武器を。
               </h2>
               <div className="sn-cta-banner__buttons">
-                <a href="#" className="sn-cta-btn sn-cta-btn--primary">
+                <a href="#" className="sn-cta-btn sn-cta-btn--primary" data-ga-click="oc_submajor">
                   オープンキャンパスで相談する
                   <ChevronRight size={16} aria-hidden="true" />
                 </a>

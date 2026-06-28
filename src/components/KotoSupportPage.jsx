@@ -127,7 +127,7 @@ export default function KotoSupportPage() {
                 あなたの管理栄養士への道をサポートします。
               </h2>
               <div className="sn-cta-banner__buttons">
-                <a href="#" className="sn-cta-btn sn-cta-btn--primary">
+                <a href="#" className="sn-cta-btn sn-cta-btn--primary" data-ga-click="oc_kotosupport">
                   オープンキャンパスで聞いてみる
                   <ChevronRight size={16} aria-hidden="true" />
                 </a>

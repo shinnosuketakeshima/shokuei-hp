@@ -53,8 +53,11 @@ export default function NationalExamSupport({ summary = false }) {
         >
           <p className="eyebrow">国試対策 / Exam Support</p>
           <TitleTag className="section-title">
-            合格率を支える<br />
-            6段階のサポートプログラム
+            {summary ? (
+              <>合格率を支える<br />6段階のサポートプログラム</>
+            ) : (
+              <>管理栄養士国家試験<br />合格を支える6段階のサポートプログラム</>
+            )}
           </TitleTag>
           <p className="support__subtitle">
             1年次からの早期意識づけに始まり、4年次は年8回の模擬試験で本番力を養成。
