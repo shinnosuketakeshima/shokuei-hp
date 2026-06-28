@@ -40,6 +40,8 @@ import NewsArchive from './components/NewsArchive'
 import FAQ from './components/FAQ'
 import SportNutritionPage from './components/SportNutritionPage'
 import SportNutritionHealthPage from './components/SportNutritionHealthPage'
+import KotoSupportPage from './components/KotoSupportPage'
+import SubMajorPage from './components/SubMajorPage'
 import Columns from './components/Columns'
 import FeatureSpotlight from './components/FeatureSpotlight'
 import AudienceGuide from './components/AudienceGuide'
@@ -202,6 +204,16 @@ const PAGE_META = {
     description: '健康運動コースからのスポーツ栄養学習。栄養士＋αの知識と技術を身につけ、スポーツ現場・教育現場で活躍する管理栄養士を目指す。',
     ogType: 'article',
   },
+  '/kotosupport': {
+    title: 'ことサポ for 食栄 | 十文字学園女子大学',
+    description: '2027年度から始まる全学共通の伴走支援「ことサポ」を食物栄養学科向けに解説。忙しい4年間をひとりにしない、学科の国試指導と全学伴走支援の二重のサポート体制を紹介します。',
+    ogType: 'website',
+  },
+  '/submajor': {
+    title: '副専攻×管理栄養士 | 十文字学園女子大学',
+    description: '2027年度から始まる全学の副専攻制度を食物栄養学科の学びと掛け合わせる提案。管理栄養士＋もうひとつ（食と美と健康、DX、発信）であなただけのキャリアをデザインする。',
+    ogType: 'website',
+  },
   '/columns': {
     title: 'コラム | 十文字学園女子大学 食物栄養学科',
     description: '学生と教員、それぞれの視点で綴るコラム一覧。実習やゼミでの気づきから、教育・キャリアへの想いまで、学びと現場のリアルをお届けします。',
@@ -221,6 +233,7 @@ const SUB_PATHS = [
   '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/lab-takeshima-column', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices', '/faq',
   '/sports-nutrition', '/sports-nutrition-health', '/columns', '/living-alone',
+  '/kotosupport', '/submajor',
 ]
 
 export default function App() {
@@ -689,6 +702,8 @@ export default function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/sports-nutrition" element={<SportNutritionPage />} />
           <Route path="/sports-nutrition-health" element={<SportNutritionHealthPage />} />
+          <Route path="/kotosupport" element={<KotoSupportPage />} />
+          <Route path="/submajor" element={<SubMajorPage />} />
           <Route path="/columns" element={<Columns />} />
           <Route path="/living-alone" element={<LivingAlone />} />
           <Route path="/" element={

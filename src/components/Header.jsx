@@ -42,6 +42,8 @@ const LAB_CATEGORIES = [
     key: 'feature',
     labs: [
       { name: 'スポーツ栄養特集', note: '食物栄養学科×スポーツの可能性', href: '/sports-nutrition' },
+      { name: 'ことサポ', note: '食物栄養学科の伴走支援', href: '/kotosupport' },
+      { name: '副専攻', note: '管理栄養士＋もうひとつ。', href: '/submajor' },
       { name: 'コラム', note: '学生・教員のリアルな声', href: '/columns' },
     ],
   },

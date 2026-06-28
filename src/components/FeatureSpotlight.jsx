@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Trophy, BookOpen, Home } from 'lucide-react';
+import { ArrowRight, Trophy, BookOpen, Home, Heart, Award } from 'lucide-react';
 
 const SPOTLIGHTS = [
   {
@@ -11,6 +11,24 @@ const SPOTLIGHTS = [
     description: '2学科共通で学べる、スポーツ栄養の最前線。教員紹介や学びのルートを紹介。',
     href: '/sports-nutrition',
     accent: 'from-[#3D6B4F]/90 to-[#2E5340]/95',
+  },
+  {
+    id: 'kotosupport',
+    icon: Heart,
+    label: '全学伴走支援',
+    title: 'ことサポ for 食栄',
+    description: '忙しい4年間を、ひとりにしない。2027年度スタートの伴走支援。',
+    href: '/kotosupport',
+    accent: 'from-[#C96C51]/90 to-[#9E4D36]/95',
+  },
+  {
+    id: 'submajor',
+    icon: Award,
+    label: '新学び方',
+    title: '副専攻×管理栄養士',
+    description: '管理栄養士＋もうひとつ。あなただけのキャリアをデザインする。',
+    href: '/submajor',
+    accent: 'from-[#5F7F6A]/90 to-[#476050]/95',
   },
   {
     id: 'living-alone',
