@@ -24,59 +24,12 @@ npx firebase deploy   # firebase CLI may not be on PATH; use npx
 
 ### Routing
 
-Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`Route` (in `src/App.jsx`). Firebase Hosting rewrites all paths to `index.html`. Do **not** revert to hash-based routing.
+`BrowserRouter` is in `src/main.jsx`; `Routes`/`Route` are in `src/App.jsx`. Firebase Hosting rewrites all paths to `index.html`. Do **not** revert to hash-based routing.
 
-| Path | Component |
-|---|---|
-| `/` | Homepage — all sections stacked |
-| `/lab-takeshima` | `LabTakeshima` |
-| `/lab-kamoshita` | `LabKamoshita` |
-| `/lab-kunii` | `LabKunii` |
-| `/lab-iimura` | `LabIimura` |
-| `/lab-kamiyama` | `LabKamiyama` |
-| `/lab-ishii` | `LabIshii` |
-| `/lab-komeichi` | `LabKomeichi` |
-| `/lab-nakaoka` | `LabNakaoka` |
-| `/lab-shibasaki` | `LabShibasaki` |
-| `/lab-yamazaki` | `LabYamazaki` |
-| `/lab-niikura` | `LabNiikura` |
-| `/lab-okamoto` | `LabOkamoto` |
-| `/koudai-project` | `KoudaiProject` |
-| `/kokushi-report` | `KokushiReport` |
-| `/student-column-1` | `StudentColumn1` |
-| `/event-0531` | `EventSpecial0525` |
-| `/student-column-3` | `StudentColumn3` |
-| `/lab-kamiyama-report` | `LabKamiyamaReport` |
-| `/lab-takeshima-column` | `LabTakeshimaColumn` |
-| `/eiyo-app-report` | `EiyoAppReport` |
-| `/news` | `NewsArchive` |
-| `/features` | `Features` |
-| `/qualifications` | `Qualifications` |
-| `/support` | `NationalExamSupport` |
-| `/career` | `CareerPage` |
-| `/campus-life` | `CampusLife` |
-| `/voices` | `StudentVoices` |
-| `/faq` | `FAQ` |
-| `/sports-nutrition` | `SportNutritionPage` |
-| `/columns` | `Columns` |
+The route list, page metadata (`PAGE_META`), and sub-page list (`SUB_PATHS`) all live in `App.jsx` — read them there rather than relying on any list here.
 
-**Note:** `/event-0531` maps to `EventSpecial0525.jsx` — the date mismatch is intentional.
-
-`Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except `/`).
-
-### SEO / Meta
-
-`SEO.jsx` (wraps `react-helmet-async`) is rendered at the top of `App.jsx` and injects `<title>`, `<meta name="description">`, Open Graph tags, canonical URL, hreflang, and JSON-LD structured data on every route. Page metadata comes from the `PAGE_META` map in `App.jsx`; structured JSON-LD (`customJsonLd`) is also built in `App.jsx` and passed to `SEO.jsx`:
-
-- `/` → `CollegeOrUniversity` with full address/geo
-- `/lab-*` → `ProfilePage` wrapping a `Person`
-- paths containing `column` or `report` → `Article`
-
-`public/robots.txt` and `public/sitemap.xml` are static SEO files deployed with the build.
-
-### Homepage section render order
-
-`Hero` → `AudienceGuide` → `FeatureSpotlight` → `CategoryBanners` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `FAQ` (summary) → `Footer` (`#contact`)
+- `/event-0531` maps to `EventSpecial0525.jsx` — the date mismatch is intentional.
+- `Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and is **skipped** for sub-pages (all routes except `/`).
 
 ### Adding a new sub-page
 
@@ -87,106 +40,55 @@ Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`
 3. **`App.jsx` `<Routes>`** — add `<Route path="/path" element={<Component />} />`.
 4. **`Header.jsx` `LAB_CATEGORIES`** and **`Footer.jsx` `LAB_COLS`** — add the lab link to the appropriate category column in both nav lists (these are separate from `Labs.jsx` and must be kept manually in sync).
 
-For **lab pages**, also update **`Labs.jsx`** (`LAB_STORIES` array) to add the story card.
+For **lab pages**, also add a story card to `Labs.jsx` (`LAB_STORIES` array) — `LAB_STORIES`, `LAB_CATEGORIES`, and `LAB_COLS` are three separate lists that must stay in sync. For **content pages** (student columns, event pages, etc.), skip the Labs and Header/Footer steps.
 
-For **content pages** (student columns, event pages, etc.), skip the Labs and Header/Footer steps.
+**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `StudentVoices`, `CampusLife`, and `FAQ` each accept a `summary` prop. On the homepage they render with `summary={true}` (condensed view); their dedicated routes render the same component without the prop for the full view. When editing these components, maintain both modes.
 
-**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `StudentVoices`, `CampusLife`, and `FAQ` each accept a `summary` prop. On the homepage they render with `summary={true}` (condensed/teaser view); their corresponding routes (`FAQ` also at `/faq`) render the same component without the prop for the full expanded view. When editing these components, maintain both modes.
+**Career is split into two components**: `Career.jsx` is homepage-only (with `summary={true}`); `CareerPage.jsx` is the full page at `/career`.
 
-**Career is split into two components**: `Career.jsx` is used only on the homepage (with `summary={true}`). `CareerPage.jsx` is the dedicated full-page component rendered at `/career`.
+**Suspended/unused components**: `LabIwamoto.jsx`, `StudentColumn2.jsx`, and `HeroFeatures.jsx` exist but are not routed/rendered. To re-enable a page, add it back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and imports in `App.jsx` (plus the Labs card and nav lists for lab pages).
 
-**Suspended pages**: `LabIwamoto.jsx` and `StudentColumn2.jsx` exist but have no active routes. To re-enable, add back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and import in `App.jsx`. For `LabIwamoto`, also re-add its card to `Labs.jsx` and the nav lists.
+### SEO / Meta
 
-**Report/archive pages with routes but no Labs card**: `LabKamiyamaReport` (`/lab-kamiyama-report`), `NewsArchive` (`/news`), and `Columns` (`/columns`) have active routes but are not in the Labs story grid — they are linked from within other content (nav, footer, homepage spotlight).
-
-`Columns` (`/columns`) is a unified listing of student (`学生コラム`) and faculty (`教員コラム`) columns, filtered from `STATIC_NEWS` (`type === 'column'`) in `src/newsData.js` with a category tab filter.
-
-`AudienceGuide` is a homepage-only audience-segmented nav block (`高校生` / `保護者` / `進路指導の先生`) rendered between `Hero` and `FeatureSpotlight`. Uses Tailwind utility classes, not `index.css`.
-
-`FeatureSpotlight` is a homepage-only quick-link bar rendered between `AudienceGuide` and `CategoryBanners`, linking to `/sports-nutrition` and `/columns`. Uses Tailwind utility classes, not `index.css`.
+`SEO.jsx` (wraps `react-helmet-async`) is rendered at the top of `App.jsx` and injects title, description, Open Graph, canonical, hreflang, and JSON-LD on every route. Metadata comes from `PAGE_META`; structured JSON-LD (`customJsonLd`) is also built in `App.jsx`: `/` → `CollegeOrUniversity`, `/lab-*` → `ProfilePage`/`Person`, paths containing `column` or `report` → `Article`. `public/robots.txt` and `public/sitemap.xml` are static.
 
 ### News: Firestore + static items
 
-`News.jsx` merges two sources:
-1. **Firestore** — `news` collection. Falls back to unordered query if the composite index is missing.
-2. **`STATIC_NEWS` array** (in `News.jsx`) — editorial/blog-style articles with internal `href` links.
+`News.jsx` merges two sources, re-sorted by date descending:
 
-Both sources are merged and re-sorted by date descending before render. Firestore `date` values can be a `Timestamp`, a `Date`, or a string — `formatNewsDate()` normalises all three to `YYYY.MM.DD`. The `type` field maps to a `news-tag--{type}` CSS class; valid types are `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`. To suppress an item, add its title pattern to `isNewsItemTemporarilyHidden()` in `News.jsx`.
+1. **Firestore** — `news` collection (falls back to an unordered query if the composite index is missing).
+2. **`STATIC_NEWS`** in `src/newsData.js` — editorial/blog articles with internal `href` links. To add/remove articles, edit `src/newsData.js`.
 
-`NewsArchive` (`/news`) shares `STATIC_NEWS`, `newsDateMillis`, and `formatNewsDate` from `src/newsData.js`. To add/remove articles, edit `src/newsData.js`.
+Firestore `date` values can be a `Timestamp`, `Date`, or string — `formatNewsDate()` normalises all three to `YYYY.MM.DD`. The `type` field maps to a `news-tag--{type}` CSS class; valid types: `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`. To suppress an item, add its title pattern to `isNewsItemTemporarilyHidden()` in `News.jsx`.
 
-### Firestore / Firebase
+`NewsArchive` (`/news`) and `Columns` (`/columns`) both build on `src/newsData.js`; `Columns` filters `STATIC_NEWS` by `type === 'column'`.
+
+### Firebase
 
 - Config is hardcoded in `src/firebase.js` — no `.env` needed (public read-only Firebase project).
-- Firebase project ID: `shokuei-hp` (`.firebaserc`).
-- The `news` collection is publicly readable (`firestore.rules`).
+- Firebase project ID: `shokuei-hp` (`.firebaserc`). The `news` collection is publicly readable (`firestore.rules`).
 
 ### Styling
 
-- **`src/index.css` is the only stylesheet** (~1900 lines). Do not create new CSS files.
+- **`src/index.css` is the only stylesheet**. Do not create new CSS files. `App.css` is intentionally empty.
 - Design-token system via CSS custom properties: `--cream`, `--terracotta`, `--forest`, `--charcoal`, `--stone`, etc. Use `clamp()` for fluid spacing.
-- Tailwind CSS 4 is a dependency. `AudienceGuide`, `FeatureSpotlight`, and a few other homepage-above-fold components use Tailwind utility classes. All other components use `index.css` only — extend `index.css` for new styles rather than adding Tailwind to existing components.
-- Google Fonts (Noto Serif JP, Noto Sans JP) load via `<link>` in `index.html`. Use `var(--font-serif)` / `var(--font-sans)`.
+- Tailwind CSS 4 is a dependency, but only a few homepage-above-fold components (`AudienceGuide`, `FeatureSpotlight`, …) use Tailwind utilities. All other components use `index.css` only — extend `index.css` for new styles rather than adding Tailwind to existing components.
+- Fonts: Noto Serif JP / Noto Sans JP via `<link>` in `index.html`. Use `var(--font-serif)` / `var(--font-sans)`.
 
-### Images
+### Images and working materials
 
-Static source images live in `src/` (root) or `src/assets/<topic>/`. Compiled names (with content hashes) appear in `dist/assets/`.
+- Static source images live in `src/` (root) or `src/assets/<topic>/`. Find current usages by grepping for the filename.
+- Faculty headshots in `src/faculty/` (`{surname-romaji}.jpg`) are **reserved assets — not imported by any active component**. Also do not import: `src/jisshu-sei.jpg`, `src/eiyo-kagaku.png`, `src/assets/hero.png` (orphaned/placeholders).
+- `docs/` is a non-deployed working directory (reference images, design docs, PDFs). Do not import from `docs/` in application code — copy assets to `src/` first.
+- `src/koudai_project.md` is a plain-text content source for `KoudaiProject.jsx`, **not** a module — do not import it.
 
-| File | Used by |
-|---|---|
-| `src/top.jpg` | `Hero.jsx` |
-| `src/university_kousha.jpg` | `CampusLife.jsx` |
-| `src/tairyou.png` | `CampusLife.jsx` |
-| `src/kuwanoha.jpg` | `CampusLife.jsx` |
-| `src/kokushi.png` | `CampusLife.jsx` |
-| `src/cheese-camembert.jpg` | `StudentColumn3.jsx` |
-| `src/cheese-seminar-lecture.jpg` | `StudentColumn3.jsx` |
-| `src/cheese-tasting.jpg` | `StudentColumn3.jsx` |
-| `src/assets/eiyo-app/*.{jpg,png}` | `EiyoAppReport.jsx` |
-| `src/assets/kamiyama-sa/*.jpg` | `LabKamiyamaReport.jsx` |
-
-Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg`. They are **not currently imported** by any active component — they are reserved assets for future use.
-
-The following files in `src/` are also unused — do not import them:
-- `src/jisshu-sei.jpg`, `src/eiyo-kagaku.png` — reserved/orphaned images
-- `src/assets/hero.png` — unused placeholder
-
-### Working materials
-
-`docs/` is a non-deployed working directory for reference images, design documents, source PDFs, and draft files. Do not import from `docs/` in application code — copy assets to `src/` first.
-
-`src/koudai_project.md` is a plain-text content source for `KoudaiProject.jsx`. It is **not** a component or module — do not import it.
-
-### Labs section
-
-`Labs.jsx` renders a story card grid (`LAB_STORIES` array, currently 12 active labs). Each entry requires:
-
-```js
-{
-  storyTitle: '...',       // card headline
-  hook: '...',             // one-line descriptor shown on the card
-  category: 'regional' | 'science' | 'welfare',
-  href: '/lab-xxx',        // or full URL for external
-  isExternal: false,       // true → <a target="_blank">, false → <Link>
-}
-```
-
-**Suspended lab** (`LabIwamoto`): no card in `LAB_STORIES`.
-
-When adding a new lab card here, also add it to the matching category column in **`Header.jsx` `LAB_CATEGORIES`** and **`Footer.jsx` `LAB_COLS`** — these three lists must stay in sync.
-
-Individual lab **pages** are separate full-page components (`src/components/LabXxx.jsx`) that use the shared `.lab-page` / `.lab-section` CSS classes. They do not import faculty photos.
-
-`HeroFeatures.jsx` exists in `src/components/` but is not rendered anywhere.
-
-### Component Conventions
+### Component conventions
 
 - All components are plain `.jsx` under `src/components/`. No TypeScript, no component subdirectories, no component-specific CSS files.
-- External links: `target="_blank" rel="noopener noreferrer"`. Internal path links: use `<Link to="...">` from `react-router-dom`.
-- Scroll-reveal: add `data-reveal` (and optionally `data-reveal-delay="1"–"6"`) to animate elements on scroll. Works only on the homepage.
-- Framer Motion is used for animations. Use `motion.*` variants and `AnimatePresence` rather than raw CSS transitions for new animated UI.
-- Icons: `lucide-react` (e.g. `import { ArrowRight } from 'lucide-react'`).
-- `App.css` is intentionally empty — all styles live in `src/index.css`.
+- Lab pages share the `.lab-page` / `.lab-section` CSS classes. `LAB_STORIES` card entries need `storyTitle`, `hook`, `category` (`regional` | `science` | `welfare`), `href`, `isExternal`.
+- External links: `target="_blank" rel="noopener noreferrer"`. Internal links: `<Link to="...">` from `react-router-dom`.
+- Scroll-reveal: add `data-reveal` (optionally `data-reveal-delay="1"–"6"`). Works only on the homepage.
+- Animations: Framer Motion (`motion.*`, `AnimatePresence`) rather than raw CSS transitions. Icons: `lucide-react`.
 
 ## Language
 
