@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const meta = {
+  title: 'ページが見つかりません | 十文字学園女子大学 食物栄養学科',
+  description: 'お探しのページは見つかりませんでした。URLをご確認いただくか、ホームからお探しください。',
+  ogType: 'website',
+}
+---
+
+<BaseLayout meta={meta} noindex={true}>
+  <div class="lab-page">
+    <div class="container">
+      <div class="lab-page__header">
+        <p class="lab-page__eyebrow">404 Not Found</p>
+        <h1 class="lab-page__title">ページが見つかりません</h1>
+        <p class="lab-page__subtitle">
+          お探しのページは移動または削除された可能性があります。
+        </p>
+      </div>
+      <div class="lab-page__content">
+        <section class="lab-section">
+          <p class="lab-section__body">
+            URLをご確認いただくか、以下のリンクからお探しください。
+          </p>
+          <p class="lab-section__body">
+            <a href="/" class="lab-page__back-link">ホームに戻る</a>
+          </p>
+          <p class="lab-section__body">
+            <a href="/news" class="lab-page__back-link">新着情報・コラム一覧を見る</a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

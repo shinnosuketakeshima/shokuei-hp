@@ -7,6 +7,9 @@ import { ROUTES, routeSlug } from './routes.mjs';
 
 const BASE_URL = process.argv[2] || 'http://localhost:4173';
 const OUT_DIR = path.resolve(process.argv[3] || 'docs/migration-baseline');
+// 第4引数: カンマ区切りのルート絞り込み（例: "/student-column-1,/faq"）
+const routeFilter = process.argv[4] ? process.argv[4].split(',') : null;
+const TARGET_ROUTES = routeFilter ? ROUTES.filter((r) => routeFilter.includes(r)) : ROUTES;
 
 const VIEWPORTS = [
   { name: '1440', width: 1440, height: 900 },
@@ -92,7 +95,7 @@ async function captureDomOutline(page) {
 const browser = await chromium.launch();
 const failures = [];
 
-for (const route of ROUTES) {
+for (const route of TARGET_ROUTES) {
   const slug = routeSlug(route);
   try {
     for (const vp of VIEWPORTS) {
