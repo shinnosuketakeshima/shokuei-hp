@@ -1,0 +1,73 @@
+main
+  section.qualifications
+    span.qualifications__bg | 資格
+    div.qualifications__inner.container
+      div.qualifications__header
+        p.eyebrow | 取得資格 / Qualifications
+        h1.section-title | 卒業後に活かせる 7つの資格・免許
+          br
+        p | 「管理栄養士＋第一種衛生管理者」のダブルライセンスが最大の強み。 全国唯一の組み合わせが、就職の幅を大きく広げます。
+      div.qualifications__details
+        div.qual-detail-section
+          div
+            span
+              svg
+                path
+                path
+                path
+                path
+                circle
+            h2.qual-detail-title | 管理栄養士
+          p | 厚生労働大臣免許の国家資格。病気の人や高齢者、健康な人まで、一人ひとりに合わせた栄養指導や給食管理を行い、人々の健康を支
+        div.qual-detail-section
+          div
+            span
+              svg
+                path
+                path
+            h2.qual-detail-title | 第一種衛生管理者
+            span | 全国唯一
+          p | 常時50人以上の労働者を使用する事業場で配置が義務付けられている国家資格。労働環境の衛生管理や健康障害の防止などを担当し
+        div.qual-detail-section
+          div
+            span
+              svg
+                path
+                path
+                path
+                path
+                circle
+            h2.qual-detail-title | 栄養士
+          p | 都道府県知事免許の公的資格。健康な人を対象とした給食管理や栄養指導を行い、健康的な食生活をサポートします。十文字では所定
+        div.qual-detail-section
+          div
+            span
+              svg
+                path
+                path
+                path
+            h2.qual-detail-title | 栄養教諭一種免許状
+          p | 学校現場において、児童・生徒に対して「食に関する指導（食育）」と「学校給食の管理」を一体的に行うための教員免許です。教職
+        div.qual-detail-section
+          div
+            span
+              svg
+                path
+                path
+            h2.qual-detail-title | NR・サプリメントアドバイザー
+          p | 消費者に対してサプリメントや健康食品に関する適切かつ的確なアドバイスを行う専門家です。日本臨床栄養協会が認定する資格で、
+        div.qual-detail-section
+          div
+            span
+              svg
+                path
+            h2.qual-detail-title | 社会福祉主事（任用資格）
+          p | 福祉事務所や社会福祉施設などで相談・指導業務などを行う専門職員（公務員等）として働く際に必要となる任用資格です。大学で特
+        div.qual-detail-section
+          div
+            span
+              svg
+                path
+                path
+            h2.qual-detail-title | 司書
+          p | 図書館法に基づく、図書館の専門的業務に従事する専門職資格です。所定の科目を履修することで取得でき、大学や公立図書館、企業

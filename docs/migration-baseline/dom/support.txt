@@ -1,0 +1,45 @@
+main
+  section.support
+    div.support__orb.support__orb--1
+    div.support__orb.support__orb--2
+    div.support__inner.container
+      div
+        p.eyebrow | 国試対策 / Exam Support
+        h1.section-title | 管理栄養士国家試験 合格を支える6段階のサポートプログラム
+          br
+        p.support__subtitle | 1年次からの早期意識づけに始まり、4年次は年8回の模擬試験で本番力を養成。 多角的なサポートで、全員合格をめざします。
+      div.support__grid
+        div.support-item
+          p.support-item__num | 01
+          h3.support-item__title | 1・2年次からの早期意識づけ
+          p.support-item__body | 「4年生からでは遅い」という方針のもと、入学直後から国家試験を意識した学習習慣を形成。基礎固めと意識づけを早期に徹底しま
+        div.support-item
+          p.support-item__num | 02
+          h3.support-item__title | 3年次：夏・冬の模擬試験
+          p.support-item__body | 3年次の夏・冬に模擬試験を実施。学習の中間チェックポイントとして弱点を可視化し、4年次に向けた対策の方向性を定めます。
+        div.support-item
+          p.support-item__num | 03
+          h3.support-item__title | 4年次：模擬試験を年8回実施
+          p.support-item__body | 4年次には模擬試験を年8回実施。本番さながらの環境で繰り返し演習し、得点力と時間管理の精度を高めます。
+        div.support-item
+          p.support-item__num | 04
+          h3.support-item__title | 130点突破を全員の目標に
+          p.support-item__body | 4年7月の模試で「130点」を合否の分岐点として明確に設定。具体的な数値目標が学習意欲と達成感を生み出します。
+        div.support-item
+          p.support-item__num | 05
+          h3.support-item__title | 外部講師による特別講義
+          p.support-item__body | 各教員による対策講座に加え、外部の専門講師による特別講義も実施。多様な視点で試験範囲を深く理解します。
+        div.support-item
+          p.support-item__num | 06
+          h3.support-item__title | e-Learningで自学自習を支援
+          p.support-item__body | e-Learningシステムを活用し、自分のペースで反復学習が可能。苦手分野の集中対策や隙間時間の有効活用を支援します。
+      div.support__report-banner
+        div.support__report-banner-inner
+          div
+            p.support__report-banner-label | 国試レポート
+            p.support__report-banner-title | 第40回管理栄養士国家試験 結果と本学の取り組みについて
+            p.support__report-banner-sub | 合格率・要因分析・今後の対策を公開しています
+          a.support__report-banner-link | 詳細を読む
+            svg
+              path
+              path

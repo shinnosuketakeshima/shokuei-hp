@@ -1,0 +1,149 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": "https://shokuei-hp.web.app/#organization",
+    "name": "十文字学園女子大学 食物栄養学科",
+    "alternateName": "Jumonji University Food and Nutrition",
+    "url": "https://shokuei-hp.web.app/",
+    "description": "埼玉県新座市にある十文字学園女子大学 食物栄養学科（人間生活学部）の非公式情報メディア。4年間を通じた実践的なカリキュラム、国家試験合格率を支えるサポート体制、最新の研究室情報など、食と栄養のプロフェッショナルを目指す高校生に向けたリアルな学びの魅力を発信します。",
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学",
+      "url": "https://www.jumonji-u.ac.jp/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "埼玉県",
+        "addressLocality": "新座市"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "埼玉県新座市菅沢2-1-28",
+      "addressLocality": "新座市",
+      "addressRegion": "埼玉県",
+      "postalCode": "352-8510",
+      "addressCountry": "JP"
+    },
+    "telephone": "+81-48-481-1111",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "35.8193",
+      "longitude": "139.6291"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "JP"
+    },
+    "inLanguage": "ja-JP",
+    "availableLanguage": "ja"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CollegeOrUniversity",
+    "name": "十文字学園女子大学 食物栄養学科",
+    "description": "埼玉県新座市にある十文字学園女子大学 食物栄養学科。管理栄養士・栄養士を育成する4年間の実践的カリキュラムと国家試験対策サポート体制が特徴。",
+    "url": "https://shokuei-hp.web.app/",
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学 食物栄養学科",
+      "url": "https://shokuei-hp.web.app/"
+    },
+    "@id": "https://shokuei-hp.web.app/#organization",
+    "alternateName": "食物栄養学科",
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学",
+      "url": "https://www.jumonji-u.ac.jp/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "埼玉県新座市菅沢2-1-28",
+      "addressLocality": "新座市",
+      "addressRegion": "埼玉県",
+      "postalCode": "352-8510",
+      "addressCountry": "JP"
+    },
+    "telephone": "+81-48-481-1111",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "35.8193",
+      "longitude": "139.6291"
+    },
+    "foundingDate": "2000",
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "埼玉県"
+      },
+      {
+        "@type": "State",
+        "name": "東京都"
+      },
+      {
+        "@type": "State",
+        "name": "神奈川県"
+      },
+      {
+        "@type": "State",
+        "name": "千葉県"
+      },
+      {
+        "@type": "State",
+        "name": "群馬県"
+      },
+      {
+        "@type": "State",
+        "name": "栃木県"
+      }
+    ],
+    "sameAs": [
+      "https://www.jumonji-u.ac.jp/",
+      "https://www.instagram.com/jumonji_shokuei/",
+      "https://www.tiktok.com/@ishokssov49"
+    ],
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "十文字学園女子大学 食物栄養学科はどんな学科ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "埼玉県新座市にある十文字学園女子大学 食物栄養学科（人間生活学部）は、管理栄養士・栄養士を育成する4年制の学科です。定員78名の少人数教育、全国唯一の管理栄養士＋第一種衛生管理者ダブルライセンス取得、国家試験全員合格を目指す6段階サポートが特徴です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "管理栄養士になるにはどんな大学に行けばいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "管理栄養士になるには、厚生労働省が認定した管理栄養士養成施設（4年制大学など）を卒業し、管理栄養士国家試験に合格する必要があります。十文字学園女子大学 食物栄養学科は管理栄養士養成課程として、1年次からの国試対策サポート体制を整えています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "キャンパスはどこにありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "埼玉県新座市菅沢2-1-28にあります。西武池袋線「ひばりヶ丘駅」からバスでアクセスできます。緑豊かなキャンパスに調理実習室・科学実験室などの充実した施設が整っています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "十文字学園女子大学 食物栄養学科の就職率はどのくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "就職率100%（2025年3月卒業生実績）を達成しています。保育園・病院・食品メーカー・一般企業など多様な分野で卒業生が活躍しており、関東圏を中心に全国で就職しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "研究室（ゼミ）はどのような種類がありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "獣医ウイルス学・食品加工・公衆栄養学・水圏生命科学・栄養生化学・調理科学・応用栄養学・動物実験・臨床栄養・食品安全学・腸内細菌・医療AIなど、12の多彩な研究室があります。3年次にゼミに配属され、4年次の卒業研究へとつながります。"
+        }
+      }
+    ]
+  }
+]

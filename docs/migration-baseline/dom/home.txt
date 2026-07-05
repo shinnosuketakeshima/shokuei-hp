@@ -1,0 +1,723 @@
+main
+  section.relative.min-h-[92svh].w-full.overflow-hidden
+    div.absolute.inset-0.bg-cover.bg-center.bg-no-repeat
+    div.absolute.inset-0.bg-gradient-to-t.from-[#2a1e1a]/85.via-[#2a1e1a]/45.to-[#2a1e1a]/25
+    div.absolute.inset-0.bg-gradient-to-r.from-[#2a1e1a]/50.via-transparent.to-transparent
+    div.container.relative.z-10.flex.min-h-[92svh].flex-col.justify-end.px-[clamp(20px,5vw,72px)].pb-[clamp(48px,8vw,96px)].pt-[clamp(100px,14vw,140px)]
+      p.mb-4.text-[11px].font-medium.tracking-[0.22em].text-white/75.uppercase | 十文字学園女子大学 食物栄養学科 ― 補完サイト
+      h1.max-w-3xl.text-balance.font-serif.text-[clamp(28px,4.6vw,56px)].leading-[1.3].font-bold.tracking-[0.02em].text-white.drop-shadow-lg | 管理栄養士をめざす毎日って、実際どんな感じ？
+      p.mt-3.max-w-2xl.text-pretty.text-[clamp(13px,1.6vw,15px)].leading-[1.9].font-light.text-white/70 | 「食」を、科学する。社会を、動かす。
+      p.mt-6.max-w-2xl.text-pretty.text-[clamp(14px,1.8vw,17px)].leading-[2].font-light.text-white/90 | ここは、十文字学園女子大学 食物栄養学科の「公式サイトでは見えにくい部分」を伝える補完サイトです。研究室の素顔、学生の本
+      div.mt-10.flex.flex-col.gap-3.sm:flex-row.sm:flex-wrap.sm:gap-4
+        a.inline-flex.min-h-[48px].items-center.justify-center.gap-2.rounded-2xl.px-6.py-3.text-[13px].font-medium.tracking-wide.transition-all.duration-300.bg-white.text-[#4a3f3f].shadow-lg.hover:-translate-y-0.5.hover:bg-[#fff9f9] | 学生たちのリアルを見る
+        a.inline-flex.min-h-[48px].items-center.justify-center.gap-2.rounded-2xl.px-6.py-3.text-[13px].font-medium.tracking-wide.transition-all.duration-300.bg-white.text-[#4a3f3f].shadow-lg.hover:-translate-y-0.5.hover:bg-[#fff9f9] | 12の研究室ストーリー
+        a.inline-flex.min-h-[48px].items-center.justify-center.gap-2.rounded-2xl.px-6.py-3.text-[13px].font-medium.tracking-wide.transition-all.duration-300.border.border-white/35.bg-white/10.text-white.backdrop-blur-sm.hover:bg-white/20 | 公式サイトでカリキュラムを見る
+          svg
+            path
+            path
+  section.bg-[#FFF9F9].pt-[clamp(28px,4vw,40px)]
+    div.container.px-[clamp(20px,5vw,72px)]
+      p.text-center.font-serif.text-[clamp(15px,1.8vw,18px)].font-bold.text-[#4A3F3F] | あなたに合わせて読む
+      div.mt-5.grid.gap-4.md:grid-cols-3.md:gap-5
+        div.rounded-2xl.border.border-[#4A3F3F]/10.bg-white.px-6.py-6.shadow-sm
+          span.flex.h-11.w-11.items-center.justify-center.rounded-full.bg-[#A87878]/10.text-[#A87878]
+            svg
+              path
+              path
+              path
+          h3.mt-4.font-serif.text-[clamp(16px,2vw,18px)].font-bold.text-[#4A3F3F] | 高校生の方へ
+          p.mt-2.text-[13px].leading-[1.8].font-light.text-[#4A3F3F]/75 | 在学生のリアルな声や、12の研究室で学べることを知る。
+          ul.mt-4.flex.flex-col.gap-2
+            li
+              a.group.inline-flex.items-center.gap-1.5.text-[13px].font-medium.text-[#A87878].transition-colors.hover:text-[#7a5555] | 在学生・卒業生の声
+                svg
+            li
+              a.group.inline-flex.items-center.gap-1.5.text-[13px].font-medium.text-[#A87878].transition-colors.hover:text-[#7a5555] | 研究室ストーリーを見る
+                svg
+        div.rounded-2xl.border.border-[#4A3F3F]/10.bg-white.px-6.py-6.shadow-sm
+          span.flex.h-11.w-11.items-center.justify-center.rounded-full.bg-[#A87878]/10.text-[#A87878]
+            svg
+              path
+              path
+              path
+              circle
+          h3.mt-4.font-serif.text-[clamp(16px,2vw,18px)].font-bold.text-[#4A3F3F] | 保護者の方へ
+          p.mt-2.text-[13px].leading-[1.8].font-light.text-[#4A3F3F]/75 | 就職率や国家試験サポート体制など、実績データで学科を知る。
+          ul.mt-4.flex.flex-col.gap-2
+            li
+              a.group.inline-flex.items-center.gap-1.5.text-[13px].font-medium.text-[#A87878].transition-colors.hover:text-[#7a5555] | 進路・就職実績を見る
+                svg
+            li
+              a.group.inline-flex.items-center.gap-1.5.text-[13px].font-medium.text-[#A87878].transition-colors.hover:text-[#7a5555] | 国家試験サポート体制
+                svg
+        div.rounded-2xl.border.border-[#4A3F3F]/10.bg-white.px-6.py-6.shadow-sm
+          span.flex.h-11.w-11.items-center.justify-center.rounded-full.bg-[#A87878]/10.text-[#A87878]
+            svg
+              path
+              path
+              path
+              path
+              path
+              circle
+          h3.mt-4.font-serif.text-[clamp(16px,2vw,18px)].font-bold.text-[#4A3F3F] | 進路指導の先生へ
+          p.mt-2.text-[13px].leading-[1.8].font-light.text-[#4A3F3F]/75 | 生徒に説明しやすい、学科の特色とよくある質問のまとめ。
+          ul.mt-4.flex.flex-col.gap-2
+            li
+              a.group.inline-flex.items-center.gap-1.5.text-[13px].font-medium.text-[#A87878].transition-colors.hover:text-[#7a5555] | 学科の特色を見る
+                svg
+            li
+              a.group.inline-flex.items-center.gap-1.5.text-[13px].font-medium.text-[#A87878].transition-colors.hover:text-[#7a5555] | よくある質問（FAQ）
+                svg
+  section.bg-[#FFF9F9].pt-[clamp(28px,4vw,40px)]
+    div.container.px-[clamp(20px,5vw,72px)]
+      div.grid.gap-4.md:grid-cols-2.md:gap-5
+        div
+          a.group.relative.flex.items-center.justify-between.gap-4.overflow-hidden.rounded-2xl.bg-gradient-to-br.from-[#3D6B4F]/90.to-[#2E5340]/95.px-6.py-5.text-white.shadow-md.transition-transform.duration-300.hover:-translate-y-0.5.hover:shadow-lg
+            div.pointer-events-none.absolute.-right-6.-top-6.h-28.w-28.rounded-full.bg-white/10.blur-2xl.transition-transform.duration-500.group-hover:scale-125
+            div.flex.items-center.gap-4
+              span.flex.h-11.w-11.shrink-0.items-center.justify-center.rounded-full.bg-white/15.backdrop-blur-sm
+                svg
+              div
+                span.text-[11px].font-medium.tracking-[0.15em].text-white/80.uppercase | 特集ページ
+                h3.text-balance.font-serif.text-[clamp(16px,2vw,19px)].leading-snug.font-bold | スポーツ栄養特集
+                p.mt-1.hidden.text-pretty.text-[12px].leading-[1.7].font-light.text-white/85.sm:block | 2学科共通で学べる、スポーツ栄養の最前線。教員紹介や学びのルートを紹介。
+            svg
+              path
+              path
+        div
+          a.group.relative.flex.items-center.justify-between.gap-4.overflow-hidden.rounded-2xl.bg-gradient-to-br.from-[#C96C51]/90.to-[#9E4D36]/95.px-6.py-5.text-white.shadow-md.transition-transform.duration-300.hover:-translate-y-0.5.hover:shadow-lg
+            div.pointer-events-none.absolute.-right-6.-top-6.h-28.w-28.rounded-full.bg-white/10.blur-2xl.transition-transform.duration-500.group-hover:scale-125
+            div.flex.items-center.gap-4
+              span.flex.h-11.w-11.shrink-0.items-center.justify-center.rounded-full.bg-white/15.backdrop-blur-sm
+                svg
+              div
+                span.text-[11px].font-medium.tracking-[0.15em].text-white/80.uppercase | 全学伴走支援
+                h3.text-balance.font-serif.text-[clamp(16px,2vw,19px)].leading-snug.font-bold | ことサポ for 食栄
+                p.mt-1.hidden.text-pretty.text-[12px].leading-[1.7].font-light.text-white/85.sm:block | 忙しい4年間を、ひとりにしない。2027年度スタートの伴走支援。
+            svg
+              path
+              path
+        div
+          a.group.relative.flex.items-center.justify-between.gap-4.overflow-hidden.rounded-2xl.bg-gradient-to-br.from-[#5F7F6A]/90.to-[#476050]/95.px-6.py-5.text-white.shadow-md.transition-transform.duration-300.hover:-translate-y-0.5.hover:shadow-lg
+            div.pointer-events-none.absolute.-right-6.-top-6.h-28.w-28.rounded-full.bg-white/10.blur-2xl.transition-transform.duration-500.group-hover:scale-125
+            div.flex.items-center.gap-4
+              span.flex.h-11.w-11.shrink-0.items-center.justify-center.rounded-full.bg-white/15.backdrop-blur-sm
+                svg
+              div
+                span.text-[11px].font-medium.tracking-[0.15em].text-white/80.uppercase | 新学び方
+                h3.text-balance.font-serif.text-[clamp(16px,2vw,19px)].leading-snug.font-bold | 副専攻×管理栄養士
+                p.mt-1.hidden.text-pretty.text-[12px].leading-[1.7].font-light.text-white/85.sm:block | 管理栄養士＋もうひとつ。あなただけのキャリアをデザインする。
+            svg
+              path
+              path
+        div
+          a.group.relative.flex.items-center.justify-between.gap-4.overflow-hidden.rounded-2xl.bg-gradient-to-br.from-[#8A7B7B]/90.to-[#6B5959]/95.px-6.py-5.text-white.shadow-md.transition-transform.duration-300.hover:-translate-y-0.5.hover:shadow-lg
+            div.pointer-events-none.absolute.-right-6.-top-6.h-28.w-28.rounded-full.bg-white/10.blur-2xl.transition-transform.duration-500.group-hover:scale-125
+            div.flex.items-center.gap-4
+              span.flex.h-11.w-11.shrink-0.items-center.justify-center.rounded-full.bg-white/15.backdrop-blur-sm
+                svg
+              div
+                span.text-[11px].font-medium.tracking-[0.15em].text-white/80.uppercase | 学生生活
+                h3.text-balance.font-serif.text-[clamp(16px,2vw,19px)].leading-snug.font-bold | 新座 一人暮らし 費用比較
+                p.mt-1.hidden.text-pretty.text-[12px].leading-[1.7].font-light.text-white/85.sm:block | 寮費・アパート家賃・学費を総額シミュレーション。新座市で進学するなら。
+            svg
+              path
+              path
+        div
+          a.group.relative.flex.items-center.justify-between.gap-4.overflow-hidden.rounded-2xl.bg-gradient-to-br.from-[#A87878]/95.to-[#7a5555]/95.px-6.py-5.text-white.shadow-md.transition-transform.duration-300.hover:-translate-y-0.5.hover:shadow-lg
+            div.pointer-events-none.absolute.-right-6.-top-6.h-28.w-28.rounded-full.bg-white/10.blur-2xl.transition-transform.duration-500.group-hover:scale-125
+            div.flex.items-center.gap-4
+              span.flex.h-11.w-11.shrink-0.items-center.justify-center.rounded-full.bg-white/15.backdrop-blur-sm
+                svg
+              div
+                span.text-[11px].font-medium.tracking-[0.15em].text-white/80.uppercase | コラム
+                h3.text-balance.font-serif.text-[clamp(16px,2vw,19px)].leading-snug.font-bold | 学生・教員コラム
+                p.mt-1.hidden.text-pretty.text-[12px].leading-[1.7].font-light.text-white/85.sm:block | 学びの気づきから現場でのリアルな声まで。学生と教員、それぞれの視点で綴る記事。
+            svg
+              path
+              path
+  section.bg-[#FFF9F9].py-[clamp(48px,8vw,88px)]
+    div.container.px-[clamp(20px,5vw,72px)]
+      div.mb-10.text-center.md:mb-12
+        p.text-[11px].font-medium.tracking-[0.2em].text-[#A87878].uppercase | Pick your story
+        h2.mt-3.text-balance.font-serif.text-[clamp(24px,3.5vw,36px)].leading-snug.font-bold.text-[#4A3F3F] | あなたの「好き」から、学びを選ぶ
+      div.grid.gap-5.md:grid-cols-3.md:gap-6
+        a.group.relative.flex.min-h-[220px].flex-col.justify-between.overflow-hidden.rounded-3xl.bg-gradient-to-br.from-[#3D6B4F]/90.to-[#2E5340]/95.p-7.text-white.shadow-lg.transition-transform.duration-300.hover:-translate-y-1.hover:shadow-xl.md:min-h-[280px].md:p-8
+          div.pointer-events-none.absolute.-right-8.-top-8.h-40.w-40.rounded-full.bg-white/10.blur-2xl.transition-transform.duration-500.group-hover:scale-125
+          div
+            span.inline-flex.items-center.gap-2.rounded-full.bg-white/15.px-3.py-1.text-[11px].font-medium.tracking-wide.backdrop-blur-sm | 社会とつながる
+              svg
+                path
+                path
+                path
+            h3.mt-5.text-balance.font-serif.text-[clamp(20px,2.2vw,26px)].leading-snug.font-bold | 【 地域連携・商品開発 】
+            p.mt-4.text-pretty.text-[13px].leading-[1.9].font-light.text-white/90 | 黒たまねぎマフィン開発、おだんご先生の高大連携、市民健康まつりなど、社会を動かすプロジェクト。
+          span.mt-6.inline-flex.items-center.gap-2.text-[13px].font-medium.text-white/95 | ストーリーを見る
+            svg
+              path
+              path
+        a.group.relative.flex.min-h-[220px].flex-col.justify-between.overflow-hidden.rounded-3xl.bg-gradient-to-br.from-[#5a4a6b]/90.to-[#3d3450]/95.p-7.text-white.shadow-lg.transition-transform.duration-300.hover:-translate-y-1.hover:shadow-xl.md:min-h-[280px].md:p-8
+          div.pointer-events-none.absolute.-right-8.-top-8.h-40.w-40.rounded-full.bg-white/10.blur-2xl.transition-transform.duration-500.group-hover:scale-125
+          div
+            span.inline-flex.items-center.gap-2.rounded-full.bg-white/15.px-3.py-1.text-[11px].font-medium.tracking-wide.backdrop-blur-sm | 白衣の実験室
+              svg
+                path
+                path
+                path
+            h3.mt-5.text-balance.font-serif.text-[clamp(20px,2.2vw,26px)].leading-snug.font-bold | 【 最先端サイエンス 】
+            p.mt-4.text-pretty.text-[13px].leading-[1.9].font-light.text-white/90 | キンギョやゼブラフィッシュの老化実験、ウイルスと遺伝子、胃消化シミュレーターなど、白衣で挑む科学の最前線。
+          span.mt-6.inline-flex.items-center.gap-2.text-[13px].font-medium.text-white/95 | ストーリーを見る
+            svg
+              path
+              path
+        a.group.relative.flex.min-h-[220px].flex-col.justify-between.overflow-hidden.rounded-3xl.bg-gradient-to-br.from-[#A87878]/95.to-[#7a5555]/95.p-7.text-white.shadow-lg.transition-transform.duration-300.hover:-translate-y-1.hover:shadow-xl.md:min-h-[280px].md:p-8
+          div.pointer-events-none.absolute.-right-8.-top-8.h-40.w-40.rounded-full.bg-white/10.blur-2xl.transition-transform.duration-500.group-hover:scale-125
+          div
+            span.inline-flex.items-center.gap-2.rounded-full.bg-white/15.px-3.py-1.text-[11px].font-medium.tracking-wide.backdrop-blur-sm | いのちを支える
+              svg
+                path
+            h3.mt-5.text-balance.font-serif.text-[clamp(20px,2.2vw,26px)].leading-snug.font-bold | 【 子ども・高齢者・福祉 】
+            p.mt-4.text-pretty.text-[13px].leading-[1.9].font-light.text-white/90 | 小中学生の骨量測定、こども食堂のアレルギー対応、特養・老健のケアマネジメントなど、誰かのいのちを支える実践。
+          span.mt-6.inline-flex.items-center.gap-2.text-[13px].font-medium.text-white/95 | ストーリーを見る
+            svg
+              path
+              path
+  section.news
+    div.container
+      div.news__layout
+        div.news__header
+          p.eyebrow | お知らせ / ブログ
+          h2.section-title | 新着情報
+          a.news__more | 一覧へ
+            svg
+              path
+              path
+        ul.news-list
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.6.21
+                span.news-tag.news-tag--info | イベント
+                span.news-item__title | ひとつのトマトが、３つの未来を開く─未来体験Day 6月21日開催
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.6.6
+                span.news-tag.news-tag--column | 教員コラム
+                span.news-item__title | 失敗が消えない時代に、どう育つか（竹嶋伸之輔 教授）
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.5.26
+                span.news-tag.news-tag--column | 教員コラム
+                span.news-item__title | 解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発した話
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.5.18
+                span.news-tag.news-tag--event | イベント
+                span.news-item__title | 【5/31開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.5.15
+                span.news-tag.news-tag--column | 教員コラム
+                span.news-item__title | 先輩が授業をサポート！総合科目「いちから学ぶnutrition science」SAレポート
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.5.13
+                span.news-tag.news-tag--column | 学生コラム
+                span.news-item__title | チーズに"王様"と"女王様"がいた！骨の衝撃映像と食育論セミナーレポート
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.5.12
+                span.news-tag.news-tag--info | お知らせ
+                span.news-item__title | 高大連携プロジェクト「食の未来を創る」十文字大×駒場学園高が始動
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.5.11
+                span.news-tag.news-tag--column | 学生コラム
+                span.news-item__title | 白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情
+          li
+            article
+              a.news-item
+                span.news-item__date | 2026.05.10
+                span.news-tag.news-tag--info | お知らせ
+                span.news-item__title | 2026年度のオープンキャンパスの日程を公開しました
+  section.stats
+    div.stats__grid
+      div.stats__item
+        div.stats__number | 100
+          span.stats__unit | %
+        div.stats__label | 就職率
+        div.stats__note | (2025年3月卒業生実績)
+      div.stats__item
+        div.stats__number | 78
+          span.stats__unit | 名
+        div.stats__label | 募集定員
+        div.stats__note | 少人数教育を徹底
+      div.stats__item
+        div.stats__number | 8
+          span.stats__unit | 回
+        div.stats__label | 4年次 国試模擬試験
+        div.stats__note | 3年次にも夏・冬の2回実施
+      div.stats__item
+        div.stats__number | 全国
+          span.stats__unit | 唯一
+        div.stats__label | 管理栄養士課程で
+        div.stats__note | 第一種衛生管理者が取れる大学
+  section.features
+    div.container
+      div.features__header
+        p.eyebrow | 学科の特色 / Features
+        h2.section-title | 食物栄養学科が選ばれる 3つの理由
+          br
+    div.features__grid
+      article.feature-card
+        span.feature-card__ghost | 01
+        div.feature-card__icon
+          svg
+            path
+            circle
+        p.feature-card__num | 01
+        h3.feature-card__title | 全国唯一のダブルライセンス
+      article.feature-card
+        span.feature-card__ghost | 02
+        div.feature-card__icon
+          svg
+            path
+            path
+            path
+            circle
+        p.feature-card__num | 02
+        h3.feature-card__title | 定員78名の少人数教育
+      article.feature-card
+        span.feature-card__ghost | 03
+        div.feature-card__icon
+          svg
+            path
+            path
+        p.feature-card__num | 03
+        h3.feature-card__title | 実践力を育む4年間のカリキュラム
+    div.container
+      a.button.button--outline | 学科の特色を詳しく見る
+        svg
+          path
+          path
+  section.section.labs-portal
+    div.container
+      div.section__header
+        h2.section__title | 12の研究室ストーリー
+        p.section__subtitle | Lab Stories
+        p.labs-portal__lead | 教員プロフィールや研究業績の一覧ではなく、ゼミごとの「物語」から入れます。気になるテーマを選んで、詳細ページへ。
+      div.labs-portal__filters
+        button.labs-portal__filter.labs-portal__filter--active | すべて
+        button.labs-portal__filter.labs-portal__filter--regional | 地域連携・商品開発
+        button.labs-portal__filter.labs-portal__filter--science | 最先端サイエンス
+        button.labs-portal__filter.labs-portal__filter--welfare | 子ども・高齢者・福祉
+      div.labs-story-grid
+        article.lab-story-card.lab-story-card--regional
+          a.lab-story-card__inner
+            span.lab-story-card__category | 地域連携・商品開発
+            h3.lab-story-card__title | 黒たまねぎマフィンと、おいしい健康の科学
+            p.lab-story-card__hook | ポリフェノール解析から地域企業とつくる「くろたまフィン」。
+            span.lab-story-card__interest | こんな人へ： 商品開発に挑戦したい
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--regional
+          a.lab-story-card__inner
+            span.lab-story-card__category | 地域連携・商品開発
+            h3.lab-story-card__title | プラスちゃんナッツと、すったてうどんの挑戦
+            p.lab-story-card__hook | 企業・地域とつなぐ、栄養管理技術の社会還元。
+            span.lab-story-card__interest | こんな人へ： 地域や企業とつながりたい
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--regional
+          a.lab-story-card__inner
+            span.lab-story-card__category | 地域連携・商品開発
+            h3.lab-story-card__title | おだんごの「おいしさ」を、科学で解き明かす
+            p.lab-story-card__hook | 和菓子職人の経験と調理科学が出会う場所。
+            span.lab-story-card__interest | こんな人へ： 「好き」を学問にしたい
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--regional
+          a.lab-story-card__inner
+            span.lab-story-card__category | 地域連携・商品開発
+            h3.lab-story-card__title | 市民健康まつりと、子ども食堂の食の現場
+            p.lab-story-card__hook | エビデンスに基づく公衆栄養を、地域で実践する。
+            span.lab-story-card__interest | こんな人へ： 人と関わる仕事がしたい
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--science
+          a.lab-story-card__inner
+            span.lab-story-card__category | 最先端サイエンス
+            h3.lab-story-card__title | ウイルスと遺伝子で、命の食卓を守る
+            p.lab-story-card__hook | BLVとBoLA。顕微鏡の向こうで動く One Health。
+            span.lab-story-card__interest | こんな人へ： 実験や研究が好き
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--science
+          a.lab-story-card__inner
+            span.lab-story-card__category | 最先端サイエンス
+            h3.lab-story-card__title | キンギョとゼブラフィッシュが教えてくれる老化のヒミツ
+            p.lab-story-card__hook | 鱗・皮膚の再生から、食品成分の分子レベル解析へ。
+            span.lab-story-card__interest | こんな人へ： 生き物や生命科学に興味がある
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--science
+          a.lab-story-card__inner
+            span.lab-story-card__category | 最先端サイエンス
+            h3.lab-story-card__title | テンペとおからで、おいしく続ける健康食
+            p.lab-story-card__hook | 被験者と試作を重ねる、食物繊維の調理科学。
+            span.lab-story-card__interest | こんな人へ： 食べることが好き
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--science
+          a.lab-story-card__inner
+            span.lab-story-card__category | 最先端サイエンス
+            h3.lab-story-card__title | グルテンフリーパンと、データで解くおいしさ
+            p.lab-story-card__hook | 雑穀粉・アレルギー対応レシピの物性評価。
+            span.lab-story-card__interest | こんな人へ： データで考えるのが好き
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--science
+          a.lab-story-card__inner
+            span.lab-story-card__category | 最先端サイエンス
+            h3.lab-story-card__title | そのサプリ、本当に安全？健康食品を守るリスク評価の科学
+            p.lab-story-card__hook | 薬物相互作用・CYP解析から独自の安全基準SDI-SEまで。
+            span.lab-story-card__interest | こんな人へ： 安全・安心を守る仕事がしたい
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--science
+          a.lab-story-card__inner
+            span.lab-story-card__category | 最先端サイエンス
+            h3.lab-story-card__title | 内視鏡とAIが拓く、腸と健康の未来
+            p.lab-story-card__hook | マイクロバイオームから臨床研究まで。
+            span.lab-story-card__interest | こんな人へ： 医療やAIに関心がある
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--welfare
+          a.lab-story-card__inner
+            span.lab-story-card__category | 子ども・高齢者・福祉
+            h3.lab-story-card__title | 食育と子どもの健康を、多角的に科学する
+            p.lab-story-card__hook | 調査研究・実践活動・基礎研究で、子どもの心身の成長をサポート。
+            span.lab-story-card__interest | こんな人へ： 子どもの成長に関わりたい
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+        article.lab-story-card.lab-story-card--welfare
+          a.lab-story-card__inner
+            span.lab-story-card__category | 子ども・高齢者・福祉
+            h3.lab-story-card__title | 超高齢社会の食と、介護現場の栄養ケア
+            p.lab-story-card__hook | サルコペニア予防から施設マネジメントまで。
+            span.lab-story-card__interest | こんな人へ： 高齢者を支える仕事がしたい
+            span.lab-story-card__link | ストーリーを読む
+              svg
+                path
+                path
+  section.qualifications
+    span.qualifications__bg | 資格
+    div.qualifications__inner.container
+      div.qualifications__header
+        p.eyebrow | 取得資格 / Qualifications
+        h2.section-title | 卒業後に活かせる 7つの資格・免許
+          br
+        p | 「管理栄養士＋第一種衛生管理者」のダブルライセンスが最大の強み。 全国唯一の組み合わせが、就職の幅を大きく広げます。
+      div.qual-grid
+        div.qual-card
+          div.qual-card__icon
+            svg
+              path
+              path
+              path
+              path
+              circle
+          h3.qual-card__title | 管理栄養士
+        div.qual-card.qual-card--special
+          p.qual-badge | ★ 全国唯一
+          div.qual-card__icon
+            svg
+              path
+              path
+          h3.qual-card__title | 第一種衛生管理者
+        div.qual-card
+          div.qual-card__icon
+            svg
+              path
+              path
+              path
+              path
+              circle
+          h3.qual-card__title | 栄養士
+        div.qual-card
+          div.qual-card__icon
+            svg
+              path
+              path
+              path
+          h3.qual-card__title | 栄養教諭一種免許状
+      div
+        a.button.button--outline | 資格・免許について詳しく見る
+          svg
+            path
+            path
+  section.support
+    div.support__orb.support__orb--1
+    div.support__orb.support__orb--2
+    div.support__inner.container
+      div
+        p.eyebrow | 国試対策 / Exam Support
+        h2.section-title | 合格率を支える 6段階のサポートプログラム
+          br
+        p.support__subtitle | 1年次からの早期意識づけに始まり、4年次は年8回の模擬試験で本番力を養成。 多角的なサポートで、全員合格をめざします。
+      div.support__grid
+        div.support-item
+          p.support-item__num | 01
+          h3.support-item__title | 1・2年次からの早期意識づけ
+        div.support-item
+          p.support-item__num | 02
+          h3.support-item__title | 3年次：夏・冬の模擬試験
+        div.support-item
+          p.support-item__num | 03
+          h3.support-item__title | 4年次：模擬試験を年8回実施
+      div
+        a.button.button--outline | 国家試験対策を詳しく見る
+          svg
+            path
+            path
+  section.sns
+    div.container
+      div.sns__header
+        p.eyebrow | SNS / Social Media
+        h2.section-title | 学科のいまを発信中
+        p | 授業・実習・学生生活の様子をリアルタイムで発信しています。
+      div.sns__grid
+        a.sns-card.sns-card--instagram
+          div.sns-card__icon
+            svg
+              rect
+              circle
+              circle
+          p.sns-card__name | Instagram
+          p.sns-card__handle | @jumonji_shokuei
+          div.sns-card__hover
+            span.sns-card__cta | フォローする
+        a.sns-card.sns-card--tiktok
+          div.sns-card__icon
+            svg
+              path
+          p.sns-card__name | TikTok
+          p.sns-card__handle | @ishokssov49
+          div.sns-card__hover
+            span.sns-card__cta | フォローする
+  section.career
+    span.career__deco | 進路
+    div.container
+      div.career__layout
+        div.career__left
+          p.eyebrow | 進路・就職 / Career
+          h2.career__stat-block
+            div.career__rate | 100
+              span.career__rate-unit | %
+            p.career__rate-label | 就職率（2025年3月卒業生実績・就職希望者ベース）
+          p | 卒業生の約3人に2人が栄養士・管理栄養士として就職。 保育園・病院・高齢者施設に加え、薬局やドラッグストア、食品メーカー
+          div
+            a.button.button--outline | 進路・就職について詳しく見る
+              svg
+                path
+                path
+        div.career__right
+          div.career__paths
+            div.career-path
+              a.career-path__link
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 栄養士・管理栄養士
+                svg
+            div.career-path
+              a.career-path__link
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 管理栄養士・医療事務・総合職
+                svg
+            div.career-path
+              a.career-path__link
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 管理栄養士
+                svg
+            div.career-path
+              a.career-path__link
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 栄養士・管理栄養士
+                svg
+  section.voices
+    div.container
+      div.voices__header
+        p.eyebrow | 学生の声 / Student Voices
+        h2.section-title | 在学生からのメッセージ
+      div.voices__grid
+        div.voice-card
+          p.voice-card__category | 資格
+          blockquote.voice-card__quote | 「 最初は衛生管理者って何？って感じでしたが、就活で絶対強みになりました。取れてよかったです。 」
+          div.voice-card__author
+            span.voice-card__initial | A.N
+            div.voice-card__meta
+              span.voice-card__year | 4年生
+              span.voice-card__course | 臨床栄養コース
+        div.voice-card
+          p.voice-card__category | 少人数教育
+          blockquote.voice-card__quote | 「 先生に名前で呼んでもらえるのが、最初は驚きでした。相談しやすい雰囲気が本当にありがたいです。 」
+          div.voice-card__author
+            span.voice-card__initial | K.W
+            div.voice-card__meta
+              span.voice-card__year | 2年生
+              span.voice-card__course | 給食管理コース
+        div.voice-card
+          p.voice-card__category | 実習
+          blockquote.voice-card__quote | 「 病院実習で初めて患者さんと関わって、勉強していたことがぜんぶつながった感じがしました。 」
+          div.voice-card__author
+            span.voice-card__initial | A.I
+            div.voice-card__meta
+              span.voice-card__year | 4年生
+              span.voice-card__course | 臨床栄養コース
+      div.voices__columns-header
+        p.eyebrow | 学生コラム / Student Column
+        h2.section-title | 学生記者が伝える学科の日常
+      div.voices__columns-grid
+        article.column-card
+          span.column-card__date | 2026.5.26
+          h3.column-card__title | 解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発
+          p.column-card__desc | InBody・MedGemで自分のからだを測り、Gemini・ChatGPTで世界に一つの栄養アドバイスアプリを開発。2
+          a.text-link | 続きを読む
+            svg
+              path
+              path
+      div
+        a.button.button--outline | 学生の声・コラムをもっと見る
+          svg
+            path
+            path
+  div.campus-life-page
+    section.section
+      div.container
+        div.section__header
+          h2.section__title | キャンパスライフ
+          p.section__subtitle | Campus Life & Environment
+        p.campus-life__lead | 「食」と「健康」のプロを目指す4年間。 十文字学園女子大学 食物栄養学科での充実した毎日をご紹介します。
+        div.campus-photos
+          figure.campus-photo
+            div.campus-photo__img-wrap
+              img.campus-photo__img
+            figcaption.campus-photo__caption | 大量調理実習
+          figure.campus-photo
+            div.campus-photo__img-wrap
+              img.campus-photo__img
+            figcaption.campus-photo__caption | 桑の葉あんぱんの試作
+        div
+          a.button.button--outline | キャンパスライフをもっと見る
+            svg
+              path
+              path
+    style | .roadmap-tab {
+          font-family: inherit;
+        }
+   
+  section.faq
+    div.container
+      div.faq__header
+        p.eyebrow | よくある質問 / FAQ
+        h2.section-title | 受験生からよく聞かれる 質問と答え
+          br
+      div.faq__list
+        div
+          div.faq__item
+            button.faq__question-btn
+              span.faq__q-mark | Q
+              span.faq__q-text | 管理栄養士の資格は取得できますか？
+              span.faq__icon
+                svg
+            div
+              div.faq__answer-inner
+                p | 卒業と同時に管理栄養士国家試験の受験資格が得られます。国家試験に合格することで管理栄養士の資格を取得できます。医療・行政
+        div
+          div.faq__item
+            button.faq__question-btn
+              span.faq__q-mark | Q
+              span.faq__q-text | 第一種衛生管理者とはどんな資格で、なぜ全国唯一なのですか？
+              span.faq__icon
+                svg
+            div
+              div.faq__answer-inner
+                p | 第一種衛生管理者は従業員50名以上の事業場への配置が法律で義務付けられた国家資格です。管理栄養士養成課程でこの資格を卒業
+        div
+          div.faq__item
+            button.faq__question-btn
+              span.faq__q-mark | Q
+              span.faq__q-text | 管理栄養士はスポーツ選手を支える仕事ができますか？
+              span.faq__icon
+                svg
+            div
+              div.faq__answer-inner
+                p | できます。「公認スポーツ栄養士」という資格があり、Jリーグクラブや実業団チーム、日本代表チームなどに帯同して選手の食事・
+        div
+          div.faq__item
+            button.faq__question-btn
+              span.faq__q-mark | Q
+              span.faq__q-text | 公認スポーツ栄養士になるにはどうすればよいですか？
+              span.faq__icon
+                svg
+            div
+              div.faq__answer-inner
+                p | 公認スポーツ栄養士は日本栄養士会と日本スポーツ協会が共同認定する、非常に専門性の高い資格です。受験には「管理栄養士免許の
+                a.faq__answer-link | 資格取得ルートを詳しく見る
+        div
+          div.faq__item
+            button.faq__question-btn
+              span.faq__q-mark | Q
+              span.faq__q-text | 管理栄養士国家試験の合格率はどのくらいですか？
+              span.faq__icon
+                svg
+            div
+              div.faq__answer-inner
+                p | 1年次からの早期意識づけ、4年次の年8回模擬試験、外部講師による特別講義など6段階のサポート体制で国家試験合格をめざしま
+        div
+          div.faq__item
+            button.faq__question-btn
+              span.faq__q-mark | Q
+              span.faq__q-text | 就職率はどのくらいですか？
+              span.faq__icon
+                svg
+            div
+              div.faq__answer-inner
+                p | 就職率100%（2025年3月卒業生実績）を達成しています。少人数教育と1年次からのキャリア支援、そして管理栄養士＋衛生
+      div.faq__more
+        a.faq__more-link | すべての質問を見る
+          svg
+            path
+            path

@@ -1,0 +1,131 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 食物栄養学科
+        h1.lab-page__title | 竹嶋 伸之輔 研究室
+        p.lab-page__subtitle | ウイルスと遺伝子から、“家畜の健康”と“人の食”を守る
+      div.lab-page__content
+        section.lab-story-feature
+          span.lab-story-feature__label | FEATURE STORY
+            svg
+              path
+              path
+              path
+              circle
+          h2.lab-story-feature__title | 食物栄養学科で ！？ ——牛の遺伝子が教えてくれる、 感染症と「食の安全」のひみつ
+            em | 「ウイルス研究」
+            br
+            br
+          p.lab-story-feature__lead | 「同じウイルスに感染しても、 。なぜ？」 ——その問いを入口に、世界規模のサンプル解析、ワクチン開発、 まで。食卓と感染
+            strong | 発症する牛と発症しない牛がいる
+            strong | One Health の視点
+          div.lab-story-feature__tags
+            span | #One_Health
+            span | #ゲノム解析
+            span | #国際共同研究
+            span | #ワクチン開発
+            span | #食の安全
+        section.lab-section
+          h2.lab-section__title | 竹嶋研究室ってどんなところ？
+          p.lab-section__body | 竹嶋研究室では、 と をモデルに、 「なぜ同じウイルスに感染しても、発症する牛と発症しない牛がいるのか」 という素朴で奥
+            strong | ウシ伝染性リンパ腫ウイルス（BLV）
+            strong | ウシ主要組織適合遺伝子複合体（BoLA）
+          p.lab-section__body | BoLA-DRB3 多型の世界規模解析や、超高感度検査法「BLV-CoCoMo-qPCR」、 ウイルス様粒子（VLP）ワ
+            strong | 現場で使える感染制御戦略
+        section.lab-section
+          h2.lab-section__title | 研究テーマ
+          div.lab-theme-list.lab-theme-list--terracotta
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 01
+                h3 | 同じウイルスなのに、なぜ違う？「個体差」を遺伝子から解き明かす
+                p | 同じBLVに感染しても、ウイルス量や発症リスクは牛ごとに大きく違います。私たちは「宿主側の遺伝子（BoLA-DRB3）」
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 02
+                h3 | 世界中の牛からウイルスを追跡！国際共同で挑む分子疫学
+                p | 世界各地のBLV流行状況と遺伝子型の分布を調査。南米のフィールド試料から新たな「第9遺伝子型」を発見するなど、国際共同研
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 03
+                h3 | 自分たちで開発！次世代の検査キットとワクチン
+                p | 超高感度な定量法「BLV-CoCoMo-qPCR法」や、感受性の高い牛をターゲットにした「VLP（ウイルス様粒子）ワクチ
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 04
+                h3 | ウイルスはどこに「住みつく」？がんが生まれる起点を探る
+                p | プロウイルスがゲノムのどこに組み込まれるかを網羅的に解析。リンパ腫発症に関わる宿主遺伝子クラスターを発見するなど、がんの
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 05
+                h3 | 「家畜の健康」と「人の食」をつなぐ — One Health 研究
+                p | 日本のヒト検体ではBLV感染の証拠は見られないことを報告するなど、獣医学と公衆衛生・栄養学を橋渡しする One Heal
+        section.lab-section
+          h2.lab-section__title | 竹嶋ラボで身につくこと・出会えるもの
+          p.lab-section__body | 「食物栄養学科でウイルス研究？」と驚かれることもありますが、 「食」と「感染症」は、One Health の視点で見れば
+          div.lab-life-highlights.lab-life-highlights--terracotta
+            p.lab-life-highlights__lead | 竹嶋ラボの「ここがユニーク」
+            ul
+              li
+                svg
+                div
+              li
+                svg
+                div
+              li
+                svg
+                div
+              li
+                svg
+                div
+        section.lab-section
+          div.lab-quote-card
+            svg
+              path
+              path
+            p | なぜ同じウイルスに感染しても、 がいるのか？
+              br
+              em | 発症する牛と発症しない牛
+            footer.lab-quote-card__author
+              span.lab-quote-card__role | 竹嶋研究室の核心となる問い
+              span.lab-quote-card__name | — from BLV × BoLA Research
+        section.lab-section
+          h2.lab-section__title | 教員紹介
+          div.lab-pi-profile
+            p
+              strong | 竹嶋 伸之輔（Takeshima Shinnosuke）
+            p | 十文字学園女子大学 人間生活学部 食物栄養学科・教授
+            p | 人間生活学部 学部長 / 食物栄養学科 学科長
+            p | 獣医ウイルス学, 動物遺伝学, 免疫学
+              strong | 専門分野:
+            p | 解剖生理学, 病原物質・微生物学 など
+              strong | 担当科目:
+        section.lab-section
+          h2.lab-section__title | 代表的な論文
+          ul.lab-publication-list
+            li |  全国調査により、BLVプロウイルス量がBoLA-DRB3多型と強く関連することを示した研究。
+              strong | BoLA-DRB3とBLVプロウイルス量の関連 (Retrovirology, 2019):
+            li |  BLV誘発リンパ腫とプロウイルス量の双方に関わるBoLA-DRB3多型を解析した論文。
+              strong | BoLA-DRB3多型とリンパ腫・プロウイルス量 (Viruses, 2020):
+            li |  全ゲノム解析から新たなBLV第9遺伝子型を報告し、BLVの進化と国際的な理解を更新した研究。
+              strong | 南米における新規BLV遺伝子型（genotype-9）の同定 (Retrovirology, 2016):
+            li |  BLV誘発リンパ腫の分子機構に迫った最新成果。
+              strong | BLV組込み部位とリンパ腫関連遺伝子クラスター (Int. J. Mol. Sci., 2025):
+            li |  日本におけるBLVとヒト疾患の関連は現時点では支持されないと結論づけた研究。
+              strong | 日本人検体におけるBLV感染の検討 (Retrovirology, 2022):

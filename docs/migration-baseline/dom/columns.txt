@@ -1,0 +1,48 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 食物栄養学科
+        h1.lab-page__title | コラム
+        p.lab-page__subtitle | 学生と教員、それぞれの視点で綴る、学びと現場のリアル。実習やゼミでの気づきから、教育・キャリアへの想いまで。
+      div.lab-page__content
+        div.columns-filter
+          button.columns-filter__tab.is-active | 全て
+          button.columns-filter__tab | 学生コラム
+          button.columns-filter__tab | 教員コラム
+        div.columns-grid
+          div
+            a.column-card
+              div.column-card__top
+                span.column-card__badge.column-card__badge--faculty | 教員コラム
+                span.column-card__date | 2026.6.6
+              h2.column-card__title | 失敗が消えない時代に、どう育つか（竹嶋伸之輔 教授）
+          div
+            a.column-card
+              div.column-card__top
+                span.column-card__badge.column-card__badge--faculty | 教員コラム
+                span.column-card__date | 2026.5.26
+              h2.column-card__title | 解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発した話
+          div
+            a.column-card
+              div.column-card__top
+                span.column-card__badge.column-card__badge--faculty | 教員コラム
+                span.column-card__date | 2026.5.15
+              h2.column-card__title | 先輩が授業をサポート！総合科目「いちから学ぶnutrition science」SAレポート
+          div
+            a.column-card
+              div.column-card__top
+                span.column-card__badge.column-card__badge--student | 学生コラム
+                span.column-card__date | 2026.5.13
+              h2.column-card__title | チーズに"王様"と"女王様"がいた！骨の衝撃映像と食育論セミナーレポート
+          div
+            a.column-card
+              div.column-card__top
+                span.column-card__badge.column-card__badge--student | 学生コラム
+                span.column-card__date | 2026.5.11
+              h2.column-card__title | 白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情

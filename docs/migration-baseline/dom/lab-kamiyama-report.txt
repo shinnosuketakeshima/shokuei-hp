@@ -1,0 +1,71 @@
+main
+  div.lab-page
+    div.container
+      div
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | 神山研究室に戻る
+      div.lab-page__header
+        p.lab-page__eyebrow | 教員コラム / Special Report
+        h1.lab-page__title | 先輩が授業をサポート！ 総合科目「いちから学ぶnutrition science」SAレポート
+          br
+        p.lab-page__subtitle | 2026年5月15日 食物栄養学科 神山真澄 教授
+      div.lab-page__content
+        section.lab-section
+          p.lab-section__body | 共通科目のなかの総合科目 において、神山ゼミの3年生、4年生が をしています。
+            strong | 「いちから学ぶnutrition science」
+            strong | student assistant (SA)
+          p.lab-section__body | 「いちから学ぶnutrition science」は、共通科目ですので、食物栄養学科のほかにも他学科の学生も履修していま
+            strong | 栄養とは何か、糖質の構造と糖尿病について、脂質の構造と乳化の原理について
+          p.lab-section__body | 先輩達からは、 、などの意見をいただいており、毎年、ゼミ生にはSAをお願いしています。
+            strong | 学んしてきたことを復習できる、教えると理解がより深まる
+        section.lab-section
+          h2.lab-section__title | 体験しながら学ぶ授業スタイル
+          p.lab-section__body | この授業、おもしろくて、受け身の座学ではなく、 までする、ちょっと変わった授業スタイルです。
+            strong | ディスカッション、プレゼンテーション、工作
+          p.lab-section__body | 脂質の回では、SAの学生が を履修学生に見せ、酢 (水)と植物油 (油)がどのように混ざるのか、まずは目で確かめました。
+            strong | マヨネーズ作り
+            strong | リン脂質、レシチン
+          div.column-figure
+            img
+            p.column-figure__caption | SAによるマヨネーズ作りの実演。分離していた油と水が混ざる様子を観察します。
+          p.lab-section__body | マヨネーズは、 という乳化方法によりできていますが、それを工作で表したものをグループで作成し、提出してもらいました。
+            strong | 水中油滴型
+          div.column-figure
+            img
+            p.column-figure__caption | リン脂質やレシチンの構造を工作で表現。視覚的に理解を深めます。
+        section.lab-section
+          h2.lab-section__title | 知識を深め、応用に繋げる
+          p.lab-section__body | 最後は、糖質や脂質の摂りすぎは、なぜいけないか、ということの応用として、‘沖縄クライシス’について学びました。とても活発
+          p.lab-section__body | 授業している私も、学生から思わぬ発言にドキッとしたり、慌てて調べなおしたりすることもあります。基礎知識がたくさん身につく
+        section.lab-section
+          div.student-voice-box
+            div.student-voice-box__header
+              svg
+                path
+                path
+              h2.student-voice-box__title | SAの学生のコメント
+            div.student-voice-box__content
+              p.lab-section__body | 授業補佐（SA）という貴重な機会をいただき、毎回とても楽しく参加させていただいています。SAは「教える立場」ではあります
+              p.lab-section__body | 1年生にどうしたらわかりやすく伝わるかを考えながら関わることで、自分がこれまで学んできた知識を改めて整理し直すことができ
+              p.lab-section__body | この授業は、ただ知識を覚えるだけではなく、実際に“体験しながら学べる”ところが魅力だと感じています。履修学生の皆さんが「
+        section.lab-section
+          div.lab-section__card
+            h3 | 関連リンク
+            p | このコラムを執筆した神山先生の研究室についてはこちらをご覧ください。
+            a.btn.btn--primary | 神山研究室 紹介ページ
+        aside.related-reading
+          div.related-reading__links
+            p.related-reading__heading | あわせて読みたい
+            ul
+              li
+                a.related-reading__link | 学科の特色・カリキュラムを見る
+              li
+                a.related-reading__link | 在学生・卒業生の声を見る
+          p.related-reading__note | ※本サイトは十文字学園女子大学 食物栄養学科の補完サイトです。入試・出願に関する正式な情報は をご確認ください。
+            a | 学科公式サイト
+    style | .student-voice-box {
+          background: #f8fafc;
+        

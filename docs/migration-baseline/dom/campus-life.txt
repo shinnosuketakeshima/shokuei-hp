@@ -1,0 +1,65 @@
+main
+  div.campus-life-page
+    section.section
+      div.container
+        div.section__header
+          h1.section__title | キャンパスライフ
+          p.section__subtitle | Campus Life & Environment
+        p.campus-life__lead | 「食」と「健康」のプロを目指す4年間。 十文字学園女子大学 食物栄養学科での充実した毎日をご紹介します。
+        div.curriculum-roadmap
+          div.roadmap-nav
+            button.roadmap-tab.active | 1 年生
+            button.roadmap-tab | 2 年生
+            button.roadmap-tab | 3 年生
+            button.roadmap-tab | 4 年生
+          div.roadmap-content
+            div.roadmap-text
+              div
+                svg
+                span | 必要な基礎知識・技術を学ぶ
+              h3 | 1年生：基礎・発見
+              p | 大学生活のスタート。管理栄養士の基礎となる化学や生物、調理の基本を徹底的に身につけます。
+              div
+                p | 主な専門科目:
+                p | 食品学、公衆衛生学、人間栄養学概論、調理学実習I
+            div.roadmap-details
+              div
+                span | 前期
+                p | 4月に入学式とオリエンテーション。調理学実習Iでは「おいしく、楽しく」基礎を学びます。唾液アミラーゼの実験など、初めての
+              div
+                span | 後期
+                p | 食品中のうま味成分の測定など、より科学的な視点が増えていきます。データサイエンスの集中授業も始まり、管理栄養士としての役
+        div.campus-photos
+          figure.campus-photo
+            div.campus-photo__img-wrap
+              img.campus-photo__img
+            figcaption.campus-photo__caption | 大量調理実習
+          figure.campus-photo
+            div.campus-photo__img-wrap
+              img.campus-photo__img
+            figcaption.campus-photo__caption | 桑の葉あんぱんの試作
+          figure.campus-photo
+            div.campus-photo__img-wrap
+              img.campus-photo__img
+            figcaption.campus-photo__caption | 国家試験模擬試験
+          figure.campus-photo
+            div.campus-photo__img-wrap
+              img.campus-photo__img
+            figcaption.campus-photo__caption | 緑豊かなキャンパス、春
+        div.campus-life-extra
+          div.grid-2
+            div
+              div
+                svg
+                h3 | 新座キャンパスの環境
+              p | 埼玉県新座市の緑豊かな環境に位置するキャンパス。 池袋から急行で約20分と都心へのアクセスも良く、落ち着いた環境で学びに
+                a | 新座で一人暮らしする費用シミュレーター →
+            div
+              div
+                svg
+                h3 | 少人数教育の絆
+              p | 1学年78名の少人数教育。教員と学生の距離が近く、先生に名前で呼んでもらえる温かい雰囲気があります。 空きコマに図書館で
+    style | .roadmap-tab {
+          font-family: inherit;
+        }
+   

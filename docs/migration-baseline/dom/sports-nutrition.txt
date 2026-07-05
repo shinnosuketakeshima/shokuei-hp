@@ -1,0 +1,324 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学
+        h1.lab-page__title | スポーツ現場に近いところで、栄養の専門家を目指すなら。
+        p.lab-page__subtitle | 食物栄養学科・健康栄養学科の2学科と強豪サッカー部が同じキャンパスに。管理栄養士・栄養士資格を軸に、スポーツと関わるキャ
+      div.lab-page__content
+        section.lab-story-feature.lab-story-feature--forest
+          span.lab-story-feature__label | あなたのペースに合わせた学び
+            svg
+              path
+              path
+              path
+              circle
+          h2.lab-story-feature__title | あなたのペースに合ったスポーツ栄養の学びが待っています
+          p.lab-story-feature__lead | 「管理栄養士養成課程は臨床・病院中心で、スポーツとは関係ない」「スポーツ系を学ぶなら健康・体育の専門学科でないと」——そ
+            br
+            br
+            strong | 「スポーツ栄養学」「運動生理学」
+            strong | 「コーチング論／スポーツコーチング論」
+            strong | 健康栄養学科との同時開講（共通化予定）
+            strong | 副指導教員制度
+            br
+            br
+            strong | 副指導教員制度
+            br
+            br
+            strong | 選手として学ぶ
+            br
+            br
+            strong | 公認スポーツ栄養士だけではありません
+          div.lab-story-feature__tags
+            span | #管理栄養士
+            span | #栄養士
+            span | #スポーツ栄養学
+            span | #公認スポーツ栄養士
+            span | #副指導教員制度
+            span | #アスリートサポート
+            span | #2学科連携
+        section.lab-story-feature.lab-story-feature--terracotta
+          span.lab-story-feature__label | 本学独自の強み
+            svg
+              path
+              path
+              path
+              circle
+          h2.lab-story-feature__title | 、 スポーツ栄養の最前線。
+            em | 学校現場こそ
+            br
+          p.lab-story-feature__lead | スポーツ栄養と聞くと、多くの人がプロチームやアスリート個人へのサポートを思い浮かべます。しかし、栄養士・管理栄養士の資格
+            strong | 「保健体育の教員免許」
+            strong | 「栄養教諭免許」
+            br
+            br
+            br
+            br
+          div.lab-story-feature__tags
+            span | #栄養教諭
+            span | #保健体育教諭
+            span | #学校給食
+            span | #ジュニア期の栄養教育
+            span | #体育教員との連携
+        section.lab-section
+          h2.lab-section__title | 十文字学園女子大学でのスポーツ栄養との関わり方
+          p.lab-section__body | 食物栄養学科の学生が、スポーツと栄養の接点を持てる3つの切り口があります。
+          div.sn-evidence-cards
+            div.sn-evidence-card
+              span.sn-evidence-card__dept | 食物栄養学科
+              div.sn-evidence-card__icon
+                svg
+              h3.sn-evidence-card__title | 管理栄養士の確かな基礎から、スポーツの現場へ
+              p.sn-evidence-card__body | 管理栄養士養成課程として医療・臨床の深い知識を身につけながら、学科内のスポーツ栄養学・運動生理学を並行履修。さらに「コー
+            div.sn-evidence-card
+              span.sn-evidence-card__dept | 副指導教員制度
+              div.sn-evidence-card__icon
+                svg
+              h3.sn-evidence-card__title | 健康栄養学科の専門教員のゼミで、スポーツを学ぶ
+              p.sn-evidence-card__body | 食物栄養学科に在籍したまま、副指導教員制度を活用することで、健康栄養学科のスポーツ専門教員のゼミ活動に参加できます。公認
+            div.sn-evidence-card
+              span.sn-evidence-card__dept | 学生アスリートとして
+              div.sn-evidence-card__icon
+                svg
+              h3.sn-evidence-card__title | 選手として学び、競技経験を専門性に変える
+              p.sn-evidence-card__body | 強豪女子サッカー部が同じキャンパスで活動中。選手として在学しながら栄養・食の専門教育を受け、卒業後はその競技経験を活かし
+        section.lab-section
+          h2.lab-section__title | スポーツ関連科目一覧
+          p.lab-section__body | スポーツ栄養学・運動生理学は食物栄養学科の選択科目として設置。コーチング論（スポーツコーチング論）は健康栄養・食物栄養の
+            strong | 2学科合同で開講
+          div.sn-courses-grid
+            div.sn-course-card.sn-course-card--forest
+              div.sn-course-card__meta
+                span | 3年次・後期
+                span | 2単位
+                span | 講義
+              span.sn-course-card__badge | 食物栄養関連科目（選択）
+              h3.sn-course-card__name | スポーツ栄養学
+              p.sn-course-card__overview | 基礎的な栄養学を土台に、スポーツにおける身体づくり・コンディショニング・競技パフォーマンス向上のための科学的根拠に基づい
+              p.sn-course-card__topics-label | 主な授業トピック
+              div.sn-course-card__topics
+                span | エネルギーニーズと身体組成評価
+                span | たんぱく質・糖質・脂質摂取
+                span | 骨の健康と貧血予防
+                span | ビタミンとコンディショニング
+                span | 水分補給
+                span | 増量・減量のウエイトコントロール
+                span | サプリメント摂取の考え方
+                span | 試合前の食事調整
+                span | ジュニア選手の栄養
+                span | 日常の実践的食事管理
+            div.sn-course-card.sn-course-card--terracotta
+              div.sn-course-card__meta
+                span | 3年次・前期
+                span | 2単位
+                span | 講義＋実技・実験
+              span.sn-course-card__badge | 専門基礎領域（選択）
+              h3.sn-course-card__name | 運動生理学
+              p.sn-course-card__overview | 運動が身体に及ぼす影響を生理学の観点から学ぶ。筋・神経・循環・呼吸・代謝の各系統が運動によってどう変化するかを理解し、実
+              p.sn-course-card__topics-label | 主な授業トピック
+              div.sn-course-card__topics
+                span | 筋の構造とATP産生3ルート
+                span | 筋線維の種類と筋力
+                span | 運動と循環・呼吸
+                span | 最大酸素摂取量・無酸素性作業閾値
+                span | 呼吸循環応答【実技・実験】
+                span | 運動とホルモン・代謝調節
+                span | 筋疲労のメカニズム
+                span | 体温調節と熱中症
+                span | 運動と栄養・スポーツ選手の食事
+                span | 運動処方の実際
+            div.sn-course-card.sn-course-card--forest.sn-course-card--wide
+              div.sn-course-card__meta
+                span | 前期
+                span | 2単位
+                span | 講義・演習
+              span.sn-course-card__badge | 2学科 同時開講（選択）
+              h3.sn-course-card__name | コーチング論 ／ スポーツコーチング論
+              p.sn-course-card__overview | 健康栄養学科「コーチング論」・食物栄養学科「スポーツコーチング論」として2学科合同で開講される実践的科目。人を育てる「コ
+              p.sn-course-card__topics-label | 主な授業トピック
+              div.sn-course-card__topics
+                span | コーチングとティーチングの違い
+                span | 成長過程と指導方法の選択
+                span | 効果的なコーチングの言葉
+                span | 勝利至上主義の問題点
+                span | 体罰・暴力・ハラスメント
+                span | プレーヤーズセンタード
+                span | アントラージュ・Well Being
+                span | 日米スポーツ文化の比較
+                span | 成長期・女性アスリートへの指導
+                span | 組織運営とリーダーシップ演習
+        section.lab-section
+          h2.lab-section__title | スポーツと栄養をつなぐ、4つのルート
+          p.lab-section__body | どの立場からスタートしても、スポーツに関わる栄養の専門家を目指せます。在学中だけでなく、卒業後・社会人からのステップアッ
+          div.sn-routes-grid
+            div.sn-route-card
+              span.sn-route-card__dept | 食物栄養学科
+              h3.sn-route-card__title | 管理栄養士の土台から、スポーツ栄養へ
+              div.sn-route-card__steps
+                div.sn-route-step
+                div.sn-route-step
+                div.sn-route-step.sn-route-step--optional
+                div.sn-route-step
+                div.sn-route-step
+            div.sn-route-card
+              span.sn-route-card__dept | 健康栄養学科
+              h3.sn-route-card__title | スポーツ栄養の専門家として
+              div.sn-route-card__steps
+                div.sn-route-step
+                div.sn-route-step
+                div.sn-route-step
+                div.sn-route-step
+                div.sn-route-step
+                div.sn-route-step.sn-route-step--optional
+            div.sn-route-card
+              span.sn-route-card__dept | 学生アスリートルート
+              h3.sn-route-card__title | 競技経験を、確かな専門性に変える
+              div.sn-route-card__steps
+                div.sn-route-step
+                div.sn-route-step
+                div.sn-route-step
+                div.sn-route-step.sn-route-step--optional
+                div.sn-route-step
+            div.sn-route-card
+              span.sn-route-card__dept | 社会人からのルート
+              h3.sn-route-card__title | 現場での経験を重ねながら、公認スポーツ栄養士へ
+              div.sn-route-card__steps
+                div.sn-route-step
+                div.sn-route-step.sn-route-step--optional
+                div.sn-route-step
+        section.lab-section
+          h2.lab-section__title | スポーツ栄養の知識で広がるキャリア
+          p.lab-section__body | 管理栄養士・栄養士としての専門性に、スポーツ・健康科学の知識を組み合わせることで、 多様なキャリアパスが開かれます。公認
+          div.sn-career-grid
+            div.sn-career-card
+              div.sn-career-card__icon
+                svg
+              h3.sn-career-card__field | 医療機関・病院
+              p.sn-career-card__examples | IMSグループ、埼玉医科大学病院、東京慈恵会医科大学附属病院 等
+              p.sn-career-card__synergy | スポーツ整形外科・リハビリ科での「メディカルスポーツ管理栄養士」として、術後復帰やアスリートの機能回復を医学と栄養の両面
+            div.sn-career-card
+              div.sn-career-card__icon
+                svg
+              h3.sn-career-card__field | スポーツ・フィットネス産業
+              p.sn-career-card__examples | アシックスジャパン、コナミスポーツ、東急スポーツオアシス、ルネサンス 等
+              p.sn-career-card__synergy | 生化学・栄養評価に基づいた個別カウンセリングができる高付加価値人材として、スポーツ・健康産業の第一線で活躍。
+            div.sn-career-card
+              div.sn-career-card__icon
+                svg
+              h3.sn-career-card__field | 学校・スポーツ教育現場
+              p.sn-career-card__examples | 栄養教諭（さいたま市・清瀬市 等）、学校給食管理、部活動への栄養支援 等
+              p.sn-career-card__synergy | 体育教員と連携しながら、運動部の選手へのコンディショニング指導や食育を推進。スポーツ栄養の知識は、教育現場でこそ日常的に
+            div.sn-career-card
+              div.sn-career-card__icon
+                svg
+              h3.sn-career-card__field | 食品・ヘルスケア開発
+              p.sn-career-card__examples | キユーピー醸造、グルメデリカ、プライムデリカ、紀文食品 等
+              p.sn-career-card__synergy | スポーツパフォーマンス向上・疲労回復を目的とした機能性食品・栄養補助食品の企画開発をエビデンスに基づき主導。
+        section.lab-section
+          h2.lab-section__title | スポーツ栄養の知識は、アスリートだけのものではない
+          p.lab-section__body | 「速く走るため」「強くなるため」——スポーツ栄養は、競技者だけのための知識ではありません。エネルギー代謝・身体組成・コン
+            strong | 幼児期から高齢期まで、生涯にわたる幅広い対象者の健康増進・身体づくりに応用できる、汎用性の高い知識
+            br
+            br
+            strong | 栄養の専門家としての土台を、より厚く、より実践的にすること
+        section.lab-section
+          h2.lab-section__title | 健康栄養学科のスポーツ系教員
+          p.lab-section__body | 以下は健康栄養学科に所属するスポーツ関連の教員です。「コーチング論／スポーツコーチング論」は食物栄養・健康栄養の のため
+            strong | 2学科同時開講
+            strong | 副指導教員制度
+          div.sn-faculty-grid
+            div.sn-faculty-card
+              div.sn-faculty-card__top
+                p.sn-faculty-card__dept | 健康栄養学科
+                p.sn-faculty-card__course | 担当科目： 栄養指導論／応用栄養学
+                h3.sn-faculty-card__name | 村田 浩子 教授
+                p.sn-faculty-card__degree | 博士（スポーツ科学）早稲田大学大学院
+              div.sn-faculty-card__badges
+                span | 日本スポーツ栄養学会 所属
+                span | 大学院 研究指導担当
+              div.sn-faculty-card__fields
+                span | 健康スポーツ科学
+                span | スポーツ栄養学
+                span | 栄養アセスメント
+                span | 競技者の食事調査
+              p.sn-faculty-card__message | 競技者を対象とした食事調査を中心に、栄養アセスメント研究の第一人者として国内外の学会で多数の発表を重ねる。本学大学院（食
+            div.sn-faculty-card.sn-faculty-card--featured
+              div.sn-faculty-card__top
+                p.sn-faculty-card__dept | 健康栄養学科
+                p.sn-faculty-card__course | 担当科目： コーチング論
+                h3.sn-faculty-card__name | ヨーコ ゼッターランド 講師
+                p.sn-faculty-card__degree | 元アメリカ女子バレーボール代表 ／ 選手歴18年・指導歴25年
+              div.sn-faculty-card__badges
+                span | バルセロナ五輪 銅メダル（1992）
+                span | アトランタ五輪 7位入賞（1996）
+              div.sn-faculty-card__career
+                p.sn-faculty-card__career-item | 1969年 アメリカ生まれ（日本名：堀江陽子）。母は元バレーボール日本代表
+                p.sn-faculty-card__career-item | 1975年 6歳で来日。東京の中学・高校でバレーボールに打ち込み、全日本ジュニア代表としてアジアジュニア選手権優勝
+                p.sn-faculty-card__career-item | 早稲田大学でチームを関東大学リーグ6部から2部優勝へ導く
+                p.sn-faculty-card__career-item | 単身渡米してアメリカ代表トライアウトに合格。バルセロナ五輪（1992年・銅メダル）、アトランタ五輪（1996年・7位入賞
+                p.sn-faculty-card__career-item | 1997年 ダイエーオレンジアタッカーズ（現・久光製薬スプリングス）とプロ契約、1999年引退
+                p.sn-faculty-card__career-item | 2013〜2017年 嘉悦大学女子バレーボール部監督
+                p.sn-faculty-card__career-item | 2019〜2024年 日本女子体育大学体育学部 准教授・バレーボール部副部長
+                p.sn-faculty-card__career-item | 2024年〜 アメリカ女子プロリーグ LOVBアトランタ アシスタントコーチ
+              div.sn-faculty-card__fields
+                span | コーチング論
+                span | 女性とスポーツ
+                span | スポーツ組織マネジメント
+                span | 日米スポーツ文化
+              p.sn-faculty-card__message | 選手歴18年・指導歴25年の実務経験をもとに、「コーチングとティーチングの違い」「グッドコーチ像」「体罰・ハラスメントの
+          div.sn-lecturer-list
+            div.sn-lecturer-list__item
+              span.sn-lecturer-list__course | スポーツ栄養学
+              span.sn-lecturer-list__person
+                span.sn-lecturer-list__name | 石津 達野
+                span.sn-lecturer-list__role | 非常勤講師
+            div.sn-lecturer-list__item
+              span.sn-lecturer-list__course | 運動生理学
+              span.sn-lecturer-list__person
+                span.sn-lecturer-list__name | 長浜 尚史
+                span.sn-lecturer-list__role | 非常勤講師
+          div.sn-dept-courses
+            p.sn-dept-courses__heading | その他のスポーツ・健康運動系教員
+            div.sn-dept-course-list
+              div.sn-dept-course-item
+                p.sn-dept-course-item__name | 徳野 裕子 准教授
+                p.sn-dept-course-item__meta | 担当： 公衆栄養学（演習・実習）
+                p.sn-dept-course-item__desc | 現役の公認スポーツ栄養士として、実際にスポーツ選手への栄養サポート活動を重ねてきた実践家。健康栄養学科の必修科目を担当し
+              div.sn-dept-course-item
+                p.sn-dept-course-item__name | 飯田 路佳
+                p.sn-dept-course-item__meta | 担当： 健康・運動・栄養の科学、スポーツ実技・指導法Ａ
+                p.sn-dept-course-item__desc | 地域住民への健康づくり支援・学生からトップアスリートまでのコンディショニング管理の実務経験をもとに指導。運動プログラムの
+              div.sn-dept-course-item
+                p.sn-dept-course-item__name | 若葉 京良
+                p.sn-dept-course-item__meta | 担当： 健康・運動・栄養の科学、スポーツ実技・指導法Ａ、運動生理学（生理学を含む）
+                p.sn-dept-course-item__desc | 運動生理学を中心に、解剖学・生理学の基礎から競技パフォーマンス向上まで体系的に指導。健康運動指導士資格取得に必須の科目を
+              div.sn-dept-course-item
+                p.sn-dept-course-item__name | 和田 左千子
+                p.sn-dept-course-item__meta | 担当： スポーツ実技・指導法Ａ（水中運動担当）
+                p.sn-dept-course-item__desc | アクアビクス・水中ウォーキングなど水中運動の指導法を専門とする。高齢者から若年層まで対応した安全で効果的な運動プログラム
+              div.sn-dept-course-item
+                p.sn-dept-course-item__name | 神田 俊平
+                p.sn-dept-course-item__meta | 担当： 健康スポーツビジネス論（全学科対象・4年）
+                p.sn-dept-course-item__desc | オリンピック・プロリーグ・放映権・地域スポーツ振興など、スポーツの社会的価値とビジネス構造を多角的に解説。食物栄養・健康
+        section.lab-section
+          div.sn-cta-banner
+            p.sn-cta-banner__eyebrow | 十文字学園女子大学
+              svg
+                path
+                path
+                path
+                circle
+            h2.sn-cta-banner__title | 2学科と強豪サッカー部が、 同じキャンパスで共に学んでいる。
+              br
+            p.sn-cta-banner__body | 食物栄養学科・健康栄養学科、どちらからでもスポーツと栄養の接点を持てる環境が整っています。本物のアスリートとともに現場で
+            div.sn-cta-banner__buttons
+              a.sn-cta-btn.sn-cta-btn--primary | 食物栄養学科について詳しく
+                svg
+              a.sn-cta-btn.sn-cta-btn--secondary | 健康栄養学科について詳しく
+                svg

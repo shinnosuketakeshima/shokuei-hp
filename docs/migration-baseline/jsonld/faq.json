@@ -1,0 +1,202 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": "https://shokuei-hp.web.app/#organization",
+    "name": "十文字学園女子大学 食物栄養学科",
+    "alternateName": "Jumonji University Food and Nutrition",
+    "url": "https://shokuei-hp.web.app/",
+    "description": "埼玉県新座市にある十文字学園女子大学 食物栄養学科（人間生活学部）の非公式情報メディア。4年間を通じた実践的なカリキュラム、国家試験合格率を支えるサポート体制、最新の研究室情報など、食と栄養のプロフェッショナルを目指す高校生に向けたリアルな学びの魅力を発信します。",
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学",
+      "url": "https://www.jumonji-u.ac.jp/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "埼玉県",
+        "addressLocality": "新座市"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "埼玉県新座市菅沢2-1-28",
+      "addressLocality": "新座市",
+      "addressRegion": "埼玉県",
+      "postalCode": "352-8510",
+      "addressCountry": "JP"
+    },
+    "telephone": "+81-48-481-1111",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "35.8193",
+      "longitude": "139.6291"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "JP"
+    },
+    "inLanguage": "ja-JP",
+    "availableLanguage": "ja"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "よくある質問 | 十文字学園女子大学 食物栄養学科",
+    "description": "食物栄養学科への入学・資格・就職・国家試験対策についてよくある質問をまとめました。管理栄養士の資格取得方法、第一種衛生管理者のダブルライセンス、就職率100%を支えるサポート体制など、受験生の疑問にお答えします。",
+    "url": "https://shokuei-hp.web.app/faq",
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学 食物栄養学科",
+      "url": "https://shokuei-hp.web.app/"
+    },
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "食物栄養学科の定員は何名ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "定員は78名の少人数制です。教員が一人ひとりの学習状況を早期に把握し、入学から卒業・就職まで親身にサポートします。先生に名前で呼ばれるほどの距離感が特徴で、国家試験対策でも個別フォローが可能です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "4年間のカリキュラムの特徴は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1年次の基礎固めから4年次の国試対策まで段階的に深める体系的なカリキュラムです。給食経営管理実習（150食の実際の給食運営）、病院・福祉施設での臨地実習、地域連携活動など、現場で役立つ実践力を養います。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "給食経営管理実習とはどのような授業ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "実際の給食施設を使い、学生自身が150食規模の給食を一から企画・調理・提供する授業です。メニュー設計から食材の発注、衛生管理、原価計算まで、給食現場のすべてを体験できる集大成となる実習です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "十文字学園女子大学はどこにありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "埼玉県新座市菅沢2-1-28にあります。JR武蔵野線・新座駅から徒歩10〜15分でアクセスできます。東京都内や埼玉各地から通いやすい立地です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "管理栄養士の資格は取得できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "卒業と同時に管理栄養士国家試験の受験資格が得られます。国家試験に合格することで管理栄養士の資格を取得できます。医療・行政・企業など幅広い分野で活躍できる国家資格です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "第一種衛生管理者とはどんな資格で、なぜ全国唯一なのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第一種衛生管理者は従業員50名以上の事業場への配置が法律で義務付けられた国家資格です。管理栄養士養成課程でこの資格を卒業と同時に取得できるのは全国の大学で本学のみです。管理栄養士との「ダブルライセンス」が企業への就職に大きく有利に働きます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "卒業と同時に取得できる資格は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "栄養士免許と第一種衛生管理者は卒業と同時に取得できます。管理栄養士は卒業後に国家試験合格が必要です。栄養教諭一種免許状は所定の教職課程修了で取得できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "栄養教諭になることはできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "所定の教職課程を修了することで栄養教諭一種免許状を取得できます。学校に配属され、児童生徒の食習慣改善や食育を担う教育職です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "管理栄養士国家試験の合格率はどのくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1年次からの早期意識づけ、4年次の年8回模擬試験、外部講師による特別講義など6段階のサポート体制で国家試験合格をめざします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "国家試験対策はいつから始まりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "「4年生からでは遅い」という方針のもと、入学直後の1年次から学習習慣の形成と基礎固めを開始します。3年次の夏・冬に模擬試験を実施し、4年次は年8回の模擬試験で本番力を高めます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "4年次の模擬試験は何回ありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "4年次には年8回の模擬試験を実施します。本番さながらの環境で繰り返し演習し、得点力と時間管理の精度を高めます。4年7月の模試で「130点突破」を全員の目標として明確に設定しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "国家試験に向けて個別サポートはありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "少人数教育（定員78名）の強みを活かし、教員が一人ひとりの学習状況を把握して個別にサポートします。4年次には就職活動・国家試験対策・卒業研究の三本柱を、教員が個別フォローしながら進めます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "就職率はどのくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "就職率100%（2025年3月卒業生実績）を達成しています。少人数教育と1年次からのキャリア支援、そして管理栄養士＋衛生管理者のダブルライセンスが高い就職実績を支えています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "卒業生の主な就職先はどこですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2025年3月卒業生の主な就職先は、保育園（25名）・調剤薬局・ドラッグストア（21名）・病院・クリニック（18名）・給食受託会社（14名）・食品メーカー（11名）などです。東京都・埼玉県を中心に関東圏全域で活躍しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "就職サポートはいつから始まりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1年次から就職サポートを開始します。ガイダンスや先輩との交流でキャリアを意識し、2年次には現場実習、3年次には個別進路相談と業界研究会、4年次には教員が一人ひとりの状況に合わせた個別フォローを行います。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "一般企業（食品以外）への就職もできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。一般企業（金融・物流ほか）に11名、公務員・自衛官に4名が就職しています（2025年3月実績）。第一種衛生管理者の資格は50名以上の事業場への配置が義務付けられているため、幅広い業種の一般企業でも強みになります。"
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://shokuei-hp.web.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "よくある質問",
+        "item": "https://shokuei-hp.web.app/faq"
+      }
+    ]
+  }
+]

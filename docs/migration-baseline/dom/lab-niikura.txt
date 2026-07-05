@@ -1,0 +1,180 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 食物栄養学科
+        h1.lab-page__title | 新倉 量太 研究室
+        p.lab-page__subtitle | 医療×AI×腸内細菌。データサイエンスで「病気にならない食生活」をデザインする。
+      div.lab-page__content
+        section.lab-story-feature
+          span.lab-story-feature__label | FEATURE STORY
+            svg
+              path
+              path
+              path
+              circle
+          h2.lab-story-feature__title | 医療×AI×腸内細菌。 データサイエンスで をデザインする。
+            br
+            br
+            em | 「病気にならない食生活」
+          p.lab-story-feature__lead | 豊富な臨床経験を活かしながら、 AIやデータサイエンスを駆使して胃腸の病気やガンの予防に挑む新倉研究室。 私たちの体の中
+            strong | 「腸内細菌」
+            strong | 「食」
+          div.lab-story-feature__tags
+            span | #腸内細菌
+            span | #AI診断
+            span | #大規模データ解析
+            span | #ガン予防
+            span | #食と医療の融合
+        section.lab-section
+          h2.lab-section__title | 研究テーマ：最先端のテクノロジーで「食と健康」に挑む
+          p.lab-section__body | 新倉研究室の研究テーマは多岐にわたりますが、すべて共通する問いがあります—— 「どうすれば、病気を防げるのか？」。 腸内
+          div.lab-theme-list.lab-theme-list--terracotta
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 01
+                h3 | 腸内細菌のナゾを解く！「ピロリ菌」がいなくなった後のガンの予防法
+                p | 胃ガンの原因として知られるピロリ菌。でも、菌を除去した後もガンになる人がいます。新倉研究室では、お腹の中の細菌（腸内細菌
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 02
+                h3 | AI（人工知能）が病気を見つける！？医療のDXを加速させる研究
+                p | 膨大な医療データや内視鏡の画像を、AI（機械学習）を使って分析します。医師の経験だけに頼らず、AIの力を借りて病気をいち
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 03
+                h3 | 「大規模データ」で病気のリスクを予測する！臨床疫学の最前線
+                p | 数万人規模のコホート研究や多施設データベースを活用し、胃腸の出血やガンのリスク因子を統計的に特定します。「なぜその人が病
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 04
+                h3 | 食べ物で病気を防ぐ！「化学予防（ケモプリベンション）」の研究
+                p | 特定の食品成分や薬が、胃腸のガン発生をどう抑制できるかを研究します。日々の食生活が実は最強の「予防薬」になり得ることを、
+        section.lab-section
+          h2.lab-section__title | 知識コラム：「腸内細菌」ってそもそも何者？
+          p.lab-section__body | 私たちの腸には、約100兆個もの細菌が住んでいます。この「腸内細菌叢（マイクロバイオーム）」が 健康・免疫・さらにはガン
+          div
+            div
+              p | 腸内細菌が多様な状態（健康）
+              ul
+                li | 免疫システムが正常に機能する
+                li | ガンや炎症のリスクが低い
+                li | 消化・栄養吸収が効率的
+                li | 腸と脳の連絡（腸脳軸）が良好
+            div
+              p | 腸内細菌が乱れた状態（ディスバイオーシス）
+              ul
+                li | 炎症性腸疾患・大腸ガンのリスク上昇
+                li | ピロリ菌除菌後の胃ガン発症リスク残存
+                li | 免疫機能の低下
+                li | 代謝異常・肥満との関連
+          p | 新倉研究室の研究は、腸内細菌と「食・病気・予防」の関係を科学的に解明することを目指しています。
+        section.lab-section
+          h2.lab-section__title | 新倉ラボで身につくこと・出会えるもの
+          p.lab-section__body | 「医師でありながら研究者」という先生のユニークな立場が、このゼミを唯一無二にしています。 臨床の現場と研究の最前線、両方
+          div.lab-life-highlights.lab-life-highlights--terracotta
+            p.lab-life-highlights__lead | 新倉ラボの「ここがユニーク」
+            ul
+              li
+                svg
+                div
+              li
+                svg
+                div
+              li
+                svg
+                div
+              li
+                svg
+                div
+        section.lab-section
+          div
+            p | こんな人に向いています
+            ul
+              li
+                svg
+                span | データを使って客観的に「食と健康」を考えたい人
+              li
+                svg
+                span | 最新のテクノロジー（AI・機械学習）に興味がある人
+              li
+                svg
+                span | 医療や病気の予防に関心がある人
+              li
+                svg
+                span | 「なぜ？」を大切にし、論文を読んだり統計を学んだりすることが好きな人
+              li
+                svg
+                span | 将来、管理栄養士として医療・研究・クリニックで活躍したい人
+        section.lab-section
+          div.lab-quote-card
+            svg
+              path
+              path
+            p | 腸内細菌と食と医療—— を、 データの海から一緒に探しませんか？
+              br
+              em | まだ誰も知らない「健康の答え」
+              br
+            footer.lab-quote-card__author
+              span.lab-quote-card__role | 新倉研究室からのメッセージ
+              span.lab-quote-card__name | — R. Niikura Lab
+        section.lab-section
+          h2.lab-section__title | 教員プロフィール
+          div.lab-media-profile
+            div.lab-media-profile__header
+              div.lab-media-profile__name
+                span.lab-media-profile__role | 十文字学園女子大学 食物栄養学科
+                h3 | 新倉 量太 教授
+              div.lab-media-profile__badges
+                span | 消化器内視鏡専門医
+                span | 臨床研究医
+                span | データサイエンス
+            p.lab-media-profile__intro | 胃腸の出血・ガン発症・腸内細菌を専門とする消化器内科医・臨床研究者。 大規模コホート研究や無作為化比較試験を中心に、リス
+            div.lab-media-profile__achievements
+              div.lab-media-profile__box
+                h4 | 専門分野
+                ul
+              div.lab-media-profile__box
+                h4 | 主な掲載ジャーナル
+                ul
+            div.lab-media-profile__message
+              p | 「十文字学園女子大学で、次世代の栄養・医療の担い手を育てたい。
+                br
+                strong | 研究・教育、すべてのフィールドで、データと食が人を救う世界を一緒に作りましょう。」
+        section.lab-section
+          div.lab-data-archive
+            h2.lab-data-archive__title | Researcher Records
+            details
+              summary | 主要論文・学術業績を表示する
+              div
+                p | 査読論文（代表的なもの）
+                ul
+            div.lab-data-archive__grid
+              div
+                h4 | 専門分野
+                div.lab-data-archive__tags
+              div
+                h4 | 掲載学術誌
+                div.lab-data-archive__tags
+        section.lab-section
+          div
+            h2 | Contact & Academic Links
+            p | 十文字学園女子大学 人間生活学部 食物栄養学科
+            div
+              a | rniikura@jumonji-u.ac.jp
+                svg
+              a | 業績ページ（十文字学園女子大学）
+                svg

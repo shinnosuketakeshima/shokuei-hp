@@ -1,0 +1,46 @@
+main
+  section.features
+    div.container
+      div.features__header
+        p.eyebrow | 学科の特色 / Features
+        h1.section-title | 食物栄養学科が選ばれる 3つの理由
+          br
+    div.features__grid
+      article.feature-card
+        span.feature-card__ghost | 01
+        div.feature-card__icon
+          svg
+            path
+            circle
+        p.feature-card__num | 01
+        h3.feature-card__title | 全国唯一のダブルライセンス
+        p.feature-card__body | 管理栄養士養成課程の中で「第一種衛生管理者」の国家資格を卒業と同時に取得できるのは、全国の大学で本学のみ。50名以上の事
+        p.feature-card__teacher-quote | 「就活のとき、衛生管理者の資格が話のきっかけになって、面接がスムーズに進んだ学生が多いです。」
+          br
+          span.feature-card__teacher-name | ─ 担当教員より
+      article.feature-card
+        span.feature-card__ghost | 02
+        div.feature-card__icon
+          svg
+            path
+            path
+            path
+            circle
+        p.feature-card__num | 02
+        h3.feature-card__title | 定員78名の少人数教育
+        p.feature-card__body | 少人数だからこそできる、きめ細かな指導。教員が一人ひとりの学習状況を早期に把握し、入学から卒業・就職まで親身にサポートし
+        p.feature-card__teacher-quote | 「少人数だからこそ、名前で呼ぶ関係が生まれます。それが, ここの一番の強みだと思っています。」
+          br
+          span.feature-card__teacher-name | ─ 担当教員より
+      article.feature-card
+        span.feature-card__ghost | 03
+        div.feature-card__icon
+          svg
+            path
+            path
+        p.feature-card__num | 03
+        h3.feature-card__title | 実践力を育む4年間のカリキュラム
+        p.feature-card__body | 1年次の基礎から4年次の国試対策まで段階的に深める体系的なカリキュラム。給食経営管理実習・臨地実習・地域連携活動など、現
+        p.feature-card__teacher-quote | 「実習で初めて現場に立ったとき、授業の意味がわかった、とよく言われます。それがうれしいんです。」
+          br
+          span.feature-card__teacher-name | ─ 担当教員より

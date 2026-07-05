@@ -1,0 +1,46 @@
+main
+  div.lab-page
+    div.container
+      div
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | 学生の声・コラムに戻る
+      div.lab-page__header
+        p.lab-page__eyebrow | 学生コラム / Student Column
+        h1.lab-page__title | チーズに"王様"と"女王様"がいた！ 食育論セミナーレポート
+          br
+        p.lab-page__subtitle | 2026年5月 食物栄養学科 学生ライター
+      div.lab-page__content
+        section.lab-section
+          p.lab-section__body | 「チーズの王様って、どのチーズか知ってる？」
+          p.lab-section__body | そんな問いかけから始まった今回のセミナー。食物栄養学科の専門科目「食育論」の授業に、雪印メグミルク株式会社の方々を講師と
+        section.lab-section
+          h2.lab-section__title | 1. 「骨」の健康は、20歳までに決まる？
+          p.lab-section__body | 講義の冒頭で紹介されたのは、私たちの「骨」についての衝撃的なお話。 実は、骨の量は20歳前後でピークを迎え、その後は維持
+          p.lab-section__body | チーズは、日本人に不足しがちなカルシウムがぎゅっと凝縮された、まさに「食べるサプリメント」。 しかも、チーズに含まれるカ
+        section.lab-section
+          h2.lab-section__title | 2. チーズの「王様」と「女王様」
+          p.lab-section__body | さて、冒頭のクイズの答えです。
+          div.lab-section__grid
+            div.lab-section__card
+              h3 | チーズの王様：ロクフォール
+              p | フランス産のブルーチーズ。強烈な香りと塩気があり、歴史と格式を感じさせる存在です。
+            div.lab-section__card
+              h3 | チーズの女王様：カマンベール
+              p | 白カビに包まれた、クリーミーでマイルドな味わい。誰もが知るその優雅な姿から女王様と呼ばれます。
+          p.lab-section__body | ちなみに、ナポレオンがこの「女王様」を大変気に入り、わざわざ挨拶（キス）をしたという伝説もあるとか。 チーズにまつわる歴
+        section.lab-section
+          h2.lab-section__title | 3. 五感で楽しむ！贅沢な試食体験
+          p.lab-section__body | そしてお待ちかねの試食タイム！ 今回は、雪印メグミルクさんの人気商品である「さけるチーズ」「6Pチーズ」「カマンベールチ
+          ul.lab-publication-list
+            li | 熟練の技術で糸状の組織を作ることで、あの独特の食感が生まれるそうです。「細くさくのが好き！」という学生もいれば、一気に豪
+              strong | 「さけるチーズ」の科学：
+            li | 外側の白カビ部分と、内側のトロッとした部分の違いをじっくり観察。温度による風味の変化も体験しました。
+              strong | カマンベールの変化：
+          p.lab-section__body | 「高タンパクで低糖質」というチーズの機能性を学びながら、その美味しさを再発見する。 管理栄養士を目指す私たちにとって、「
+        section.lab-section
+          h2.lab-section__title | 編集後記
+          p.lab-section__body | 企業の最前線で働く方から直接お話を伺うことで、教科書だけでは学べない「食の魅力」に触れることができました。 「何を食べる
+          p.lab-section__body | （今回のセミナーで、学生記者の冷蔵庫にはチーズのストックが3倍に増えました。）

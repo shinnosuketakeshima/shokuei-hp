@@ -1,0 +1,349 @@
+{
+  "title": "スポーツ栄養 | 十文字学園女子大学",
+  "items": [
+    {
+      "tag": "link",
+      "attrs": {
+        "as": "image",
+        "href": "/top.jpg",
+        "rel": "preload"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "crossorigin": "",
+        "href": "/assets/index-C5Rykk35.css",
+        "rel": "stylesheet"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "crossorigin": "",
+        "href": "https://fonts.gstatic.com",
+        "rel": "preconnect"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "href": "/favicon.svg",
+        "rel": "icon",
+        "type": "image/svg+xml"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "href": "https://fonts.googleapis.com",
+        "rel": "preconnect"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "href": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;700;900&display=swap",
+        "rel": "stylesheet"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "href": "https://shokuei-hp.web.app/",
+        "rel": "canonical"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "href": "https://shokuei-hp.web.app/sports-nutrition",
+        "hreflang": "ja-JP",
+        "rel": "alternate"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "href": "https://shokuei-hp.web.app/sports-nutrition",
+        "hreflang": "ja",
+        "rel": "alternate"
+      }
+    },
+    {
+      "tag": "link",
+      "attrs": {
+        "href": "https://shokuei-hp.web.app/sports-nutrition",
+        "rel": "canonical"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "charset": "UTF-8"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "_NqjypcGRuI7BuwwhHrvPEIFz9cmWmGblMYnmiSnuhE",
+        "name": "google-site-verification"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "1200",
+        "property": "og:image:width"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "35.8193, 139.6291",
+        "name": "ICBM"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "35.8193, 139.6291",
+        "name": "ICBM"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "35.8193;139.6291",
+        "name": "geo.position"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "35.8193;139.6291",
+        "name": "geo.position"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "630",
+        "property": "og:image:height"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "https://shokuei-hp.web.app/",
+        "property": "og:url"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "https://shokuei-hp.web.app/og-image.jpg",
+        "name": "twitter:image"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "https://shokuei-hp.web.app/og-image.jpg",
+        "name": "twitter:image"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "https://shokuei-hp.web.app/og-image.jpg",
+        "property": "og:image"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "https://shokuei-hp.web.app/og-image.jpg",
+        "property": "og:image"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "https://shokuei-hp.web.app/sports-nutrition",
+        "property": "og:url"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "ja_JP",
+        "property": "og:locale"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "ja_JP",
+        "property": "og:locale"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "JP-11",
+        "name": "geo.region"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "JP-11",
+        "name": "geo.region"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "summary_large_image",
+        "name": "twitter:card"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "summary_large_image",
+        "name": "twitter:card"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "website",
+        "property": "og:type"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "website",
+        "property": "og:type"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "width=device-width, initial-scale=1.0",
+        "name": "viewport"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "スポーツ栄養 | 十文字学園女子大学",
+        "name": "twitter:title"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "スポーツ栄養 | 十文字学園女子大学",
+        "property": "og:title"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "管理栄養士・栄養士を目指す学生のリアルな声と研究室の素顔。十文字学園女子大学食物栄養学科の学びを在学生・教員が伝える補完情報サイト。",
+        "name": "description"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "管理栄養士・栄養士を目指す学生のリアルな声と研究室の素顔。十文字学園女子大学食物栄養学科の学びを在学生・教員が伝える補完情報サイト。",
+        "name": "twitter:description"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "管理栄養士・栄養士を目指す学生のリアルな声と研究室の素顔。十文字学園女子大学食物栄養学科の学びを在学生・教員が伝える補完情報サイト。",
+        "property": "og:description"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "管理栄養士を目指せる食物栄養学科のリアル｜十文字学園女子大学",
+        "name": "twitter:title"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "管理栄養士を目指せる食物栄養学科のリアル｜十文字学園女子大学",
+        "property": "og:title"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "強豪女子サッカー部が同じキャンパスで活動中。管理栄養士の確かな知識を本物のアスリートとともに実践できる十文字学園女子大学のスポーツ栄養特集。2学科体制・他学科開放制度・国内最高峰の教員陣による本格的な指導環境を紹介します。",
+        "name": "description"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "強豪女子サッカー部が同じキャンパスで活動中。管理栄養士の確かな知識を本物のアスリートとともに実践できる十文字学園女子大学のスポーツ栄養特集。2学科体制・他学科開放制度・国内最高峰の教員陣による本格的な指導環境を紹介します。",
+        "name": "twitter:description"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "強豪女子サッカー部が同じキャンパスで活動中。管理栄養士の確かな知識を本物のアスリートとともに実践できる十文字学園女子大学のスポーツ栄養特集。2学科体制・他学科開放制度・国内最高峰の教員陣による本格的な指導環境を紹介します。",
+        "property": "og:description"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "十文字学園女子大学 食物栄養学科",
+        "property": "og:site_name"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "食物栄養学科 | 十文字学園女子大学",
+        "property": "og:site_name"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "新座市, 埼玉県, 日本",
+        "name": "geo.placename"
+      }
+    },
+    {
+      "tag": "meta",
+      "attrs": {
+        "content": "新座市",
+        "name": "geo.placename"
+      }
+    },
+    {
+      "tag": "title",
+      "text": "スポーツ栄養 | 十文字学園女子大学",
+      "attrs": {}
+    },
+    {
+      "tag": "title",
+      "text": "管理栄養士を目指せる食物栄養学科のリアル｜十文字学園女子大学",
+      "attrs": {}
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+main
+  div.news-archive-page
+    div.container
+      div
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+      div.archive-header
+        h1.archive-title | 新着情報・コラム一覧
+        p.archive-subtitle | 食物栄養学科の最新ニュース、学生・教員のコラムをお届けします。
+      div.archive-filter
+        div.archive-filter__label
+          svg
+            path
+          span | 絞り込み:
+        div.archive-filter__tabs
+          button.archive-filter__tab.is-active | 全て
+          button.archive-filter__tab | コラム
+          button.archive-filter__tab | イベント
+          button.archive-filter__tab | レポート
+          button.archive-filter__tab | お知らせ
+      div.archive-list-container
+        ul.archive-list
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.6.21
+                span.news-tag.news-tag--info | イベント
+              h2.archive-item__title | ひとつのトマトが、３つの未来を開く─未来体験Day 6月21日開催
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.6.6
+                span.news-tag.news-tag--column | 教員コラム
+              h2.archive-item__title | 失敗が消えない時代に、どう育つか（竹嶋伸之輔 教授）
+              p.archive-item__hook | 「マニュアルがないとできない」と言われる学生たちの背景に、何があるのか。
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.5.26
+                span.news-tag.news-tag--column | 教員コラム
+              h2.archive-item__title | 解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発した話
+              p.archive-item__hook | InBodyの測定データをもとに、生成AIで自分専用の栄養アドバイスアプリを作る実習とは。
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.5.18
+                span.news-tag.news-tag--event | イベント
+              h2.archive-item__title | 【5/31開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」
+              p.archive-item__hook | 管理栄養士のリアルな仕事や大学での学びを体験できる、参加無料の特別企画。
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.5.15
+                span.news-tag.news-tag--column | 教員コラム
+              h2.archive-item__title | 先輩が授業をサポート！総合科目「いちから学ぶnutrition science」SAレポート
+              p.archive-item__hook | 先輩が後輩を教える「SA」の活動から見える、教える力と学ぶ力の育ち方。
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.5.13
+                span.news-tag.news-tag--column | 学生コラム
+              h2.archive-item__title | チーズに"王様"と"女王様"がいた！骨の衝撃映像と食育論セミナーレポート
+              p.archive-item__hook | チーズの"王様"と"女王様"って何のこと？学生記者が体験した特別講義のリアル。
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.5.12
+                span.news-tag.news-tag--info | お知らせ
+              h2.archive-item__title | 高大連携プロジェクト「食の未来を創る」十文字大×駒場学園高が始動
+              p.archive-item__hook | 高校生と大学生がタッグを組み、商品開発や地域食堂で食課題に挑む実践レポート。
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.5.11
+                span.news-tag.news-tag--column | 学生コラム
+              h2.archive-item__title | 白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情
+              p.archive-item__hook | 実習着・白衣・エプロン…用途で使い分ける理由を、現役学生が解説。
+          li
+            a.archive-item
+              div.archive-item__meta
+                span.archive-item__date | 2026.05.10
+                span.news-tag.news-tag--info | お知らせ
+              h2.archive-item__title | 2026年度のオープンキャンパスの日程を公開しました
+    style | .news-archive-page {
+          padding: 8rem 0 4rem;
+       

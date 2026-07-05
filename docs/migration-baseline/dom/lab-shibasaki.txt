@@ -1,0 +1,111 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 食物栄養学科
+        h1.lab-page__title | 芝崎 本実 研究室
+        p.lab-page__subtitle | 和菓子と調理科学で「おいしい」を解き明かす（おだんごゼミ）
+      div.lab-page__content
+        section.lab-story-feature
+          span.lab-story-feature__label | FEATURE STORY
+            svg
+              path
+              path
+              path
+              circle
+          h2.lab-story-feature__title | 「好き」を科学に変える！ おだんご先生と解き明かす の世界
+            br
+            br
+            em | 「和菓子と調理科学」
+          p.lab-story-feature__lead | 「お菓子作りが好き」「日本の食文化に興味がある」——そんな純粋なトキメキを、 する芝崎研究室（おだんごゼミ）。 和菓子職
+            strong | 最先端の科学で探究
+            strong | 「おだんご先生」
+          div.lab-story-feature__tags
+            span | #おだんごゼミ
+            span | #和菓子×調理科学
+            span | #スイーツ開発
+            span | #職人技をデータ化
+        section.lab-section
+          h2.lab-section__title | 研究テーマ：科学の目で和菓子をアップデート！
+          p.lab-section__body | 「好き」という気持ちからスタートした研究も、中身は本格的。 大学の最先端の実験機器を使って、職人の勘や経験をデータに変え
+          div.lab-theme-list.lab-theme-list--terracotta
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 01
+                h3 | お腹の中を再現！？「ヒト胃消化シミュレーター」で見る和菓子の優しさ
+                p | おだんごやあんこが、お腹の中でどのように消化されていくのかを、機械を使ってリアルに再現して可視化（見える化）します。 「
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 02
+                h3 | 職人の技をデータにする！伝統レシピ × 栄養強化のイノベーション
+                p | 職人の勘や経験を「破断強度」などの科学データに落とし込みます。 美味しさはそのままに、高齢者やアスリートが必要な栄養を補
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 03
+                h3 | おやつで体をサポート！ライフステージに合わせた和菓子研究
+                p | 成長期の子ども、スポーツをする人、そして高齢者。それぞれのライフステージや活動レベルに合わせて、 最適なエネルギー補給が
+        section.lab-section
+          h2.lab-section__title | 社会とつながるプロジェクト
+          div.lab-project-story
+            div.lab-project-story__header
+              svg
+                path
+                circle
+              h3 | 高校生と一緒に開発！「青春三色パン」と地域をむすぶ「しらりん食堂」
+            div.lab-project-story__body
+              p | 研究室を飛び出し、駒場学園高等学校・食物調理科の生徒たちとタッグを組んだ高大連携プロジェクトが進行中！ 若者の食生活をハ
+                strong | 「青春三色パン」
+              p | さらに、地域還元プロジェクトとして「適塩（ちょうどいい塩分）」をテーマにした での活動も展開。 ただ料理を作るだけでなく
+                strong | 「しらりん食堂」
+              div.lab-project-story__award
+                span.lab-project-story__award-label | 🏆 AWARD
+                p | 令和7年度「みどり戦略学生チャレンジ」関東ブロック大会にて、 を獲得！（令和6年度は特別賞を受賞） ゼミ生たちの熱い想い
+        section.lab-section
+          h2.lab-section__title | おだんご先生の素顔
+          div.lab-media-profile
+            div.lab-media-profile__header
+              div.lab-media-profile__name
+                span.lab-media-profile__role | 和菓子屋情報MAPサイト「おだんご日和」主宰
+                h3 | 芝崎 本実 准教授
+              div.lab-media-profile__badges
+                span | 管理栄養士
+                span | 調理師
+                span | 製菓衛生師
+                span | フードスペシャリスト
+            p.lab-media-profile__intro | 和菓子職人としての現場経験を活かし、地域に根ざした和菓子文化を調理科学と栄養学の視点から次世代につなぐ活動を精力的に行っ
+            div.lab-media-profile__achievements
+              div.lab-media-profile__box
+                h4.flex.items-center.gap-2 | メディア出演
+                ul
+              div.lab-media-profile__box
+                h4.flex.items-center.gap-2 | 主な著書
+                ul
+            div.lab-media-profile__message
+              p | 「大好きなおだんごを、科学的に語れるようになりたい」 そんな気持ちを大切に、実験とフィールドワークの両面から「食のプロ」
+                br
+                br
+                strong | おだんごやあんこが大大好きな皆さんの参加を待っています！
+        section.lab-section
+          div.lab-data-archive
+            h2.lab-data-archive__title | Research Data & Background
+            div.lab-data-archive__grid
+              div
+                h4 | 専門分野
+                div.lab-data-archive__tags
+              div
+                h4 | キーワード
+                div.lab-data-archive__tags
+              div.col-span-full
+                h4 | 略歴
+                p | 帝京平成大学大学院修了 博士（健康科学）、女子栄養大学大学院修了 修士（栄養学）。 帝京平成大学 健康栄養学科 助教、農

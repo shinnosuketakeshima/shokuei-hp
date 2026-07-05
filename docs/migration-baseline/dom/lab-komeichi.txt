@@ -1,0 +1,128 @@
+main
+  div.lab-page
+    div.container
+      a.lab-page__back-link
+        svg
+          path
+          path
+        span | トップページに戻る
+      div.lab-page__header
+        p.lab-page__eyebrow | Public Health Nutrition
+        h1.lab-page__title | 地域の「健康」をデザインする。 こども食堂から自衛隊まで、食と栄養で社会を動かす。
+          br
+        p.lab-page__subtitle | 病院や施設の中だけが、管理栄養士の活躍の場ではありません。古明地研究室では、地域のこども食堂や防災イベント、さらには自衛
+          br
+          br
+      div.lab-page__content
+        section.lab-section
+          h2.lab-section__title | 古明地 夕佳 先生と出会う
+          div.lab-pi-profile
+            p
+              strong | 古明地 夕佳（こめいち せきか）
+            p | 十文字学園女子大学 人間生活学部 食物栄養学科
+            p.lab-section__body | 実は、先生は公務員時代に保健所や県庁で地域の健康課題と向き合ってきた経験があります。 その現場経験だからこそ、「机上の理
+        section.lab-section
+          h2.lab-section__title | 学生たちの挑戦——3つのストーリー
+          div.lab-section__grid
+            div.lab-section__card
+              div
+                svg
+              h3 | 【子ども・地域】「こども食堂」を食と栄養の視点で支える
+              p | 食物アレルギー対応メニュー開発プロジェクト
+              p.lab-section__body | 地域の子どもたちの居場所であるこども食堂。ただ食事を提供するだけでなく、食物アレルギーのある子どもたちも安心して参加でき
+            div.lab-section__card
+              div
+                svg
+              h3 | 【防災・企業】カルピス×カルビーと連携！防災万博での食育プロデュース
+              p | セキ薬品×大手食品企業とのコラボ企画
+              p.lab-section__body | 夏の防災万博に、大手企業と学生が一緒にブースを運営。「管理栄養士が教える食育＆熱中症対策」をテーマに、来場者に楽しみなが
+            div.lab-section__card
+              div
+                svg
+              h3 | 【特別任務】自衛隊の駐屯地へ！「安くておいしい給食」コンテストを審査
+              p | 東方ZEPPIN!カップ — 陸上自衛隊東武方面隊
+              p.lab-section__body | 陸上自衛隊東武方面隊の駐屯地給食「安くておいしい献立」コンテストのプレ審査員として参加。限られた予算の中で、隊員の士気を
+        section.lab-section
+          h2.lab-section__title | ゼミ生の1年間——地域に出るスケジュール
+          p.lab-section__body | 対象（年齢・性別・目的）によって話し方や接し方が変わることを体験しながら、 地域活動を通じて住民の方々と実際に関わる機会
+          div
+            div
+              div
+                p | 6月
+              div
+                h3 | 日本健康・栄養システム学会
+                p.lab-section__body | 学会発表を通じて、研究活動を社会に発信し、専門的な学びを深めています。
+            div
+              div
+                p | 8月
+              div
+                h3 | 流山防災万博（セキ薬品×カルピス×カルビー）
+                p.lab-section__body | 企業と連携して「食育＆熱中症対策」ブースを運営。実践的なプロジェクト経験を獲得。
+            div
+              div
+                p | 9月
+              div
+                h3 | TJUP「毎日楽しく介護予防」講座
+                p.lab-section__body | 埼玉東上地域大学教育プラットフォーム参加。他大学と共催で介護予防プログラムを実施。
+            div
+              div
+                p | 9月
+              div
+                h3 | 社会人対象キャリア形成プログラム
+                p.lab-section__body | 「食から考える従業員の健康管理」をテーマに、社会人向けの健康教育に貢献。
+            div
+              div
+                p | 10月
+              div
+                h3 | 新座市市民健康まつり
+                p.lab-section__body | 骨密度・血管年齢測定を実施。卒業研究で開発した低栄養予防媒体を配布・説明します。
+          div.lab-section__card
+            p.lab-section__body | 卒業研究の成果は を行い、 としてまとめます。 自分たちが現場で見つけた「なぜ？」が、研究として完成し、新しい知見として
+              svg
+                path
+              strong | 桐華祭でポスター発表
+              strong | 卒業論文
+        section.lab-section
+          h2.lab-section__title | こんな気持ちを持っていますか？
+          div.lab-section__grid
+            div.lab-section__card
+              div
+                svg
+              h3 | 地域保健・医療・福祉に興味がある
+              p | 制度も含めて、地域の健康課題に関心がある。法律や仕組みの背景まで含めて「なぜ？」を考えたい。
+            div.lab-section__card
+              div
+                svg
+              h3 | 実際に手を動かして社会に貢献したい
+              p | 人を支えることに意義を感じ、現場に出て誰かのためになる実践活動がしたい。
+            div.lab-section__card
+              div
+                svg
+              h3 | 社会全体の課題と向き合いたい
+              p | 食や栄養にとどまらず、疑問を見つけて実態を把握し、実践・評価まで取り組みたい。
+        section.lab-section
+          h2.lab-section__title | 先生からのメッセージ
+          p.lab-section__body | 疑問を見つけ、その実態を把握し、課題を整理して、実践・評価・改善を繰り返す—— そのプロセスを、皆さんと一緒に歩んでいき
+          p.lab-section__body | 文献検索、事例収集、教育プログラムや教育媒体の開発など、研究の進め方は様々です。 大切なのは「自分で考え、まとめる」こと
+          p.lab-section__body | 地域保健・医療・福祉、ヒューマンサービス、社会全体への関心—— そんな気持ちを持っている方と一緒に学べることを楽しみにし
+        section.lab-section
+          h2.lab-section__title | Researcher Information
+          div
+            div
+              p | 専門分野
+              ul
+                li | 公衆栄養学
+                li | 地域保健
+                li | 栄養教育
+            div
+              p | 研究テーマ
+              ul
+                li | 高齢者栄養ケア・マネジメント
+                li | こども食堂研究
+                li | アレルギー対応食開発
+            div
+              p | 地域連携実績
+              ul
+                li | 新座市健康づくり推進協議会委員
+                li | TJUP介護予防講座講師
+                li | 自衛隊給食コンテスト審査員

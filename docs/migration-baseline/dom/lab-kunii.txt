@@ -1,0 +1,101 @@
+main
+  div.lab-page
+    div.container
+      a.lab-page__back-link
+        svg
+          path
+          path
+        span | トップページに戻る
+      div.lab-page__header
+        p.lab-page__eyebrow | Innovation & Entrepreneurship
+        h1.lab-page__title | 栄養を、ビジネスの力に変える。 社会とつながり、新たな価値を創造する「実践型」ラボ。
+          br
+        p.lab-page__subtitle | 國井ゼミのテーマは「栄養管理技術の社会還元」。 大学での学びを教室だけで終わらせず、企業と協業して新商品を開発したり、 
+      div.lab-page__content
+        section.lab-section
+          h2.lab-section__title | 学生たちの挑戦——3つのストーリー
+          div.lab-section__grid
+            div.lab-section__card
+              div
+                svg
+              h3 | 【商品開発】大学公式キャラ「プラスちゃん」をナッツに！企業との共同開発
+              p | プラスちゃんナッツ × NewDays
+              p.lab-section__body | 管理栄養士が監修する、美味しくて健康的なナッツ・フルーツ商品を企業と一緒にプロデュース。企画から改良、社会実装まで、新商
+            div.lab-section__card
+              div
+                svg
+              h3 | 【地域・食育】「すったて」うどんで食育リスキリング！地域の名店とコラボ
+              p | 実践食事学で、地域の味を再発見
+              p.lab-section__body | 埼玉県の郷土料理「呉汁うどん」「すったてうどん」をベースに、実践食事学を盛り込んだメニューを展開。18歳〜22歳以降の習
+            div.lab-section__card
+              div
+                svg
+              h3 | 【実践教育】社会人として通用する「プロの思考法」を習得
+              p | 食育リスキリング環境の構築
+              p.lab-section__body | からだの仕組みを知り、食べ物の特徴を知り、それを生活でつなぐ「実践食事学」。中国・北京のフォーラムで国際講演をする先生、
+        section.lab-section
+          h2.lab-section__title | 「実践食事学」の3つのステップ
+          p.lab-section__body | このゼミで身につける「食べる学び」は、3つのステップで体系化されています。 企業と協働し、社会と向き合う中で、この3つを
+          div
+            div
+              div | ①
+              h3 | 食べものの「特徴と食べ方」を知っておく
+              p | 栄養成分、食文化的価値、調理法——食べ物の全体像を理解する基礎を固めます。
+            div
+              div | ②
+              h3 | からだの「仕組み」を知っておく
+              p | 栄養学、生理学、健康管理——体がどう反応するかの科学的知識を習得します。
+            div
+              div | ③
+              h3 | 学びを実生活で「つなぐ（体験する）」
+              p | 企業との協業、地域での実装を通じて、知識を現実社会の課題解決に活かします。
+        section.lab-section
+          h2.lab-section__title | 社会実装の軌跡
+          p.lab-section__body | 企業協働、地域連携、国際発信——學生たちの研究が、実際に社会に出ていく瞬間。
+          div
+            div
+              div
+                p | 2025年6月
+              div
+                h3 | GOONA（グーナ）グミ発売
+                p.lab-section__body | 23種類の栄養成分配合。子ども向け栄養サポートお菓子として商品化
+            div
+              div
+                p | 2025年7月
+              div
+                h3 | 「すったてうどん」実践食事学コラボ
+                p.lab-section__body | 川島町の名店と連携。夏の郷土料理の栄養分析と開発を実施
+            div
+              div
+                p | 2025年8月
+              div
+                h3 | セブンイレブン「すったて」販売
+                p.lab-section__body | 学生が栄養計算・ポスター制作を担当。埼玉県内で季節限定販売中
+            div
+              div
+                p | 2026年1月
+              div
+                h3 | プラスちゃんナッツ NewDays新座で販売開始
+                p.lab-section__body | 駅ナカ店舗での本格販売。より多くの人に届く新たなステージへ
+        section.lab-section
+          h2.lab-section__title | Lab Information
+          div
+            div
+              p | 研究室名
+              p | 栄養管理・実践教育研究室
+(NutriEdu Praxis Lab)
+            div
+              p | 指導教員
+              p | 國井 大輔 特任教授
+            div
+              p | 研究キーワード
+              p | 栄養管理技術の事業化
+実践食事学
+食育リスキリング
+商品開発
+            div
+              p | 連絡先
+              p | kunii@jumonji-u.ac.jp
+            div
+              p | 場所
+              p | 8号棟5階 8509室
