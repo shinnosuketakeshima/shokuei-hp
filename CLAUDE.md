@@ -109,6 +109,8 @@ The repo is migrating from the React/Vite SPA to Astro, route by route, without 
 
 **Migration verification**: `scripts/migration/routes.mjs` lists all 35 legacy routes; `scripts/migration/capture-baseline.mjs` captured pre-migration `head`/JSON-LD/DOM snapshots into `docs/migration-baseline/` for diffing against the Astro output. When porting a page, diff against its baseline rather than eyeballing.
 
+**Homepage (`/`)**: `src/pages/index.astro` assembles 14 section components (`Hero`, `AudienceGuide`, `FeatureSpotlight`, `CategoryBanners`, `News`, `StatsBar`, `Features`, `Labs`, `Qualifications`, `NationalExamSupport`, `SNSSection`, `Career`, `StudentVoices`, `CampusLife`, `FAQ`), each a `.astro` port of the matching `.jsx` component. Components with a `summary` prop (`Features`, `Qualifications`, `NationalExamSupport`, `Career`, `StudentVoices`, `CampusLife`, `FAQ`) keep the same dual-mode contract as the React originals — `summary={true}` on the homepage, no prop on their future dedicated `/xxx` route. `Labs` (category filter), `CampusLife` (4-year roadmap tabs), and `FAQ` (accordion) replace React `useState` with vanilla `<script>` blocks that toggle classes/`max-height` directly. **`News` fetches Firestore at Astro *build time*** (top-level `await getDocs()` in frontmatter, merged with `STATIC_NEWS`) rather than client-side on every page load — a deliberate static-site tradeoff (confirmed with the user): new Firestore articles only appear after the next `astro build`/deploy, not immediately.
+
 ## Language
 
 All UI text is in Japanese. Follow the existing convention: English identifiers, Japanese string literals. No comments unless the intent is non-obvious.
