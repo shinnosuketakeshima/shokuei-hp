@@ -363,7 +363,9 @@ function buildCustomJsonLd(pathname, meta) {
   ) {
     const articleDateMap = {
       '/student-column-1': '2026-05-11',
+      '/student-column-2': '2026-05-12',
       '/student-column-3': '2026-05-13',
+      '/student-column-4': '2026-07-07',
       '/koudai-project': '2026-05-12',
       '/kokushi-report': '2026-05-01',
       '/lab-kamiyama-report': '2026-05-15',

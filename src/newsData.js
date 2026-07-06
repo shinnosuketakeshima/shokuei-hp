@@ -72,6 +72,15 @@ export const STATIC_NEWS = [
     href: '/student-column-1',
   },
   {
+    id: 'col2',
+    date: '2026.5.12',
+    tag: '学生コラム',
+    type: 'column',
+    title: '健康×SNS映え！？竹嶋ゼミ・芝崎ゼミの「機能性和洋菓子」開発会議に潜入取材！',
+    hook: '桑の葉パンとブラックみたらし団子。機能性とSNS映えを両立させる商品開発の裏側をレポート。',
+    href: '/student-column-2',
+  },
+  {
     id: 'koudai-project',
     date: '2026.5.12',
     tag: 'お知らせ',
