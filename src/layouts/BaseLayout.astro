@@ -127,8 +127,8 @@ const orgJsonLd = {
       document.addEventListener('click', function (e) {
         var t = e.target.closest('[data-ga-click]');
         if (t && typeof gtag === 'function') {
-          gtag('event', 'click_cta', {
-            event_category: 'CTA',
+          gtag('event', t.getAttribute('data-ga-event') || 'click_cta', {
+            event_category: t.getAttribute('data-ga-category') || 'CTA',
             event_label: t.getAttribute('data-ga-click'),
             page_path: location.pathname,
           });

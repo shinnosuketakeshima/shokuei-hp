@@ -71,7 +71,15 @@ const CTAS = [
 
         if (cta.external) {
           return (
-            <a href={cta.href} class={className} target="_blank" rel="noopener noreferrer">
+            <a
+              href={cta.href}
+              class={className}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-ga-click="hero_official_hp"
+              data-ga-event="outbound_official_site"
+              data-ga-category="Outbound"
+            >
               {cta.label}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>

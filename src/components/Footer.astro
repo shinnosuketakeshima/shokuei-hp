@@ -105,7 +105,13 @@ const year = new Date().getFullYear()
         </address>
         <div class="footer__sns">
           {SNS.map(s => (
-            <a href={s.href} class="footer__sns-link" target="_blank" rel="noopener noreferrer">
+            <a
+              href={s.href}
+              class="footer__sns-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              {...(s.href.startsWith('http') ? { 'data-ga-click': s.label, 'data-ga-event': 'outbound_sns', 'data-ga-category': 'SNS' } : {})}
+            >
               {s.label}
             </a>
           ))}
@@ -128,7 +134,11 @@ const year = new Date().getFullYear()
         <ul class="footer__links">
           {LINKS_2.map(l => (
             <li>
-              <a href={l.href} class="footer__link">{l.label}</a>
+              <a
+                href={l.href}
+                class="footer__link"
+                {...(l.href.startsWith('http') ? { 'data-ga-click': l.label, 'data-ga-event': 'outbound_official_site', 'data-ga-category': 'Outbound' } : {})}
+              >{l.label}</a>
             </li>
           ))}
         </ul>
@@ -137,7 +147,7 @@ const year = new Date().getFullYear()
 
     <p class="footer__disclaimer">
       このサイトは食物栄養学科の教員・学生有志が運営する非公式メディアです。
-      公式情報は<a href="https://www.jumonji-u.ac.jp/humanlife/food/" target="_blank" rel="noopener noreferrer" class="footer__disclaimer-link">学科公式HP</a>をご確認ください。
+      公式情報は<a href="https://www.jumonji-u.ac.jp/humanlife/food/" target="_blank" rel="noopener noreferrer" class="footer__disclaimer-link" data-ga-click="footer_disclaimer_official_hp" data-ga-event="outbound_official_site" data-ga-category="Outbound">学科公式HP</a>をご確認ください。
     </p>
 
     <div class="footer__bottom">
