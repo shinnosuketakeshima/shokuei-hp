@@ -4049,6 +4049,15 @@
   color: var(--terracotta);
   margin-top: 3px;
 }
+.faq__icon-minus {
+  display: none;
+}
+.faq__item--open .faq__icon-plus {
+  display: none;
+}
+.faq__item--open .faq__icon-minus {
+  display: inline-flex;
+}
 .faq__answer-inner {
   padding: 2px 0 22px 40px;
   font-size: clamp(13px, 1.5vw, 14px);
@@ -5351,4 +5360,25 @@ html.js [data-reveal].is-visible {
 .eiyo-app-demo-card__link {
   display: inline-flex;
   align-items: center;
+}
+
+/* CampusLife: 4年間ロードマップのタブ（旧コンポーネント内インラインstyleから移動） */
+.roadmap-tab {
+  font-family: inherit;
+}
+.roadmap-tab:hover {
+  background: rgba(46, 81, 62, 0.1);
+}
+.roadmap-tab.active:hover {
+  background: var(--forest);
+}
+@media (max-width: 768px) {
+  .roadmap-content {
+    padding: 24px !important;
+    gap: 24px !important;
+  }
+  .curriculum-roadmap {
+    margin-top: 40px !important;
+    margin-bottom: 60px !important;
+  }
 }
