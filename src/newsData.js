@@ -1,5 +1,14 @@
 export const STATIC_NEWS = [
   {
+    id: 'col4',
+    date: '2026.7.7',
+    tag: '学生コラム',
+    type: 'column',
+    title: '夢を掴む夏の「寺子屋」へ。国試模試に挑む食えい生たちの熱い自習室',
+    hook: '夏の特別集中講座「寺子屋」の選抜を兼ねた国試模試が目前。直前のキャンパスに満ちる熱気を学生記者がレポート。',
+    href: '/student-column-4',
+  },
+  {
     id: 'miraitaikenday-2026',
     date: '2026.6.21',
     tag: 'イベント',
