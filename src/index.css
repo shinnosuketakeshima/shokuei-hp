@@ -5285,3 +5285,70 @@ html.js [data-reveal].is-visible {
     transition: none;
   }
 }
+
+/* ============================================
+   コラム／レポート系ページの補助スタイル
+   （Astro移行前は各コンポーネントのインライン <style> にあったものを集約）
+   ============================================ */
+.student-voice-box {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 3rem 0;
+  border-left: 4px solid var(--forest);
+}
+.student-voice-box__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.student-voice-box__icon {
+  color: var(--forest);
+  opacity: 0.5;
+}
+.student-voice-box__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1e293b;
+}
+
+.takeshima-pull {
+  margin: 2.5rem 0;
+  padding: 1.75rem 2rem;
+  border-left: 3px solid var(--terracotta, #c0392b);
+  background: rgba(192, 57, 43, 0.04);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 2;
+  color: var(--charcoal, #1a1a2e);
+}
+
+.btn--primary {
+  background: var(--forest);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn--primary:hover {
+  opacity: 0.9;
+}
+
+.eiyo-app-demo-card {
+  margin-top: 2rem;
+  border: 2px solid var(--forest);
+  background: linear-gradient(135deg, #f8faf8 0%, #fff 100%);
+}
+.eiyo-app-demo-card h3 {
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+.eiyo-app-demo-card__link {
+  display: inline-flex;
+  align-items: center;
+}

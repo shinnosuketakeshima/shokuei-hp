@@ -1,0 +1,234 @@
+---
+import { ArrowLeft, ChefHat, Lightbulb, Beaker } from '@lucide/astro'
+
+const RESEARCH_VISION = [
+  {
+    icon: ChefHat,
+    title: "健康と、日常的に向き合える食の開発",
+    body: "食物繊維や植物性たんぱく質など、からだにいい素材を毎日の食卓に。試行錯誤を重ねて、「おいしく続けられる」新しい食習慣を提案します。"
+  },
+  {
+    icon: Beaker,
+    title: "人が感じる「おいしさ」を科学する",
+    body: "なぜこのレシピはおいしいのか？被験者の食べた感想をデータで分析し、「おいしさの法則」を解き明かす。料理と科学の融合です。"
+  }
+]
+
+const JOURNEY_STEPS = [
+  { step: '1.', title: '健康素材との出会い', desc: '食物繊維たっぷり、植物性たんぱく質豊富——今注目の素材を選びます。' },
+  { step: '2.', title: 'キッチンでの試行錯誤', desc: '何度も試作を重ねる。「もっとおいしくするには？」の連続。' },
+  { step: '3.', title: '実食アンケート', desc: '被験者に食べてもらい、「おいしさ」を言葉とデータで評価。' },
+  { step: '4.', title: 'おいしさの科学分析', desc: '10人中8人が笑顔になるレシピの秘密を解き明かす。' }
+]
+
+const FEATURED_FOODS = [
+  {
+    title: "テンペ",
+    subtitle: "アジアの伝統発酵食品を、ハンバーガーやソーセージにアレンジ！",
+    tag: "食物繊維たっぷり",
+    body: "大豆を発酵させたインドネシア発祥の食品。揚げ浸し、ハンバーガー、ソーセージなど、日本の食卓に取り入れやすい料理を次々開発。家庭でも簡単に調理できる新定番を目指しています。"
+  },
+  {
+    title: "オートミール",
+    subtitle: "まさかのポテトチップスやガトーショコラに！？驚きのヘルシーおやつ。",
+    tag: "食物繊維たっぷり",
+    body: "朝食の定番？いいえ、クッキー、ガトーショコラ、ポテトチップス……意外性のある料理にも活用。「ヘルシーだけどおいしい」の両立を徹底追求します。"
+  },
+  {
+    title: "生のおから・おからパウダー",
+    subtitle: "焼きドーナツからお好み焼きまで、幅広いジャンルで試作中。",
+    tag: "食物繊維たっぷり",
+    body: "豆腐づくりの副産物を、ごちそうに変える。焼きドーナツ、クッキー、ガトーショコラ、お好み焼き、ハンバーグ——試作を重ねるたびに新しいレシピが生まれます。"
+  },
+  {
+    title: "ひよこ豆粉",
+    subtitle: "豆由来の植物性たんぱく質を手軽に摂れるレシピを考案。",
+    tag: "植物性たんぱく質",
+    body: "パンケーキやマフィンに活用。植物性たんぱく質の宝庫でありながら、素朴な甘さが特徴。からだにも環境にもやさしい食生活を提案します。"
+  },
+  {
+    title: "コオロギパウダー",
+    subtitle: "地球にやさしい「新素材」。持続可能な未来のクッキーづくり。",
+    tag: "地球にやさしい新素材",
+    body: "昆虫食の可能性を探り、持続可能な食の未来を見据える。クッキーへの活用を研究中。「おいしい」と「地球にやさしい」が両立する食文化の創造を目指しています。"
+  }
+]
+
+const WELCOME_CARDS = [
+  {
+    icon: ChefHat,
+    title: "キッチンから食の常識を塗り替えたい",
+    body: "料理を作ることが好きな、クリエイティブな好奇心。試作を繰り返しながら「もっとおいしくするには？」と考えることを楽しめる方を歓迎します。"
+  },
+  {
+    icon: Lightbulb,
+    title: "「なぜおいしいのか」を科学したい",
+    body: "食べることが好きで、「おいしさ」を言葉やデータで表現したい。複雑な人間の感覚を、科学的に解き明かすことに興奮を感じる方。"
+  },
+  {
+    icon: Beaker,
+    title: "納得の「おいしさ」にたどり着く粘り強さ",
+    body: "地道な試作・評価・考察を積み重ねられる、ワクワクする粘り強さ。何度の失敗も、次のおいしさへの一歩と考える方が活躍します。"
+  }
+]
+
+const GRADUATION_WORK = [
+  {
+    title: "桐華祭でポスター発表",
+    body: "試作・実験・考察の全プロセスを、ポスターで表現。自分たちの研究成果を多くの人に見てもらう瞬間。"
+  },
+  {
+    title: "卒業論文の執筆",
+    body: "4年間のすべてを言葉にまとめる。「おいしさ」という人間の感覚を、科学的に表現する最後のチャレンジ。"
+  }
+]
+
+const PROFILE_INFO = [
+  { label: '指導教員', value: '鴨下 澄子（かもした すみこ）准教授' },
+  { label: '専門分野', value: '生活科学\n食生活学\n国際栄養学\n公衆衛生学' },
+  { label: '学位', value: '博士（学術）' }
+]
+---
+
+<div class="lab-page">
+  <div class="container">
+    <a href="/" class="lab-page__back-link" data-reveal="left">
+      <ArrowLeft size={16} />
+      <span>トップページに戻る</span>
+    </a>
+
+    {/* Hero Section */}
+    <div class="lab-page__header" data-reveal style="--reveal-delay: 0.1s">
+      <p class="lab-page__eyebrow">Recipe Development & Food Science</p>
+      <h1 class="lab-page__title">「体にいい」をもっと「おいしく」。<br />10人中8人が笑顔になる、新しい食習慣のカタチ。</h1>
+      <p class="lab-page__subtitle">
+        健康にいい食べ物でも、おいしくなければ続けられない。
+        鴨下ゼミでは、食物繊維や植物性たんぱく質など、注目の素材を使った「最高においしいレシピ」を科学しています。
+        <br /><br />
+        被験者に実際に食べてもらい、その「おいしさ」をデータで分析する。
+        食の未来をプロデュースする、ワクワクする研究室生活をご紹介します！
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+      {/* Research Vision */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">2つの研究テーマ</h2>
+        <div class="lab-section__grid" style="margin-top: 16px">
+          {RESEARCH_VISION.map((card, i) => {
+            const Icon = card.icon
+            return (
+              <div class="lab-section__card" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s`}>
+                <div style="margin-bottom: 12px"><Icon class="text-terracotta" size={28} /></div>
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Research Journey */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">【体験ストーリー】キッチンが研究室！「10人中8人のおいしい」を探し出す旅</h2>
+        <p class="lab-section__body">
+          まずは注目の健康素材を選ぶことからスタート。何度も試作を重ねて納得のレシピを完成させたら、いよいよ被験者による実食アンケートです。
+          <br /><br />
+          「なぜおいしいと感じるのか？」を言葉とデータで解き明かし、誰もが無理なく続けられる「新しい食習慣」を世界に提案します。
+        </p>
+        <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+          {JOURNEY_STEPS.map((item, i) => (
+            <div data-reveal style={`--reveal-delay: ${i * 0.1}s; padding: 20px; background-color: rgba(238, 119, 82, 0.08); border-radius: 8px; border-left: 4px solid var(--terracotta); display: flex; flex-direction: column; gap: 8px`}>
+              <div style="font-size: 1.8em; font-weight: 700; color: var(--terracotta)">
+                {item.step}
+              </div>
+              <h3 style="font-size: 1.05em; margin-bottom: 8px">{item.title}</h3>
+              <p style="font-size: 0.95em; line-height: 1.6; color: #666">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Research Foods */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">次世代フード——注目の健康素材たち</h2>
+        <p class="lab-section__body">
+          アジアの伝統食、スーパーフード、地球にやさしい新素材……
+          鴨下ゼミが試作してきた、食の未来を変える素材たち。
+        </p>
+        <div class="lab-section__grid" style="margin-top: 20px">
+          {FEATURED_FOODS.map((card, i) => (
+            <div class="lab-section__card" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s`}>
+              <h3>{card.title}</h3>
+              <p style="font-size: 0.95em; color: var(--terracotta); font-weight: 500; margin-bottom: 8px">
+                {card.subtitle}
+              </p>
+              <p style="font-size: 0.75em; color: #888; font-weight: 600; margin-bottom: 8px; display: inline-block; padding: 4px 8px; background-color: rgba(238, 119, 82, 0.1); border-radius: 4px">
+                {card.tag}
+              </p>
+              <p class="lab-section__body">{card.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Who We Welcome */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">こんなワクワクを感じる君、大歓迎！</h2>
+        <div class="lab-section__grid">
+          {WELCOME_CARDS.map((card, i) => {
+            const Icon = card.icon
+            return (
+              <div class="lab-section__card" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s`}>
+                <div style="margin-bottom: 12px"><Icon class="text-terracotta" size={24} /></div>
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Graduation Work */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">4年間の集大成</h2>
+        <div class="lab-section__grid">
+          {GRADUATION_WORK.map((card, i) => (
+            <div class="lab-section__card" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s`}>
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Researcher Profile */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">Researcher Profile</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px">
+          {PROFILE_INFO.map((info, i) => (
+            <div data-reveal style={`--reveal-delay: ${i * 0.08}s; padding: 16px; background-color: #f9f7f4; border-radius: 8px; border-left: 3px solid var(--terracotta)`}>
+              <p style="font-size: 0.9em; font-weight: 600; color: var(--terracotta); margin-bottom: 8px">
+                {info.label}
+              </p>
+              <p style="font-size: 0.95em; line-height: 1.6; white-space: pre-wrap">
+                {info.value}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p class="lab-section__body" style="margin-top: 20px">
+          より詳細な研究業績は、教員情報データベースをご覧ください。
+        </p>
+        <a
+          href="https://gyoseki.acoffice.jp/jmuhp/KgApp/k03/resid/S000233;jsessionid=21C4137957064FC5B14E93AB2E712EF8?local=0&headerTitle=%E5%8D%81%E6%96%87%E5%AD%97%E5%AD%A6%E5%9C%92%E5%A5%B3%E5%AD%90%E5%A4%A7%E5%AD%A6"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="lab-section__link"
+        >
+          教員情報データベースで詳細を見る
+        </a>
+      </section>
+    </div>
+  </div>
+</div>

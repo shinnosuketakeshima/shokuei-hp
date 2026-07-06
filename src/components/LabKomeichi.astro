@@ -1,0 +1,198 @@
+---
+import { Users, Home, BookOpen, Star, Sparkles, Heart } from '@lucide/astro'
+import { ArrowLeft } from '@lucide/astro'
+
+const STORIES = [
+  {
+    icon: Heart,
+    title: "【子ども・地域】「こども食堂」を食と栄養の視点で支える",
+    subtitle: "食物アレルギー対応メニュー開発プロジェクト",
+    body: "地域の子どもたちの居場所であるこども食堂。ただ食事を提供するだけでなく、食物アレルギーのある子どもたちも安心して参加できる環境を作る。特定原材料8品目を使用しない安全でおいしいメニューを開発することで、全ての子どもが食事の時間を楽しめるようにサポート。管理栄養士だからこそできる、本当に意味のある社会貢献です。"
+  },
+  {
+    icon: Sparkles,
+    title: "【防災・企業】カルピス×カルビーと連携！防災万博での食育プロデュース",
+    subtitle: "セキ薬品×大手食品企業とのコラボ企画",
+    body: "夏の防災万博に、大手企業と学生が一緒にブースを運営。「管理栄養士が教える食育＆熱中症対策」をテーマに、来場者に楽しみながら防災知識を伝えるプログラムを企画・実行。学生たちは、管理栄養士の視点で社会課題（防災、熱中症予防）にどうアプローチするかを学びます。企業のプロたちとの協力で、単なる学びを超えた実務経験に。"
+  },
+  {
+    icon: Star,
+    title: "【特別任務】自衛隊の駐屯地へ！「安くておいしい給食」コンテストを審査",
+    subtitle: "東方ZEPPIN!カップ — 陸上自衛隊東武方面隊",
+    body: "陸上自衛隊東武方面隊の駐屯地給食「安くておいしい献立」コンテストのプレ審査員として参加。限られた予算の中で、隊員の士気を高め、栄養バランスの取れた食事を実現する献立を評価。こんなユニークな体験も公衆栄養の学びの一部。自分たちが学んだ知識が、実際に人々の心身を支えている実感をリアルに感じられます。"
+  }
+]
+
+const SCHEDULE = [
+  { month: '6月', title: '日本健康・栄養システム学会', desc: '学会発表を通じて、研究活動を社会に発信し、専門的な学びを深めています。' },
+  { month: '8月', title: '流山防災万博（セキ薬品×カルピス×カルビー）', desc: '企業と連携して「食育＆熱中症対策」ブースを運営。実践的なプロジェクト経験を獲得。' },
+  { month: '9月', title: 'TJUP「毎日楽しく介護予防」講座', desc: '埼玉東上地域大学教育プラットフォーム参加。他大学と共催で介護予防プログラムを実施。' },
+  { month: '9月', title: '社会人対象キャリア形成プログラム', desc: '「食から考える従業員の健康管理」をテーマに、社会人向けの健康教育に貢献。' },
+  { month: '10月', title: '新座市市民健康まつり', desc: '骨密度・血管年齢測定を実施。卒業研究で開発した低栄養予防媒体を配布・説明します。' }
+]
+
+const WHO_FITS = [
+  {
+    icon: BookOpen,
+    title: "地域保健・医療・福祉に興味がある",
+    body: "制度も含めて、地域の健康課題に関心がある。法律や仕組みの背景まで含めて「なぜ？」を考えたい。"
+  },
+  {
+    icon: Users,
+    title: "実際に手を動かして社会に貢献したい",
+    body: "人を支えることに意義を感じ、現場に出て誰かのためになる実践活動がしたい。"
+  },
+  {
+    icon: Home,
+    title: "社会全体の課題と向き合いたい",
+    body: "食や栄養にとどまらず、疑問を見つけて実態を把握し、実践・評価まで取り組みたい。"
+  }
+]
+
+const RESEARCHER_INFO = [
+  { label: '専門分野', values: ['公衆栄養学', '地域保健', '栄養教育'] },
+  { label: '研究テーマ', values: ['高齢者栄養ケア・マネジメント', 'こども食堂研究', 'アレルギー対応食開発'] },
+  { label: '地域連携実績', values: ['新座市健康づくり推進協議会委員', 'TJUP介護予防講座講師', '自衛隊給食コンテスト審査員'] }
+]
+---
+
+<div class="lab-page">
+  <div class="container">
+    <a href="/" class="lab-page__back-link" data-reveal="left">
+      <ArrowLeft size={16} />
+      <span>トップページに戻る</span>
+    </a>
+
+    {/* Hero Section */}
+    <div class="lab-page__header" data-reveal style="--reveal-delay: 0.1s">
+      <p class="lab-page__eyebrow">Public Health Nutrition</p>
+      <h1 class="lab-page__title">地域の「健康」をデザインする。<br />こども食堂から自衛隊まで、食と栄養で社会を動かす。</h1>
+      <p class="lab-page__subtitle">
+        病院や施設の中だけが、管理栄養士の活躍の場ではありません。古明地研究室では、地域のこども食堂や防災イベント、さらには自衛隊の駐屯地まで飛び出して、街の人々の健康を支える「公衆栄養」を実践しています。
+        <br /><br />
+        「なぜ？」を考え、実際に手を動かし、誰かの人生を豊かにする。そんな熱気あふれるフィールドワークの世界をご紹介します！
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+      {/* Faculty Introduction */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">古明地 夕佳 先生と出会う</h2>
+        <div class="lab-pi-profile">
+          <p><strong>古明地 夕佳（こめいち せきか）</strong></p>
+          <p>十文字学園女子大学 人間生活学部 食物栄養学科</p>
+          <p class="lab-section__body" style="margin-top: 1.5em">
+            実は、先生は公務員時代に保健所や県庁で地域の健康課題と向き合ってきた経験があります。
+            その現場経験だからこそ、「机上の理論」だけではない、本当に社会に必要な食育と栄養支援のあり方を教えてくれます。
+            高齢者の低栄養問題、子どもを取り巻く食環境——社会が抱える課題を、
+            学生たちと一緒に「なぜ？」から探究し、実践できる数少ない研究室です。
+          </p>
+        </div>
+      </section>
+
+      {/* Three Story Narratives */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">学生たちの挑戦——3つのストーリー</h2>
+        <div class="lab-section__grid">
+          {STORIES.map((card, i) => {
+            const Icon = card.icon
+            return (
+              <div class="lab-section__card" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s; grid-column: span 1`}>
+                <div style="margin-bottom: 12px"><Icon class="text-terracotta" size={28} /></div>
+                <h3>{card.title}</h3>
+                <p style="font-size: 0.95em; color: var(--terracotta); font-weight: 500; margin-bottom: 8px">
+                  {card.subtitle}
+                </p>
+                <p class="lab-section__body">{card.body}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Annual Schedule */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">ゼミ生の1年間——地域に出るスケジュール</h2>
+        <p class="lab-section__body">
+          対象（年齢・性別・目的）によって話し方や接し方が変わることを体験しながら、
+          地域活動を通じて住民の方々と実際に関わる機会を設けています。
+        </p>
+        <div style="margin-top: 24px">
+          {SCHEDULE.map((item, i) => (
+            <div data-reveal="left" style={`--reveal-delay: ${i * 0.1}s; display: flex; gap: 20px; margin-bottom: 24px; padding-left: 20px; border-left: 3px solid var(--terracotta); position: relative`}>
+              <div style="min-width: 80px">
+                <p style="font-size: 1.1em; font-weight: 700; color: var(--terracotta); margin-bottom: 4px">
+                  {item.month}
+                </p>
+              </div>
+              <div style="flex: 1">
+                <h3 style="margin-bottom: 8px; font-size: 1.05em">{item.title}</h3>
+                <p class="lab-section__body">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="lab-section__card" style="margin-top: 24px; background-color: rgba(238, 119, 82, 0.05)">
+          <p class="lab-section__body">
+            <Star class="text-terracotta" size={16} style="display: inline; margin-right: 6px; vertical-align: middle" />
+            卒業研究の成果は<strong>桐華祭でポスター発表</strong>を行い、<strong>卒業論文</strong>としてまとめます。
+            自分たちが現場で見つけた「なぜ？」が、研究として完成し、新しい知見として社会に発信される——
+            その全プロセスを経験できるのです。
+          </p>
+        </div>
+      </section>
+
+      {/* Who fits Section */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">こんな気持ちを持っていますか？</h2>
+        <div class="lab-section__grid">
+          {WHO_FITS.map((card, i) => {
+            const Icon = card.icon
+            return (
+              <div class="lab-section__card" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s`}>
+                <div style="margin-bottom: 12px"><Icon class="text-terracotta" /></div>
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Message Section */}
+      <section class="lab-section" data-reveal style="background-color: rgba(238, 119, 82, 0.08); padding: 28px; border-radius: 12px; border-left: 4px solid var(--terracotta)">
+        <h2 class="lab-section__title">先生からのメッセージ</h2>
+        <p class="lab-section__body">
+          疑問を見つけ、その実態を把握し、課題を整理して、実践・評価・改善を繰り返す——
+          そのプロセスを、皆さんと一緒に歩んでいきたいと思っています。
+        </p>
+        <p class="lab-section__body">
+          文献検索、事例収集、教育プログラムや教育媒体の開発など、研究の進め方は様々です。
+          大切なのは「自分で考え、まとめる」こと。
+          テーマは皆さんと相談しながら決めていきます。
+        </p>
+        <p class="lab-section__body" style="font-size: 1.05em; font-weight: 500; color: var(--terracotta)">
+          地域保健・医療・福祉、ヒューマンサービス、社会全体への関心——
+          そんな気持ちを持っている方と一緒に学べることを楽しみにしています。
+        </p>
+      </section>
+
+      {/* Researcher Information (Bottom) */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">Researcher Information</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-top: 16px">
+          {RESEARCHER_INFO.map((section, i) => (
+            <div data-reveal style={`--reveal-delay: ${i * 0.1}s; padding: 16px; background-color: #f9f7f4; border-radius: 8px; border-left: 3px solid var(--terracotta)`}>
+              <p style="font-size: 0.9em; font-weight: 600; color: var(--terracotta); margin-bottom: 8px">
+                {section.label}
+              </p>
+              <ul style="margin: 0; padding-left: 20px; line-height: 1.6; font-size: 0.95em">
+                {section.values.map((val) => <li>{val}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

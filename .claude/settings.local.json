@@ -16,7 +16,8 @@
       "WebFetch(domain:localhost)",
       "WebFetch(domain:gyoseki.acoffice.jp)",
       "WebSearch",
-      "Skill(run)"
+      "Skill(run)",
+      "Bash(npx astro *)"
     ]
   }
 }

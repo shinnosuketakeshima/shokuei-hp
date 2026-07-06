@@ -1,0 +1,160 @@
+---
+import { ArrowLeft, ShoppingCart, Users, Zap } from '@lucide/astro'
+
+const STORIES = [
+  {
+    icon: ShoppingCart,
+    title: "【商品開発】大学公式キャラ「プラスちゃん」をナッツに！企業との共同開発",
+    subtitle: "プラスちゃんナッツ × NewDays",
+    body: "管理栄養士が監修する、美味しくて健康的なナッツ・フルーツ商品を企業と一緒にプロデュース。企画から改良、社会実装まで、新商品が世に出るプロセスをそのまま体験します。学生たちが栄養計算した商品は、今、新座駅のNewDaysで販売中。あなたの「栄養の知識」が、実際にお客さんの手に届く実感——それがこのゼミの醍醐味です。"
+  },
+  {
+    icon: Zap,
+    title: "【地域・食育】「すったて」うどんで食育リスキリング！地域の名店とコラボ",
+    subtitle: "実践食事学で、地域の味を再発見",
+    body: "埼玉県の郷土料理「呉汁うどん」「すったてうどん」をベースに、実践食事学を盛り込んだメニューを展開。18歳〜22歳以降の習慣が固定される前の世代に「食事を選ぶ力」を届ける挑戦です。学生たちは現地調査、栄養分析、セブンイレブンのポスター制作まで担当。教科書には載らない「地域経済への影響」も学べます。"
+  },
+  {
+    icon: Users,
+    title: "【実践教育】社会人として通用する「プロの思考法」を習得",
+    subtitle: "食育リスキリング環境の構築",
+    body: "からだの仕組みを知り、食べ物の特徴を知り、それを生活でつなぐ「実践食事学」。中国・北京のフォーラムで国際講演をする先生、YouTubeクリエイターとコラボする企画……社会に出てから即戦力として活躍するための、考え方・取り組み方を徹底的に磨きます。"
+  }
+]
+
+const STEPS = [
+  {
+    step: '①',
+    title: '食べものの「特徴と食べ方」を知っておく',
+    desc: '栄養成分、食文化的価値、調理法——食べ物の全体像を理解する基礎を固めます。'
+  },
+  {
+    step: '②',
+    title: 'からだの「仕組み」を知っておく',
+    desc: '栄養学、生理学、健康管理——体がどう反応するかの科学的知識を習得します。'
+  },
+  {
+    step: '③',
+    title: '学びを実生活で「つなぐ（体験する）」',
+    desc: '企業との協業、地域での実装を通じて、知識を現実社会の課題解決に活かします。'
+  }
+]
+
+const TIMELINE = [
+  { year: '2025年6月', event: 'GOONA（グーナ）グミ発売', detail: '23種類の栄養成分配合。子ども向け栄養サポートお菓子として商品化' },
+  { year: '2025年7月', event: '「すったてうどん」実践食事学コラボ', detail: '川島町の名店と連携。夏の郷土料理の栄養分析と開発を実施' },
+  { year: '2025年8月', event: 'セブンイレブン「すったて」販売', detail: '学生が栄養計算・ポスター制作を担当。埼玉県内で季節限定販売中' },
+  { year: '2026年1月', event: 'プラスちゃんナッツ NewDays新座で販売開始', detail: '駅ナカ店舗での本格販売。より多くの人に届く新たなステージへ' }
+]
+
+const LAB_INFO = [
+  { label: '研究室名', value: '栄養管理・実践教育研究室\n(NutriEdu Praxis Lab)' },
+  { label: '指導教員', value: '國井 大輔 特任教授' },
+  { label: '研究キーワード', value: '栄養管理技術の事業化\n実践食事学\n食育リスキリング\n商品開発' },
+  { label: '連絡先', value: 'kunii@jumonji-u.ac.jp' },
+  { label: '場所', value: '8号棟5階 8509室' }
+]
+---
+
+<div class="lab-page">
+  <div class="container">
+    <a href="/" class="lab-page__back-link" data-reveal="left">
+      <ArrowLeft size={16} />
+      <span>トップページに戻る</span>
+    </a>
+
+    {/* Hero Section */}
+    <div class="lab-page__header" data-reveal style="--reveal-delay: 0.1s">
+      <p class="lab-page__eyebrow">Innovation & Entrepreneurship</p>
+      <h1 class="lab-page__title">栄養を、ビジネスの力に変える。<br />社会とつながり、新たな価値を創造する「実践型」ラボ。</h1>
+      <p class="lab-page__subtitle">
+        國井ゼミのテーマは「栄養管理技術の社会還元」。
+        大学での学びを教室だけで終わらせず、企業と協業して新商品を開発したり、
+        社会人が食事を選ぶ力をサポートするプログラムを作ったり。
+        専門家としての「実践技術」と「プロの考え方」を、本気で身につける4年間がここにあります。
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+      {/* Three Story Narratives */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">学生たちの挑戦——3つのストーリー</h2>
+        <div class="lab-section__grid">
+          {STORIES.map((card, i) => {
+            const Icon = card.icon
+            return (
+              <div class="lab-section__card" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s; grid-column: span 1`}>
+                <div style="margin-bottom: 12px"><Icon class="text-terracotta" size={28} /></div>
+                <h3>{card.title}</h3>
+                <p style="font-size: 0.95em; color: var(--terracotta); font-weight: 500; margin-bottom: 8px">
+                  {card.subtitle}
+                </p>
+                <p class="lab-section__body">{card.body}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Practical Food Science 3 Steps */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">「実践食事学」の3つのステップ</h2>
+        <p class="lab-section__body">
+          このゼミで身につける「食べる学び」は、3つのステップで体系化されています。
+          企業と協働し、社会と向き合う中で、この3つを深掘りしていきます。
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 24px">
+          {STEPS.map((item, i) => (
+            <div data-reveal style={`--reveal-delay: ${i * 0.1}s; padding: 20px; background-color: rgba(238, 119, 82, 0.08); border-radius: 8px; border-left: 4px solid var(--terracotta); display: flex; flex-direction: column; gap: 8px`}>
+              <div style="font-size: 2em; font-weight: 700; color: var(--terracotta)">
+                {item.step}
+              </div>
+              <h3 style="font-size: 1.05em; margin-bottom: 8px">{item.title}</h3>
+              <p style="font-size: 0.95em; line-height: 1.6; color: #666">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Recent Achievements Timeline */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">社会実装の軌跡</h2>
+        <p class="lab-section__body">
+          企業協働、地域連携、国際発信——學生たちの研究が、実際に社会に出ていく瞬間。
+        </p>
+        <div style="margin-top: 24px">
+          {TIMELINE.map((item, i) => (
+            <div data-reveal="left" style={`--reveal-delay: ${i * 0.08}s; display: flex; gap: 20px; margin-bottom: 20px; padding-left: 20px; border-left: 3px solid var(--terracotta); position: relative`}>
+              <div style="min-width: 100px">
+                <p style="font-size: 0.95em; font-weight: 700; color: var(--terracotta); margin-bottom: 4px">
+                  {item.year}
+                </p>
+              </div>
+              <div style="flex: 1">
+                <h3 style="margin-bottom: 4px; font-size: 1.05em">{item.event}</h3>
+                <p class="lab-section__body" style="font-size: 0.95em">{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Lab Information */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">Lab Information</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px">
+          {LAB_INFO.map((info, i) => (
+            <div data-reveal style={`--reveal-delay: ${i * 0.08}s; padding: 16px; background-color: #f9f7f4; border-radius: 8px; border-left: 3px solid var(--terracotta)`}>
+              <p style="font-size: 0.9em; font-weight: 600; color: var(--terracotta); margin-bottom: 8px">
+                {info.label}
+              </p>
+              <p style="font-size: 0.95em; line-height: 1.6; white-space: pre-wrap">
+                {info.value}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

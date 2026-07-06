@@ -1,0 +1,159 @@
+---
+import { ArrowLeft, Baby, Activity, Utensils, GraduationCap, Award, BookOpen, FlaskConical } from '@lucide/astro'
+
+const RESEARCH_THEMES = [
+  {
+    icon: Activity,
+    title: "子どもの食習慣・生活習慣と成長・発達",
+    body: "小中学生を対象に、食事内容・運動習慣・睡眠（クロノタイプ）などと骨量・体格・体力の関連を質問紙調査や測定を通じて解析しています。最近は咀嚼習慣や咀嚼能力にも着目し、食行動との関連についても研究しています。「隠れ肥満」や偏食など、現代の子どもたちが抱える健康課題にも目を向けています。"
+  },
+  {
+    icon: Baby,
+    title: "保育所・科学館における食育活動",
+    body: "保育所での食育ワークショップやクッキング保育、科学館での体験型食育ワークショップなど、子どもたちが食に親しむ実践プログラムを企画・実施・評価しています。こうした実践を通して、子どもが楽しみながら食への関心を高める食育のあり方について検討しています。"
+  },
+  {
+    icon: Utensils,
+    title: "幼児食・離乳食と保護者の養育環境",
+    body: "離乳食・幼児食のレシピ考案や、調理方法の違いが子どもの食べやすさに与える影響について研究しています。子どもの食べやすさと保護者の実践しやすさの両立を目指し、家庭で活用しやすい食支援のあり方を検討しています。また、保護者の食態度や養育環境が幼児の食生活に与える影響についても調査しています。"
+  },
+  {
+    icon: FlaskConical,
+    title: "動物実験（栄養と健康の基礎研究）",
+    body: "ラットを用いた飼育実験により、栄養条件が生体機能や健康に及ぼす影響について研究しています。食と健康をつなぐ生体内の仕組みに着目し、食物アレルギーや肥満などの健康課題に関する基礎研究を行っています。"
+  }
+]
+---
+
+<div class="lab-page">
+  <div class="container">
+    {/* Back Link */}
+    <div data-reveal="left">
+      <a href="/" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>トップページに戻る</span>
+      </a>
+    </div>
+
+    {/* Hero Section */}
+    <div class="lab-page__header" data-reveal style="--reveal-delay: 0.1s">
+      <p class="lab-page__eyebrow">食生活学・応用健康科学</p>
+      <h1 class="lab-page__title">中岡 加奈絵 研究室</h1>
+      <p class="lab-page__subtitle">
+        子どもの「からだ」と「食」と「生活習慣」をつなぐ。<br />
+        調査研究から実験研究まで、多角的なアプローチで子どもの健康を科学しています。
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+      {/* Profile Section */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">教員プロフィール</h2>
+        <div class="lab-pi-profile">
+          <p><strong>中岡 加奈絵（なかおか かなえ）准教授</strong></p>
+          <p>十文字学園女子大学 人間生活学部 食物栄養学科</p>
+          <p><strong>専門分野:</strong> 栄養学、健康科学（食生活学・応用健康科学）</p>
+          <p><strong>所属学会:</strong> 日本家政学会、日本食育学会、日本栄養・食糧学会、日本家庭科教育学会、日本健康教育学会 他</p>
+          <p class="lab-section__body" style="margin-top: 1.5em">
+            子どもの食生活・食育を主な研究テーマとし、食習慣や生活習慣が子どもの心身の成長にどのように関わるのか、質問紙調査や各種測定・動物実験など多様な手法を組み合わせて研究しています。保育所での食育活動や小中学校での調査・測定など、現場に根ざしたフィールドワークを大切にしています。
+          </p>
+          <p class="lab-section__body">
+            2025年5月には日本家政学会 奨励賞を受賞。管理栄養士養成のための教材開発にも継続的に取り組み、『ライフステージ栄養学』『五訂 応用栄養学実習』に加え、2025年には『イラスト 応用栄養学』を刊行しています。
+          </p>
+          <p><strong>職歴（抜粋）:</strong> 日本女子大学大学院 博士後期課程在学中に中野区保健センター非常勤管理栄養士として勤務。博士（学術）取得後、2020年に本学専任講師として着任し、2026年より准教授。横浜女子短期大学・立正大学・近畿大学九州短期大学（通信）でも非常勤講師として教鞭をとる。</p>
+        </div>
+      </section>
+
+      {/* Research Themes Section */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">研究テーマ</h2>
+        <div class="lab-section__grid">
+          {RESEARCH_THEMES.map((card, i) => {
+            const Icon = card.icon
+            return (
+              <div class="lab-section__card" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s`}>
+                <div style="margin-bottom: 12px"><Icon class="text-terracotta" /></div>
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Research Activities Section */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">研究室の活動</h2>
+        <div class="lab-section__card" style="margin-bottom: 20px">
+          <h3>【3年生】</h3>
+          <ul class="lab-publication-list">
+            <li>保育所や科学館と連携した食育活動の企画・運営</li>
+            <li>小中学校等での調査・測定活動への参加</li>
+            <li>動物実験（ラット飼育・サンプリング）</li>
+            <li>論文紹介や研究発表を行う勉強会</li>
+          </ul>
+          <p class="lab-section__body" style="margin-top: 1.5em">
+            子どもの食生活や健康に関する研究について学びながら、調査研究・実践活動・基礎研究を幅広く経験します。
+          </p>
+        </div>
+        <div class="lab-section__card">
+          <h3>【4年生】</h3>
+          <ul class="lab-publication-list">
+            <li>卒業研究</li>
+            <li>学会発表や研究成果の発信</li>
+            <li>大学祭での研究紹介や体験型企画の実施</li>
+          </ul>
+          <p class="lab-section__body" style="margin-top: 1.5em">
+            少人数グループで協力しながら研究テーマを設定し、調査計画の立案からデータ解析、発表まで取り組みます。
+          </p>
+        </div>
+      </section>
+
+      {/* Education & Achievements Section */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">教育活動・主な実績</h2>
+        <div class="lab-section__card" style="margin-bottom: 20px">
+          <div class="flex items-start gap-3">
+            <BookOpen class="text-terracotta mt-1 flex-shrink-0" size={20} />
+            <div>
+              <h3>教科書・教材の執筆</h3>
+              <p class="lab-section__body">
+                『ライフステージ栄養学』、『五訂 応用栄養学実習―ケーススタディーで学ぶ栄養マネジメント―』、そして2025年刊行の『イラスト 応用栄養学 ―ライフステージ別栄養ケア・マネジメントの理解と実践―』に携わっています。最新のガイドラインや制度を踏まえながら、学生が理解しやすく、管理栄養士として現場で活躍するための基礎を身につけられる教材づくりを心がけています。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="lab-section__card" style="margin-bottom: 20px">
+          <div class="flex items-start gap-3">
+            <Award class="text-terracotta mt-1 flex-shrink-0" size={20} />
+            <div>
+              <h3>受賞</h3>
+              <p class="lab-section__body">
+                2025年5月、<strong>日本家政学会 奨励賞</strong>を受賞。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="lab-section__card">
+          <div class="flex items-start gap-3">
+            <GraduationCap class="text-terracotta mt-1 flex-shrink-0" size={20} />
+            <div>
+              <h3>社会活動</h3>
+              <p class="lab-section__body">
+                日本食育学会 代議員として学会活動にも参画。食育や子どもの食生活に関するテーマで、保育士向け研修会や教員を対象とした講習会の講師を務めています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Message Section */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">研究室での学び</h2>
+        <p class="lab-section__body">
+          研究室では、子どもの食生活や健康に関する課題を多角的に捉え、調査研究・食育実践・基礎研究を通して学びを深めています。学生はテーマ設定から調査・実験、発表まで主体的に取り組みながら、管理栄養士として必要な実践力と研究力を身につけていきます。
+        </p>
+      </section>
+    </div>
+  </div>
+</div>

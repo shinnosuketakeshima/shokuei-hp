@@ -22,6 +22,8 @@ npx firebase deploy   # firebase CLI may not be on PATH; use npx
 
 **shokuei-hp** is a React 19 + Vite 8 SPA for Jumonji University's Food and Nutrition Department (食物栄養学科). It is a non-official informational/media site deployed on Firebase Hosting with Firestore for dynamic news content.
 
+**This branch (`refactor/hp-redesign`) is mid-migration to Astro** — see [Astro migration](#astro-migration-in-progress) below. Until Phase 5 cutover, the React/Vite SPA described in this section remains what's actually deployed (`dist/`); the Astro build (`dist-astro/`) is a parallel, not-yet-shipped output.
+
 ### Routing
 
 `BrowserRouter` is in `src/main.jsx`; `Routes`/`Route` are in `src/App.jsx`. Firebase Hosting rewrites all paths to `index.html`. Do **not** revert to hash-based routing.
@@ -89,6 +91,23 @@ Firestore `date` values can be a `Timestamp`, `Date`, or string — `formatNewsD
 - External links: `target="_blank" rel="noopener noreferrer"`. Internal links: `<Link to="...">` from `react-router-dom`.
 - Scroll-reveal: add `data-reveal` (optionally `data-reveal-delay="1"–"6"`). Works only on the homepage.
 - Animations: Framer Motion (`motion.*`, `AnimatePresence`) rather than raw CSS transitions. Icons: `lucide-react`.
+
+## Astro migration (in progress)
+
+The repo is migrating from the React/Vite SPA to Astro, route by route, without an `npm run` script wired up yet — use `npx astro dev` / `npx astro build` / `npx astro check` directly. The Astro build is intentionally kept separate from the live site until cutover:
+
+- `astro.config.mjs`: `outDir: './dist-astro'` (not `dist/`), `build.format: 'file'`, `trailingSlash: 'never'` — must match the live site's URL shape (no trailing slash) since Firebase Hosting's `cleanUrls` behavior is being replicated by hand.
+- `firebase.json` hosting still points at `dist/`. Do not deploy `dist-astro/` or treat any `.astro` work as live until an explicit cutover step.
+- `tsconfig.json` extends `astro/tsconfigs/base` and exists for `astro check`, not for a general TypeScript migration — the codebase is still JS/JSX otherwise.
+- `eslint.config.js` only lints `**/*.{js,jsx}` — `.astro` files are not covered by `npm run lint`.
+
+**Routing**: Astro's file-based routing lives in `src/pages/*.astro` (one file per route, e.g. `kokushi-report.astro`). Each page wraps a matching `src/components/*.astro` component in `src/layouts/BaseLayout.astro` — mirroring the original `.jsx` component of the same name. Not every route has been ported yet; check for the corresponding file in `src/pages/` before assuming a page is on Astro rather than the React `Routes` in `App.jsx`.
+
+**Metadata**: `src/data/pageMeta.js` is a verbatim port of `App.jsx`'s `PAGE_META`/`keywordsMap`, and `src/lib/seo.js` ports the JSON-LD builders. `BaseLayout.astro` looks up `PAGE_META[pathname]` and **throws a build error if a route isn't registered** — this replaces the old "keep 4 places in sync" requirement (`PAGE_META`/`SUB_PATHS`/`<Routes>`) with a single required edit for Astro pages. The `Header.jsx`/`Footer.jsx` ↔ `Header.astro`/`Footer.astro` nav-list duplication (`LAB_CATEGORIES`/`LAB_COLS`) still applies separately on each stack — adding a lab link means updating both the `.jsx` and `.astro` nav components independently.
+
+**No React runtime in the shell**: `Header.astro`/`Footer.astro` reimplement the menu/dropdown/scroll behavior in vanilla `<script>` (no Framer Motion, no React) to avoid hydration cost. Scroll-reveal is ported to `src/scripts/reveal.js` (vanilla `IntersectionObserver`, gated on `html.js`, respects `prefers-reduced-motion`) as the Astro equivalent of the `data-reveal` logic in `App.jsx`. `@astrojs/react` is still installed so React components can be dropped in as islands where needed, but ported pages so far are pure Astro.
+
+**Migration verification**: `scripts/migration/routes.mjs` lists all 35 legacy routes; `scripts/migration/capture-baseline.mjs` captured pre-migration `head`/JSON-LD/DOM snapshots into `docs/migration-baseline/` for diffing against the Astro output. When porting a page, diff against its baseline rather than eyeballing.
 
 ## Language
 
