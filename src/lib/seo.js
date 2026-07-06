@@ -25,7 +25,7 @@ function buildCustomJsonLd(pathname, meta) {
         postalCode: '352-8510',
         addressCountry: 'JP'
       },
-      telephone: '+81-48-481-1111',
+      telephone: '+81-48-477-0555',
       geo: {
         '@type': 'GeoCoordinates',
         latitude: '35.8193',

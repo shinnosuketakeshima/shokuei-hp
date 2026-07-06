@@ -38,6 +38,7 @@ const routes = [
   { path: '/lab-takeshima-column', changefreq: 'monthly', priority: '0.6' },
   { path: '/faq', changefreq: 'monthly', priority: '0.7' },
   { path: '/sports-nutrition', changefreq: 'monthly', priority: '0.8' },
+  { path: '/sports-nutrition-health', changefreq: 'monthly', priority: '0.7' },
   { path: '/kotosupport', changefreq: 'monthly', priority: '0.8' },
   { path: '/submajor', changefreq: 'monthly', priority: '0.8' },
   { path: '/columns', changefreq: 'weekly', priority: '0.7' },
