@@ -111,7 +111,7 @@ function HBarHtml(label: string, count: number, total: number, accent: string) {
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 48px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 48px;">
         <div data-reveal>
           <h3 style="font-size: 13px; letter-spacing: 0.08em; color: var(--stone); margin-bottom: 24px; font-weight: 500;">業種別の人数</h3>
           {BREAKDOWN.map((b, i) => {
