@@ -17,7 +17,8 @@
       "WebFetch(domain:gyoseki.acoffice.jp)",
       "WebSearch",
       "Skill(run)",
-      "Bash(npx astro *)"
+      "Bash(npx astro *)",
+      "Bash(gh auth *)"
     ]
   }
 }
