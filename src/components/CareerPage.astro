@@ -1,0 +1,219 @@
+---
+import { ArrowRight, MapPin, GraduationCap, Sparkles, Building2 } from '@lucide/astro'
+import Career from './Career.astro'
+
+const BREAKDOWN = [
+  { name: '保育園', count: 25 },
+  { name: '調剤薬局・ドラッグストア', count: 21 },
+  { name: '病院・クリニック', count: 18 },
+  { name: '給食受託会社', count: 14 },
+  { name: '食品メーカー・関連企業', count: 11 },
+  { name: '一般企業（金融・物流ほか）', count: 11 },
+  { name: '高齢者・福祉施設', count: 7 },
+  { name: 'スーパー・百貨店・小売', count: 5 },
+  { name: '公務員・自衛官', count: 4 },
+  { name: '歯科クリニック', count: 4 },
+  { name: '進学・留学・その他', count: 7 },
+]
+
+const REGIONS = [
+  { name: '東京都', count: 50 },
+  { name: '埼玉県', count: 43 },
+  { name: '千葉県', count: 8 },
+  { name: '神奈川県', count: 6 },
+  { name: '栃木県', count: 5 },
+  { name: 'その他（北関東・全国）', count: 8 },
+]
+
+const SUPPORT_STEPS = [
+  { year: '1年次', title: '基礎づくりとキャリア意識', body: '学びの土台を作りながら、ガイダンスや先輩との交流を通して「どんな栄養士になりたいか」を少しずつ言葉にしていきます。' },
+  { year: '2年次', title: '実習・現場体験', body: '給食経営管理実習や臨地実習で、はじめての「現場」を経験。職種のリアルを知り、自分の向き不向きを確かめる時期です。' },
+  { year: '3年次', title: '進路選択と対策のはじまり', body: '個別の進路相談を本格化し、国家試験対策と就職活動の準備を並行して進めます。模擬試験や業界研究会も実施。' },
+  { year: '4年次', title: '内定・国試・卒業研究', body: '就職活動・国家試験対策・卒業研究の三本柱。教員が一人ひとりの状況に合わせて個別フォローします。' },
+]
+
+const TOTAL = 127
+const NUTRITION = 84
+const GENERAL = 36
+const OTHER = 7
+const REGION_TOTAL = 120
+
+function HBarHtml(label: string, count: number, total: number, accent: string) {
+  const pct = (count / total) * 100
+  return { label, pct: pct.toFixed(1), accent }
+}
+---
+
+<div class="career-page">
+  <Career summary={false} />
+
+  <section style="padding: 80px 0; background: var(--cream, #faf8f3);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 56px;" data-reveal>
+        <p class="eyebrow">Numbers</p>
+        <h2 style="font-size: 28px; letter-spacing: 0.04em; margin-top: 8px;">
+          数字で見る、卒業後のリアル
+        </h2>
+        <p style="font-size: 13px; color: var(--stone); margin-top: 16px; line-height: 1.9;">
+          2025年3月卒業生の進路実績にもとづく集計です。
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto;">
+        {[
+          { num: '66', unit: '%', label: '栄養士・管理栄養士として就職', Icon: GraduationCap },
+          { num: '73', unit: '%', label: '東京・埼玉エリアで勤務', Icon: MapPin },
+          { num: '10', unit: '分野', label: 'にわたる就職先業種', Icon: Building2 },
+        ].map((s, i) => (
+          <div data-reveal data-reveal-delay={String(i)} style="background: #fff; padding: 32px 24px; border-radius: 4px; text-align: center; border: 1px solid rgba(0,0,0,0.06);">
+            <div style="color: var(--stone); display: flex; justify-content: center; margin-bottom: 14px;">
+              <s.Icon size={18} />
+            </div>
+            <div style="font-size: 44px; font-weight: 300; line-height: 1; letter-spacing: -0.02em; color: var(--ink, #2b2b2b);">
+              {s.num}
+              <span style="font-size: 18px; margin-left: 4px; color: var(--stone);">{s.unit}</span>
+            </div>
+            <p style="font-size: 12px; color: var(--stone); margin-top: 12px; letter-spacing: 0.04em; line-height: 1.6;">
+              {s.label}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 80px 0;">
+    <div class="container">
+      <div style="margin-bottom: 40px;" data-reveal>
+        <p class="eyebrow">Breakdown</p>
+        <h2 style="font-size: 24px; letter-spacing: 0.04em; margin-top: 8px;">進路の構成</h2>
+        <p style="font-size: 13px; color: var(--stone); margin-top: 14px; line-height: 1.9; max-width: 640px;">
+          「管理栄養士」だけが進路ではありません。
+          栄養の学びを土台にして、医療・福祉・小売・食品・サービスなど、
+          さまざまな業界で卒業生が活躍しています。
+        </p>
+      </div>
+
+      <div style="margin-bottom: 64px; max-width: 900px;" data-reveal>
+        <div style="display: flex; height: 54px; border-radius: 4px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.04);">
+          <div style={`width: ${(NUTRITION / TOTAL) * 100}%; background: var(--moss, #6b7d52); display: flex; align-items: center; padding-left: 18px; color: #fff; font-size: 12px; letter-spacing: 0.04em; white-space: nowrap;`}>
+            栄養士・管理栄養士 {Math.round((NUTRITION / TOTAL) * 100)}%
+          </div>
+          <div style={`width: ${(GENERAL / TOTAL) * 100}%; background: var(--terracotta, #b87654); display: flex; align-items: center; padding-left: 14px; color: #fff; font-size: 12px; letter-spacing: 0.04em; white-space: nowrap; overflow: hidden;`}>
+            一般職 {Math.round((GENERAL / TOTAL) * 100)}%
+          </div>
+          <div style={`width: ${(OTHER / TOTAL) * 100}%; background: rgba(0,0,0,0.18); display: flex; align-items: center; padding-left: 10px; color: #fff; font-size: 11px; letter-spacing: 0.04em; white-space: nowrap; overflow: hidden;`}>
+            進学等 {OTHER}
+          </div>
+        </div>
+        <p style="font-size: 11px; color: var(--stone); margin-top: 12px; opacity: 0.75;">
+          ※ 一般職には、栄養の知識を活かして食品メーカーや小売・医療事務などに就いた卒業生を含みます。
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 48px;">
+        <div data-reveal>
+          <h3 style="font-size: 13px; letter-spacing: 0.08em; color: var(--stone); margin-bottom: 24px; font-weight: 500;">業種別の人数</h3>
+          {BREAKDOWN.map((b, i) => {
+            const h = HBarHtml(b.name, b.count, TOTAL, i < 4 ? 'var(--moss, #6b7d52)' : 'var(--terracotta, #b87654)')
+            return (
+              <div style="margin-bottom: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; font-size: 13px;">
+                  <span style="color: var(--ink, #2b2b2b); letter-spacing: 0.02em;">{h.label}</span>
+                  <span style="color: var(--stone, #8a8175); font-size: 12px; font-variant-numeric: tabular-nums;">{h.pct}%</span>
+                </div>
+                <div style="height: 6px; background: rgba(0,0,0,0.05); border-radius: 3px; overflow: hidden;">
+                  <div style={`width: ${h.pct}%; height: 100%; background: ${h.accent}; border-radius: 3px;`}></div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        <div data-reveal>
+          <h3 style="font-size: 13px; letter-spacing: 0.08em; color: var(--stone); margin-bottom: 24px; font-weight: 500;">勤務地の分布</h3>
+          {REGIONS.map((r) => {
+            const h = HBarHtml(r.name, r.count, REGION_TOTAL, 'var(--moss, #6b7d52)')
+            return (
+              <div style="margin-bottom: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; font-size: 13px;">
+                  <span style="color: var(--ink, #2b2b2b); letter-spacing: 0.02em;">{h.label}</span>
+                  <span style="color: var(--stone, #8a8175); font-size: 12px; font-variant-numeric: tabular-nums;">{h.pct}%</span>
+                </div>
+                <div style="height: 6px; background: rgba(0,0,0,0.05); border-radius: 3px; overflow: hidden;">
+                  <div style={`width: ${h.pct}%; height: 100%; background: ${h.accent}; border-radius: 3px;`}></div>
+                </div>
+              </div>
+            )
+          })}
+          <p style="font-size: 11px; color: var(--stone); margin-top: 20px; opacity: 0.7; line-height: 1.7;">
+            ※ 勤務地が確定している卒業生のみ集計。<br />
+            首都圏を中心に、北関東から関西・北海道まで広がりがあります。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 80px 0; background: var(--cream, #faf8f3);">
+    <div class="container">
+      <div style="margin-bottom: 48px;" data-reveal>
+        <p class="eyebrow">Support</p>
+        <h2 style="font-size: 24px; letter-spacing: 0.04em; margin-top: 8px;">4年間の就職サポート</h2>
+        <p style="font-size: 13px; color: var(--stone); margin-top: 14px; line-height: 1.9; max-width: 640px;">
+          入学から卒業まで、教員が一人ひとりの進路に伴走します。
+          「いきなり就活」ではなく、4年かけて段階的に準備していく仕組みです。
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+        {SUPPORT_STEPS.map((s, i) => (
+          <div data-reveal data-reveal-delay={String(Math.min(i, 6))} style="background: #fff; padding: 28px 24px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.06); position: relative;">
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: var(--moss, #6b7d52); font-weight: 600;">{s.year}</span>
+            <h3 style="font-size: 15px; margin-top: 10px; margin-bottom: 12px; letter-spacing: 0.02em; font-weight: 600;">{s.title}</h3>
+            <p style="font-size: 12.5px; color: var(--stone); line-height: 1.85;">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 80px 0;">
+    <div class="container">
+      <div data-reveal style="max-width: 720px; margin: 0 auto; padding: 40px 36px; background: var(--cream, #faf8f3); border-left: 3px solid var(--moss, #6b7d52); border-radius: 2px;">
+        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 12px;">
+          <Sparkles size={16} style="color: var(--moss, #6b7d52);" />
+          <p class="eyebrow" style="margin: 0;">関連ページ</p>
+        </div>
+        <h3 style="font-size: 18px; letter-spacing: 0.02em; margin-bottom: 10px;">管理栄養士国家試験の結果と対策</h3>
+        <p style="font-size: 13px; color: var(--stone); line-height: 1.9; margin-bottom: 18px;">
+          本学科の国家試験合格率や、そこに至るまでの対策、学生一人ひとりの成長の物語を、
+          数字と言葉でご紹介しています。
+        </p>
+        <a href="/kokushi-report" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--moss, #6b7d52); text-decoration: none; letter-spacing: 0.04em; border-bottom: 1px solid currentColor; padding-bottom: 2px;">
+          国家試験結果のページへ
+          <ArrowRight size={14} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 80px 0 100px; background: var(--cream, #faf8f3);">
+    <div class="container">
+      <div data-reveal style="text-align: center; max-width: 640px; margin: 0 auto;">
+        <p class="eyebrow">Next Step</p>
+        <h2 style="font-size: 24px; letter-spacing: 0.04em; margin-top: 8px; margin-bottom: 18px;">気になったら、見にきてください</h2>
+        <p style="font-size: 13px; color: var(--stone); line-height: 1.9; margin-bottom: 32px;">
+          数字や説明だけでは伝わらない、教室の雰囲気・先輩や教員との距離感は、
+          ぜひオープンキャンパスで体感してみてください。
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/event-0531" class="button">
+            イベント情報を見る <ArrowRight size={16} style="margin-left: 6px;" />
+          </a>
+          <a href="/" class="button button--outline">トップに戻る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

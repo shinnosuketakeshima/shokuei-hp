@@ -1,0 +1,97 @@
+---
+import { ArrowLeft, GraduationCap, BookOpen } from '@lucide/astro'
+import { STATIC_NEWS, newsDateMillis, formatNewsDate } from '../newsData.js'
+
+const FILTERS = [
+  { id: 'all', label: '全て' },
+  { id: '学生コラム', label: '学生コラム' },
+  { id: '教員コラム', label: '教員コラム' },
+]
+
+const columns = STATIC_NEWS
+  .filter((n) => n.type === 'column')
+  .sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date))
+---
+
+<div class="lab-page">
+  <div class="container">
+
+    <div class="lab-page__header" data-reveal>
+      <a href="/" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>トップページに戻る</span>
+      </a>
+      <p class="lab-page__eyebrow">十文字学園女子大学 食物栄養学科</p>
+      <h1 class="lab-page__title">コラム</h1>
+      <p class="lab-page__subtitle">
+        学生と教員、それぞれの視点で綴る、学びと現場のリアル。実習やゼミでの気づきから、教育・キャリアへの想いまで。
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+      <div class="columns-filter">
+        {FILTERS.map((f) => (
+          <button
+            type="button"
+            class="columns-filter__tab"
+            data-columns-filter={f.id}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
+      <div class="columns-grid" data-columns-grid>
+        {columns.map((c) => {
+          const isStudent = c.tag === '学生コラム'
+          const Icon = isStudent ? GraduationCap : BookOpen
+          return (
+            <div data-columns-item data-columns-tag={c.tag}>
+              <a href={c.href || '/'} class="column-card">
+                <div class="column-card__top">
+                  <span class={`column-card__badge column-card__badge--${isStudent ? 'student' : 'faculty'}`}>
+                    <Icon size={13} aria-hidden="true" />
+                    {c.tag}
+                  </span>
+                  <span class="column-card__date">{formatNewsDate(c.date)}</span>
+                </div>
+                <h2 class="column-card__title">{c.title}</h2>
+                {c.description && <p class="column-card__desc">{c.description}</p>}
+              </a>
+            </div>
+          )
+        })}
+      </div>
+
+      <p class="columns-empty" data-columns-empty style="display: none;">該当するコラムがありません。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const grid = document.querySelector<HTMLElement>('[data-columns-grid]')
+  const empty = document.querySelector<HTMLElement>('[data-columns-empty]')
+  const buttons = document.querySelectorAll<HTMLElement>('[data-columns-filter]')
+  const items = document.querySelectorAll<HTMLElement>('[data-columns-item]')
+
+  function applyFilter(filter: string) {
+    let visibleCount = 0
+    items.forEach((item) => {
+      const match = filter === 'all' || item.getAttribute('data-columns-tag') === filter
+      item.style.display = match ? '' : 'none'
+      if (match) visibleCount++
+    })
+    if (empty) empty.style.display = visibleCount === 0 ? '' : 'none'
+    buttons.forEach((btn) => {
+      btn.classList.toggle('is-active', btn.getAttribute('data-columns-filter') === filter)
+    })
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      applyFilter(btn.getAttribute('data-columns-filter') || 'all')
+    })
+  })
+
+  applyFilter('all')
+</script>

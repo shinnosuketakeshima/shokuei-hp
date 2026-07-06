@@ -1,0 +1,138 @@
+---
+import { ArrowLeft, Sparkles, ChevronRight, Award, FlaskConical, PenTool } from '@lucide/astro'
+
+const SUB_MAJORS = [
+  {
+    tag: '栄養 × 食と美と健康',
+    title: '「美」を、科学で語れる人に。',
+    body: '「食べてきれいになる」を、なんとなくではなく根拠をもって伝えられる管理栄養士へ。',
+    subjects: ['美しさを育む食と栄養', '食と幸福学'],
+    accent: 'var(--forest)',
+    icon: Award,
+  },
+  {
+    tag: '栄養 × DX',
+    title: '栄養の知識に、データで動く力を。',
+    body: '一人ひとりに合わせた食の提案を、データを使って組み立てられる次世代の管理栄養士へ。',
+    subjects: ['データで読み解く地域課題', '未来を創るDX入門'],
+    accent: 'var(--terracotta)',
+    icon: FlaskConical,
+  },
+  {
+    tag: '栄養 × 発信',
+    title: '正しい食の情報を、"届く"形に。',
+    body: 'あふれる食の情報の中で、本当に正しいことをちゃんと伝えられる発信力を身につける。',
+    subjects: ['デジタル発信力：SNS・動画編集実践', '※Canva・CapCut実習あり'],
+    accent: 'var(--stone)',
+    icon: PenTool,
+  },
+]
+---
+
+<div class="lab-page">
+  <div class="container">
+
+    <div class="lab-page__header" data-reveal>
+      <a href="/" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>トップページに戻る</span>
+      </a>
+      <p class="lab-page__eyebrow">2027年度スタート｜全学の副専攻制度</p>
+      <h1 class="lab-page__title">
+        管理栄養士<span style="color: var(--terracotta);">＋</span>もうひとつ。
+      </h1>
+      <p class="lab-page__subtitle">
+        国家資格をめざす専門の学びに、全学の「副専攻」をかけ合わせる。資格を取るだけで終わらない、あなただけのキャリアをデザインできる4年間です。
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+
+      <section class="lab-story-feature lab-story-feature--forest" data-reveal>
+        <span class="lab-story-feature__label">
+          <Sparkles size={12} /> 対象年度
+        </span>
+        <p class="lab-story-feature__lead" style="font-size: 1.25rem; font-weight: bold; margin: 0; color: var(--ink);">
+          この新しい学び方を、最初に選べるのは——2027年4月に入学するあなたたちです。
+        </p>
+      </section>
+
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">栄養×副専攻の3つの掛け合わせパターン</h2>
+        <p class="lab-section__body">
+          食物栄養学科の専門的な学びに、自分の興味に合わせた副専攻プログラムを掛け合わせることで、さらに活躍の場が広がります。
+        </p>
+        <div class="sn-evidence-cards">
+          {SUB_MAJORS.map((card, i) => {
+            const Icon = card.icon
+            const tagColor = card.accent === 'var(--stone)' ? 'var(--charcoal)' : card.accent
+            return (
+              <div class="sn-evidence-card" data-reveal data-reveal-delay={i > 0 ? String(Math.min(i, 6)) : undefined}>
+                <span
+                  class="sn-evidence-card__dept"
+                  style={`background: color-mix(in srgb, ${card.accent} 12%, transparent); color: ${tagColor};`}
+                >
+                  {card.tag}
+                </span>
+                <div
+                  class="sn-evidence-card__icon"
+                  style={`background: color-mix(in srgb, ${card.accent} 12%, transparent); color: ${tagColor};`}
+                >
+                  <Icon size={28} aria-hidden="true" />
+                </div>
+                <h3 class="sn-evidence-card__title">{card.title}</h3>
+                <p class="sn-evidence-card__body">{card.body}</p>
+
+                <div style="margin-top: auto; padding-top: 1.25rem;">
+                  <p class="sn-course-card__topics-label" style="margin: 0 0 8px 0;">例示科目</p>
+                  <div class="sn-course-card__topics">
+                    {card.subjects.map((sub) => {
+                      const isNote = sub.startsWith('※')
+                      return isNote ? (
+                        <span style="font-size: 0.7rem; color: var(--stone); width: 100%; padding: 2px 0; background: transparent; border-radius: 0;">
+                          {sub}
+                        </span>
+                      ) : (
+                        <span style={`background: color-mix(in srgb, ${card.accent} 8%, transparent); color: ${tagColor}; border: 1px solid color-mix(in srgb, ${card.accent} 15%, transparent);`}>
+                          {sub}
+                        </span>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--stone); margin-top: 1.5rem; text-align: left;">
+          ※副専攻には他にも複数のプログラムがあります。ここで紹介したのは、食物栄養学科の学びと相性のよい一例です。
+        </p>
+      </section>
+
+      <section class="lab-section" data-reveal>
+        <div class="sn-cta-banner">
+          <p class="sn-cta-banner__eyebrow">
+            <Sparkles size={14} aria-hidden="true" />
+            十文字学園女子大学
+          </p>
+          <h2 class="sn-cta-banner__title">
+            管理栄養士の資格に加え、<br />
+            あなただけのもうひとつの武器を。
+          </h2>
+          <div class="sn-cta-banner__buttons">
+            <a href="#" class="sn-cta-btn sn-cta-btn--primary" data-ga-click="oc_submajor">
+              オープンキャンパスで相談する
+              <ChevronRight size={16} aria-hidden="true" />
+            </a>
+            <a href="/kotosupport" class="sn-cta-btn sn-cta-btn--secondary">
+              ことサポ for 食栄のページを見る
+              <ChevronRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
