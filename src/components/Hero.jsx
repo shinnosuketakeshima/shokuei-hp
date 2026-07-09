@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import HeroBg from '../top.jpg';
 
 const CTAS = [
+  {
+    label: 'オープンキャンパスに申し込む',
+    href: 'https://mypage.s-axol.jp/jumonji-u/login',
+    external: true,
+    primary: true,
+  },
   { label: '学生たちのリアルを見る', href: '/voices', external: false },
   { label: '12の研究室ストーリー', href: '#labs', external: false },
   {
@@ -31,15 +37,6 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#2a1e1a]/50 via-transparent to-transparent" aria-hidden="true" />
 
       <div className="container relative z-10 flex min-h-[92svh] flex-col justify-end px-[clamp(20px,5vw,72px)] pb-[clamp(48px,8vw,96px)] pt-[clamp(100px,14vw,140px)]">
-        <motion.p
-          className="mb-4 text-[11px] font-medium tracking-[0.22em] text-white/75 uppercase"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-        >
-          十文字学園女子大学 食物栄養学科 ― 補完サイト
-        </motion.p>
-
         <motion.h1
           className="max-w-3xl text-balance font-serif text-[clamp(28px,4.6vw,56px)] leading-[1.3] font-bold tracking-[0.02em] text-white drop-shadow-lg"
           initial={{ opacity: 0, y: 24 }}
@@ -76,7 +73,7 @@ export default function Hero() {
           {CTAS.map((cta) => {
             const className =
               'inline-flex min-h-[48px] items-center justify-center gap-2 rounded-2xl px-6 py-3 text-[13px] font-medium tracking-wide transition-all duration-300 ' +
-              (cta.external
+              (cta.external && !cta.primary
                 ? 'border border-white/35 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20'
                 : 'bg-white text-[#4a3f3f] shadow-lg hover:-translate-y-0.5 hover:bg-[#fff9f9]');
 
