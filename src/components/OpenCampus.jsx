@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight, Calendar, Clock, MapPin, ChevronRight } from 'lucide-react'
 
 const OC_DATES = [
-  { date: '7月XX日（土）', time: '10:00〜15:00（予定）' },
-  { date: '8月XX日（土）', time: '10:00〜15:00（予定）' },
+  { date: '7月12日（日）', time: '10:00〜15:00（予定）' },
+  { date: '7月19日（日）', time: '10:00〜15:00（予定）' },
 ]
 
 const PROGRAM = [
