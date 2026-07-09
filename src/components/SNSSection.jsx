@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 
 function InstagramIcon({ size = 24 }) {
   return (
@@ -52,6 +53,9 @@ export default function SNSSection() {
             <div className="sns-card__icon"><InstagramIcon size={44} /></div>
             <p className="sns-card__name">Instagram</p>
             <p className="sns-card__handle">@jumonji_shokuei</p>
+            <span className="sns-card__follow-label">
+              フォローする <ArrowUpRight size={12} aria-hidden="true" />
+            </span>
             <div className="sns-card__hover">
               <span className="sns-card__cta">フォローする</span>
             </div>
@@ -71,6 +75,9 @@ export default function SNSSection() {
             <div className="sns-card__icon"><TikTokIcon size={44} /></div>
             <p className="sns-card__name">TikTok</p>
             <p className="sns-card__handle">@ishokssov49</p>
+            <span className="sns-card__follow-label">
+              フォローする <ArrowUpRight size={12} aria-hidden="true" />
+            </span>
             <div className="sns-card__hover">
               <span className="sns-card__cta">フォローする</span>
             </div>
