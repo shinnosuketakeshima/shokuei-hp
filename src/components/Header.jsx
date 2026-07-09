@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, ArrowUpRight } from 'lucide-react'
 
 const LAB_CATEGORIES = [
   {
@@ -76,98 +76,121 @@ export default function Header() {
   const toggle   = (key) => setOpenKey(k => k === key ? null : key)
 
   return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}${onHero ? ' header--on-hero' : ''}`}>
-      <div className="header__inner">
+    <>
+      <header className={`header${scrolled ? ' header--scrolled' : ''}${onHero ? ' header--on-hero' : ''}`}>
+        <div className="header__inner">
 
-        <a href="/" className="header__logo" onClick={closeAll}>
-          <div className="header__logo-main">
-            <span className="header__logo-dept">食物栄養学科</span>
-            <span className="header__unofficial-badge">非公式</span>
-          </div>
-          <span className="header__logo-tagline">十文字学園女子大学 ― 学生・教員による情報メディア</span>
-        </a>
-
-        <nav
-          ref={navRef}
-          className={`header__nav${menuOpen ? ' header__nav--open' : ''}`}
-          aria-label="メインナビゲーション"
-        >
-          <a href="/" className="header__nav-link" onClick={closeAll}>ホーム</a>
-
-          {LAB_CATEGORIES.map(cat => (
-            <div key={cat.key} className="header__cat-wrap">
-              <button
-                type="button"
-                className={`header__cat-btn${openKey === cat.key ? ' header__cat-btn--active' : ''}`}
-                onClick={() => toggle(cat.key)}
-                aria-expanded={openKey === cat.key}
-                aria-haspopup="true"
-              >
-                {cat.label}
-                <ChevronDown
-                  size={13}
-                  className={`header__cat-chevron${openKey === cat.key ? ' header__cat-chevron--open' : ''}`}
-                  aria-hidden="true"
-                />
-              </button>
-
-              <div
-                className={`header__dropdown header__dropdown--${cat.key}${openKey === cat.key ? ' header__dropdown--open' : ''}`}
-                aria-hidden={openKey !== cat.key}
-              >
-                <p className="header__dropdown-eyebrow">{cat.sublabel}</p>
-                {cat.labs.map(lab =>
-                  lab.external ? (
-                    <a
-                      key={lab.href}
-                      href={lab.href}
-                      className="header__dropdown-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={closeAll}
-                      tabIndex={openKey === cat.key ? 0 : -1}
-                    >
-                      <span className="header__dropdown-name">{lab.name}</span>
-                      <span className="header__dropdown-note">{lab.note} ↗</span>
-                    </a>
-                  ) : (
-                    <a
-                      key={lab.href}
-                      href={lab.href}
-                      className="header__dropdown-item"
-                      onClick={closeAll}
-                      tabIndex={openKey === cat.key ? 0 : -1}
-                    >
-                      <span className="header__dropdown-name">{lab.name}</span>
-                      <span className="header__dropdown-note">{lab.note}</span>
-                    </a>
-                  )
-                )}
-              </div>
+          <a href="/" className="header__logo" onClick={closeAll}>
+            <div className="header__logo-main">
+              <span className="header__logo-dept">食物栄養学科</span>
+              <span className="header__unofficial-badge">非公式</span>
             </div>
-          ))}
+            <span className="header__logo-tagline">十文字学園女子大学 ― 学生・教員による情報メディア</span>
+          </a>
+
+          <nav
+            ref={navRef}
+            className={`header__nav${menuOpen ? ' header__nav--open' : ''}`}
+            aria-label="メインナビゲーション"
+          >
+            <a href="/" className="header__nav-link" onClick={closeAll}>ホーム</a>
+
+            {LAB_CATEGORIES.map(cat => (
+              <div key={cat.key} className="header__cat-wrap">
+                <button
+                  type="button"
+                  className={`header__cat-btn${openKey === cat.key ? ' header__cat-btn--active' : ''}`}
+                  onClick={() => toggle(cat.key)}
+                  aria-expanded={openKey === cat.key}
+                  aria-haspopup="true"
+                >
+                  {cat.label}
+                  <ChevronDown
+                    size={13}
+                    className={`header__cat-chevron${openKey === cat.key ? ' header__cat-chevron--open' : ''}`}
+                    aria-hidden="true"
+                  />
+                </button>
+
+                <div
+                  className={`header__dropdown header__dropdown--${cat.key}${openKey === cat.key ? ' header__dropdown--open' : ''}`}
+                  aria-hidden={openKey !== cat.key}
+                >
+                  <p className="header__dropdown-eyebrow">{cat.sublabel}</p>
+                  {cat.labs.map(lab =>
+                    lab.external ? (
+                      <a
+                        key={lab.href}
+                        href={lab.href}
+                        className="header__dropdown-item"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeAll}
+                        tabIndex={openKey === cat.key ? 0 : -1}
+                      >
+                        <span className="header__dropdown-name">{lab.name}</span>
+                        <span className="header__dropdown-note">{lab.note} ↗</span>
+                      </a>
+                    ) : (
+                      <a
+                        key={lab.href}
+                        href={lab.href}
+                        className="header__dropdown-item"
+                        onClick={closeAll}
+                        tabIndex={openKey === cat.key ? 0 : -1}
+                      >
+                        <span className="header__dropdown-name">{lab.name}</span>
+                        <span className="header__dropdown-note">{lab.note}</span>
+                      </a>
+                    )
+                  )}
+                </div>
+              </div>
+            ))}
+
+            <a
+              href="https://www.jumonji-u.ac.jp/humanlife/food/"
+              className="header__official-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeAll}
+            >
+              学科公式HP ↗
+            </a>
+          </nav>
 
           <a
-            href="https://www.jumonji-u.ac.jp/humanlife/food/"
-            className="header__official-link"
+            href="https://mypage.s-axol.jp/jumonji-u/login"
             target="_blank"
             rel="noopener noreferrer"
+            className="header__oc-btn"
             onClick={closeAll}
           >
-            学科公式HP ↗
+            OC申込 <ArrowUpRight size={14} aria-hidden="true" />
           </a>
-        </nav>
 
-        <button
-          className={`header__menu-btn${menuOpen ? ' open' : ''}`}
-          onClick={() => setMenuOpen(v => !v)}
-          aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
-          aria-expanded={menuOpen}
+          <button
+            className={`header__menu-btn${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(v => !v)}
+            aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+            aria-expanded={menuOpen}
+          >
+            <span /><span /><span />
+          </button>
+
+        </div>
+      </header>
+
+      <div className="mobile-oc-bar">
+        <a
+          href="https://mypage.s-axol.jp/jumonji-u/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mobile-oc-bar__link"
         >
-          <span /><span /><span />
-        </button>
-
+          オープンキャンパス 7月・8月開催 — 申し込む ↗
+        </a>
       </div>
-    </header>
+    </>
   )
 }
