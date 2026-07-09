@@ -44,6 +44,7 @@ import Columns from './components/Columns'
 import FeatureSpotlight from './components/FeatureSpotlight'
 import AudienceGuide from './components/AudienceGuide'
 import LivingAlone from './components/LivingAlone'
+import OpenCampus from './components/OpenCampus'
 import './App.css'
 
 const PAGE_META = {
@@ -212,6 +213,11 @@ const PAGE_META = {
     description: '学生寮とアパートの費用比較。月額ではなく年間・4年間でいくらかかるか、実際のシミュレーションで検討できます。食事・家具・セキュリティなど生活面の違いも一覧で比較。',
     ogType: 'website',
   },
+  '/open-campus': {
+    title: 'オープンキャンパス 2025 | 十文字学園女子大学 食物栄養学科',
+    description: '食物栄養学科のオープンキャンパス。2025年7月・8月開催。学科説明・模擬授業・施設見学・個別相談。就職率100%・定員78名の少人数教育を体感しよう。',
+    ogType: 'website',
+  },
 }
 
 const SUB_PATHS = [
@@ -221,6 +227,7 @@ const SUB_PATHS = [
   '/event-0531', '/student-column-3', '/lab-kamiyama-report', '/lab-takeshima-column', '/eiyo-app-report',
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices', '/faq',
   '/sports-nutrition', '/sports-nutrition-health', '/columns', '/living-alone',
+  '/open-campus',
 ]
 
 export default function App() {
@@ -679,6 +686,7 @@ export default function App() {
           <Route path="/sports-nutrition-health" element={<SportNutritionHealthPage />} />
           <Route path="/columns" element={<Columns />} />
           <Route path="/living-alone" element={<LivingAlone />} />
+          <Route path="/open-campus" element={<OpenCampus />} />
           <Route path="/" element={
             <>
               <Hero />

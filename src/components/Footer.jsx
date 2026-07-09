@@ -12,7 +12,7 @@ const LINKS_1 = [
 
 const LINKS_2 = [
   { label: '入試情報',          href: '#' },
-  { label: 'オープンキャンパス', href: '#' },
+  { label: 'オープンキャンパス', href: '/open-campus' },
   { label: '学科公式HP',        href: 'https://www.jumonji-u.ac.jp/humanlife/food/' },
   { label: 'アクセス',          href: '#' },
   { label: '大学ホームページ',   href: '#' },
