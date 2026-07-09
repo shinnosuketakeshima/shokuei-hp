@@ -5178,7 +5178,7 @@
 .header__oc-btn {
   display: none;
 }
-@media (min-width: 769px) {
+@media (min-width: 901px) {
   .header__oc-btn {
     display: inline-flex;
     align-items: center;
