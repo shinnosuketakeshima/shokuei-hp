@@ -43,10 +43,11 @@ const FACULTY = [
     course: '栄養指導論／応用栄養学',
     degree: '博士（スポーツ科学）早稲田大学大学院',
     fields: ['健康スポーツ科学', 'スポーツ栄養学', '栄養アセスメント', '競技者の食事調査'],
-    badges: ['日本スポーツ栄養学会 所属', '大学院 研究指導担当'],
+    badges: ['公認スポーツ栄養士', '日本スポーツ栄養学会 所属', '大学院 研究指導担当'],
     message:
-      '競技者を対象とした食事調査を中心に、栄養アセスメント研究の第一人者として国内外の学会で多数の発表を重ねる。本学大学院（食物栄養学専攻修士課程）の研究指導も担当しており、学部で学んだ学生がさらに専門性を高めるために教授ゼミへ進学する道も開かれている。実際に、大学院生（食物栄養学科卒業生）が競技者の食事調査に関する研究で、昨年の日本スポーツ栄養学会大会において演題賞を受賞——「入学・学部・大学院・キャリアアップ」という一貫した学びの好例を、自らのゼミから生み出している。',
+      '公認スポーツ栄養士として、競技者を対象とした食事調査を中心に、栄養アセスメント研究の第一人者として国内外の学会で多数の発表を重ねる。本学大学院（食物栄養学専攻修士課程）の研究指導も担当しており、学部で学んだ学生がさらに専門性を高めるために教授ゼミへ進学する道も開かれている。実際に、大学院生（食物栄養学科卒業生）が競技者の食事調査に関する研究で、昨年の日本スポーツ栄養学会大会において演題賞を受賞——「入学・学部・大学院・キャリアアップ」という一貫した学びの好例を、自らのゼミから生み出している。',
     career: undefined as string[] | undefined,
+    link: { label: '日本スポーツ栄養学会 プロフィールを見る', href: 'https://www.jsna.org/activity/activity-1355.html' } as { label: string; href: string } | undefined,
     wide: false,
   },
   {
@@ -68,6 +69,7 @@ const FACULTY = [
     ] as string[] | undefined,
     message:
       '選手歴18年・指導歴25年の実務経験をもとに、「コーチングとティーチングの違い」「グッドコーチ像」「体罰・ハラスメントのない指導環境」「プレーヤーズセンタード」を実践的かつ国際的な視点から教えます。日米のスポーツ文化を知る数少ない指導者として、栄養・管理栄養士を目指す学生に「人を育てること」の本質を伝えます。',
+    link: undefined as { label: string; href: string } | undefined,
     wide: true,
   },
 ]
@@ -310,7 +312,7 @@ const delayFor = (i: number, step = 0.08) => String(Math.min(Math.round((i * ste
                 <card.icon size={24} aria-hidden="true" />
               </div>
               <h3 class="sn-career-card__field">{card.field}</h3>
-              <p class="sn-career-card__examples">{card.examples}</p>
+              <p class="sn-career-card__examples">就職先：{card.examples}</p>
               <p class="sn-career-card__synergy">{card.synergy}</p>
             </div>
           ))}
@@ -351,6 +353,12 @@ const delayFor = (i: number, step = 0.08) => String(Math.min(Math.round((i * ste
                 {f.fields.map((field) => <span>{field}</span>)}
               </div>
               <p class="sn-faculty-card__message">{f.message}</p>
+              {f.link && (
+                <a href={f.link.href} target="_blank" rel="noopener noreferrer" class="sn-faculty-card__link">
+                  {f.link.label}
+                  <ChevronRight size={14} aria-hidden="true" />
+                </a>
+              )}
             </div>
           ))}
         </div>

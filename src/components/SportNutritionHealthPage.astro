@@ -21,20 +21,23 @@ const FACULTY = [
   {
     name: '村田 浩子 教授', dept: '健康栄養学科', course: '栄養指導論／応用栄養学', degree: '博士（スポーツ科学）早稲田大学大学院',
     fields: ['健康スポーツ科学', 'スポーツ栄養学', '栄養アセスメント', '競技者の食事調査'],
-    badges: ['日本スポーツ栄養学会 所属', '大学院 研究指導担当'],
-    message: '健康栄養学科の教員として、スポーツ栄養学の第一人者。競技者を対象とした食事調査を中心に研究を重ね、大学院（食物栄養学専攻修士課程）の研究指導も担当。健康運動コースの学生も受講・ゼミ参加が可能で、スポーツ栄養に特化した実践的指導を受ける機会が開かれている。',
+    badges: ['公認スポーツ栄養士', '日本スポーツ栄養学会 所属', '大学院 研究指導担当'],
+    message: '健康栄養学科の教員として、スポーツ栄養学の第一人者。公認スポーツ栄養士として、競技者を対象とした食事調査を中心に研究を重ね、大学院（食物栄養学専攻修士課程）の研究指導も担当。健康運動コースの学生も受講・ゼミ参加が可能で、スポーツ栄養に特化した実践的指導を受ける機会が開かれている。',
+    link: { label: '日本スポーツ栄養学会 プロフィールを見る', href: 'https://www.jsna.org/activity/activity-1355.html' } as { label: string; href: string } | undefined,
   },
   {
     name: '徳野 裕子 准教授', dept: '健康栄養学科', course: '公衆栄養学（演習・実習）', degree: '公認スポーツ栄養士',
     fields: ['公認スポーツ栄養士', 'スポーツ栄養サポート', '栄養アセスメント', 'アスリート指導'],
     badges: ['日本スポーツ栄養学会 所属', '実践的栄養サポート経歴'],
     message: '健康運動コースの学生にとって身近な指導者。現役の公認スポーツ栄養士として、実際にスポーツ選手への栄養サポート活動を重ねてきた実践家。「公認スポーツ栄養士を目指したい」という明確な目標を持つ学生にとって、実務経験に基づいた指導を受ける最適なメンター。',
+    link: undefined as { label: string; href: string } | undefined,
   },
   {
     name: '若葉 京良', dept: '健康栄養学科', course: '運動生理学（生理学を含む）、スポーツ実技・指導法Ａ', degree: '健康運動指導士',
     fields: ['運動生理学', '解剖学・生理学', '競技パフォーマンス向上', 'コンディショニング'],
     badges: ['健康運動指導士資格取得担当', 'スポーツ実技指導専門'],
     message: '運動生理学を中心に、スポーツをする人の身体の変化・ニーズを理学的に理解する教育を担当。栄養指導の際に「なぜこの栄養が必要か」という運動生理学的背景を理解することは不可欠。村田教授の栄養学と若葉氏の運動生理学を両輪で学ぶことで、栄養士＋αの専門性が初めて確立される。',
+    link: undefined as { label: string; href: string } | undefined,
   },
 ]
 
@@ -236,7 +239,7 @@ const delayFor = (i: number, step = 0.08) => String(Math.min(Math.round((i * ste
                 <card.icon size={24} aria-hidden="true" />
               </div>
               <h3 class="sn-career-card__field">{card.field}</h3>
-              <p class="sn-career-card__examples">{card.examples}</p>
+              <p class="sn-career-card__examples">就職先：{card.examples}</p>
               <p class="sn-career-card__synergy">{card.synergy}</p>
             </div>
           ))}
@@ -264,6 +267,12 @@ const delayFor = (i: number, step = 0.08) => String(Math.min(Math.round((i * ste
                 {f.fields.map((field) => <span>{field}</span>)}
               </div>
               <p class="sn-faculty-card__message">{f.message}</p>
+              {f.link && (
+                <a href={f.link.href} target="_blank" rel="noopener noreferrer" class="sn-faculty-card__link">
+                  {f.link.label}
+                  <ChevronRight size={14} aria-hidden="true" />
+                </a>
+              )}
             </div>
           ))}
         </div>

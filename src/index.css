@@ -4498,6 +4498,26 @@
   margin: 0;
 }
 
+.sn-faculty-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 40px;
+  border: 1.5px solid var(--terracotta);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--terracotta);
+  text-decoration: none;
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.sn-faculty-card__link:hover {
+  background: var(--terracotta);
+  color: var(--white);
+}
+
 @media (max-width: 640px) {
   .sn-faculty-grid {
     grid-template-columns: 1fr;
