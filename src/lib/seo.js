@@ -371,6 +371,8 @@ function buildCustomJsonLd(pathname, meta) {
       '/lab-kamiyama-report': '2026-05-15',
       '/eiyo-app-report': '2026-05-26',
       '/event-0531': '2026-05-18',
+      '/event-0719': '2026-07-14',
+      '/event-0726': '2026-07-14',
     }
     return {
       '@type': 'Article',

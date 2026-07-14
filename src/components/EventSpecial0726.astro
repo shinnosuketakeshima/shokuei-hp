@@ -1,0 +1,146 @@
+---
+import { ArrowLeft, ArrowRight, Calendar, MapPin, Users, Mail } from '@lucide/astro'
+---
+
+<div class="lab-page">
+  <div class="container">
+    <div class="lab-page__header" data-reveal>
+      <a href="/" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>トップページに戻る</span>
+      </a>
+      <p class="lab-page__eyebrow">十文字学園女子大学 食物栄養学科・学科特別イベント</p>
+      <h1 class="lab-page__title">管理栄養士について考える<br />探求型イベント</h1>
+      <p class="lab-page__subtitle">管理栄養士の"伝える"技術を考える</p>
+    </div>
+
+    <div class="lab-page__content">
+
+      <section class="lab-section event-overview" data-reveal>
+        <div class="event-overview__card">
+          <div class="event-overview__badge">参加費 無料</div>
+          <div class="event-overview__meta">
+            <div class="event-overview__meta-item">
+              <Calendar size={18} class="event-overview__icon" />
+              <div>
+                <p class="event-overview__meta-label">日時</p>
+                <p class="event-overview__meta-value">2026年7月26日（日）10:30〜11:30</p>
+                <p class="event-overview__meta-sub">開場 10:00</p>
+              </div>
+            </div>
+            <div class="event-overview__meta-item">
+              <MapPin size={18} class="event-overview__icon" />
+              <div>
+                <p class="event-overview__meta-label">場所</p>
+                <p class="event-overview__meta-value">十文字学園女子大学（新座駅から徒歩10分程度）</p>
+              </div>
+            </div>
+            <div class="event-overview__meta-item">
+              <Users size={18} class="event-overview__icon" />
+              <div>
+                <p class="event-overview__meta-label">対象</p>
+                <p class="event-overview__meta-value">食や栄養・管理栄養士に興味がある高校生</p>
+                <p class="event-overview__meta-sub">保護者の方も参加OK</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section" data-reveal style="--reveal-delay: 0.1s">
+        <div class="event-catch">
+          <p class="event-catch__label">総合型選抜入試"面接対策"にピッタリ</p>
+          <p class="lab-section__body">
+            自分自身の考えを伝え、それを理解して実行してもらう技術は、管理栄養士にはもちろん、大学入試や大学生活、
+            社会に出る際や社会に出た後も必須の技術となります。今回は大学入試の面接を題材に、AIも活用しながら
+            "伝える"技術について考えてみましょう。
+          </p>
+        </div>
+      </section>
+
+      <section class="lab-section" data-reveal style="--reveal-delay: 0.15s">
+        <h2 class="lab-section__title">イベント内容</h2>
+        <div class="event-program">
+          <div class="event-program__item">
+            <div class="event-program__number">1</div>
+            <div class="event-program__body">
+              <h3 class="event-program__title">管理栄養士の"伝え方"</h3>
+              <p class="event-program__desc">
+                管理栄養士が"伝える際"にどんなことを考えているかを学びます。
+              </p>
+            </div>
+          </div>
+          <div class="event-program__item">
+            <div class="event-program__number">2</div>
+            <div class="event-program__body">
+              <h3 class="event-program__title">"自分の意見"を作り上げる</h3>
+              <p class="event-program__desc">
+                AIも活用しながら、自分の考えをまとめる方法を学びます。
+              </p>
+            </div>
+          </div>
+          <div class="event-program__item">
+            <div class="event-program__number">3</div>
+            <div class="event-program__body">
+              <h3 class="event-program__title">"自分の意見"を伝える</h3>
+              <p class="event-program__desc">
+                大学入試の面接を想定し、自分の考えを伝える方法を学びます。
+                「自分だけの管理栄養士像」が見つかるワークショップです。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section" data-reveal style="--reveal-delay: 0.2s">
+        <h2 class="lab-section__title">こんな方におすすめ</h2>
+        <div class="lab-section__grid">
+          <div class="lab-section__card">
+            <h3>総合型選抜入試の面接対策をしたい方</h3>
+            <p>自分の意見をまとめて伝える練習は、面接本番でそのまま強みになります。</p>
+          </div>
+          <div class="lab-section__card">
+            <h3>食や栄養に興味がある高校生</h3>
+            <p>管理栄養士という仕事に少しでも興味があれば大歓迎。まずは「知る」ところから始めましょう。</p>
+          </div>
+          <div class="lab-section__card">
+            <h3>保護者の方</h3>
+            <p>管理栄養士という職業・食物栄養学科での学びをより深く知りたい保護者の方も歓迎しています。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section" data-reveal style="--reveal-delay: 0.25s">
+        <h2 class="lab-section__title">参加のご案内</h2>
+        <div class="event-cta">
+          <div class="event-cta__info">
+            <p class="event-cta__free">参加費：無料</p>
+            <p class="lab-section__body">
+              事前登録をしていただくと当日がスムーズです。追加情報は学科公式インスタグラム（@jumonji_shokuei）でも随時発信しています。
+            </p>
+          </div>
+          <div class="event-cta__contact">
+            <Mail size={16} />
+            <span>お問い合わせ：</span>
+            <a href="mailto:iimura@jumonji-u.ac.jp" class="event-cta__mail">
+              iimura@jumonji-u.ac.jp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section" data-reveal style="--reveal-delay: 0.3s">
+        <div class="event-catch">
+          <p class="lab-section__body">
+            前週7月19日には、前編イベント「企業や社会につなぐ『食べる学び』」も開催します。
+          </p>
+          <a href="/event-0719" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--moss, #6b7d52); text-decoration: none; letter-spacing: 0.04em; border-bottom: 1px solid currentColor; padding-bottom: 2px;">
+            7/19開催イベントの詳細を見る
+            <ArrowRight size={14} />
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
