@@ -18,7 +18,17 @@
       "WebSearch",
       "Skill(run)",
       "Bash(npx astro *)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "WebFetch(domain:www.jsna.org)",
+      "Bash(curl -s https://shokuei-hp.web.app/)",
+      "Bash(curl -s https://shokuei-hp.web.app/sports-nutrition)",
+      "Bash(date -jf \"%Y-%m-%d\" \"2026-07-19\" \"+%Y-%m-%d is a %A\")",
+      "Bash(date -jf \"%Y-%m-%d\" \"2026-07-26\" \"+%Y-%m-%d is a %A\")",
+      "Bash(kill %1)",
+      "Bash(echo \"home: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/\\)\")",
+      "Bash(echo \"features: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/features\\)\")",
+      "Bash(echo \"event-0719: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/event-0719\\)\")",
+      "Bash(echo \"event-0726: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/event-0726\\)\")"
     ]
   }
 }
