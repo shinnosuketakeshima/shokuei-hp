@@ -1,0 +1,93 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": "https://shokuei-hp.web.app/#organization",
+    "name": "十文字学園女子大学 食物栄養学科",
+    "alternateName": "Jumonji University Food and Nutrition",
+    "url": "https://shokuei-hp.web.app/",
+    "description": "埼玉県新座市にある十文字学園女子大学 食物栄養学科（人間生活学部）の非公式情報メディア。4年間を通じた実践的なカリキュラム、国家試験合格率を支えるサポート体制、最新の研究室情報など、食と栄養のプロフェッショナルを目指す高校生に向けたリアルな学びの魅力を発信します。",
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学",
+      "url": "https://www.jumonji-u.ac.jp/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "埼玉県",
+        "addressLocality": "新座市"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "埼玉県新座市菅沢2-1-28",
+      "addressLocality": "新座市",
+      "addressRegion": "埼玉県",
+      "postalCode": "352-8510",
+      "addressCountry": "JP"
+    },
+    "telephone": "+81-48-481-1111",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "35.8193",
+      "longitude": "139.6291"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "JP"
+    },
+    "inLanguage": "ja-JP",
+    "availableLanguage": "ja"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": "古明地夕佳研究室（公衆栄養・地域連携） | 十文字学園女子大学 食物栄養学科",
+    "description": "エビデンスに基づく公衆栄養実践で、地域に根ざした食と健康づくりを実践する古明地研究室。人々の生活習慣の改善と健康寿命の延伸をサポートするプロフェッショナルを目指します。",
+    "url": "https://shokuei-hp.web.app/lab-komeichi",
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学 食物栄養学科",
+      "url": "https://shokuei-hp.web.app/"
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "name": "古明地夕佳",
+      "jobTitle": "教授",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "十文字学園女子大学 食物栄養学科",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "新座市",
+          "addressRegion": "埼玉県",
+          "addressCountry": "JP"
+        }
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://shokuei-hp.web.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "研究室一覧",
+        "item": "https://shokuei-hp.web.app/#labs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "古明地夕佳研究室（公衆栄養・地域連携）",
+        "item": "https://shokuei-hp.web.app/lab-komeichi"
+      }
+    ]
+  }
+]

@@ -1,0 +1,69 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 2027年度スタート｜全学の副専攻制度
+        h1.lab-page__title | 管理栄養士 もうひとつ。
+          span | ＋
+        p.lab-page__subtitle | 国家資格をめざす専門の学びに、全学の「副専攻」をかけ合わせる。資格を取るだけで終わらない、あなただけのキャリアをデザイン
+      div.lab-page__content
+        section.lab-story-feature.lab-story-feature--forest
+          span.lab-story-feature__label | 対象年度
+            svg
+              path
+              path
+              path
+              circle
+          p.lab-story-feature__lead | この新しい学び方を、最初に選べるのは——2027年4月に入学するあなたたちです。
+        section.lab-section
+          h2.lab-section__title | 栄養×副専攻の3つの掛け合わせパターン
+          p.lab-section__body | 食物栄養学科の専門的な学びに、自分の興味に合わせた副専攻プログラムを掛け合わせることで、さらに活躍の場が広がります。
+          div.sn-evidence-cards
+            div.sn-evidence-card
+              span.sn-evidence-card__dept | 栄養 × 食と美と健康
+              div.sn-evidence-card__icon
+                svg
+              h3.sn-evidence-card__title | 「美」を、科学で語れる人に。
+              p.sn-evidence-card__body | 「食べてきれいになる」を、なんとなくではなく根拠をもって伝えられる管理栄養士へ。
+              div
+                p.sn-course-card__topics-label | 例示科目
+                div.sn-course-card__topics
+            div.sn-evidence-card
+              span.sn-evidence-card__dept | 栄養 × DX
+              div.sn-evidence-card__icon
+                svg
+              h3.sn-evidence-card__title | 栄養の知識に、データで動く力を。
+              p.sn-evidence-card__body | 一人ひとりに合わせた食の提案を、データを使って組み立てられる次世代の管理栄養士へ。
+              div
+                p.sn-course-card__topics-label | 例示科目
+                div.sn-course-card__topics
+            div.sn-evidence-card
+              span.sn-evidence-card__dept | 栄養 × 発信
+              div.sn-evidence-card__icon
+                svg
+              h3.sn-evidence-card__title | 正しい食の情報を、"届く"形に。
+              p.sn-evidence-card__body | あふれる食の情報の中で、本当に正しいことをちゃんと伝えられる発信力を身につける。
+              div
+                p.sn-course-card__topics-label | 例示科目
+                div.sn-course-card__topics
+          p | ※副専攻には他にも複数のプログラムがあります。ここで紹介したのは、食物栄養学科の学びと相性のよい一例です。
+        section.lab-section
+          div.sn-cta-banner
+            p.sn-cta-banner__eyebrow | 十文字学園女子大学
+              svg
+                path
+                path
+                path
+                circle
+            h2.sn-cta-banner__title | 管理栄養士の資格に加え、 あなただけのもうひとつの武器を。
+              br
+            div.sn-cta-banner__buttons
+              a.sn-cta-btn.sn-cta-btn--primary | オープンキャンパスで相談する
+                svg
+              a.sn-cta-btn.sn-cta-btn--secondary | ことサポ for 食栄のページを見る
+                svg

@@ -2286,6 +2286,7 @@
   padding-left: 1.5em;
   position: relative;
   margin-bottom: 1em;
+  overflow-wrap: anywhere; /* 生URLの引用がモバイル幅で横はみ出ししないように */
 }
 .lab-publication-list li::before {
   content: '・';
@@ -4049,6 +4050,15 @@
   color: var(--terracotta);
   margin-top: 3px;
 }
+.faq__icon-minus {
+  display: none;
+}
+.faq__item--open .faq__icon-plus {
+  display: none;
+}
+.faq__item--open .faq__icon-minus {
+  display: inline-flex;
+}
 .faq__answer-inner {
   padding: 2px 0 22px 40px;
   font-size: clamp(13px, 1.5vw, 14px);
@@ -4486,6 +4496,26 @@
   line-height: 1.85;
   color: var(--stone);
   margin: 0;
+}
+
+.sn-faculty-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 40px;
+  border: 1.5px solid var(--terracotta);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--terracotta);
+  text-decoration: none;
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.sn-faculty-card__link:hover {
+  background: var(--terracotta);
+  color: var(--white);
 }
 
 @media (max-width: 640px) {
@@ -5162,11 +5192,95 @@
 }
 .la-foot p { margin: 0; font-size: 1rem; }
 
+.la-local {
+  margin-bottom: 48px; padding: 28px 26px;
+  background: var(--cream); border-radius: 14px;
+  border-left: 5px solid var(--forest);
+}
+.la-local .la-h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin: 0 0 14px; }
+.la-local p { margin: 0 0 14px; font-size: 0.98rem; }
+.la-local-list { margin: 0 0 14px; padding-left: 1.2em; }
+.la-local-list li { margin-bottom: 6px; }
+.la-local-note { font-size: 0.92rem; color: var(--stone); }
+.la-local-note a { color: var(--forest); font-weight: 600; }
+
+.la-sim--apt { margin-top: 32px; }
+
+.la-tuition {
+  margin-bottom: 48px; padding: 36px 28px;
+  background: var(--cream); border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.la-tuition .la-eyebrow { color: var(--terracotta-dark); }
+.la-tuition .la-h2 { margin-bottom: 10px; }
+.la-tuition-note { color: var(--stone); margin: 0 0 24px; font-size: 0.95rem; }
+.la-tuition-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; }
+.la-tuition-card {
+  background: #fff; border-radius: 12px; padding: 22px 20px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.la-tuition-card--highlight {
+  border-top: 4px solid var(--terracotta);
+  display: flex; flex-direction: column;
+}
+.la-tuition-card h3 { font-size: 1.05rem; margin: 0 0 14px; color: var(--forest); }
+.la-tuition-card dl { margin: 0; }
+.la-tuition-card dl > div {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.92rem;
+}
+.la-tuition-card dt { color: var(--stone); }
+.la-tuition-card dd { margin: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.la-tuition-total { border-bottom: none !important; padding-top: 10px !important; }
+.la-tuition-total dt { font-weight: 700; color: var(--charcoal) !important; }
+.la-tuition-total dd { font-weight: 800; font-size: 1.1rem; }
+.la-tuition-four {
+  font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800;
+  margin: 0 0 8px; color: var(--terracotta); font-variant-numeric: tabular-nums;
+}
+.la-tuition-sub { font-size: 0.85rem; color: var(--stone); margin: 0 0 14px; flex: 1; }
+.la-tuition-link {
+  display: inline-block; font-size: 0.9rem; font-weight: 600;
+  color: var(--forest); text-decoration: underline; text-underline-offset: 2px;
+}
+
+.la-total { margin-bottom: 48px; }
+.la-total .la-h2 { margin-bottom: 8px; }
+.la-total-note { color: var(--stone); font-size: 0.92rem; margin: 0 0 20px; }
+.la-total-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.la-total-card {
+  border-radius: 14px; padding: 24px 22px; text-align: center;
+}
+.la-total-card--dorm { background: rgba(61, 107, 79, 0.08); border: 1px solid rgba(61, 107, 79, 0.2); }
+.la-total-card--apt { background: rgba(200, 155, 155, 0.1); border: 1px solid rgba(200, 155, 155, 0.25); }
+.la-total-card h3 { font-size: 1rem; margin: 0 0 10px; }
+.la-total-card--dorm h3 { color: var(--forest); }
+.la-total-card--apt h3 { color: var(--terracotta-dark); }
+.la-total-num {
+  font-size: clamp(1.4rem, 4vw, 1.9rem); font-weight: 800;
+  margin: 0 0 8px; font-variant-numeric: tabular-nums;
+}
+.la-total-breakdown { font-size: 0.82rem; color: var(--stone); margin: 0; }
+
+.la-faq { margin-bottom: 48px; }
+.la-faq .la-h2 { margin-bottom: 20px; }
+.la-faq-list { margin: 0; }
+.la-faq-item {
+  padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.la-faq-item dt {
+  font-weight: 700; font-size: 1rem; margin: 0 0 8px; color: var(--charcoal);
+}
+.la-faq-item dd { margin: 0; font-size: 0.95rem; color: var(--stone); line-height: 1.8; }
+
 @media (max-width: 768px) {
   .la-choices { grid-template-columns: 1fr; }
   .la-breakdown { grid-template-columns: 1fr; }
   .la-sim { padding: 28px 20px; }
   .la-reference-grid { grid-template-columns: 1fr; }
+  .la-tuition-grid { grid-template-columns: 1fr; }
+  .la-total-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5486,3 +5600,117 @@
   opacity: 0.7;
 }
 
+/* ============================================
+   Scroll Reveal（framer-motion 置換・Astro移行）
+   html.js ゲートにより JS 無効環境・クローラーは常に全表示。
+   variant は data-reveal 属性値で指定、stagger は --reveal-delay。
+   ============================================ */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0s);
+}
+html.js [data-reveal="left"] { transform: translateX(-20px); }
+html.js [data-reveal="right"] { transform: translateX(20px); }
+html.js [data-reveal="scale"] { transform: scale(0.94); }
+html.js [data-reveal="fade"] { transform: none; }
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================
+   コラム／レポート系ページの補助スタイル
+   （Astro移行前は各コンポーネントのインライン <style> にあったものを集約）
+   ============================================ */
+.student-voice-box {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 3rem 0;
+  border-left: 4px solid var(--forest);
+}
+.student-voice-box__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.student-voice-box__icon {
+  color: var(--forest);
+  opacity: 0.5;
+}
+.student-voice-box__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1e293b;
+}
+
+.takeshima-pull {
+  margin: 2.5rem 0;
+  padding: 1.75rem 2rem;
+  border-left: 3px solid var(--terracotta, #c0392b);
+  background: rgba(192, 57, 43, 0.04);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 2;
+  color: var(--charcoal, #1a1a2e);
+}
+
+.btn--primary {
+  background: var(--forest);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn--primary:hover {
+  opacity: 0.9;
+}
+
+.eiyo-app-demo-card {
+  margin-top: 2rem;
+  border: 2px solid var(--forest);
+  background: linear-gradient(135deg, #f8faf8 0%, #fff 100%);
+}
+.eiyo-app-demo-card h3 {
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+.eiyo-app-demo-card__link {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* CampusLife: 4年間ロードマップのタブ（旧コンポーネント内インラインstyleから移動） */
+.roadmap-tab {
+  font-family: inherit;
+}
+.roadmap-tab:hover {
+  background: rgba(46, 81, 62, 0.1);
+}
+.roadmap-tab.active:hover {
+  background: var(--forest);
+}
+@media (max-width: 768px) {
+  .roadmap-content {
+    padding: 24px !important;
+    gap: 24px !important;
+  }
+  .curriculum-roadmap {
+    margin-top: 40px !important;
+    margin-bottom: 60px !important;
+  }
+}

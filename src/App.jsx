@@ -40,6 +40,8 @@ import NewsArchive from './components/NewsArchive'
 import FAQ from './components/FAQ'
 import SportNutritionPage from './components/SportNutritionPage'
 import SportNutritionHealthPage from './components/SportNutritionHealthPage'
+import KotoSupportPage from './components/KotoSupportPage'
+import SubMajorPage from './components/SubMajorPage'
 import Columns from './components/Columns'
 import FeatureSpotlight from './components/FeatureSpotlight'
 import AudienceGuide from './components/AudienceGuide'
@@ -164,19 +166,19 @@ const PAGE_META = {
     ogType: 'article',
   },
   '/qualifications': {
-    title: '取得できる資格（管理栄養士・栄養教諭など） | 十文字学園女子大学 食物栄養学科',
-    description: '十文字学園女子大学 食物栄養学科で取得可能な資格一覧。管理栄養士国家試験受験資格をはじめ、栄養士、栄養教諭一種免許状、食品衛生管理者など、食と健康のプロフェッショナルとして社会で活躍するための資格取得を徹底サポートします。',
-    ogType: 'article',
+    title: '管理栄養士・栄養士など取得できる7つの資格｜十文字学園女子大学 食物栄養学科',
+    description: '管理栄養士・栄養士・第一種衛生管理者など卒業後に活かせる7つの資格・免許を紹介。全国唯一の管理栄養士＋衛生管理者ダブルライセンスが最大の特長。',
+    ogType: 'website',
   },
   '/support': {
     title: '管理栄養士 国家試験対策サポート | 十文字学園女子大学 食物栄養学科',
-    description: '十文字学園女子大学 食物栄養学科が誇る、管理栄養士国家試験への手厚いサポート体制。全国平均を上回る高い合格実績を支える、1年次からのステップアップ指導や特別講座、個別面談などの具体的な対策プログラムをご紹介します。',
-    ogType: 'article',
+    description: '十文字学園女子大学の管理栄養士国家試験対策は1年次から開始。年8回の模擬試験・130点突破目標など6段階の合格サポートプログラムを詳しく紹介。',
+    ogType: 'website',
   },
   '/career': {
-    title: '進路・就職先実績 | 十文字学園女子大学 食物栄養学科',
-    description: '食物栄養学科の卒業後の進路と就職実績。病院・福祉施設での臨床栄養から、食品メーカーでの商品開発、学校での栄養教諭まで、管理栄養士の資格を活かして多様なフィールドで活躍する卒業生たちのキャリアと、大学の就職支援体制をご紹介。',
-    ogType: 'article',
+    title: '管理栄養士として就職できる？進路・就職実績｜十文字学園女子大学 食物栄養学科',
+    description: '就職率100%（2025年3月卒業生実績）。卒業生の進路先や管理栄養士・栄養士としての就職先を数字と実例で紹介します。',
+    ogType: 'website',
   },
   '/campus-life': {
     title: 'キャンパスライフ・施設紹介 | 十文字学園女子大学 食物栄養学科',
@@ -203,14 +205,24 @@ const PAGE_META = {
     description: '健康運動コースからのスポーツ栄養学習。栄養士＋αの知識と技術を身につけ、スポーツ現場・教育現場で活躍する管理栄養士を目指す。',
     ogType: 'article',
   },
+  '/kotosupport': {
+    title: 'ことサポ for 食栄 | 十文字学園女子大学',
+    description: '2027年度から始まる全学共通の伴走支援「ことサポ」を食物栄養学科向けに解説。忙しい4年間をひとりにしない、学科の国試指導と全学伴走支援の二重のサポート体制を紹介します。',
+    ogType: 'website',
+  },
+  '/submajor': {
+    title: '管理栄養士＋副専攻でキャリアを広げる｜十文字学園女子大学 食物栄養学科',
+    description: '管理栄養士の資格に加えて「こどもコース」「スポーツコース」など副専攻で差別化。あなただけのキャリアをデザインする新しい学び方を紹介。',
+    ogType: 'website',
+  },
   '/columns': {
     title: 'コラム | 十文字学園女子大学 食物栄養学科',
     description: '学生と教員、それぞれの視点で綴るコラム一覧。実習やゼミでの気づきから、教育・キャリアへの想いまで、学びと現場のリアルをお届けします。',
     ogType: 'website',
   },
   '/living-alone': {
-    title: 'はじめての一人暮らし | 十文字学園女子大学 食物栄養学科',
-    description: '学生寮とアパートの費用比較。月額ではなく年間・4年間でいくらかかるか、実際のシミュレーションで検討できます。食事・家具・セキュリティなど生活面の違いも一覧で比較。',
+    title: '新座 一人暮らし 費用シミュレーター｜学費・寮費の総額比較 | 十文字学園女子大学 食物栄養学科',
+    description: '埼玉県新座市で十文字学園女子大学に進学する際の一人暮らし費用をシミュレーション。学生寮とアパートの年間・4年間コスト比較、食物栄養学科の学費総額も一覧で確認できます。',
     ogType: 'website',
   },
   '/open-campus': {
@@ -228,6 +240,7 @@ const SUB_PATHS = [
   '/news', '/features', '/qualifications', '/support', '/career', '/campus-life', '/voices', '/faq',
   '/sports-nutrition', '/sports-nutrition-health', '/columns', '/living-alone',
   '/open-campus',
+  '/kotosupport', '/submajor',
 ]
 
 export default function App() {
@@ -256,15 +269,39 @@ export default function App() {
 
   const meta = PAGE_META[location.pathname] || PAGE_META['/']
 
-  // SPAのクライアントサイド遷移はgtag.jsの自動計測では検知されないため、ルート変更ごとに手動でpage_viewを送信
+  // SPAの二重計測を防止し、DOMのtitleが更新された後に正確にPVを送信する
   useEffect(() => {
     if (typeof window.gtag !== 'function') return
-    window.gtag('event', 'page_view', {
-      page_path: location.pathname + location.search,
-      page_title: meta.title,
-      page_location: window.location.href,
-    })
-  }, [location.pathname, location.search, meta.title])
+
+    const timer = setTimeout(() => {
+      window.gtag('event', 'page_view', {
+        page_path: location.pathname + location.search,
+        page_title: document.title || meta.title,
+        page_location: window.location.href,
+      })
+    }, 100)
+
+    return () => clearTimeout(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname, location.search]) // 依存配列から meta.title を除外し、ページ遷移時のみトリガー
+
+  // グローバルCTAクリック計測 (GA4カスタムイベント)
+  useEffect(() => {
+    const handleCtaClick = (e) => {
+      const target = e.target.closest('[data-ga-click]')
+      if (!target || typeof window.gtag !== 'function') return
+
+      const label = target.getAttribute('data-ga-click')
+      window.gtag('event', 'click_cta', {
+        event_category: 'CTA',
+        event_label: label,
+        page_path: location.pathname,
+      })
+    }
+
+    document.addEventListener('click', handleCtaClick)
+    return () => document.removeEventListener('click', handleCtaClick)
+  }, [location.pathname])
 
   // ページごとに固有のカスタムJSON-LDを生成（GEO対応）
   let customJsonLd = {}
@@ -570,6 +607,17 @@ export default function App() {
         },
       ],
     }
+  } else if (location.pathname === '/living-alone') {
+    customJsonLd = {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: '新座で一人暮らしすると月いくらかかりますか？', acceptedAnswer: { '@type': 'Answer', text: '十文字学園女子大学周辺のアパートは家賃月4.5〜6.5万円が目安です。光熱費・食費・通信費を含めると、月8〜12万円程度が一般的な生活費の目安です。学生寮（ドーミー）を選ぶと、朝夕2食付き・家具家電込みのため、月額6.7〜8.2万円＋電気代で生活費がほぼ確定します。' } },
+        { '@type': 'Question', name: '新座市のアパート家賃相場はいくらですか？', acceptedAnswer: { '@type': 'Answer', text: '大学周辺（新座駅・ひばりヶ丘駅方面）のワンルーム・1Kは、家賃月4.5〜6.5万円が相場です。初期費用は敷金・礼金・仲介手数料などで家賃の4〜6か月分が目安になります。' } },
+        { '@type': 'Question', name: '十文字学園女子大学の学生寮の費用はいくらですか？', acceptedAnswer: { '@type': 'Answer', text: 'ドーミー（共立メンテナンス）の寮費は月67,700〜82,000円（2025年時点）。入館費29万円・保証金5万円・年間管理費22万円が別途かかります。初年度の総額は約142〜158万円（電気代別）が目安です。' } },
+        { '@type': 'Question', name: '食物栄養学科の4年間の学費はいくらですか？', acceptedAnswer: { '@type': 'Answer', text: '2026年度入学者の初年度納入金は約151万円（入学金25万円＋授業料80万円＋施設費40万円＋諸会費等）。2年目以降は入学金なしで年間約126万円。4年間の学費総額は約531万円です。最新の正確な金額は大学公式サイトの募集要項でご確認ください。' } },
+        { '@type': 'Question', name: '学生寮とアパート、どちらが安いですか？', acceptedAnswer: { '@type': 'Answer', text: '家賃だけ見るとアパートの方が安く見えますが、寮は食事2食・家具家電・管理費込みで計算できます。4年間の住居費総額では大きな差にならないことも多く、食費やセキュリティの安心感も含めて選ぶのがおすすめです。' } },
+      ],
+    }
   } else if (location.pathname === '/faq') {
     customJsonLd = {
       '@type': 'FAQPage',
@@ -638,6 +686,7 @@ export default function App() {
     '/voices': '在学生の声,卒業生,体験談,管理栄養士 体験',
     '/news': '食物栄養 ニュース,学科 お知らせ,コラム,イベント',
     '/faq': 'よくある質問,管理栄養士 疑問,食物栄養学科 入学,管理栄養士 大学 埼玉,Q&A',
+    '/living-alone': '新座 一人暮らし,新座市 一人暮らし 費用,十文字学園女子大学 一人暮らし,学生寮 費用,アパート 家賃 新座,学費 シミュレーター,一人暮らし コスト比較,埼玉 女子大学 下宿,新座 学生 家賃',
   }
   const keywords = keywordsMap[location.pathname] ||
     (location.pathname.startsWith('/lab-') ? '研究室,ゼミ,卒業研究,食物栄養学科,十文字学園女子大学' : null)
@@ -684,6 +733,8 @@ export default function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/sports-nutrition" element={<SportNutritionPage />} />
           <Route path="/sports-nutrition-health" element={<SportNutritionHealthPage />} />
+          <Route path="/kotosupport" element={<KotoSupportPage />} />
+          <Route path="/submajor" element={<SubMajorPage />} />
           <Route path="/columns" element={<Columns />} />
           <Route path="/living-alone" element={<LivingAlone />} />
           <Route path="/open-campus" element={<OpenCampus />} />

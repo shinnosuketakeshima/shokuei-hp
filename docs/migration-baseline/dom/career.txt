@@ -1,0 +1,263 @@
+main
+  div.career-page
+    section.career
+      span.career__deco | 進路
+      div.container
+        div.career__layout
+          div.career__left
+            p.eyebrow | 進路・就職 / Career
+            h1.career__stat-block
+              div.career__rate | 100
+                span.career__rate-unit | %
+              p.career__rate-label | 就職率（2025年3月卒業生実績・就職希望者ベース）
+            p | 卒業生の約3人に2人が栄養士・管理栄養士として就職。 保育園・病院・高齢者施設に加え、薬局やドラッグストア、食品メーカー
+            p | ※ 2025年3月卒業生の進路データに基づく主な就職先
+          div.career__right
+            div.career__paths
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 栄養士・管理栄養士
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 管理栄養士・医療事務・総合職
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 管理栄養士
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 栄養士・管理栄養士
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 商品開発・品質管理・営業・食品CRO
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 事務・営業・販売・サービス
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 施設管理栄養士
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 販売・総合職
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 栄養職員・自衛官
+              div.career-path
+                span.career-path__dot
+                div.career-path__info
+                span.career-path__role | 管理栄養士・歯科助手
+    section
+      div.container
+        div
+          p.eyebrow | Numbers
+          h2 | 数字で見る、卒業後のリアル
+          p | 2025年3月卒業生の進路実績にもとづく集計です。
+        div
+          div
+            div
+              svg
+                path
+                path
+                path
+            div | 66
+              span | %
+            p | 栄養士・管理栄養士として就職
+          div
+            div
+              svg
+                path
+                circle
+            div | 73
+              span | %
+            p | 東京・埼玉エリアで勤務
+          div
+            div
+              svg
+                path
+                path
+                path
+                path
+                path
+            div | 10
+              span | 分野
+            p | にわたる就職先業種
+    section
+      div.container
+        div
+          p.eyebrow | Breakdown
+          h2 | 進路の構成
+          p | 「管理栄養士」だけが進路ではありません。 栄養の学びを土台にして、医療・福祉・小売・食品・サービスなど、 さまざまな業界
+        div
+          div
+            div | 栄養士・管理栄養士 66 %
+            div | 一般職 28 %
+            div | 進学等 7
+          p | ※ 一般職には、栄養の知識を活かして食品メーカーや小売・医療事務などに就いた卒業生を含みます。
+        div
+          div
+            h3 | 業種別の人数
+            div
+              div
+                span | 保育園
+                span | 19.7 %
+              div
+                div
+            div
+              div
+                span | 調剤薬局・ドラッグストア
+                span | 16.5 %
+              div
+                div
+            div
+              div
+                span | 病院・クリニック
+                span | 14.2 %
+              div
+                div
+            div
+              div
+                span | 給食受託会社
+                span | 11.0 %
+              div
+                div
+            div
+              div
+                span | 食品メーカー・関連企業
+                span | 8.7 %
+              div
+                div
+            div
+              div
+                span | 一般企業（金融・物流ほか）
+                span | 8.7 %
+              div
+                div
+            div
+              div
+                span | 高齢者・福祉施設
+                span | 5.5 %
+              div
+                div
+            div
+              div
+                span | スーパー・百貨店・小売
+                span | 3.9 %
+              div
+                div
+            div
+              div
+                span | 公務員・自衛官
+                span | 3.1 %
+              div
+                div
+            div
+              div
+                span | 歯科クリニック
+                span | 3.1 %
+              div
+                div
+            div
+              div
+                span | 進学・留学・その他
+                span | 5.5 %
+              div
+                div
+          div
+            h3 | 勤務地の分布
+            div
+              div
+                span | 東京都
+                span | 41.7 %
+              div
+                div
+            div
+              div
+                span | 埼玉県
+                span | 35.8 %
+              div
+                div
+            div
+              div
+                span | 千葉県
+                span | 6.7 %
+              div
+                div
+            div
+              div
+                span | 神奈川県
+                span | 5.0 %
+              div
+                div
+            div
+              div
+                span | 栃木県
+                span | 4.2 %
+              div
+                div
+            div
+              div
+                span | その他（北関東・全国）
+                span | 6.7 %
+              div
+                div
+            p | ※ 勤務地が確定している卒業生のみ集計。 首都圏を中心に、北関東から関西・北海道まで広がりがあります。
+              br
+    section
+      div.container
+        div
+          p.eyebrow | Support
+          h2 | 4年間の就職サポート
+          p | 入学から卒業まで、教員が一人ひとりの進路に伴走します。 「いきなり就活」ではなく、4年かけて段階的に準備していく仕組みで
+        div
+          div
+            span | 1年次
+            h3 | 基礎づくりとキャリア意識
+            p | 学びの土台を作りながら、ガイダンスや先輩との交流を通して「どんな栄養士になりたいか」を少しずつ言葉にしていきます。
+          div
+            span | 2年次
+            h3 | 実習・現場体験
+            p | 給食経営管理実習や臨地実習で、はじめての「現場」を経験。職種のリアルを知り、自分の向き不向きを確かめる時期です。
+          div
+            span | 3年次
+            h3 | 進路選択と対策のはじまり
+            p | 個別の進路相談を本格化し、国家試験対策と就職活動の準備を並行して進めます。模擬試験や業界研究会も実施。
+          div
+            span | 4年次
+            h3 | 内定・国試・卒業研究
+            p | 就職活動・国家試験対策・卒業研究の三本柱。教員が一人ひとりの状況に合わせて個別フォローします。
+    section
+      div.container
+        div
+          div
+            svg
+              path
+              path
+              path
+              circle
+            p.eyebrow | 関連ページ
+          h3 | 管理栄養士国家試験の結果と対策
+          p | 本学科の国家試験合格率や、そこに至るまでの対策、学生一人ひとりの成長の物語を、 数字と言葉でご紹介しています。
+          a | 国家試験結果のページへ
+            svg
+              path
+              path
+    section
+      div.container
+        div
+          p.eyebrow | Next Step
+          h2 | 気になったら、見にきてください
+          p | 数字や説明だけでは伝わらない、教室の雰囲気・先輩や教員との距離感は、 ぜひオープンキャンパスで体感してみてください。
+          div
+            a.button | イベント情報を見る
+              svg
+                path
+                path
+            a.button.button--outline | トップに戻る

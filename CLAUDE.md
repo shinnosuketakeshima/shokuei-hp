@@ -5,10 +5,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev       # Start Vite dev server with HMR
-npm run build     # Production build → dist/
-npm run preview   # Preview the production build locally
-npm run lint      # ESLint (flat config, React Hooks + React Refresh rules)
+npx astro dev      # Start Astro dev server with HMR
+npx astro build    # Production build → dist-astro/
+npx astro preview  # Preview the production build locally
+npx astro check    # Type-check .astro files (must be 0 errors before deploying)
 ```
 
 Deploy to Firebase Hosting (requires Firebase CLI):
@@ -16,177 +16,85 @@ Deploy to Firebase Hosting (requires Firebase CLI):
 npx firebase deploy   # firebase CLI may not be on PATH; use npx
 ```
 
-`firebase deploy` deploys both Firestore rules (`firestore.rules`) and Hosting (`dist/`). Run `npm run build` first.
+`firebase deploy` deploys both Firestore rules (`firestore.rules`) and Hosting (`dist-astro/`). Run `npx astro build` first. See the `deploy` skill for the full flow.
 
 ## Architecture
 
-**shokuei-hp** is a React 19 + Vite 8 SPA for Jumonji University's Food and Nutrition Department (食物栄養学科). It is a non-official informational/media site deployed on Firebase Hosting with Firestore for dynamic news content.
+**shokuei-hp** is an Astro static site for Jumonji University's Food and Nutrition Department (食物栄養学科). It is a non-official informational/media site deployed on Firebase Hosting with Firestore for build-time news content.
+
+**As of the 2026-07-06 cutover, Astro is the live site** (`dist-astro/`, deployed via `firebase.json`'s `hosting.public`). The repo also still contains the original React 19 + Vite 8 SPA source (`App.jsx`, `Header.jsx`, `Footer.jsx`, `Labs.jsx`, `.jsx` components, `npm run build` → `dist/`) — **this is legacy, unbuilt, undeployed source kept for reference only**. Do not add new pages or features there; see [Legacy React source](#legacy-react-source-not-deployed) below if you need to understand or clean it up.
 
 ### Routing
 
-Routing uses `react-router-dom` `BrowserRouter` (in `src/main.jsx`) + `Routes`/`Route` (in `src/App.jsx`). Firebase Hosting rewrites all paths to `index.html`. Do **not** revert to hash-based routing.
+Astro's file-based routing lives in `src/pages/*.astro` (one file per route, e.g. `src/pages/kokushi-report.astro`). Each page wraps a matching `src/components/*.astro` component in `src/layouts/BaseLayout.astro`. All 35 routes are ported; there is no remaining React-only route.
 
-| Path | Component |
-|---|---|
-| `/` | Homepage — all sections stacked |
-| `/lab-takeshima` | `LabTakeshima` |
-| `/lab-kamoshita` | `LabKamoshita` |
-| `/lab-kunii` | `LabKunii` |
-| `/lab-iimura` | `LabIimura` |
-| `/lab-kamiyama` | `LabKamiyama` |
-| `/lab-ishii` | `LabIshii` |
-| `/lab-komeichi` | `LabKomeichi` |
-| `/lab-nakaoka` | `LabNakaoka` |
-| `/lab-shibasaki` | `LabShibasaki` |
-| `/lab-yamazaki` | `LabYamazaki` |
-| `/lab-niikura` | `LabNiikura` |
-| `/lab-okamoto` | `LabOkamoto` |
-| `/koudai-project` | `KoudaiProject` |
-| `/kokushi-report` | `KokushiReport` |
-| `/student-column-1` | `StudentColumn1` |
-| `/event-0531` | `EventSpecial0525` |
-| `/student-column-3` | `StudentColumn3` |
-| `/lab-kamiyama-report` | `LabKamiyamaReport` |
-| `/lab-takeshima-column` | `LabTakeshimaColumn` |
-| `/eiyo-app-report` | `EiyoAppReport` |
-| `/news` | `NewsArchive` |
-| `/features` | `Features` |
-| `/qualifications` | `Qualifications` |
-| `/support` | `NationalExamSupport` |
-| `/career` | `CareerPage` |
-| `/campus-life` | `CampusLife` |
-| `/voices` | `StudentVoices` |
-| `/faq` | `FAQ` |
-| `/sports-nutrition` | `SportNutritionPage` |
-| `/columns` | `Columns` |
+`astro.config.mjs`: `outDir: './dist-astro'`, `build.format: 'file'`, `trailingSlash: 'never'`. `firebase.json` hosting has `"public": "dist-astro"` and `"cleanUrls": true` with **no rewrite rule** — Firebase resolves `/features` → `features.html` natively via cleanUrls, so don't reintroduce a catch-all `rewrites: [{ source: "**", destination: "/index.html" }]` (that was the old SPA's fallback and would break every non-home route).
 
-**Note:** `/event-0531` maps to `EventSpecial0525.jsx` — the date mismatch is intentional.
-
-`Header` and `Footer` render on every route. The `data-reveal` IntersectionObserver is set up in `App.jsx` and re-initialised on each route change; it is **skipped** for sub-pages (all routes except `/`).
-
-### SEO / Meta
-
-`SEO.jsx` (wraps `react-helmet-async`) is rendered at the top of `App.jsx` and injects `<title>`, `<meta name="description">`, Open Graph tags, canonical URL, hreflang, and JSON-LD structured data on every route. Page metadata comes from the `PAGE_META` map in `App.jsx`; structured JSON-LD (`customJsonLd`) is also built in `App.jsx` and passed to `SEO.jsx`:
-
-- `/` → `CollegeOrUniversity` with full address/geo
-- `/lab-*` → `ProfilePage` wrapping a `Person`
-- paths containing `column` or `report` → `Article`
-
-`public/robots.txt` and `public/sitemap.xml` are static SEO files deployed with the build.
-
-### Homepage section render order
-
-`Hero` → `AudienceGuide` → `FeatureSpotlight` → `CategoryBanners` → `News` (`#news`) → `StatsBar` → `Features` (`#features`) → `Labs` (`#labs`) → `Qualifications` (`#qualifications`) → `NationalExamSupport` (`#support`) → `SNSSection` → `Career` (`#career`) → `StudentVoices` (`#voices`) → `CampusLife` (`#campus-life`) → `FAQ` (summary) → `Footer` (`#contact`)
+- `/event-0531` maps to `EventSpecial0525.astro` — the date mismatch is intentional.
+- `Header.astro` and `Footer.astro` render on every route via `BaseLayout.astro`. Scroll-reveal (`src/scripts/reveal.js`) runs on every page (gated on `html.js`, respects `prefers-reduced-motion`).
+- `tsconfig.json` extends `astro/tsconfigs/base` and exists for `astro check`, not for a general TypeScript migration — the codebase is still JS/JSX in `.astro` frontmatter and script blocks otherwise.
+- `eslint.config.js` only lints `**/*.{js,jsx}` — `.astro` files are not covered by `npm run lint` (which itself only applies to the legacy React source).
 
 ### Adding a new sub-page
 
-**Four places** must all be updated together for any new route:
+1. Create the component as `.astro` under `src/components/`, styled via `src/index.css` classes (reuse `.lab-page` / `.lab-section` for lab pages).
+2. Create `src/pages/<path>.astro`: wrap the component in `<BaseLayout>`.
+3. Add a `PAGE_META` entry (title/description/ogType) to `src/data/pageMeta.js`. `BaseLayout.astro` **throws a build error** for any pathname missing from `PAGE_META` — this is the one mandatory sync point. Add a `keywordsMap` entry in the same file if the page needs specific keywords (otherwise `/lab-*` paths fall back to a generic string via `getKeywords()`).
+4. For **lab pages**: add the story card to `Labs.astro`'s `LAB_STORIES`, and the nav link to `Header.astro`'s `LAB_CATEGORIES` **and** `Footer.astro`'s `LAB_COLS` — three separate lists that must stay in sync.
+5. For **content pages** (student columns, event pages, etc.): skip the Labs/Header/Footer step. Add a `STATIC_NEWS` entry in `src/newsData.js` if it should appear in the News/Columns listings.
 
-1. **`App.jsx` `PAGE_META`** — add `'/path': { title, desc, ogType }`.
-2. **`App.jsx` `SUB_PATHS`** — add `'/path'` (skips scroll-reveal on sub-pages).
-3. **`App.jsx` `<Routes>`** — add `<Route path="/path" element={<Component />} />`.
-4. **`Header.jsx` `LAB_CATEGORIES`** and **`Footer.jsx` `LAB_COLS`** — add the lab link to the appropriate category column in both nav lists (these are separate from `Labs.jsx` and must be kept manually in sync).
+See the `new-page` skill for the full checklist and output format.
 
-For **lab pages**, also update **`Labs.jsx`** (`LAB_STORIES` array) to add the story card.
+**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `StudentVoices`, `CampusLife`, and `FAQ` each accept a `summary` prop. On the homepage (`src/pages/index.astro`) they render with `summary={true}` (condensed view); their dedicated `/xxx` routes render the same component without the prop for the full view. When editing these components, maintain both modes.
 
-For **content pages** (student columns, event pages, etc.), skip the Labs and Header/Footer steps.
+**Career is split into two components**: `Career.astro` is homepage-only (`summary={true}`, also embedded at the top of `CareerPage.astro`); `CareerPage.astro` is the full page at `/career` (adds numeric breakdown, 4-year support timeline, etc.).
 
-**Dual-mode homepage sections**: `Features`, `Qualifications`, `NationalExamSupport`, `StudentVoices`, `CampusLife`, and `FAQ` each accept a `summary` prop. On the homepage they render with `summary={true}` (condensed/teaser view); their corresponding routes (`FAQ` also at `/faq`) render the same component without the prop for the full expanded view. When editing these components, maintain both modes.
+**Homepage (`/`)**: `src/pages/index.astro` assembles 14 section components (`Hero`, `AudienceGuide`, `FeatureSpotlight`, `CategoryBanners`, `News`, `StatsBar`, `Features`, `Labs`, `Qualifications`, `NationalExamSupport`, `SNSSection`, `Career`, `StudentVoices`, `CampusLife`, `FAQ`). `Labs` (category filter), `CampusLife` (4-year roadmap tabs), `FAQ` (accordion), `Columns`/`NewsArchive` (category filter), and `LivingAlone` (dorm/apartment cost simulator) each use vanilla `<script>` blocks (`querySelectorAll`/`classList`/`textContent`) for interactivity — no React, no client-side framework runtime anywhere in the shell.
 
-**Career is split into two components**: `Career.jsx` is used only on the homepage (with `summary={true}`). `CareerPage.jsx` is the dedicated full-page component rendered at `/career`.
+### SEO / Meta
 
-**Suspended pages**: `LabIwamoto.jsx` and `StudentColumn2.jsx` exist but have no active routes. To re-enable, add back to `PAGE_META`, `SUB_PATHS`, `<Routes>`, and import in `App.jsx`. For `LabIwamoto`, also re-add its card to `Labs.jsx` and the nav lists.
-
-**Report/archive pages with routes but no Labs card**: `LabKamiyamaReport` (`/lab-kamiyama-report`), `NewsArchive` (`/news`), and `Columns` (`/columns`) have active routes but are not in the Labs story grid — they are linked from within other content (nav, footer, homepage spotlight).
-
-`Columns` (`/columns`) is a unified listing of student (`学生コラム`) and faculty (`教員コラム`) columns, filtered from `STATIC_NEWS` (`type === 'column'`) in `src/newsData.js` with a category tab filter.
-
-`AudienceGuide` is a homepage-only audience-segmented nav block (`高校生` / `保護者` / `進路指導の先生`) rendered between `Hero` and `FeatureSpotlight`. Uses Tailwind utility classes, not `index.css`.
-
-`FeatureSpotlight` is a homepage-only quick-link bar rendered between `AudienceGuide` and `CategoryBanners`, linking to `/sports-nutrition` and `/columns`. Uses Tailwind utility classes, not `index.css`.
+`BaseLayout.astro` looks up `src/data/pageMeta.js`'s `PAGE_META[pathname]` and injects title, description, Open Graph, canonical, hreflang, and JSON-LD on every route (throws a build error if the route is unregistered). `src/lib/seo.js` builds the structured JSON-LD: `/` → `CollegeOrUniversity`, `/lab-*` → `ProfilePage`/`Person`, paths containing `column` or `report` → `Article`. `public/robots.txt` and `public/sitemap.xml` are static (Astro's `@astrojs/sitemap` integration also generates `sitemap-index.xml`/`sitemap-0.xml` alongside it — both exist in `dist-astro/`, not a conflict).
 
 ### News: Firestore + static items
 
-`News.jsx` merges two sources:
-1. **Firestore** — `news` collection. Falls back to unordered query if the composite index is missing.
-2. **`STATIC_NEWS` array** (in `News.jsx`) — editorial/blog-style articles with internal `href` links.
+`News.astro` (homepage) and `NewsArchive.astro` (`/news`) both fetch **Firestore at Astro build time** (top-level `await getDocs()` in frontmatter — `news` collection, falls back to an unordered query if the composite index is missing) and merge with `STATIC_NEWS` from `src/newsData.js`, re-sorted by date descending. This is a deliberate static-site tradeoff: **new Firestore articles only appear after the next `astro build`/deploy, not immediately** on page load.
 
-Both sources are merged and re-sorted by date descending before render. Firestore `date` values can be a `Timestamp`, a `Date`, or a string — `formatNewsDate()` normalises all three to `YYYY.MM.DD`. The `type` field maps to a `news-tag--{type}` CSS class; valid types are `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`. To suppress an item, add its title pattern to `isNewsItemTemporarilyHidden()` in `News.jsx`.
+Firestore `date` values can be a `Timestamp`, `Date`, or string — `formatNewsDate()` normalises all three to `YYYY.MM.DD`. The `type` field maps to a `news-tag--{type}` CSS class; valid types: `info`, `news`, `event`, `report`, `voice`, `column`, `sensei`.
 
-`NewsArchive` (`/news`) shares `STATIC_NEWS`, `newsDateMillis`, and `formatNewsDate` from `src/newsData.js`. To add/remove articles, edit `src/newsData.js`.
+`NewsArchive.astro` (`/news`) and `Columns.astro` (`/columns`) both build on `src/newsData.js`; `Columns` filters `STATIC_NEWS` by `type === 'column'`. Both have a category-filter UI driven by vanilla `<script>` (toggle `display`/`is-active` class by `data-*` attributes), not client-side React state.
 
-### Firestore / Firebase
+### Firebase
 
 - Config is hardcoded in `src/firebase.js` — no `.env` needed (public read-only Firebase project).
-- Firebase project ID: `shokuei-hp` (`.firebaserc`).
-- The `news` collection is publicly readable (`firestore.rules`).
+- Firebase project ID: `shokuei-hp` (`.firebaserc`). The `news` collection is publicly readable (`firestore.rules`).
 
 ### Styling
 
-- **`src/index.css` is the only stylesheet** (~1900 lines). Do not create new CSS files.
+- **`src/index.css` is the only stylesheet**, shared by both the Astro site and the legacy React source. Do not create new CSS files.
 - Design-token system via CSS custom properties: `--cream`, `--terracotta`, `--forest`, `--charcoal`, `--stone`, etc. Use `clamp()` for fluid spacing.
-- Tailwind CSS 4 is a dependency. `AudienceGuide`, `FeatureSpotlight`, and a few other homepage-above-fold components use Tailwind utility classes. All other components use `index.css` only — extend `index.css` for new styles rather than adding Tailwind to existing components.
-- Google Fonts (Noto Serif JP, Noto Sans JP) load via `<link>` in `index.html`. Use `var(--font-serif)` / `var(--font-sans)`.
+- Fonts: Noto Serif JP / Noto Sans JP via `<link>` in `BaseLayout.astro`. Use `var(--font-serif)` / `var(--font-sans)`.
+- Scroll-reveal: add `data-reveal` (optionally `data-reveal="left"|"right"|"scale"|"fade"`, and `style="--reveal-delay: 0.1s"` for stagger). Driven by `src/scripts/reveal.js`'s `IntersectionObserver`, gated on `html.js`.
 
-### Images
+### Images and working materials
 
-Static source images live in `src/` (root) or `src/assets/<topic>/`. Compiled names (with content hashes) appear in `dist/assets/`.
+- Static source images live in `src/` (root) or `src/assets/<topic>/`. Find current usages by grepping for the filename.
+- `docs/` is a non-deployed working directory (reference images, design docs, PDFs). Do not import from `docs/` in application code — copy assets to `src/` first.
 
-| File | Used by |
-|---|---|
-| `src/top.jpg` | `Hero.jsx` |
-| `src/university_kousha.jpg` | `CampusLife.jsx` |
-| `src/tairyou.png` | `CampusLife.jsx` |
-| `src/kuwanoha.jpg` | `CampusLife.jsx` |
-| `src/kokushi.png` | `CampusLife.jsx` |
-| `src/cheese-camembert.jpg` | `StudentColumn3.jsx` |
-| `src/cheese-seminar-lecture.jpg` | `StudentColumn3.jsx` |
-| `src/cheese-tasting.jpg` | `StudentColumn3.jsx` |
-| `src/assets/eiyo-app/*.{jpg,png}` | `EiyoAppReport.jsx` |
-| `src/assets/kamiyama-sa/*.jpg` | `LabKamiyamaReport.jsx` |
+### Component conventions
 
-Faculty headshots live in `src/faculty/` as `{surname-romaji}.jpg`. They are **not currently imported** by any active component — they are reserved assets for future use.
+- Astro components live under `src/components/*.astro`, pages under `src/pages/*.astro`. No component subdirectories, no component-specific CSS files.
+- Lab pages share the `.lab-page` / `.lab-section` CSS classes. `LAB_STORIES` card entries (in `Labs.astro`) need `storyTitle`, `hook`, `category` (`regional` | `science` | `welfare`), `href`, `isExternal`.
+- External links: `target="_blank" rel="noopener noreferrer"`. Internal links: plain `<a href="...">` (no client-side router).
+- Icons: `@lucide/astro` (not `lucide-react`).
+- Interactivity (filters, tabs, accordions, simulators): vanilla `<script>` blocks using `querySelectorAll`/`classList.toggle`/`textContent`, gated with TypeScript element generics (`querySelectorAll<HTMLElement>(...)`) to satisfy `astro check`.
 
-The following files in `src/` are also unused — do not import them:
-- `src/jisshu-sei.jpg`, `src/eiyo-kagaku.png` — reserved/orphaned images
-- `src/assets/hero.png` — unused placeholder
+## Legacy React source (not deployed)
 
-### Working materials
+The pre-Astro React 19 + Vite 8 SPA source still exists (`src/main.jsx`, `src/App.jsx`, `.jsx` components, `npm run dev`/`build`/`preview`/`lint`) but **is not built, deployed, or reachable in production**. It's kept for reference during the migration tail (comparing old vs. new behavior) and hasn't been deleted yet. Do not extend it — all new work targets the `.astro` files above. If asked to clean up dead code, confirm with the user before deleting the `.jsx` source wholesale, since it may still be useful as a reference until the team is fully confident in the Astro build.
 
-`docs/` is a non-deployed working directory for reference images, design documents, source PDFs, and draft files. Do not import from `docs/` in application code — copy assets to `src/` first.
+## Migration history
 
-`src/koudai_project.md` is a plain-text content source for `KoudaiProject.jsx`. It is **not** a component or module — do not import it.
-
-### Labs section
-
-`Labs.jsx` renders a story card grid (`LAB_STORIES` array, currently 12 active labs). Each entry requires:
-
-```js
-{
-  storyTitle: '...',       // card headline
-  hook: '...',             // one-line descriptor shown on the card
-  category: 'regional' | 'science' | 'welfare',
-  href: '/lab-xxx',        // or full URL for external
-  isExternal: false,       // true → <a target="_blank">, false → <Link>
-}
-```
-
-**Suspended lab** (`LabIwamoto`): no card in `LAB_STORIES`.
-
-When adding a new lab card here, also add it to the matching category column in **`Header.jsx` `LAB_CATEGORIES`** and **`Footer.jsx` `LAB_COLS`** — these three lists must stay in sync.
-
-Individual lab **pages** are separate full-page components (`src/components/LabXxx.jsx`) that use the shared `.lab-page` / `.lab-section` CSS classes. They do not import faculty photos.
-
-`HeroFeatures.jsx` exists in `src/components/` but is not rendered anywhere.
-
-### Component Conventions
-
-- All components are plain `.jsx` under `src/components/`. No TypeScript, no component subdirectories, no component-specific CSS files.
-- External links: `target="_blank" rel="noopener noreferrer"`. Internal path links: use `<Link to="...">` from `react-router-dom`.
-- Scroll-reveal: add `data-reveal` (and optionally `data-reveal-delay="1"–"6"`) to animate elements on scroll. Works only on the homepage.
-- Framer Motion is used for animations. Use `motion.*` variants and `AnimatePresence` rather than raw CSS transitions for new animated UI.
-- Icons: `lucide-react` (e.g. `import { ArrowRight } from 'lucide-react'`).
-- `App.css` is intentionally empty — all styles live in `src/index.css`.
+`scripts/migration/routes.mjs` lists all 35 routes; `scripts/migration/capture-baseline.mjs` captured pre-migration `head`/JSON-LD/DOM snapshots into `docs/migration-baseline/` from the old React SPA, used to diff-verify each Astro page during the migration. Useful if investigating a discrepancy between current Astro output and the site's pre-cutover behavior.
 
 ## Language
 

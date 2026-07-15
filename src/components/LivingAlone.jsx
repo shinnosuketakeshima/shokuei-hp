@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const DORM_ROOMS = [
   { label: "67,700円タイプ", monthly: 67700 },
   { label: "75,000円タイプ", monthly: 75000 },
   { label: "82,000円タイプ", monthly: 82000 },
+];
+
+const APT_RENTS = [
+  { label: "4.5万円タイプ", monthly: 45000 },
+  { label: "5.5万円タイプ", monthly: 55000 },
+  { label: "6.5万円タイプ", monthly: 65000 },
 ];
 
 const DORM_FIXED = {
@@ -12,6 +19,36 @@ const DORM_FIXED = {
   mgmtYear: 220000,
   netMonthly: 3960,
 };
+
+const TUITION = {
+  admission: 250000,
+  tuitionYear: 800000,
+  facilityYear: 400000,
+  feesYear: 64660,
+};
+
+const FAQ_ITEMS = [
+  {
+    q: "新座で一人暮らしすると月いくらかかりますか？",
+    a: "十文字学園女子大学周辺のアパートは家賃月4.5〜6.5万円が目安です。光熱費・食費・通信費を含めると、月8〜12万円程度が一般的な生活費の目安です。学生寮（ドーミー）を選ぶと、朝夕2食付き・家具家電込みのため、月額6.7〜8.2万円＋電気代で生活費がほぼ確定します。",
+  },
+  {
+    q: "新座市のアパート家賃相場はいくらですか？",
+    a: "大学周辺（新座駅・ひばりヶ丘駅方面）のワンルーム・1Kは、家賃月4.5〜6.5万円が相場です。初期費用は敷金・礼金・仲介手数料などで家賃の4〜6か月分が目安になります。",
+  },
+  {
+    q: "十文字学園女子大学の学生寮の費用はいくらですか？",
+    a: "ドーミー（共立メンテナンス）の寮費は月67,700〜82,000円（2025年時点）。入館費29万円・保証金5万円・年間管理費22万円が別途かかります。初年度の総額は約142〜158万円（電気代別）が目安です。",
+  },
+  {
+    q: "食物栄養学科の4年間の学費はいくらですか？",
+    a: "2026年度入学者の初年度納入金は約151万円（入学金25万円＋授業料80万円＋施設費40万円＋諸会費等）。2年目以降は入学金なしで年間約126万円。4年間の学費総額は約531万円です。最新の正確な金額は大学公式サイトの募集要項でご確認ください。",
+  },
+  {
+    q: "学生寮とアパート、どちらが安いですか？",
+    a: "家賃だけ見るとアパートの方が安く見えますが、寮は食事2食・家具家電・管理費込みで計算できます。4年間の住居費総額では大きな差にならないことも多く、食費やセキュリティの安心感も含めて選ぶのがおすすめです。",
+  },
+];
 
 const yen = (n) => n.toLocaleString("ja-JP") + "円";
 
@@ -29,27 +66,64 @@ function calcDorm(monthly) {
   return { room, net, firstYear, fourYear };
 }
 
+function calcApt(monthly) {
+  const annualRent = monthly * 12;
+  const initial = monthly * 5;
+  const firstYear = annualRent + initial;
+  const fourYear = annualRent * 4 + initial;
+  return { annualRent, initial, firstYear, fourYear };
+}
+
+function calcTuition() {
+  const year1 =
+    TUITION.admission + TUITION.tuitionYear + TUITION.facilityYear + TUITION.feesYear;
+  const yearN = TUITION.tuitionYear + TUITION.facilityYear + TUITION.feesYear;
+  const fourYear = year1 + yearN * 3;
+  return { year1, yearN, fourYear };
+}
+
 export default function LivingAlone() {
   const [roomIdx, setRoomIdx] = useState(0);
+  const [aptIdx, setAptIdx] = useState(1);
   const room = DORM_ROOMS[roomIdx];
+  const apt = APT_RENTS[aptIdx];
   const d = calcDorm(room.monthly);
+  const a = calcApt(apt.monthly);
+  const t = calcTuition();
 
   return (
     <div className="la">
       <header className="la-hero">
-        <p className="la-eyebrow">はじめての一人暮らし</p>
+        <p className="la-eyebrow">新座 一人暮らし 費用シミュレーター</p>
         <h1 className="la-title">
-          住まいは<br />
-          <span className="la-accent">学生寮</span>と
-          <span className="la-accent">アパート</span>から選べます
+          新座で一人暮らし——<br />
+          <span className="la-accent">住まい</span>と
+          <span className="la-accent">学費</span>を総額で比較
         </h1>
         <p className="la-lead">
-          進学で一番気になるのが「住まいにいくらかかるのか」。
-          月額の家賃だけ見ると分かりにくいので、このページでは
-          <strong>1年間・4年間でいくらかかるか</strong>という見方で整理しました。
-          寮にもアパートにもそれぞれ良さがあります。生活スタイルに合わせて選んでください。
+          埼玉県<strong>新座市</strong>にある十文字学園女子大学 食物栄養学科へ進学する際、
+          受験生・保護者の方が最も気になる「<strong>新座で一人暮らしするといくらかかるのか</strong>」。
+          月額の家賃や寮費だけでは見えない<strong>年間・4年間の総額</strong>で、
+          学生寮・アパート・学費をこのページのシミュレーターで比較できます。
         </p>
       </header>
+
+      <section className="la-local" aria-labelledby="la-local-heading">
+        <h2 id="la-local-heading" className="la-h2">新座市で一人暮らしする費用の目安</h2>
+        <p>
+          十文字学園女子大学は埼玉県新座市菅沢にあり、JR武蔵野線・新座駅から徒歩10〜15分です。
+          ひばりヶ丘駅方面からバスでのアクセスも可能で、池袋から急行で約20分と都心へも通いやすい立地です。
+        </p>
+        <ul className="la-local-list">
+          <li><strong>学生寮（ドーミー）</strong>：月6.7〜8.2万円、朝夕2食・家具家電込み</li>
+          <li><strong>アパート・マンション</strong>：新座周辺の家賃相場 月4.5〜6.5万円</li>
+          <li><strong>学費（食物栄養学科）</strong>：初年度約151万円、4年間総額約531万円</li>
+        </ul>
+        <p className="la-local-note">
+          住居費と学費を合わせた4年間の総額は、下のシミュレーターで寮タイプ・家賃タイプを選んで確認できます。
+          詳しいキャンパス環境は<Link to="/campus-life">キャンパスライフ</Link>もご覧ください。
+        </p>
+      </section>
 
       <section className="la-choices">
         <article className="la-card la-card--dorm">
@@ -67,9 +141,9 @@ export default function LivingAlone() {
         </article>
 
         <article className="la-card la-card--apt">
-          <h2>アパート・マンション</h2>
+          <h2>アパート・マンション（新座周辺）</h2>
           <ul>
-            <li>周辺家賃相場は月 4.5〜6.5万円</li>
+            <li>新座市周辺の家賃相場は月 4.5〜6.5万円</li>
             <li>自炊など生活スタイルを自由に選べる</li>
             <li>毎年の管理費（約22万円）が通常かからない</li>
             <li>工夫しだいで費用を抑えられる場合も</li>
@@ -81,21 +155,21 @@ export default function LivingAlone() {
         </article>
       </section>
 
-      <section className="la-sim">
-        <p className="la-eyebrow">学生寮の費用を「総額」で見る</p>
-        <h2 className="la-h2">月額表示と実際に払う額は印象が変わります</h2>
+      <section className="la-sim" aria-labelledby="la-dorm-sim-heading">
+        <p className="la-eyebrow">一人暮らしコスト比較｜学生寮</p>
+        <h2 id="la-dorm-sim-heading" className="la-h2">学生寮の費用シミュレーター</h2>
         <p className="la-sim-note">
           寮費（月額）のほかに、入館費・保証金・年間管理費・通信費がかかります。
           部屋タイプを選ぶと、1年目と4年間の総額の目安が出ます。
         </p>
 
-        <div className="la-tabs" role="tablist" aria-label="部屋タイプ">
+        <div className="la-tabs" role="tablist" aria-label="寮の部屋タイプ">
           {DORM_ROOMS.map((r, i) => (
             <button
               key={r.label}
               role="tab"
               aria-selected={i === roomIdx}
-              aria-controls="la-breakdown"
+              aria-controls="la-dorm-breakdown"
               aria-label={`${r.label}を選択`}
               className={"la-tab" + (i === roomIdx ? " is-active" : "")}
               onClick={() => setRoomIdx(i)}
@@ -105,7 +179,7 @@ export default function LivingAlone() {
           ))}
         </div>
 
-        <div id="la-breakdown" className="la-breakdown" role="tabpanel" aria-labelledby="la-breakdown">
+        <div id="la-dorm-breakdown" className="la-breakdown" role="tabpanel">
           <div className="la-bd-col">
             <h3>1年目にかかるお金</h3>
             <dl>
@@ -119,7 +193,7 @@ export default function LivingAlone() {
           </div>
 
           <div className="la-bd-col la-bd-col--four">
-            <h3>4年間の合計</h3>
+            <h3>4年間の住居費合計</h3>
             <p className="la-four-num">{yen(d.fourYear)}<span>＋電気代</span></p>
             <p className="la-four-sub">
               入館費・保証金は4年で1回、寮費・管理費・通信費は毎年かかる前提の目安です。
@@ -133,12 +207,115 @@ export default function LivingAlone() {
         </p>
       </section>
 
+      <section className="la-sim la-sim--apt" aria-labelledby="la-apt-sim-heading">
+        <p className="la-eyebrow">一人暮らしコスト比較｜アパート</p>
+        <h2 id="la-apt-sim-heading" className="la-h2">新座市アパートの費用シミュレーター</h2>
+        <p className="la-sim-note">
+          新座市周辺の家賃相場（月4.5〜6.5万円）をもとに、初期費用（家賃5か月分）と
+          1年目・4年間の住居費を試算します。食費・光熱費・家具家電は含みません。
+        </p>
+
+        <div className="la-tabs" role="tablist" aria-label="アパートの家賃タイプ">
+          {APT_RENTS.map((r, i) => (
+            <button
+              key={r.label}
+              role="tab"
+              aria-selected={i === aptIdx}
+              aria-controls="la-apt-breakdown"
+              aria-label={`${r.label}を選択`}
+              className={"la-tab" + (i === aptIdx ? " is-active" : "")}
+              onClick={() => setAptIdx(i)}
+            >
+              {r.label}
+            </button>
+          ))}
+        </div>
+
+        <div id="la-apt-breakdown" className="la-breakdown" role="tabpanel">
+          <div className="la-bd-col">
+            <h3>1年目にかかるお金</h3>
+            <dl>
+              <div><dt>家賃（{yen(apt.monthly)}×12か月）</dt><dd>{yen(a.annualRent)}</dd></div>
+              <div><dt>初期費用（家賃5か月分の目安）</dt><dd>{yen(a.initial)}</dd></div>
+              <div className="la-bd-total"><dt>1年目合計</dt><dd>{yen(a.firstYear)}<span>食費・光熱費別</span></dd></div>
+            </dl>
+          </div>
+
+          <div className="la-bd-col la-bd-col--four">
+            <h3>4年間の住居費合計</h3>
+            <p className="la-four-num">{yen(a.fourYear)}<span>食費・光熱費別</span></p>
+            <p className="la-four-sub">
+              初期費用は1回のみ、家賃は毎年かかる前提の目安です。
+              寮と違い食事は自炊・外食のため、食費は別途かかります。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="la-tuition" aria-labelledby="la-tuition-heading">
+        <p className="la-eyebrow">学費シミュレーター</p>
+        <h2 id="la-tuition-heading" className="la-h2">食物栄養学科の学費（2026年度入学者）</h2>
+        <p className="la-tuition-note">
+          一人暮らしの費用とあわせて検討したい学費の目安です。
+          奨学金・修学支援制度の適用により実際の負担額は変わります。
+        </p>
+        <div className="la-tuition-grid">
+          <div className="la-tuition-card">
+            <h3>初年度納入金</h3>
+            <dl>
+              <div><dt>入学金</dt><dd>{yen(TUITION.admission)}</dd></div>
+              <div><dt>授業料（1年分）</dt><dd>{yen(TUITION.tuitionYear)}</dd></div>
+              <div><dt>施設・教育充実費</dt><dd>{yen(TUITION.facilityYear)}</dd></div>
+              <div><dt>諸会費等</dt><dd>{yen(TUITION.feesYear)}</dd></div>
+              <div className="la-tuition-total"><dt>初年度合計</dt><dd>{yen(t.year1)}</dd></div>
+            </dl>
+          </div>
+          <div className="la-tuition-card la-tuition-card--highlight">
+            <h3>4年間の学費総額</h3>
+            <p className="la-tuition-four">{yen(t.fourYear)}</p>
+            <p className="la-tuition-sub">
+              2年目以降は入学金なしで年間約{Math.round(t.yearN / 10000)}万円。
+              最新の正確な金額は大学公式サイトの募集要項でご確認ください。
+            </p>
+            <a
+              href="https://www.jumonji-u.ac.jp/admission/expense/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="la-tuition-link"
+            >
+              大学公式｜学費のご案内
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="la-total" aria-labelledby="la-total-heading">
+        <h2 id="la-total-heading" className="la-h2">4年間の総額イメージ（住居費＋学費）</h2>
+        <p className="la-total-note">現在選択中のタイプでの目安です。食費・光熱費・生活費は含みません。</p>
+        <div className="la-total-grid">
+          <article className="la-total-card la-total-card--dorm">
+            <h3>学生寮＋学費</h3>
+            <p className="la-total-num">{yen(d.fourYear + t.fourYear)}</p>
+            <p className="la-total-breakdown">
+              住居費 {yen(d.fourYear)} ＋ 学費 {yen(t.fourYear)}
+            </p>
+          </article>
+          <article className="la-total-card la-total-card--apt">
+            <h3>アパート＋学費</h3>
+            <p className="la-total-num">{yen(a.fourYear + t.fourYear)}</p>
+            <p className="la-total-breakdown">
+              住居費 {yen(a.fourYear)} ＋ 学費 {yen(t.fourYear)}
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section className="la-compare">
         <h2 className="la-h2">寮とアパート、どう違う？</h2>
         <div className="la-table-wrap">
           <table className="la-table">
             <thead>
-              <tr><th></th><th>学生寮</th><th>アパート</th></tr>
+              <tr><th></th><th>学生寮</th><th>アパート（新座周辺）</th></tr>
             </thead>
             <tbody>
               <tr><th>食事</th><td>朝夕2食付き</td><td>自炊・外食</td></tr>
@@ -156,6 +333,18 @@ export default function LivingAlone() {
         </p>
       </section>
 
+      <section className="la-faq" aria-labelledby="la-faq-heading">
+        <h2 id="la-faq-heading" className="la-h2">新座で一人暮らし——よくある質問</h2>
+        <dl className="la-faq-list">
+          {FAQ_ITEMS.map((item) => (
+            <div key={item.q} className="la-faq-item">
+              <dt>{item.q}</dt>
+              <dd>{item.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
       <section className="la-references">
         <h2 className="la-h2">参考になるリンク</h2>
         <div className="la-reference-grid">
@@ -165,30 +354,30 @@ export default function LivingAlone() {
           </a>
           <a href="https://www.jumonji-u.ac.jp/jumonji-style/about/campus-life/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
             <h3>キャンパスライフ</h3>
-            <p>一人暮らしの学生の声・キャンパス風景など</p>
+            <p>新座で一人暮らしする学生の声・キャンパス風景など</p>
           </a>
           <a href="https://dormy-ac.com/page/jumonji/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
             <h3>ドーミー公式サイト</h3>
             <p>十文字学園女子大学向け学生寮の詳細情報・資料請求</p>
           </a>
-          <a href="https://suumo.jp/chintai/kanto/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
-            <h3>SUUMO</h3>
-            <p>賃貸物件検索。東京都近郊のアパート探しに</p>
+          <a href="https://suumo.jp/chintai/saitama/sc_niizashi/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>SUUMO（新座市）</h3>
+            <p>新座市の賃貸物件検索。一人暮らし向けアパート探しに</p>
           </a>
-          <a href="https://www.homes.co.jp/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
-            <h3>HOMES</h3>
-            <p>賃貸・売買物件情報。家賃相場や条件検索</p>
+          <a href="https://www.homes.co.jp/chintai/saitama/niiza-city/list/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>HOMES（新座市）</h3>
+            <p>新座市の賃貸・家賃相場情報</p>
           </a>
-          <a href="https://www.chintai.net/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
-            <h3>賃貸情報 チンタイ</h3>
-            <p>礼金なし・敷金なしなど条件に合わせた検索</p>
+          <a href="https://www.jumonji-u.ac.jp/admission/expense/" target="_blank" rel="noopener noreferrer" className="la-reference-card">
+            <h3>大学公式｜学費</h3>
+            <p>食物栄養学科を含む各学科の学費・奨学金情報</p>
           </a>
         </div>
       </section>
 
       <footer className="la-foot">
         <p>
-          住まい選びで迷ったら、オープンキャンパスや個別相談で気軽に聞いてください。
+          新座での一人暮らしや学費で迷ったら、オープンキャンパスや個別相談で気軽に聞いてください。
           先輩たちの実際の暮らし方もお伝えできます。
         </p>
       </footer>

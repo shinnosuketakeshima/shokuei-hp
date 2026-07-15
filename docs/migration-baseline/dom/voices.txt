@@ -1,0 +1,91 @@
+main
+  section.voices
+    div.container
+      div.voices__header
+        p.eyebrow | 学生の声 / Student Voices
+        h1.section-title | 在学生からのメッセージ
+      div.voices__grid
+        div.voice-card
+          p.voice-card__category | 資格
+          blockquote.voice-card__quote | 「 最初は衛生管理者って何？って感じでしたが、就活で絶対強みになりました。取れてよかったです。 」
+          div.voice-card__author
+            span.voice-card__initial | A.N
+            div.voice-card__meta
+              span.voice-card__year | 4年生
+              span.voice-card__course | 臨床栄養コース
+        div.voice-card
+          p.voice-card__category | 少人数教育
+          blockquote.voice-card__quote | 「 先生に名前で呼んでもらえるのが、最初は驚きでした。相談しやすい雰囲気が本当にありがたいです。 」
+          div.voice-card__author
+            span.voice-card__initial | K.W
+            div.voice-card__meta
+              span.voice-card__year | 2年生
+              span.voice-card__course | 給食管理コース
+        div.voice-card
+          p.voice-card__category | 実習
+          blockquote.voice-card__quote | 「 病院実習で初めて患者さんと関わって、勉強していたことがぜんぶつながった感じがしました。 」
+          div.voice-card__author
+            span.voice-card__initial | A.I
+            div.voice-card__meta
+              span.voice-card__year | 4年生
+              span.voice-card__course | 臨床栄養コース
+        div.voice-card
+          p.voice-card__category | 学生生活
+          blockquote.voice-card__quote | 「 やりたいことを話したら、先生が一緒に考えてくれた。「ここでよかった」って思える4年間でした。 」
+          div.voice-card__author
+            span.voice-card__initial | S.A
+            div.voice-card__meta
+              span.voice-card__year | 4年生
+              span.voice-card__course | 公衆栄養コース
+        div.voice-card
+          p.voice-card__category | 国試対策
+          blockquote.voice-card__quote | 「 国試の勉強、ひとりだったら折れてたと思います。仲間がいたから最後まで続けられました。 」
+          div.voice-card__author
+            span.voice-card__initial | A.O
+            div.voice-card__meta
+              span.voice-card__year | 4年生
+              span.voice-card__course | 臨床栄養コース
+        div.voice-card
+          p.voice-card__category | 学生生活
+          blockquote.voice-card__quote | 「 同じ目標を持った友達ができた。それだけで、ここに来た意味があったと思っています。 」
+          div.voice-card__author
+            span.voice-card__initial | N.S
+            div.voice-card__meta
+              span.voice-card__year | 3年生
+              span.voice-card__course | 給食管理コース
+      div.voices__columns-header
+        p.eyebrow | 学生コラム / Student Column
+        h2.section-title | 学生記者が伝える学科の日常
+      div.voices__columns-grid
+        article.column-card
+          span.column-card__date | 2026.5.26
+          h3.column-card__title | 解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発
+          p.column-card__desc | InBody・MedGemで自分のからだを測り、Gemini・ChatGPTで世界に一つの栄養アドバイスアプリを開発。2
+          a.text-link | 続きを読む
+            svg
+              path
+              path
+        article.column-card
+          span.column-card__date | 2026.5.13
+          h3.column-card__title | チーズに"王様"と"女王様"がいた！食育論セミナーレポート
+          p.column-card__desc | 食育論の授業に雪印メグミルク様をお招き。骨の衝撃映像からチーズの試食まで体験した学生記者レポート。
+          a.text-link | 続きを読む
+            svg
+              path
+              path
+        article.column-card
+          span.column-card__date | 2026.5.12
+          h3.column-card__title | 健康×SNS映え！？「機能性和洋菓子」開発会議に潜入取材！
+          p.column-card__desc | 竹嶋ゼミ・芝崎ゼミが合同で取り組む機能性お菓子の開発現場をレポート。
+          a.text-link | 続きを読む
+            svg
+              path
+              path
+        article.column-card
+          span.column-card__date | 2026.5.11
+          h3.column-card__title | 白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情
+          p.column-card__desc | 実験、実習、そして白衣。管理栄養士を目指す学生たちの日常にある不思議なルールとは？
+          a.text-link | 続きを読む
+            svg
+              path
+              path

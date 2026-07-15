@@ -1,0 +1,80 @@
+---
+import { Award, Users, BookOpen, ArrowRight } from '@lucide/astro'
+
+interface Props {
+  summary?: boolean
+}
+const { summary = false } = Astro.props
+
+const FEATURES = [
+  {
+    num: '01',
+    icon: Award,
+    title: '全国唯一のダブルライセンス',
+    body: '管理栄養士養成課程の中で「第一種衛生管理者」の国家資格を卒業と同時に取得できるのは、全国の大学で本学のみ。50名以上の事業場で配置が義務付けられており、企業の産業保健分野への就職に大きく有利です。',
+    quote: '「就活のとき、衛生管理者の資格が話のきっかけになって、面接がスムーズに進んだ学生が多いです。」',
+    quoteAuthor: '担当教員より',
+  },
+  {
+    num: '02',
+    icon: Users,
+    title: '定員78名の少人数教育',
+    body: '少人数だからこそできる、きめ細かな指導。教員が一人ひとりの学習状況を早期に把握し、入学から卒業・就職まで親身にサポートします。就職率100%（2025年3月卒業生実績）はこの環境から生まれています。',
+    quote: '「少人数だからこそ、名前で呼ぶ関係が生まれます。それが, ここの一番の強みだと思っています。」',
+    quoteAuthor: '担当教員より',
+  },
+  {
+    num: '03',
+    icon: BookOpen,
+    title: '実践力を育む4年間のカリキュラム',
+    body: '1年次の基礎から4年次の国試対策まで段階的に深める体系的なカリキュラム。給食経営管理実習・臨地実習・地域連携活動など、現場で役立つ実践力を養います。',
+    quote: '「実習で初めて現場に立ったとき、授業の意味がわかった、とよく言われます。それがうれしいんです。」',
+    quoteAuthor: '担当教員より',
+  },
+]
+
+const TitleTag = summary ? 'h2' : 'h1'
+---
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="features__header" data-reveal>
+      <p class="eyebrow">学科の特色 / Features</p>
+      <TitleTag class="section-title">
+        食物栄養学科が選ばれる<br />
+        3つの理由
+      </TitleTag>
+    </div>
+  </div>
+
+  <div class="features__grid">
+    {FEATURES.map((f, i) => {
+      const Icon = f.icon
+      return (
+        <article class="feature-card" data-reveal style={`--reveal-delay: ${i * 0.15}s`}>
+          <span class="feature-card__ghost">{f.num}</span>
+          <div class="feature-card__icon"><Icon size={20} /></div>
+          <p class="feature-card__num">{f.num}</p>
+          <h3 class="feature-card__title">{f.title}</h3>
+          {!summary && (
+            <>
+              <p class="feature-card__body">{f.body}</p>
+              <p class="feature-card__teacher-quote">
+                {f.quote}<br />
+                <span class="feature-card__teacher-name">─ {f.quoteAuthor}</span>
+              </p>
+            </>
+          )}
+        </article>
+      )
+    })}
+  </div>
+
+  {summary && (
+    <div class="container" style="margin-top: 48px; text-align: center">
+      <a href="/features" class="button button--outline">
+        学科の特色を詳しく見る <ArrowRight size={16} style="margin-left: 8px" />
+      </a>
+    </div>
+  )}
+</section>

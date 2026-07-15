@@ -3,17 +3,13 @@
     "rules": "firestore.rules"
   },
   "hosting": {
-    "public": "dist",
+    "public": "dist-astro",
+    "cleanUrls": true,
+    "trailingSlash": false,
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }

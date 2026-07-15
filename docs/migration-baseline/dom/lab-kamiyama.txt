@@ -1,0 +1,165 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 食物栄養学科
+        h1.lab-page__title | 神山 真澄 研究室
+        p.lab-page__subtitle | 「おいしい」を入口に、「健康」と「安心な暮らし」へ。
+      div.lab-page__content
+        section.lab-story-feature
+          span.lab-story-feature__label | FEATURE STORY
+            svg
+              path
+              path
+              path
+              circle
+          h2.lab-story-feature__title | 「おいしい」を数値化！ 学生たちが挑んだ 「熟成黒たまねぎマフィン」開発の裏側
+            br
+            br
+          p.lab-story-feature__lead | 「食べることが好き」「新商品を作ってみたい」——そんな思いを持つ学生が集まる神山研究室。 企業とコラボした から、 まで
+            strong | マフィン開発
+            strong | 細胞レベルの実験
+          div.lab-story-feature__tags
+            span | #産学連携
+            span | #新商品開発
+            span | #機能性食品
+            span | #高校生に伝えたい
+        section.lab-section
+          h2.lab-section__title | 企業 × 学生で生まれた「くろたまフィン」開発ステップ
+          p.lab-section__body | エイジェックファームとの「熟成黒たまレシピ開発プロジェクト」では、神山ゼミの学生たちが を担当。リアルなビジネスの現場で
+            strong | 商品企画から販売・科学分析まで
+          div.lab-timeline
+            div.lab-timeline__step
+              div.lab-timeline__num | 01
+              div.lab-timeline__content
+                h3 | アイデア出し・企画立案
+                p | 「黒たまねぎの機能性を活かしたお菓子を作りたい！」 学生たちのアイデア出しからプロジェクトはスタート。誰に届けたいか、ど
+            div.lab-timeline__step
+              div.lab-timeline__num | 02
+              div.lab-timeline__content
+                h3 | 原価計算とビジネス目線
+                p | 材料費・包装費・販売価格まで、ビジネス目線で電卓を叩く。「学生のうちから商品をひとつ世に出す」リアルな経験。
+            div.lab-timeline__step
+              div.lab-timeline__num | 03
+              div.lab-timeline__content
+                h3 | 試作 × 官能評価
+                p | 配合を変えては焼き、食べ、また配合を変える。「おいしい」を言葉と数値で評価する官能評価にチャレンジ。
+            div.lab-timeline__step
+              div.lab-timeline__num | 04
+              div.lab-timeline__content
+                h3 | パッケージデザイン
+                p | 誰の手に届けたいか、どう手に取ってもらうか。デザイン案を持ち寄り、企業の方と一緒にブラッシュアップ。
+            div.lab-timeline__step
+              div.lab-timeline__num | 05
+              div.lab-timeline__content
+                h3 | 駅ナカ・学内売店で販売
+                p | 完成した「くろたまフィン」は学内売店や駅ナカのマルシェに登場。お客様の「おいしい！」がそのまま研究室の励みに。
+            div.lab-timeline__step
+              div.lab-timeline__num | 06
+              div.lab-timeline__content
+                h3 | 科学的データで裏付け
+                p | 総ポリフェノール量や抗酸化能を測定。販売した商品の「機能性」を、自分たちのデータで証明する。
+        section.lab-chat-section
+          h2.lab-chat-section__title | ゼミ生のリアルな声
+            svg
+              path
+              path
+          p.lab-chat-section__lead | 「神山ゼミってどんな雰囲気？」——実際に研究室で学ぶ学生の声を、ちょっとだけのぞいてみました。
+          div.lab-chat
+            div.lab-chat__row.lab-chat__row--left
+              div.lab-chat__avatar | A
+              div.lab-chat__bubble
+                p | 難しい内容でも、身近な食べ物の話に置き換えて説明してくださるので、毎回「なるほど！」と思えます。
+                span.lab-chat__name | 神山ゼミ 学生A
+            div.lab-chat__row.lab-chat__row--right
+              div.lab-chat__avatar | B
+              div.lab-chat__bubble
+                p | 実験がうまくいかないときも、先生が一緒に原因を考えてくれるので、次へのモチベーションになります。
+                span.lab-chat__name | 神山ゼミ 学生B
+        section.lab-section
+          h2.lab-section__title | 研究テーマ
+          div.lab-section__grid
+            div.lab-section__card
+              h3 | 01. ポリフェノールと血管・代謝の健康
+              p | 味噌の発酵・熟成過程で増えていく大豆イソフラボンアグリコンやポリフェノールに注目。抗酸化能の変化や、酸化LDLによる血管
+            div.lab-section__card
+              h3 | 02. 機能性食品開発と生活習慣病予防
+              p | 味噌・大豆製品・ぶどう・玉ねぎなど、身近な食品に含まれる機能性成分を分析。「おいしく食べながら高血圧や糖尿病を予防する食
+        section.lab-section
+          h2.lab-section__title | 神山研究室で学べること
+          div.lab-jargon-decoder
+            span.lab-jargon-decoder__eyebrow | WHAT YOU LEARN — 01
+              svg
+                path
+                path
+                path
+            h3 | 教科書の中の図を として理解する実験
+              br
+              em | 「自分のデータ」
+            p | 「酵素反応速度論」や「mRNA発現解析」と聞くと、ちょっと身構えてしまうかもしれません。 神山研究室では、こうした実験を
+              strong | 身近な食べ物や、体の中で起きていること
+            ul.lab-jargon-decoder__list
+              li
+                strong | 酵素反応速度論 って？
+                span | 消化や代謝の「スピード」を測る考え方。たまねぎの成分がどれくらいの速さで効くのか、なんてことも数値化できる。
+              li
+                strong | mRNA・タンパク質発現解析 って？
+                span | 細胞の中で「どの遺伝子のスイッチがどれくらいオンになったか」を見る実験。食品成分のチカラを細胞レベルで確かめる。
+              li
+                strong | 血液生化学指標の測定 って？
+                span | 血液中のコレステロールや糖の値を測ること。食習慣が体にどう影響するかを「目に見える数字」に変える。
+            div.lab-jargon-decoder__keywords
+              span | #酵素反応速度論
+              span | #血液生化学指標の測定
+              span | #mRNA・タンパク質発現解析
+          div.lab-section__card
+            h3 | 02. 機能性食品についての卒業研究
+            p | 味噌や大豆製品、ぶどう、黒たまねぎなどの機能性評価から、成分評価や新商品開発まで、 食と健康を多面的に捉えたテーマに取り
+        section.lab-section
+          h2.lab-section__title | 教員プロフィール
+          div.lab-pi-profile
+            p
+              strong | 神山 真澄（かみやま ますみ）教授
+            p | 十文字学園女子大学 人間生活学部 食物栄養学科 教授
+            p | 栄養生化学・機能性食品・生活習慣病の予防
+              strong | 専門分野:
+            p.lab-section__body | 理化学研究所 横浜研究所 遺伝子多型センター Postdoctoral fellow を経て、長野県工業技術総合センター
+            p.lab-section__body | 2019年より十文字学園女子大学 食物栄養学科に着任し、2026年から教授として学部・大学院教育と研究指導を担当していま
+            p.lab-section__body | 日本栄養・食糧学会、日本糖尿病学会、日本腎臓学会、日本未病学会、日本栄養治療学会、日本栄養改善学会、日本高血圧学会、日本
+        section.lab-section
+          h2.lab-section__title | 学内外からの評価
+          div.lab-rating-card
+            div.lab-rating-card__score
+              span.lab-rating-card__number | 5.0
+              span.lab-rating-card__max | / 5.0
+              div.lab-rating-card__stars
+                svg
+                svg
+                svg
+                svg
+                svg
+            div.lab-rating-card__body
+              p.lab-rating-card__label | 授業評価サイトより
+              p | 神山真澄先生の研究室に対して、授業の充実度 という高い評価。 丁寧な指導と充実した内容が学生から支持されています。
+                strong | 5.0 / 5.0
+          ul.lab-publication-list
+            li | 多くの学会での発表や委員・評議員としての活動を通じて、機能性食品・ポリフェノール・生活習慣病予防の分野で専門家コミュニテ
+              strong | 専門家としての信頼:
+        section.lab-section
+          h2.lab-section__title | 教員コラム / 活動レポート
+          div.lab-section__card
+            span.column-card__date | 2026.5.15
+            h3 | 先輩が授業をサポート！総合科目「いちから学ぶ nutrition science」SAレポート
+            p.lab-section__body | 神山ゼミの学生たちがSA（スチューデント・アシスタント）として活躍する授業の様子をレポートします。
+            a.text-link | コラムを読む
+              svg
+                path
+                path
+        section.lab-section
+          h2.lab-section__title | 受験生・在学生へのメッセージ
+          p.lab-section__body | 「食べることが好き」「機能性食品に興味がある」「予防医学に関心がある」——そんな思いを持つ皆さんを、神山研究室は歓迎しま

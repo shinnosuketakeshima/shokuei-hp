@@ -1,0 +1,121 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 食物栄養学科
+        h1.lab-page__title | 高大連携プロジェクト「食の未来を創る」
+        p.lab-page__subtitle | 十文字学園女子大学と駒場学園高等学校の共同プロジェクト
+      div.lab-page__content
+        section.lab-section
+          h2.lab-section__title | 協定締結の背景と教育機関としての専門的相補性
+          p.lab-section__body | 現代の日本の教育現場において、中等教育と高等教育の連続性を担保し、学術的な探求力と実践的な社会貢献力を統合する「高大接続
+          p.lab-section__body | この高大連携協定の核心となるのが、十文字学園女子大学人間生活学部食物栄養学科と、駒場学園高等学校食物調理科による共同プロ
+          p.lab-section__body | 十文字学園女子大学食物栄養学科は、高度な専門知識と科学的根拠に基づき、「食を通してヒトをみる専門家」としての管理栄養士を
+          div.table-responsive
+            table.lab-table
+              thead
+                tr
+              tbody
+                tr
+                tr
+                tr
+                tr
+                tr
+        section.lab-section
+          h2.lab-section__title | 2023年度（初年度）：廃棄資源の付加価値化と代替食材の探求
+          p.lab-section__body | 高大連携プロジェクト「食の未来を創る」の記念すべき第1期にあたる2023年度は、全9回のプログラムを通じて「地球環境や健
+          p.lab-section__body | 2023年8月28日、駒場学園高等学校においてキックオフとなる初回オリエンテーションが開催されました。参加した生徒・学生
+          p.lab-section__body | この年度における中核的な活動内容は、「もったいないだしプロジェクト」と「新素材でフュージョン料理と菓子を作ろうプロジェク
+        section.lab-section
+          h2.lab-section__title | 2024年度（第二期）：若年層の食生活改善と多角的な産学官連携
+          p.lab-section__body | 2024年度の第2期プロジェクトは、多様な生活スタイルによって朝食の欠食や不規則な栄養摂取が問題視されている若者（高校生
+          p.lab-section__body | プロジェクトの初期段階において、株式会社オルトメディコが開発した簡易食事調査法「CAND」を用い、学生・生徒自身が土日を
+          p.lab-section__body | この実態を受け、現代の若者に不足しがちな栄養素、エネルギー、および食物繊維やタンパク質を補完し、一食あたりに必要な栄養素
+          ul.lab-publication-list
+            li | ：簡易食事調査法の提供および栄養摂取データの解析
+              strong | 株式会社オルトメディコ
+            li | ：国産米粉の調理特性に関する学術講義、米粉・強力粉の無償提供、および商品開発にかかる実務的な指導
+              strong | 株式会社ニップン
+            li | ：製餡情報および業務用あんこの提供、および製品化への配合アドバイス
+              strong | 株式会社木下製餡
+            li | ：食品製造プロセスにおける廃棄極小化および環境配慮型ロジスティクスのアドバイス
+              strong | 株式会社接点
+          div.table-responsive
+            table.lab-table
+              thead
+                tr
+              tbody
+                tr
+                tr
+                tr
+                tr
+                tr
+                tr
+          p.lab-section__body | この活動は、単なるメニュー開発に留まらず、2024年10月27日の十文字学園女子大学学園祭「桐華祭」において画期的な社会
+          p.lab-section__body | 2025年2月15日には、大学のキャンパスにて成果報告会が開催され、学生による司会進行のもと、関係企業や保証人を前に高校
+        section.lab-section
+          h2.lab-section__title | 2025年度（第三期）：「適塩」と「地産地消」による地域循環と二度目の栄冠
+          p.lab-section__body | 前年度の食事分析から明らかになった別の深刻な課題、すなわち「若年世代における過剰な食塩摂取」に対峙するため、2025年度
+          p.lab-section__body | プロジェクトの推進にあたり、徹底的な「科学的実証」が導入されました。参加者は、ソルセイブ（食塩含浸ろ紙）を用いた味覚試験
+          p.lab-section__body | また、地産地消の実現においては、埼玉県飯能市の「飯島ファーム」と提携しました。当初は農家との直接の繋がりを持っていなかっ
+          p.lab-section__body | このプロジェクトを通じて達成された主要なアウトプットと地域還元は多岐にわたります。
+          ul.lab-publication-list
+            li | ：埼玉県産のみそと、飯島ファームで収穫された新鮮な旬野菜を主役に据え、素材本来の旨味や出汁を巧みに活用することで不必要な
+              strong | 「毎日食べよう『みそ汁』カレンダー」の製作
+            li | ：和光市に位置する地域子ども食堂「しらりん食堂」において、高校生と大学生が合同で調理および配膳ボランティアに従事しました
+              strong | 「しらりん食堂」での適塩みそ汁提供
+          p.lab-section__body | この2025年度の活動は、農林水産省が主催する令和7年度「みどり戦略学生チャレンジ」関東ブロック大会（大学・専門学校の部
+          p.lab-section__body | さらに、プロジェクトはここで休止することなく、次年度に向けてさらなる進化が予定されています。2026年度は、日本人の主食
+        section.lab-section
+          h2.lab-section__title | 高大連携がもたらす教育システムとしてのイノベーション
+          p.lab-section__body | 十文字学園女子大学と駒場学園高等学校の「食の未来を創る」プロジェクトは、単なる2校間の親睦的なイベントの枠組みを遥かに超
+          p.lab-section__body | 教育学的な側面から見出される最大の価値は、両校が保持する極めて高い専門性の交差点で生じる「相互変容プロセス」です。管理栄
+          p.lab-section__body | ここに、駒場学園高等学校食物調理科の生徒たちが有する、第一線のプロシェフに鍛えられた実践的な「調理技術」と、現場の動線を
+          p.lab-section__body | また、民間企業や行政（飯能市）、地域団体（和光市子ども食堂）が教育現場を媒介として密接に統合された「マルチステークホルダ
+          p.lab-section__body | このような食、健康、農、および福祉が融合した高度な循環型プロジェクトは、将来の教育接続における一つの金字塔であり、次代を
+        section.lab-section
+          h2.lab-section__title | 引用文献
+          ul.lab-publication-list
+            li | 駒場学園高等学校と高大連携に関する協定を締結しました | NEWS, 5月 9, 2026にアクセス、
+              a | https://www.jumonji-u.ac.jp/info/20230927_1-60032/
+            li | 2023.09.30 トピックス 十文字学園女子大学と ... - 駒場学園高等学校, 5月 9, 2026にアクセス、
+              a | https://www.komabagakuen.ac.jp/news/?p=7850
+            li | 本学と駒場学園高等学校による高大連携プロジェクト「食の未来を創る」が８月より始動しました, 5月 9, 2026にアクセ
+              a | https://www.jumonji-u.ac.jp/info/20230915_01-29929/
+            li | 本学と駒場学園高等学校（東京）との高大連携プロジェクト「食の未来を創る」が始動しました, 5月 9, 2026にアクセス
+              a | https://www.jumonji-u.ac.jp/topic/koudairenkei_syokumirai/
+            li | 【受賞報告】本学（食物栄養学科）と駒場学園高校（食物調理科 ..., 5月 9, 2026にアクセス、
+              a | https://www.jumonji-u.ac.jp/topic/20260206_01/
+            li | 食物栄養学科 Department of Food and Nutrition - 十文字学園女子大学, 5月 9, 2
+              a | https://www.jumonji-u.ac.jp/jumonji-style/department/food_an
+            li | Food Department 食物調理科 - 駒場学園高等学校, 5月 9, 2026にアクセス、
+              a | https://www.komabagakuen.ac.jp/education/food.html
+            li | 食物栄養学科 | 人間生活学部 - 十文字学園女子大学, 5月 9, 2026にアクセス、
+              a | https://www.jumonji-u.ac.jp/humanlife/food/
+            li | 先輩が十文字学園女子大学に入学を決めた理由 | テレメール全国一斉進学調査調べ, 5月 9, 2026にアクセス、
+              a | https://telemail.jp/shingaku/p/shingakusurvey/result.php?cod
+            li | 管理栄養士の資格を取得し、「食」で多くの人を健康に、幸せにしたい - スタディサプリ進路, 5月 9, 2026にアクセ
+              a | https://shingakunet.com/gakko/SC000289/campusLife/9002516331
+            li | 駒場学園高等学校の部活・施設・特徴 - インターエデュ, 5月 9, 2026にアクセス、
+              a | https://www.inter-edu.com/schools/school/590/feature
+            li | 駒場学園高校（東京都世田谷区）【食物調理科】 食のプロを目指す二人が学ぶ食物調理科とは？, 5月 9, 2026にアクセ
+              a | https://ysmedia.jp/report/984/
+            li | 駒場学園高校（東京都世田谷区）【食物調理科】 特集：専門分野を学ぶ2025, 5月 9, 2026にアクセス、
+              a | https://ysmedia.jp/report/25467/
+            li | 埼玉県 十文字学園女子大学 ～食・農・健康をつなぐ学び 高大連携プロジェクト, 5月 9, 2026にアクセス、
+              a | https://www.maff.go.jp/kanto/kikaku/daigakurenkei_jumonji.pd
+            li | 本学の食物栄養学科と駒場学園高等学校 食物調理科による 高大連携 ..., 5月 9, 2026にアクセス、
+              a | https://www.jumonji-u.ac.jp/media/pressrelease_0731.pdf
+            li | 2024年度高大連携「食の未来を創る」プロジェクトの報告会を実施 ..., 5月 9, 2026にアクセス、
+              a | https://www.jumonji-u.ac.jp/info/20250215_01/
+            li | CANDのフィードバック｜「食の未来を創る」・高大連携プロジェクトの支援活動, 5月 9, 2026にアクセス、
+              a | https://www.orthomedico.jp/staff-blog/240708.html
+            li | 駒場学園高等学校との高大連携プロジェクト「食の未来を創る ..., 5月 9, 2026にアクセス、
+              a | https://www.jumonji-u.ac.jp/topic/20240819_01/
+            li | 駒場学園高等学校との高大連携プロジェクトが、農林水産省主催「みどり戦略学生チャレンジ」関東ブロック大会で特別賞を受賞しま
+              a | https://www.jumonji-u.ac.jp/topic/20250304_01/

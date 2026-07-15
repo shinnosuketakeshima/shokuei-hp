@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import HeroBg from '../top.jpg'
+import Hero from '../components/Hero.astro'
+import UpcomingEvents from '../components/UpcomingEvents.astro'
+import AudienceGuide from '../components/AudienceGuide.astro'
+import FeatureSpotlight from '../components/FeatureSpotlight.astro'
+import CategoryBanners from '../components/CategoryBanners.astro'
+import News from '../components/News.astro'
+import StatsBar from '../components/StatsBar.astro'
+import Features from '../components/Features.astro'
+import Labs from '../components/Labs.astro'
+import Qualifications from '../components/Qualifications.astro'
+import NationalExamSupport from '../components/NationalExamSupport.astro'
+import SNSSection from '../components/SNSSection.astro'
+import Career from '../components/Career.astro'
+import StudentVoices from '../components/StudentVoices.astro'
+import CampusLife from '../components/CampusLife.astro'
+import FAQ from '../components/FAQ.astro'
+---
+
+<BaseLayout>
+  <link slot="head" rel="preload" as="image" href={HeroBg.src} />
+  <Hero />
+  <UpcomingEvents />
+  <AudienceGuide />
+  <FeatureSpotlight />
+  <CategoryBanners />
+  <News />
+  <StatsBar />
+  <Features summary={true} />
+  <Labs />
+  <Qualifications summary={true} />
+  <NationalExamSupport summary={true} />
+  <SNSSection />
+  <Career summary={true} />
+  <StudentVoices summary={true} />
+  <CampusLife summary={true} />
+  <FAQ summary={true} />
+</BaseLayout>

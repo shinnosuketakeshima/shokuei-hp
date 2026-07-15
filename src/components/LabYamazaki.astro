@@ -1,0 +1,373 @@
+---
+import {
+  ArrowLeft,
+  Sparkles,
+  ShieldCheck,
+  FlaskConical,
+  Microscope,
+  CheckCircle2,
+  Quote,
+  BookOpen,
+} from '@lucide/astro'
+
+const RESEARCH_THEMES = [
+  {
+    icon: ShieldCheck,
+    tag: 'テーマ 01',
+    title: 'サプリと薬の「飲み合わせ」を解明する',
+    body: 'セイヨウオトギリソウ（セントジョーンズワート）やウコンなど、身近なハーブが薬の効き目を変えてしまう「薬物相互作用」を研究。薬を分解する酵素「CYP（シップ）」の動きを解析し、安全な摂取目安を考えます。',
+  },
+  {
+    icon: FlaskConical,
+    tag: 'テーマ 02',
+    title: '「一生毎日食べても大丈夫？」を決める科学',
+    body: '食品添加物で使われる評価法（ADI：一日摂取許容量）を参考に、ハーブ製品に特化した独自の安全評価法（SDI-SE）を構築。動物実験（ラットの肝臓解析）を通して、私たちが一生安心して健康食品を楽しめる基準をつくります。',
+  },
+]
+
+const TOKUHO_COLS = [
+  {
+    label: '特定保健用食品（トクホ）',
+    color: 'var(--terracotta)',
+    points: [
+      '消費者庁が個別審査・許可',
+      '科学的根拠を国が審査',
+      '「おなかの調子を整える」など効果を表示できる',
+      '代表例：特茶、ヤクルト 400W など',
+    ],
+  },
+  {
+    label: '機能性表示食品',
+    color: 'var(--forest)',
+    points: [
+      '企業が届け出・自己責任で表示',
+      '消費者庁への届け出が必要',
+      '「目のピントを調整する」などの表示が可能',
+      '2015年に創設されたより新しい制度',
+    ],
+  },
+]
+
+const LAB_METHODS = [
+  {
+    label: '動物実験',
+    body: 'ラットへの投与試験を通して、成長曲線や肝臓重量への影響を精密に測定します。',
+  },
+  {
+    label: '細胞実験',
+    body: 'ヒトの培養肝細胞（HepG2）を使って、成分が細胞にどう作用するかを分析。',
+  },
+  {
+    label: '遺伝子解析',
+    body: 'リアルタイムRT-PCR法などの最先端技術で、目に見えないmRNA（遺伝子発現）の変化まで追いかけます。',
+  },
+]
+
+const SENIOR_THEMES = [
+  '機能性表示食品の安全性評価（動物実験）',
+  'ハーブ抽出物が培養肝細胞に与える影響（細胞実験）',
+]
+
+const PUBLICATION_SECTIONS = [
+  {
+    label: '査読論文',
+    items: [
+      'Near-Physiological Concentrations of Extracellular Pyruvate Stimulated Glucose Utilization along with Triglyceride Accumulation and Mitochondrial Activity in HepG2 Cells. J Nutr Sci Vitaminol. 2023;69(5):314-325. (共著)',
+      'Application to Butterbur Products of a Suggested Daily Intake-Based Safety Evaluation of Individual Herbal Supplements with Cytochrome P450 Expression as a Major Index. J Nutr Sci Vitaminol. 2023;69(3):206-219. (共著)',
+      'デンプン原料の異なる2種類のリン酸高架橋デンプンに対するヒト腸内細菌由来水素ガス測定による発酵性の評価. 安定同位体と生体ガス. 2022;14:46-57. (共著)',
+      '母獣ラットの難消化性糖質継続摂取による腸内細菌由来水素ガスの体内分布と胎仔への移行. 安定同位体と生体ガス. 2021;13:13-22. (共著)',
+      'Excessive folic acid supplementation in pregnant mice impairs insulin secretion and induces the expression of genes associated with fatty liver in their offsprings. 2020;6(4). (共著)',
+      'Comparison of CYP Induction by Coleus forskohlii Extract and Recovery in the Small Intestine and Liver of Mice. Biol Pharm Bull. 2020;43:116-123. (共著)',
+      'Science-Based Ratings of Safety and Effectiveness of Ingredients of Health Foods Distributed in Japan Differ among Health Food Categories. 2019;1(4):100-110. (共著)',
+      '培養細胞内グリコーゲンの定量のための酵素蛍光法の検討. 十文字学園女子大学紀要. 2019;49:83-94. (共著)',
+      '細胞内ATP測定への化学発光イメージング解析の応用. 十文字学園女子大学紀要. 2018;48(2):85-97. (共著)',
+      '食品添加物の安全性評価の手法に準じたアマチャヅル製品の安全性の検討. 十文字学園女子大学紀要. 2018;48(2):75-84. (共著)',
+      'ラットを1,5-アンヒドログルシトール飼料で飼育したときの成長，臓器重量，血液性状ならびに酸化ストレスなどに及ぼす影響. ルミナコイド研究. 2016;20(2):77-84. (共著)',
+      'Induction of fatty liver by Coleus forskohlii extract through enhancement of de novo triglyceride synthesis in mice. Toxicology Reports. 2014;1:787-794. (共著)',
+      'D-sorbose inhibits disaccharidase activity and demonstrates suppressive action on postprandial blood levels of glucose and insulin in the rat. Nutrition Research. 2014;34:961-967. (共著)',
+      'Coleus forskohlii extract induces hepatic cytochrome P450 enzymes in mice. Food Chem Toxicol. 2012;50:750-755. (共著)',
+      'ヒトにおけるD-タガトースの一過性下痢に対する最大無作用量，有効エネルギー量ならびに生体における利用性. 日本栄養・食糧学会誌. 2011;64(6):403-413. (共著)',
+      '人気の高いハーブサプリメント素材のNatural Medicines Comprehensive Databaseに基づく安全性および有効性の評価検討. 栄養学雑誌. 2011;69(5):267-279. (共著)',
+      'Influence of zinc deficiency to the mice infected with babesia microti. J Vet Med Sci. 2011;73(2):263-267. (共著)',
+      'Time-Dependent Induction of Hepatic Cytochrome P450(CYP)s Enzyme Activity and mRNA Expression by Bilobalide in Rats. J Pharmacol Sci. 2009;109:459-462. (共著)',
+      'High dose of commercial products of kava (Piper methysticum) markedly enhanced hepatic cytochrome P450 1A1 mRNA expression with liver enlargement in rats. Food Chem Toxicol. 2008;46:3732-3738. (共著)',
+      '栄養士養成教育のための遺伝子解析実習プログラムの点検評価. 十文字学園女子短期大学研究紀要. 2000;31:113-122. (共著)',
+      '栄養士養成に向けたチトクロームP450 1A1の遺伝子解析実習に関する教育研究. 十文字学園女子短期大学研究紀要. 1999;30:121-132. (共著)',
+      '成長期の雄ラットにおける飲用水からのメラトニン摂取の影響. 十文字学園女子短期大学研究紀要. 1999;30:111-119. (共著)',
+      '栄養士養成教育への遺伝子解析実習の導入の試み. 栄養学雑誌. 1999;57:229-240. (共著)',
+      '中枢神経系局在カルシウム結合タンパク質セファロカルシンの分子多様性. 十文字学園女子短期大学研究紀要. 1996;27:155-170. (共著)',
+    ],
+  },
+  {
+    label: '著書',
+    items: [
+      '健康・栄養学用語辞典. 2012. (共著)',
+      '食品機能性の科学. 2008. (共著)',
+    ],
+  },
+  {
+    label: 'レビュー・解説',
+    items: [
+      '抗うつ作用を志向するハーブ類サプリメントのエビデンス. アンチエイジング医学－日本抗加齢医学会雑誌. 2007;3(4):33-41. (共著)',
+      'ハーブサプリメントの安全・安心な利用をめざして（連載12回）. FOOD Style 21. 2004-2005. (共著)',
+      'ハーブサプリメントとその有用性. 医学のあゆみ. 2004;208(12):991-995. (共著)',
+      'セイヨウオトギリソウと通常医薬品の相互作用：臨床試験の系統的レビュー. 栄養学雑誌. 2004;62(5):309. (単著)',
+    ],
+  },
+]
+---
+
+<div class="lab-page">
+  <div class="container">
+
+    {/* ===== ヘッダー ===== */}
+    <div class="lab-page__header" data-reveal>
+      <a href="/" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>トップページに戻る</span>
+      </a>
+      <p class="lab-page__eyebrow">十文字学園女子大学 食物栄養学科</p>
+      <h1 class="lab-page__title">山崎 優子 研究室</h1>
+      <p class="lab-page__subtitle">
+        サプリメントと健康食品の「本当の安全」を、科学で守る
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+
+      {/* ===== Feature Story Hero ===== */}
+      <section class="lab-story-feature" data-reveal>
+        <span class="lab-story-feature__label">
+          <Sparkles size={12} /> FEATURE STORY
+        </span>
+        <h2 class="lab-story-feature__title">
+          そのサプリ、本当に安全？<br />
+          「健康食品」を科学の眼で守る、<br />
+          <em>リスク評価の最前線。</em>
+        </h2>
+        <p class="lab-story-feature__lead">
+          コンビニやドラッグストアで手軽に買えるサプリメントやハーブ製品。でも、体の中ではどんな反応が起きているのでしょうか？
+          山崎研究室では、<strong>動物実験や細胞実験を駆使して</strong>、健康食品の「本当の安全性」を科学的に評価しています。
+          薬とサプリの飲み合わせ（相互作用）や、肝臓への影響を解明する、
+          <strong>食の安全のスペシャリスト</strong>を目指してみませんか？
+        </p>
+        <div class="lab-story-feature__tags">
+          <span>#食品安全学</span>
+          <span>#薬物相互作用</span>
+          <span>#リスク評価</span>
+          <span>#健康食品</span>
+          <span>#栄養生化学</span>
+        </div>
+      </section>
+
+      {/* ===== 研究テーマ ===== */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">
+          専門用語をひも解く：山崎ゼミの2大テーマ
+        </h2>
+        <p class="lab-section__body">
+          パッと聞くと難しそうな研究も、中身を知れば「あ、これって自分たちの身近な話だ」と気づくはず。
+          高校生向けに、ていねいに解説します。
+        </p>
+        <div class="lab-theme-list lab-theme-list--terracotta" style="margin-top: 24px">
+          {RESEARCH_THEMES.map((theme, i) => {
+            const Icon = theme.icon
+            return (
+              <div class="lab-theme-card" data-reveal style={`--reveal-delay: ${i * 0.1}s`}>
+                <div class="lab-theme-card__icon" aria-hidden="true">
+                  <Icon size={28} />
+                </div>
+                <div class="lab-theme-card__content">
+                  <span class="lab-theme-card__tag">{theme.tag}</span>
+                  <h3>{theme.title}</h3>
+                  <p>{theme.body}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ===== 知識コラム：トクホ・機能性表示食品 ===== */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">知識コラム：「トクホ」と「機能性表示食品」って何が違う？</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px">
+          {TOKUHO_COLS.map((col) => (
+            <div style={`background: var(--white); border-radius: 16px; padding: 20px; border-top: 4px solid ${col.color}; box-shadow: var(--shadow-sm)`}>
+              <p style={`font-size: 13px; font-weight: 700; color: ${col.color}; margin-bottom: 12px; letter-spacing: 0.04em`}>{col.label}</p>
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px">
+                {col.points.map((pt) => (
+                  <li style="font-size: 13px; color: var(--stone); line-height: 1.7; padding-left: 16px; position: relative">
+                    <span style={`position: absolute; left: 0; color: ${col.color}`}>▸</span>
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p style="font-size: 13px; color: var(--stone-light); margin-top: 12px; line-height: 1.7">
+          山崎研究室の研究成果は、これらの制度において「科学的根拠」を担う安全性評価に直結しています。
+        </p>
+      </section>
+
+      {/* ===== 実験の舞台裏 ===== */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">実験の舞台裏</h2>
+        <div class="lab-project-story">
+          <div class="lab-project-story__header">
+            <Microscope size={24} class="lab-project-story__icon" />
+            <h3>動物・細胞・遺伝子。多角的なアプローチで答えを探す。</h3>
+          </div>
+          <div class="lab-project-story__body">
+            {LAB_METHODS.map((m) => (
+              <p>
+                <strong>★ {m.label}：</strong>{m.body}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 先輩テーマ & ゼミ生活 ===== */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">山崎ゼミの空気感</h2>
+        <div class="lab-life-highlights lab-life-highlights--terracotta">
+          <p class="lab-life-highlights__lead">先輩たちの研究テーマ</p>
+          <ul>
+            {SENIOR_THEMES.map((t, i) => (
+              <li data-reveal="left" style={`--reveal-delay: ${i * 0.08}s`}>
+                <CheckCircle2 size={22} aria-hidden="true" />
+                <div>
+                  <strong>{t}</strong>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <p class="lab-section__body" style="margin-top: 24px">
+          平日の週1〜2回の実験や休み期間の集中実験を軸に、学園祭での発表、笑顔あふれる歓迎会・送別会まで——
+          <strong>メリハリのある充実したゼミ生活</strong>が待っています。
+          「実験楽しい！」「また失敗した…でも原因がわかった！」そんな声が飛び交う研究室です。
+        </p>
+      </section>
+
+      {/* ===== 引用カード ===== */}
+      <section class="lab-section" data-reveal>
+        <div class="lab-quote-card">
+          <Quote size={36} class="lab-quote-card__icon" aria-hidden="true" />
+          <p>
+            実験に興味のある方、大歓迎！<br />
+            失敗しても原因を考え、改善策を練るプロセス。<br />
+            教科書にはない<em>「発見」の喜び</em>を一緒に味わいましょう。
+          </p>
+          <footer class="lab-quote-card__author">
+            <span class="lab-quote-card__role">山崎研究室からのメッセージ</span>
+            <span class="lab-quote-card__name">— 山崎 優子 准教授</span>
+          </footer>
+        </div>
+      </section>
+
+      {/* ===== プロフィール ===== */}
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">教員プロフィール</h2>
+        <div class="lab-media-profile">
+          <div class="lab-media-profile__header">
+            <div class="lab-media-profile__name">
+              <span class="lab-media-profile__role">
+                食品安全学・栄養生化学
+              </span>
+              <h3>山崎 優子 准教授</h3>
+            </div>
+            <div class="lab-media-profile__badges">
+              <span>管理栄養士</span>
+              <span>食品安全学</span>
+              <span>栄養生化学</span>
+            </div>
+          </div>
+          <p class="lab-media-profile__intro">
+            サプリメントや健康食品に含まれる生理活性成分の安全性評価を専門とする研究者。
+            薬物代謝酵素（CYP）を介した食品と医薬品の相互作用解析から、
+            独自の安全評価指標（SDI-SE）の開発まで、食品安全の科学的基盤を構築しています。
+          </p>
+          <div class="lab-media-profile__achievements">
+            <div class="lab-media-profile__box">
+              <h4 class="flex items-center gap-2">
+                <ShieldCheck size={16} /> 専門分野
+              </h4>
+              <ul>
+                <li>食品安全学・リスク評価</li>
+                <li>栄養生化学</li>
+                <li>薬物代謝酵素（CYP）研究</li>
+                <li>健康食品・機能性食品の評価</li>
+              </ul>
+            </div>
+            <div class="lab-media-profile__box">
+              <h4 class="flex items-center gap-2">
+                <BookOpen size={16} /> 主な研究キーワード
+              </h4>
+              <ul>
+                <li>薬物相互作用（セントジョーンズワート・ウコン）</li>
+                <li>ADI / SDI-SE（安全性評価法）</li>
+                <li>HepG2 培養肝細胞・リアルタイムRT-PCR</li>
+                <li>特定保健用食品・機能性表示食品</li>
+              </ul>
+            </div>
+          </div>
+          <div class="lab-media-profile__message">
+            <p>
+              「実験に興味のある方、大歓迎！ 失敗しても原因を考え、改善策を練るプロセス。
+              教科書にはない『発見』の喜びを一緒に味わいましょう。」
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Researcher Records（折りたたみ） ===== */}
+      <section class="lab-section" data-reveal>
+        <div class="lab-data-archive">
+          <h2 class="lab-data-archive__title">Researcher Records</h2>
+          <details>
+            <summary style="cursor: pointer; font-size: 13px; color: var(--stone); margin-bottom: 16px; user-select: none">
+              主要論文・学術業績を表示する
+            </summary>
+            {PUBLICATION_SECTIONS.map((section) => (
+              <div style="margin-bottom: 24px">
+                <p style="font-size: 11px; font-weight: 700; color: var(--terracotta-dark, var(--terracotta)); letter-spacing: 0.1em; margin-bottom: 10px; text-transform: uppercase">
+                  {section.label}
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px">
+                  {section.items.map((pub) => (
+                    <li style="font-size: 12px; line-height: 1.8; color: var(--stone); padding-left: 14px; border-left: 2px solid var(--terracotta)">
+                      {pub}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </details>
+          <div class="lab-data-archive__grid" style="margin-top: 16px">
+            <div>
+              <h4>専門分野</h4>
+              <div class="lab-data-archive__tags">
+                <span>食品安全学</span>
+                <span>栄養生化学</span>
+                <span>薬物代謝</span>
+                <span>リスク評価</span>
+              </div>
+            </div>
+            <div>
+              <h4>掲載学術誌</h4>
+              <div class="lab-data-archive__tags">
+                <span>J. Nutr. Sci. Vitaminol.</span>
+                <span>Food Chem. Toxicol.</span>
+                <span>Food Funct.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>

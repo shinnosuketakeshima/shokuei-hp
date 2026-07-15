@@ -1,0 +1,89 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": "https://shokuei-hp.web.app/#organization",
+    "name": "十文字学園女子大学 食物栄養学科",
+    "alternateName": "Jumonji University Food and Nutrition",
+    "url": "https://shokuei-hp.web.app/",
+    "description": "埼玉県新座市にある十文字学園女子大学 食物栄養学科（人間生活学部）の非公式情報メディア。4年間を通じた実践的なカリキュラム、国家試験合格率を支えるサポート体制、最新の研究室情報など、食と栄養のプロフェッショナルを目指す高校生に向けたリアルな学びの魅力を発信します。",
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学",
+      "url": "https://www.jumonji-u.ac.jp/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "埼玉県",
+        "addressLocality": "新座市"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "埼玉県新座市菅沢2-1-28",
+      "addressLocality": "新座市",
+      "addressRegion": "埼玉県",
+      "postalCode": "352-8510",
+      "addressCountry": "JP"
+    },
+    "telephone": "+81-48-481-1111",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "35.8193",
+      "longitude": "139.6291"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "JP"
+    },
+    "inLanguage": "ja-JP",
+    "availableLanguage": "ja"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "name": "【参加無料】管理栄養士探求型イベント開催（5/31） | 十文字学園女子大学 食物栄養学科",
+    "description": "食と栄養で未来をデザイン！5月31日に開催される十文字学園女子大学 食物栄養学科の特別探求型イベント。高校生・保護者向けに、管理栄養士のリアルな仕事や大学での学びを体験できるスペシャル企画の詳細と参加申し込みのご案内です。",
+    "url": "https://shokuei-hp.web.app/event-0531",
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "十文字学園女子大学",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "新座市",
+        "addressRegion": "埼玉県",
+        "addressCountry": "JP"
+      }
+    },
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-06-04",
+    "author": {
+      "@type": "Organization",
+      "name": "十文字学園女子大学 食物栄養学科"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://shokuei-hp.web.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "お知らせ・コラム",
+        "item": "https://shokuei-hp.web.app/news"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "【参加無料】管理栄養士探求型イベント開催（5/31）",
+        "item": "https://shokuei-hp.web.app/event-0531"
+      }
+    ]
+  }
+]

@@ -1,0 +1,147 @@
+---
+import { ArrowRight } from '@lucide/astro'
+
+interface Props {
+  summary?: boolean
+}
+const { summary = false } = Astro.props
+
+const VOICES = [
+  {
+    initial: 'A.N',
+    year: '4年生',
+    quote: '最初は衛生管理者って何？って感じでしたが、就活で絶対強みになりました。取れてよかったです。',
+    category: '資格',
+  },
+  {
+    initial: 'K.W',
+    year: '2年生',
+    quote: '先生に名前で呼んでもらえるのが、最初は驚きでした。相談しやすい雰囲気が本当にありがたいです。',
+    category: '少人数教育',
+  },
+  {
+    initial: 'A.I',
+    year: '4年生',
+    quote: '病院実習で初めて患者さんと関わって、勉強していたことがぜんぶつながった感じがしました。',
+    category: '実習',
+  },
+  {
+    initial: 'S.A',
+    year: '4年生',
+    quote: 'やりたいことを話したら、先生が一緒に考えてくれた。「ここでよかった」って思える4年間でした。',
+    category: '学生生活',
+  },
+  {
+    initial: 'A.O',
+    year: '4年生',
+    quote: '国試の勉強、ひとりだったら折れてたと思います。仲間がいたから最後まで続けられました。',
+    category: '国試対策',
+  },
+  {
+    initial: 'N.S',
+    year: '3年生',
+    quote: '同じ目標を持った友達ができた。それだけで、ここに来た意味があったと思っています。',
+    category: '学生生活',
+  },
+]
+
+const COLUMNS = [
+  {
+    id: 'col4',
+    title: '夢を掴む夏の「寺子屋」へ。国試模試に挑む食栄生たちの熱い自習室',
+    date: '2026.7.7',
+    desc: '夏の特別集中講座「寺子屋」の選抜を兼ねた国試模試が目前。新しくなった社会連携センター「ここプラス」に満ちる熱気を学生記者がレポート。',
+    href: '/student-column-4',
+  },
+  {
+    id: 'eiyo-app-report',
+    title: '解剖生理学実験×生成AI！学生が"自分の栄養アドバイスアプリ"を開発',
+    date: '2026.5.26',
+    desc: 'InBody・MedGemで自分のからだを測り、Gemini・ChatGPTで世界に一つの栄養アドバイスアプリを開発。2年生「解剖生理学実験」教員コラム。',
+    href: '/eiyo-app-report',
+  },
+  {
+    id: 'col3',
+    title: 'チーズに"王様"と"女王様"がいた！食育論セミナーレポート',
+    date: '2026.5.13',
+    desc: '食育論の授業に雪印メグミルク様をお招き。骨の衝撃映像からチーズの試食まで体験した学生記者レポート。',
+    href: '/student-column-3',
+  },
+  {
+    id: 'col2',
+    title: '健康×SNS映え！？「機能性和洋菓子」開発会議に潜入取材！',
+    date: '2026.5.12',
+    desc: '竹嶋ゼミ・芝崎ゼミが合同で取り組む機能性お菓子の開発現場をレポート。',
+    href: '/student-column-2',
+  },
+  {
+    id: 'col1',
+    title: '白衣の「三権分立」？管理栄養士の卵たちのリアルな裏事情',
+    date: '2026.5.11',
+    desc: '実験、実習、そして白衣。管理栄養士を目指す学生たちの日常にある不思議なルールとは？',
+    href: '/student-column-1',
+  },
+]
+
+const displayVoices = summary ? VOICES.slice(0, 3) : VOICES
+const displayColumns = summary ? COLUMNS.slice(0, 1) : COLUMNS
+const TitleTag = summary ? 'h2' : 'h1'
+---
+
+<section class="voices" id="voices">
+  <div class="container">
+    <div class="voices__header" data-reveal>
+      <p class="eyebrow">学生の声 / Student Voices</p>
+      <TitleTag class="section-title">
+        在学生からのメッセージ
+      </TitleTag>
+    </div>
+
+    <div class="voices__grid">
+      {displayVoices.map((v, i) => (
+        <div class="voice-card" data-reveal style={`--reveal-delay: ${(i % 3) * 0.1}s`}>
+          <p class="voice-card__category">{v.category}</p>
+          <blockquote class="voice-card__quote">
+            「{v.quote}」
+          </blockquote>
+          <div class="voice-card__author">
+            <span class="voice-card__initial">{v.initial}</span>
+            <div class="voice-card__meta">
+              <span class="voice-card__year">{v.year}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="voices__columns-header" data-reveal style="margin-top: 80px; margin-bottom: 40px">
+      <p class="eyebrow">学生コラム / Student Column</p>
+      <h2 class="section-title">学生記者が伝える学科の日常</h2>
+    </div>
+
+    <div class="voices__columns-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+      {displayColumns.map((c, i) => (
+        <article
+          class="column-card"
+          data-reveal
+          style={`--reveal-delay: ${i * 0.1}s; background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column;`}
+        >
+          <span class="column-card__date" style="font-size: 13px; color: var(--stone); margin-bottom: 8px">{c.date}</span>
+          <h3 class="column-card__title" style="font-size: 1.1rem; margin-bottom: 12px; line-height: 1.5">{c.title}</h3>
+          <p class="column-card__desc" style="font-size: 14px; color: var(--charcoal); margin-bottom: 20px; flex: 1">{c.desc}</p>
+          <a href={c.href} class="text-link" style="font-size: 14px; display: flex; align-items: center; gap: 4px; color: var(--terracotta); font-weight: bold" aria-label={`${c.title} の続きを読む`}>
+            続きを読む <ArrowRight size={14} />
+          </a>
+        </article>
+      ))}
+    </div>
+
+    {summary && (
+      <div style="margin-top: 48px; text-align: center">
+        <a href="/voices" class="button button--outline">
+          学生の声・コラムをもっと見る <ArrowRight size={16} style="margin-left: 8px" />
+        </a>
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,204 @@
+main
+  section.faq.faq--page
+    div.faq__page-inner
+      div.faq__header
+        p.eyebrow | よくある質問 / FAQ
+        h1.section-title | 受験生・保護者からの よくある質問
+          br
+        p.faq__subtitle | 食物栄養学科への入学・資格・就職・国家試験対策についてのよくある質問をまとめました。
+      div.faq__audience-guides
+        div.faq__audience-guide
+          h2.faq__audience-guide-title | 保護者の方へ
+          p.faq__audience-guide-desc | 実績データと制度から、学科の信頼性を確認したい方は、まずこちらの質問をご覧ください。
+          ul.faq__audience-guide-links
+            li
+              a.faq__audience-guide-link | 就職率はどのくらいですか？
+                svg
+            li
+              a.faq__audience-guide-link | 卒業生の主な就職先はどこですか？
+                svg
+            li
+              a.faq__audience-guide-link | 管理栄養士国家試験の合格率はどのくらいですか？
+                svg
+            li
+              a.faq__audience-guide-link | 第一種衛生管理者とはどんな資格で、なぜ全国唯一なのですか？
+                svg
+        div.faq__audience-guide
+          h2.faq__audience-guide-title | 進路指導の先生へ
+          p.faq__audience-guide-desc | 生徒さんに学科の特色を説明する際に役立つ質問を集めました。
+          ul.faq__audience-guide-links
+            li
+              a.faq__audience-guide-link | 4年間のカリキュラムの特徴は何ですか？
+                svg
+            li
+              a.faq__audience-guide-link | 管理栄養士の資格は取得できますか？
+                svg
+            li
+              a.faq__audience-guide-link | 卒業と同時に取得できる資格は何ですか？
+                svg
+            li
+              a.faq__audience-guide-link | 就職サポートはいつから始まりますか？
+                svg
+      div.faq__categories
+        div
+          h2.faq__category-title | 学科・入学について
+          div.faq__list
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 食物栄養学科の定員は何名ですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 4年間のカリキュラムの特徴は何ですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 給食経営管理実習とはどのような授業ですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 十文字学園女子大学はどこにありますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 健康栄養学科でスポーツ栄養を学べる？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+        div
+          h2.faq__category-title | 取得できる資格
+          div.faq__list
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 管理栄養士の資格は取得できますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 第一種衛生管理者とはどんな資格で、なぜ全国唯一なのですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 卒業と同時に取得できる資格は何ですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 栄養教諭になることはできますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+        div
+          h2.faq__category-title | 管理栄養士 国家試験対策
+          div.faq__list
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 管理栄養士国家試験の合格率はどのくらいですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 国家試験対策はいつから始まりますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 4年次の模擬試験は何回ありますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 国家試験に向けて個別サポートはありますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+        div
+          h2.faq__category-title | スポーツ栄養・スポーツ管理栄養士
+          div.faq__list
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 管理栄養士はスポーツ選手を支える仕事ができますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 食物栄養学科でもスポーツ栄養は学べますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 公認スポーツ栄養士になるにはどうすればよいですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | スポーツが好きで管理栄養士を目指しています。どんな仕事に就けますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+        div
+          h2.faq__category-title | 就職・進路
+          div.faq__list
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 就職率はどのくらいですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 卒業生の主な就職先はどこですか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 就職サポートはいつから始まりますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner
+            div.faq__item
+              button.faq__question-btn
+                span.faq__q-mark | Q
+                span.faq__q-text | 一般企業（食品以外）への就職もできますか？
+                span.faq__icon
+              div
+                div.faq__answer-inner

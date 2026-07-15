@@ -1,0 +1,187 @@
+---
+import { ChevronDown } from '@lucide/astro'
+
+const LAB_CATEGORIES = [
+  {
+    label: 'プロジェクト',
+    sublabel: '地域連携・商品開発',
+    key: 'regional',
+    labs: [
+      { name: '神山研究室', note: '黒たまねぎマフィン', href: '/lab-kamiyama' },
+      { name: '芝崎研究室', note: 'おだんごゼミ・和菓子科学', href: '/lab-shibasaki' },
+      { name: '國井研究室', note: 'プラスちゃんナッツ・食育', href: '/lab-kunii' },
+      { name: '鴨下研究室', note: 'ヘルシーレシピ・おいしさ評価', href: '/lab-kamoshita' },
+    ],
+  },
+  {
+    label: '最先端サイエンス',
+    sublabel: '生命科学・データ',
+    key: 'science',
+    labs: [
+      { name: '竹嶋研究室', note: 'ウイルスと遺伝子・One Health', href: '/lab-takeshima' },
+      { name: '飯村研究室', note: '小型魚類モデル・皮膚老化', href: '/lab-iimura' },
+      { name: '新倉研究室', note: '医療×データサイエンス', href: '/lab-niikura' },
+      { name: '山崎研究室', note: '健康食品・リスク評価科学', href: '/lab-yamazaki' },
+      { name: '石井研究室', note: 'もっちり食感・グルテンフリー', href: '/lab-ishii' },
+    ],
+  },
+  {
+    label: 'いのちを支える',
+    sublabel: '子ども・高齢者・福祉',
+    key: 'welfare',
+    labs: [
+      { name: '中岡研究室', note: '子どもの骨量・食育', href: '/lab-nakaoka' },
+      { name: '古明地研究室', note: 'こども食堂・公衆栄養', href: '/lab-komeichi' },
+      { name: '岡本研究室', note: '高齢者・サルコペニア予防', href: '/lab-okamoto' },
+    ],
+  },
+  {
+    label: '特集',
+    sublabel: 'コンテンツ・記事',
+    key: 'feature',
+    labs: [
+      { name: 'スポーツ栄養特集', note: '食物栄養学科×スポーツの可能性', href: '/sports-nutrition' },
+      { name: 'ことサポ', note: '食物栄養学科の伴走支援', href: '/kotosupport' },
+      { name: '副専攻', note: '管理栄養士＋もうひとつ。', href: '/submajor' },
+      { name: 'コラム', note: '学生・教員のリアルな声', href: '/columns' },
+    ],
+  },
+]
+
+const isHome = Astro.url.pathname === '/'
+---
+
+<header class={`header${isHome ? ' header--on-hero' : ''}`} data-home={String(isHome)}>
+  <div class="header__inner">
+
+    <a href="/" class="header__logo">
+      <div class="header__logo-main">
+        <span class="header__logo-dept">食物栄養学科</span>
+      </div>
+      <span class="header__logo-tagline">十文字学園女子大学 ― 学生・教員による情報メディア</span>
+    </a>
+
+    <nav class="header__nav" aria-label="メインナビゲーション">
+      <a href="/" class="header__nav-link">ホーム</a>
+
+      {LAB_CATEGORIES.map(cat => (
+        <div class="header__cat-wrap" data-key={cat.key}>
+          <button
+            type="button"
+            class="header__cat-btn"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            {cat.label}
+            <ChevronDown size={13} class="header__cat-chevron" aria-hidden="true" />
+          </button>
+
+          <div class={`header__dropdown header__dropdown--${cat.key}`} aria-hidden="true">
+            <p class="header__dropdown-eyebrow">{cat.sublabel}</p>
+            {cat.labs.map(lab => (
+              <a href={lab.href} class="header__dropdown-item">
+                <span class="header__dropdown-name">{lab.name}</span>
+                <span class="header__dropdown-note">{lab.note}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <a
+        href="https://www.jumonji-u.ac.jp/humanlife/food/"
+        class="header__official-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        学科公式HP ↗
+      </a>
+    </nav>
+
+    <button
+      class="header__menu-btn"
+      aria-label="メニューを開く"
+      aria-expanded="false"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<script>
+  // 旧 Header.jsx の useState/useEffect 群をクラス切替で再現（React不要）
+  const header = document.querySelector('.header')
+  if (header) {
+    const nav = header.querySelector('.header__nav')
+    const menuBtn = header.querySelector('.header__menu-btn')
+    const wraps = [...header.querySelectorAll('.header__cat-wrap')]
+    const isHome = header.getAttribute('data-home') === 'true'
+    let menuOpen = false
+    let openKey = null
+
+    const applyHeader = () => {
+      const scrolled = window.scrollY > 48
+      header.classList.toggle('header--scrolled', scrolled)
+      header.classList.toggle('header--on-hero', isHome && !scrolled && !menuOpen)
+    }
+
+    const applyDropdowns = () => {
+      for (const wrap of wraps) {
+        const open = openKey === wrap.getAttribute('data-key')
+        const btn = wrap.querySelector('.header__cat-btn')
+        const dropdown = wrap.querySelector('.header__dropdown')
+        btn.classList.toggle('header__cat-btn--active', open)
+        btn.setAttribute('aria-expanded', String(open))
+        btn.querySelector('.header__cat-chevron')?.classList.toggle('header__cat-chevron--open', open)
+        dropdown.classList.toggle('header__dropdown--open', open)
+        dropdown.setAttribute('aria-hidden', String(!open))
+        dropdown.toggleAttribute('inert', !open)
+      }
+    }
+
+    const applyMenu = () => {
+      nav.classList.toggle('header__nav--open', menuOpen)
+      menuBtn.classList.toggle('open', menuOpen)
+      menuBtn.setAttribute('aria-expanded', String(menuOpen))
+      menuBtn.setAttribute('aria-label', menuOpen ? 'メニューを閉じる' : 'メニューを開く')
+      applyHeader()
+    }
+
+    const closeAll = () => {
+      menuOpen = false
+      openKey = null
+      applyMenu()
+      applyDropdowns()
+    }
+
+    window.addEventListener('scroll', applyHeader, { passive: true })
+
+    document.addEventListener('mousedown', (e) => {
+      const target = e.target instanceof Node ? e.target : null
+      if (!nav.contains(target)) {
+        openKey = null
+        applyDropdowns()
+      }
+    })
+
+    for (const wrap of wraps) {
+      const key = wrap.getAttribute('data-key')
+      wrap.querySelector('.header__cat-btn').addEventListener('click', () => {
+        openKey = openKey === key ? null : key
+        applyDropdowns()
+      })
+    }
+
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen
+      applyMenu()
+    })
+
+    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeAll))
+    header.querySelector('.header__logo').addEventListener('click', closeAll)
+
+    applyHeader()
+    applyDropdowns()
+  }
+</script>

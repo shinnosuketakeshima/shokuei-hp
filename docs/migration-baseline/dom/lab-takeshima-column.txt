@@ -1,0 +1,40 @@
+main
+  div.lab-page
+    div.container
+      div
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | 竹嶋研究室に戻る
+      div.lab-page__header
+        p.lab-page__eyebrow | 教員コラム / Faculty Column
+        h1.lab-page__title | 失敗が消えない時代に、 どう育つか
+          br
+        p.lab-page__subtitle | 2026年6月　食物栄養学科　竹嶋伸之輔 教授
+      div.lab-page__content
+        section.lab-section
+          p.lab-section__body | 「マニュアルがないとできないんです、今の子たちは」
+          p.lab-section__body | ある病院の栄養士さんが、ぽつりとそう言った。学生の実習巡回で病院を訪れた時のことだ。その言葉が、ずっと頭に引っかかってい
+          p.lab-section__body | 怠慢なのだろうか。いや、そうは思わない。むしろ、まじめで勉強熱心な学生ほど、マニュアルの外に踏み出せない傾向があるように
+          p.lab-section__body | 考えていくうちに、ひとつの仮説にたどり着いた。「失敗のコスト」が、根本的に変わってしまったのではないか、と。
+        section.lab-section
+          div.takeshima-pull | 昔、クラスで起きた喧嘩は、クラスで終わった。 今、クラスで起きた喧嘩は、知らない1万人に届く。
+            br
+          p.lab-section__body | 私が学生だったころ、友人と大喧嘩をしても、それはそのクラスの、その瞬間だけの出来事だった。関係のない人がそれを知ることは
+          p.lab-section__body | ところが今は違う。ちょっとした言動がSNSで拡散され、見知らぬ人から批判を受ける。本人だけでなく、その様子を見て育った子
+          p.lab-section__body | だとすれば、マニュアルにしがみつくのは、臆病なのではなく、合理的な自己防衛なのかもしれない。間違えないための装置として、
+        section.lab-section
+          div.takeshima-pull | 「失敗を許さない社会」が、 「失敗からしか育たない人間」を育てようとしている。
+            br
+          p.lab-section__body | これは矛盾だ。しかし、その矛盾の中に、私たち教育に携わる者への問いが含まれているとも思う。正解のある問いばかりで評価して
+          p.lab-section__body | 実習先の栄養士さんはこうも言っていた。「ここに来る前は知らなかったことを、大切にしてほしい」と。既に知っていることの確認
+          p.lab-section__body | 答えのない問いに、自分なりの言葉で向き合う経験。それをどう積み重ねるか。簡単ではないが、そこから目を逸らしてはいけないと
+        section.lab-section
+          div.lab-section__card
+            h3 | 関連リンク
+            p | このコラムを執筆した竹嶋先生の研究室についてはこちらをご覧ください。
+            a.btn.btn--primary | 竹嶋研究室 紹介ページ
+    style | .takeshima-pull {
+          margin: 2.5rem 0;
+          padd

@@ -1,0 +1,73 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 食物栄養学科・学科特別イベント
+        h1.lab-page__title | 管理栄養士について考える 探求型イベント
+          br
+        p.lab-page__subtitle | 食と栄養で未来をデザイン
+      div.lab-page__content
+        section.lab-section.event-overview
+          div.event-overview__card
+            div.event-overview__badge | 参加費 無料
+            div.event-overview__meta
+              div.event-overview__meta-item
+                svg
+                div
+              div.event-overview__meta-item
+                svg
+                div
+              div.event-overview__meta-item
+                svg
+                div
+        section.lab-section
+          div.event-catch
+            p.event-catch__label | 総合型選抜・学校推薦型選抜対策に！
+            p.lab-section__body | 昨年も多くの高校生が参加し、進路決定や入試準備に活用した大好評のイベントです。 管理栄養士の多様な活躍について学びながら
+        section.lab-section
+          h2.lab-section__title | イベント内容
+          div.event-program
+            div.event-program__item
+              div.event-program__number | 1
+              div.event-program__body
+                h3.event-program__title | 管理栄養士の活躍を知る！
+                p.event-program__desc | 病院・学校・企業・行政など、多彩なフィールドで活躍する管理栄養士の「今」をわかりやすく紹介します。 「管理栄養士って何を
+            div.event-program__item
+              div.event-program__number | 2
+              div.event-program__body
+                h3.event-program__title | 管理栄養士の未来を考える！
+                p.event-program__desc | 食と栄養の力で、社会をどう幸せに変えられるか。 これからの時代に求められる管理栄養士の役割や、食の未来について一緒に考え
+            div.event-program__item
+              div.event-program__number | 3
+              div.event-program__body
+                h3.event-program__title | 入試に役立つヒントが満載！
+                p.event-program__desc | イベントを通じて得られる気づきは、面接での受け答えや小論文のテーマ設定にそのまま活かせる貴重な素材になります。 食物栄養
+        section.lab-section
+          h2.lab-section__title | こんな方におすすめ
+          div.lab-section__grid
+            div.lab-section__card
+              h3 | 食や栄養に興味がある高校生
+              p | 管理栄養士という仕事に少しでも興味があれば大歓迎。まずは「知る」ところから始めましょう。
+            div.lab-section__card
+              h3 | 面接・小論文対策をしたい方
+              p | 管理栄養士の専門性や社会貢献について深く考える経験は、入試のあらゆる場面であなたの強みになります。
+            div.lab-section__card
+              h3 | 保護者の方
+              p | 管理栄養士という職業・食物栄養学科での学びをより深く知りたい保護者の方も歓迎しています。
+        section.lab-section
+          h2.lab-section__title | 参加のご案内
+          div.event-cta
+            div.event-cta__info
+              p.event-cta__free | 参加費：無料
+              p.lab-section__body | 事前登録をしていただくと当日がスムーズです。フライヤーに掲載のQRコードからご登録ください。 追加情報は学科公式インスタ
+            div.event-cta__contact
+              svg
+                path
+                rect
+              span | お問い合わせ：
+              a.event-cta__mail | iimura@jumonji-u.ac.jp

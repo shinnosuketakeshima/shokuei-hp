@@ -7,6 +7,8 @@ const LINKS_1 = [
   { label: '学生生活',    href: '/campus-life' },
   { label: 'よくある質問', href: '/faq' },
   { label: 'スポーツ栄養特集', href: '/sports-nutrition' },
+  { label: 'ことサポ for 食栄', href: '/kotosupport' },
+  { label: '副専攻×管理栄養士', href: '/submajor' },
   { label: 'コラム', href: '/columns' },
 ]
 

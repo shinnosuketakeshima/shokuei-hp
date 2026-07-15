@@ -1,0 +1,124 @@
+main
+  div.lab-page
+    div.container
+      a.lab-page__back-link
+        svg
+          path
+          path
+        span | トップページに戻る
+      div.lab-page__header
+        p.lab-page__eyebrow | Recipe Development & Food Science
+        h1.lab-page__title | 「体にいい」をもっと「おいしく」。 10人中8人が笑顔になる、新しい食習慣のカタチ。
+          br
+        p.lab-page__subtitle | 健康にいい食べ物でも、おいしくなければ続けられない。 鴨下ゼミでは、食物繊維や植物性たんぱく質など、注目の素材を使った「
+          br
+          br
+      div.lab-page__content
+        section.lab-section
+          h2.lab-section__title | 2つの研究テーマ
+          div.lab-section__grid
+            div.lab-section__card
+              div
+                svg
+              h3 | 健康と、日常的に向き合える食の開発
+              p | 食物繊維や植物性たんぱく質など、からだにいい素材を毎日の食卓に。試行錯誤を重ねて、「おいしく続けられる」新しい食習慣を提
+            div.lab-section__card
+              div
+                svg
+              h3 | 人が感じる「おいしさ」を科学する
+              p | なぜこのレシピはおいしいのか？被験者の食べた感想をデータで分析し、「おいしさの法則」を解き明かす。料理と科学の融合です。
+        section.lab-section
+          h2.lab-section__title | 【体験ストーリー】キッチンが研究室！「10人中8人のおいしい」を探し出す旅
+          p.lab-section__body | まずは注目の健康素材を選ぶことからスタート。何度も試作を重ねて納得のレシピを完成させたら、いよいよ被験者による実食アンケ
+            br
+            br
+          div
+            div
+              div | 1.
+              h3 | 健康素材との出会い
+              p | 食物繊維たっぷり、植物性たんぱく質豊富——今注目の素材を選びます。
+            div
+              div | 2.
+              h3 | キッチンでの試行錯誤
+              p | 何度も試作を重ねる。「もっとおいしくするには？」の連続。
+            div
+              div | 3.
+              h3 | 実食アンケート
+              p | 被験者に食べてもらい、「おいしさ」を言葉とデータで評価。
+            div
+              div | 4.
+              h3 | おいしさの科学分析
+              p | 10人中8人が笑顔になるレシピの秘密を解き明かす。
+        section.lab-section
+          h2.lab-section__title | 次世代フード——注目の健康素材たち
+          p.lab-section__body | アジアの伝統食、スーパーフード、地球にやさしい新素材…… 鴨下ゼミが試作してきた、食の未来を変える素材たち。
+          div.lab-section__grid
+            div.lab-section__card
+              h3 | テンペ
+              p | アジアの伝統発酵食品を、ハンバーガーやソーセージにアレンジ！
+              p | 食物繊維たっぷり
+              p.lab-section__body | 大豆を発酵させたインドネシア発祥の食品。揚げ浸し、ハンバーガー、ソーセージなど、日本の食卓に取り入れやすい料理を次々開発
+            div.lab-section__card
+              h3 | オートミール
+              p | まさかのポテトチップスやガトーショコラに！？驚きのヘルシーおやつ。
+              p | 食物繊維たっぷり
+              p.lab-section__body | 朝食の定番？いいえ、クッキー、ガトーショコラ、ポテトチップス……意外性のある料理にも活用。「ヘルシーだけどおいしい」の両
+            div.lab-section__card
+              h3 | 生のおから・おからパウダー
+              p | 焼きドーナツからお好み焼きまで、幅広いジャンルで試作中。
+              p | 食物繊維たっぷり
+              p.lab-section__body | 豆腐づくりの副産物を、ごちそうに変える。焼きドーナツ、クッキー、ガトーショコラ、お好み焼き、ハンバーグ——試作を重ねるた
+            div.lab-section__card
+              h3 | ひよこ豆粉
+              p | 豆由来の植物性たんぱく質を手軽に摂れるレシピを考案。
+              p | 植物性たんぱく質
+              p.lab-section__body | パンケーキやマフィンに活用。植物性たんぱく質の宝庫でありながら、素朴な甘さが特徴。からだにも環境にもやさしい食生活を提案
+            div.lab-section__card
+              h3 | コオロギパウダー
+              p | 地球にやさしい「新素材」。持続可能な未来のクッキーづくり。
+              p | 地球にやさしい新素材
+              p.lab-section__body | 昆虫食の可能性を探り、持続可能な食の未来を見据える。クッキーへの活用を研究中。「おいしい」と「地球にやさしい」が両立する
+        section.lab-section
+          h2.lab-section__title | こんなワクワクを感じる君、大歓迎！
+          div.lab-section__grid
+            div.lab-section__card
+              div
+                svg
+              h3 | キッチンから食の常識を塗り替えたい
+              p | 料理を作ることが好きな、クリエイティブな好奇心。試作を繰り返しながら「もっとおいしくするには？」と考えることを楽しめる方
+            div.lab-section__card
+              div
+                svg
+              h3 | 「なぜおいしいのか」を科学したい
+              p | 食べることが好きで、「おいしさ」を言葉やデータで表現したい。複雑な人間の感覚を、科学的に解き明かすことに興奮を感じる方。
+            div.lab-section__card
+              div
+                svg
+              h3 | 納得の「おいしさ」にたどり着く粘り強さ
+              p | 地道な試作・評価・考察を積み重ねられる、ワクワクする粘り強さ。何度の失敗も、次のおいしさへの一歩と考える方が活躍します。
+        section.lab-section
+          h2.lab-section__title | 4年間の集大成
+          div.lab-section__grid
+            div.lab-section__card
+              h3 | 桐華祭でポスター発表
+              p | 試作・実験・考察の全プロセスを、ポスターで表現。自分たちの研究成果を多くの人に見てもらう瞬間。
+            div.lab-section__card
+              h3 | 卒業論文の執筆
+              p | 4年間のすべてを言葉にまとめる。「おいしさ」という人間の感覚を、科学的に表現する最後のチャレンジ。
+        section.lab-section
+          h2.lab-section__title | Researcher Profile
+          div
+            div
+              p | 指導教員
+              p | 鴨下 澄子（かもした すみこ）准教授
+            div
+              p | 専門分野
+              p | 生活科学
+食生活学
+国際栄養学
+公衆衛生学
+            div
+              p | 学位
+              p | 博士（学術）
+          p.lab-section__body | より詳細な研究業績は、教員情報データベースをご覧ください。
+          a.lab-section__link | 教員情報データベースで詳細を見る

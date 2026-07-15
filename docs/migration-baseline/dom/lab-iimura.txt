@@ -1,0 +1,133 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 人間生活学部 食物栄養学科
+        h1.lab-page__title | 飯村 九林 研究室
+        p.lab-page__subtitle | 小型魚類を研究モデルに、食品と生命科学の接点を探る研究室
+      div.lab-page__content
+        section.lab-story-feature.lab-story-feature--forest
+          span.lab-story-feature__label | FEATURE STORY
+            svg
+              path
+              path
+              path
+              circle
+          h2.lab-story-feature__title | 魚は「食料」じゃなくて ！？ キンギョやゼブラフィッシュと探る 皮膚の老化メカニズム
+            br
+            em | 「研究モデル」
+            br
+            br
+          p.lab-story-feature__lead | 大学での学びは、答えのない問いに挑戦する冒険です。飯村研究室では、 を使って、骨や皮膚の再生、 アンチエイジングの未来を
+            strong | ゼブラフィッシュやキンギョなどの小型魚類
+            strong | ユニークな研究
+          div.lab-story-feature__tags
+            span | #ゼブラフィッシュ
+            span | #アンチエイジング
+            span | #バイオミネラリゼーション
+            span | #食物栄養学科
+        section.lab-section
+          h2.lab-section__title | 飯村研究室ってどんなところ？
+          p.lab-section__body | 飯村研究室では、魚を「食料」ではなく「研究モデル」として活用するという、 ちょっと変わったアプローチで食品科学・生命科学
+            strong | 鱗・尾びれ・心臓など様々な組織を短期間で再生できる
+          p.lab-section__body | 私たちはこの特性を活かして、骨や皮膚の再生メカニズム、老化と深く関わるヒアルロン酸の機能、 紫外線が皮膚に与える影響など
+        section.lab-section
+          h2.lab-section__title | 研究テーマ
+          div.lab-theme-list
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 01
+                h3 | 研究の主役は「小さな魚」たち
+                p | ゼブラフィッシュやキンギョは、哺乳類に似た組織を持ちながら、安価・短期間で実験できる優れた研究モデル。食品成分の骨・皮膚
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 02
+                h3 | 魚のウロコでアンチエイジングを科学する
+                p | 老化とともに減少することが知られるヒアルロン酸。魚の鱗が再生する過程でのヒアルロン酸の局在や働きを解析し、骨・皮膚の老化
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 03
+                h3 | 紫外線が肌に与える影響を分子レベルで解明
+                p | 紫外線は皮膚老化（シワ・たるみ）の主要因。魚の鱗再生モデルを使い、UV照射が石灰化や線維層板形成に与える影響を、組織・分
+          p.lab-section__body | ※ これまでの研究では、アフラトキシン（カビ毒）産生阻害や、アシタバなど植物由来機能性成分の遺伝子解析も行ってきました。
+        section.lab-section
+          h2.lab-section__title | 研究室生活と卒業研究
+          p.lab-section__body | 本研究室の卒業研究では、学生一人ひとりが主役です。自ら立てた研究計画に基づき、 実験・文献調査・データ解析・発表という一
+          div.lab-life-highlights
+            p.lab-life-highlights__lead | 飯村ラボの「ふだん」をのぞいてみよう
+            ul
+              li
+                svg
+                div
+              li
+                svg
+                div
+              li
+                svg
+                div
+              li
+                svg
+                div
+          div.lab-section__card
+            h3 | 卒業研究テーマの例
+            ul.lab-publication-list
+              li | 魚の鱗再生を利用したヒアルロン酸機能の解析
+              li | 紫外線照射が鱗の石灰化・線維層板形成に与える影響
+              li | ゼブラフィッシュ・キンギョを用いた食品成分の骨・皮膚への作用評価
+        section.lab-section
+          div.lab-quote-card
+            svg
+              path
+              path
+            p | 大学での学びは、答えのない問いに挑戦する冒険です。研究室では、 教科書には載っていない 経験ができます。 失敗を恐れず、
+              em | 「？」を自分自身の力で「！」に変える
+            footer.lab-quote-card__author
+              span.lab-quote-card__role | 飯村研究室 主宰
+              span.lab-quote-card__name | 飯村 九林 教授
+        section.lab-section
+          h2.lab-section__title | 教員紹介
+          div.lab-pi-profile
+            p
+              strong | 飯村 九林（いいむら くりん）
+            p | 十文字学園女子大学 人間生活学部 食物栄養学科・教授
+            p | 農芸化学, 水圏応用科学（生物有機化学・水圏生命科学・バイオミネラリゼーション）
+              strong | 専門分野:
+            p | 小型魚類, 鱗再生, ヒアルロン酸, 石灰化, 老化, 紫外線, コラーゲン, バイオミネラリゼーション, 食品機能性成
+              strong | 研究キーワード:
+            p | 日本農芸化学会, 日本水産学会
+              strong | 所属学会:
+            p | 北海道大学大学院 博士課程修了後、東京大学大学院 農学生命科学研究科 特任研究員、日本女子大学 家政学部 助教を経て、2
+              strong | 職歴（抜粋）:
+        section.lab-section
+          h2.lab-section__title | 代表的な研究業績
+          ul.lab-publication-list
+            li | 食品学の基礎をイラストで分かりやすく解説した教科書。
+              strong | 著書『イラスト食品学各論』(2023, 共著):
+            li | 真珠層の形成に関わるサルコプラズミックカルシウム結合タンパク質の精製・結晶化・X線解析。
+              strong | 真珠貝（アコヤガイ）のカルシウム結合タンパク質に関する論文 (2021):
+            li | アシタバ（Angelica keiskei）の機能性成分合成に関わる酵素遺伝子のクローニングと機能解析。
+              strong | アシタバのセスキテルペン合成酵素遺伝子に関する論文 (2020):
+            li | 食品添加物によるカビ毒汚染防除手法をまとめた総説論文。
+              strong | 食品添加物を用いたアフラトキシン汚染防除（Bio industry, 2017, 共著）:
+            li | cyclo(L-Ala-L-Pro)によるアフラトキシン産生阻害メカニズムを明らかにした研究。
+              strong | アフラトキシン産生阻害機構に関する論文（Toxins, 2017, 共著）:
+            li | 北海道大学大学院 水産科学院 海洋応用生命科学専攻。魚類の分子生物学的研究に従事。
+              strong | 博士（水産科学）取得 (2012):
+        section.lab-section
+          h2.lab-section__title | 受賞・特許
+          ul.lab-publication-list
+            li | アフラトキシン産生特異的阻害剤 cyclo(L-Ala-L-Pro) の標的分子に関する研究発表により受賞。
+              strong | ISMYCO 2016 Silver Presentation Award (2016):
+            li | 食品を汚染するカビ毒産生を抑制する新規手法に関する特許。
+              strong | 特許「アフラトキシン産生阻害剤及びアフラトキシン汚染防除方法」(登録 2016/03/29):

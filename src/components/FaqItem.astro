@@ -1,0 +1,43 @@
+---
+import { Plus, Minus, ChevronRight } from '@lucide/astro'
+
+interface Props {
+  item: {
+    id: string
+    q: string
+    a: string
+    link?: string
+    linkLabel?: string
+    relatedLink?: { href: string; label: string }
+  }
+}
+const { item } = Astro.props
+---
+
+<div id={`faq-${item.id}`} class="faq__item" data-faq-item>
+  <button type="button" class="faq__question-btn" data-faq-toggle aria-expanded="false">
+    <span class="faq__q-mark">Q</span>
+    <span class="faq__q-text">{item.q}</span>
+    <span class="faq__icon" aria-hidden="true">
+      <span class="faq__icon-plus"><Plus size={18} /></span>
+      <span class="faq__icon-minus"><Minus size={18} /></span>
+    </span>
+  </button>
+  <div class="faq__answer" data-faq-answer style="max-height: 0px; overflow: hidden; transition: max-height 0.28s cubic-bezier(0.16, 1, 0.3, 1)">
+    <div class="faq__answer-inner">
+      <p>{item.a}</p>
+      {item.link && (
+        <a href={item.link} class="faq__answer-link">
+          {item.linkLabel}
+          <ChevronRight size={14} aria-hidden="true" />
+        </a>
+      )}
+      {item.relatedLink && (
+        <a href={item.relatedLink.href} class="faq__answer-link">
+          {item.relatedLink.label}
+          <ChevronRight size={14} aria-hidden="true" />
+        </a>
+      )}
+    </div>
+  </div>
+</div>

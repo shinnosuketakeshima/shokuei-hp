@@ -1,0 +1,155 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 十文字学園女子大学 食物栄養学科
+        h1.lab-page__title | 山崎 優子 研究室
+        p.lab-page__subtitle | サプリメントと健康食品の「本当の安全」を、科学で守る
+      div.lab-page__content
+        section.lab-story-feature
+          span.lab-story-feature__label | FEATURE STORY
+            svg
+              path
+              path
+              path
+              circle
+          h2.lab-story-feature__title | そのサプリ、本当に安全？ 「健康食品」を科学の眼で守る、
+            br
+            br
+            em | リスク評価の最前線。
+          p.lab-story-feature__lead | コンビニやドラッグストアで手軽に買えるサプリメントやハーブ製品。でも、体の中ではどんな反応が起きているのでしょうか？ 山
+            strong | 動物実験や細胞実験を駆使して
+            strong | 食の安全のスペシャリスト
+          div.lab-story-feature__tags
+            span | #食品安全学
+            span | #薬物相互作用
+            span | #リスク評価
+            span | #健康食品
+            span | #栄養生化学
+        section.lab-section
+          h2.lab-section__title | 専門用語をひも解く：山崎ゼミの2大テーマ
+          p.lab-section__body | パッと聞くと難しそうな研究も、中身を知れば「あ、これって自分たちの身近な話だ」と気づくはず。 高校生向けに、ていねいに解
+          div.lab-theme-list.lab-theme-list--terracotta
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 01
+                h3 | サプリと薬の「飲み合わせ」を解明する
+                p | セイヨウオトギリソウ（セントジョーンズワート）やウコンなど、身近なハーブが薬の効き目を変えてしまう「薬物相互作用」を研究
+            div.lab-theme-card
+              div.lab-theme-card__icon
+                svg
+              div.lab-theme-card__content
+                span.lab-theme-card__tag | テーマ 02
+                h3 | 「一生毎日食べても大丈夫？」を決める科学
+                p | 食品添加物で使われる評価法（ADI：一日摂取許容量）を参考に、ハーブ製品に特化した独自の安全評価法（SDI-SE）を構築
+        section.lab-section
+          h2.lab-section__title | 知識コラム：「トクホ」と「機能性表示食品」って何が違う？
+          div
+            div
+              p | 特定保健用食品（トクホ）
+              ul
+                li | 消費者庁が個別審査・許可
+                li | 科学的根拠を国が審査
+                li | 「おなかの調子を整える」など効果を表示できる
+                li | 代表例：特茶、ヤクルト 400W など
+            div
+              p | 機能性表示食品
+              ul
+                li | 企業が届け出・自己責任で表示
+                li | 消費者庁への届け出が必要
+                li | 「目のピントを調整する」などの表示が可能
+                li | 2015年に創設されたより新しい制度
+          p | 山崎研究室の研究成果は、これらの制度において「科学的根拠」を担う安全性評価に直結しています。
+        section.lab-section
+          h2.lab-section__title | 実験の舞台裏
+          div.lab-project-story
+            div.lab-project-story__header
+              svg
+                path
+                path
+                path
+                path
+                path
+                path
+              h3 | 動物・細胞・遺伝子。多角的なアプローチで答えを探す。
+            div.lab-project-story__body
+              p | ラットへの投与試験を通して、成長曲線や肝臓重量への影響を精密に測定します。
+                strong | ★ 動物実験 ：
+              p | ヒトの培養肝細胞（HepG2）を使って、成分が細胞にどう作用するかを分析。
+                strong | ★ 細胞実験 ：
+              p | リアルタイムRT-PCR法などの最先端技術で、目に見えないmRNA（遺伝子発現）の変化まで追いかけます。
+                strong | ★ 遺伝子解析 ：
+        section.lab-section
+          h2.lab-section__title | 山崎ゼミの空気感
+          div.lab-life-highlights.lab-life-highlights--terracotta
+            p.lab-life-highlights__lead | 先輩たちの研究テーマ
+            ul
+              li
+                svg
+                div
+              li
+                svg
+                div
+          p.lab-section__body | 平日の週1〜2回の実験や休み期間の集中実験を軸に、学園祭での発表、笑顔あふれる歓迎会・送別会まで—— が待っています。 
+            strong | メリハリのある充実したゼミ生活
+        section.lab-section
+          div.lab-quote-card
+            svg
+              path
+              path
+            p | 実験に興味のある方、大歓迎！ 失敗しても原因を考え、改善策を練るプロセス。 教科書にはない を一緒に味わいましょう。
+              br
+              br
+              em | 「発見」の喜び
+            footer.lab-quote-card__author
+              span.lab-quote-card__role | 山崎研究室からのメッセージ
+              span.lab-quote-card__name | — 山崎 優子 准教授
+        section.lab-section
+          h2.lab-section__title | 教員プロフィール
+          div.lab-media-profile
+            div.lab-media-profile__header
+              div.lab-media-profile__name
+                span.lab-media-profile__role | 食品安全学・栄養生化学
+                h3 | 山崎 優子 准教授
+              div.lab-media-profile__badges
+                span | 管理栄養士
+                span | 食品安全学
+                span | 栄養生化学
+            p.lab-media-profile__intro | サプリメントや健康食品に含まれる生理活性成分の安全性評価を専門とする研究者。 薬物代謝酵素（CYP）を介した食品と医薬品
+            div.lab-media-profile__achievements
+              div.lab-media-profile__box
+                h4.flex.items-center.gap-2 | 専門分野
+                ul
+              div.lab-media-profile__box
+                h4.flex.items-center.gap-2 | 主な研究キーワード
+                ul
+            div.lab-media-profile__message
+              p | 「実験に興味のある方、大歓迎！ 失敗しても原因を考え、改善策を練るプロセス。 教科書にはない『発見』の喜びを一緒に味わい
+        section.lab-section
+          div.lab-data-archive
+            h2.lab-data-archive__title | Researcher Records
+            details
+              summary | 主要論文・学術業績を表示する
+              div
+                p | 査読論文
+                ul
+              div
+                p | 著書
+                ul
+              div
+                p | レビュー・解説
+                ul
+            div.lab-data-archive__grid
+              div
+                h4 | 専門分野
+                div.lab-data-archive__tags
+              div
+                h4 | 掲載学術誌
+                div.lab-data-archive__tags

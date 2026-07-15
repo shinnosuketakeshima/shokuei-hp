@@ -1,0 +1,62 @@
+---
+// Firestoreはビルド時に1回だけ取得する（静的サイト方針。反映は次回デプロイ時）。
+import { ArrowRight } from '@lucide/astro'
+import { collection, getDocs, query, orderBy } from 'firebase/firestore'
+import { db } from '../firebase.js'
+import { STATIC_NEWS, newsDateMillis, formatNewsDate } from '../newsData.js'
+
+let firestoreNews: any[] = []
+try {
+  const newsCollectionRef = collection(db, 'news')
+  let querySnapshot
+  try {
+    const q = query(newsCollectionRef, orderBy('date', 'desc'))
+    querySnapshot = await getDocs(q)
+  } catch {
+    querySnapshot = await getDocs(newsCollectionRef)
+  }
+  firestoreNews = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+} catch {
+  firestoreNews = []
+}
+
+const allNews = [
+  ...firestoreNews.map((n) => ({
+    ...n,
+    date: formatNewsDate(n.date),
+    type: n.type || 'info',
+  })),
+  ...STATIC_NEWS,
+].sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date))
+---
+
+<section class="news" id="news">
+  <div class="container">
+    <div class="news__layout">
+      <div class="news__header" data-reveal="left">
+        <p class="eyebrow">お知らせ / ブログ</p>
+        <h2 class="section-title">新着情報</h2>
+        <a href="/news" class="news__more">
+          一覧へ <ArrowRight size={13} />
+        </a>
+      </div>
+
+      <ul class="news-list" data-reveal style="--reveal-delay: 0.2s" aria-label="新着情報一覧">
+        {allNews.map((n, i) => (
+          <li data-reveal style={`--reveal-delay: ${i * 0.05}s`}>
+            <article>
+              <a href={n.href || '/'} class="news-item" aria-label={`${n.date} ${n.tag}: ${n.title} の詳細を読む`}>
+                <span class="news-item__date">{n.date}</span>
+                <span class={`news-tag news-tag--${n.type}`}>{n.tag}</span>
+                <span class="news-item__title">
+                  {n.title}
+                  {n.hook && <span class="news-item__hook">{n.hook}</span>}
+                </span>
+              </a>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

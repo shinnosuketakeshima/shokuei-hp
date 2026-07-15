@@ -1,0 +1,250 @@
+---
+import { ArrowRight, BookOpen, Users, GraduationCap, Microscope, ChefHat, MapPin } from '@lucide/astro'
+import KoushaImage from '../university_kousha.jpg'
+import TairyouImage from '../tairyou.png'
+import KuwanohaImage from '../kuwanoha.jpg'
+import KokushiImage from '../kokushi.png'
+
+interface Props {
+  summary?: boolean
+}
+const { summary = false } = Astro.props
+
+const PHOTOS = [
+  {
+    src: TairyouImage,
+    alt: '食物栄養学科の大量調理実習。給食経営管理実習の様子。',
+    caption: '大量調理実習',
+  },
+  {
+    src: KuwanohaImage,
+    alt: '地域連携活動。桑の葉あんぱんの試作品。',
+    caption: '桑の葉あんぱんの試作',
+  },
+  {
+    src: KokushiImage,
+    alt: '管理栄養士国家試験の模擬試験。真剣に取り組む学生たち。',
+    caption: '国家試験模擬試験',
+  },
+  {
+    src: KoushaImage,
+    alt: '十文字学園女子大学の緑豊かなキャンパス風景。',
+    caption: '緑豊かなキャンパス、春',
+  },
+]
+
+const CURRICULUM = [
+  {
+    year: 1,
+    title: '1年生：基礎・発見',
+    theme: '必要な基礎知識・技術を学ぶ',
+    desc: '大学生活のスタート。管理栄養士の基礎となる化学や生物、調理の基本を徹底的に身につけます。',
+    items: [
+      { label: '前期', detail: '4月に入学式とオリエンテーション。調理学実習Iでは「おいしく、楽しく」基礎を学びます。唾液アミラーゼの実験など、初めての専門教育にワクワクする時期です。' },
+      { label: '後期', detail: '食品中のうま味成分の測定など、より科学的な視点が増えていきます。データサイエンスの集中授業も始まり、管理栄養士としての役割を理解し始めます。' }
+    ],
+    icon: BookOpen,
+    subjects: '食品学、公衆衛生学、人間栄養学概論、調理学実習I',
+  },
+  {
+    year: 2,
+    title: '2年生：統合・深化',
+    theme: '実験・実習を通して知識と技術を統合',
+    desc: '1年次の基礎をベースに、疾病と栄養の関わりを深く学びます。実験や実習がぐっと増え、専門性が高まります。',
+    items: [
+      { label: '前期', detail: 'こんにゃく、うどん、ジャムなどの手作り加工実習。アントシアニン色素のpH変化など、食品の不思議を科学で解き明かします。' },
+      { label: '後期', detail: '栄養教育論実習がスタート。対象者に合わせた栄養指導の基礎を学びます。病気についての理解を深め、増粘剤を用いた飲料の粘度測定など、現場に近い実習も行います。' }
+    ],
+    icon: Microscope,
+    subjects: '解剖生理学、食品加工学、病態生理学、栄養教育論',
+  },
+  {
+    year: 3,
+    title: '3年生：実践・飛躍',
+    theme: '管理栄養士としての実践力を養う',
+    desc: '4月のゼミ配属で研究が始動。より高度な技術と、現場で必要とされるマネジメント能力を磨きます。',
+    items: [
+      { label: '前期', detail: '150食の給食を実際に作り、運営する「給食経営管理実習」。計画から調理、衛生管理までマネジメントの全行程を体験します。' },
+      { label: '後期', detail: '病院や福祉施設での臨地実習が本格化。上腕周囲長や皮下脂肪厚の測定による栄養アセスメントなど、学外での実践的な学びが中心となります。' }
+    ],
+    icon: ChefHat,
+    subjects: '臨床栄養学、公衆栄養学、給食経営管理、栄養教育論',
+  },
+  {
+    year: 4,
+    title: '4年生：集大成・挑戦',
+    theme: '卒業研究と国家試験合格を目指す',
+    desc: '4年間の学びの集大成。自分自身の研究テーマを追求しながら、国家試験全員合格に向けてラストスパート。',
+    items: [
+      { label: '前期', detail: '卒業研究と並行して、4月から本格的な国試対策が始動。地域での食育活動や多職種連携論など、将来のキャリアを見据えた高度な選択科目も履修します。' },
+      { label: '後期', detail: '10月の桐華祭（学園祭）で研究成果を発表。2月の国家試験本番に向けて、仲間と一緒に全力で集中学習に取り組みます。3月には感動の卒業式。' }
+    ],
+    icon: GraduationCap,
+    subjects: '総合演習（国試対策）、多職種連携論、卒業研究',
+  },
+]
+
+const displayPhotos = summary ? PHOTOS.slice(0, 2) : PHOTOS
+const TitleTag = summary ? 'h2' : 'h1'
+---
+
+<div class="campus-life-page">
+  <section class="section" id="campus-life">
+    <div class="container">
+      <div class="section__header" data-reveal>
+        <TitleTag class="section__title">キャンパスライフ</TitleTag>
+        <p class="section__subtitle">Campus Life &amp; Environment</p>
+      </div>
+
+      <p class="campus-life__lead" data-reveal style="--reveal-delay: 0.2s">
+        「食」と「健康」のプロを目指す4年間。
+        十文字学園女子大学 食物栄養学科での充実した毎日をご紹介します。
+      </p>
+
+      {!summary && (
+        <div class="curriculum-roadmap" style="margin-top: 80px; margin-bottom: 100px">
+          <div class="roadmap-nav" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap" data-roadmap-nav>
+            {CURRICULUM.map((c, i) => (
+              <button
+                type="button"
+                data-roadmap-tab={i}
+                class={`roadmap-tab${i === 0 ? ' active' : ''}`}
+                style={`padding: 12px 24px; border-radius: 30px; border: 2px solid var(--forest); background: ${i === 0 ? 'var(--forest)' : 'transparent'}; color: ${i === 0 ? 'white' : 'var(--forest)'}; font-weight: bold; cursor: pointer; transition: all 0.3s;`}
+              >
+                {c.year}年生
+              </button>
+            ))}
+          </div>
+
+          <div class="roadmap-panes" data-roadmap-panes>
+            {CURRICULUM.map((c, i) => {
+              const Icon = c.icon
+              return (
+                <div
+                  class="roadmap-content"
+                  data-roadmap-pane={i}
+                  style={`display: ${i === 0 ? 'grid' : 'none'}; background: white; padding: 40px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;`}
+                >
+                  <div class="roadmap-text">
+                    <div style="display: flex; align-items: center; gap: 12px; color: var(--forest); margin-bottom: 16px">
+                      <Icon size={24} />
+                      <span style="font-weight: bold; font-size: 1.2rem">{c.theme}</span>
+                    </div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px">{c.title}</h3>
+                    <p style="color: var(--stone); line-height: 1.8; margin-bottom: 24px">{c.desc}</p>
+                    <div style="padding: 20px; background: var(--bg); border-radius: 12px; border-left: 4px solid var(--forest)">
+                      <p style="font-size: 14px; font-weight: bold; margin-bottom: 8px">主な専門科目:</p>
+                      <p style="font-size: 14px; color: var(--charcoal)">{c.subjects}</p>
+                    </div>
+                  </div>
+                  <div class="roadmap-details">
+                    {c.items.map((item) => (
+                      <div style="margin-bottom: 24px">
+                        <span style="display: inline-block; background: var(--terracotta); color: white; padding: 2px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 8px">
+                          {item.label}
+                        </span>
+                        <p style="font-size: 15px; line-height: 1.7; color: var(--charcoal)">{item.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      <div class="campus-photos">
+        {displayPhotos.map((photo, i) => (
+          <figure class="campus-photo" data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s`}>
+            <div class="campus-photo__img-wrap">
+              <img
+                src={photo.src.src}
+                alt={photo.alt}
+                class="campus-photo__img"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption class="campus-photo__caption">{photo.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+
+      {!summary && (
+        <div class="campus-life-extra" style="margin-top: 100px">
+          <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px">
+            <div data-reveal style="background: #f8fafc; padding: 40px; border-radius: 24px">
+              <div style="display: flex; align-items: center; gap: 12px; color: var(--forest); margin-bottom: 20px">
+                <MapPin size={24} />
+                <h3 style="font-size: 1.4rem">新座キャンパスの環境</h3>
+              </div>
+              <p style="font-size: 15px; line-height: 1.8; color: var(--stone)">
+                埼玉県新座市の緑豊かな環境に位置するキャンパス。
+                池袋から急行で約20分と都心へのアクセスも良く、落ち着いた環境で学びに集中できます。
+                四季折々の自然を感じながら、学生たちは図書館や自習室、国試対策室で仲間と共に切磋琢磨しています。
+                <a href="/living-alone" style="display: inline-block; margin-top: 12px; color: var(--forest); font-weight: 600">
+                  新座で一人暮らしする費用シミュレーター →
+                </a>
+              </p>
+            </div>
+
+            <div data-reveal style="--reveal-delay: 0.15s; background: #fef2f2; padding: 40px; border-radius: 24px">
+              <div style="display: flex; align-items: center; gap: 12px; color: var(--terracotta); margin-bottom: 20px">
+                <Users size={24} />
+                <h3 style="font-size: 1.4rem">少人数教育の絆</h3>
+              </div>
+              <p style="font-size: 15px; line-height: 1.8; color: var(--stone)">
+                1学年78名の少人数教育。教員と学生の距離が近く、先生に名前で呼んでもらえる温かい雰囲気があります。
+                空きコマに図書館で一緒に課題に取り組んだり、手作りのお弁当を見せ合ったり。
+                同じ目標を持つ仲間との絆が、大変な実習や国試勉強を乗り越える力になります。
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {summary && (
+        <div style="margin-top: 48px; text-align: center">
+          <a href="/campus-life" class="button button--outline">
+            キャンパスライフをもっと見る <ArrowRight size={16} style="margin-left: 8px" />
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+</div>
+
+{!summary && (
+  <script>
+    // React版のuseStateタブ切り替えをvanilla化。
+    function initRoadmapTabs() {
+      const nav = document.querySelector('[data-roadmap-nav]')
+      const panes = document.querySelector('[data-roadmap-panes]')
+      if (!nav || !panes) return
+      const tabs = nav.querySelectorAll<HTMLElement>('[data-roadmap-tab]')
+      const paneEls = panes.querySelectorAll<HTMLElement>('[data-roadmap-pane]')
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-roadmap-tab')
+          tabs.forEach((t) => {
+            const active = t === tab
+            t.classList.toggle('active', active)
+            t.style.background = active ? 'var(--forest)' : 'transparent'
+            t.style.color = active ? 'white' : 'var(--forest)'
+          })
+          paneEls.forEach((pane) => {
+            pane.style.display = pane.getAttribute('data-roadmap-pane') === target ? 'grid' : 'none'
+          })
+        })
+      })
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initRoadmapTabs)
+    } else {
+      initRoadmapTabs()
+    }
+  </script>
+)}

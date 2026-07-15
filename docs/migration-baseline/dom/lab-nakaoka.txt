@@ -1,0 +1,99 @@
+main
+  div.lab-page
+    div.container
+      div
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+      div.lab-page__header
+        p.lab-page__eyebrow | 食生活学・応用健康科学
+        h1.lab-page__title | 中岡 加奈絵 研究室
+        p.lab-page__subtitle | 子どもの「からだ」と「食」と「生活習慣」をつなぐ。 調査研究から実験研究まで、多角的なアプローチで子どもの健康を科学して
+          br
+      div.lab-page__content
+        section.lab-section
+          h2.lab-section__title | 教員プロフィール
+          div.lab-pi-profile
+            p
+              strong | 中岡 加奈絵（なかおか かなえ）准教授
+            p | 十文字学園女子大学 人間生活学部 食物栄養学科
+            p | 栄養学、健康科学（食生活学・応用健康科学）
+              strong | 専門分野:
+            p | 日本家政学会、日本食育学会、日本栄養・食糧学会、日本家庭科教育学会、日本健康教育学会 他
+              strong | 所属学会:
+            p.lab-section__body | 子どもの食生活・食育を主な研究テーマとし、食習慣や生活習慣が子どもの心身の成長にどのように関わるのか、質問紙調査や各種測
+            p.lab-section__body | 2025年5月には日本家政学会 奨励賞を受賞。管理栄養士養成のための教材開発にも継続的に取り組み、『ライフステージ栄養学
+            p | 日本女子大学大学院 博士後期課程在学中に中野区保健センター非常勤管理栄養士として勤務。博士（学術）取得後、2020年に本
+              strong | 職歴（抜粋）:
+        section.lab-section
+          h2.lab-section__title | 研究テーマ
+          div.lab-section__grid
+            div.lab-section__card
+              div
+                svg
+              h3 | 子どもの食習慣・生活習慣と成長・発達
+              p | 小中学生を対象に、食事内容・運動習慣・睡眠（クロノタイプ）などと骨量・体格・体力の関連を質問紙調査や測定を通じて解析して
+            div.lab-section__card
+              div
+                svg
+              h3 | 保育所・科学館における食育活動
+              p | 保育所での食育ワークショップやクッキング保育、科学館での体験型食育ワークショップなど、子どもたちが食に親しむ実践プログラ
+            div.lab-section__card
+              div
+                svg
+              h3 | 幼児食・離乳食と保護者の養育環境
+              p | 離乳食・幼児食のレシピ考案や、調理方法の違いが子どもの食べやすさに与える影響について研究しています。子どもの食べやすさと
+            div.lab-section__card
+              div
+                svg
+              h3 | 動物実験（栄養と健康の基礎研究）
+              p | ラットを用いた飼育実験により、栄養条件が生体機能や健康に及ぼす影響について研究しています。食と健康をつなぐ生体内の仕組み
+        section.lab-section
+          h2.lab-section__title | 研究室の活動
+          div.lab-section__card
+            h3 | 【3年生】
+            ul.lab-publication-list
+              li | 保育所や科学館と連携した食育活動の企画・運営
+              li | 小中学校等での調査・測定活動への参加
+              li | 動物実験（ラット飼育・サンプリング）
+              li | 論文紹介や研究発表を行う勉強会
+            p.lab-section__body | 子どもの食生活や健康に関する研究について学びながら、調査研究・実践活動・基礎研究を幅広く経験します。
+          div.lab-section__card
+            h3 | 【4年生】
+            ul.lab-publication-list
+              li | 卒業研究
+              li | 学会発表や研究成果の発信
+              li | 大学祭での研究紹介や体験型企画の実施
+            p.lab-section__body | 少人数グループで協力しながら研究テーマを設定し、調査計画の立案からデータ解析、発表まで取り組みます。
+        section.lab-section
+          h2.lab-section__title | 教育活動・主な実績
+          div.lab-section__card
+            div.flex.items-start.gap-3
+              svg
+                path
+                path
+              div
+                h3 | 教科書・教材の執筆
+                p.lab-section__body | 『ライフステージ栄養学』、『五訂 応用栄養学実習―ケーススタディーで学ぶ栄養マネジメント―』、そして2025年刊行の『イ
+          div.lab-section__card
+            div.flex.items-start.gap-3
+              svg
+                path
+                circle
+              div
+                h3 | 受賞
+                p.lab-section__body | 2025年5月、 を受賞。
+          div.lab-section__card
+            div.flex.items-start.gap-3
+              svg
+                path
+                path
+                path
+              div
+                h3 | 社会活動
+                p.lab-section__body | 日本食育学会 代議員として学会活動にも参画。食育や子どもの食生活に関するテーマで、保育士向け研修会や教員を対象とした講習
+        section.lab-section
+          h2.lab-section__title | 研究室での学び
+          p.lab-section__body | 研究室では、子どもの食生活や健康に関する課題を多角的に捉え、調査研究・食育実践・基礎研究を通して学びを深めています。学生

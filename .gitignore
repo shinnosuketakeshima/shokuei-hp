@@ -29,3 +29,8 @@ dist-ssr
 # Playwright screenshots
 .playwright-mcp/
 test-results/
+
+# Astro 移行の比較用スクショ（55MB — ローカル比較専用、head/jsonld/dom はコミットする）
+docs/migration-baseline/shots/
+dist-astro/
+.astro/

@@ -1,0 +1,62 @@
+main
+  div.lab-page
+    div.container
+      div.lab-page__header
+        a.lab-page__back-link
+          svg
+            path
+            path
+          span | トップページに戻る
+        p.lab-page__eyebrow | 2027年度スタート｜全学共通の伴走支援
+        h1.lab-page__title | 忙しい4年間を、ひとりにしない。
+        p.lab-page__subtitle | 管理栄養士をめざす道は、学ぶことも実習も国家試験もある、密度の濃い4年間です。十文字では2027年度から、その毎日を支え
+      div.lab-page__content
+        section.lab-story-feature.lab-story-feature--terracotta
+          span.lab-story-feature__label | 対象年度
+            svg
+              path
+              path
+              path
+              circle
+          p.lab-story-feature__lead | この支援を最初から受けられるのは、2027年4月に入学するみなさんです。
+        section.lab-section
+          h2.lab-section__title | 食物栄養学科にとっての「ことサポ」
+          p.lab-section__body | 食物栄養学科では、もともとある「学科による国家試験指導」と、新しい「ことサポ」が両輪になります。
+          div.sn-evidence-cards
+            div.sn-evidence-card
+              span.sn-evidence-card__dept | 学科によるサポート
+              div.sn-evidence-card__icon
+                svg
+              h3.sn-evidence-card__title | 学科による国試指導
+                br
+                span | （これまでも、これからも）
+              p.sn-evidence-card__body | 合格まで、教員が専門的に伴走します。過去問の使い方、苦手分野の克服、直前期の進め方まで、食物栄養学科の教員が直接サポート
+            div.sn-evidence-card
+              span.sn-evidence-card__dept | 全学によるサポート
+              div.sn-evidence-card__icon
+                svg
+              h3.sn-evidence-card__title | ことサポ
+                br
+                span | （2027年度から、ここが加わる）
+              p.sn-evidence-card__body | 勉強や進路の不安、心と体の調子、ひとりで抱えがちなことを、専任のスタッフに相談できます。学科の指導とは別の窓口だから、話
+        section.lab-story-feature.lab-story-feature--forest
+          span.lab-story-feature__label | 保護者のみなさまへ
+            svg
+              path
+          h2.lab-story-feature__title | 保護者のみなさまへ
+          p.lab-story-feature__lead | 専門職をめざす4年間には、励ましだけでは越えにくい場面もあります。学科の厳しくも丁寧な国試指導に加えて、ことサポによる心
+        section.lab-section
+          div.sn-cta-banner
+            p.sn-cta-banner__eyebrow | 十文字学園女子大学
+              svg
+                path
+                path
+                path
+                circle
+            h2.sn-cta-banner__title | 2つの伴走体制で、 あなたの管理栄養士への道をサポートします。
+              br
+            div.sn-cta-banner__buttons
+              a.sn-cta-btn.sn-cta-btn--primary | オープンキャンパスで聞いてみる
+                svg
+              a.sn-cta-btn.sn-cta-btn--secondary | 副専攻×管理栄養士のページを見る
+                svg

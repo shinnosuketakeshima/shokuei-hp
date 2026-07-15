@@ -1,0 +1,225 @@
+main
+  div.la
+    header.la-hero
+      p.la-eyebrow | 新座 一人暮らし 費用シミュレーター
+      h1.la-title | 新座で一人暮らし—— と を総額で比較
+        br
+        span.la-accent | 住まい
+        span.la-accent | 学費
+      p.la-lead | 埼玉県 にある十文字学園女子大学 食物栄養学科へ進学する際、 受験生・保護者の方が最も気になる「 」。 月額の家賃や寮費
+        strong | 新座市
+        strong | 新座で一人暮らしするといくらかかるのか
+        strong | 年間・4年間の総額
+    section.la-local
+      h2.la-h2 | 新座市で一人暮らしする費用の目安
+      p | 十文字学園女子大学は埼玉県新座市菅沢にあり、JR武蔵野線・新座駅から徒歩10〜15分です。 ひばりヶ丘駅方面からバスでの
+      ul.la-local-list
+        li | ：月6.7〜8.2万円、朝夕2食・家具家電込み
+          strong | 学生寮（ドーミー）
+        li | ：新座周辺の家賃相場 月4.5〜6.5万円
+          strong | アパート・マンション
+        li | ：初年度約151万円、4年間総額約531万円
+          strong | 学費（食物栄養学科）
+      p.la-local-note | 住居費と学費を合わせた4年間の総額は、下のシミュレーターで寮タイプ・家賃タイプを選んで確認できます。 詳しいキャンパス環
+        a | キャンパスライフ
+    section.la-choices
+      article.la-card.la-card--dorm
+        h2 | 学生寮（ドーミー）
+        ul
+          li | 朝・夕の2食付き
+          li | 家具・家電がそろっている
+          li | オートロック・管理人常駐で安心
+          li | 引越しの荷物が少なくてすむ
+        p.la-card-cost | 初年度費用の目安
+          strong | 約142万円〜
+          span | （電気代別）
+      article.la-card.la-card--apt
+        h2 | アパート・マンション（新座周辺）
+        ul
+          li | 新座市周辺の家賃相場は月 4.5〜6.5万円
+          li | 自炊など生活スタイルを自由に選べる
+          li | 毎年の管理費（約22万円）が通常かからない
+          li | 工夫しだいで費用を抑えられる場合も
+        p.la-card-cost | 初期費用の目安
+          strong | 家賃の4〜6か月分
+          span | （敷金・礼金・仲介手数料など）
+    section.la-sim
+      p.la-eyebrow | 一人暮らしコスト比較｜学生寮
+      h2.la-h2 | 学生寮の費用シミュレーター
+      p.la-sim-note | 寮費（月額）のほかに、入館費・保証金・年間管理費・通信費がかかります。 部屋タイプを選ぶと、1年目と4年間の総額の目安が
+      div.la-tabs
+        button.la-tab.is-active | 67,700円タイプ
+        button.la-tab | 75,000円タイプ
+        button.la-tab | 82,000円タイプ
+      div.la-breakdown
+        div.la-bd-col
+          h3 | 1年目にかかるお金
+          dl
+            div
+              dt | 寮費（ 67,700円 ×12か月）
+              dd | 812,400円
+            div
+              dt | 年間管理費
+              dd | 220,000円
+            div
+              dt | 通信設備費（ 3,960円 ×12）
+              dd | 47,520円
+            div
+              dt | 入館費（4年で1回）
+              dd | 290,000円
+            div
+              dt | 保証金（4年で1回）
+              dd | 50,000円
+            div.la-bd-total
+              dt | 1年目合計
+              dd | 1,419,920円
+                span | ＋電気代
+        div.la-bd-col.la-bd-col--four
+          h3 | 4年間の住居費合計
+          p.la-four-num | 4,659,680円
+            span | ＋電気代
+          p.la-four-sub | 入館費・保証金は4年で1回、寮費・管理費・通信費は毎年かかる前提の目安です。
+      p.la-disclaimer | ※ 金額は2025年時点の公開情報をもとにした目安です。部屋タイプや契約年により変わります。 最新の正確な費用は、必ずド
+    section.la-sim.la-sim--apt
+      p.la-eyebrow | 一人暮らしコスト比較｜アパート
+      h2.la-h2 | 新座市アパートの費用シミュレーター
+      p.la-sim-note | 新座市周辺の家賃相場（月4.5〜6.5万円）をもとに、初期費用（家賃5か月分）と 1年目・4年間の住居費を試算します。食
+      div.la-tabs
+        button.la-tab | 4.5万円タイプ
+        button.la-tab.is-active | 5.5万円タイプ
+        button.la-tab | 6.5万円タイプ
+      div.la-breakdown
+        div.la-bd-col
+          h3 | 1年目にかかるお金
+          dl
+            div
+              dt | 家賃（ 55,000円 ×12か月）
+              dd | 660,000円
+            div
+              dt | 初期費用（家賃5か月分の目安）
+              dd | 275,000円
+            div.la-bd-total
+              dt | 1年目合計
+              dd | 935,000円
+                span | 食費・光熱費別
+        div.la-bd-col.la-bd-col--four
+          h3 | 4年間の住居費合計
+          p.la-four-num | 2,915,000円
+            span | 食費・光熱費別
+          p.la-four-sub | 初期費用は1回のみ、家賃は毎年かかる前提の目安です。 寮と違い食事は自炊・外食のため、食費は別途かかります。
+    section.la-tuition
+      p.la-eyebrow | 学費シミュレーター
+      h2.la-h2 | 食物栄養学科の学費（2026年度入学者）
+      p.la-tuition-note | 一人暮らしの費用とあわせて検討したい学費の目安です。 奨学金・修学支援制度の適用により実際の負担額は変わります。
+      div.la-tuition-grid
+        div.la-tuition-card
+          h3 | 初年度納入金
+          dl
+            div
+              dt | 入学金
+              dd | 250,000円
+            div
+              dt | 授業料（1年分）
+              dd | 800,000円
+            div
+              dt | 施設・教育充実費
+              dd | 400,000円
+            div
+              dt | 諸会費等
+              dd | 64,660円
+            div.la-tuition-total
+              dt | 初年度合計
+              dd | 1,514,660円
+        div.la-tuition-card.la-tuition-card--highlight
+          h3 | 4年間の学費総額
+          p.la-tuition-four | 5,308,640円
+          p.la-tuition-sub | 2年目以降は入学金なしで年間約 126 万円。 最新の正確な金額は大学公式サイトの募集要項でご確認ください。
+          a.la-tuition-link | 大学公式｜学費のご案内
+    section.la-total
+      h2.la-h2 | 4年間の総額イメージ（住居費＋学費）
+      p.la-total-note | 現在選択中のタイプでの目安です。食費・光熱費・生活費は含みません。
+      div.la-total-grid
+        article.la-total-card.la-total-card--dorm
+          h3 | 学生寮＋学費
+          p.la-total-num | 9,968,320円
+          p.la-total-breakdown | 住居費 4,659,680円 ＋ 学費 5,308,640円
+        article.la-total-card.la-total-card--apt
+          h3 | アパート＋学費
+          p.la-total-num | 8,223,640円
+          p.la-total-breakdown | 住居費 2,915,000円 ＋ 学費 5,308,640円
+    section.la-compare
+      h2.la-h2 | 寮とアパート、どう違う？
+      div.la-table-wrap
+        table.la-table
+          thead
+            tr
+              th
+              th | 学生寮
+              th | アパート（新座周辺）
+          tbody
+            tr
+              th | 食事
+              td | 朝夕2食付き
+              td | 自炊・外食
+            tr
+              th | 家具・家電
+              td | そろっている
+              td | 自分で用意
+            tr
+              th | セキュリティ
+              td | オートロック・管理人常駐
+              td | 物件による
+            tr
+              th | 毎年の管理費
+              td | あり（約22万円）
+              td | 通常なし
+            tr
+              th | 初期費用
+              td | 入館費・保証金
+              td | 敷金・礼金・仲介手数料
+            tr
+              th | 費用の見えやすさ
+              td | 入る前にほぼ確定
+              td | 物件や生活で変動
+      p.la-compare-note | 食費・家具家電・防犯まで含めて考えると、トータルでは大きな差にならないことも多いです。 「安さ」だけでなく、生活のしやす
+    section.la-faq
+      h2.la-h2 | 新座で一人暮らし——よくある質問
+      dl.la-faq-list
+        div.la-faq-item
+          dt | 新座で一人暮らしすると月いくらかかりますか？
+          dd | 十文字学園女子大学周辺のアパートは家賃月4.5〜6.5万円が目安です。光熱費・食費・通信費を含めると、月8〜12万円程度
+        div.la-faq-item
+          dt | 新座市のアパート家賃相場はいくらですか？
+          dd | 大学周辺（新座駅・ひばりヶ丘駅方面）のワンルーム・1Kは、家賃月4.5〜6.5万円が相場です。初期費用は敷金・礼金・仲介
+        div.la-faq-item
+          dt | 十文字学園女子大学の学生寮の費用はいくらですか？
+          dd | ドーミー（共立メンテナンス）の寮費は月67,700〜82,000円（2025年時点）。入館費29万円・保証金5万円・年間
+        div.la-faq-item
+          dt | 食物栄養学科の4年間の学費はいくらですか？
+          dd | 2026年度入学者の初年度納入金は約151万円（入学金25万円＋授業料80万円＋施設費40万円＋諸会費等）。2年目以降は
+        div.la-faq-item
+          dt | 学生寮とアパート、どちらが安いですか？
+          dd | 家賃だけ見るとアパートの方が安く見えますが、寮は食事2食・家具家電・管理費込みで計算できます。4年間の住居費総額では大き
+    section.la-references
+      h2.la-h2 | 参考になるリンク
+      div.la-reference-grid
+        a.la-reference-card
+          h3 | 十文字学園女子大学
+          p | 受験生応援サイト イベントカレンダー
+        a.la-reference-card
+          h3 | キャンパスライフ
+          p | 新座で一人暮らしする学生の声・キャンパス風景など
+        a.la-reference-card
+          h3 | ドーミー公式サイト
+          p | 十文字学園女子大学向け学生寮の詳細情報・資料請求
+        a.la-reference-card
+          h3 | SUUMO（新座市）
+          p | 新座市の賃貸物件検索。一人暮らし向けアパート探しに
+        a.la-reference-card
+          h3 | HOMES（新座市）
+          p | 新座市の賃貸・家賃相場情報
+        a.la-reference-card
+          h3 | 大学公式｜学費
+          p | 食物栄養学科を含む各学科の学費・奨学金情報
+    footer.la-foot
+      p | 新座での一人暮らしや学費で迷ったら、オープンキャンパスや個別相談で気軽に聞いてください。 先輩たちの実際の暮らし方もお伝
