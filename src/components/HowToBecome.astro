@@ -1,0 +1,221 @@
+---
+import {
+  ArrowLeft,
+  Sparkles,
+  ChevronRight,
+  Stethoscope,
+  Utensils,
+  GraduationCap,
+} from '@lucide/astro'
+import FaqItem from './FaqItem.astro'
+
+const LICENSE_CARDS = [
+  {
+    tag: '栄養士',
+    icon: Utensils,
+    title: '都道府県知事の免許',
+    body: '栄養士養成施設（2〜4年制）を卒業すると、国家試験なしで取得できます。主に健康な人を対象に、栄養指導や給食の管理を行います。',
+    accent: 'var(--forest)',
+  },
+  {
+    tag: '管理栄養士',
+    icon: Stethoscope,
+    title: '厚生労働大臣の免許（国家資格）',
+    body: '国家試験に合格して取得する上位資格。病気の方への栄養指導や、病院・学校など大規模施設での高度な栄養管理まで担えます。活躍の場も待遇も大きく広がります。',
+    accent: 'var(--terracotta)',
+  },
+]
+
+const ROUTE_STEPS = [
+  {
+    num: '1',
+    title: '管理栄養士養成課程（4年制大学）に入学',
+    body: '十文字学園女子大学 食物栄養学科はこのタイプ。管理栄養士になるための最短ルートです。',
+  },
+  {
+    num: '2',
+    title: '4年間で専門知識と実践力を身につける',
+    body: '講義・実験・調理実習・臨地実習（病院などでの学外実習）を通じて、栄養の科学を体系的に学びます。',
+  },
+  {
+    num: '3',
+    title: '卒業と同時に「栄養士免許」と「国家試験の受験資格」を取得',
+    body: '養成課程卒業なら実務経験は不要。在学中の4年次にそのまま国家試験（例年2月末〜3月実施）に挑戦できます。',
+  },
+  {
+    num: '4',
+    title: '管理栄養士国家試験に合格',
+    body: '合格すれば管理栄養士に。病院・学校・行政・食品企業・スポーツなど、活躍のフィールドが一気に広がります。',
+  },
+]
+
+const FAQ_ITEMS = [
+  {
+    id: 'htb1',
+    q: '高校で文系でも大丈夫ですか？',
+    a: '大丈夫です。大学の授業は基礎から積み上げる構成になっているので、高校で化学や生物を深く学んでいなくても、入学後に学び直しながら追いつけます。不安なことは、オープンキャンパスやイベントで在学生・教員に直接聞いてみるのがおすすめです。',
+    link: '/faq',
+    linkLabel: 'よくある質問をもっと見る',
+  },
+  {
+    id: 'htb2',
+    q: '高校生のうちにやっておくといいことは？',
+    a: '化学基礎・生物基礎は大学の学びの土台になるので、授業を大切にしておくと安心です。それ以外は、自分でごはんを作ってみる、食や健康のニュースに関心を持つ——そんな日常の積み重ねが、そのまま学びのモチベーションになります。',
+  },
+  {
+    id: 'htb3',
+    q: '料理が得意じゃなくても目指せますか？',
+    a: '目指せます。調理の技術は大学の実習で段階的に身につけるものなので、入学時点の得意・不得意は心配いりません。それよりも「食を通じて人を支えたい」という気持ちが何よりの原動力になります。',
+  },
+  {
+    id: 'htb4',
+    q: '国家試験って難しいの？',
+    a: '全受験者の合格率は例年50%前後ですが、4年制の養成課程を卒業したばかりの新卒に限れば例年80%を超えます。つまり大切なのは、4年間しっかり学べる環境とサポート体制。十文字では1年次から国家試験対策がスタートします。',
+    link: '/support',
+    linkLabel: '国家試験サポート体制を見る',
+  },
+  {
+    id: 'htb5',
+    q: '管理栄養士になったら、どんな場所で働けるの？',
+    a: '病院、学校（栄養教諭）、保育園、行政（保健所など）、食品メーカー、給食会社、スポーツの現場など、活躍の場はさまざま。十文字学園女子大学 食物栄養学科の就職率は100%（2025年3月卒業生実績）です。',
+    link: '/career',
+    linkLabel: '進路・就職実績を見る',
+  },
+]
+---
+
+<div class="lab-page">
+  <div class="container">
+
+    <div class="lab-page__header" data-reveal>
+      <a href="/" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>トップページに戻る</span>
+      </a>
+      <p class="lab-page__eyebrow">高校生のための進路ガイド</p>
+      <h1 class="lab-page__title">
+        管理栄養士に<span style="color: var(--terracotta);">なるには？</span>
+      </h1>
+      <p class="lab-page__subtitle">
+        栄養士との違い、なるための最短ルート、そして「文系でも大丈夫？」まで。管理栄養士を目指す高校生が最初に知っておきたいことを、この1ページにまとめました。
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">「栄養士」と「管理栄養士」は何が違う？</h2>
+        <p class="lab-section__body">
+          似ているようで、実は資格の種類も仕事の範囲も異なります。ざっくり言うと、管理栄養士は栄養士の上位にあたる国家資格です。
+        </p>
+        <div class="sn-evidence-cards">
+          {LICENSE_CARDS.map((card, i) => {
+            const Icon = card.icon
+            return (
+              <div class="sn-evidence-card" data-reveal data-reveal-delay={i > 0 ? String(i) : undefined}>
+                <span
+                  class="sn-evidence-card__dept"
+                  style={`background: color-mix(in srgb, ${card.accent} 12%, transparent); color: ${card.accent};`}
+                >
+                  {card.tag}
+                </span>
+                <div
+                  class="sn-evidence-card__icon"
+                  style={`background: color-mix(in srgb, ${card.accent} 12%, transparent); color: ${card.accent};`}
+                >
+                  <Icon size={28} aria-hidden="true" />
+                </div>
+                <h3 class="sn-evidence-card__title">{card.title}</h3>
+                <p class="sn-evidence-card__body">{card.body}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">管理栄養士になるまでの最短ルート</h2>
+        <p class="lab-section__body">
+          管理栄養士への道はいくつかありますが、いちばんの近道は「4年制の管理栄養士養成課程」に進むこと。栄養士として先に働いてから目指すルート（栄養士養成施設卒業後、1〜3年の実務経験で受験資格）もありますが、養成課程なら実務経験なしで、在学中に国家試験へ挑戦できます。
+        </p>
+        <div class="lab-timeline">
+          {ROUTE_STEPS.map((step, i) => (
+            <div class="lab-timeline__step" data-reveal="left" style={`--reveal-delay: ${i * 0.08}s`}>
+              <div class="lab-timeline__num">{step.num}</div>
+              <div class="lab-timeline__content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="lab-story-feature lab-story-feature--forest" data-reveal>
+        <span class="lab-story-feature__label">
+          <Sparkles size={12} /> 十文字ならではのプラスα
+        </span>
+        <p class="lab-story-feature__lead" style="font-size: 1.1rem; margin: 0; color: var(--ink);">
+          十文字学園女子大学 食物栄養学科は、管理栄養士課程で<strong>第一種衛生管理者</strong>の免許も取れる全国唯一の大学。国家試験対策も1年次から始まり、4年次には模擬試験を年8回実施。「目指すだけ」で終わらせないサポート体制があります。
+        </p>
+      </section>
+
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">よくある不安に答えます</h2>
+        <div class="faq__list">
+          {FAQ_ITEMS.map((item, i) => (
+            <div data-reveal style={`--reveal-delay: ${i * 0.06}s`}>
+              <FaqItem item={item} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="lab-section" data-reveal>
+        <div class="sn-cta-banner">
+          <p class="sn-cta-banner__eyebrow">
+            <GraduationCap size={14} aria-hidden="true" />
+            十文字学園女子大学 食物栄養学科
+          </p>
+          <h2 class="sn-cta-banner__title">
+            「なりたい」を、<br />
+            「なれる」に変える4年間へ。
+          </h2>
+          <div class="sn-cta-banner__buttons">
+            <a href="/voices" class="sn-cta-btn sn-cta-btn--primary">
+              在学生のリアルな声を見る
+              <ChevronRight size={16} aria-hidden="true" />
+            </a>
+            <a href="/support" class="sn-cta-btn sn-cta-btn--secondary">
+              国家試験サポート体制を見る
+              <ChevronRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function initFaqAccordion() {
+    const items = document.querySelectorAll('[data-faq-item]')
+    items.forEach((item) => {
+      const btn = item.querySelector<HTMLElement>('[data-faq-toggle]')
+      const answer = item.querySelector<HTMLElement>('[data-faq-answer]')
+      if (!btn || !answer) return
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.toggle('faq__item--open')
+        btn.setAttribute('aria-expanded', String(isOpen))
+        answer.style.maxHeight = isOpen ? `${answer.scrollHeight}px` : '0px'
+      })
+    })
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFaqAccordion)
+  } else {
+    initFaqAccordion()
+  }
+</script>

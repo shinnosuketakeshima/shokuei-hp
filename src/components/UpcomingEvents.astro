@@ -1,9 +1,10 @@
 ---
 import { ArrowRight, Calendar, Sparkles } from '@lucide/astro'
 
-const EVENTS = [
+const ALL_EVENTS = [
   {
     id: 'event-0719',
+    heldOn: '2026-07-19',
     date: '7月19日（日）',
     time: '10:30〜11:30（10:00開場）',
     tag: '総合型選抜対策にもピッタリ',
@@ -13,6 +14,7 @@ const EVENTS = [
   },
   {
     id: 'event-0726',
+    heldOn: '2026-07-26',
     date: '7月26日（日）',
     time: '10:30〜11:30（10:00開場）',
     tag: '総合型選抜入試"面接対策"にピッタリ',
@@ -21,7 +23,14 @@ const EVENTS = [
     href: '/event-0726',
   },
 ]
+
+// ビルド時点（JST）で開催日を過ぎたイベントは表示しない。全件終了ならセクションごと非表示。
+// 静的サイトのため反映は次回ビルド時（再ビルドなしでは過去イベントが残る点は従来どおり手動運用と同じ）。
+const todayJst = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' })
+const EVENTS = ALL_EVENTS.filter((ev) => ev.heldOn >= todayJst)
 ---
+
+{EVENTS.length > 0 && (
 
 <section
   class="relative overflow-hidden bg-gradient-to-br from-[#C96C51] to-[#9E4D36] py-[clamp(40px,6vw,64px)]"
@@ -44,11 +53,11 @@ const EVENTS = [
         7月開催！管理栄養士について考える探求型イベント
       </h2>
       <p class="mt-2 text-pretty text-[13px] font-light text-white/85">
-        高校生・保護者の方向け／十文字学園女子大学 食物栄養学科 特別企画（全2回）
+        高校生・保護者の方向け／十文字学園女子大学 食物栄養学科 特別企画
       </p>
     </div>
 
-    <div class="grid gap-4 md:grid-cols-2 md:gap-5">
+    <div class={`mx-auto grid gap-4 md:gap-5 ${EVENTS.length > 1 ? 'md:grid-cols-2' : 'max-w-xl'}`}>
       {EVENTS.map((ev, i) => (
         <a
           href={ev.href}
@@ -80,6 +89,7 @@ const EVENTS = [
           </span>
         </a>
       ))}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+)}

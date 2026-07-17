@@ -28,7 +28,10 @@
       "Bash(echo \"home: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/\\)\")",
       "Bash(echo \"features: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/features\\)\")",
       "Bash(echo \"event-0719: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/event-0719\\)\")",
-      "Bash(echo \"event-0726: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/event-0726\\)\")"
+      "Bash(echo \"event-0726: $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/event-0726\\)\")",
+      "Bash(echo \"/ : $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/\\)\")",
+      "Bash(echo \"/how-to-become : $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/how-to-become\\)\")",
+      "Bash(echo \"/features : $\\(curl -s -o /dev/null -w '%{http_code}' https://shokuei-hp.web.app/features\\)\")"
     ]
   }
 }

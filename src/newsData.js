@@ -1,5 +1,14 @@
 export const STATIC_NEWS = [
   {
+    id: 'how-to-become',
+    date: '2026.7.17',
+    tag: 'お知らせ',
+    type: 'info',
+    title: '高校生向け進路ガイド「管理栄養士になるには？」を公開しました',
+    hook: '栄養士との違い、なるための最短ルート、「文系でも大丈夫？」などのよくある不安まで、1ページにまとめて解説。',
+    href: '/how-to-become',
+  },
+  {
     id: 'event-0726',
     date: '2026.7.14',
     tag: 'イベント',
