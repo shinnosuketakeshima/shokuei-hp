@@ -18,15 +18,6 @@ export const STATIC_NEWS = [
     href: '/event-0726',
   },
   {
-    id: 'event-0719',
-    date: '2026.7.14',
-    tag: 'イベント',
-    type: 'event',
-    title: '【7/19開催・無料】企業や社会につなぐ「食べる学び」探求型イベント',
-    hook: '管理栄養士の仕事・活躍・未来を考えるワークショップ。総合型選抜対策にもピッタリな参加無料の特別企画。',
-    href: '/event-0719',
-  },
-  {
     id: 'col4',
     date: '2026.7.7',
     tag: '学生コラム',
@@ -34,15 +25,6 @@ export const STATIC_NEWS = [
     title: '夢を掴む夏の「寺子屋」へ。国試模試に挑む食栄生たちの熱い自習室',
     hook: '夏の特別集中講座「寺子屋」の選抜を兼ねた国試模試が目前。新しくなった社会連携センター「ここプラス」に満ちる熱気を学生記者がレポート。',
     href: '/student-column-4',
-  },
-  {
-    id: 'miraitaikenday-2026',
-    date: '2026.6.21',
-    tag: 'イベント',
-    type: 'info',
-    title: 'ひとつのトマトが、３つの未来を開く─未来体験Day 6月21日開催',
-    description: '食物栄養・健康栄養・食品開発の3学科合同イベント。高校生が同じ食材「トマト」から3つの専門分野を体験。',
-    href: 'https://www.jumonji-u.ac.jp/info/jumonji_miraitaikenday/',
   },
   {
     id: 'takeshima-column-1',
@@ -79,15 +61,6 @@ export const STATIC_NEWS = [
     title: 'チーズに"王様"と"女王様"がいた！骨の衝撃映像と食育論セミナーレポート',
     hook: 'チーズの"王様"と"女王様"って何のこと？学生記者が体験した特別講義のリアル。',
     href: '/student-column-3',
-  },
-  {
-    id: 'event-0531',
-    date: '2026.5.18',
-    tag: 'イベント',
-    type: 'event',
-    title: '【5/31開催・無料】管理栄養士について考える探求型イベント「食と栄養で未来をデザイン」',
-    hook: '管理栄養士のリアルな仕事や大学での学びを体験できる、参加無料の特別企画。',
-    href: '/event-0531',
   },
   {
     id: 'col1',
