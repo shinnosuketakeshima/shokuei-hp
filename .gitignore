@@ -34,3 +34,7 @@ test-results/
 docs/migration-baseline/shots/
 dist-astro/
 .astro/
+
+# Git worktrees (isolated implementation workspaces)
+.worktrees/
+.superpowers/
