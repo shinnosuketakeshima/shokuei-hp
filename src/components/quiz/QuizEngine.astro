@@ -1,0 +1,153 @@
+---
+// src/components/quiz/QuizEngine.astro
+interface QuizQuestion {
+  sec: string
+  q: string
+  opts: string[]
+  ans: number
+  exp: string[]
+  note?: string
+}
+
+interface Props {
+  questions: QuizQuestion[]
+}
+
+const { questions } = Astro.props
+const MARK = ['(1)', '(2)', '(3)', '(4)', '(5)']
+
+let currentSec = ''
+const rows = questions.map((item, i) => {
+  const isNewSection = item.sec !== currentSec
+  if (isNewSection) currentSec = item.sec
+  const sectionCount = questions.filter((q) => q.sec === item.sec).length
+  return { item, index: i, isNewSection, sectionCount }
+})
+---
+
+<div class="quiz-scorebar">
+  <span>解答 <span class="quiz-scorebar__num" data-quiz-answered>0</span> / {questions.length}</span>
+  <span>正答 <span class="quiz-scorebar__num" data-quiz-correct>0</span></span>
+  <span>正答率 <span class="quiz-scorebar__num" data-quiz-rate>－</span></span>
+  <button type="button" class="quiz-scorebar__reset" data-quiz-reset>やり直す</button>
+</div>
+
+{rows.map(({ item, index, isNewSection, sectionCount }) => (
+  <Fragment>
+    {isNewSection && (
+      <h2 class="lab-section__title">{item.sec}（{sectionCount}問）</h2>
+    )}
+    <div class="quiz-card" data-quiz-card>
+      <div class="quiz-card__head">
+        <span class="quiz-card__no">問{index + 1}</span>
+        {item.q}
+      </div>
+      <ul class="quiz-options">
+        {item.opts.map((opt, j) => (
+          <li>
+            <button
+              type="button"
+              class="quiz-opt"
+              data-index={j + 1}
+              data-correct={j + 1 === item.ans ? 'true' : 'false'}
+            >
+              <span class="quiz-opt__mark">{MARK[j]}</span>
+              <span class="quiz-opt__text">{opt}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+      <button type="button" class="quiz-reveal-btn">解答・解説を見る</button>
+      <div class="quiz-exp" style="display: none;">
+        <p class="quiz-exp__answer">正解：{MARK[item.ans - 1]}</p>
+        <ul>
+          {item.exp.map((e, j) => (
+            <li class={j + 1 === item.ans ? 'quiz-exp__item--hit' : ''}>{MARK[j]} {e}</li>
+          ))}
+        </ul>
+        {item.note && <p class="quiz-exp__note">補足：{item.note}</p>}
+      </div>
+    </div>
+  </Fragment>
+))}
+
+<script>
+  function initQuiz() {
+    const cards = document.querySelectorAll<HTMLElement>('[data-quiz-card]')
+    const answeredEl = document.querySelector<HTMLElement>('[data-quiz-answered]')
+    const correctEl = document.querySelector<HTMLElement>('[data-quiz-correct]')
+    const rateEl = document.querySelector<HTMLElement>('[data-quiz-rate]')
+    let answered = 0
+    let correct = 0
+
+    function updateScore() {
+      if (answeredEl) answeredEl.textContent = String(answered)
+      if (correctEl) correctEl.textContent = String(correct)
+      if (rateEl) rateEl.textContent = answered ? `${Math.round((correct / answered) * 100)}%` : '－'
+    }
+
+    function finish(card: HTMLElement, picked: number) {
+      if (card.dataset.done) return
+      card.dataset.done = '1'
+
+      let correctIndex = -1
+      card.querySelectorAll<HTMLElement>('.quiz-opt').forEach((opt) => {
+        const idx = Number(opt.dataset.index)
+        const isCorrect = opt.dataset.correct === 'true'
+        if (isCorrect) correctIndex = idx
+        opt.setAttribute('disabled', 'true')
+        if (isCorrect) {
+          opt.classList.add('quiz-opt--correct')
+        } else if (idx === picked) {
+          opt.classList.add('quiz-opt--wrong')
+        }
+      })
+
+      const revealBtn = card.querySelector<HTMLElement>('.quiz-reveal-btn')
+      const exp = card.querySelector<HTMLElement>('.quiz-exp')
+      if (revealBtn) revealBtn.style.display = 'none'
+      if (exp) exp.style.display = ''
+
+      if (picked > 0) {
+        answered++
+        if (picked === correctIndex) correct++
+        updateScore()
+      }
+    }
+
+    cards.forEach((card) => {
+      card.querySelectorAll<HTMLElement>('.quiz-opt').forEach((opt) => {
+        opt.addEventListener('click', () => finish(card, Number(opt.dataset.index)))
+      })
+      const revealBtn = card.querySelector<HTMLElement>('.quiz-reveal-btn')
+      if (revealBtn) revealBtn.addEventListener('click', () => finish(card, 0))
+    })
+
+    const resetBtn = document.querySelector<HTMLElement>('[data-quiz-reset]')
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        answered = 0
+        correct = 0
+        updateScore()
+        cards.forEach((card) => {
+          delete card.dataset.done
+          card.querySelectorAll<HTMLElement>('.quiz-opt').forEach((opt) => {
+            opt.removeAttribute('disabled')
+            opt.classList.remove('quiz-opt--correct', 'quiz-opt--wrong')
+          })
+          const revealBtn = card.querySelector<HTMLElement>('.quiz-reveal-btn')
+          const exp = card.querySelector<HTMLElement>('.quiz-exp')
+          if (revealBtn) revealBtn.style.display = ''
+          if (exp) exp.style.display = 'none'
+        })
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      })
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initQuiz)
+  } else {
+    initQuiz()
+  }
+</script>
