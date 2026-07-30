@@ -1,0 +1,23 @@
+---
+// src/components/StudyAppliedNutrition.astro
+import { ArrowLeft } from '@lucide/astro'
+import QuizEngine from './quiz/QuizEngine.astro'
+import { QUIZ } from '../data/quizzes/appliedNutrition.js'
+---
+
+<div class="lab-page">
+  <div class="container">
+    <div class="lab-page__header" data-reveal>
+      <a href="/study" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>学習教材一覧に戻る</span>
+      </a>
+      <p class="lab-page__eyebrow">在学生向け / Study</p>
+      <h1 class="lab-page__title">{QUIZ.title}</h1>
+      <p class="lab-page__subtitle">{QUIZ.description}</p>
+    </div>
+    <div class="lab-page__content">
+      <QuizEngine questions={QUIZ.questions} />
+    </div>
+  </div>
+</div>
