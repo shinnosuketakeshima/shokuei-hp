@@ -95,5 +95,20 @@ const TitleTag = summary ? 'h2' : 'h1'
         </div>
       </div>
     )}
+
+    {!summary && (
+      <div class="support__report-banner" data-reveal="scale">
+        <div class="support__report-banner-inner">
+          <div>
+            <p class="support__report-banner-label">学習教材</p>
+            <p class="support__report-banner-title">応用栄養学 演習問題（20問）を解いてみる</p>
+            <p class="support__report-banner-sub">選択肢をクリックすると即採点・解説が表示される自己採点クイズです</p>
+          </div>
+          <a href="/study" class="support__report-banner-link">
+            演習問題を見る <ArrowRight size={14} />
+          </a>
+        </div>
+      </div>
+    )}
   </div>
 </section>
