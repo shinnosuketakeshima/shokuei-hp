@@ -82,7 +82,7 @@ Firestore `date` values can be a `Timestamp`, `Date`, or string — `formatNewsD
 
 ### Component conventions
 
-- Astro components live under `src/components/*.astro`, pages under `src/pages/*.astro`. No component subdirectories, no component-specific CSS files.
+- Astro components live under `src/components/*.astro`, pages under `src/pages/*.astro`. No component subdirectories, no component-specific CSS files — except `src/components/quiz/`, which groups the reusable `QuizEngine` and any future quiz-related components together.
 - Lab pages share the `.lab-page` / `.lab-section` CSS classes. `LAB_STORIES` card entries (in `Labs.astro`) need `storyTitle`, `hook`, `category` (`regional` | `science` | `welfare`), `href`, `isExternal`.
 - External links: `target="_blank" rel="noopener noreferrer"`. Internal links: plain `<a href="...">` (no client-side router).
 - Icons: `@lucide/astro` (not `lucide-react`).

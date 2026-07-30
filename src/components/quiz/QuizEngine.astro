@@ -14,6 +14,19 @@ interface Props {
 }
 
 const { questions } = Astro.props
+
+questions.forEach((item, i) => {
+  if (item.opts.length !== 5) {
+    throw new Error(`QuizEngine: 問${i + 1} の opts は5件である必要があります（実際: ${item.opts.length}件）`)
+  }
+  if (item.exp.length !== item.opts.length) {
+    throw new Error(`QuizEngine: 問${i + 1} の exp は opts と同じ件数である必要があります（opts: ${item.opts.length}件, exp: ${item.exp.length}件）`)
+  }
+  if (item.ans < 1 || item.ans > item.opts.length) {
+    throw new Error(`QuizEngine: 問${i + 1} の ans が範囲外です（ans: ${item.ans}, opts: ${item.opts.length}件）`)
+  }
+})
+
 const MARK = ['(1)', '(2)', '(3)', '(4)', '(5)']
 
 let currentSec = ''
@@ -73,6 +86,7 @@ const rows = questions.map((item, i) => {
 
 <script>
   function initQuiz() {
+    // 1ページに1つの QuizEngine を前提とする（複数配置するとスコアが混ざる）
     const cards = document.querySelectorAll<HTMLElement>('[data-quiz-card]')
     const answeredEl = document.querySelector<HTMLElement>('[data-quiz-answered]')
     const correctEl = document.querySelector<HTMLElement>('[data-quiz-correct]')

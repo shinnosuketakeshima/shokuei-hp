@@ -200,7 +200,7 @@ export const PAGE_META = {
   '/study-applied-nutrition': {
     title: '応用栄養学 演習問題（20問）| 学習教材 | 十文字学園女子大学 食物栄養学科',
     description: '管理栄養士国家試験「応用栄養学」の自己採点式演習問題。環境と栄養、身体活動・運動、スポーツ栄養、災害時の栄養管理の4分野・全20問。選択肢をクリックすると即採点・解説が表示されます。',
-    ogType: 'article',
+    ogType: 'website',
   },
   '/study': {
     title: '学習教材 | 十文字学園女子大学 食物栄養学科',

@@ -5720,7 +5720,7 @@ html.js [data-reveal].is-visible {
    ============================================= */
 .quiz-scorebar {
   position: sticky;
-  top: 0;
+  top: 100px;
   z-index: 10;
   display: flex;
   align-items: center;
