@@ -1,0 +1,47 @@
+---
+// src/components/Study.astro
+import { ArrowLeft, BookOpen } from '@lucide/astro'
+import { QUIZ as APPLIED_NUTRITION_QUIZ } from '../data/quizzes/appliedNutrition.js'
+
+const QUIZZES = [
+  {
+    subject: '応用栄養学',
+    href: '/study-applied-nutrition',
+    quiz: APPLIED_NUTRITION_QUIZ,
+  },
+]
+---
+
+<div class="lab-page">
+  <div class="container">
+    <div class="lab-page__header" data-reveal>
+      <a href="/" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>トップページに戻る</span>
+      </a>
+      <p class="lab-page__eyebrow">在学生向け / Study</p>
+      <h1 class="lab-page__title">学習教材</h1>
+      <p class="lab-page__subtitle">
+        国家試験対策の自己採点クイズなど、在学生が自習に使える教材をまとめています。
+      </p>
+    </div>
+
+    <div class="lab-page__content">
+      <div class="columns-grid">
+        {QUIZZES.map(({ subject, href, quiz }) => (
+          <a href={href} class="column-card">
+            <div class="column-card__top">
+              <span class="column-card__badge column-card__badge--student">
+                <BookOpen size={13} aria-hidden="true" />
+                {subject}
+              </span>
+              <span class="column-card__date">全{quiz.questions.length}問</span>
+            </div>
+            <h2 class="column-card__title">{quiz.title}</h2>
+            <p class="column-card__desc">{quiz.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
