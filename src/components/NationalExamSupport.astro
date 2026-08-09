@@ -28,7 +28,7 @@ const EXAM_SUBJECTS = [
   { name: '社会・環境と健康', courses: '公衆衛生学、健康管理概論 など' },
   { name: '人体の構造と機能及び疾病の成り立ち', courses: '解剖生理学、病態生理学 など' },
   { name: '食べ物と健康', courses: '食品学I・Ⅱ、食品衛生学 など' },
-  { name: '基礎栄養学', courses: '基礎栄養学 など' },
+  { name: '基礎栄養学', courses: '' },
   { name: '応用栄養学', courses: '応用栄養学I〜Ⅲ など' },
   { name: '栄養教育論', courses: '栄養教育論I・Ⅱ など' },
   { name: '臨床栄養学', courses: '臨床栄養学I〜Ⅳ など' },
@@ -49,7 +49,7 @@ const ROADMAP = [
     <div class="container">
       <div class="kr-header" data-reveal>
         <p class="kr-header__eyebrow">国試対策 / Exam Support</p>
-        <h1 class="kr-header__title">大学の支援と学生の取り組みで<br />合格を目指します</h1>
+        <h1 class="kr-header__title">管理栄養士国家試験<br />大学の支援と学生の取り組みで合格を目指します</h1>
       </div>
 
       <section class="kr-section" data-reveal>
@@ -86,7 +86,7 @@ const ROADMAP = [
 
         <ul class="kr-list">
           {EXAM_SUBJECTS.map((s) => (
-            <li><strong>{s.name}</strong>（{s.courses}）</li>
+            <li><strong>{s.name}</strong>{s.courses && <>（{s.courses}）</>}</li>
           ))}
         </ul>
 
