@@ -1,5 +1,6 @@
 ---
 import { ArrowLeft, ShoppingCart, Users, Zap } from '@lucide/astro'
+import practiceFoodSciencePoster from '../assets/tabeken/practice-food-science-poster.png'
 
 const STORIES = [
   {
@@ -116,6 +117,16 @@ const LAB_INFO = [
           ))}
         </div>
       </section>
+
+      <div class="column-figure" data-reveal>
+        <img
+          src={practiceFoodSciencePoster.src}
+          alt="「みんなの実践食事学」紹介ポスター。國井ゼミ独自の取り組みとして、食べ物の特徴と食べかたを知る・心と身体と腸内環境の仕組みを知る・学びを実生活につなぐ、の3ステップを紹介"
+          loading="lazy"
+          decoding="async"
+        />
+        <p class="column-figure__caption">▲ 「みんなの実践食事学」紹介ポスター（2026年版）。「食べる学び」の選択肢を増やし、可能性を広げる取り組みとして展開中。</p>
+      </div>
 
       {/* Recent Achievements Timeline */}
       <section class="lab-section" data-reveal>
