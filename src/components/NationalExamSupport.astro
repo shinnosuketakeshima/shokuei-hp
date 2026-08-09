@@ -9,39 +9,118 @@ const { summary = false } = Astro.props
 const ITEMS = [
   {
     num: '01',
-    title: '1・2年次からの早期意識づけ',
-    body: '「4年生からでは遅い」という方針のもと、入学直後から国家試験を意識した学習習慣を形成。基礎固めと意識づけを早期に徹底します。',
+    title: '対策開始がとにかく早い',
+    body: '本学では、常に国家試験を意識した授業を実施し、2年生から模擬試験も始まります。入学前には入学者対象イベント「十文字デビューDay」を実施し、勉強法についてもしっかりアドバイス。入学前から国家試験対策を始めることができます。',
   },
   {
     num: '02',
-    title: '3年次：夏・冬の模擬試験',
-    body: '3年次の夏・冬に模擬試験を実施。学習の中間チェックポイントとして弱点を可視化し、4年次に向けた対策の方向性を定めます。',
+    title: '集中講座で苦手分野を克服',
+    body: '4年生の夏休みに夏期講習を実施。午前中から夕方まで9日間、集中的に勉強することで苦手分野を克服し、合格に近づきます。',
   },
   {
     num: '03',
-    title: '4年次：模擬試験を年8回実施',
-    body: '4年次には模擬試験を年8回実施。本番さながらの環境で繰り返し演習し、得点力と時間管理の精度を高めます。',
-  },
-  {
-    num: '04',
-    title: '130点突破を全員の目標に',
-    body: '4年7月の模試で「130点」を合否の分岐点として明確に設定。具体的な数値目標が学習意欲と達成感を生み出します。',
-  },
-  {
-    num: '05',
-    title: '外部講師による特別講義',
-    body: '各教員による対策講座に加え、外部の専門講師による特別講義も実施。多様な視点で試験範囲を深く理解します。',
-  },
-  {
-    num: '06',
-    title: 'e-Learningで自学自習を支援',
-    body: 'e-Learningシステムを活用し、自分のペースで反復学習が可能。苦手分野の集中対策や隙間時間の有効活用を支援します。',
+    title: '十文字オリジナル問題集',
+    body: '各分野の教員が協力し、オリジナル問題集を作成。独自の問題集を利用することで十文字に特化したきめ細やかな対策が可能です。必要に応じて、各教員が質問対応や独自の対策講座も実施します。',
   },
 ]
 
-const displayItems = summary ? ITEMS.slice(0, 3) : ITEMS
-const TitleTag = summary ? 'h2' : 'h1'
+const EXAM_SUBJECTS = [
+  { name: '社会・環境と健康', courses: '公衆衛生学、健康管理概論 など' },
+  { name: '人体の構造と機能及び疾病の成り立ち', courses: '解剖生理学、病態生理学 など' },
+  { name: '食べ物と健康', courses: '食品学I・Ⅱ、食品衛生学 など' },
+  { name: '基礎栄養学', courses: '' },
+  { name: '応用栄養学', courses: '応用栄養学I〜Ⅲ など' },
+  { name: '栄養教育論', courses: '栄養教育論I・Ⅱ など' },
+  { name: '臨床栄養学', courses: '臨床栄養学I〜Ⅳ など' },
+  { name: '公衆栄養学', courses: '公衆栄養学I・Ⅱ など' },
+  { name: '給食経営管理論', courses: '給食経営管理論I・Ⅱ など' },
+]
+
+const ROADMAP = [
+  { period: '入学前', support: '勉強方法のガイダンス', student: '高校までの学習を振り返る' },
+  { period: '1・2年次', support: '授業による基礎力の定着、定期試験による到達度確認', student: '授業の復習を習慣化する' },
+  { period: '3年次', support: '模試や外部講座の実施、苦手分野の確認', student: '模試の復習、学修計画の実行' },
+  { period: '4年次', support: '模試や外部講座の実施、夏期講習や寺子屋の実施', student: '苦手分野の克服、試験に備える' },
+]
 ---
+
+{!summary && (
+  <div class="kr-page">
+    <div class="container">
+      <div class="kr-header" data-reveal>
+        <p class="kr-header__eyebrow">国試対策 / Exam Support</p>
+        <h1 class="kr-header__title">管理栄養士国家試験<br />大学の支援と学生の取り組みで合格を目指します</h1>
+      </div>
+
+      <section class="kr-section" data-reveal>
+        <div class="kr-section__label">Section 01</div>
+        <h2 class="kr-section__title">管理栄養士国家試験の合格率</h2>
+        <p class="kr-body">管理栄養士になるには、管理栄養士国家試験に合格する必要があります。試験は年々難化傾向にあり、4年生になってから対策を始めても間に合いません。</p>
+
+        <div class="kr-stats-row">
+          <div class="kr-stat">
+            <div class="kr-stat__num">83.9<span class="kr-stat__unit">%</span></div>
+            <div class="kr-stat__label">本学 合格率<br />（第38・39回平均）</div>
+          </div>
+          <div class="kr-stat kr-stat--highlight">
+            <div class="kr-stat__num">72.7<span class="kr-stat__unit">%</span></div>
+            <div class="kr-stat__label">本学 合格率<br />（第40回）</div>
+          </div>
+          <div class="kr-stat">
+            <div class="kr-stat__num kr-stat__num--muted">79.4<span class="kr-stat__unit">%</span></div>
+            <div class="kr-stat__label">全国平均<br />（第40回）</div>
+          </div>
+        </div>
+
+        <p class="kr-body">全国平均も5年間で90%台から70%台後半まで低下しており、試験全体が難化傾向にあります。夢を実現するために、入学した今から勉強習慣をつけておきましょう。</p>
+
+        <a href="/kokushi-report" class="kr-link-btn">
+          国試レポートを読む <ArrowRight size={14} />
+        </a>
+      </section>
+
+      <section class="kr-section" data-reveal>
+        <div class="kr-section__label">Section 02</div>
+        <h2 class="kr-section__title">管理栄養士国家試験の内容</h2>
+        <p class="kr-body">試験の内容は以下のように多岐に渡ります。そのため、1年生からの対策が必要となります。</p>
+
+        <ul class="kr-list">
+          {EXAM_SUBJECTS.map((s) => (
+            <li><strong>{s.name}</strong>{s.courses && <>（{s.courses}）</>}</li>
+          ))}
+        </ul>
+
+        <p class="kr-body kr-body--emphasis">管理栄養士国家試験は200問（200点満点）出題され、合格するためには120点以上の取得が必要です。</p>
+      </section>
+
+      <section class="kr-section" data-reveal>
+        <div class="kr-section__label">Section 03</div>
+        <h2 class="kr-section__title">大学の授業が、一番の国家試験対策です</h2>
+        <p class="kr-body">国家試験の内容は幅広いですが、その内容は大学の授業で1つずつ学びます。つまり、授業で学んだ内容を復習し、知識を積み重ねることが、国家試験対策の第一歩となります。</p>
+
+        <ul class="kr-list">
+          <li>授業で学ぶ</li>
+          <li>復習する</li>
+          <li>定期試験で確認する</li>
+          <li>苦手分野を学び直す</li>
+        </ul>
+
+        <p class="kr-body">例えば、1年生で習う食品学・食品衛生学は「食べ物と健康」に、解剖生理学は「人体の構造と機能及び疾病の成り立ち」に、基礎栄養学は「基礎栄養学」に、そのままつながっています。</p>
+        <p class="kr-body">そのため本学では、授業で学んだ内容を振り返る習慣を身につけるこのサイクルを大切にしています。</p>
+      </section>
+
+      <section class="kr-section" data-reveal>
+        <div class="kr-section__label">Section 04</div>
+        <h2 class="kr-section__title">4年間の伴走ロードマップ</h2>
+        <p class="kr-body">入学前から4年次まで、段階的に国家試験対策を行います。大学の支援と学生自身の取り組みを組み合わせ、合格に必要な力を育てます。合格には学生自身の継続的な学習が欠かせません。十文字は、その努力を4年間支えます。</p>
+
+        {ROADMAP.map((r) => (
+          <p class="kr-body"><strong>{r.period}</strong> — 大学の支援：{r.support}／学生の取り組み：{r.student}</p>
+        ))}
+      </section>
+    </div>
+  </div>
+)}
 
 <section class="support" id="support">
   <div class="support__orb support__orb--1" aria-hidden="true"></div>
@@ -49,22 +128,22 @@ const TitleTag = summary ? 'h2' : 'h1'
 
   <div class="support__inner container">
     <div data-reveal>
-      <p class="eyebrow">国試対策 / Exam Support</p>
-      <TitleTag class="section-title">
+      {summary && <p class="eyebrow">国試対策 / Exam Support</p>}
+      <h2 class="section-title">
         {summary ? (
-          <>合格率を支える<br />6段階のサポートプログラム</>
+          <>大学の支援と学生の取り組みで<br />合格を目指す3つのサポート</>
         ) : (
-          <>管理栄養士国家試験<br />合格を支える6段階のサポートプログラム</>
+          <>管理栄養士国家試験<br />合格を支える十文字の3つの支援</>
         )}
-      </TitleTag>
+      </h2>
       <p class="support__subtitle">
-        1年次からの早期意識づけに始まり、4年次は年8回の模擬試験で本番力を養成。
-        多角的なサポートで、全員合格をめざします。
+        入学前から国家試験を意識した学びを重ね、夏の集中講座と十文字オリジナル問題集で苦手を克服。
+        大学の支援と学生自身の取り組みを組み合わせ、全員合格をめざします。
       </p>
     </div>
 
     <div class="support__grid">
-      {displayItems.map((item, i) => (
+      {ITEMS.map((item, i) => (
         <div class="support-item" data-reveal style={`--reveal-delay: ${(i % 3) * 0.1}s`}>
           <p class="support-item__num">{item.num}</p>
           <h3 class="support-item__title">{item.title}</h3>
@@ -72,6 +151,14 @@ const TitleTag = summary ? 'h2' : 'h1'
         </div>
       ))}
     </div>
+
+    {!summary && (
+      <div style="margin-top: 48px; text-align: center" data-reveal="scale">
+        <p class="support__subtitle" style="margin: 0 auto; text-align: center; max-width: 560px;">
+          国家試験合格には、学生自身の継続的な学習が欠かせません。合格をめざして努力する学生を、十文字は一人にしません。
+        </p>
+      </div>
+    )}
 
     {summary && (
       <div style="margin-top: 48px; text-align: center">

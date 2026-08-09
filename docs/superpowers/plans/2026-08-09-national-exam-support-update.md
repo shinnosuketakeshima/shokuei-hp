@@ -4,7 +4,9 @@
 
 **Goal:** `docs/国家試験対策.pptx`（食物栄養学科の新しい国試対策フレーム）の内容を反映し、`/support`ページ・ホーム要約・関連ページの記述を最新化する。
 
-**Architecture:** `NationalExamSupport.astro`を「Part A: 新規の白背景解説パート（合格率・試験内容・学習サイクル・4年間ロードマップ、`/support`のみ）」＋「Part B: 既存の緑背景セクションを3項目に再編（ホーム要約と`/support`共通）」の2部構成に再編する。既存の`KokushiReport.astro`が使う`kr-*`系CSSクラスをPart Aで流用し、新規CSSは追加しない。あわせて、同じ数値・施策（130点目標／年8回模試／e-Learning／6段階）を参照している`FAQ.astro`・`StatsBar.astro`・`HowToBecome.astro`・`pageMeta.js`を整合させる。
+**Architecture:** `NationalExamSupport.astro`を「Part A: 新規の白背景解説パート（合格率・試験内容・学習サイクル・4年間ロードマップ、`/support`のみ）」＋「Part B: 既存の緑背景セクションを3項目に再編（ホーム要約と`/support`共通）」の2部構成に再編する。既存の`KokushiReport.astro`が使う`kr-*`系CSSクラスをPart Aで流用し、新規CSSは追加しない。あわせて、同じ数値・施策（130点目標／年8回模試／e-Learning／6段階）を参照している`FAQ.astro`・`StatsBar.astro`・`HowToBecome.astro`・`pageMeta.js`・`src/lib/seo.js`（構造化データ）を整合させる。
+
+**追記（Task 1完了後に発覚）:** `src/lib/seo.js`に、当初のファイル調査（`.astro`ファイルのみgrep）で見落としていた、`/support`・`/faq`・`/`向けのJSON-LD構造化データ（FAQPageのQ&A、CollegeOrUniversityの説明文）に同じ旧表現（年8回・130点・6段階・e-Learning）がハードコードされていることが判明した。ユーザーに確認のうえ、Task 6として追加し、既存の「最終確認」タスクをTask 7に繰り下げた。
 
 **Tech Stack:** Astro（`.astro`コンポーネント、フロントマターJS）、既存の`src/index.css`（新規CSS追加なし）。このリポジトリに自動テストランナーは存在しないため、各タスクの検証は`npx astro check`（型・ビルドエラー検出）＋ `npx astro dev`での目視確認で行う。
 
@@ -16,6 +18,7 @@
 - 新規CSSクラスの追加は行わない。既存の`kr-*`系（`KokushiReport.astro`が使用）・`support__*`系クラスの流用で完結させる。
 - pptxの画像素材は使用しない（テキスト内容のみ反映）。
 - 全コード内テキストは日本語。既存の命名規則（英語識別子・日本語文字列）に従う。
+- `src/lib/seo.js`冒頭の「Phase 6でベースラインとdeep-equal検証するため、内容・順序を変えないこと」というコメントは、React→Astro移行（2026-07-06カットオーバー、本番稼働確認済み）の検証用であり役割を終えている（ユーザー確認済み）。このplanの範囲でこのファイルの該当箇所を更新してよい。
 
 ---
 
@@ -655,36 +658,227 @@ EOF
 
 ---
 
-### Task 6: 最終確認（ビルド・全ページ目視QA・数値突合）
+### Task 6: src/lib/seo.js の構造化データ（JSON-LD）を更新する
+
+**Files:**
+- Modify: `src/lib/seo.js:1-2`（ファイル先頭コメント）
+- Modify: `src/lib/seo.js`（`/`用`buildCustomJsonLd`内、`mainEntity`の1問目の`text`。現在の内容の行番号は`grep -n "6段階サポートが特徴です" src/lib/seo.js`で確認すること）
+- Modify: `src/lib/seo.js`（`if (pathname === '/support')`ブロック全体）
+- Modify: `src/lib/seo.js`（`if (pathname === '/faq')`ブロック内、国試対策関連の3問）
+
+**Interfaces:**
+- Consumes: なし
+- Produces: なし（他タスクに影響しない独立した変更）
+
+**背景:** Task 1実装後のビルド検証で、`src/lib/seo.js`に`/support`・`/faq`・`/`向けのJSON-LD構造化データが別途ハードコードされており、`NationalExamSupport.astro`・`FAQ.astro`から削除した旧表現（年8回模試・130点突破・6段階・e-Learning）がそのまま残っていることが判明した。ユーザー確認済みで、このタスクで整合させる。ファイル先頭の「内容・順序を変えないこと」というコメントはReact→Astro移行検証用で役割を終えているため、あわせて更新する。
+
+- [ ] **Step 1: ファイル先頭のコメントを更新する**
+
+`old_string`:
+```js
+// JSON-LD ビルダー（旧 App.jsx の customJsonLd 分岐と旧 SEO.jsx の逐語移植）。
+// Phase 6 でベースラインと deep-equal 検証するため、内容・順序を変えないこと。
+```
+
+`new_string`:
+```js
+// JSON-LD ビルダー（旧 App.jsx の customJsonLd 分岐と旧 SEO.jsx の逐語移植）。
+// 移行完了後は通常のコンテンツファイルと同様に更新してよい。
+```
+
+- [ ] **Step 2: `/`（トップページ）の説明文から「6段階サポート」表現を外す**
+
+`old_string`（`pathname === '/'`ブロック内、1問目の`acceptedAnswer.text`）:
+```js
+            text: '埼玉県新座市にある十文字学園女子大学 食物栄養学科（人間生活学部）は、管理栄養士・栄養士を育成する4年制の学科です。定員78名の少人数教育、全国唯一の管理栄養士＋第一種衛生管理者ダブルライセンス取得、国家試験全員合格を目指す6段階サポートが特徴です。',
+```
+
+`new_string`:
+```js
+            text: '埼玉県新座市にある十文字学園女子大学 食物栄養学科（人間生活学部）は、管理栄養士・栄養士を育成する4年制の学科です。定員78名の少人数教育、全国唯一の管理栄養士＋第一種衛生管理者ダブルライセンス取得、入学前から4年間続く国家試験対策サポートが特徴です。',
+```
+
+- [ ] **Step 3: `/support`のFAQPageブロックを新しい4問に置き換える**
+
+`old_string`（`if (pathname === '/support') {` から、その閉じの `}` まで全体。6問）:
+```js
+  if (pathname === '/support') {
+    return {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '管理栄養士国家試験の合格率はどのくらいですか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '1年次からの早期意識づけ、4年次の年8回模擬試験、外部講師による特別講義など6段階のサポート体制で国家試験合格をめざします。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '国家試験対策はいつから始まりますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '「4年生からでは遅い」という方針のもと、入学直後の1年次から学習習慣の形成と基礎固めを開始します。3年次の夏・冬に模擬試験を実施し、4年次は年8回の模擬試験で本番力を高めます。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '4年次の模擬試験は何回ありますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '4年次には年8回の模擬試験を実施します。本番さながらの環境で繰り返し演習し、得点力と時間管理の精度を高めます。4年7月の模試で「130点突破」を全員の目標として明確に設定しています。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'e-Learningはどのように活用できますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'e-Learningシステムにより、自分のペースで反復学習が可能です。苦手分野の集中対策や隙間時間の有効活用に役立ちます。授業外での自学自習をシステムが支援します。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '外部講師による特別講義はありますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'はい。各教員による対策講座に加え、外部の専門講師による特別講義も実施しています。多様な視点で試験範囲を深く理解することができます。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '国家試験に向けて個別サポートはありますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '少人数教育（定員78名）の強みを活かし、教員が一人ひとりの学習状況を把握して個別にサポートします。4年次には就職活動・国家試験対策・卒業研究の三本柱を、教員が個別フォローしながら進めます。',
+          },
+        },
+      ],
+    }
+  }
+```
+
+`new_string`（4問。「e-Learning」「外部講師特別講義」の2問は、該当機能をページから削除したため構造化データからも削除する）:
+```js
+  if (pathname === '/support') {
+    return {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '管理栄養士国家試験の合格率はどのくらいですか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '本学の合格率は第38・39回平均83.9%、直近の第40回は72.7%（全国平均79.4%）でした。管理栄養士国家試験は年々難化傾向にあり、詳しい分析と今後の対策は「国試レポート」で公開しています。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '国家試験対策はいつから始まりますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '「4年生からでは遅い」という方針のもと、入学前の「十文字デビューDay」から国家試験対策が始まります。2年次から模擬試験を実施し、大学の授業と復習のサイクルを通じて4年間かけて力を伸ばします。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '国家試験対策で十文字ならではの取り組みは何ですか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '各分野の教員が作成する十文字オリジナル問題集で、きめ細やかな対策が可能です。4年次の夏休みには9日間の夏期講習を実施し、苦手分野を集中的に克服します。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '国家試験に向けて個別サポートはありますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '少人数教育（定員78名）の強みを活かし、教員が一人ひとりの学習状況を把握して個別にサポートします。4年次には就職活動・国家試験対策・卒業研究の三本柱を、教員が個別フォローしながら進めます。',
+          },
+        },
+      ],
+    }
+  }
+```
+
+- [ ] **Step 4: `/faq`のFAQPageブロック内、国試対策関連の3問を更新する**
+
+`/faq`用の`mainEntity`配列は1行1問の書式（他の学科カテゴリの問と同じ配列に混在している）。国試対策に該当する3問だけを置き換える。それ以外の行（就職・資格・カリキュラム等）は変更しない。
+
+`old_string`:
+```js
+        { '@type': 'Question', name: '管理栄養士国家試験の合格率はどのくらいですか？', acceptedAnswer: { '@type': 'Answer', text: '1年次からの早期意識づけ、4年次の年8回模擬試験、外部講師による特別講義など6段階のサポート体制で国家試験合格をめざします。' } },
+        { '@type': 'Question', name: '国家試験対策はいつから始まりますか？', acceptedAnswer: { '@type': 'Answer', text: '「4年生からでは遅い」という方針のもと、入学直後の1年次から学習習慣の形成と基礎固めを開始します。3年次の夏・冬に模擬試験を実施し、4年次は年8回の模擬試験で本番力を高めます。' } },
+        { '@type': 'Question', name: '4年次の模擬試験は何回ありますか？', acceptedAnswer: { '@type': 'Answer', text: '4年次には年8回の模擬試験を実施します。本番さながらの環境で繰り返し演習し、得点力と時間管理の精度を高めます。4年7月の模試で「130点突破」を全員の目標として明確に設定しています。' } },
+```
+
+`new_string`:
+```js
+        { '@type': 'Question', name: '管理栄養士国家試験の合格率はどのくらいですか？', acceptedAnswer: { '@type': 'Answer', text: '本学の合格率は第38・39回平均83.9%、直近の第40回は72.7%（全国平均79.4%）でした。管理栄養士国家試験は年々難化傾向にあり、詳しい分析と今後の対策は「国試レポート」で公開しています。' } },
+        { '@type': 'Question', name: '国家試験対策はいつから始まりますか？', acceptedAnswer: { '@type': 'Answer', text: '「4年生からでは遅い」という方針のもと、入学前の「十文字デビューDay」から国家試験対策が始まります。2年次から模擬試験を実施し、大学の授業と復習のサイクルを通じて4年間かけて力を伸ばします。' } },
+        { '@type': 'Question', name: '国家試験対策で十文字ならではの取り組みは何ですか？', acceptedAnswer: { '@type': 'Answer', text: '各分野の教員が作成する十文字オリジナル問題集で、きめ細やかな対策が可能です。4年次の夏休みには9日間の夏期講習を実施し、苦手分野を集中的に克服します。' } },
+```
+
+（この3行の直後にある「国家試験に向けて個別サポートはありますか？」の行は変更しない）
+
+- [ ] **Step 5: 型・ビルドチェック**
+
+Run: `npx astro check`
+Expected: `0 errors`
+
+- [ ] **Step 6: ビルドして構造化データを確認**
+
+Run: `npx astro build`
+`dist-astro/support.html`と`dist-astro/faq.html`を開き、`<script type="application/ld+json">`内のJSON-LDに`年8回`・`130点`・`6段階`・`e-Learning`という文字列が**含まれていない**こと、代わりに`83.9`・`72.7`・`79.4`・`十文字デビューDay`・`夏期講習`・`十文字オリジナル問題集`が含まれていることを確認する（`grep`でよい）。
+
+- [ ] **Step 7: コミット**
+
+```bash
+git add src/lib/seo.js
+git commit -m "$(cat <<'EOF'
+fix: 構造化データ(JSON-LD)の国試対策関連の記述を更新
+
+src/lib/seo.js にハードコードされた/support・/faq・/向けの
+FAQPage構造化データに残っていた「年8回模試」「130点突破」
+「6段階」「e-Learning」を、NationalExamSupport.astro/FAQ.astro
+と同じ新しい内容に統一。移行検証用だった「内容を変えない」
+コメントも役割終了として更新。
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+EOF
+)"
+```
+
+---
+
+### Task 7: 最終確認（ビルド・全ページQA・数値突合）
 
 **Files:** なし（コード変更なし。検証のみ）
 
 **Interfaces:**
-- Consumes: Task 1〜5ですべて変更済みのファイル一式
+- Consumes: Task 1〜6ですべて変更済みのファイル一式
 - Produces: なし
+
+このリポジトリに自動テストランナーはなく、実装を担当するsubagentにブラウザは使えない。目視確認は「開発サーバーを開いて見る」のではなく、`npx astro build`が生成した`dist-astro/`配下のHTMLをgrepして期待する文字列の有無を確認する方式で行う。
 
 - [ ] **Step 1: プロダクションビルドで全体エラーがないことを確認**
 
 Run: `npx astro build`
-Expected: ビルドが成功し、`dist-astro/`に`support.html`が生成される。エラー・警告が新規に出ていないこと。
+Expected: ビルドが成功し、`dist-astro/`に`index.html`・`support.html`・`faq.html`・`how-to-become.html`・`kokushi-report.html`が生成される。エラーが出ていないこと。
 
 - [ ] **Step 2: `npx astro check` を最終実行**
 
 Run: `npx astro check`
 Expected: `0 errors`
 
-- [ ] **Step 3: 開発サーバーで影響範囲を一通り目視確認**
+- [ ] **Step 3: 生成されたHTMLに旧表現が残っていないか横断的に確認**
 
-Run: `npx astro dev`
-以下を順に開き、崩れ・矛盾がないか確認する:
-- `/`（StatsBar・国試対策サマリー・FAQサマリーがあれば）
-- `/support`（Part A + Part B 全体）
-- `/faq`
-- `/how-to-become`
-- `/kokushi-report`
+Run: `grep -rn "年8回\|130点突破\|6段階\|e-Learning" dist-astro/index.html dist-astro/support.html dist-astro/faq.html dist-astro/how-to-become.html`
+Expected: 何もヒットしない（0件）。ヒットした場合は該当ファイル（`NationalExamSupport.astro`／`FAQ.astro`／`StatsBar.astro`／`HowToBecome.astro`／`pageMeta.js`／`seo.js`のいずれか）を特定し、該当タスクに戻って修正・追加コミットする。
 
 - [ ] **Step 4: 数値の突合確認**
 
-`/support`に表示した「本学 合格率（第38・39回平均）83.9%」「本学 合格率（第40回）72.7%」「全国平均（第40回）79.4%」が、`/kokushi-report`に表示されている同じ数値（`KokushiReport.astro:113,117,121`）と完全に一致していることを目視で再確認する。不一致があれば`NationalExamSupport.astro`側を修正し、Task 1のコミットを追加修正コミットで補う。
+`grep -o "83\.9\|72\.7\|79\.4" dist-astro/support.html` と `grep -o "83\.9\|72\.7\|79\.4" dist-astro/kokushi-report.html` を実行し、両方に同じ3つの数値（83.9・72.7・79.4）が出現していることを確認する。`KokushiReport.astro:113,117,121`の値と食い違いがないか、該当箇所を`Read`で見比べる。不一致があれば`NationalExamSupport.astro`または`seo.js`側を修正し、追加コミットで補う。
 
 - [ ] **Step 5: 問題がなければ完了。問題があれば該当タスクに戻って修正しコミットする。**
