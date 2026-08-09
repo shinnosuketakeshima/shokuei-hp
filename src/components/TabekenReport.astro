@@ -1,0 +1,110 @@
+---
+import { ArrowLeft, ExternalLink } from '@lucide/astro'
+import flyer from '../assets/tabeken/flyer.png'
+---
+
+<div class="lab-page">
+  <div class="container">
+
+    <div data-reveal="left">
+      <a href="/lab-kunii" class="lab-page__back-link">
+        <ArrowLeft size={16} />
+        <span>國井研究室に戻る</span>
+      </a>
+    </div>
+
+    <div class="lab-page__header" data-reveal style="--reveal-delay: 0.1s">
+      <p class="lab-page__eyebrow">レポート / Report</p>
+      <h1 class="lab-page__title">
+        「食べかた研究所（たべけん）」第1期、始動。<br />
+        健康診断の結果から、自分だけの食べ方をつくる3か月へ
+      </h1>
+      <p class="lab-page__subtitle">2026年8月8日 食物栄養学科 國井研究室</p>
+    </div>
+
+    <div class="lab-page__content">
+
+      <section class="lab-section" data-reveal>
+        <p class="lab-section__body">
+          8月8日（土）、食物栄養学科・國井研究室が運営する食事管理プログラム
+          <strong>「食べかた研究所」（通称：たべけん）</strong>の事前説明会が、本学1号棟2階の「ここラボ」で開催されました。
+          この日は、7月に募集していた第1期生を対象にしたオリエンテーション。
+          いよいよ、約3か月間にわたる「食べかた」のサポートプログラムがスタートします。
+        </p>
+      </section>
+
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">「食べかた研究所」とは</h2>
+        <p class="lab-section__body">
+          食べかた研究所は、國井研究室（栄養管理・実践教育研究室）が展開する
+          <strong>「みんなの実践食事学」</strong>プロジェクトの一環として立ち上げられた、
+          地域の方向けの食事管理プログラムです。
+          担当するのは、メタボ指導を含めて延べ1万人以上の支援経験を持つ國井大輔特任教授（管理栄養士）。
+          参加者一人ひとりの<strong>健康診断の結果</strong>をもとに、食事や身体活動、ストレス管理まで含めた
+          オーダーメイドの3か月間の支援プログラムを組み立てます。
+        </p>
+        <p class="lab-section__body">
+          参加条件は個人・グループを問わず、18歳以上であれば性別や目標も不問。
+          「痩せたい」「健康診断の数値が気になってきた」「家族の食事を見直したい」など、
+          参加者ごとに異なる目的に合わせて内容を調整していくのが特徴です。
+        </p>
+      </section>
+
+      <div class="column-figure" data-reveal>
+        <img
+          src={flyer.src}
+          alt="「食べかた研究所（たべけん）」第1期生募集チラシ。人間生活学部食物栄養学科・國井研究室が実施する食事管理プログラムの案内"
+          loading="lazy"
+          decoding="async"
+        />
+        <p class="column-figure__caption">▲ 第1期生の募集にあたって配布されたチラシ。「どう食べる？食事と健康をつなぐプロワザを伝授！」がテーマ。</p>
+      </div>
+
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">学生も「助手」としてサポートに参加</h2>
+        <p class="lab-section__body">
+          このプログラムのもう一つの特徴が、<strong>食物栄養学科の学生たちが助手として運営に加わっている</strong>ことです。
+          8月8日の事前説明会でも、体組成測定やヒアリングのサポートに学生スタッフが立ち会いました。
+          教科書の中だけで学ぶ栄養指導ではなく、実際に地域の方と向き合いながら支援の現場を経験できることは、
+          管理栄養士を目指す学生にとって大きな学びの機会になっています。
+        </p>
+        <p class="lab-section__body">
+          プログラムは全3回のクール（面談・フォロー）を軸に、土曜日の午前・午後で実施。
+          初回のオリエンテーションでは、プライバシーに配慮しながら体組成測定なども行われました。
+          会場は本学1号棟2階「ここラボ」で、1回あたり約60分・完全予約制。
+          参加費は1回1,000円（税込）で、大学公式キャラクター「プラスちゃん」のオリジナルナッツと各種資料が付きます。
+        </p>
+      </section>
+
+      <section class="lab-section" data-reveal>
+        <h2 class="lab-section__title">研究室のあゆみの、新しいページへ</h2>
+        <p class="lab-section__body">
+          國井研究室ではこれまでも、企業と共同開発した「プラスちゃんナッツ」の商品化や、
+          地域の名店とコラボした「すったてうどん」の実践食事学プロジェクトなど、
+          学びを社会に還元する取り組みを重ねてきました。
+          今回の「食べかた研究所」は、その延長線上にある新しい挑戦です。
+          知識を教室の中で完結させず、地域の一人ひとりの生活に寄り添う支援へ——。
+          第1期生の3か月間の伴走を通じて、その手応えを確かめていきます。
+        </p>
+        <p class="lab-section__body">
+          今後の実施の様子や、参加者・学生スタッフの声についても、続報でお伝えしていく予定です。
+          次期の募集情報は、本ページおよび國井研究室のページで随時ご案内します。
+        </p>
+      </section>
+
+      <section class="lab-section" data-reveal>
+        <div class="lab-section__card">
+          <h3>関連リンク</h3>
+          <p>「食べかた研究所」を運営する國井研究室の紹介ページはこちらから。</p>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem">
+            <a href="/lab-kunii" class="btn btn--primary">
+              國井研究室 紹介ページ
+              <ExternalLink size={14} style="margin-left: 6px; vertical-align: middle" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
