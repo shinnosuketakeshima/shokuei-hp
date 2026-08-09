@@ -1,5 +1,14 @@
 export const STATIC_NEWS = [
   {
+    id: 'tabeken-launch',
+    date: '2026.8.8',
+    tag: 'レポート',
+    type: 'report',
+    title: '食物栄養学科「食べかた研究所（たべけん）」第1期がスタートしました',
+    hook: '國井研究室が展開する、健康診断結果をもとにした3か月間の食事管理プログラム。事前説明会を皮切りに、約10名の第1期生の支援がいよいよ始まります。',
+    href: '/lab-kunii',
+  },
+  {
     id: 'how-to-become',
     date: '2026.7.17',
     tag: 'お知らせ',
