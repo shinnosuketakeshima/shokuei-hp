@@ -343,7 +343,8 @@ function buildCustomJsonLd(pathname, meta) {
     pathname.includes('column') ||
     pathname.includes('report') ||
     pathname.includes('project') ||
-    pathname.includes('event')
+    pathname.includes('event') ||
+    pathname === '/message'
   ) {
     const articleDateMap = {
       '/student-column-1': '2026-05-11',
@@ -357,6 +358,7 @@ function buildCustomJsonLd(pathname, meta) {
       '/event-0531': '2026-05-18',
       '/event-0719': '2026-07-14',
       '/event-0726': '2026-07-14',
+      '/message': '2026-09-15',
     }
     return {
       '@type': 'Article',
@@ -417,7 +419,8 @@ export function buildBreadcrumbJsonLd(pathname, title) {
     pathname.includes('column') ||
     pathname.includes('report') ||
     pathname.includes('project') ||
-    pathname.includes('event')
+    pathname.includes('event') ||
+    pathname === '/message'
   ) {
     breadcrumbs = [
       base,
