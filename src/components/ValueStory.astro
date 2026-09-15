@@ -1,0 +1,64 @@
+---
+import { ArrowRight, BookOpen, Heart, HeartHandshake } from '@lucide/astro'
+
+const BLOCKS = [
+  {
+    number: '01',
+    icon: BookOpen,
+    heading: '自分の中に、専門を持つ。',
+    lead: '「これは私の専門です」と言えるものを。',
+    body: '管理栄養士という国家資格。食と栄養、人体、疾病、食品、地域、データ。4年間で身につけるのは、試験のためだけの知識ではありません。環境やライフステージが変わっても、自分を支えてくれる専門性です。',
+    ctaLabel: '管理栄養士になるまでを見る',
+    href: '/how-to-become',
+  },
+  {
+    number: '02',
+    icon: Heart,
+    heading: 'つまずいても、前に進める。',
+    lead: '最初から、全部できなくていい。',
+    body: '大学に入った18歳のとき、将来が決まっていなくてもいい。勉強につまずくことがあってもいい。少人数だからこそ、一人ひとりを見ながら、理解できなかったところに戻り、もう一度前へ進む。4年間の中で、「私にもできることがある」を見つけてほしい。',
+    ctaLabel: '十文字の学びとサポートを見る',
+    href: '/support',
+  },
+  {
+    number: '03',
+    icon: HeartHandshake,
+    heading: '学んだ力で、誰かを支える。',
+    lead: '食と栄養には、人の人生を少し良くする力がある。',
+    body: '病院で患者さんを支える。子どもの成長を支える。高齢者の暮らしを支える。食品をつくる。地域を健康にする。研究する。そして、まだ存在しない仕事を、自分でつくる。あなたなら、食と栄養で誰を幸せにしますか。',
+    ctaLabel: '12の研究室ストーリーを見る',
+    href: '#labs',
+  },
+]
+---
+
+<section class="bg-[#FFF9F9] pt-[clamp(28px,4vw,40px)] pb-[clamp(48px,8vw,88px)]" aria-labelledby="value-story-heading">
+  <div class="container px-[clamp(20px,5vw,72px)]">
+    <p id="value-story-heading" class="sr-only">十文字学園女子大学 食物栄養学科が育てる力</p>
+    <div class="mx-auto flex max-w-3xl flex-col gap-[clamp(32px,6vw,56px)]">
+      {BLOCKS.map((b, i) => {
+        const Icon = b.icon
+        return (
+          <div class="flex flex-col gap-4" data-reveal style={`--reveal-delay: ${i * 0.1}s`}>
+            <div class="flex items-center gap-4">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#A87878]/10 text-[#A87878]">
+                <Icon size={22} aria-hidden="true" />
+              </span>
+              <span class="font-serif text-[13px] font-medium tracking-[0.2em] text-[#A87878]">{b.number}</span>
+            </div>
+            <h3 class="font-serif text-[clamp(20px,2.6vw,28px)] font-bold leading-snug text-[#4A3F3F]">{b.heading}</h3>
+            <p class="text-[15px] font-medium leading-[1.9] text-[#4A3F3F]/90">{b.lead}</p>
+            <p class="text-[13px] font-light leading-[1.9] text-[#4A3F3F]/75">{b.body}</p>
+            <a
+              href={b.href}
+              class="group mt-1 inline-flex w-fit items-center gap-1.5 text-[13px] font-medium text-[#A87878] transition-colors hover:text-[#7a5555]"
+            >
+              {b.ctaLabel}
+              <ArrowRight size={14} class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            </a>
+          </div>
+        )
+      })}
+    </div>
+  </div>
+</section>
