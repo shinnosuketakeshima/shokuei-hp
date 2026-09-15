@@ -1,0 +1,30 @@
+---
+import { ArrowRight } from '@lucide/astro'
+---
+
+<section class="bg-white py-[clamp(48px,8vw,88px)]" aria-labelledby="chair-teaser-heading">
+  <div class="container px-[clamp(20px,5vw,72px)]">
+    <div
+      class="mx-auto flex max-w-2xl flex-col items-center gap-6 rounded-3xl border border-[#4A3F3F]/10 bg-[#FFF9F9] px-8 py-12 text-center sm:px-14"
+      data-reveal="scale"
+    >
+      <p class="text-[11px] font-medium tracking-[0.2em] text-[#A87878] uppercase">学科長から高校生のみなさんへ</p>
+      <h2 id="chair-teaser-heading" class="sr-only">学科長メッセージ</h2>
+      <blockquote class="text-balance font-serif text-[clamp(18px,2.4vw,24px)] font-bold leading-[1.8] text-[#4A3F3F]">
+        食と栄養という専門性を持って、<br />
+        自分の人生を自分で選び、<br />
+        そして誰かの人生を支えることのできる人。
+      </blockquote>
+      <p class="text-[13px] font-light leading-[1.8] text-[#4A3F3F]/70">
+        竹嶋伸之輔学科長が、この学科で育てたい学生像について綴ったメッセージです。
+      </p>
+      <a
+        href="/message"
+        class="group inline-flex min-h-[48px] items-center gap-2 rounded-2xl bg-[#A87878] px-6 py-3 text-[13px] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#7a5555]"
+      >
+        学科長メッセージ全文を読む
+        <ArrowRight size={16} class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>
