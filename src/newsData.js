@@ -1,5 +1,14 @@
 export const STATIC_NEWS = [
   {
+    id: 'chair-message',
+    date: '2026.9.15',
+    tag: '学科長メッセージ',
+    type: 'sensei',
+    title: '学科長メッセージ「自分の人生を選び、誰かの人生を支えられる人に。」',
+    hook: '管理栄養士という資格に何を託し、どんな学生を育てたいのか。竹嶋伸之輔学科長が、学科の教育にかける思いを綴りました。',
+    href: '/message',
+  },
+  {
     id: 'tabeken-launch',
     date: '2026.8.8',
     tag: 'レポート',
