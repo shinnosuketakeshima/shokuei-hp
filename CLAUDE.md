@@ -49,7 +49,9 @@ See the `new-page` skill for the full checklist and output format.
 
 **Career is split into two components**: `Career.astro` is homepage-only (`summary={true}`, also embedded at the top of `CareerPage.astro`); `CareerPage.astro` is the full page at `/career` (adds numeric breakdown, 4-year support timeline, etc.).
 
-**Homepage (`/`)**: `src/pages/index.astro` assembles 14 section components (`Hero`, `AudienceGuide`, `FeatureSpotlight`, `CategoryBanners`, `News`, `StatsBar`, `Features`, `Labs`, `Qualifications`, `NationalExamSupport`, `SNSSection`, `Career`, `StudentVoices`, `CampusLife`, `FAQ`). `Labs` (category filter), `CampusLife` (4-year roadmap tabs), `FAQ` (accordion), `Columns`/`NewsArchive` (category filter), and `LivingAlone` (dorm/apartment cost simulator) each use vanilla `<script>` blocks (`querySelectorAll`/`classList`/`textContent`) for interactivity — no React, no client-side framework runtime anywhere in the shell.
+**Homepage (`/`)**: `src/pages/index.astro` assembles the sections in a deliberate order — FV (`Hero`, `UpcomingEvents`) → audience nav (`AudienceGuide`) → strengths (`StatsBar`, `Features`) → outcomes (`Qualifications`, `NationalExamSupport`, `Career`) → philosophy (`ValueStory`, `ChairMessageTeaser`) → learning (`CategoryBanners`, `Labs`) → real life (`CampusLife`, `RealVoices`) → `News` (latest 4, title/date only) → `FAQ` → `SNSSection`. USPs and outcomes are intentionally placed before news; keep that order unless asked. `RealVoices` is homepage-only and tabs 学生の声／コラム／特集 (data from `src/data/voices.js`, `STATIC_NEWS` columns, and `<FeatureSpotlight embedded />`). `Labs` (category filter), `RealVoices` (tabs), `CampusLife` (4-year roadmap tabs), `FAQ` (accordion), `Columns`/`NewsArchive` (category filter), and `LivingAlone` (dorm/apartment cost simulator) each use vanilla `<script>` blocks (`querySelectorAll`/`classList`/`textContent`) for interactivity — no React, no client-side framework runtime anywhere in the shell.
+
+**Shared homepage data** lives in `src/data/`: `audiences.js` (used by `AudienceGuide` and the Header's 対象別 dropdown / mobile chips), `voices.js` (`StudentVoices` + `RealVoices`), `spotlights.js` (`FeatureSpotlight`). Edit the data file, not the component, when changing these lists.
 
 ### SEO / Meta
 
@@ -73,6 +75,7 @@ Firestore `date` values can be a `Timestamp`, `Date`, or string — `formatNewsD
 - **`src/index.css` is the only stylesheet**, shared by both the Astro site and the legacy React source. Do not create new CSS files.
 - Design-token system via CSS custom properties: `--cream`, `--terracotta`, `--forest`, `--charcoal`, `--stone`, etc. Use `clamp()` for fluid spacing.
 - Fonts: Noto Serif JP / Noto Sans JP via `<link>` in `BaseLayout.astro`. Use `var(--font-serif)` / `var(--font-sans)`.
+- Buttons: `.button` / `.button--outline` (defined at the bottom of `index.css`) for section CTAs.
 - Scroll-reveal: add `data-reveal` (optionally `data-reveal="left"|"right"|"scale"|"fade"`, and `style="--reveal-delay: 0.1s"` for stagger). Driven by `src/scripts/reveal.js`'s `IntersectionObserver`, gated on `html.js`.
 
 ### Images and working materials

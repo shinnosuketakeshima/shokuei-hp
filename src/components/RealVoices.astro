@@ -1,0 +1,147 @@
+---
+// ホーム専用。散在していた「学生の声」「コラム」「特集」をタブ切り替えで1セクションに集約する。
+import { ArrowRight } from '@lucide/astro'
+import { VOICES } from '../data/voices.js'
+import { STATIC_NEWS } from '../newsData.js'
+import FeatureSpotlight from './FeatureSpotlight.astro'
+
+const voices = VOICES.slice(0, 3)
+const columns = STATIC_NEWS.filter((n) => n.type === 'column').slice(0, 3)
+
+const TABS = [
+  { key: 'voices', label: '学生の声', moreLabel: '学生の声をもっと見る', moreHref: '/voices' },
+  { key: 'columns', label: 'コラム', moreLabel: 'コラム一覧を見る', moreHref: '/columns' },
+  { key: 'features', label: '特集', moreLabel: null, moreHref: null },
+]
+---
+
+<section class="real" id="real">
+  <div class="container">
+    <div class="real__header" data-reveal>
+      <p class="eyebrow">リアルな声 / Real Voices</p>
+      <h2 class="section-title">在学生・教員が伝える<br />学科の日常</h2>
+    </div>
+
+    <div class="real__tabs" role="tablist" aria-label="リアルな声のカテゴリ" data-reveal>
+      {TABS.map((t, i) => (
+        <button
+          type="button"
+          role="tab"
+          id={`real-tab-${t.key}`}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          aria-controls={`real-panel-${t.key}`}
+          class={`real__tab${i === 0 ? ' real__tab--active' : ''}`}
+          data-real-tab={t.key}
+        >
+          {t.label}
+        </button>
+      ))}
+    </div>
+
+    <div
+      id="real-panel-voices"
+      role="tabpanel"
+      aria-labelledby="real-tab-voices"
+      class="real__panel"
+      data-real-panel="voices"
+    >
+      <div class="voices__grid">
+        {voices.map((v, i) => (
+          <div class="voice-card" data-reveal style={`--reveal-delay: ${(i % 3) * 0.1}s`}>
+            <p class="voice-card__category">{v.category}</p>
+            <blockquote class="voice-card__quote">「{v.quote}」</blockquote>
+            <div class="voice-card__author">
+              <span class="voice-card__initial">{v.initial}</span>
+              <div class="voice-card__meta">
+                <span class="voice-card__year">{v.year}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="real__more">
+        <a href="/voices" class="button button--outline">
+          学生の声をもっと見る <ArrowRight size={16} style="margin-left: 8px" />
+        </a>
+      </div>
+    </div>
+
+    <div
+      id="real-panel-columns"
+      role="tabpanel"
+      aria-labelledby="real-tab-columns"
+      class="real__panel"
+      data-real-panel="columns"
+      hidden
+    >
+      <div class="real__columns">
+        {columns.map((c) => (
+          <article class="real-column">
+            <a href={c.href} class="real-column__link" aria-label={`${c.title} を読む`}>
+              <div class="real-column__meta">
+                <span class="real-column__date">{c.date}</span>
+                <span class={`news-tag news-tag--${c.type}`}>{c.tag}</span>
+              </div>
+              <h3 class="real-column__title">{c.title}</h3>
+              {c.hook && <p class="real-column__hook">{c.hook}</p>}
+              <span class="real-column__cta">
+                続きを読む <ArrowRight size={14} aria-hidden="true" />
+              </span>
+            </a>
+          </article>
+        ))}
+      </div>
+      <div class="real__more">
+        <a href="/columns" class="button button--outline">
+          コラム一覧を見る <ArrowRight size={16} style="margin-left: 8px" />
+        </a>
+      </div>
+    </div>
+
+    <div
+      id="real-panel-features"
+      role="tabpanel"
+      aria-labelledby="real-tab-features"
+      class="real__panel"
+      data-real-panel="features"
+      hidden
+    >
+      <FeatureSpotlight embedded={true} />
+    </div>
+  </div>
+</section>
+
+<script>
+  function initRealTabs() {
+    const section = document.getElementById('real')
+    if (!section) return
+    const tabs = section.querySelectorAll<HTMLElement>('[data-real-tab]')
+    const panels = section.querySelectorAll<HTMLElement>('[data-real-panel]')
+
+    const activate = (key: string) => {
+      tabs.forEach((tab) => {
+        const active = tab.getAttribute('data-real-tab') === key
+        tab.classList.toggle('real__tab--active', active)
+        tab.setAttribute('aria-selected', String(active))
+      })
+      panels.forEach((panel) => {
+        const active = panel.getAttribute('data-real-panel') === key
+        panel.hidden = !active
+        // hidden 中は IntersectionObserver が発火しないため、表示時にまとめて可視化する
+        if (active) {
+          panel.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'))
+        }
+      })
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => activate(tab.getAttribute('data-real-tab') || 'voices'))
+    })
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRealTabs)
+  } else {
+    initRealTabs()
+  }
+</script>

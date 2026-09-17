@@ -28,6 +28,9 @@ const allNews = [
   })),
   ...STATIC_NEWS,
 ].sort((a, b) => newsDateMillis(b.date) - newsDateMillis(a.date))
+
+// ホームはタイトルと日付だけの最新4件に絞る（全文は /news）
+const latestNews = allNews.slice(0, 4)
 ---
 
 <section class="news" id="news">
@@ -41,22 +44,24 @@ const allNews = [
         </a>
       </div>
 
-      <ul class="news-list" data-reveal style="--reveal-delay: 0.2s" aria-label="新着情報一覧">
-        {allNews.map((n, i) => (
+      <div class="news__body" data-reveal style="--reveal-delay: 0.2s">
+      <ul class="news-list" aria-label="新着情報一覧">
+        {latestNews.map((n, i) => (
           <li data-reveal style={`--reveal-delay: ${i * 0.05}s`}>
             <article>
               <a href={n.href || '/'} class="news-item" aria-label={`${n.date} ${n.tag}: ${n.title} の詳細を読む`}>
                 <span class="news-item__date">{n.date}</span>
                 <span class={`news-tag news-tag--${n.type}`}>{n.tag}</span>
-                <span class="news-item__title">
-                  {n.title}
-                  {n.hook && <span class="news-item__hook">{n.hook}</span>}
-                </span>
+                <span class="news-item__title">{n.title}</span>
               </a>
             </article>
           </li>
         ))}
       </ul>
+      <a href="/news" class="button button--outline news__all">
+        お知らせ一覧を見る <ArrowRight size={16} style="margin-left: 8px" />
+      </a>
+      </div>
     </div>
   </div>
 </section>

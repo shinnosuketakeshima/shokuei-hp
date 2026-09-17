@@ -59,7 +59,8 @@ const QUALS = [
   },
 ]
 
-const displayQuals = summary ? QUALS.slice(0, 4) : QUALS
+const heroQuals = QUALS.slice(0, 2)
+const otherQuals = QUALS.slice(2)
 const TitleTag = summary ? 'h2' : 'h1'
 ---
 
@@ -80,17 +81,32 @@ const TitleTag = summary ? 'h2' : 'h1'
     </div>
 
     {summary ? (
-      <div class="qual-grid">
-        {displayQuals.map((q, i) => {
-          const Icon = q.icon
-          return (
-            <div class={`qual-card${q.special ? ' qual-card--special' : ''}`} data-reveal="scale" style={`--reveal-delay: ${(i % 4) * 0.1}s`}>
-              {q.special && <p class="qual-badge">★ {q.badge}</p>}
-              <div class="qual-card__icon"><Icon size={16} /></div>
-              <h3 class="qual-card__title">{q.title}</h3>
-            </div>
-          )
-        })}
+      <div class="qual-summary">
+        <div class="qual-hero-grid">
+          {heroQuals.map((q, i) => {
+            const Icon = q.icon
+            return (
+              <div class={`qual-card qual-card--hero${q.special ? ' qual-card--special' : ''}`} data-reveal="scale" style={`--reveal-delay: ${i * 0.1}s`}>
+                <p class="qual-badge">{q.special ? `★ ${q.badge}` : '国家資格'}</p>
+                <div class="qual-card__icon"><Icon size={18} /></div>
+                <h3 class="qual-card__title qual-card__title--hero">{q.title}</h3>
+                <p class="qual-card__note">{q.note}</p>
+              </div>
+            )
+          })}
+        </div>
+        <p class="qual-badges__label" data-reveal>そのほか取得をめざせる資格・免許</p>
+        <ul class="qual-badges" data-reveal style="--reveal-delay: 0.15s">
+          {otherQuals.map((q) => {
+            const Icon = q.icon
+            return (
+              <li class="qual-badge-item">
+                <Icon size={14} aria-hidden="true" />
+                <span>{q.title}</span>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     ) : (
       <div class="qualifications__details" style="margin-top: 48px; display: flex; flex-direction: column; gap: 36px">

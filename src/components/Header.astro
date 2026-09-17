@@ -1,5 +1,6 @@
 ---
 import { ChevronDown } from '@lucide/astro'
+import { AUDIENCES } from '../data/audiences.js'
 
 const LAB_CATEGORIES = [
   {
@@ -63,7 +64,35 @@ const isHome = Astro.url.pathname === '/'
     </a>
 
     <nav class="header__nav" aria-label="メインナビゲーション">
+      <div class="header__audience-chips" aria-label="対象者別メニュー">
+        <span class="header__audience-chips-label">あなたに合わせて読む</span>
+        {AUDIENCES.map((a) => (
+          <a href={a.primaryHref} class="header__audience-chip">{a.shortLabel}</a>
+        ))}
+      </div>
+
       <a href="/" class="header__nav-link">ホーム</a>
+
+      <div class="header__cat-wrap header__cat-wrap--audience" data-key="audience">
+        <button
+          type="button"
+          class="header__cat-btn"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          対象別
+          <ChevronDown size={13} class="header__cat-chevron" aria-hidden="true" />
+        </button>
+        <div class="header__dropdown header__dropdown--audience" aria-hidden="true">
+          <p class="header__dropdown-eyebrow">あなたに合わせて読む</p>
+          {AUDIENCES.map((a) => (
+            <a href={a.primaryHref} class="header__dropdown-item">
+              <span class="header__dropdown-name">{a.label}</span>
+              <span class="header__dropdown-note">{a.links.map((l) => l.label).join('・')}</span>
+            </a>
+          ))}
+        </div>
+      </div>
 
       {LAB_CATEGORIES.map(cat => (
         <div class="header__cat-wrap" data-key={cat.key}>
