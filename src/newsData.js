@@ -1,7 +1,7 @@
 export const STATIC_NEWS = [
   {
     id: 'col5',
-    date: '2026.9.17',
+    date: '2026.9.13',
     tag: '学生コラム',
     type: 'column',
     title: '教室で覚えた知識が、現場の一食につながった',
@@ -10,7 +10,7 @@ export const STATIC_NEWS = [
   },
   {
     id: 'col6',
-    date: '2026.9.16',
+    date: '2026.9.12',
     tag: '学生コラム',
     type: 'column',
     title: 'うなぎのたれで、ご飯が食べられる',
@@ -19,7 +19,7 @@ export const STATIC_NEWS = [
   },
   {
     id: 'col7',
-    date: '2026.9.16',
+    date: '2026.9.11',
     tag: '学生コラム',
     type: 'column',
     title: '夕食まであと1時間。病院給食の舞台裏',
@@ -28,7 +28,7 @@ export const STATIC_NEWS = [
   },
   {
     id: 'col8',
-    date: '2026.9.15',
+    date: '2026.9.10',
     tag: '学生コラム',
     type: 'column',
     title: '真っ白な白衣は「はたらく細胞」の白血球みたい？',
