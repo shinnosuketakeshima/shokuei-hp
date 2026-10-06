@@ -10,6 +10,22 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/jev/classify",
+        "function": {
+          "functionId": "jevClassify",
+          "region": "asia-northeast1"
+        }
+      },
+      {
+        "source": "/api/patient/speak",
+        "function": {
+          "functionId": "patientSpeak",
+          "region": "asia-northeast1"
+        }
+      }
     ]
   }
 }
