@@ -40,7 +40,7 @@ Astro's file-based routing lives in `src/pages/*.astro` (one file per route, e.g
 1. Create the component as `.astro` under `src/components/`, styled via `src/index.css` classes (reuse `.lab-page` / `.lab-section` for lab pages).
 2. Create `src/pages/<path>.astro`: wrap the component in `<BaseLayout>`.
 3. Add a `PAGE_META` entry (title/description/ogType) to `src/data/pageMeta.js`. `BaseLayout.astro` **throws a build error** for any pathname missing from `PAGE_META` — this is the one mandatory sync point. Add a `keywordsMap` entry in the same file if the page needs specific keywords (otherwise `/lab-*` paths fall back to a generic string via `getKeywords()`).
-4. For **lab pages**: add the story card to `Labs.astro`'s `LAB_STORIES`, and the nav link to `Header.astro`'s `LAB_CATEGORIES` **and** `Footer.astro`'s `LAB_COLS` — three separate lists that must stay in sync.
+4. For **lab pages**: add the story card to `Labs.astro`'s `LAB_STORIES`, and the footer link to `Footer.astro`'s `LAB_COLS` — two lists that must stay in sync (the header has a single 研究室 link to `/labs`, which renders the full `Labs` component, so no header edit is needed).
 5. For **content pages** (student columns, event pages, etc.): skip the Labs/Header/Footer step. Add a `STATIC_NEWS` entry in `src/newsData.js` if it should appear in the News/Columns listings.
 
 See the `new-page` skill for the full checklist and output format.

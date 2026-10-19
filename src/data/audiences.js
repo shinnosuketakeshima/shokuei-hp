@@ -12,7 +12,7 @@ export const AUDIENCES = [
     links: [
       { label: '管理栄養士になるには', href: '/how-to-become' },
       { label: '在学生・卒業生の声', href: '/voices' },
-      { label: '12の研究室ストーリー', href: '#labs' },
+      { label: '12の研究室ストーリー', href: '/labs' },
     ],
   },
   {
