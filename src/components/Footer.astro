@@ -16,16 +16,17 @@ const LINKS_1 = [
 ]
 
 const LINKS_2 = [
-  { label: '入試情報',          href: '#' },
-  { label: 'オープンキャンパス', href: '#' },
+  { label: '入試情報',          href: 'https://www.jumonji-u.ac.jp/jumonji-style/' },
+  { label: 'オープンキャンパス', href: 'https://www.jumonji-u.ac.jp/jumonji-style/open-campus/' },
+  { label: '資料請求',          href: 'https://entry24.s-axol.jp/jumonji-u/step1?ef=1' },
   { label: '学科公式HP',        href: 'https://www.jumonji-u.ac.jp/humanlife/food/' },
-  { label: 'アクセス',          href: '#' },
-  { label: '大学ホームページ',   href: '#' },
+  { label: 'アクセス',          href: 'https://www.jumonji-u.ac.jp/outline/access/' },
+  { label: '大学ホームページ',   href: 'https://www.jumonji-u.ac.jp/' },
 ]
 
 const SNS = [
   { label: 'Instagram', href: 'https://www.instagram.com/jumonji_shokuei/' },
-  { label: 'TikTok',    href: '#' },
+  { label: 'TikTok',    href: 'https://www.tiktok.com/@ishokssov49' },
 ]
 
 const LAB_COLS = [
@@ -119,7 +120,7 @@ const year = new Date().getFullYear()
         <ul class="footer__links">
           {LINKS_1.map(l => (
             <li>
-              <a href={l.href} class="footer__link">{l.label}</a>
+              <a href={l.href} class="footer__link" {...(l.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{l.label}</a>
             </li>
           ))}
         </ul>
@@ -130,7 +131,7 @@ const year = new Date().getFullYear()
         <ul class="footer__links">
           {LINKS_2.map(l => (
             <li>
-              <a href={l.href} class="footer__link">{l.label}</a>
+              <a href={l.href} class="footer__link" {...(l.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{l.label}</a>
             </li>
           ))}
         </ul>

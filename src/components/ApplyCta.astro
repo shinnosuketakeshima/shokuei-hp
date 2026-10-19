@@ -1,0 +1,39 @@
+---
+import { ChevronRight } from '@lucide/astro'
+import { OFFICIAL_LINKS } from '../data/officialLinks.js'
+---
+
+<section class="apply-cta" aria-labelledby="apply-cta-title">
+  <div class="apply-cta__inner">
+    <p class="apply-cta__eyebrow">もっと知りたいと思ったら</p>
+    <h2 class="apply-cta__title" id="apply-cta-title">まずは、大学で実際に見て・聞いてみませんか。</h2>
+    <p class="apply-cta__lead">お申し込み・資料請求は大学公式サイトで受け付けています。</p>
+    <div class="apply-cta__buttons">
+      <a
+        href={OFFICIAL_LINKS.openCampus}
+        class="button"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-ga-click="cta_open_campus"
+      >
+        オープンキャンパスに申し込む
+        <ChevronRight size={16} aria-hidden="true" />
+      </a>
+      <a
+        href={OFFICIAL_LINKS.request}
+        class="button button--outline"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-ga-click="cta_request_material"
+      >
+        資料請求
+        <ChevronRight size={16} aria-hidden="true" />
+      </a>
+    </div>
+    <p class="apply-cta__sub">
+      <a href={OFFICIAL_LINKS.admission} target="_blank" rel="noopener noreferrer" data-ga-click="cta_admission">入試情報</a>
+      <span aria-hidden="true">／</span>
+      <a href={OFFICIAL_LINKS.dept} target="_blank" rel="noopener noreferrer" data-ga-click="cta_dept_official">学科公式HP</a>
+    </p>
+  </div>
+</section>

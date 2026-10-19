@@ -2,6 +2,7 @@
 import '../index.css'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import ApplyCta from '../components/ApplyCta.astro'
 import { PAGE_META, getKeywords } from '../data/pageMeta.js'
 import { buildPageJsonLd, buildBreadcrumbJsonLd } from '../lib/seo.js'
 
@@ -141,6 +142,7 @@ const orgJsonLd = {
     <main>
       <slot />
     </main>
+    {!noindex && <ApplyCta />}
     <Footer />
     <script>
       import '../scripts/reveal.js'
